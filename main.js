@@ -14,7 +14,7 @@ class AssessmentHelper {
     container.innerHTML = `
       <div id="Launcher" class="Launcher" style="outline: none;min-height: 160px;transform: 
       translateX(0px) translateY(-32px);opacity: 0.95;font-family: 'Nunito', sans-serif;width: 140px;height: 180px;background: 
-      #1c1e2b;position: absolute;border-radius: 16px;display: grid;place-items: center;color: white;font-size: larger;top: 213px;left: 1141px; position:absolute; z-index: 99999;padding: 10px;box-shadow: 0 8px 16px rgba(0,0,0,0.3);resize: both;overflow: hidden;">
+      #1c1e2b;position: absolute;border-radius: 16px;display: grid;place-items: center;color: white;font-size: larger;top: 213px;left: 1141px; position:absolute; z-index: 99999;padding: 10px;box-shadow: 0 8px 16px rgba(0,0,0,0.3);resize: both;overflow: hidden;white-space: nowrap;">
         <div class="drag-handle" style="width: 100%; height: 20px; cursor: move; background: transparent;"></div>
         <button id="closeButton" style="position: absolute; top: 5px; right: 5px; background: none; border: none; color: white; font-size: 16px; cursor: pointer;">×</button>
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="24" height="18.6" viewBox="0 0 300.000000 233.000000" class="center" style="margin: 2px;">
