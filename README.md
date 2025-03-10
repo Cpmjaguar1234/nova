@@ -1,6 +1,6 @@
 # Nova - BIM Cheat Assistant
 
-A browser extension that enhances your learning experience by providing intelligent assistance during BIM practice tests.
+A browser extension that enhances your learning experience by providing intelligent assistance during BIM assignments.
 
 ## Features
 
@@ -21,8 +21,8 @@ A browser extension that enhances your learning experience by providing intellig
 ### Keyboard Shortcuts
 
 - Press `Ctrl + Shift + L` to discreetly initialize the assistant (just for stealth or smth)
-- Use `Tab` to navigate through options
-- Press `Enter` to confirm selection
+- Press `Alt + C` to toggle the UI
+- Press `Ctrl + V` or `Alt + X` to get and copy the answer; Ctrl + V is kinda scuffed though
 
 ### Supported Question Types
 
@@ -35,6 +35,7 @@ A browser extension that enhances your learning experience by providing intellig
 - This tool is designed for learning and practice purposes only
 - Use responsibly and ethically
 - Always verify answers and understand the underlying concepts
+- If you have an issue or question, please report it in the Issues section
 
 ## License
 
