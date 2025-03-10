@@ -1,4 +1,4 @@
-# BIM Cheat Assistant
+# Nova - BIM Cheat Assistant
 
 A browser extension that enhances your learning experience by providing intelligent assistance during BIM practice tests.
 
