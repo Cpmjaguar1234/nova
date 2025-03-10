@@ -31,7 +31,7 @@ class AssessmentHelper {
         <h1 class="title" style="font-size: 22px; margin: 5px 0;">Nova</h1>
         <h1 class="bottomTitle" style="font-size: 12px; margin: 3px 0;">1.0</h1>
         <button id="answer" class="button" style="font-size: 12px; padding: 8px 16px; background: #2c2f3f; border: none; color: white; border-radius: 6px; cursor: pointer; margin-bottom: 8px;">Get Answer</button>
-        <div class="watermark" style="position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); font-size: 10px; color: rgba(255, 255, 255, 0.5);">2025 - cpmjaguar1234</div>
+        <div class="watermark" style="position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); font-size: 10px; color: rgba(255, 255, 255, 0.5); white-space: nowrap;">2025 - cpmjaguar1234</div>
       </div>
     `;
     return container;
