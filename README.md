@@ -20,7 +20,7 @@ A browser extension that enhances your learning experience by providing intellig
 
 ### Keyboard Shortcuts
 
-- Press `Alt + A` to activate the assistant
+- Press `Ctrl + Shift + L` to discreetly initialize the assistant (just for stealth or smth)
 - Use `Tab` to navigate through options
 - Press `Enter` to confirm selection
 
