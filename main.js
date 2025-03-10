@@ -165,7 +165,7 @@ class AssessmentHelper {
         }
       } 
       else if (type === "longtypeV2" || type === 'longtextV2') {
-        answers.push("Can't be done, use Google or something.");
+        answers.push("Since this is a long answer, it can't be solved using the api. Instead, use Gemini or Google.");
       } 
       else if (type === "mcq") {
         const validResponse = question.validation.valid_response;
