@@ -17,41 +17,19 @@ A collection of browser scripts that enhance your learning experience by providi
 ## Features
 
 - Automatic question analysis and answer suggestions
-- Keyboard shortcuts for quick interactions
 - Support for multiple question types
 - Clean and unobtrusive interface
 - Cross-platform compatibility
 
 ## Installation
 
-1. Install the Tampermonkey browser extension
-2. Create a new script in Tampermonkey
-3. Copy and paste the content of the respective script:
-   - For BIM: Use `tampermonkey.js`
-   - For Achieve: Use `achieve.js`
-4. Save the script
+1. Create a new bookmark in your browser
+2. Copy the content of `bookmarklet.js` into the URL field of the bookmark
+3. Click the bookmark when you're on either:
+   - BigIdeasMath (BIM) website
+   - Achieve3000 website
 
-## Usage
-
-### Keyboard Shortcuts
-
-BIM Assistant:
-- Press `Ctrl + Shift + L` to discreetly initialize the assistant
-- Press `Alt + C` to toggle the UI
-- Press `Ctrl + V` or `Alt + X` to get and copy the answer
-
-Achieve Assistant:
-- Keyboard shortcuts will be displayed in the interface
-
-### Supported Question Types
-
-BIM Assistant:
-- Multiple choice questions
-- True/False questions
-- Fill-in-the-blank questions
-
-Achieve Assistant:
-- Supports various Achieve platform question formats
+The appropriate script will automatically load based on the website you're using.
 
 ## Important Notes
 
@@ -60,13 +38,13 @@ Achieve Assistant:
 - Always verify answers and understand the underlying concepts
 - If you have an issue or question, please report it in the Issues section
 
-## License
-
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
-
 ## Disclaimer
 
 This software is provided "as is", without warranty of any kind. The authors are not responsible for any consequences of using these tools.
+
+## License
+
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
