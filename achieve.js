@@ -186,6 +186,15 @@ class AssessmentHelper {
         const answer = await this.fetchAnswer(true);
         answerContent.textContent = answer;
         answerContainer.style.display = 'block';
+
+        // Auto-click the corresponding answer option
+        if (answer && ['A', 'B', 'C', 'D'].includes(answer.trim())) {
+          const options = document.querySelectorAll('[role="radio"]');
+          const index = answer.trim().charCodeAt(0) - 'A'.charCodeAt(0);
+          if (options[index]) {
+            options[index].click();
+          }
+        }
       });
     }, 0);
     }
