@@ -183,18 +183,52 @@ class AssessmentHelper {
       });
 
       getAnswerButton.addEventListener('click', async () => {
-        const answer = await this.fetchAnswer(true);
-        answerContent.textContent = answer;
-        answerContainer.style.display = 'block';
-
-        // Auto-click the corresponding answer option
-        if (answer && ['A', 'B', 'C', 'D'].includes(answer.trim())) {
-          const options = document.querySelectorAll('[role="radio"]');
-          const index = answer.trim().charCodeAt(0) - 'A'.charCodeAt(0);
-          if (options[index]) {
-            options[index].click();
+        const processQuestion = async () => {
+          const answer = await this.fetchAnswer(true);
+          answerContent.textContent = answer;
+          answerContainer.style.display = 'block';
+      
+          if (answer && ['A', 'B', 'C', 'D'].includes(answer.trim())) {
+            const options = document.querySelectorAll('[role="radio"]');
+            const index = answer.trim().charCodeAt(0) - 'A'.charCodeAt(0);
+            if (options[index]) {
+              options[index].click();
+              
+              await new Promise(resolve => setTimeout(async () => {
+                // Find submit button by text content instead of class
+                const submitButton = Array.from(document.querySelectorAll('button'))
+                  .find(button => button.textContent.trim() === 'Submit');
+                
+                if (submitButton) {
+                  submitButton.click();
+                
+                  await new Promise(resolve => setTimeout(async () => {
+                    const nextButton = document.getElementById('feedbackActivityFormBtn');
+                    if (nextButton) {
+                      nextButton.click();
+                    
+                      await new Promise(resolve => setTimeout(async () => {
+                        // Find new submit button by text content
+                        const newSubmitButton = Array.from(document.querySelectorAll('button'))
+                          .find(button => button.textContent.trim() === 'Submit');
+                        const newQuestion = document.querySelector('[role="radio"]');
+                        
+                        if (newSubmitButton && newQuestion) {
+                          await processQuestion();
+                        }
+                        resolve();
+                      }, 1000));
+                    }
+                    resolve();
+                  }, 500));
+                }
+                resolve();
+              }, 500));
+            }
           }
-        }
+        };
+
+        await processQuestion();
       });
     }, 0);
     }
