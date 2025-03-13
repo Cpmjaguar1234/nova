@@ -21,12 +21,15 @@ A collection of browser scripts that enhance your learning experience by providi
 - Clean and unobtrusive interface
 - Cross-platform compatibility
 
-## Bookmarklet Installation
+## Installation
 
-Drag the following link to your bookmarks bar to install:
+1. Create a new bookmark in your browser
+2. Copy the content of `bookmarklet.js` into the URL field of the bookmark
+3. Click the bookmark when you're on either:
+   - BigIdeasMath (BIM) website
+   - Achieve3000 website
 
-[Bookmarklet](javascript:(function(){'use strict';function loadScript(url){fetch(url).then(response=>{if(!response.ok)throw new Error('Network response was not ok');return response.text()}).then(scriptContent=>{const scriptElement=document.createElement('script');scriptElement.textContent=scriptContent;document.head.appendChild(scriptElement);console.log('Script loaded and executed successfully')}).catch(error=>{console.error('Error loading script:',error)})}const currentDomain=window.location.hostname;if(currentDomain.includes('bigideasmath.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/bigideas.js');else if(currentDomain.includes('achieve3000.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/achieve.js')})())
-
+The appropriate script will automatically load based on the website you're using.
 
 ## Important Notes
 
