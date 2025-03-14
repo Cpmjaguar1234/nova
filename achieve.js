@@ -1,10 +1,18 @@
 class AssessmentHelper {
     constructor() {
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => this.init());
-      } else {
-        this.init();
-      }
+        this.isDragging = false;
+        this.currentX = 0;
+        this.currentY = 0;
+        this.initialX = 0;
+        this.initialY = 0;
+        this.xOffset = 0;
+        this.yOffset = 0;
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.init());
+        } else {
+            this.init();
+        }
     }
 
     init() {
@@ -110,157 +118,173 @@ class AssessmentHelper {
     }
 
     setupEventListeners() {
-      // Wait for elements to be mounted
-      setTimeout(() => {
-        const launcher = document.getElementById('Launcher');
-        if (!launcher) return;
-        
-        const closeButton = launcher.querySelector('#closeButton');
-        const dragHandle = launcher.querySelector('.drag-handle');
-        const sendArticleButton = launcher.querySelector('#sendArticleButton');
-        const getAnswerButton = launcher.querySelector('#getAnswerButton');
-        const answerContainer = document.getElementById('answerContainer');
-        if (!answerContainer) return;
+        setTimeout(() => {
+            const launcher = document.getElementById('Launcher');
+            if (!launcher) return;
+            
+            const closeButton = launcher.querySelector('#closeButton');
+            const dragHandle = launcher.querySelector('.drag-handle');
+            const sendArticleButton = launcher.querySelector('#sendArticleButton');
+            const getAnswerButton = launcher.querySelector('#getAnswerButton');
+            const answerContainer = document.getElementById('answerContainer');
+            if (!answerContainer) return;
 
-      let isDragging = false;
-      let currentX;
-      let currentY;
-      let initialX;
-      let initialY;
-      let xOffset = 0;
-      let yOffset = 0;
+            // Only start drag on handle
+            dragHandle.addEventListener('mousedown', (e) => {
+                e.preventDefault(); // Prevent text selection
+                this.isDragging = true;
+                launcher.style.position = 'fixed';
+                const rect = launcher.getBoundingClientRect();
+                launcher.style.right = null;
+                launcher.style.transform = 'none';
+                launcher.style.left = `${rect.left}px`;
+                launcher.style.top = `${rect.top}px`;
+                
+                this.initialX = e.clientX;
+                this.initialY = e.clientY;
+                this.xOffset = rect.left;
+                this.yOffset = rect.top;
+            });
 
-      dragHandle.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        initialX = e.clientX - xOffset;
-        initialY = e.clientY - yOffset;
-      });
+            // Keep mousemove on document for smooth tracking
+            document.addEventListener('mousemove', (e) => {
+                if (this.isDragging) {
+                    e.preventDefault();
+                    const deltaX = e.clientX - this.initialX;
+                    const deltaY = e.clientY - this.initialY;
+                    const newX = this.xOffset + deltaX;
+                    const newY = this.yOffset + deltaY;
+                    launcher.style.left = `${newX}px`;
+                    launcher.style.top = `${newY}px`;
+                }
+            });
 
-      document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-          e.preventDefault();
-          currentX = e.clientX - initialX;
-          currentY = e.clientY - initialY;
-          xOffset = currentX;
-          yOffset = currentY;
-          launcher.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
-        }
-      });
+            // Keep mouseup on document
+            document.addEventListener('mouseup', () => {
+                this.isDragging = false;
+                console.log('Drag ended');
+            });
 
-      document.addEventListener('mouseup', () => {
-        isDragging = false;
-      });
+            // Cleanup drag if mouse leaves the window
+            document.addEventListener('mouseleave', () => {
+                this.isDragging = false;
+            });
 
-      closeButton.addEventListener('click', () => {
-        launcher.style.display = 'none';
-      });
+            document.addEventListener('mouseup', () => {
+                this.isDragging = false;
+                console.log('Drag ended');
+            });
 
-      let answerIsDragging = false;
-      let answerCurrentX;
-      let answerCurrentY;
-      let answerInitialX;
-      let answerInitialY;
+            closeButton.addEventListener('click', () => {
+                launcher.style.display = 'none';
+            });
 
-      const answerDragHandle = answerContainer.querySelector('.answer-drag-handle');
-      const closeAnswerButton = answerContainer.querySelector('#closeAnswerButton');
-      const answerContent = answerContainer.querySelector('#answerContent');
+            let answerIsDragging = false;
+            let answerCurrentX;
+            let answerCurrentY;
+            let answerInitialX;
+            let answerInitialY;
 
-      answerDragHandle.addEventListener('mousedown', (e) => {
-        answerIsDragging = true;
-        answerInitialX = e.clientX - answerContainer.offsetLeft;
-        answerInitialY = e.clientY - answerContainer.offsetTop;
-      });
+            const answerDragHandle = answerContainer.querySelector('.answer-drag-handle');
+            const closeAnswerButton = answerContainer.querySelector('#closeAnswerButton');
+            const answerContent = answerContainer.querySelector('#answerContent');
 
-      document.addEventListener('mousemove', (e) => {
-        if (answerIsDragging) {
-          answerCurrentX = e.clientX - answerInitialX;
-          answerCurrentY = e.clientY - answerInitialY;
-          answerContainer.style.left = `${answerCurrentX}px`;
-          answerContainer.style.top = `${answerCurrentY}px`;
-        }
-      });
+            answerDragHandle.addEventListener('mousedown', (e) => {
+                answerIsDragging = true;
+                answerInitialX = e.clientX - answerContainer.offsetLeft;
+                answerInitialY = e.clientY - answerContainer.offsetTop;
+            });
 
-      document.addEventListener('mouseup', () => {
-        answerIsDragging = false;
-      });
+            document.addEventListener('mousemove', (e) => {
+                if (answerIsDragging) {
+                    answerCurrentX = e.clientX - answerInitialX;
+                    answerCurrentY = e.clientY - answerInitialY;
+                    answerContainer.style.left = `${answerCurrentX}px`;
+                    answerContainer.style.top = `${answerCurrentY}px`;
+                }
+            });
 
-      closeAnswerButton.addEventListener('click', () => {
-        answerContainer.style.display = 'none';
-      });
+            document.addEventListener('mouseup', () => {
+                answerIsDragging = false;
+            });
 
-      getAnswerButton.addEventListener('click', async () => {
-          console.log('Skip Article button clicked');
-  
-          const processQuestion = async (excludedAnswers = []) => {
-              try {
-                  let queryContent = await this.fetchArticleContent();
-                  console.log(`Fetched article content: ${queryContent}`);
-                  
-                  queryContent += "\n\nPROVIDE ONLY A ONE-LETTER ANSWER THAT'S IT NOTHING ELSE (A, B, C, or D).";
-  
-                  // Add prompt to avoid excluded answers
-                  if (excludedAnswers.length > 0) {
-                      queryContent += `\n\nDon't pick letter ${excludedAnswers.join(', ')}.`;
-                  }
-  
-                  const answer = await this.fetchAnswer(queryContent);
-                  console.log(`Received answer: ${answer}`);
-                  answerContent.textContent = answer;
-                  answerContainer.style.display = 'block';
-  
-                  if (answer && ['A', 'B', 'C', 'D'].includes(answer.trim()) && !excludedAnswers.includes(answer.trim())) {
-                      const options = document.querySelectorAll('[role="radio"]');
-                      const index = answer.trim().charCodeAt(0) - 'A'.charCodeAt(0);
-  
-                      if (options[index]) {
-                          options[index].click();
-  
-                          await new Promise(resolve => setTimeout(async () => {
-                              const submitButton = Array.from(document.querySelectorAll('button'))
-                                  .find(button => button.textContent.trim() === 'Submit');
-  
-                              if (submitButton) {
-                                  submitButton.click();
-  
-                                  await new Promise(resolve => setTimeout(async () => {
-                                      const feedbackText = document.evaluate('//*[@id="feedbackActivityFormlive"]/p/text()[1]', document, null, XPathResult.STRING_TYPE, null).stringValue;
-                                      
-                                      if (feedbackText.includes("Oops! You answered incorrectly.")) {
-                                          excludedAnswers.push(answer.trim());
-                                          await processQuestion(excludedAnswers);
-                                      } else {
-                                          excludedAnswers = [];
-                                          const nextButton = document.getElementById('feedbackActivityFormBtn');
-                                          if (nextButton) {
-                                              nextButton.click();
-  
-                                              await new Promise(resolve => setTimeout(async () => {
-                                                  const newSubmitButton = Array.from(document.querySelectorAll('button'))
-                                                      .find(button => button.textContent.trim() === 'Submit');
-                                                  const newQuestion = document.querySelector('[role="radio"]');
-  
-                                                  if (newSubmitButton && newQuestion) {
-                                                      await processQuestion();
-                                                  }
-                                                  resolve();
-                                              }, 1000));
-                                          }
-                                      }
-                                      resolve();
-                                  }, 500));
-                              }
-                              resolve();
-                          }, 500));
-                      }
-                  }
-              } catch (error) {
-                  console.error('Error:', error);
-              }
-          };
-  
-          await processQuestion();
-      });
-    }, 0);
+            closeAnswerButton.addEventListener('click', () => {
+                answerContainer.style.display = 'none';
+            });
+
+            getAnswerButton.addEventListener('click', async () => {
+                console.log('Skip Article button clicked');
+    
+                const processQuestion = async (excludedAnswers = []) => {
+                    try {
+                        let queryContent = await this.fetchArticleContent();
+                        console.log(`Fetched article content: ${queryContent}`);
+                        
+                        queryContent += "\n\nPROVIDE ONLY A ONE-LETTER ANSWER THAT'S IT NOTHING ELSE (A, B, C, or D).";
+    
+                        // Add prompt to avoid excluded answers
+                        if (excludedAnswers.length > 0) {
+                            queryContent += `\n\nDon't pick letter ${excludedAnswers.join(', ')}.`;
+                        }
+    
+                        const answer = await this.fetchAnswer(queryContent);
+                        console.log(`Received answer: ${answer}`);
+                        answerContent.textContent = answer;
+                        answerContainer.style.display = 'block';
+    
+                        if (answer && ['A', 'B', 'C', 'D'].includes(answer.trim()) && !excludedAnswers.includes(answer.trim())) {
+                            const options = document.querySelectorAll('[role="radio"]');
+                            const index = answer.trim().charCodeAt(0) - 'A'.charCodeAt(0);
+    
+                            if (options[index]) {
+                                options[index].click();
+    
+                                await new Promise(resolve => setTimeout(async () => {
+                                    const submitButton = Array.from(document.querySelectorAll('button'))
+                                        .find(button => button.textContent.trim() === 'Submit');
+    
+                                    if (submitButton) {
+                                        submitButton.click();
+    
+                                        await new Promise(resolve => setTimeout(async () => {
+                                            const feedbackText = document.evaluate('//*[@id="feedbackActivityFormlive"]/p/text()[1]', document, null, XPathResult.STRING_TYPE, null).stringValue;
+                                            
+                                            if (feedbackText.includes("Oops! You answered incorrectly.")) {
+                                                excludedAnswers.push(answer.trim());
+                                                await processQuestion(excludedAnswers);
+                                            } else {
+                                                excludedAnswers = [];
+                                                const nextButton = document.getElementById('feedbackActivityFormBtn');
+                                                if (nextButton) {
+                                                    nextButton.click();
+    
+                                                    await new Promise(resolve => setTimeout(async () => {
+                                                        const newSubmitButton = Array.from(document.querySelectorAll('button'))
+                                                            .find(button => button.textContent.trim() === 'Submit');
+                                                        const newQuestion = document.querySelector('[role="radio"]');
+    
+                                                        if (newSubmitButton && newQuestion) {
+                                                            await processQuestion();
+                                                        }
+                                                        resolve();
+                                                    }, 1000));
+                                                }
+                                            }
+                                            resolve();
+                                        }, 500));
+                                    }
+                                    resolve();
+                                }, 500));
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                    }
+                };
+    
+                await processQuestion();
+            });
+        }, 0);
     }
 }
 
