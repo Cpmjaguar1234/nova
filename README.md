@@ -23,13 +23,28 @@ A collection of browser scripts that enhance your learning experience by providi
 
 ## Installation
 
-1. Create a new bookmark in your browser
-2. Copy the content of `bookmarklet.js` into the URL field of the bookmark
-3. Click the bookmark when you're on either:
-   - BigIdeasMath (BIM) website
-   - Achieve3000 website
+# Bookmarklet Installation
 
-The appropriate script will automatically load based on the website you're using.
+## How to Install
+
+To use the Nova bookmarklet, follow these simple steps:
+
+1. **Visit the GitHub Pages Site**: Go to [Nova Bookmarklet Site](https://cpmjaguar1234.github.io/nova).
+
+2. **Drag the Bookmarklet**: On the site, you will see a link labeled "Nova". Simply drag this link to your bookmarks bar.
+
+3. **Use the Bookmarklet**: Navigate to a supported site (e.g., bigideasmath.com or achieve3000.com) and click the "Nova" bookmarklet in your bookmarks bar to execute the script.
+
+## Supported Sites
+
+- **Big Ideas Math**: Automatically loads the script for bigideasmath.com.
+- **Achieve3000**: Automatically loads the script for achieve3000.com.
+
+## Troubleshooting
+
+If you encounter any issues, ensure that your browser allows bookmarklets and that you are visiting a supported site.
+
+For more information or support, please contact [bigjaguar20112@gmail.com](mailto:bigjaguar20112@gmail.com).
 
 ## Important Notes
 
