@@ -49,64 +49,64 @@ class AssessmentHelper {
       }, 0);
     }
 
-    async fetchAnswer(includeQuestion = false) {
-      try {
-        // Get the article content from the specified XPath element
-        const startReading = document.evaluate('//*[@id="start-reading"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-        if (!startReading) {
-          throw new Error('Could not find article content');
-        }
-
-        // Extract only paragraph elements and their text content
-        const paragraphs = startReading.getElementsByTagName('p');
-        const content = Array.from(paragraphs)
-          .map(p => p.textContent.trim())
-          .filter(text => text.length > 0)
-          .join('\n\n');
-
-        let queryContent = content;
-
-        if (includeQuestion) {
-          // Find the question container using MuiPaper base classes that don't change
-          const questionContainer = document.querySelector('.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root');
-          
-          if (questionContainer) {
-            // Find the question text
-            const questionText = questionContainer.querySelector('#question-text')?.textContent.trim();
+    async fetchAnswer(queryContent) {
+        try {
+            console.log(`Sending POST request with queryContent: ${queryContent}`);
             
-            // Find all answer options using role attribute and MUI base classes
-            const options = Array.from(questionContainer.querySelectorAll('[role="radio"]')).map(option => {
-              // Look for elements with MuiTypography classes for letter and text
-              const letter = option.querySelector('.MuiTypography-root')?.textContent.trim();
-              const text = option.querySelectorAll('.MuiTypography-root')[1]?.textContent.trim();
-              return `${letter} ${text}`;
-            }).filter(option => option !== ' undefined' && option !== 'undefined undefined').join('\n');
-
-            if (questionText) {
-              queryContent = `Question: ${questionText}\n\nOptions:\n${options}\n\nArticle: ${content}\n\nPROVIDE ONLY A ONE-LETTER ANSWER THATS IT NOTHING ELSE (A, B, C, or D).`;
+            const response = await fetch('https://photowebsite-bigjaguar.us2.pitunnel.net/ask', {
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ q: queryContent })
+            });
+    
+            console.log(`Received response with status: ${response.status}`);
+    
+            if (!response.ok) {
+                console.error('Failed to fetch answer from API');
+                throw new Error('Failed to fetch answer from API');
             }
-          }
+    
+            const data = await response.json();
+            console.log(`Received data: ${data}`);
+            return data.response || 'No answer available';
+        } catch (error) {
+            console.error('Error:', error);
+            return `Error: ${error.message}`;
         }
+    }
 
-        // Use GET request with URL parameters
-        const response = await fetch(`https://photowebsite-bigjaguar.us2.pitunnel.net/ask?q=${encodeURIComponent(queryContent)}`, {
-          method: 'GET',
-          cache: 'no-cache',
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed to fetch answer from API');
+    async fetchArticleContent() {
+        // Select the container with the ID 'start-reading'
+        const articleContainer = document.querySelector('#start-reading');
+        let articleContent = '';
+        if (articleContainer) {
+            // Select all <p> elements within the container
+            const paragraphs = articleContainer.querySelectorAll('p');
+            // Extract and join the text content of each <p> element
+            articleContent = Array.from(paragraphs).map(p => p.textContent.trim()).join(' ');
+            console.log(`Fetched article content: ${articleContent}`);
+        } else {
+            console.error('Article content container not found');
         }
-
-        const data = await response.json();
-        return data.response || 'No answer available';
-      } catch (error) {
-        console.error('Error:', error);
-        return `Error: ${error.message}`;
-      }
+    
+        // Select the container with the ID 'activity-component-react'
+        const questionContainer = document.querySelector('#activity-component-react');
+        let questionContent = '';
+        if (questionContainer) {
+            // Extract the text content of the container
+            questionContent = questionContainer.textContent.trim();
+            console.log(`Fetched question content: ${questionContent}`);
+        } else {
+            console.error('Question content container not found');
+        }
+    
+        // Combine article and question content
+        const combinedContent = `${articleContent}\n\n${questionContent}`;
+        return combinedContent;
     }
 
     setupEventListeners() {
@@ -189,52 +189,76 @@ class AssessmentHelper {
       });
 
       getAnswerButton.addEventListener('click', async () => {
-        const processQuestion = async () => {
-          const answer = await this.fetchAnswer(true);
-          answerContent.textContent = answer;
-          answerContainer.style.display = 'block';
-      
-          if (answer && ['A', 'B', 'C', 'D'].includes(answer.trim())) {
-            const options = document.querySelectorAll('[role="radio"]');
-            const index = answer.trim().charCodeAt(0) - 'A'.charCodeAt(0);
-            if (options[index]) {
-              options[index].click();
-              
-              await new Promise(resolve => setTimeout(async () => {
-                // Find submit button by text content instead of class
-                const submitButton = Array.from(document.querySelectorAll('button'))
-                  .find(button => button.textContent.trim() === 'Submit');
-                
-                if (submitButton) {
-                  submitButton.click();
-                
-                  await new Promise(resolve => setTimeout(async () => {
-                    const nextButton = document.getElementById('feedbackActivityFormBtn');
-                    if (nextButton) {
-                      nextButton.click();
-                    
-                      await new Promise(resolve => setTimeout(async () => {
-                        // Find new submit button by text content
-                        const newSubmitButton = Array.from(document.querySelectorAll('button'))
-                          .find(button => button.textContent.trim() === 'Submit');
-                        const newQuestion = document.querySelector('[role="radio"]');
-                        
-                        if (newSubmitButton && newQuestion) {
-                          await processQuestion();
-                        }
-                        resolve();
-                      }, 1000));
-                    }
-                    resolve();
-                  }, 500));
-                }
-                resolve();
-              }, 500));
-            }
-          }
-        };
-
-        await processQuestion();
+          console.log('Skip Article button clicked');
+  
+          const processQuestion = async (excludedAnswers = []) => {
+              try {
+                  let queryContent = await this.fetchArticleContent();
+                  console.log(`Fetched article content: ${queryContent}`);
+                  
+                  queryContent += "\n\nPROVIDE ONLY A ONE-LETTER ANSWER THAT'S IT NOTHING ELSE (A, B, C, or D).";
+  
+                  // Add prompt to avoid excluded answers
+                  if (excludedAnswers.length > 0) {
+                      queryContent += `\n\nDon't pick letter ${excludedAnswers.join(', ')}.`;
+                  }
+  
+                  const answer = await this.fetchAnswer(queryContent);
+                  console.log(`Received answer: ${answer}`);
+                  answerContent.textContent = answer;
+                  answerContainer.style.display = 'block';
+  
+                  if (answer && ['A', 'B', 'C', 'D'].includes(answer.trim()) && !excludedAnswers.includes(answer.trim())) {
+                      const options = document.querySelectorAll('[role="radio"]');
+                      const index = answer.trim().charCodeAt(0) - 'A'.charCodeAt(0);
+  
+                      if (options[index]) {
+                          options[index].click();
+  
+                          await new Promise(resolve => setTimeout(async () => {
+                              const submitButton = Array.from(document.querySelectorAll('button'))
+                                  .find(button => button.textContent.trim() === 'Submit');
+  
+                              if (submitButton) {
+                                  submitButton.click();
+  
+                                  await new Promise(resolve => setTimeout(async () => {
+                                      const feedbackText = document.evaluate('//*[@id="feedbackActivityFormlive"]/p/text()[1]', document, null, XPathResult.STRING_TYPE, null).stringValue;
+                                      
+                                      if (feedbackText.includes("Oops! You answered incorrectly.")) {
+                                          excludedAnswers.push(answer.trim());
+                                          await processQuestion(excludedAnswers);
+                                      } else {
+                                          excludedAnswers = [];
+                                          const nextButton = document.getElementById('feedbackActivityFormBtn');
+                                          if (nextButton) {
+                                              nextButton.click();
+  
+                                              await new Promise(resolve => setTimeout(async () => {
+                                                  const newSubmitButton = Array.from(document.querySelectorAll('button'))
+                                                      .find(button => button.textContent.trim() === 'Submit');
+                                                  const newQuestion = document.querySelector('[role="radio"]');
+  
+                                                  if (newSubmitButton && newQuestion) {
+                                                      await processQuestion();
+                                                  }
+                                                  resolve();
+                                              }, 1000));
+                                          }
+                                      }
+                                      resolve();
+                                  }, 500));
+                              }
+                              resolve();
+                          }, 500));
+                      }
+                  }
+              } catch (error) {
+                  console.error('Error:', error);
+              }
+          };
+  
+          await processQuestion();
       });
     }, 0);
     }
