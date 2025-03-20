@@ -222,7 +222,6 @@ class AssessmentHelper {
                         
                         queryContent += "\n\nPROVIDE ONLY A ONE-LETTER ANSWER THAT'S IT NOTHING ELSE (A, B, C, or D).";
     
-                        // Add prompt to avoid excluded answers
                         if (excludedAnswers.length > 0) {
                             queryContent += `\n\nDon't pick letter ${excludedAnswers.join(', ')}.`;
                         }
@@ -238,45 +237,99 @@ class AssessmentHelper {
     
                             if (options[index]) {
                                 options[index].click();
+                                await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for click to register
     
-                                await new Promise(resolve => setTimeout(async () => {
-                                    const submitButton = Array.from(document.querySelectorAll('button'))
-                                        .find(button => button.textContent.trim() === 'Submit');
+                                const submitButton = Array.from(document.querySelectorAll('button'))
+                                    .find(button => button.textContent.trim() === 'Submit');
     
-                                    if (submitButton) {
-                                        submitButton.click();
+                                if (submitButton) {
+                                    submitButton.click();
+                                    await new Promise(resolve => setTimeout(resolve, 1500)); // Wait for feedback
     
-                                        await new Promise(resolve => setTimeout(async () => {
-                                            const feedbackText = document.evaluate('//*[@id="feedbackActivityFormlive"]/p/text()[1]', document, null, XPathResult.STRING_TYPE, null).stringValue;
-                                            
-                                            const nextButton = document.getElementById('feedbackActivityFormBtn');
-                                            if (nextButton) {
-                                                nextButton.click();
+                                    const feedbackText = document.evaluate('//*[@id="feedbackActivityFormlive"]/p/text()[1]', document, null, XPathResult.STRING_TYPE, null).stringValue;
+                                    
+                                    if (feedbackText.includes("Oops! You answered incorrectly.")) {
+                                        excludedAnswers.push(answer.trim());
+                                        await processQuestion(excludedAnswers);
+                                    } else {
+                                        excludedAnswers = [];
+                                        const nextButton = document.getElementById('feedbackActivityFormBtn');
+                                        if (nextButton) {
+                                            nextButton.click();
+                                            await new Promise(resolve => setTimeout(resolve, 1500)); // Wait for next question
     
-                                                await new Promise(resolve => setTimeout(async () => {
-                                                    const newSubmitButton = Array.from(document.querySelectorAll('button'))
-                                                        .find(button => button.textContent.trim() === 'Submit');
-                                                    const newQuestion = document.querySelector('[role="radio"]');
+                                            const newSubmitButton = Array.from(document.querySelectorAll('button'))
+                                                .find(button => button.textContent.trim() === 'Submit');
+                                            const newQuestion = document.querySelector('[role="radio"]');
     
-                                                    if (newSubmitButton && newQuestion) {
-                                                        await processQuestion();
-                                                    }
-                                                    resolve();
-                                                }, 1000));
+                                            if (newSubmitButton && newQuestion) {
+                                                await processQuestion();
                                             }
-                                            resolve();
-                                        }, 500));
+                                        }
                                     }
-                                    resolve();
-                                }, 500));
+                                }
                             }
                         }
                     } catch (error) {
                         console.error('Error:', error);
                     }
                 };
-    
-                await processQuestion();
+
+                const submitButton = document.getElementById('before-reading-poll-submit-button');
+                if (submitButton) {
+                    const agreeOption = Array.from(document.querySelectorAll('.MuiFormControlLabel-label'))
+                        .find(label => label.textContent.trim() === 'Agree');
+                    
+                    if (agreeOption) {
+                        agreeOption.click();
+                        await new Promise(resolve => setTimeout(resolve, 500)); // Wait for click
+                        submitButton.click();
+                        
+                        await new Promise(resolve => setTimeout(resolve, 1500)); // Wait for form submission
+
+                        const iframe = document.querySelector('iframe');
+                        if (iframe) {
+                            const tinyMCE = iframe.contentDocument.querySelector('#tinymce p');
+                            if (tinyMCE) {
+                                const randomText = Math.random().toString(36).substring(2, 7);
+                                tinyMCE.textContent = randomText;
+                            }
+                        }
+
+                        const cancelButtonPath = document.evaluate('//*[@id="cancel_button"]/svg/path', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                        if (cancelButtonPath) {
+                            cancelButtonPath.click();
+                            await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for cancel
+                        }
+
+                        const navButton = document.evaluate('//*[@id="article_container"]/span/div[2]/nav/ul/li[2]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                        
+                        if (navButton) {
+                            navButton.click();
+                            await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for navigation
+
+                            const continueButton = document.evaluate('//*[@id="article_container"]/span/div[4]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                            if (continueButton) {
+                                continueButton.click();
+                                await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for continue
+
+                                const closeButton = document.evaluate('//*[@id="dialogCloseButton"]/svg', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                                if (closeButton) {
+                                    closeButton.click();
+                                    await new Promise(resolve => setTimeout(resolve, 500)); // Wait for dialog to close
+                                }
+                            }
+                        } else {
+                            const altButton = document.evaluate('//*[@id="article_container"]/span/div[3]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                            if (altButton) {
+                                altButton.click();
+                                await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for alternative action
+                            }
+                        }
+
+                        await processQuestion();
+                    }
+                }
             });
         }, 0);
     }
