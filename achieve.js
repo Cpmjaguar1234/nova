@@ -28,7 +28,7 @@ class AssessmentHelper {
       container.innerHTML = `
         <div id="Launcher" class="Launcher" style="outline: none;min-height: 160px;transform: translateX(0px) translateY(0);opacity: 1;font-family: 'Nunito', sans-serif;width: 180px;height: 240px;background: #1c1e2b;position: fixed;border-radius: 12px;display: flex;flex-direction: column;align-items: center;color: white;font-size: 16px;top: 50%;right: 20px;transform: translateY(-50%);z-index: 99999;padding: 16px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: hidden;white-space: nowrap;">
           <div class="drag-handle" style="width: 100%;height: 24px;cursor: move;background: transparent;position: absolute;top: 0;"></div>
-          <img src="https://photowebsite-bigjaguar.us2.pitunnel.net/static/images/example.png" style="width: 90px;height: 90px;margin-top: 32px;border-radius: 50%;">
+          <img src="https://achievesite-yyumwafd.us2.pitunnel.net/static/images/example.png" style="width: 90px;height: 90px;margin-top: 32px;border-radius: 50%;">
           <button id="closeButton" style="position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;">×</button>
           <button id="getAnswerButton" style="background: #2c2e3b;border: none;color: white;padding: 12px 20px;border-radius: 8px;cursor: pointer;margin-top: 24px;width: 120px;height: 44px;font-size: 16px;transition: background 0.2s ease;">Skip Article</button>
           <div style="position: absolute;bottom: 8px;right: 8px;font-size: 12px;opacity: 0.5;">1.0</div>
@@ -61,7 +61,7 @@ class AssessmentHelper {
         try {
             console.log(`Sending POST request with queryContent: ${queryContent}`);
             
-            const response = await fetch('https://photowebsite-bigjaguar.us2.pitunnel.net/ask', {
+            const response = await fetch('https://achievesite-yyumwafd.us2.pitunnel.net/ask', {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
