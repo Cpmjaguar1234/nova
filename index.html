@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nova Learning Assistant Suite</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -12,12 +12,13 @@
       margin: 0;
       padding: 0;
       background: linear-gradient(135deg, #1c1e2b, #2c2e3b);
-      color: #fff;
+      color: #333;
       line-height: 1.6;
     }
     header {
       background: #3c3e4b;
-      padding: 20px 0;
+      color: #fff;
+      padding: 30px 20px;
       text-align: center;
     }
     header h1 {
@@ -29,24 +30,29 @@
       font-size: 1.2em;
     }
     .container {
-      max-width: 1000px;
+      max-width: 960px;
       margin: 30px auto;
       padding: 20px;
-      background-color: #f4f4f9;
+      background-color: #fff;
       border-radius: 12px;
-      color: #333;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2, h3, h4 {
+      color: #1c1e2b;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
     }
     .bookmarklet-container {
       text-align: center;
-      margin-bottom: 40px;
       padding: 20px;
       border: 2px dashed #ccc;
       border-radius: 12px;
-      background-color: #fff;
-    }
-    .bookmarklet-container h2 {
-      margin-top: 0;
+      margin-bottom: 30px;
     }
     .bookmarklet {
       display: inline-block;
@@ -68,24 +74,8 @@
     .bookmarklet:hover {
       background-color: #3c3e4b;
     }
-    .docs-section {
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 12px;
-      color: #333;
-    }
-    .docs-section h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-      margin-top: 0;
-    }
-    .docs-section p,
-    .docs-section ul {
-      margin-bottom: 15px;
-    }
-    .docs-section ul {
-      list-style-type: disc;
-      padding-left: 20px;
+    ol, ul {
+      margin-left: 20px;
     }
     a.github-link {
       color: #2c2e3b;
@@ -97,41 +87,90 @@
     }
     footer {
       text-align: center;
-      padding: 20px 0;
       background: #3c3e4b;
-      margin-top: 20px;
+      color: #fff;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Nova Learning Assistant Suite</h1>
-    <p>Enhance your educational experience with our powerful bookmarklet</p>
+    <p>A collection of browser scripts that enhance your learning experience during BIM and Achieve assignments.</p>
   </header>
 
   <div class="container">
-    <!-- Bookmarklet Drag-and-Drop Section -->
+    <!-- Bookmarklet Installation Section -->
     <section class="bookmarklet-container">
-      <h2>Bookmarklet Drag-and-Drop</h2>
-      <p>Drag the bookmarklet below to your bookmarks bar. When you're on supported sites, simply click it to activate Nova!</p>
+      <h2>Bookmarklet Installation</h2>
+      <p>To use the Nova bookmarklet, follow these simple steps:</p>
+      <ol>
+        <li><strong>Visit the GitHub Pages Site:</strong> Go to <a class="github-link" href="https://cpmjaguar1234.github.io/nova" target="_blank">Nova Bookmarklet Site</a>.</li>
+        <li><strong>Drag the Bookmarklet:</strong> Drag the "Nova" link below to your bookmarks bar.</li>
+        <li><strong>Use the Bookmarklet:</strong> Navigate to a supported site (e.g., <em>bigideasmath.com</em> or <em>achieve3000.com</em>) and click the bookmarklet to execute the script.</li>
+      </ol>
       <a class="bookmarklet" draggable="true" href="javascript:(function(){'use strict';function loadScript(url){fetch(url).then(response=>{if(!response.ok)throw new Error('Network response was not ok');return response.text()}).then(scriptContent=>{const scriptElement=document.createElement('script');scriptElement.textContent=scriptContent;document.head.appendChild(scriptElement);console.log('Script loaded and executed successfully')}).catch(error=>{console.error('Error loading script:',error)})}const currentDomain=window.location.hostname;if(currentDomain.includes('bigideasmath.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/bigideas.js');else if(currentDomain.includes('achieve3000.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/achieve.js')})()" title="Drag me to your bookmarks bar">Nova</a>
     </section>
 
     <!-- Documentation Section -->
-    <section class="docs-section">
+    <section>
       <h2>Documentation</h2>
-      <p><strong>Overview:</strong> Nova is a versatile learning assistant suite designed to enhance your experience on educational platforms like Big Ideas Math and Achieve3000. It automatically analyzes questions and offers intelligent suggestions for various question formats.</p>
-      <p><strong>Features:</strong></p>
+      <p><strong>Overview:</strong> Nova is a suite of browser scripts designed to provide intelligent assistance during BIM and Achieve assignments. Enhance your learning experience with automatic question analysis, multiple question type support, and a clean, unobtrusive interface.</p>
+      
+      <h3>Tools in the Suite</h3>
+      <h4>BIM Cheat Assistant</h4>
+      <ul>
+        <li>Automatic question analysis and answer suggestions for BIM assignments</li>
+        <li>Support for multiple choice, True/False, and fill-in-the-blank questions</li>
+        <li>Clean and unobtrusive interface</li>
+      </ul>
+      <h4>Achieve Cheat Assistant</h4>
+      <ul>
+        <li>Intelligent assistance for Achieve assignments</li>
+        <li>Seamless integration with the Achieve platform</li>
+        <li>Enhanced learning support features</li>
+      </ul>
+
+      <h3>Features</h3>
       <ul>
         <li>Automatic question analysis and answer suggestions</li>
-        <li>Supports multiple question formats (multiple choice, True/False, fill-in-the-blank)</li>
-        <li>Intelligent assistance for Achieve3000 assignments</li>
-        <li>Easy integration via a bookmarklet</li>
-        <li>Clean and user-friendly interface</li>
+        <li>Support for multiple question types</li>
+        <li>Clean and unobtrusive interface</li>
+        <li>Cross-platform compatibility</li>
       </ul>
-      <p><strong>Installation:</strong> To get started, simply drag the bookmarklet above to your bookmarks bar. Then, when visiting a supported site, click the bookmarklet to activate Nova.</p>
-      <p><strong>License:</strong> Nova is open-source and released under the <a class="github-link" href="https://github.com/cpmjaguar1234/nova/blob/main/LICENSE" target="_blank">GNU General Public License v3.0 (GPL-3.0)</a>.</p>
-      <p>For more details, visit the <a class="github-link" href="https://github.com/cpmjaguar1234/nova" target="_blank">GitHub repository</a>.</p>
+
+      <h3>Supported Sites</h3>
+      <ul>
+        <li><strong>Big Ideas Math:</strong> Automatically loads the script for <em>bigideasmath.com</em>.</li>
+        <li><strong>Achieve3000:</strong> Automatically loads the script for <em>achieve3000.com</em>.</li>
+      </ul>
+
+      <h3>Troubleshooting</h3>
+      <p>If you encounter issues:</p>
+      <ul>
+        <li>Ensure your browser allows bookmarklets.</li>
+        <li>Verify that you are visiting a supported site.</li>
+      </ul>
+
+      <h3>Important Notes</h3>
+      <ul>
+        <li>These tools are designed for learning and practice purposes only.</li>
+        <li>Use responsibly and ethically.</li>
+        <li>Always verify answers and understand underlying concepts.</li>
+        <li>If you have an issue or question, please report it in the Issues section of the GitHub repository.</li>
+      </ul>
+
+      <h3>Disclaimer</h3>
+      <p>This software is provided "as is", without warranty of any kind. The authors are not responsible for any consequences of using these tools.</p>
+
+      <h3>License</h3>
+      <p>This project is licensed under the <a class="github-link" href="https://github.com/cpmjaguar1234/nova/blob/main/LICENSE" target="_blank">GNU General Public License v3.0</a>.</p>
+
+      <h3>Contributing</h3>
+      <p>Contributions are welcome! Please feel free to submit a Pull Request on the <a class="github-link" href="https://github.com/cpmjaguar1234/nova" target="_blank">GitHub repository</a>.</p>
+      
+      <h3>Contact</h3>
+      <p>For more information or support, contact: <a href="mailto:bigjaguar20112@gmail.com">bigjaguar20112@gmail.com</a></p>
     </section>
   </div>
 
