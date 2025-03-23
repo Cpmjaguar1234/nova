@@ -1,57 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookmarklet Drag-and-Drop</title>
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f9;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            background: #1c1e2b;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            color: white;
-        }
-        .bookmarklet {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #2c2e3b;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            cursor: move;
-            transition: background 0.2s ease;
-            -webkit-user-drag: element;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            touch-action: none;
-        }
-        .bookmarklet:hover {
-            background-color: #3c3e4b;
-        }
-        .bookmarklet:active {
-            cursor: grabbing;
-            cursor: -webkit-grabbing;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Learning Assistant Suite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1c1e2b, #2c2e3b);
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background: #3c3e4b;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.2em;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #f4f4f9;
+      border-radius: 12px;
+      color: #333;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .bookmarklet-container {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 20px;
+      border: 2px dashed #ccc;
+      border-radius: 12px;
+      background-color: #fff;
+    }
+    .bookmarklet-container h2 {
+      margin-top: 0;
+    }
+    .bookmarklet {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2c2e3b;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      cursor: move;
+      transition: background 0.2s ease;
+      -webkit-user-drag: element;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      touch-action: none;
+    }
+    .bookmarklet:hover {
+      background-color: #3c3e4b;
+    }
+    .docs-section {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      color: #333;
+    }
+    .docs-section h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+    .docs-section p,
+    .docs-section ul {
+      margin-bottom: 15px;
+    }
+    .docs-section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    a.github-link {
+      color: #2c2e3b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.github-link:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #3c3e4b;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Drag this to your bookmarks bar</h1>
-        <a class="bookmarklet" draggable="true" href="javascript:(function(){'use strict';function loadScript(url){fetch(url).then(response=>{if(!response.ok)throw new Error('Network response was not ok');return response.text()}).then(scriptContent=>{const scriptElement=document.createElement('script');scriptElement.textContent=scriptContent;document.head.appendChild(scriptElement);console.log('Script loaded and executed successfully')}).catch(error=>{console.error('Error loading script:',error)})}const currentDomain=window.location.hostname;if(currentDomain.includes('bigideasmath.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/bigideas.js');else if(currentDomain.includes('achieve3000.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/achieve.js')})()" title="Drag me to your bookmarks bar">Nova</a>
-    </div>
+  <header>
+    <h1>Nova Learning Assistant Suite</h1>
+    <p>Enhance your educational experience with our powerful bookmarklet</p>
+  </header>
+
+  <div class="container">
+    <!-- Bookmarklet Drag-and-Drop Section -->
+    <section class="bookmarklet-container">
+      <h2>Bookmarklet Drag-and-Drop</h2>
+      <p>Drag the bookmarklet below to your bookmarks bar. When you're on supported sites, simply click it to activate Nova!</p>
+      <a class="bookmarklet" draggable="true" href="javascript:(function(){'use strict';function loadScript(url){fetch(url).then(response=>{if(!response.ok)throw new Error('Network response was not ok');return response.text()}).then(scriptContent=>{const scriptElement=document.createElement('script');scriptElement.textContent=scriptContent;document.head.appendChild(scriptElement);console.log('Script loaded and executed successfully')}).catch(error=>{console.error('Error loading script:',error)})}const currentDomain=window.location.hostname;if(currentDomain.includes('bigideasmath.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/bigideas.js');else if(currentDomain.includes('achieve3000.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/achieve.js')})()" title="Drag me to your bookmarks bar">Nova</a>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="docs-section">
+      <h2>Documentation</h2>
+      <p><strong>Overview:</strong> Nova is a versatile learning assistant suite designed to enhance your experience on educational platforms like Big Ideas Math and Achieve3000. It automatically analyzes questions and offers intelligent suggestions for various question formats.</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Automatic question analysis and answer suggestions</li>
+        <li>Supports multiple question formats (multiple choice, True/False, fill-in-the-blank)</li>
+        <li>Intelligent assistance for Achieve3000 assignments</li>
+        <li>Easy integration via a bookmarklet</li>
+        <li>Clean and user-friendly interface</li>
+      </ul>
+      <p><strong>Installation:</strong> To get started, simply drag the bookmarklet above to your bookmarks bar. Then, when visiting a supported site, click the bookmarklet to activate Nova.</p>
+      <p><strong>License:</strong> Nova is open-source and released under the <a class="github-link" href="https://github.com/cpmjaguar1234/nova/blob/main/LICENSE" target="_blank">GNU General Public License v3.0 (GPL-3.0)</a>.</p>
+      <p>For more details, visit the <a class="github-link" href="https://github.com/cpmjaguar1234/nova" target="_blank">GitHub repository</a>.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Nova Learning Assistant Suite</p>
+  </footer>
 </body>
 </html>
