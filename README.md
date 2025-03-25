@@ -44,7 +44,7 @@ To use the Nova bookmarklet, follow these simple steps:
 
 If you encounter any issues, ensure that your browser allows bookmarklets and that you are visiting a supported site.
 
-For more information or support, please contact [bigjaguar20112@gmail.com](mailto:bigjaguar20112@gmail.com).
+For more information or support, please contact [1yyumwafd@mozmail.com](mailto:1yyumwafd@mozmail.com).
 
 ## Important Notes
 
