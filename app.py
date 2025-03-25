@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, redirect
 from flask_cors import CORS
 import google.generativeai as genai
 import os
@@ -18,6 +18,13 @@ genai.configure(api_key=api_key)
 
 # Initialize the Gemini model
 model = genai.GenerativeModel('gemini-2.0-flash-exp')
+
+# Middleware to redirect to the specified URL unless on an endpoint
+@app.before_request
+def redirect_to_nova():
+    # Check if the current endpoint is a valid route
+    if request.endpoint is None:
+        return redirect("https://cpmjaguar1234.github.io/nova")
 
 @app.route('/ask', methods=['GET', 'POST'])
 def ask_gemini():
