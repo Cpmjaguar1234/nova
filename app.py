@@ -1,13 +1,18 @@
-from flask import Flask, request, jsonify, render_template, redirect
+from flask import Flask, request, jsonify, render_template, redirect, session
 from flask_cors import CORS
 import google.generativeai as genai
 import os
 import re
+from datetime import timedelta
 
 app = Flask(__name__)
 
 # Update CORS configuration to allow all origins
 CORS(app, resources={r"/*": {"origins": "*"}})
+
+# Configure session
+app.secret_key = os.urandom(24)
+app.permanent_session_lifetime = timedelta(minutes=30)
 
 # Securely load the API key from an environment variable
 api_key = os.getenv("GEMINI_API_KEY")
@@ -34,6 +39,13 @@ def ask_gemini():
         data = request.get_json()
         app.logger.info(f"POST data: {data}")
         user_input = data.get('q')
+        
+        # If the request contains article content, store it in session
+        article_content = data.get('article')
+        if article_content:
+            session['article_content'] = article_content
+            app.logger.info("Article content stored in session")
+            
     else:
         user_input = request.args.get('q')
         app.logger.info(f"GET query parameter: {user_input}")
@@ -41,6 +53,10 @@ def ask_gemini():
     if not user_input:
         app.logger.warning('No query parameter provided')
         return jsonify({'error': 'No query parameter provided'}), 400
+        
+    # If this is a question and we have stored article content, combine them
+    if session.get('article_content'):
+        user_input = f"{session['article_content']}\n\n{user_input}"
 
     try:
         response = model.generate_content(user_input)

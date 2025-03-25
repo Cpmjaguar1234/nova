@@ -68,7 +68,10 @@ class AssessmentHelper {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ q: queryContent })
+                body: JSON.stringify({
+                    q: queryContent,
+                    article: this.cachedArticle || null
+                })
             });
     
             console.log(`Received response with status: ${response.status}`);
@@ -114,6 +117,8 @@ class AssessmentHelper {
     
         // Combine article and question content
         const combinedContent = `${articleContent}\n\n${questionContent}`;
+        // Cache the article content
+        this.cachedArticle = articleContent;
         return combinedContent;
     }
 
