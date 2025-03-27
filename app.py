@@ -5,6 +5,8 @@ import os
 import re
 from datetime import timedelta
 import json
+import bcrypt
+from functools import wraps
 
 app = Flask(__name__)
 
@@ -12,8 +14,34 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Configure session
-app.secret_key = os.urandom(24)
+app.secret_key = os.getenv('SECRET_KEY') or os.urandom(24)
 app.permanent_session_lifetime = timedelta(minutes=30)
+
+# Initialize password hash from environment variable
+PASSWORD = os.getenv('APP_PASSWORD')
+if not PASSWORD:
+    raise ValueError("APP_PASSWORD is not set in environment variables.")
+
+SALT = bcrypt.gensalt(rounds=12)
+HASHED_PASSWORD = bcrypt.hashpw(PASSWORD.encode('utf-8'), SALT)
+
+def require_auth(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        auth = request.headers.get('Authorization')
+        if not auth or not check_auth(auth):
+            return jsonify({'error': 'Unauthorized access'}), 401
+        return f(*args, **kwargs)
+    return decorated
+
+def check_auth(auth_header):
+    try:
+        if not auth_header.startswith('Bearer '):
+            return False
+        password = auth_header.split(' ')[1]
+        return bcrypt.checkpw(password.encode('utf-8'), HASHED_PASSWORD)
+    except Exception:
+        return False
 
 # Securely load the API key from an environment variable
 api_key = os.getenv("GEMINI_API_KEY")
@@ -74,6 +102,10 @@ def ask_gemini():
 
 @app.route('/data', methods=['GET', 'POST'])
 def handle_data():
+    auth = request.authorization
+    if not auth or not bcrypt.checkpw(auth.password.encode('utf-8'), HASHED_PASSWORD):
+        return jsonify({'error': 'Unauthorized access'}), 401, {'WWW-Authenticate': 'Basic realm="Login Required"'}
+        
     data_file = 'data.json'
     app.logger.info(f"Data endpoint called with {request.method} method")
     
