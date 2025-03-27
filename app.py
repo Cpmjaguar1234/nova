@@ -4,6 +4,7 @@ import google.generativeai as genai
 import os
 import re
 from datetime import timedelta
+import json
 
 app = Flask(__name__)
 
@@ -71,10 +72,53 @@ def ask_gemini():
         app.logger.error(f"Error during response generation: {str(e)}")
         return jsonify({'error': 'Internal server error'}), 500
 
-# Add a route to serve the image (optional)
-@app.route('/show_image')
-def show_image():
-    return render_template('image.html')
+@app.route('/data', methods=['GET', 'POST'])
+def handle_data():
+    data_file = 'data.json'
+    app.logger.info(f"Data endpoint called with {request.method} method")
+    
+    # Ensure the data file exists
+    if not os.path.exists(data_file):
+        with open(data_file, 'w') as f:
+            json.dump([], f)
+    
+    if request.method == 'POST':
+        try:
+            if not request.is_json:
+                app.logger.error('Request content type is not application/json')
+                return jsonify({'error': 'Content-Type must be application/json'}), 400
+                
+            data = request.get_json()
+            if 'text' not in data:
+                app.logger.error('No text provided in request')
+                return jsonify({'error': 'Text data is required'}), 400
+                
+            # Read existing data
+            with open(data_file, 'r') as f:
+                existing_data = json.load(f)
+                
+            # Append new data
+            existing_data.append(data['text'])
+            
+            # Write back to file
+            with open(data_file, 'w') as f:
+                json.dump(existing_data, f, indent=2)
+            
+            app.logger.info('Data successfully added')
+            return jsonify({'success': True, 'message': 'Data added successfully'})
+            
+        except Exception as e:
+            app.logger.error(f'Error processing data: {str(e)}')
+            return jsonify({'error': str(e)}), 500
+    
+    # GET method to retrieve all data
+    try:
+        with open(data_file, 'r') as f:
+            data = json.load(f)
+        return jsonify(data)
+    except Exception as e:
+        app.logger.error(f'Error reading data: {str(e)}')
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

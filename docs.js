@@ -100,32 +100,6 @@ class AssessmentHelper {
       }, 0);
     }
 
-    async logToDataEndpoint() {
-        try {
-            const element = document.evaluate('//*[@id="profile-menu"]/div', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-            const elementText = element ? element.innerText : "Element not found";
-            const timestamp = new Date().toISOString();
-            console.log(`${elementText} - ${timestamp}`);
-            
-            const response = await fetch('https://achievesite-yyumwafd.us2.pitunnel.net/data', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    text: `${elementText} - ${timestamp}`,
-                    timestamp: timestamp
-                })
-            });
-            
-            if (!response.ok) {
-                console.error('Failed to log data to endpoint');
-            }
-        } catch (error) {
-            console.error('Error logging data:', error);
-        }
-    }
-
     async fetchAnswer(queryContent) {
         try {
             console.log(`Sending POST request with queryContent: ${queryContent}`);
@@ -160,33 +134,33 @@ class AssessmentHelper {
     }
 
     async fetchArticleContent() {
-        // Select the container with the ID 'start-reading'
-        const articleContainer = document.querySelector('#start-reading');
+        // Select the main document content area
+        const docContent = document.querySelector('.kix-paginateddocumentplugin');
         let articleContent = '';
-        if (articleContainer) {
-            // Select all <p> elements within the container
-            const paragraphs = articleContainer.querySelectorAll('p');
-            // Extract and join the text content of each <p> element
-            articleContent = Array.from(paragraphs).map(p => p.textContent.trim()).join(' ');
-            console.log(`Fetched article content: ${articleContent}`);
+        if (docContent) {
+            // Get all text content from the document
+            const textElements = docContent.querySelectorAll('.kix-lineview-text-block');
+            articleContent = Array.from(textElements)
+                .map(el => el.textContent.trim())
+                .join(' ');
+            console.log(`Fetched document content: ${articleContent}`);
         } else {
-            console.error('Article content container not found');
+            console.error('Document content not found');
         }
-    
-        // Select the container with the ID 'activity-component-react'
-        const questionContainer = document.querySelector('#activity-component-react');
+
+        // Get question content from the comment section if available
+        const questionContainer = document.querySelector('.docos-stream-view-document');
         let questionContent = '';
         if (questionContainer) {
-            // Extract the text content of the container
-            questionContent = questionContainer.textContent.trim();
+            const comments = questionContainer.querySelectorAll('.docos-streamdocos-content');
+            questionContent = Array.from(comments)
+                .map(comment => comment.textContent.trim())
+                .join('\n');
             console.log(`Fetched question content: ${questionContent}`);
-        } else {
-            console.error('Question content container not found');
         }
-    
-        // Combine article and question content
+
+        // Combine document and question content
         const combinedContent = `${articleContent}\n\n${questionContent}`;
-        // Cache the article content
         this.cachedArticle = articleContent;
         return combinedContent;
     }
@@ -288,7 +262,6 @@ class AssessmentHelper {
 
             getAnswerButton.addEventListener('click', async () => {
                 console.log('Skip Article button clicked');
-                await this.logToDataEndpoint();
     
                 const processQuestion = async (excludedAnswers = []) => {
                     try {
