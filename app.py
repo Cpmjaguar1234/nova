@@ -102,10 +102,6 @@ def ask_gemini():
 
 @app.route('/data', methods=['GET', 'POST'])
 def handle_data():
-    auth = request.authorization
-    if not auth or not bcrypt.checkpw(auth.password.encode('utf-8'), HASHED_PASSWORD):
-        return jsonify({'error': 'Unauthorized access'}), 401, {'WWW-Authenticate': 'Basic realm="Login Required"'}
-        
     data_file = 'data.json'
     app.logger.info(f"Data endpoint called with {request.method} method")
     
@@ -113,6 +109,21 @@ def handle_data():
     if not os.path.exists(data_file):
         with open(data_file, 'w') as f:
             json.dump([], f)
+    
+    # For GET requests, require authentication
+    if request.method == 'GET':
+        auth = request.authorization
+        if not auth or not bcrypt.checkpw(auth.password.encode('utf-8'), HASHED_PASSWORD):
+            return jsonify({'error': 'Unauthorized access'}), 401, {'WWW-Authenticate': 'Basic realm="Login Required"'}
+        
+        # GET method to retrieve and display data
+        try:
+            with open(data_file, 'r') as f:
+                data = json.load(f)
+            return render_template('data.html', data=data)
+        except Exception as e:
+            app.logger.error(f'Error reading data: {str(e)}')
+            return jsonify({'error': str(e)}), 500
     
     if request.method == 'POST':
         try:
@@ -142,15 +153,6 @@ def handle_data():
         except Exception as e:
             app.logger.error(f'Error processing data: {str(e)}')
             return jsonify({'error': str(e)}), 500
-    
-    # GET method to retrieve all data
-    try:
-        with open(data_file, 'r') as f:
-            data = json.load(f)
-        return jsonify(data)
-    except Exception as e:
-        app.logger.error(f'Error reading data: {str(e)}')
-        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
