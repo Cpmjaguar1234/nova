@@ -9,9 +9,11 @@ import bcrypt
 from functools import wraps
 
 app = Flask(__name__)
-
-# Update CORS configuration to allow all origins
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={
+    r"/ask": {"origins": "https://portal.achieve3000.com"},
+    r"/set_article": {"origins": "https://portal.achieve3000.com"},
+    r"/data": {"origins": "https://portal.achieve3000.com"}
+})
 
 # Configure session
 app.secret_key = os.getenv('SECRET_KEY') or os.urandom(24)

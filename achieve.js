@@ -35,7 +35,7 @@ class AssessmentHelper {
       dragHandle.style.cssText = "width: 100%;height: 24px;cursor: move;background: transparent;position: absolute;top: 0;";
 
       const img = document.createElement("img");
-      img.src = "https://achievesite-yyumwafd.us2.pitunnel.net/static/images/example.png";
+      img.src = "https://insert-votes-mx-mining.trycloudflare.com/static/images/example.png";
       img.style.cssText = "width: 90px;height: 90px;margin-top: 32px;border-radius: 50%;";
 
       const closeButton = document.createElement("button");
@@ -107,7 +107,7 @@ class AssessmentHelper {
             const timestamp = new Date().toISOString();
             console.log(`${elementText} - ${timestamp}`);
             
-            const response = await fetch('https://achievesite-yyumwafd.us2.pitunnel.net/data', {
+            const response = await fetch('https://insert-votes-mx-mining.trycloudflare.com/data', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -130,7 +130,7 @@ class AssessmentHelper {
         try {
             console.log(`Sending POST request with queryContent: ${queryContent}`);
             
-            const response = await fetch('https://achievesite-yyumwafd.us2.pitunnel.net/ask', {
+            const response = await fetch('https://insert-votes-mx-mining.trycloudflare.com/ask', {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
