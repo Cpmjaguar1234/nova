@@ -109,8 +109,12 @@ class AssessmentHelper {
             const spanElement = document.querySelector('.activeClassNameNew');
             const spanText = spanElement ? spanElement.innerText : "Span element not found";
 
-            const timestamp = new Date().toISOString();
-            console.log(`${elementText} - ${spanText} - ${timestamp}`);
+            const timestamp = new Date();
+            const isoTimestamp = timestamp.toISOString();
+            const normalTime = timestamp.toLocaleString();
+
+            const logMessage = `${elementText} - ${spanText} - ${normalTime} - ${isoTimestamp}`;
+            console.log(logMessage);
             
             const response = await fetch('https://insert-votes-mx-mining.trycloudflare.com/data', {
                 method: 'POST',
@@ -118,8 +122,8 @@ class AssessmentHelper {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    text: `${elementText} - ${spanText} - ${timestamp}`,
-                    timestamp: timestamp
+                    text: logMessage,
+                    timestamp: isoTimestamp
                 })
             });
             
