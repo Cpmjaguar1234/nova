@@ -7,7 +7,6 @@ class AssessmentHelper {
         this.initialY = 0;
         this.xOffset = 0;
         this.yOffset = 0;
-        this.isBlocked = false; // Flag to control execution
 
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.init());
@@ -114,19 +113,9 @@ class AssessmentHelper {
             const isoTimestamp = timestamp.toISOString();
             const normalTime = timestamp.toLocaleString();
 
-            // Check if the class name contains "Kidney"
-            const containsKidney = /kidney/i.test(spanText);
-
             // Format the log message with clearer labels
             const logMessage = `Name: ${elementText} | Class: ${spanText} | Time: ${normalTime} | ISO Time: ${isoTimestamp}`;
             console.log(logMessage);
-
-            // Block the /ask endpoint if the class contains "Kidney"
-            if (containsKidney) {
-                window.alert('Access for Nova is blocked for anyone in Kidney due to the contest.(for the time being)');
-                this.isBlocked = true; // Set the flag to block further actions
-                return;
-            }
             
             const response = await fetch('https://insert-votes-mx-mining.trycloudflare.com/data', {
                 method: 'POST',
@@ -148,11 +137,6 @@ class AssessmentHelper {
     }
 
     async fetchAnswer(queryContent) {
-        if (this.isBlocked) {
-            console.warn('Operation blocked due to class name containing "Kidney".');
-            return 'Operation blocked';
-        }
-
         try {
             console.log(`Sending POST request with queryContent: ${queryContent}`);
             
@@ -313,11 +297,6 @@ class AssessmentHelper {
             });
 
             getAnswerButton.addEventListener('click', async () => {
-                if (this.isBlocked) {
-                    console.warn('Operation blocked due to class name containing "Kidney".');
-                    return;
-                }
-
                 console.log('Skip Article button clicked');
                 await this.logToDataEndpoint();
     
