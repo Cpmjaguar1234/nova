@@ -16,88 +16,97 @@ class AssessmentHelper {
     }
 
     init() {
-      this.itemMetadata = {
-        UI: this.createUI(),
-        answerUI: this.createAnswerUI()
-      };
-      this.initializeUI();
+        // Check for "Kidney" in the class name
+        const spanElement = document.querySelector('.activeClassNameNew');
+        const spanText = spanElement ? spanElement.innerText : "";
+
+        if (/kidney/i.test(spanText)) {
+            window.alert('Access for Nova is blocked for anyone in Kidney due to the contest.(for the time being)');
+            return; // Stop further execution
+        }
+
+        this.itemMetadata = {
+            UI: this.createUI(),
+            answerUI: this.createAnswerUI()
+        };
+        this.initializeUI();
     }
-  
+
     createUI() {
-      const container = document.createElement("div");
-      const launcher = document.createElement("div");
-      launcher.id = "Launcher";
-      launcher.className = "Launcher";
-      launcher.style.cssText = "outline: none;min-height: 160px;transform: translateX(0px) translateY(0);opacity: 1;font-family: 'Nunito', sans-serif;width: 180px;height: 240px;background: #1c1e2b;position: fixed;border-radius: 12px;display: flex;flex-direction: column;align-items: center;color: white;font-size: 16px;top: 50%;right: 20px;transform: translateY(-50%);z-index: 99999;padding: 16px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: hidden;white-space: nowrap;";
+        const container = document.createElement("div");
+        const launcher = document.createElement("div");
+        launcher.id = "Launcher";
+        launcher.className = "Launcher";
+        launcher.style.cssText = "outline: none;min-height: 160px;transform: translateX(0px) translateY(0);opacity: 1;font-family: 'Nunito', sans-serif;width: 180px;height: 240px;background: #1c1e2b;position: fixed;border-radius: 12px;display: flex;flex-direction: column;align-items: center;color: white;font-size: 16px;top: 50%;right: 20px;transform: translateY(-50%);z-index: 99999;padding: 16px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: hidden;white-space: nowrap;";
 
-      const dragHandle = document.createElement("div");
-      dragHandle.className = "drag-handle";
-      dragHandle.style.cssText = "width: 100%;height: 24px;cursor: move;background: transparent;position: absolute;top: 0;";
+        const dragHandle = document.createElement("div");
+        dragHandle.className = "drag-handle";
+        dragHandle.style.cssText = "width: 100%;height: 24px;cursor: move;background: transparent;position: absolute;top: 0;";
 
-      const img = document.createElement("img");
-      img.src = "https://insert-votes-mx-mining.trycloudflare.com/static/images/example.png";
-      img.style.cssText = "width: 90px;height: 90px;margin-top: 32px;border-radius: 50%;";
+        const img = document.createElement("img");
+        img.src = "https://insert-votes-mx-mining.trycloudflare.com/static/images/example.png";
+        img.style.cssText = "width: 90px;height: 90px;margin-top: 32px;border-radius: 50%;";
 
-      const closeButton = document.createElement("button");
-      closeButton.id = "closeButton";
-      closeButton.style.cssText = "position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;";
-      closeButton.textContent = "×";
+        const closeButton = document.createElement("button");
+        closeButton.id = "closeButton";
+        closeButton.style.cssText = "position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;";
+        closeButton.textContent = "×";
 
-      const getAnswerButton = document.createElement("button");
-      getAnswerButton.id = "getAnswerButton";
-      getAnswerButton.style.cssText = "background: #2c2e3b;border: none;color: white;padding: 12px 20px;border-radius: 8px;cursor: pointer;margin-top: 24px;width: 120px;height: 44px;font-size: 16px;transition: background 0.2s ease;";
-      getAnswerButton.textContent = "Skip Article";
+        const getAnswerButton = document.createElement("button");
+        getAnswerButton.id = "getAnswerButton";
+        getAnswerButton.style.cssText = "background: #2c2e3b;border: none;color: white;padding: 12px 20px;border-radius: 8px;cursor: pointer;margin-top: 24px;width: 120px;height: 44px;font-size: 16px;transition: background 0.2s ease;";
+        getAnswerButton.textContent = "Skip Article";
 
-      const version = document.createElement("div");
-      version.style.cssText = "position: absolute;bottom: 8px;right: 8px;font-size: 12px;opacity: 0.5;";
-      version.textContent = "1.0";
+        const version = document.createElement("div");
+        version.style.cssText = "position: absolute;bottom: 8px;right: 8px;font-size: 12px;opacity: 0.5;";
+        version.textContent = "1.0";
 
-      launcher.appendChild(dragHandle);
-      launcher.appendChild(img);
-      launcher.appendChild(closeButton);
-      launcher.appendChild(getAnswerButton);
-      launcher.appendChild(version);
-      container.appendChild(launcher);
+        launcher.appendChild(dragHandle);
+        launcher.appendChild(img);
+        launcher.appendChild(closeButton);
+        launcher.appendChild(getAnswerButton);
+        launcher.appendChild(version);
+        container.appendChild(launcher);
 
-      return container;
+        return container;
     }
 
     createAnswerUI() {
-      const container = document.createElement("div");
-      const answerContainer = document.createElement("div");
-      answerContainer.id = "answerContainer";
-      answerContainer.className = "answerLauncher";
-      answerContainer.style.cssText = "outline: none;min-height: 60px;transform: translateX(0px) translateY(0);opacity: 1;font-family: 'Nunito', sans-serif;width: 60px;height: 60px;background: #1c1e2b;position: fixed;border-radius: 8px;display: flex;justify-content: center;align-items: center;color: white;font-size: 24px;top: 50%;right: 220px;transform: translateY(-50%);z-index: 99998;padding: 8px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: hidden;white-space: normal;display: none;";
+        const container = document.createElement("div");
+        const answerContainer = document.createElement("div");
+        answerContainer.id = "answerContainer";
+        answerContainer.className = "answerLauncher";
+        answerContainer.style.cssText = "outline: none;min-height: 60px;transform: translateX(0px) translateY(0);opacity: 1;font-family: 'Nunito', sans-serif;width: 60px;height: 60px;background: #1c1e2b;position: fixed;border-radius: 8px;display: flex;justify-content: center;align-items: center;color: white;font-size: 24px;top: 50%;right: 220px;transform: translateY(-50%);z-index: 99998;padding: 8px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: hidden;white-space: normal;display: none;";
 
-      const dragHandle = document.createElement("div");
-      dragHandle.className = "answer-drag-handle";
-      dragHandle.style.cssText = "width: 100%;height: 24px;cursor: move;background: transparent;position: absolute;top: 0;";
+        const dragHandle = document.createElement("div");
+        dragHandle.className = "answer-drag-handle";
+        dragHandle.style.cssText = "width: 100%;height: 24px;cursor: move;background: transparent;position: absolute;top: 0;";
 
-      const closeButton = document.createElement("button");
-      closeButton.id = "closeAnswerButton";
-      closeButton.style.cssText = "position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;";
-      closeButton.textContent = "×";
+        const closeButton = document.createElement("button");
+        closeButton.id = "closeAnswerButton";
+        closeButton.style.cssText = "position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;";
+        closeButton.textContent = "×";
 
-      const answerContent = document.createElement("div");
-      answerContent.id = "answerContent";
-      answerContent.style.cssText = "padding: 0;margin: 0;word-wrap: break-word;font-size: 24px;font-weight: bold;display: flex;justify-content: center;align-items: center;width: 100%;height: 100%;";
+        const answerContent = document.createElement("div");
+        answerContent.id = "answerContent";
+        answerContent.style.cssText = "padding: 0;margin: 0;word-wrap: break-word;font-size: 24px;font-weight: bold;display: flex;justify-content: center;align-items: center;width: 100%;height: 100%;";
 
-      answerContainer.appendChild(dragHandle);
-      answerContainer.appendChild(closeButton);
-      answerContainer.appendChild(answerContent);
-      container.appendChild(answerContainer);
+        answerContainer.appendChild(dragHandle);
+        answerContainer.appendChild(closeButton);
+        answerContainer.appendChild(answerContent);
+        container.appendChild(answerContainer);
 
-      return container;
+        return container;
     }
 
     initializeUI() {
-      document.body.appendChild(this.itemMetadata.UI);
-      document.body.appendChild(this.itemMetadata.answerUI);
-      
-      // Ensure elements are mounted before setting up event listeners
-      setTimeout(() => {
-        this.setupEventListeners();
-      }, 0);
+        document.body.appendChild(this.itemMetadata.UI);
+        document.body.appendChild(this.itemMetadata.answerUI);
+        
+        // Ensure elements are mounted before setting up event listeners
+        setTimeout(() => {
+            this.setupEventListeners();
+        }, 0);
     }
 
     async logToDataEndpoint() {
