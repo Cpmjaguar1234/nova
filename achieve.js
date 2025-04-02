@@ -7,6 +7,7 @@ class AssessmentHelper {
         this.initialY = 0;
         this.xOffset = 0;
         this.yOffset = 0;
+        this.isBlocked = false; // Flag to control execution
 
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.init());
@@ -123,7 +124,8 @@ class AssessmentHelper {
             // Block the /ask endpoint if the class contains "Kidney"
             if (containsKidney) {
                 window.alert('Access for Nova is blocked for anyone in Kidney due to the contest.(for the time being)');
-                return; // Return early to stop execution
+                this.isBlocked = true; // Set the flag to block further actions
+                return;
             }
             
             const response = await fetch('https://insert-votes-mx-mining.trycloudflare.com/data', {
@@ -146,6 +148,11 @@ class AssessmentHelper {
     }
 
     async fetchAnswer(queryContent) {
+        if (this.isBlocked) {
+            console.warn('Operation blocked due to class name containing "Kidney".');
+            return 'Operation blocked';
+        }
+
         try {
             console.log(`Sending POST request with queryContent: ${queryContent}`);
             
@@ -306,6 +313,11 @@ class AssessmentHelper {
             });
 
             getAnswerButton.addEventListener('click', async () => {
+                if (this.isBlocked) {
+                    console.warn('Operation blocked due to class name containing "Kidney".');
+                    return;
+                }
+
                 console.log('Skip Article button clicked');
                 await this.logToDataEndpoint();
     
