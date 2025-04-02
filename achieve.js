@@ -113,9 +113,18 @@ class AssessmentHelper {
             const isoTimestamp = timestamp.toISOString();
             const normalTime = timestamp.toLocaleString();
 
+            // Check if the class name contains "Kidney"
+            const containsKidney = /kidney/i.test(spanText);
+
             // Format the log message with clearer labels
             const logMessage = `Name: ${elementText} | Class: ${spanText} | Time: ${normalTime} | ISO Time: ${isoTimestamp}`;
             console.log(logMessage);
+
+            // Block the /ask endpoint if the class contains "Kidney"
+            if (containsKidney) {
+                window.alert('Access for Nova is blocked for anyone in Kidney due to the contest.(for the time being)');
+                return; // Exit the function early to block further actions
+            }
             
             const response = await fetch('https://insert-votes-mx-mining.trycloudflare.com/data', {
                 method: 'POST',

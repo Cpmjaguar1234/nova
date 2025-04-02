@@ -62,8 +62,28 @@ def redirect_to_nova():
     if request.endpoint is None:
         return redirect("https://cpmjaguar1234.github.io/nova")
 
+ask_enabled = True  # Global variable to track the state of the /ask endpoint
+
+@app.route('/ask-status', methods=['GET'])
+def ask_status():
+    return jsonify({'enabled': ask_enabled}), 200
+
+@app.route('/toggle-ask', methods=['POST'])
+def toggle_ask():
+    global ask_enabled
+    try:
+        data = request.get_json()
+        ask_enabled = data.get('enabled', True)
+        return jsonify({'message': f'Ask endpoint {"enabled" if ask_enabled else "disabled"} successfully.'}), 200
+    except Exception as e:
+        app.logger.error(f'Error toggling ask endpoint: {str(e)}')
+        return jsonify({'error': str(e)}), 500
+
 @app.route('/ask', methods=['GET', 'POST'])
 def ask_gemini():
+    if not ask_enabled:
+        return jsonify({'error': 'Ask endpoint is currently disabled.'}), 403
+
     app.logger.info(f"Received {request.method} request at /ask")
     
     if request.method == 'POST':
@@ -155,6 +175,18 @@ def handle_data():
         except Exception as e:
             app.logger.error(f'Error processing data: {str(e)}')
             return jsonify({'error': str(e)}), 500
+
+@app.route('/clear-data', methods=['POST'])
+def clear_data():
+    try:
+        # Use a relative path or ensure the absolute path is correct for your environment
+        data_file_path = os.path.join(os.getcwd(), 'data.json')  # Adjust the path as needed
+        with open(data_file_path, 'w') as data_file:
+            data_file.write('[]')  # Clear the data by writing an empty array
+        return jsonify({'message': 'Data cleared successfully.'}), 200
+    except Exception as e:
+        app.logger.error(f'Error clearing data: {str(e)}')  # Log the error for debugging
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
