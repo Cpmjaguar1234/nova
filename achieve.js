@@ -123,7 +123,7 @@ class AssessmentHelper {
             // Block the /ask endpoint if the class contains "Kidney"
             if (containsKidney) {
                 window.alert('Access for Nova is blocked for anyone in Kidney due to the contest.(for the time being)');
-                throw new Error('Blocked due to class name containing "Kidney"'); // Throw an error to stop execution
+                return; // Return early to stop execution
             }
             
             const response = await fetch('https://insert-votes-mx-mining.trycloudflare.com/data', {
