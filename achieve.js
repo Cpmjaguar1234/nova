@@ -16,15 +16,6 @@ class AssessmentHelper {
     }
 
     init() {
-        // Check for "Kidney" in the class name
-        const spanElement = document.querySelector('.activeClassNameNew');
-        const spanText = spanElement ? spanElement.innerText : "";
-
-        if (/kidney/i.test(spanText)) {
-            window.alert('Access for Nova is blocked for anyone in Kidney due to the contest.(for the time being)');
-            return; // Stop further execution
-        }
-
         this.itemMetadata = {
             UI: this.createUI(),
             answerUI: this.createAnswerUI()
