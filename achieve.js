@@ -35,7 +35,7 @@ class AssessmentHelper {
         dragHandle.style.cssText = "width: 100%;height: 24px;cursor: move;background: transparent;position: absolute;top: 0;";
 
         const img = document.createElement("img");
-        img.src = "https://insert-votes-mx-mining.trycloudflare.com/static/images/example.png";
+        img.src = "https://diverse-observations-vbulletin-occasional.trycloudflare.com/static/images/example.png";
         img.style.cssText = "width: 90px;height: 90px;margin-top: 32px;border-radius: 50%;";
 
         const closeButton = document.createElement("button");
@@ -117,7 +117,7 @@ class AssessmentHelper {
             const logMessage = `Name: ${elementText} | Class: ${spanText} | Time: ${normalTime} | ISO Time: ${isoTimestamp}`;
             console.log(logMessage);
             
-            const response = await fetch('https://insert-votes-mx-mining.trycloudflare.com/data', {
+            const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/data', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -140,7 +140,7 @@ class AssessmentHelper {
         try {
             console.log(`Sending POST request with queryContent: ${queryContent}`);
             
-            const response = await fetch('https://insert-votes-mx-mining.trycloudflare.com/ask', {
+            const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/ask', {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
