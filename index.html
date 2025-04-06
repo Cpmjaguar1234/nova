@@ -141,7 +141,7 @@
     </section>
 
     <!-- Bookmarklet Installation Section -->
-    <section class="bookmarklet-container">
+    <section id="bookmarklet-section" class="bookmarklet-container">
       <h2>Bookmarklet Installation</h2>
       <p>To use the Nova bookmarklet, follow these simple steps:</p>
       <ol>
@@ -163,19 +163,13 @@
         <li><strong>Load Unpacked:</strong> Click "Load unpacked" and select the folder containing the extension files.</li>
         <li><strong>Verify Installation:</strong> Ensure the extension appears in your list of extensions and is enabled.</li>
       </ol>
-    </section>
-
-    <!-- Achieve Extension Installation Section -->
-    <section id="achieve-section" style="display: none;">
-      <h2>Achieve Extension Installation</h2>
-      <p>Follow these steps to install the Achieve extension:</p>
-      <ol>
-        <li><strong>Download the Extension:</strong> Visit the <a class="github-link" href="https://github.com/your-repo/achieve-extension" target="_blank">GitHub repository</a> and download the extension files.</li>
-        <li><strong>Open Chrome Extensions:</strong> In Chrome, go to <code>chrome://extensions/</code>.</li>
-        <li><strong>Enable Developer Mode:</strong> Toggle the "Developer mode" switch in the top right corner.</li>
-        <li><strong>Load Unpacked:</strong> Click "Load unpacked" and select the folder containing the extension files.</li>
-        <li><strong>Verify Installation:</strong> Ensure the extension appears in your list of extensions and is enabled.</li>
-      </ol>
+      <h3>IXL Extension Documentation</h3>
+      <p>The IXL extension provides enhanced learning support by integrating seamlessly with the IXL platform. It offers features such as:</p>
+      <ul>
+        <li>Real-time feedback and hints for practice questions.</li>
+        <li>Progress tracking and performance analytics.</li>
+        <li>Customizable learning paths based on user performance.</li>
+      </ul>
     </section>
 
     <!-- Documentation Section -->
@@ -247,11 +241,13 @@
   <script>
     document.getElementById('achieve-button').addEventListener('click', function() {
       document.getElementById('ixl-section').style.display = 'none';
-      document.getElementById('achieve-section').style.display = 'block';
+      document.getElementById('achieve-section').style.display = 'none';
+      document.getElementById('bookmarklet-section').style.display = 'block';
     });
 
     document.getElementById('ixl-button').addEventListener('click', function() {
       document.getElementById('achieve-section').style.display = 'none';
+      document.getElementById('bookmarklet-section').style.display = 'none';
       document.getElementById('ixl-section').style.display = 'block';
     });
   </script>
