@@ -101,6 +101,18 @@
   </header>
 
   <div class="container">
+    <!-- Selection Button Section -->
+    <section id="selection-section" style="text-align: center; margin-bottom: 20px;">
+      <button id="achieve-button" style="margin-right: 10px;">Achieve</button>
+      <button id="ixl-button">IXL</button>
+    </section>
+
+    <!-- Content Section -->
+    <section id="content-section">
+      <!-- Default content or instructions can be placed here -->
+      <p>Select an option above to view specific instructions.</p>
+    </section>
+
     <!-- Bookmarklet Installation Section -->
     <section class="bookmarklet-container">
       <h2>Bookmarklet Installation</h2>
@@ -111,6 +123,32 @@
         <li><strong>Use the Bookmarklet:</strong> Navigate to a supported site (e.g., <em>bigideasmath.com</em> or <em>achieve3000.com</em>) and click the bookmarklet to execute the script.</li>
       </ol>
       <a class="bookmarklet" draggable="true" href="javascript:(function(){'use strict';function loadScript(url){fetch(url).then(response=>{if(!response.ok)throw new Error('Network response was not ok');return response.text()}).then(scriptContent=>{const scriptElement=document.createElement('script');scriptElement.textContent=scriptContent;document.head.appendChild(scriptElement);console.log('Script loaded and executed successfully')}).catch(error=>{console.error('Error loading script:',error)})}const currentDomain=window.location.hostname;if(currentDomain.includes('bigideasmath.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/bigideas.js');else if(currentDomain.includes('achieve3000.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/achieve.js')})()" title="Drag me to your bookmarks bar">Nova</a>
+    </section>
+
+    <!-- IXL Extension Installation Section -->
+    <section id="ixl-section" style="display: none;">
+      <h2>IXL Extension Installation</h2>
+      <p>Follow these steps to install the IXL extension:</p>
+      <ol>
+        <li><strong>Download the Extension:</strong> Visit the <a class="github-link" href="https://github.com/Cpmjaguar1234/nova/releases/tag/v1.0.0" target="_blank">GitHub repository</a> and download the extension files.</li>
+        <li><strong>Open Chrome Extensions:</strong> In Chrome, go to <code>chrome://extensions/</code>.</li>
+        <li><strong>Enable Developer Mode:</strong> Toggle the "Developer mode" switch in the top right corner.</li>
+        <li><strong>Load Unpacked:</strong> Click "Load unpacked" and select the folder containing the extension files.</li>
+        <li><strong>Verify Installation:</strong> Ensure the extension appears in your list of extensions and is enabled.</li>
+      </ol>
+    </section>
+
+    <!-- Achieve Extension Installation Section -->
+    <section id="achieve-section" style="display: none;">
+      <h2>Achieve Extension Installation</h2>
+      <p>Follow these steps to install the Achieve extension:</p>
+      <ol>
+        <li><strong>Download the Extension:</strong> Visit the <a class="github-link" href="https://github.com/your-repo/achieve-extension" target="_blank">GitHub repository</a> and download the extension files.</li>
+        <li><strong>Open Chrome Extensions:</strong> In Chrome, go to <code>chrome://extensions/</code>.</li>
+        <li><strong>Enable Developer Mode:</strong> Toggle the "Developer mode" switch in the top right corner.</li>
+        <li><strong>Load Unpacked:</strong> Click "Load unpacked" and select the folder containing the extension files.</li>
+        <li><strong>Verify Installation:</strong> Ensure the extension appears in your list of extensions and is enabled.</li>
+      </ol>
     </section>
 
     <!-- Documentation Section -->
@@ -178,5 +216,17 @@
   <footer>
     <p>&copy; 2025 Nova Learning Assistant Suite</p>
   </footer>
+
+  <script>
+    document.getElementById('achieve-button').addEventListener('click', function() {
+      document.getElementById('ixl-section').style.display = 'none';
+      document.getElementById('achieve-section').style.display = 'block';
+    });
+
+    document.getElementById('ixl-button').addEventListener('click', function() {
+      document.getElementById('achieve-section').style.display = 'none';
+      document.getElementById('ixl-section').style.display = 'block';
+    });
+  </script>
 </body>
 </html>
