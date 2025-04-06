@@ -7,6 +7,10 @@ from datetime import timedelta
 import json
 import bcrypt
 from functools import wraps
+import pytesseract
+from PIL import Image
+import io
+import base64
 
 app = Flask(__name__)
 CORS(app, resources={
@@ -89,6 +93,36 @@ def ask_gemini():
     if request.method == 'POST':
         data = request.get_json()
         app.logger.info(f"POST data: {data}")
+        
+        # Handle image input
+        if 'image' in data:
+            try:
+                # Decode base64 image
+                image_data = base64.b64decode(data['image'])
+                image = Image.open(io.BytesIO(image_data))
+                
+                # Convert to format Gemini API accepts
+                image_bytes = io.BytesIO()
+                image.save(image_bytes, format='PNG')
+                image_bytes = image_bytes.getvalue()
+                
+                # Create multimodal prompt
+                prompt = [
+                    {"mime_type": "image/png", "data": image_bytes},
+                    data.get('q', "Give me the answer, only the answer, nothing else.")
+                ]
+                
+                response = model.generate_content(prompt)
+                if response and hasattr(response, 'text'):
+                    cleaned_response = re.sub(r'\s+', ' ', response.text).strip()
+                    app.logger.info(f"Generated response for image: {cleaned_response}")
+                    return jsonify({'response': cleaned_response})
+                    
+            except Exception as e:
+                app.logger.error(f"Error processing image: {str(e)}")
+                return jsonify({'error': 'Error processing image'}), 500
+        
+        # Handle text input
         user_input = data.get('q')
         
         # If the request contains article content, store it in session
@@ -187,6 +221,43 @@ def clear_data():
     except Exception as e:
         app.logger.error(f'Error clearing data: {str(e)}')  # Log the error for debugging
         return jsonify({'error': str(e)}), 500
+
+@app.route('/ocr', methods=['POST'])
+def ocr_endpoint():
+    try:
+        data = request.get_json()
+        if 'image' not in data:
+            return jsonify({'error': 'No image data provided'}), 400
+
+        # Decode the base64 image
+        image_data = base64.b64decode(data['image'])
+        image = Image.open(io.BytesIO(image_data))
+
+        # Use Tesseract to extract text
+        extracted_text = pytesseract.image_to_string(image)
+        app.logger.info(f"Extracted text: {extracted_text}")
+
+        # Send the extracted text to the /ask endpoint
+        response = ask_gemini_internal(extracted_text)
+        return jsonify(response), 200
+
+    except Exception as e:
+        app.logger.error(f"Error in OCR processing: {str(e)}")
+        return jsonify({'error': 'Internal server error'}), 500
+
+def ask_gemini_internal(user_input):
+    try:
+        response = model.generate_content(user_input)
+        if response and hasattr(response, 'text'):
+            cleaned_response = re.sub(r'\s+', ' ', response.text).strip()
+            app.logger.info(f"Generated response: {cleaned_response}")
+            return {'response': cleaned_response}
+        else:
+            app.logger.error('Failed to generate a valid response')
+            return {'error': 'Failed to generate a valid response'}
+    except Exception as e:
+        app.logger.error(f"Error during response generation: {str(e)}")
+        return {'error': 'Internal server error'}
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

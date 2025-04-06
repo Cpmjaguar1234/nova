@@ -254,11 +254,6 @@ class AssessmentHelper {
                 this.isDragging = false;
             });
 
-            document.addEventListener('mouseup', () => {
-                this.isDragging = false;
-                console.log('Drag ended');
-            });
-
             closeButton.addEventListener('click', () => {
                 launcher.style.display = 'none';
             });
