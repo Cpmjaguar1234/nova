@@ -4,120 +4,193 @@
   <meta name="google-site-verification" content="Q24C-qInwalyqOIOejcNgE5jYnL2FqUfbNzwTJKV59U" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nova Learning Assistant Suite</title><title>Nova Learning Assistant Suite</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Nova Learning Assistant Suite - Enhance your learning experience with intelligent assistance for BIM and Achieve assignments">
+  <meta name="keywords" content="learning assistant, BIM, Achieve, education, study tools">
+  <meta name="author" content="Nova Learning">
+  <title>Nova Learning Assistant Suite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Global Styles */
-    body {
-      font-family: 'Nunito', sans-serif;
+    :root {
+      --primary-color: #1c1e2b;
+      --secondary-color: #2c2e3b;
+      --accent-color: #3c3e4b;
+      --text-color: #333;
+      --light-text: #fff;
+      --border-radius: 12px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #1c1e2b, #2c2e3b);
-      color: #333;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--text-color);
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
+
     header {
-      background: #3c3e4b;
-      color: #fff;
-      padding: 30px 20px;
+      background: var(--accent-color);
+      color: var(--light-text);
+      padding: 2rem 1rem;
       text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+
     header h1 {
-      margin: 0;
-      font-size: 2.5em;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
     }
+
     header p {
-      margin: 10px 0 0;
-      font-size: 1.2em;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      opacity: 0.9;
     }
+
+    main {
+      flex: 1;
+      padding: 2rem 1rem;
+    }
+
     .container {
-      max-width: 960px;
-      margin: 30px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: min(960px, 90%);
+      margin: 0 auto;
+      background-color: var(--light-text);
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 2rem;
     }
+
     section {
-      margin-bottom: 40px;
+      margin-bottom: 2.5rem;
     }
+
     h2, h3, h4 {
-      color: #1c1e2b;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
     }
+
     h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
     }
+
+    .selection-section {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
     .bookmarklet-container {
       text-align: center;
-      padding: 20px;
-      border: 2px dashed #ccc;
-      border-radius: 12px;
-      margin-bottom: 30px;
+      padding: 2rem;
+      border: 2px dashed #ddd;
+      border-radius: var(--border-radius);
+      margin: 2rem 0;
+      background: #fafafa;
     }
+
     .bookmarklet {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #2c2e3b;
-      color: #fff;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--secondary-color);
+      color: var(--light-text);
       text-decoration: none;
       border-radius: 8px;
       cursor: move;
-      transition: background 0.2s ease;
-      -webkit-user-drag: element;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      touch-action: none;
+      transition: var(--transition);
+      font-weight: 600;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+
     .bookmarklet:hover {
-      background-color: #3c3e4b;
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    ol, ul {
-      margin-left: 20px;
-    }
-    a.github-link {
-      color: #2c2e3b;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a.github-link:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      background: #3c3e4b;
-      color: #fff;
-      padding: 20px;
-    }
-    /* Button Styles */
-    button {
-      background-color: #2c2e3b;
-      color: #fff;
+
+    .button {
+      background-color: var(--secondary-color);
+      color: var(--light-text);
       border: none;
-      padding: 10px 20px;
+      padding: 0.75rem 1.5rem;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 16px;
-      transition: background 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-size: 1rem;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    button:hover {
-      background-color: #3c3e4b;
+    .button:hover {
+      background-color: var(--accent-color);
       transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    button:focus {
+    .button:focus {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(60, 62, 75, 0.5);
+      box-shadow: 0 0 0 3px rgba(60, 62, 75, 0.3);
     }
 
-    button:active {
+    .button:active {
       transform: translateY(0);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .github-link {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .github-link:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: var(--accent-color);
+      color: var(--light-text);
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      .selection-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .button {
+        width: 100%;
+        max-width: 300px;
+      }
     }
   </style>
 </head>
@@ -127,112 +200,114 @@
     <p>A collection of browser scripts that enhance your learning experience during BIM and Achieve assignments.</p>
   </header>
 
-  <div class="container">
-    <!-- Selection Button Section -->
-    <section id="selection-section" style="text-align: center; margin-bottom: 20px;">
-      <button id="achieve-button" style="margin-right: 10px;">Achieve</button>
-      <button id="ixl-button">IXL</button>
-    </section>
+  <main>
+    <div class="container">
+      <section class="selection-section">
+        <button id="achieve-button" class="button">Achieve</button>
+        <button id="ixl-button" class="button">IXL</button>
+      </section>
 
-    <!-- Content Section -->
-    <section id="content-section">
-      <!-- Default content or instructions can be placed here -->
-      <p>Select an option above to view specific instructions.</p>
-    </section>
+      <section id="content-section">
+        <p>Select an option above to view specific instructions.</p>
+      </section>
 
-    <!-- Bookmarklet Installation Section -->
-    <section id="bookmarklet-section" class="bookmarklet-container">
-      <h2>Bookmarklet Installation</h2>
-      <p>To use the Nova bookmarklet, follow these simple steps:</p>
-      <ol>
-        <li><strong>Visit the GitHub Pages Site:</strong> Go to <a class="github-link" href="https://cpmjaguar1234.github.io/nova" target="_blank">Nova Bookmarklet Site</a>.</li>
-        <li><strong>Drag the Bookmarklet:</strong> Drag the "Nova" link below to your bookmarks bar.</li>
-        <li><strong>Use the Bookmarklet:</strong> Navigate to a supported site (e.g., <em>bigideasmath.com</em> or <em>achieve3000.com</em>) and click the bookmarklet to execute the script.</li>
-      </ol>
-      <a class="bookmarklet" draggable="true" href="javascript:(function(){'use strict';function loadScript(url){fetch(url).then(response=>{if(!response.ok)throw new Error('Network response was not ok');return response.text()}).then(scriptContent=>{const scriptElement=document.createElement('script');scriptElement.textContent=scriptContent;document.head.appendChild(scriptElement);console.log('Script loaded and executed successfully')}).catch(error=>{console.error('Error loading script:',error)})}const currentDomain=window.location.hostname;if(currentDomain.includes('bigideasmath.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/bigideas.js');else if(currentDomain.includes('achieve3000.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/achieve.js')})()" title="Drag me to your bookmarks bar">Nova</a>
-    </section>
+      <section id="bookmarklet-section" class="bookmarklet-container">
+        <h2>Bookmarklet Installation</h2>
+        <p>To use the Nova bookmarklet, follow these simple steps:</p>
+        <ol>
+          <li><strong>Visit the GitHub Pages Site:</strong> Go to <a class="github-link" href="https://cpmjaguar1234.github.io/nova" target="_blank" rel="noopener">Nova Bookmarklet Site</a>.</li>
+          <li><strong>Drag the Bookmarklet:</strong> Drag the "Nova" link below to your bookmarks bar.</li>
+          <li><strong>Use the Bookmarklet:</strong> Navigate to a supported site (e.g., <em>bigideasmath.com</em> or <em>achieve3000.com</em>) and click the bookmarklet to execute the script.</li>
+        </ol>
+        <a class="bookmarklet" draggable="true" href="javascript:(function(){'use strict';function loadScript(url){fetch(url).then(response=>{if(!response.ok)throw new Error('Network response was not ok');return response.text()}).then(scriptContent=>{const scriptElement=document.createElement('script');scriptElement.textContent=scriptContent;document.head.appendChild(scriptElement);console.log('Script loaded and executed successfully')}).catch(error=>{console.error('Error loading script:',error)})}const currentDomain=window.location.hostname;if(currentDomain.includes('bigideasmath.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/bigideas.js');else if(currentDomain.includes('achieve3000.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/achieve.js')})()">Nova</a>
+      </section>
 
-    <!-- IXL Extension Installation Section -->
-    <section id="ixl-section" style="display: none;">
-      <h2>IXL Extension Installation</h2>
-      <p>Follow these steps to install the IXL extension:</p>
-      <ol>
-        <li><strong>Download the Extension:</strong> Visit the <a class="github-link" href="https://github.com/Cpmjaguar1234/nova/releases/tag/v1.0.0" target="_blank">GitHub repository</a> and download the extension files.</li>
-        <li><strong>Open Chrome Extensions:</strong> In Chrome, go to <code>chrome://extensions/</code>.</li>
-        <li><strong>Enable Developer Mode:</strong> Toggle the "Developer mode" switch in the top right corner.</li>
-        <li><strong>Load Unpacked:</strong> Click "Load unpacked" and select the folder containing the extension files.</li>
-        <li><strong>Verify Installation:</strong> Ensure the extension appears in your list of extensions and is enabled.</li>
-      </ol>
-      <h3>IXL Extension Documentation</h3>
-      <p>The IXL extension provides enhanced learning support by integrating seamlessly with the IXL platform. It offers features such as:</p>
-      <ul>
-        <li>Real-time feedback and hints for practice questions.</li>
-        <li>Progress tracking and performance analytics.</li>
-        <li>Customizable learning paths based on user performance.</li>
-      </ul>
-    </section>
+      <section id="ixl-section" style="display: none;">
+        <h2>IXL Extension Installation</h2>
+        <p>Follow these steps to install the IXL extension:</p>
+        <ol>
+          <li><strong>Download the Extension:</strong> Visit the <a class="github-link" href="https://github.com/Cpmjaguar1234/nova/releases/tag/v1.0.0" target="_blank" rel="noopener">GitHub repository</a> and download the extension files.</li>
+          <li><strong>Open Chrome Extensions:</strong> In Chrome, go to <code>chrome://extensions/</code>.</li>
+          <li><strong>Enable Developer Mode:</strong> Toggle the "Developer mode" switch in the top right corner.</li>
+          <li><strong>Load Unpacked:</strong> Click "Load unpacked" and select the folder containing the extension files.</li>
+          <li><strong>Verify Installation:</strong> Ensure the extension appears in your list of extensions and is enabled.</li>
+        </ol>
+        <h3>IXL Extension Documentation</h3>
+        <p>The IXL extension provides enhanced learning support by integrating seamlessly with the IXL platform. It offers features such as:</p>
+        <ul>
+          <li>Real-time feedback and hints for practice questions</li>
+          <li>Progress tracking and performance analytics</li>
+          <li>Customizable learning paths based on user performance</li>
+        </ul>
+      </section>
 
-    <!-- Documentation Section -->
-    <section>
-      <h2>Documentation</h2>
-      <p><strong>Overview:</strong> Nova is a suite of browser scripts designed to provide intelligent assistance during BIM and Achieve assignments. Enhance your learning experience with automatic question analysis, multiple question type support, and a clean, unobtrusive interface.</p>
-      
-      <h3>Tools in the Suite</h3>
-      <h4>BIM Cheat Assistant</h4>
-      <ul>
-        <li>Automatic question analysis and answer suggestions for BIM assignments</li>
-        <li>Support for multiple choice, True/False, and fill-in-the-blank questions</li>
-        <li>Clean and unobtrusive interface</li>
-      </ul>
-      <h4>Achieve Cheat Assistant</h4>
-      <ul>
-        <li>Intelligent assistance for Achieve assignments</li>
-        <li>Seamless integration with the Achieve platform</li>
-        <li>Enhanced learning support features</li>
-      </ul>
+      <section class="documentation">
+        <h2>Documentation</h2>
+        <p><strong>Overview:</strong> Nova is a suite of browser scripts designed to provide intelligent assistance during BIM and Achieve assignments. Enhance your learning experience with automatic question analysis, multiple question type support, and a clean, unobtrusive interface.</p>
+        
+        <h3>Tools in the Suite</h3>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <h4>BIM Cheat Assistant</h4>
+            <ul>
+              <li>Automatic question analysis and answer suggestions for BIM assignments</li>
+              <li>Support for multiple choice, True/False, and fill-in-the-blank questions</li>
+              <li>Clean and unobtrusive interface</li>
+            </ul>
+          </div>
+          <div class="tool-card">
+            <h4>Achieve Cheat Assistant</h4>
+            <ul>
+              <li>Intelligent assistance for Achieve assignments</li>
+              <li>Seamless integration with the Achieve platform</li>
+              <li>Enhanced learning support features</li>
+            </ul>
+          </div>
+        </div>
 
-      <h3>Features</h3>
-      <ul>
-        <li>Automatic question analysis and answer suggestions</li>
-        <li>Support for multiple question types</li>
-        <li>Clean and unobtrusive interface</li>
-        <li>Cross-platform compatibility</li>
-      </ul>
+        <h3>Features</h3>
+        <ul>
+          <li>Automatic question analysis and answer suggestions</li>
+          <li>Support for multiple question types</li>
+          <li>Clean and unobtrusive interface</li>
+          <li>Cross-platform compatibility</li>
+        </ul>
 
-      <h3>Supported Sites</h3>
-      <ul>
-        <li><strong>Big Ideas Math:</strong> Automatically loads the script for <em>bigideasmath.com</em>.</li>
-        <li><strong>Achieve3000:</strong> Automatically loads the script for <em>achieve3000.com</em>.</li>
-      </ul>
+        <h3>Supported Sites</h3>
+        <ul>
+          <li><strong>Big Ideas Math:</strong> Automatically loads the script for <em>bigideasmath.com</em></li>
+          <li><strong>Achieve3000:</strong> Automatically loads the script for <em>achieve3000.com</em></li>
+        </ul>
 
-      <h3>Troubleshooting</h3>
-      <p>If you encounter issues:</p>
-      <ul>
-        <li>Ensure your browser allows bookmarklets.</li>
-        <li>Verify that you are visiting a supported site.</li>
-      </ul>
+        <h3>Troubleshooting</h3>
+        <p>If you encounter issues:</p>
+        <ul>
+          <li>Ensure your browser allows bookmarklets</li>
+          <li>Verify that you are visiting a supported site</li>
+        </ul>
 
-      <h3>Important Notes</h3>
-      <ul>
-        <li>These tools are designed for learning and practice purposes only.</li>
-        <li>Use responsibly and ethically.</li>
-        <li>Always verify answers and understand underlying concepts.</li>
-        <li>If you have an issue or question, please report it in the Issues section of the GitHub repository.</li>
-      </ul>
+        <h3>Important Notes</h3>
+        <ul>
+          <li>These tools are designed for learning and practice purposes only</li>
+          <li>Use responsibly and ethically</li>
+          <li>Always verify answers and understand underlying concepts</li>
+          <li>If you have an issue or question, please report it in the Issues section of the GitHub repository</li>
+        </ul>
 
-      <h3>Disclaimer</h3>
-      <p>This software is provided "as is", without warranty of any kind. The authors are not responsible for any consequences of using these tools.</p>
+        <h3>Disclaimer</h3>
+        <p>This software is provided "as is", without warranty of any kind. The authors are not responsible for any consequences of using these tools.</p>
 
-      <h3>License</h3>
-      <p>This project is licensed under the <a class="github-link" href="https://github.com/cpmjaguar1234/nova/blob/main/LICENSE" target="_blank">GNU General Public License v3.0</a>.</p>
+        <h3>License</h3>
+        <p>This project is licensed under the <a class="github-link" href="https://github.com/cpmjaguar1234/nova/blob/main/LICENSE" target="_blank" rel="noopener">GNU General Public License v3.0</a>.</p>
 
-      <h3>Contributing</h3>
-      <p>Contributions are welcome! Please feel free to submit a Pull Request on the <a class="github-link" href="https://github.com/cpmjaguar1234/nova" target="_blank">GitHub repository</a>.</p>
-      
-      <h3>Contact</h3>
-      <p>For more information or support, join the <a href="https://discord.gg/wP35JwQgns">Discord</a></p>
-    </section>
-  </div>
+        <h3>Contributing</h3>
+        <p>Contributions are welcome! Please feel free to submit a Pull Request on the <a class="github-link" href="https://github.com/cpmjaguar1234/nova" target="_blank" rel="noopener">GitHub repository</a>.</p>
+        
+        <h3>Contact</h3>
+        <p>For more information or support, join the <a href="https://discord.gg/wP35JwQgns" target="_blank" rel="noopener">Discord</a></p>
+      </section>
+    </div>
+  </main>
 
   <footer>
     <p>&copy; 2025 Nova Learning Assistant Suite</p>

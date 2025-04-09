@@ -7,10 +7,7 @@
     "host_permissions": ["<all_urls>"],
     "action": {
       "default_popup": "popup.html"
-    },
-    "content_scripts": [{
-      "matches": ["*://*.ixl.com/*"],
-      "js": ["content.js"]
-    }]
+    }
+
   }
   
