@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Nova Ixl Extension",
+  "version": "1.0",
+  "description": "This extension allows you to use Nova in Ixl, to skip individual questions.",
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "web_accessible_resources": [{
+    "resources": ["popup.js"],
+    "matches": ["<all_urls>"]
+  }]
+}

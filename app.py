@@ -109,7 +109,7 @@ def ask_gemini():
                 # Create multimodal prompt
                 prompt = [
                     {"mime_type": "image/png", "data": image_bytes},
-                    data.get('q', "Give me the answer, only the answer, nothing else.")
+                    data.get('q', "Always give me only the final, fully simplified answer - no steps, no explanations, no extra text. Do this every time. If math, give the number answer, if reading, give me the letter answer, if the question asks when something happened, look at the dates in the text.")
                 ]
                 
                 response = model.generate_content(prompt)

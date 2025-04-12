@@ -14,6 +14,11 @@ A collection of browser scripts that enhance your learning experience by providi
 - Seamless integration with the Achieve platform
 - Enhanced learning support features
 
+### IXL Extension
+- Real-time feedback and hints for practice questions
+- Progress tracking and performance analytics
+- Customizable learning paths based on user performance
+
 ## Features
 
 - Automatic question analysis and answer suggestions
@@ -23,9 +28,9 @@ A collection of browser scripts that enhance your learning experience by providi
 
 ## Installation
 
-# Bookmarklet Installation
+### Bookmarklet Installation
 
-## How to Install
+#### How to Install
 
 To use the Nova bookmarklet, follow these simple steps:
 
@@ -35,14 +40,32 @@ To use the Nova bookmarklet, follow these simple steps:
 
 3. **Use the Bookmarklet**: Navigate to a supported site (e.g., bigideasmath.com or achieve3000.com) and click the "Nova" bookmarklet in your bookmarks bar to execute the script.
 
+### IXL Extension Installation
+
+#### How to Install
+
+1. **Download the Extension**: Visit the [GitHub releases page](https://github.com/Cpmjaguar1234/nova/releases/tag/v1.0.0) and download the extension files.
+
+2. **Open Chrome Extensions**: Navigate to `chrome://extensions/` in your Chrome browser.
+
+3. **Enable Developer Mode**: Toggle the "Developer mode" switch in the top right corner.
+
+4. **Load the Extension**: Click "Load unpacked" and select the folder containing the downloaded extension files.
+
+5. **Verify Installation**: The extension should appear in your list of extensions and be enabled.
+
 ## Supported Sites
 
 - **Big Ideas Math**: Automatically loads the script for bigideasmath.com.
 - **Achieve3000**: Automatically loads the script for achieve3000.com.
+- **IXL**: Enhanced learning support through the Chrome extension.
 
 ## Troubleshooting
 
-If you encounter any issues, ensure that your browser allows bookmarklets and that you are visiting a supported site.
+If you encounter any issues, ensure that:
+- Your browser allows bookmarklets and extensions
+- You are visiting a supported site
+- Developer mode is enabled for the IXL extension
 
 For more information or support, please contact [1yyumwafd@mozmail.com](mailto:1yyumwafd@mozmail.com).
 

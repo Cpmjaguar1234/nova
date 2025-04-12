@@ -70,34 +70,52 @@
     }
 
     section {
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
     }
 
     h2, h3, h4 {
       color: var(--primary-color);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     h2 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       border-bottom: 2px solid #eee;
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.4rem;
     }
 
     .selection-section {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
     }
 
     .bookmarklet-container {
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem;
       border: 2px dashed #ddd;
       border-radius: var(--border-radius);
-      margin: 2rem 0;
+      margin: 1.5rem 0;
       background: #fafafa;
+    }
+
+    .container {
+      max-width: min(960px, 90%);
+      margin: 0 auto;
+      background-color: var(--light-text);
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+    }
+
+    ul, ol {
+      padding-left: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
     }
 
     .bookmarklet {
@@ -226,18 +244,35 @@
         <h2>IXL Extension Installation</h2>
         <p>Follow these steps to install the IXL extension:</p>
         <ol>
-          <li><strong>Download the Extension:</strong> Visit the <a class="github-link" href="https://github.com/Cpmjaguar1234/nova/releases/tag/v1.0.0" target="_blank" rel="noopener">GitHub repository</a> and download the extension files.</li>
-          <li><strong>Open Chrome Extensions:</strong> In Chrome, go to <code>chrome://extensions/</code>.</li>
+          <li><strong>Download the Extension:</strong> Visit the <a class="github-link" href="https://github.com/Cpmjaguar1234/nova/releases/tag/v1.0.0" target="_blank" rel="noopener">GitHub releases page</a> and download the extension files.</li>
+          <li><strong>Open Chrome Extensions:</strong> Navigate to <code>chrome://extensions/</code> in your Chrome browser.</li>
           <li><strong>Enable Developer Mode:</strong> Toggle the "Developer mode" switch in the top right corner.</li>
-          <li><strong>Load Unpacked:</strong> Click "Load unpacked" and select the folder containing the extension files.</li>
-          <li><strong>Verify Installation:</strong> Ensure the extension appears in your list of extensions and is enabled.</li>
+          <li><strong>Load Unpacked:</strong> Click "Load unpacked" and select the folder containing the downloaded extension files.</li>
+          <li><strong>Verify Installation:</strong> The extension should appear in your list of extensions and be enabled.</li>
         </ol>
-        <h3>IXL Extension Documentation</h3>
-        <p>The IXL extension provides enhanced learning support by integrating seamlessly with the IXL platform. It offers features such as:</p>
+
+        <h3>Features</h3>
         <ul>
           <li>Real-time feedback and hints for practice questions</li>
           <li>Progress tracking and performance analytics</li>
           <li>Customizable learning paths based on user performance</li>
+          <li>Seamless integration with the IXL platform</li>
+        </ul>
+
+        <h3>Usage Guide</h3>
+        <ol>
+          <li>After installation, the IXL extension icon will appear in your browser's toolbar</li>
+          <li>Navigate to any IXL practice page</li>
+          <li>Click the extension icon to activate the learning assistant</li>
+          <li>Follow the on-screen prompts for enhanced learning support</li>
+        </ol>
+
+        <h3>Troubleshooting</h3>
+        <ul>
+          <li>Ensure Chrome is up to date</li>
+          <li>Verify that Developer Mode is enabled in Chrome extensions</li>
+          <li>Try reinstalling the extension if issues persist</li>
+          <li>Check our <a class="github-link" href="https://github.com/Cpmjaguar1234/nova/issues" target="_blank" rel="noopener">GitHub Issues</a> page for known problems and solutions</li>
         </ul>
       </section>
 
