@@ -100,9 +100,18 @@ def ask_gemini():
                 # Decode base64 image
                 image_data = base64.b64decode(data['image'])
                 image = Image.open(io.BytesIO(image_data))
+
+                # Resize image if it's too large to potentially speed up processing
+                max_dimension = 1024
+                if image.width > max_dimension or image.height > max_dimension:
+                    image.thumbnail((max_dimension, max_dimension), Image.Resampling.LANCZOS)
+                    app.logger.info(f"Resized image to {image.size}")
                 
                 # Convert to format Gemini API accepts
                 image_bytes = io.BytesIO()
+                # Ensure image is in RGB format before saving as PNG for compatibility
+                if image.mode == 'RGBA' or image.mode == 'P':
+                    image = image.convert('RGB')
                 image.save(image_bytes, format='PNG')
                 image_bytes = image_bytes.getvalue()
                 
@@ -207,7 +216,7 @@ def handle_data():
             return jsonify({'success': True, 'message': 'Data added successfully'})
             
         except Exception as e:
-            app.logger.error(f'Error processing data: {str(e)}')
+            app.logger.error(f"Error processing data: {str(e)}")
             return jsonify({'error': str(e)}), 500
 
 @app.route('/clear-data', methods=['POST'])
@@ -221,29 +230,6 @@ def clear_data():
     except Exception as e:
         app.logger.error(f'Error clearing data: {str(e)}')  # Log the error for debugging
         return jsonify({'error': str(e)}), 500
-
-@app.route('/ocr', methods=['POST'])
-def ocr_endpoint():
-    try:
-        data = request.get_json()
-        if 'image' not in data:
-            return jsonify({'error': 'No image data provided'}), 400
-
-        # Decode the base64 image
-        image_data = base64.b64decode(data['image'])
-        image = Image.open(io.BytesIO(image_data))
-
-        # Use Tesseract to extract text
-        extracted_text = pytesseract.image_to_string(image)
-        app.logger.info(f"Extracted text: {extracted_text}")
-
-        # Send the extracted text to the /ask endpoint
-        response = ask_gemini_internal(extracted_text)
-        return jsonify(response), 200
-
-    except Exception as e:
-        app.logger.error(f"Error in OCR processing: {str(e)}")
-        return jsonify({'error': 'Internal server error'}), 500
 
 def ask_gemini_internal(user_input):
     try:

@@ -1,339 +1,268 @@
-class AssessmentHelper {
-    constructor() {
-        this.isDragging = false;
-        this.currentX = 0;
-        this.currentY = 0;
-        this.initialX = 0;
-        this.initialY = 0;
-        this.xOffset = 0;
-        this.yOffset = 0;
+/**
+ * DeltaMath Answer Extractor
+ * 
+ * This script extracts answers from DeltaMath problems and displays them in the console.
+ * It can be run in the browser console when on a DeltaMath problem page.
+ */
 
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.init());
-        } else {
-            this.init();
-        }
-    }
-
-    init() {
-      this.itemMetadata = {
-        UI: this.createUI(),
-        answerUI: this.createAnswerUI()
-      };
-      this.initializeUI();
-    }
+function extractDeltaMathAnswers() {
+  // Create an object to store all answers
+  const answers = {};
   
-    createUI() {
-      const container = document.createElement("div");
-      container.innerHTML = `
-        <div id="Launcher" class="Launcher" style="outline: none;min-height: 160px;transform: translateX(0px) translateY(0);opacity: 1;font-family: 'Nunito', sans-serif;width: 180px;height: 240px;background: #1c1e2b;position: fixed;border-radius: 12px;display: flex;flex-direction: column;align-items: center;color: white;font-size: 16px;top: 50%;right: 20px;transform: translateY(-50%);z-index: 99999;padding: 16px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: hidden;white-space: nowrap;">
-          <div class="drag-handle" style="width: 100%;height: 24px;cursor: move;background: transparent;position: absolute;top: 0;"></div>
-          <img src="https://photowebsite-bigjaguar.us2.pitunnel.net/static/images/example.png" style="width: 90px;height: 90px;margin-top: 32px;border-radius: 50%;">
-          <button id="closeButton" style="position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;">×</button>
-          <button id="getAnswerButton" style="background: #2c2e3b;border: none;color: white;padding: 12px 20px;border-radius: 8px;cursor: pointer;margin-top: 24px;width: 120px;height: 44px;font-size: 16px;transition: background 0.2s ease;">Skip Article</button>
-          <div style="position: absolute;bottom: 8px;right: 8px;font-size: 12px;opacity: 0.5;">1.0</div>
-        </div>`;
-      return container;
+  // Check for text answers in standard input fields
+  const textInputs = document.querySelectorAll('input[type="text"]');
+  textInputs.forEach(input => {
+    if (input.id) {
+      answers[input.id] = input.value.replace(/−/g, "-");
+    } else if (input.name) {
+      answers[input.name] = input.value.replace(/−/g, "-");
     }
-
-    createAnswerUI() {
-      const container = document.createElement("div");
-      container.innerHTML = `
-        <div id="answerContainer" class="answerLauncher" style="outline: none;min-height: 60px;transform: translateX(0px) translateY(0);opacity: 1;font-family: 'Nunito', sans-serif;width: 60px;height: 60px;background: #1c1e2b;position: fixed;border-radius: 8px;display: flex;justify-content: center;align-items: center;color: white;font-size: 24px;top: 50%;right: 220px;transform: translateY(-50%);z-index: 99998;padding: 8px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: hidden;white-space: normal;display: none;">
-          <div class="answer-drag-handle" style="width: 100%;height: 24px;cursor: move;background: transparent;position: absolute;top: 0;"></div>
-          <button id="closeAnswerButton" style="position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;">×</button>
-          <div id="answerContent" style="padding: 0;margin: 0;word-wrap: break-word;font-size: 24px;font-weight: bold;display: flex;justify-content: center;align-items: center;width: 100%;height: 100%;"></div>
-        </div>`;
-      return container;
+  });
+  
+  // Check for multiple choice answers
+  const radioInputs = document.querySelectorAll('input[type="radio"]:checked');
+  radioInputs.forEach(radio => {
+    if (radio.name) {
+      answers[radio.name] = radio.value;
     }
-
-    initializeUI() {
-      document.body.appendChild(this.itemMetadata.UI);
-      document.body.appendChild(this.itemMetadata.answerUI);
+  });
+  
+  // Check for MathQuill fields (math input) - Enhanced version
+  const mqElements = document.querySelectorAll('.mathquill-editable, .mq-editable-field, .mq-root-block, .mq-math-mode, [class*="mathquill"], [class*="mq-"]');
+  mqElements.forEach((mqEl, index) => {
+    try {
+      // Try to get MathQuill instance using various methods
+      let mq = null;
+      let latex = "";
       
-      // Ensure elements are mounted before setting up event listeners
-      setTimeout(() => {
-        this.setupEventListeners();
-      }, 0);
-    }
-
-    async fetchAnswer(queryContent) {
-        try {
-            console.log(`Sending POST request with queryContent: ${queryContent}`);
-            
-            const response = await fetch('https://photowebsite-bigjaguar.us2.pitunnel.net/ask', {
-                method: 'POST',
-                cache: 'no-cache',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ q: queryContent })
-            });
-    
-            console.log(`Received response with status: ${response.status}`);
-    
-            if (!response.ok) {
-                console.error('Failed to fetch answer from API');
-                throw new Error('Failed to fetch answer from API');
-            }
-    
-            const data = await response.json();
-            console.log(`Received data: ${data}`);
-            return data.response || 'No answer available';
-        } catch (error) {
-            console.error('Error:', error);
-            return `Error: ${error.message}`;
+      // Method 1: Using MQ API if available
+      if (window.MQ) {
+        if (mqEl.id && window.MQ.MathField) {
+          try { mq = window.MQ.MathField(mqEl); } catch (e) {}
         }
-    }
-
-    async fetchArticleContent() {
-        // Select the container with the ID 'start-reading'
-        const articleContainer = document.querySelector('#start-reading');
-        let articleContent = '';
-        if (articleContainer) {
-            // Select all <p> elements within the container
-            const paragraphs = articleContainer.querySelectorAll('p');
-            // Extract and join the text content of each <p> element
-            articleContent = Array.from(paragraphs).map(p => p.textContent.trim()).join(' ');
-            console.log(`Fetched article content: ${articleContent}`);
-        } else {
-            console.error('Article content container not found');
+        if (!mq && mqEl.id) {
+          try { mq = window.MQ(mqEl); } catch (e) {}
         }
-    
-        // Select the container with the ID 'activity-component-react'
-        const questionContainer = document.querySelector('#activity-component-react');
-        let questionContent = '';
-        if (questionContainer) {
-            // Extract the text content of the container
-            questionContent = questionContainer.textContent.trim();
-            console.log(`Fetched question content: ${questionContent}`);
-        } else {
-            console.error('Question content container not found');
+        if (mq && typeof mq.latex === 'function') {
+          latex = mq.latex();
         }
-    
-        // Combine article and question content
-        const combinedContent = `${articleContent}\n\n${questionContent}`;
-        return combinedContent;
-    }
-
-    setupEventListeners() {
-        setTimeout(() => {
-            const launcher = document.getElementById('Launcher');
-            if (!launcher) return;
-            
-            const closeButton = launcher.querySelector('#closeButton');
-            const dragHandle = launcher.querySelector('.drag-handle');
-            const sendArticleButton = launcher.querySelector('#sendArticleButton');
-            const getAnswerButton = launcher.querySelector('#getAnswerButton');
-            const answerContainer = document.getElementById('answerContainer');
-            if (!answerContainer) return;
-
-            // Only start drag on handle
-            dragHandle.addEventListener('mousedown', (e) => {
-                e.preventDefault(); // Prevent text selection
-                this.isDragging = true;
-                launcher.style.position = 'fixed';
-                const rect = launcher.getBoundingClientRect();
-                launcher.style.right = null;
-                launcher.style.transform = 'none';
-                launcher.style.left = `${rect.left}px`;
-                launcher.style.top = `${rect.top}px`;
+      }
+      
+      // Method 2: Try to extract from DOM structure if MQ API failed
+      if (!latex) {
+        // Look for LaTeX in data attributes
+        latex = mqEl.getAttribute('data-latex') || 
+                mqEl.getAttribute('data-math') || 
+                mqEl.getAttribute('data-content');
                 
-                this.initialX = e.clientX;
-                this.initialY = e.clientY;
-                this.xOffset = rect.left;
-                this.yOffset = rect.top;
-            });
-
-            // Keep mousemove on document for smooth tracking
-            document.addEventListener('mousemove', (e) => {
-                if (this.isDragging) {
-                    e.preventDefault();
-                    const deltaX = e.clientX - this.initialX;
-                    const deltaY = e.clientY - this.initialY;
-                    const newX = this.xOffset + deltaX;
-                    const newY = this.yOffset + deltaY;
-                    launcher.style.left = `${newX}px`;
-                    launcher.style.top = `${newY}px`;
-                }
-            });
-
-            // Keep mouseup on document
-            document.addEventListener('mouseup', () => {
-                this.isDragging = false;
-                console.log('Drag ended');
-            });
-
-            // Cleanup drag if mouse leaves the window
-            document.addEventListener('mouseleave', () => {
-                this.isDragging = false;
-            });
-
-            document.addEventListener('mouseup', () => {
-                this.isDragging = false;
-                console.log('Drag ended');
-            });
-
-            closeButton.addEventListener('click', () => {
-                launcher.style.display = 'none';
-            });
-
-            let answerIsDragging = false;
-            let answerCurrentX;
-            let answerCurrentY;
-            let answerInitialX;
-            let answerInitialY;
-
-            const answerDragHandle = answerContainer.querySelector('.answer-drag-handle');
-            const closeAnswerButton = answerContainer.querySelector('#closeAnswerButton');
-            const answerContent = answerContainer.querySelector('#answerContent');
-
-            answerDragHandle.addEventListener('mousedown', (e) => {
-                answerIsDragging = true;
-                answerInitialX = e.clientX - answerContainer.offsetLeft;
-                answerInitialY = e.clientY - answerContainer.offsetTop;
-            });
-
-            document.addEventListener('mousemove', (e) => {
-                if (answerIsDragging) {
-                    answerCurrentX = e.clientX - answerInitialX;
-                    answerCurrentY = e.clientY - answerInitialY;
-                    answerContainer.style.left = `${answerCurrentX}px`;
-                    answerContainer.style.top = `${answerCurrentY}px`;
-                }
-            });
-
-            document.addEventListener('mouseup', () => {
-                answerIsDragging = false;
-            });
-
-            closeAnswerButton.addEventListener('click', () => {
-                answerContainer.style.display = 'none';
-            });
-
-            getAnswerButton.addEventListener('click', async () => {
-                console.log('Skip Article button clicked');
-    
-                const processQuestion = async (excludedAnswers = []) => {
-                    try {
-                        let queryContent = await this.fetchArticleContent();
-                        console.log(`Fetched article content: ${queryContent}`);
-                        
-                        queryContent += "\n\nPROVIDE ONLY A ONE-LETTER ANSWER THAT'S IT NOTHING ELSE (A, B, C, or D).";
-    
-                        if (excludedAnswers.length > 0) {
-                            queryContent += `\n\nDon't pick letter ${excludedAnswers.join(', ')}.`;
-                        }
-    
-                        const answer = await this.fetchAnswer(queryContent);
-                        console.log(`Received answer: ${answer}`);
-                        answerContent.textContent = answer;
-                        answerContainer.style.display = 'block';
-    
-                        if (answer && ['A', 'B', 'C', 'D'].includes(answer.trim()) && !excludedAnswers.includes(answer.trim())) {
-                            const options = document.querySelectorAll('[role="radio"]');
-                            const index = answer.trim().charCodeAt(0) - 'A'.charCodeAt(0);
-    
-                            if (options[index]) {
-                                options[index].click();
-                                await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for click to register
-    
-                                const submitButton = Array.from(document.querySelectorAll('button'))
-                                    .find(button => button.textContent.trim() === 'Submit');
-    
-                                if (submitButton) {
-                                    submitButton.click();
-                                    await new Promise(resolve => setTimeout(resolve, 1500)); // Wait for feedback
-    
-                                    const feedbackText = document.evaluate('//*[@id="feedbackActivityFormlive"]/p/text()[1]', document, null, XPathResult.STRING_TYPE, null).stringValue;
-                                    
-                                    if (feedbackText.includes("Oops! You answered incorrectly.")) {
-                                        excludedAnswers.push(answer.trim());
-                                        await processQuestion(excludedAnswers);
-                                    } else {
-                                        excludedAnswers = [];
-                                        const nextButton = document.getElementById('feedbackActivityFormBtn');
-                                        if (nextButton) {
-                                            nextButton.click();
-                                            await new Promise(resolve => setTimeout(resolve, 1500)); // Wait for next question
-    
-                                            const newSubmitButton = Array.from(document.querySelectorAll('button'))
-                                                .find(button => button.textContent.trim() === 'Submit');
-                                            const newQuestion = document.querySelector('[role="radio"]');
-    
-                                            if (newSubmitButton && newQuestion) {
-                                                await processQuestion();
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    } catch (error) {
-                        console.error('Error:', error);
-                    }
-                };
-
-                const submitButton = document.getElementById('before-reading-poll-submit-button');
-                if (submitButton) {
-                    const agreeOption = Array.from(document.querySelectorAll('.MuiFormControlLabel-label'))
-                        .find(label => label.textContent.trim() === 'Agree');
-                    
-                    if (agreeOption) {
-                        agreeOption.click();
-                        await new Promise(resolve => setTimeout(resolve, 500)); // Wait for click
-                        submitButton.click();
-                        
-                        await new Promise(resolve => setTimeout(resolve, 1500)); // Wait for form submission
-
-                        const iframe = document.querySelector('iframe');
-                        if (iframe) {
-                            const tinyMCE = iframe.contentDocument.querySelector('#tinymce p');
-                            if (tinyMCE) {
-                                const randomText = Math.random().toString(36).substring(2, 7);
-                                tinyMCE.textContent = randomText;
-                            }
-                        }
-
-                        const cancelButtonPath = document.evaluate('//*[@id="cancel_button"]/svg/path', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-                        if (cancelButtonPath) {
-                            cancelButtonPath.click();
-                            await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for cancel
-                        }
-
-                        const navButton = document.evaluate('//*[@id="article_container"]/span/div[2]/nav/ul/li[2]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-                        
-                        if (navButton) {
-                            navButton.click();
-                            await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for navigation
-
-                            const continueButton = document.evaluate('//*[@id="article_container"]/span/div[4]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-                            if (continueButton) {
-                                continueButton.click();
-                                await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for continue
-
-                                const closeButton = document.evaluate('//*[@id="dialogCloseButton"]/svg', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-                                if (closeButton) {
-                                    closeButton.click();
-                                    await new Promise(resolve => setTimeout(resolve, 500)); // Wait for dialog to close
-                                }
-                            }
-                        } else {
-                            const altButton = document.evaluate('//*[@id="article_container"]/span/div[3]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-                            if (altButton) {
-                                altButton.click();
-                                await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for alternative action
-                            }
-                        }
-
-                        await processQuestion();
-                    }
-                }
-            });
-        }, 0);
+        // Look for LaTeX in hidden input fields that might be associated
+        if (!latex && mqEl.id) {
+          const hiddenInput = document.querySelector(`input[type="hidden"][data-mathquill-id="${mqEl.id}"]`);
+          if (hiddenInput) {
+            latex = hiddenInput.value;
+          }
+        }
+        
+        // Extract from inner text as last resort
+        if (!latex) {
+          // Get text content but preserve math structure
+          const textContent = mqEl.textContent.trim();
+          if (textContent) {
+            latex = textContent;
+          }
+        }
+      }
+      
+      // Process and store the LaTeX if found
+      if (latex) {
+        latex = latex.replace(/−/g, "-")
+                     .replace(/[^\x00-\x7F]/g, "")
+                     .trim();
+        
+        // Clean up the LaTeX if dmKAS is available
+        const cleanedLatex = window.dmKAS ? window.dmKAS.cleanUpLatex(latex) : latex;
+        
+        // Store with ID if available, otherwise use a generated ID
+        const key = mqEl.id || `math-input-${index + 1}`;
+        answers[key] = cleanedLatex;
+      }
+    } catch (e) {
+      console.warn('Error extracting MathQuill field:', e);
     }
+  });
+  
+  // Additional check for DeltaMath-specific math input fields
+  const dmMathFields = document.querySelectorAll('.dm-math-input, [data-math-field], .math-field, .math-input');
+  dmMathFields.forEach((field, index) => {
+    if (!field.classList.contains('mathquill-editable') && !field.classList.contains('mq-editable-field')) {
+      try {
+        const latex = field.getAttribute('data-latex') || 
+                     field.getAttribute('data-math') || 
+                     field.getAttribute('data-content') || 
+                     field.textContent.trim();
+        
+        if (latex) {
+          const key = field.id || `dm-math-${index + 1}`;
+          answers[key] = latex.replace(/−/g, "-").replace(/[^\x00-\x7F]/g, "").trim();
+        }
+      } catch (e) {
+        console.warn('Error extracting DeltaMath math field:', e);
+      }
+    }
+  });
+  
+  // Check for dropdown selects
+  const selectElements = document.querySelectorAll('select');
+  selectElements.forEach(select => {
+    if (select.id) {
+      answers[select.id] = select.value;
+    } else if (select.name) {
+      answers[select.name] = select.value;
+    }
+  });
+  
+  // Check for special answer type selector (common in DeltaMath)
+  const ansTypeSelect = document.getElementById('ans-type-select');
+  if (ansTypeSelect) {
+    answers['answerType'] = ansTypeSelect.value;
+  }
+  
+  // Check for graph points if this is a graphing question
+  if (window.mypoints && Array.isArray(window.mypoints)) {
+    answers['graphPoints'] = window.mypoints;
+  }
+  
+  // Check for the submit-answer-form field
+  const submitAnswerForm = document.querySelector('[name="submit-answer-form"]');
+  if (submitAnswerForm) {
+    answers['submit-answer-form'] = submitAnswerForm.value || "";
+  }
+  
+  // Handle text area answers (for longer text responses)
+  const textareas = document.querySelectorAll('textarea');
+  textareas.forEach(textarea => {
+    if (textarea.id) {
+      answers[textarea.id] = textarea.value;
+    } else if (textarea.name) {
+      answers[textarea.name] = textarea.value;
+    }
+  });
+  
+  // Check for DeltaMath specific answer fields
+  const dmAnswerFields = document.querySelectorAll('.answer-field, .dm-answer-field, [data-answer]');
+  dmAnswerFields.forEach(field => {
+    const dataAnswer = field.getAttribute('data-answer');
+    if (dataAnswer) {
+      answers[field.id || `answer-${Object.keys(answers).length}`] = dataAnswer;
+    }
+  });
+  
+  // Check for correct answers in the page (sometimes visible in the DOM)
+  const correctAnswerElements = document.querySelectorAll('.correct-answer, [data-correct-answer]');
+  correctAnswerElements.forEach(el => {
+    const correctAnswer = el.getAttribute('data-correct-answer') || el.textContent.trim();
+    if (correctAnswer) {
+      answers[el.id || `correct-${Object.keys(answers).length}`] = correctAnswer;
+    }
+  });
+  
+  // If we didn't find any answers, try to get all form elements with IDs
+  if (Object.keys(answers).length === 0) {
+    const allElements = document.querySelectorAll('[id]');
+    allElements.forEach(el => {
+      let value = "";
+      if (el.tagName === "INPUT" || el.tagName === "SELECT" || el.tagName === "TEXTAREA") {
+        const inputEl = el;
+        value = inputEl.value;
+      } else {
+        const valueAttr = el.getAttribute('value');
+        if (valueAttr !== null) {
+          value = valueAttr;
+        } else {
+          // Try to get inner text for elements that might contain answers
+          if (el.classList.contains('answer') || el.id.includes('answer')) {
+            value = el.textContent.trim();
+          }
+        }
+      }
+      if (value) {
+        answers[el.id] = value;
+      }
+    });
+  }
+  
+  return answers;
 }
 
-// Initialize the helper
-const helper = new AssessmentHelper();
+/**
+ * Copy the extracted answers to clipboard
+ */
+function copyAnswersToClipboard(answers) {
+  const answersText = JSON.stringify(answers, null, 2);
+  navigator.clipboard.writeText(answersText)
+    .then(() => {
+      console.log('Answers copied to clipboard!');
+    })
+    .catch(err => {
+      console.error('Failed to copy answers:', err);
+    });
+}
+
+/**
+ * Display answers in a more readable format
+ */
+function displayAnswers(answers) {
+  console.log('%c DeltaMath Answers ', 'background: #4CAF50; color: white; font-size: 14px; font-weight: bold; padding: 5px;');
+  
+  if (Object.keys(answers).length === 0) {
+    console.log('%c No answers found! ', 'background: #F44336; color: white; font-size: 12px; padding: 3px;');
+    console.log('%c Try refreshing the page or make sure you\'re on a DeltaMath problem page. ', 'color: #FF9800; font-size: 12px;');
+    return;
+  }
+  
+  // Group answers by type for better organization
+  const mathInputs = {};
+  const otherInputs = {};
+  
+  Object.entries(answers).forEach(([key, value]) => {
+    if (key.includes('math') || key.includes('mq-')) {
+      mathInputs[key] = value;
+    } else {
+      otherInputs[key] = value;
+    }
+  });
+  
+  // Display math inputs first (these are usually the most important)
+  if (Object.keys(mathInputs).length > 0) {
+    console.log('%c Math Inputs ', 'background: #2196F3; color: white; font-size: 12px; padding: 3px;');
+    Object.entries(mathInputs).forEach(([key, value]) => {
+      console.log(
+        `%c ${key}: %c ${value}`, 
+        'color: #2196F3; font-weight: bold;', 
+        'color: #000; font-weight: normal;'
+      );
+    });
+  }
+  
+  // Display other inputs
+  if (Object.keys(otherInputs).length > 0) {
+    console.log('%c Other Inputs ', 'background: #FF9800; color: white; font-size: 12px; padding: 3px;');
+    Object.entries(otherInputs).forEach(([key, value]) => {
+      console.log(
+        `%c ${key}: %c ${value}`, 
+        'color: #FF9800; font-weight: bold;', 
+        'color: #000; font-weight: normal;'
+      );
+    });
+  }
+  
+  console.log('%c End of answers ', 'background: #4CAF50; color: white; font-size: 12px; padding: 3px;');
+}
+
+// Execute and log the results
+const extractedAnswers = extractDeltaMathAnswers();
+displayAnswers(extractedAnswers);
+copyAnswersToClipboard(extractedAnswers);
+
+// Return the answers for use in the console
+extractedAnswers;
