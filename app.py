@@ -14,7 +14,7 @@ import base64
 
 app = Flask(__name__)
 CORS(app, resources={
-    r"/ask": {"origins": "https://portal.achieve3000.com"},
+    r"/ask": {"origins": ["https://portal.achieve3000.com", "https://www.deltamath.com"]},
     r"/set_article": {"origins": "https://portal.achieve3000.com"},
     r"/data": {"origins": "https://portal.achieve3000.com"}
 })

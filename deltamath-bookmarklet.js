@@ -97,6 +97,50 @@ javascript:(function() {
     // Create an object to store all answers
     const answers = {};
     
+    // Extract problem content/question
+    const problemPrompt = document.getElementById('problemPrompt');
+    if (problemPrompt) {
+      // Get both text content and LaTeX content
+      answers['problemQuestion'] = {
+        text: problemPrompt.textContent.trim(),
+        html: problemPrompt.innerHTML
+      };
+      
+      // Try to extract LaTeX equations if present
+      const katexElements = problemPrompt.querySelectorAll('.katex, .katex-mathml, [class*="katex"]');
+      if (katexElements.length > 0) {
+        const equations = [];
+        katexElements.forEach((katex, index) => {
+          // Try to get LaTeX from annotation
+          const annotation = katex.querySelector('annotation[encoding="application/x-tex"]');
+          if (annotation) {
+            equations.push(annotation.textContent.trim());
+          } else {
+            // Fallback to getting the rendered text
+            equations.push(katex.textContent.trim());
+          }
+        });
+        answers['problemEquations'] = equations;
+      }
+    } else {
+      // Try alternative selectors if problemPrompt is not found
+      const alternativeSelectors = [
+        '.problem-statement', '.problem-text', '.problem-content',
+        '[role="group"]', '.dm-problem-prompt', '.question-text'
+      ];
+      
+      for (const selector of alternativeSelectors) {
+        const element = document.querySelector(selector);
+        if (element) {
+          answers['problemQuestion'] = {
+            text: element.textContent.trim(),
+            html: element.innerHTML
+          };
+          break;
+        }
+      }
+    }
+    
     // Check for text answers in standard input fields
     const textInputs = document.querySelectorAll('input[type="text"]');
     textInputs.forEach(input => {
@@ -292,6 +336,30 @@ javascript:(function() {
       return;
     }
     
+    // Display problem question if available
+    if (answers.problemQuestion) {
+      const questionSection = document.createElement('div');
+      questionSection.style.cssText = `
+        margin-bottom: 15px;
+        padding: 10px;
+        background: #f5f5f5;
+        border-radius: 4px;
+        border-left: 4px solid #2196F3;
+      `;
+      
+      const questionTitle = document.createElement('h4');
+      questionTitle.textContent = 'Problem:';
+      questionTitle.style.margin = '0 0 5px 0';
+      questionSection.appendChild(questionTitle);
+      
+      const questionContent = document.createElement('div');
+      // Use innerHTML to preserve formatting and math expressions
+      questionContent.innerHTML = answers.problemQuestion.html || answers.problemQuestion.text;
+      questionSection.appendChild(questionContent);
+      
+      content.appendChild(questionSection);
+    }
+    
     // Create a table for the answers
     const table = document.createElement('table');
     table.style.width = '100%';
@@ -299,6 +367,9 @@ javascript:(function() {
     
     // Add each answer to the table
     Object.entries(answers).forEach(([key, value]) => {
+      // Skip problemQuestion as we've already displayed it
+      if (key === 'problemQuestion' || key === 'problemEquations') return;
+      
       const row = document.createElement('tr');
       
       const keyCell = document.createElement('td');
@@ -309,7 +380,12 @@ javascript:(function() {
       keyCell.style.color = '#2196F3';
       
       const valueCell = document.createElement('td');
-      valueCell.textContent = value;
+      // Handle different value types
+      if (typeof value === 'object' && value !== null) {
+        valueCell.textContent = JSON.stringify(value);
+      } else {
+        valueCell.textContent = value;
+      }
       valueCell.style.padding = '5px';
       valueCell.style.borderBottom = '1px solid #eee';
       
