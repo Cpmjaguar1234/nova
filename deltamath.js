@@ -1,1258 +1,823 @@
 /**
- * DeltaMath Answer Extractor with AI Integration
- * 
- * This script extracts answers from DeltaMath problems and sends them to an AI endpoint for processing.
- * It displays both extracted answers and AI-generated answers in the console and in a floating UI.
- * It can be run in the browser console when on a DeltaMath problem page.
- * 
- * Features:
- * - Extracts answers from various DeltaMath input fields
- * - Converts LaTeX mathematical expressions to normal text format
- * - Sends problems to AI for processing
- * - Displays answers in a floating UI
+ * DeltaMath UI Helper (KaTeX Version)
+ *
+ * This script creates a floating UI for the DeltaMath Answer Extractor.
+ * It displays extracted answers, rendered using KaTeX, in a draggable panel.
+ * It dynamically loads KaTeX if not already present.
  */
 
-function extractDeltaMathAnswers() {
+// --- KaTeX Loader ---
+// Function to load KaTeX if it's not already loaded
+function loadKaTeXScript() {
+  if (typeof window.katex === 'undefined') {
+    console.log('KaTeX not found. Loading from CDN...');
+
+    // Load KaTeX CSS
+    const cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css';
+    document.head.appendChild(cssLink);
+
+    // Load KaTeX JS
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js';
+    script.async = true;
+    script.onload = () => {
+      console.log('KaTeX script loaded.');
+      // KaTeX is generally ready once the script is loaded, but rendering is done via its API
+    };
+    script.onerror = () => {
+      console.error('Failed to load KaTeX script.');
+      // Optionally, inform the user in the UI later if math fails to render
+    };
+    document.head.appendChild(script);
+
+     // Load KaTeX auto-render extension (optional, but helpful for rendering delimiters automatically)
+     // This script needs to load AFTER the main katex.js
+     const autoRenderScript = document.createElement('script');
+     autoRenderScript.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js';
+     autoRenderScript.async = true;
+     autoRenderScript.onload = () => {
+         console.log('KaTeX auto-render loaded.');
+     };
+     autoRenderScript.onerror = () => {
+         console.warn('Failed to load KaTeX auto-render script. Automatic rendering of delimiters might not work.');
+     };
+     script.parentNode.insertBefore(autoRenderScript, script.nextSibling); // Insert after katex.js
+
+  } else {
+    console.log('KaTeX already loaded.');
+  }
+}
+
+// --- Data Extraction ---
+// Function to extract answers from DeltaMath problems
+// REMOVED: convertLatexToReadableText function is gone.
+window.extractDeltaMathAnswers = function extractDeltaMathAnswers() {
   // Create an object to store all answers
   const answers = {};
-  
+
   // Try to access DeltaMath's internal data structures first
   try {
     // Method 1: Try to access the problem data directly from DeltaMath's global objects
     if (window.dmProblem && window.dmProblem.problem) {
-      answers['dmProblem'] = JSON.stringify(window.dmProblem.problem);
-      
-      // Extract correct answer if available
+      answers['problemData'] = window.dmProblem.problem;
+
+      // Extract correct answer if available (might be LaTeX or plain text)
       if (window.dmProblem.problem.correctAnswer) {
         answers['correctAnswer'] = window.dmProblem.problem.correctAnswer;
       }
-      
+
       // Extract problem ID and other metadata
       if (window.dmProblem.problem.id) {
         answers['problemId'] = window.dmProblem.problem.id;
       }
     }
-    
-    // Method 2: Try to access Angular scope if DeltaMath is using Angular
-    const angularElement = document.querySelector('[ng-app], [data-ng-app], [ng-controller], [data-ng-controller]');
-    if (angularElement && window.angular) {
-      try {
-        const angularScope = window.angular.element(angularElement).scope();
-        if (angularScope && angularScope.$root) {
-          // Look for problem data in Angular scope
-          if (angularScope.$root.problem) {
-            answers['angularProblem'] = JSON.stringify(angularScope.$root.problem);
-          }
-          // Look for answer data in Angular scope
-          if (angularScope.$root.answer || angularScope.$root.correctAnswer) {
-            answers['angularAnswer'] = JSON.stringify(angularScope.$root.answer || angularScope.$root.correctAnswer);
-          }
-        }
-      } catch (e) {
-        console.warn('Error accessing Angular scope:', e);
-      }
-    }
-    
-    // Method 3: Try to access React components if DeltaMath is using React
-    if (window.__REACT_DEVTOOLS_GLOBAL_HOOK__ && window.__REACT_DEVTOOLS_GLOBAL_HOOK__.renderers) {
-      try {
-        // This is a common technique to access React internals
-        const reactInstances = [];
-        const hook = window.__REACT_DEVTOOLS_GLOBAL_HOOK__;
-        const renderers = Array.from(hook.renderers.values());
-        
-        renderers.forEach(renderer => {
-          const fiber = renderer.getFiberRoots().next().value;
-          if (fiber) {
-            const root = fiber.current;
-            if (root && root.memoizedState && root.memoizedState.element) {
-              reactInstances.push(root.memoizedState.element);
-            }
-          }
-        });
-        
-        if (reactInstances.length > 0) {
-          answers['reactData'] = 'React components found, but data extraction requires specific component knowledge';
-        }
-      } catch (e) {
-        console.warn('Error accessing React components:', e);
-      }
-    }
   } catch (e) {
     console.warn('Error accessing DeltaMath internal data:', e);
   }
-  
+
   // Check for text answers in standard input fields
   const textInputs = document.querySelectorAll('input[type="text"]');
-  textInputs.forEach(input => {
-    if (input.id) {
-      answers[input.id] = input.value.replace(/−/g, "-");
-    } else if (input.name) {
-      answers[input.name] = input.value.replace(/−/g, "-");
-    }
-  });
-  
+  if (textInputs.length > 0) {
+    answers['textInputs'] = {};
+    textInputs.forEach((input, index) => {
+      const key = input.id || input.name || `textInput${index}`;
+      // Keep original value, replace unicode minus if needed
+      answers['textInputs'][key] = input.value.replace(/−/g, "-");
+    });
+  }
+
   // Check for multiple choice answers
   const radioInputs = document.querySelectorAll('input[type="radio"]:checked');
-  radioInputs.forEach(radio => {
-    if (radio.name) {
-      answers[radio.name] = radio.value;
-    }
-  });
-  
-  // Check for MathQuill fields (math input) - Enhanced version
-  const mqElements = document.querySelectorAll('.mathquill-editable, .mq-editable-field, .mq-root-block, .mq-math-mode, [class*="mathquill"], [class*="mq-"]');
-  mqElements.forEach((mqEl, index) => {
-    try {
-      // Try to get MathQuill instance using various methods
-      let mq = null;
-      let latex = "";
-      
-      // Method 1: Using MQ API if available
-      if (window.MQ) {
-        if (mqEl.id && window.MQ.MathField) {
-          try { mq = window.MQ.MathField(mqEl); } catch (e) {}
-        }
-        if (!mq && mqEl.id) {
-          try { mq = window.MQ(mqEl); } catch (e) {}
-        }
-        if (mq && typeof mq.latex === 'function') {
-          latex = mq.latex();
-        }
-      }
-      
-      // Method 2: Try to extract from DOM structure if MQ API failed
-      if (!latex) {
-        // Look for LaTeX in data attributes
-        latex = mqEl.getAttribute('data-latex') || 
-                mqEl.getAttribute('data-math') || 
-                mqEl.getAttribute('data-content');
-                
-        // Look for LaTeX in hidden input fields that might be associated
-        if (!latex && mqEl.id) {
-          const hiddenInput = document.querySelector(`input[type="hidden"][data-mathquill-id="${mqEl.id}"]`);
-          if (hiddenInput) {
-            latex = hiddenInput.value;
-          }
-        }
-        
-        // Extract from inner text as last resort
-        if (!latex) {
-          // Get text content but preserve math structure
-          const textContent = mqEl.textContent.trim();
-          if (textContent) {
-            latex = textContent;
-          }
-        }
-      }
-      
-      // Process and store the LaTeX if found
-      if (latex) {
-        latex = latex.replace(/−/g, "-")
-                     .replace(/[^\x00-\x7F]/g, "")
-                     .trim();
-        
-        // Clean up the LaTeX if dmKAS is available
-        const cleanedLatex = window.dmKAS ? window.dmKAS.cleanUpLatex(latex) : latex;
-        
-        // Store with ID if available, otherwise use a generated ID
-        const key = mqEl.id || `math-input-${index + 1}`;
-        answers[key] = cleanedLatex;
-        
-        // Also store the human-readable version
-        answers[`${key}-readable`] = convertLatexToReadableText(cleanedLatex);
-      }
-    } catch (e) {
-      console.warn('Error extracting MathQuill field:', e);
-    }
-  });
-  
-  // Additional check for DeltaMath-specific math input fields
-  const dmMathFields = document.querySelectorAll('.dm-math-input, [data-math-field], .math-field, .math-input');
-  dmMathFields.forEach((field, index) => {
-    if (!field.classList.contains('mathquill-editable') && !field.classList.contains('mq-editable-field')) {
+  if (radioInputs.length > 0) {
+    answers['multipleChoice'] = {};
+    radioInputs.forEach((radio, index) => {
+      const key = radio.name || `option${index}`;
+      answers['multipleChoice'][key] = radio.value; // Usually plain text value
+    });
+  }
+
+  // Check for KaTeX display elements (specifically looking for the katex-display class)
+  const katexDisplayElements = document.querySelectorAll('.katex-display');
+  if (katexDisplayElements.length > 0) {
+    answers['katexDisplays'] = {};
+    katexDisplayElements.forEach((katexEl, index) => {
       try {
-        const latex = field.getAttribute('data-latex') || 
-                     field.getAttribute('data-math') || 
-                     field.getAttribute('data-content') || 
-                     field.textContent.trim();
-        
-        if (latex) {
-          const key = field.id || `dm-math-${index + 1}`;
-          answers[key] = latex.replace(/−/g, "-").replace(/[^\x00-\x7F]/g, "").trim();
-        }
-      } catch (e) {
-        console.warn('Error extracting DeltaMath math field:', e);
-      }
-    }
-  });
-  
-  // Check for dropdown selects
-  const selectElements = document.querySelectorAll('select');
-  selectElements.forEach(select => {
-    if (select.id) {
-      answers[select.id] = select.value;
-    } else if (select.name) {
-      answers[select.name] = select.value;
-    }
-  });
-  
-  // Check for special answer type selector (common in DeltaMath)
-  const ansTypeSelect = document.getElementById('ans-type-select');
-  if (ansTypeSelect) {
-    answers['answerType'] = ansTypeSelect.value;
-  }
-  
-  // Check for graph points if this is a graphing question
-  if (window.mypoints && Array.isArray(window.mypoints)) {
-    answers['graphPoints'] = window.mypoints;
-  }
-  
-  // Check for the submit-answer-form field
-  const submitAnswerForm = document.querySelector('[name="submit-answer-form"]');
-  if (submitAnswerForm) {
-    answers['submit-answer-form'] = submitAnswerForm.value || "";
-  }
-  
-  // Handle text area answers (for longer text responses)
-  const textareas = document.querySelectorAll('textarea');
-  textareas.forEach(textarea => {
-    if (textarea.id) {
-      answers[textarea.id] = textarea.value;
-    } else if (textarea.name) {
-      answers[textarea.name] = textarea.value;
-    }
-  });
-  
-  // Check for DeltaMath specific answer fields
-  const dmAnswerFields = document.querySelectorAll('.answer-field, .dm-answer-field, [data-answer]');
-  dmAnswerFields.forEach(field => {
-    const dataAnswer = field.getAttribute('data-answer');
-    if (dataAnswer) {
-      answers[field.id || `answer-${Object.keys(answers).length}`] = dataAnswer;
-    }
-  });
-  
-  // Check for correct answers in the page (sometimes visible in the DOM)
-  const correctAnswerElements = document.querySelectorAll('.correct-answer, [data-correct-answer]');
-  correctAnswerElements.forEach(el => {
-    const correctAnswer = el.getAttribute('data-correct-answer') || el.textContent.trim();
-    if (correctAnswer) {
-      answers[el.id || `correct-${Object.keys(answers).length}`] = correctAnswer;
-    }
-  });
-  
-  // Try to access DeltaMath's answer validation functions
-  try {
-    // Look for answer validation functions in the global scope
-    if (typeof window.checkAnswer === 'function') {
-      answers['hasCheckAnswerFunction'] = true;
-    }
-    
-    // Look for answer-related objects in the global scope
-    const globalVars = ['answerData', 'correctAnswer', 'problemData', 'dmAnswer', 'dmProblem'];
-    globalVars.forEach(varName => {
-      if (window[varName] !== undefined) {
-        try {
-          answers[`global_${varName}`] = JSON.stringify(window[varName]);
-        } catch (e) {
-          answers[`global_${varName}`] = 'Found but could not stringify';
-        }
-      }
-    });
-    
-    // Look for DeltaMath-specific objects
-    if (window.dm && typeof window.dm === 'object') {
-      if (window.dm.problem) {
-        answers['dm_problem'] = JSON.stringify(window.dm.problem);
-      }
-      if (window.dm.answer) {
-        answers['dm_answer'] = JSON.stringify(window.dm.answer);
-      }
-    }
-  } catch (e) {
-    console.warn('Error accessing DeltaMath validation functions:', e);
-  }
-  
-  // Try to find answer containers by class patterns
-  const answerContainers = document.querySelectorAll(
-    '.answer-container, .answer-box, .answer-field, ' +
-    '.problem-answer, .dm-answer, .dm-problem-answer, ' +
-    '[class*="answer"], [class*="solution"], [id*="answer"], [id*="solution"]'
-  );
-  
-  answerContainers.forEach((container, index) => {
-    // Extract text content
-    const textContent = container.textContent.trim();
-    if (textContent) {
-      const key = container.id || `answer-container-${index}`;
-      answers[key] = textContent;
-      
-      // Also check for any hidden inputs within this container
-      const hiddenInputs = container.querySelectorAll('input[type="hidden"]');
-      hiddenInputs.forEach((input, inputIndex) => {
-        if (input.value) {
-          answers[`${key}-hidden-${inputIndex}`] = input.value;
-        }
-      });
-    }
-  });
-  
-  // If we didn't find any answers, try to get all form elements with IDs
-  if (Object.keys(answers).length === 0) {
-    const allElements = document.querySelectorAll('[id]');
-    allElements.forEach(el => {
-      let value = "";
-      if (el.tagName === "INPUT" || el.tagName === "SELECT" || el.tagName === "TEXTAREA") {
-        const inputEl = el;
-        value = inputEl.value;
-      } else {
-        const valueAttr = el.getAttribute('value');
-        if (valueAttr !== null) {
-          value = valueAttr;
-        } else {
-          // Try to get inner text for elements that might contain answers
-          if (el.classList.contains('answer') || (el.id && el.id.includes('answer'))) {
-            value = el.textContent.trim();
-          }
-        }
-      }
-      if (value) {
-        answers[el.id] = value;
-      }
-    });
-  }
-  
-  // Try to extract from DeltaMath's network requests
-  try {
-    // Create a proxy for the fetch function to capture answer-related requests
-    if (!window._originalFetch && !window._fetchProxyInstalled) {
-      window._originalFetch = window.fetch;
-      window._fetchProxyInstalled = true;
-      window._capturedRequests = [];
-      
-      window.fetch = function(url, options) {
-        // Store the request for later analysis
-        window._capturedRequests.push({url, options});
-        
-        // Call the original fetch
-        return window._originalFetch.apply(this, arguments);
-      };
-      
-      console.log('Installed fetch proxy to capture DeltaMath requests');
-      answers['fetchProxyInstalled'] = true;
-    }
-    
-    // Check if we've captured any requests
-    if (window._capturedRequests && window._capturedRequests.length > 0) {
-      answers['capturedRequests'] = `Captured ${window._capturedRequests.length} network requests`;
-      
-      // Look for answer-related requests
-      const answerRequests = window._capturedRequests.filter(req => 
-        req.url.includes('answer') || req.url.includes('submit') || req.url.includes('check')
-      );
-      
-      if (answerRequests.length > 0) {
-        answers['answerRequests'] = `Found ${answerRequests.length} answer-related requests`;
-      }
-    }
-  } catch (e) {
-    console.warn('Error setting up network request capture:', e);
-  }
-  
-  return answers;
-}
+        // Try to extract LaTeX content
+        let latex = "";
 
-/**
- * Convert LaTeX mathematical expressions to normal readable text
- * 
- * @param {string} latex - The LaTeX string to convert
- * @returns {string} - Human-readable text representation
- */
-function convertLatexToReadableText(latex) {
-  if (!latex) return '';
-  
-  let readable = latex;
-  
-  // Replace common LaTeX math operators and symbols
-  const replacements = [
-    // Fractions
-    { pattern: /\\frac{([^{}]+)}{([^{}]+)}/g, replacement: "$1/$2" },
-    { pattern: /\\frac{([^{}]+)}{([^{}]*)\{([^{}]+)\}([^{}]*)}/g, replacement: "$1/($2$3$4)" },
-    { pattern: /\\frac{([^{}]*)\{([^{}]+)\}([^{}]*)}{([^{}]+)}/g, replacement: "($1$2$3)/$4" },
-    
-    // Powers and exponents
-    { pattern: /\^\{([^{}]+)\}/g, replacement: "^$1" },
-    { pattern: /\^(\d)/g, replacement: "^$1" },
-    { pattern: /([a-zA-Z0-9])\^(\d|\{[^{}]+\})/g, replacement: "$1^$2" },
-    
-    // Roots
-    { pattern: /\\sqrt{([^{}]+)}/g, replacement: "sqrt($1)" },
-    { pattern: /\\sqrt\[([^\]]+)\]{([^{}]+)}/g, replacement: "root($1, $2)" },
-    
-    // Subscripts
-    { pattern: /\_\{([^{}]+)\}/g, replacement: "_$1" },
-    { pattern: /\_([a-zA-Z0-9])/g, replacement: "_$1" },
-    
-    // Greek letters
-    { pattern: /\\alpha/g, replacement: "alpha" },
-    { pattern: /\\beta/g, replacement: "beta" },
-    { pattern: /\\gamma/g, replacement: "gamma" },
-    { pattern: /\\delta/g, replacement: "delta" },
-    { pattern: /\\epsilon/g, replacement: "epsilon" },
-    { pattern: /\\varepsilon/g, replacement: "epsilon" },
-    { pattern: /\\zeta/g, replacement: "zeta" },
-    { pattern: /\\eta/g, replacement: "eta" },
-    { pattern: /\\theta/g, replacement: "theta" },
-    { pattern: /\\vartheta/g, replacement: "theta" },
-    { pattern: /\\iota/g, replacement: "iota" },
-    { pattern: /\\kappa/g, replacement: "kappa" },
-    { pattern: /\\lambda/g, replacement: "lambda" },
-    { pattern: /\\mu/g, replacement: "mu" },
-    { pattern: /\\nu/g, replacement: "nu" },
-    { pattern: /\\xi/g, replacement: "xi" },
-    { pattern: /\\pi/g, replacement: "pi" },
-    { pattern: /\\rho/g, replacement: "rho" },
-    { pattern: /\\sigma/g, replacement: "sigma" },
-    { pattern: /\\tau/g, replacement: "tau" },
-    { pattern: /\\upsilon/g, replacement: "upsilon" },
-    { pattern: /\\phi/g, replacement: "phi" },
-    { pattern: /\\varphi/g, replacement: "phi" },
-    { pattern: /\\chi/g, replacement: "chi" },
-    { pattern: /\\psi/g, replacement: "psi" },
-    { pattern: /\\omega/g, replacement: "omega" },
-    { pattern: /\\Gamma/g, replacement: "Gamma" },
-    { pattern: /\\Delta/g, replacement: "Delta" },
-    { pattern: /\\Theta/g, replacement: "Theta" },
-    { pattern: /\\Lambda/g, replacement: "Lambda" },
-    { pattern: /\\Xi/g, replacement: "Xi" },
-    { pattern: /\\Pi/g, replacement: "Pi" },
-    { pattern: /\\Sigma/g, replacement: "Sigma" },
-    { pattern: /\\Upsilon/g, replacement: "Upsilon" },
-    { pattern: /\\Phi/g, replacement: "Phi" },
-    { pattern: /\\Psi/g, replacement: "Psi" },
-    { pattern: /\\Omega/g, replacement: "Omega" },
-    
-    // Trigonometric functions
-    { pattern: /\\sin/g, replacement: "sin" },
-    { pattern: /\\cos/g, replacement: "cos" },
-    { pattern: /\\tan/g, replacement: "tan" },
-    { pattern: /\\csc/g, replacement: "csc" },
-    { pattern: /\\sec/g, replacement: "sec" },
-    { pattern: /\\cot/g, replacement: "cot" },
-    { pattern: /\\arcsin/g, replacement: "arcsin" },
-    { pattern: /\\arccos/g, replacement: "arccos" },
-    { pattern: /\\arctan/g, replacement: "arctan" },
-    
-    // Logarithmic functions
-    { pattern: /\\log/g, replacement: "log" },
-    { pattern: /\\ln/g, replacement: "ln" },
-    { pattern: /\\log_([a-zA-Z0-9])/g, replacement: "log_$1" },
-    { pattern: /\\log_{([^{}]+)}/g, replacement: "log_$1" },
-    
-    // Limits
-    { pattern: /\\lim_{([^{}]+)}/g, replacement: "lim as $1" },
-    
-    // Parentheses and brackets
-    { pattern: /\\left\(/g, replacement: "(" },
-    { pattern: /\\right\)/g, replacement: ")" },
-    { pattern: /\\left\[/g, replacement: "[" },
-    { pattern: /\\right\]/g, replacement: "]" },
-    { pattern: /\\left\{/g, replacement: "{" },
-    { pattern: /\\right\}/g, replacement: "}" },
-    { pattern: /\\left\|/g, replacement: "|" },
-    { pattern: /\\right\|/g, replacement: "|" },
-    
-    // Common operations
-    { pattern: /\\times/g, replacement: "×" },
-    { pattern: /\\div/g, replacement: "÷" },
-    { pattern: /\\cdot/g, replacement: "·" },
-    { pattern: /\\pm/g, replacement: "±" },
-    { pattern: /\\mp/g, replacement: "∓" },
-    
-    // Comparison operators
-    { pattern: /\\lt/g, replacement: "<" },
-    { pattern: /\\gt/g, replacement: ">" },
-    { pattern: /\\le/g, replacement: "≤" },
-    { pattern: /\\leq/g, replacement: "≤" },
-    { pattern: /\\ge/g, replacement: "≥" },
-    { pattern: /\\geq/g, replacement: "≥" },
-    { pattern: /\\ne/g, replacement: "≠" },
-    { pattern: /\\neq/g, replacement: "≠" },
-    { pattern: /\\approx/g, replacement: "≈" },
-    
-    // Set operations
-    { pattern: /\\in/g, replacement: "∈" },
-    { pattern: /\\notin/g, replacement: "∉" },
-    { pattern: /\\subset/g, replacement: "⊂" },
-    { pattern: /\\subseteq/g, replacement: "⊆" },
-    { pattern: /\\supset/g, replacement: "⊃" },
-    { pattern: /\\supseteq/g, replacement: "⊇" },
-    { pattern: /\\cup/g, replacement: "∪" },
-    { pattern: /\\cap/g, replacement: "∩" },
-    { pattern: /\\setminus/g, replacement: "\\" },
-    
-    // Miscellaneous symbols
-    { pattern: /\\infty/g, replacement: "∞" },
-    { pattern: /\\nabla/g, replacement: "∇" },
-    { pattern: /\\partial/g, replacement: "∂" },
-    { pattern: /\\forall/g, replacement: "∀" },
-    { pattern: /\\exists/g, replacement: "∃" },
-    { pattern: /\\nexists/g, replacement: "∄" },
-    { pattern: /\\therefore/g, replacement: "∴" },
-    { pattern: /\\because/g, replacement: "∵" },
-    
-    // Clean up any remaining LaTeX commands
-    { pattern: /\\[a-zA-Z]+/g, replacement: "" },
-    { pattern: /\{|\}/g, replacement: "" }
-  ];
-  
-  // Apply all replacements
-  replacements.forEach(({ pattern, replacement }) => {
-    readable = readable.replace(pattern, replacement);
-  });
-  
-  // Handle nested fractions and other complex structures through multiple passes
-  for (let i = 0; i < 3; i++) {
-    replacements.forEach(({ pattern, replacement }) => {
-      readable = readable.replace(pattern, replacement);
-    });
-  }
-  
-  // Clean up any remaining LaTeX artifacts
-  readable = readable.replace(/\\\\|\\;|\\:|\\,|\\!/g, " ");
-  readable = readable.replace(/\s+/g, " ").trim();
-  
-  return readable;
-}
-
-/**
- * Copy the extracted answers to clipboard
- */
-function copyAnswersToClipboard(answers) {
-  const answersText = JSON.stringify(answers, null, 2);
-  navigator.clipboard.writeText(answersText)
-    .then(() => {
-      console.log('Answers copied to clipboard!');
-    })
-    .catch(err => {
-      console.error('Failed to copy answers:', err);
-    });
-}
-
-/**
- * Display answers in a more readable format
- */
-function displayAnswers(answers) {
-  console.log('%c DeltaMath Answers ', 'background: #4CAF50; color: white; font-size: 14px; font-weight: bold; padding: 5px;');
-  
-  if (Object.keys(answers).length === 0) {
-    console.log('%c No answers found! ', 'background: #F44336; color: white; font-size: 12px; padding: 3px;');
-    console.log('%c Try refreshing the page or make sure you\'re on a DeltaMath problem page. ', 'color: #FF9800; font-size: 12px;');
-    return;
-  }
-  
-  // Check if we have any readable versions of LaTeX answers
-  const readableAnswers = {};
-  Object.keys(answers).forEach(key => {
-    if (key.endsWith('-readable') && answers[key]) {
-      readableAnswers[key.replace('-readable', '')] = answers[key];
-    }
-  });
-  
-  // Group answers by type for better organization
-  const mathInputs = {};
-  const internalData = {};
-  const otherInputs = {};
-  
-  Object.entries(answers).forEach(([key, value]) => {
-    if (key.includes('math') || key.includes('mq-')) {
-      mathInputs[key] = value;
-    } else if (key.includes('dm') || key.includes('problem') || key.includes('answer') || 
-               key.includes('global_') || key.includes('angular') || key.includes('react')) {
-      internalData[key] = value;
-    } else {
-      otherInputs[key] = value;
-    }
-  });
-  
-  // Display internal data first (these are most likely to contain the actual answers)
-  if (Object.keys(internalData).length > 0) {
-    console.log('%c DeltaMath Internal Data ', 'background: #673AB7; color: white; font-size: 12px; padding: 3px;');
-    Object.entries(internalData).forEach(([key, value]) => {
-      // Try to parse JSON values for better display
-      let displayValue = value;
-      if (typeof value === 'string' && (value.startsWith('{') || value.startsWith('['))) {
-        try {
-          const parsed = JSON.parse(value);
-          // If it's an object with a correctAnswer property, highlight that
-          if (parsed && parsed.correctAnswer) {
-            const correctAnswer = parsed.correctAnswer;
-            const readableAnswer = typeof correctAnswer === 'string' ? 
-              convertLatexToReadableText(correctAnswer) : JSON.stringify(correctAnswer);
-            
-            console.log(
-              `%c ${key} → CORRECT ANSWER: %c ${JSON.stringify(parsed.correctAnswer)}`, 
-              'color: #E91E63; font-weight: bold;', 
-              'color: #000; font-weight: bold; background: #FFEB3B; padding: 2px;'
-            );
-            
-            if (readableAnswer && readableAnswer !== JSON.stringify(parsed.correctAnswer)) {
-              console.log(
-                `%c ${key} → READABLE ANSWER: %c ${readableAnswer}`, 
-                'color: #E91E63; font-weight: bold;', 
-                'color: #000; font-weight: bold; background: #CDDC39; padding: 2px;'
-              );
-            }
-            return;
-          }
-          displayValue = JSON.stringify(parsed, null, 2);
-        } catch (e) {
-          // Keep original value if parsing fails
-        }
-      }
-      
-      console.log(
-        `%c ${key}: %c ${displayValue}`, 
-        'color: #673AB7; font-weight: bold;', 
-        'color: #000; font-weight: normal;'
-      );
-    });
-  }
-  
-  // Display math inputs next
-  if (Object.keys(mathInputs).length > 0) {
-    console.log('%c Math Inputs ', 'background: #2196F3; color: white; font-size: 12px; padding: 3px;');
-    Object.entries(mathInputs).forEach(([key, value]) => {
-      console.log(
-        `%c ${key}: %c ${value}`, 
-        'color: #2196F3; font-weight: bold;', 
-        'color: #000; font-weight: normal;'
-      );
-      
-      // Display readable version if available
-      if (readableAnswers[key]) {
-        console.log(
-          `%c ${key} (readable): %c ${readableAnswers[key]}`, 
-          'color: #2196F3; font-style: italic;', 
-          'color: #000; font-weight: bold;'
-        );
-      } else if (typeof value === 'string') {
-        // Try to convert on the fly
-        const readable = convertLatexToReadableText(value);
-        if (readable && readable !== value) {
-          console.log(
-            `%c ${key} (readable): %c ${readable}`, 
-            'color: #2196F3; font-style: italic;', 
-            'color: #000; font-weight: bold;'
-          );
-        }
-      }
-    });
-  }
-  
-  // Display other inputs
-  if (Object.keys(otherInputs).length > 0) {
-    console.log('%c Other Inputs ', 'background: #FF9800; color: white; font-size: 12px; padding: 3px;');
-    Object.entries(otherInputs).forEach(([key, value]) => {
-      console.log(
-        `%c ${key}: %c ${value}`, 
-        'color: #FF9800; font-weight: bold;', 
-        'color: #000; font-weight: normal;'
-      );
-    });
-  }
-  
-  console.log('%c End of answers ', 'background: #4CAF50; color: white; font-size: 12px; padding: 3px;');
-  console.log('%c Tip: If you don\'t see answers, try interacting with the problem first or click a few form elements. ', 'color: #607D8B; font-style: italic;');
-}
-
-/**
- * Extract problem content from the DeltaMath page
- */
-/**
- * Extract the problem prompt HTML and screen reader text
- * @param {string} htmlString - The HTML string to parse
- * @returns {Object} Object containing the problem prompt HTML and screen reader text
- */
-function extractProblemPromptHTMLAndSROnly(htmlString) {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(htmlString, 'text/html');
-  const problemPromptElement = doc.querySelector('#problemPrompt');
-  const srOnlySpan = doc.querySelector('.sr-only');
-
-  let problemPromptHTML = null;
-  let srOnlyText = null;
-
-  if (problemPromptElement) {
-    problemPromptHTML = problemPromptElement.outerHTML;
-  }
-
-  if (srOnlySpan) {
-    srOnlyText = srOnlySpan.textContent.trim();
-  }
-
-  return { problemPromptHTML: problemPromptHTML, srOnly: srOnlyText };
-}
-
-async function extractProblemContent() {
-  let problemContent = '';
-  let mathExpressionContent = '';
-  let rawHTML = '';
-  
-  // First, try to find the problem title or question
-  const questionTitle = document.querySelector('.question-title, .problem-title, h1, h2, h3');
-  if (questionTitle) {
-    problemContent = questionTitle.textContent.trim();
-    console.log(`Extracted question title: ${problemContent}`);
-  }
-  
-  // Try to find the problem prompt with ID 'problemPrompt'
-  const problemPrompt = document.getElementById('problemPrompt');
-  if (problemPrompt) {
-    // Extract both text content and raw HTML
-    problemContent += '\n' + problemPrompt.textContent.trim();
-    rawHTML = problemPrompt.outerHTML;
-    console.log(`Extracted problem prompt with ID 'problemPrompt': ${problemPrompt.textContent.trim()}`);
-    
-    // Extract screen reader text if available
-    const srOnlyElement = problemPrompt.querySelector('.sr-only');
-    if (srOnlyElement) {
-      const srOnlyText = srOnlyElement.textContent.trim();
-      console.log(`Extracted screen reader text: ${srOnlyText}`);
-      problemContent += '\nScreen reader text: ' + srOnlyText;
-    }
-  } else {
-    // If problemPrompt ID is not found, fall back to other selectors
-    const problemStatement = document.querySelector('.problem-statement, .problem-text, .problem-container, .question-page, [class*="problem"]');
-    
-    if (problemStatement) {
-      problemContent += '\n' + problemStatement.textContent.trim();
-      rawHTML = problemStatement.outerHTML;
-      console.log(`Extracted problem statement: ${problemStatement.textContent.trim()}`);
-    } else {
-      console.warn('Could not find problem statement element');
-      // Try to get any visible text that might contain the problem
-      const visibleText = Array.from(document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, div'))
-        .filter(el => el.offsetWidth > 0 && el.offsetHeight > 0 && el.textContent.trim().length > 0)
-        .map(el => el.textContent.trim())
-        .join('\n');
-      problemContent += '\n' + visibleText;
-      
-      // Also try to get the HTML of these elements
-      const visibleElements = Array.from(document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, div'))
-        .filter(el => el.offsetWidth > 0 && el.offsetHeight > 0 && el.textContent.trim().length > 0);
-      if (visibleElements.length > 0) {
-        rawHTML = visibleElements.map(el => el.outerHTML).join('');
-      }
-    }
-  }
-  
-  // Get any images that might be part of the problem
-  const problemImages = document.querySelectorAll('.problem-statement img, .problem-text img, .problem-container img');
-  if (problemImages.length > 0) {
-    problemContent += '\n[Problem contains images that cannot be processed]';
-  }
-  
-  // Extract math expressions from the page with improved selectors
-  const mathExpressions = document.querySelectorAll('.math, .latex, .katex, .MathJax, .katex-display, .katex-html, .mord, .katex-mathml, .jax, .line-equation, [class*="equation"]');
-  if (mathExpressions.length > 0) {
-    console.log('Found math expressions on the page');
-    
-    // Try to extract LaTeX from KaTeX elements
-    mathExpressions.forEach(expr => {
-      try {
-        // Try different methods to extract the math content
-        let mathText = '';
-        
-        // Method 1: Check for annotation elements that might contain LaTeX
-        const annotation = expr.querySelector('annotation[encoding="application/x-tex"]');
+        // Look for annotation element which contains the original LaTeX
+        const annotation = katexEl.querySelector('annotation[encoding="application/x-tex"]');
         if (annotation) {
-          mathText = annotation.textContent.trim();
+          latex = annotation.textContent.trim();
+        } else {
+          // Fallback: try to get from the rendered content - less reliable for pure LaTeX
+          // This might capture the visually rendered text, not the source LaTeX
+          // Consider if a data-attribute or other source is available if annotation fails
+          console.warn('KaTeX annotation not found, attempting to extract from textContent for:', katexEl);
+          latex = katexEl.textContent.trim(); // Less ideal, might not be pure LaTeX
         }
-        
-        // Method 2: Check for data attributes that might contain LaTeX
-        if (!mathText) {
-          mathText = expr.getAttribute('data-latex') || 
-                    expr.getAttribute('data-math') || 
-                    expr.getAttribute('data-content');
-        }
-        
-        // Method 3: For MathJax, try to get the original TeX
-        if (!mathText && expr.classList.contains('MathJax')) {
-          const script = expr.nextElementSibling;
-          if (script && script.tagName === 'SCRIPT' && script.type === 'math/tex') {
-            mathText = script.textContent.trim();
-          }
-        }
-        
-        // If we found math content, add it to our collection
-        if (mathText) {
-          mathExpressionContent += '\n' + mathText;
+
+        if (latex) {
+          const key = `katexDisplay${index}`;
+          // Store ONLY the LaTeX source
+          answers['katexDisplays'][key] = {
+            latex: latex
+          };
         }
       } catch (e) {
-        console.warn('Error extracting math expression:', e);
+        console.warn('Error extracting KaTeX display:', e);
       }
     });
   }
-  
-  // Try to extract the full equation from the page
-  try {
-    // First, try to find the equation container that has both left and right sides
-    const equationContainer = document.querySelector('.resize-katex, .line-equation, .jax, [class*="equation-container"]');
-    
-    if (equationContainer) {
-      console.log('Found equation container, attempting to extract full equation');
-      
-      // Look for left and right equation parts directly in the container
-      const leftEq = equationContainer.querySelector('.left-equation, [data-index^="eq-left"]');
-      const rightEq = equationContainer.querySelector('.right-equation, [data-index^="eq-right"]');
-      
-      if (leftEq && rightEq) {
-        // Extract text from both sides and combine
-        const leftText = leftEq.textContent.trim();
-        const rightText = rightEq.textContent.trim();
-        
-        if (leftText && rightText) {
-          const fullEquation = `${leftText} ${rightText}`;
-          mathExpressionContent += '\n' + fullEquation;
-          console.log(`Extracted full equation from container: ${fullEquation}`);
-          
-          // Also try to extract LaTeX from annotations if available
-          const leftAnnotation = leftEq.querySelector('annotation[encoding="application/x-tex"]');
-          const rightAnnotation = rightEq.querySelector('annotation[encoding="application/x-tex"]');
-          
-          if (leftAnnotation && rightAnnotation) {
-            const leftLatex = leftAnnotation.textContent.trim();
-            const rightLatex = rightAnnotation.textContent.trim();
-            mathExpressionContent += `\nLaTeX: ${leftLatex} ${rightLatex}`;
-          }
+
+  // Check for MathQuill fields (math input)
+  const mqElements = document.querySelectorAll('.mathquill-editable, .mq-editable-field, .mq-root-block, .mq-math-mode');
+  if (mqElements.length > 0) {
+    answers['mathInputs'] = {};
+    mqElements.forEach((mqEl, index) => {
+      try {
+        let latex = "";
+
+        // --- Improved MathQuill Extraction Logic ---
+        // Prioritize data attributes which are often set directly
+        if (mqEl.dataset && mqEl.dataset.latex) {
+            latex = mqEl.dataset.latex;
+        } else if (mqEl.dataset && mqEl.dataset.math) {
+             latex = mqEl.dataset.math;
+        } else if (mqEl.dataset && mqEl.dataset.content) {
+             latex = mqEl.dataset.content;
         }
-      }
-    }
-    
-    // As a fallback, look for individual equation elements
-    const equationElements = document.querySelectorAll('.logic-row, .eq-type, [data-linetype="eq"], .left-equation, .right-equation');
-    
-    if (equationElements.length > 0) {
-      console.log('Found equation elements, attempting to extract full equation');
-      
-      // Try to construct the full equation
-      let fullEquation = '';
-      equationElements.forEach(eqEl => {
-        const leftEq = eqEl.querySelector('.left-equation, [data-index^="eq-left"]');
-        const rightEq = eqEl.querySelector('.right-equation, [data-index^="eq-right"]');
-        
-        if (leftEq && rightEq) {
-          // Extract text from both sides and combine
-          const leftText = leftEq.textContent.trim();
-          const rightText = rightEq.textContent.trim();
-          
-          if (leftText && rightText) {
-            fullEquation += `\n${leftText} ${rightText}`;
-          }
-        } else {
-          // If we can't find left/right parts, just use the whole element
-          fullEquation += `\n${eqEl.textContent.trim()}`;
+        // Check for jQuery and its data method safely
+        else if (typeof $ !== 'undefined' && $(mqEl).data('mathquill-latex')) {
+            latex = $(mqEl).data('mathquill-latex');
         }
-      });
-      
-      if (fullEquation) {
-        mathExpressionContent += '\n' + fullEquation;
-        console.log(`Extracted full equation: ${fullEquation}`);
-      }
-    }
-  } catch (e) {
-    console.warn('Error extracting full equation:', e);
-  }
-  
-  // Add math expressions to the problem content if found
-  if (mathExpressionContent) {
-    problemContent += '\nMath Expressions:' + mathExpressionContent;
-  }
-  
-  // For the specific case in the user's example, add the equation directly
-  // This ensures we have the correct equation even if extraction fails
-  if (problemContent.includes('Solve for all values of x by factoring')) {
-    problemContent += '\nx^2 + x - 22 = x + 3';
-  }
-  
-  // Extract equation from the specific DOM structure in the user's example
-  try {
-    const resizeKatex = document.querySelector('.resize-katex.jax.line-equation');
-    if (resizeKatex) {
-      const leftEquation = resizeKatex.querySelector('.left-equation');
-      const rightEquation = resizeKatex.querySelector('.right-equation');
-      
-      if (leftEquation && rightEquation) {
-        const leftText = leftEquation.textContent.trim();
-        const rightText = rightEquation.textContent.trim();
-        
-        if (leftText && rightText) {
-          const fullEquation = `${leftText} ${rightText}`;
-          console.log(`Extracted equation from resize-katex: ${fullEquation}`);
-          mathExpressionContent += '\nExtracted equation: ' + fullEquation;
-          
-          // Add this to the problem content as well
-          problemContent += '\nComplete equation: ' + fullEquation;
+        // Safely attempt to use the MathQuill API if available and getInterface exists
+        else if (window.MathQuill && typeof window.MathQuill.getInterface === 'function') {
+            const MQ = window.MathQuill.getInterface(2);
+            if (MQ && typeof MQ.data === 'function') {
+                const mathField = MQ.data(mqEl);
+                if (mathField && typeof mathField.latex === 'function') {
+                    latex = mathField.latex();
+                }
+            }
         }
-      }
-    }
-  } catch (e) {
-    console.warn('Error extracting from resize-katex:', e);
-  }
-  
-  // Look for specific equation patterns in the DOM structure that DeltaMath uses
-  try {
-    // Find all elements that might contain equation parts
-    const equationParts = document.querySelectorAll('.katex-html, .katex-display, [class*="equation"]');
-    
-    // Extract text content from these elements to find equation patterns
-    equationParts.forEach(part => {
-      const text = part.textContent.trim();
-      
-      // Look for patterns that indicate this is an equation
-      if (text.includes('=') || 
-          (text.match(/x\^2|x\^\{2\}/) && text.match(/[-+]\s*\d+/))) {
-        console.log(`Found potential equation part: ${text}`);
-        mathExpressionContent += '\n' + text;
+        // Fallback to text content as a last resort
+        else {
+            latex = mqEl.textContent.trim();
+             if (latex) {
+                 console.warn('MathQuill data attributes and API failed, falling back to textContent for:', mqEl);
+             }
+        }
+        // --- End of Improved Logic ---
+
+
+        if (latex) {
+          latex = latex.replace(/−/g, "-").trim(); // Clean up unicode minus
+          const key = mqEl.id || `mathInput${index}`;
+          // Store ONLY the LaTeX source
+          answers['mathInputs'][key] = {
+            latex: latex
+          };
+        }
+      } catch (e) {
+        console.warn('Error extracting MathQuill field:', e);
+        // Log the element to help diagnose issues
+        console.warn('Element causing error:', mqEl);
       }
     });
-  } catch (e) {
-    console.warn('Error extracting equation patterns:', e);
   }
-  
-  // Return both the processed problem content and raw HTML
-  return { problemContent, rawHTML };
-}
 
-/**
- * Send the problem content to the AI endpoint and get the answer
- */
-async function fetchAnswerFromAI(problemData, extractedAnswers) {
-  try {
-    // Extract problem content and raw HTML from the problem data
-    const { problemContent, rawHTML } = problemData;
-    
-    console.log(`Sending problem to AI endpoint: ${problemContent}`);
-    
-    // Convert extracted answers to a string for context
-    const answersContext = JSON.stringify(extractedAnswers);
-    
-    // Extract problem prompt HTML and screen reader text if available
-    let problemPromptHTML = null;
-    let srOnlyText = null;
-    
-    if (rawHTML) {
-      const extractedData = extractProblemPromptHTMLAndSROnly(rawHTML);
-      problemPromptHTML = extractedData.problemPromptHTML;
-      srOnlyText = extractedData.srOnly;
-      
-      console.log('Extracted problem prompt HTML:', problemPromptHTML ? 'Found' : 'Not found');
-      console.log('Extracted screen reader text:', srOnlyText || 'Not found');
-    } else {
-      // If no raw HTML is available, try to get it from the current document
-      const currentProblemPrompt = document.getElementById('problemPrompt');
-      if (currentProblemPrompt) {
-        problemPromptHTML = currentProblemPrompt.outerHTML;
-        const srOnly = currentProblemPrompt.querySelector('.sr-only');
-        if (srOnly) {
-          srOnlyText = srOnly.textContent.trim();
-        }
-        console.log('Extracted problem prompt HTML from current document:', problemPromptHTML ? 'Found' : 'Not found');
-      }
-    }
-    
-    // Determine if this is a factoring problem
-    const isFactoringProblem = problemContent.toLowerCase().includes('factor') || 
-                               problemContent.toLowerCase().includes('solve') || 
-                               /x\^2|x\^\{2\}/.test(problemContent);
-    
-    // Create a specialized prompt for factoring problems
-    let prompt;
-    if (isFactoringProblem) {
-      // Extract the equation from the problem content or use the default
-      const equationMatch = problemContent.match(/[^\n]*=[^\n]*/g);
-      const equation = equationMatch ? equationMatch[0] : 'x^2 + x - 22 = x + 3';
-      
-      prompt = `DeltaMath Problem: Solve for all values of x by factoring.\n\nEquation: ${equation}\n\nRaw HTML: ${problemPromptHTML || 'Not available'}\n\nScreen reader text: ${srOnlyText || 'Not available'}\n\nExtracted data: ${answersContext}\n\nPlease solve this problem by factoring and provide ONLY the final answer(s) for x. Return only the numerical value(s) in the most concise format possible.`;
-    } else {
-      // Default prompt for other types of problems
-      prompt = `DeltaMath Problem: ${problemContent}\n\nRaw HTML: ${problemPromptHTML || 'Not available'}\n\nScreen reader text: ${srOnlyText || 'Not available'}\n\nExtracted data: ${answersContext}\n\nPlease solve this problem and provide ONLY the final answer without any explanation or steps. Do not include any working, reasoning, or additional text. Return only the answer in the most concise format possible.`;
-    }
-    
-    console.log(`Sending detailed prompt to AI: ${prompt}`);
-    
-    const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/ask', {
-      method: 'POST',
-      cache: 'no-cache',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        q: prompt,
-        article: null
-      })
-    });
+  // Get problem statement
+  const problemStatement = document.querySelector('.problem-statement, .problem-text, .problem-description, #problemPrompt');
+  if (problemStatement) {
+    // Extract raw innerHTML to preserve potential embedded math elements (KaTeX/MathJax)
+    const rawHTML = problemStatement.innerHTML;
+    const textContent = problemStatement.textContent.trim(); // Also get plain text
 
-    console.log(`Received response with status: ${response.status}`);
-
-    if (!response.ok) {
-      console.error('Failed to fetch answer from AI endpoint');
-      throw new Error('Failed to fetch answer from AI endpoint');
-    }
-
-    const data = await response.json();
-    console.log(`Received data from AI:`, data);
-    
-    // Process the AI response based on problem type
-    if (isFactoringProblem) {
-      return processFactoringAnswer(data.response);
-    }
-    
-    return data.response || 'No answer available from AI';
-  } catch (error) {
-    console.error('Error fetching from AI endpoint:', error);
-    return `Error: ${error.message}`;
+    answers['problemStatement'] = {
+      html: rawHTML, // Store HTML to render math correctly
+      text: textContent // Store plain text as fallback/reference
+    };
   }
-}
 
-/**
- * Process the AI response for factoring problems to extract only the numerical values
- * 
- * @param {string} aiResponse - The raw response from the AI
- * @returns {string} - Cleaned and formatted answer
- */
-function processFactoringAnswer(aiResponse) {
-  if (!aiResponse) return 'No answer available';
-  
-  // Remove any explanations or extra text
-  let cleanedResponse = aiResponse;
-  
-  // Extract numerical values (including negative numbers and fractions)
-  const numberPattern = /-?\d+(\/\d+)?|-?\d*\.\d+/g;
-  const numbers = aiResponse.match(numberPattern);
-  
-  if (numbers && numbers.length > 0) {
-    // Format the answer as x = value or x = value1, value2
-    if (numbers.length === 1) {
-      cleanedResponse = `x = ${numbers[0]}`;
-    } else {
-      cleanedResponse = `x = ${numbers.join(', ')}`;
-    }
-  }
-  
-  // For the specific problem x^2 + x - 22 = x + 3
-  if (aiResponse.includes('-7') || aiResponse.includes('7')) {
-    cleanedResponse = 'x = -7, 4';
-  }
-  
-  return cleanedResponse;
-}
-
-/**
- * Create and display the UI for showing answers
- */
-function createAnswerUI(aiAnswer) {
-  // Create container for the UI
-  const container = document.createElement('div');
-  container.id = 'deltamath-answer-ui';
-  container.style.cssText = 'font-family: "Nunito", sans-serif; position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px;';
-  
-  // Create the answer display box
-  const answerBox = document.createElement('div');
-  answerBox.style.cssText = 'background: #1c1e2b; color: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); min-width: 250px; max-width: 350px; position: relative;';
-  
-  // Add toggle for LaTeX/readable format
-  const formatToggle = document.createElement('div');
-  formatToggle.style.cssText = 'display: flex; justify-content: flex-end; margin-bottom: 10px;';
-  
-  const toggleLabel = document.createElement('label');
-  toggleLabel.style.cssText = 'font-size: 12px; display: flex; align-items: center; cursor: pointer;';
-  toggleLabel.innerHTML = 'Show readable format';
-  
-  const toggleCheckbox = document.createElement('input');
-  toggleCheckbox.type = 'checkbox';
-  toggleCheckbox.checked = true;
-  toggleCheckbox.style.cssText = 'margin-left: 5px;';
-  toggleCheckbox.addEventListener('change', function() {
-    document.querySelectorAll('.latex-format, .readable-format').forEach(el => {
-      el.style.display = 'none';
-    });
-    
-    if (this.checked) {
-      document.querySelectorAll('.readable-format').forEach(el => {
-        el.style.display = 'block';
-      });
-    } else {
-      document.querySelectorAll('.latex-format').forEach(el => {
-        el.style.display = 'block';
-      });
-    }
-  });
-  
-  toggleLabel.appendChild(toggleCheckbox);
-  formatToggle.appendChild(toggleLabel);
-  answerBox.appendChild(formatToggle);
-  
-  // Add a title
-  const title = document.createElement('div');
-  title.textContent = 'DeltaMath AI Answer';
-  title.style.cssText = 'font-weight: bold; font-size: 16px; margin-bottom: 10px; color: #E91E63;';
-  answerBox.appendChild(title);
-  
-  // Add the answer content
-  const content = document.createElement('div');
-  content.style.cssText = 'margin-bottom: 15px;';
-  
-  // Process AI answer for LaTeX conversion
-  const aiAnswerLatex = document.createElement('div');
-  aiAnswerLatex.className = 'latex-format';
-  aiAnswerLatex.textContent = aiAnswer;
-  aiAnswerLatex.style.cssText = 'display: none; font-size: 14px; line-height: 1.4; word-break: break-word;';
-  content.appendChild(aiAnswerLatex);
-  
-  const aiAnswerReadable = document.createElement('div');
-  aiAnswerReadable.className = 'readable-format';
-  aiAnswerReadable.textContent = convertLatexToReadableText(aiAnswer);
-  aiAnswerReadable.style.cssText = 'display: block; font-size: 14px; line-height: 1.4; word-break: break-word;';
-  content.appendChild(aiAnswerReadable);
-  
-  answerBox.appendChild(content);
-  
-  // Add extracted answers section
-  const extractedAnswersTitle = document.createElement('div');
-  extractedAnswersTitle.textContent = 'Extracted Answers';
-  extractedAnswersTitle.style.cssText = 'font-weight: bold; font-size: 14px; margin-top: 15px; margin-bottom: 8px;';
-  
-  const extractedAnswersContent = document.createElement('div');
-  extractedAnswersContent.style.cssText = 'font-size: 13px; line-height: 1.4;';
-  
-  // Display extracted answers
-  const answers = extractDeltaMathAnswers();
-  Object.entries(answers).forEach(([key, value]) => {
-    // Skip readable versions as they'll be paired with their original
-    if (key.endsWith('-readable')) return;
-    
-    // Skip internal data and long JSON strings
-    if (key.includes('Problem') || key.includes('global_') || 
-        (typeof value === 'string' && value.startsWith('{') && value.length > 50)) {
-      return;
-    }
-    
-    // Skip specific UI elements that should be hidden
-    if (key === 'math-input-1' || key === 'math-input-3' || 
-        key === 'answer-block' || key === 'submit-answer-form' || 
-        key === 'deltamath-answer-ui') {
-      return;
-    }
-    
-    // Skip specific UI elements that should be hidden
-    if (key === 'math-input-1' || key === 'math-input-3' || 
-        key === 'answer-block' || key === 'submit-answer-form' || 
-        key === 'deltamath-answer-ui') {
-      return;
-    }
-    
-    const answerItem = document.createElement('div');
-    answerItem.style.cssText = 'margin-bottom: 8px;';
-    
-    const answerLabel = document.createElement('div');
-    answerLabel.textContent = key + ':';
-    answerLabel.style.cssText = 'font-weight: bold; font-size: 12px; color: #8e9dcc;';
-    answerItem.appendChild(answerLabel);
-    
-    // LaTeX format
-    const latexFormat = document.createElement('div');
-    latexFormat.className = 'latex-format';
-    latexFormat.textContent = value;
-    latexFormat.style.cssText = 'display: none; word-break: break-word;';
-    answerItem.appendChild(latexFormat);
-    
-    // Readable format
-    const readableFormat = document.createElement('div');
-    readableFormat.className = 'readable-format';
-    
-    // Get readable version if available, otherwise convert on the fly
-    const readableKey = `${key}-readable`;
-    const readableValue = answers[readableKey] || 
-                         (typeof value === 'string' ? convertLatexToReadableText(value) : value);
-    
-    readableFormat.textContent = readableValue;
-    readableFormat.style.cssText = 'display: block; word-break: break-word;';
-    answerItem.appendChild(readableFormat);
-    
-    extractedAnswersContent.appendChild(answerItem);
-  });
-  
-  answerBox.appendChild(extractedAnswersTitle);
-  answerBox.appendChild(extractedAnswersContent);
-  
-  // Add a close button
-  const closeButton = document.createElement('button');
-  closeButton.textContent = '×';
-  closeButton.style.cssText = 'position: absolute; top: 5px; right: 5px; background: none; border: none; color: white; font-size: 18px; cursor: pointer; padding: 0 5px;';
-  closeButton.onclick = function() {
-    document.body.removeChild(container);
+  // Format the answers for better structure
+  const formattedAnswers = {
+    problem: {},
+    answers: {}
   };
-  
-  // Add a drag handle
-  const dragHandle = document.createElement('div');
-  dragHandle.style.cssText = 'position: absolute; top: 0; left: 0; right: 0; height: 20px; cursor: move; background: transparent;';
-  
-  // Add dragging functionality
-  let isDragging = false;
-  let offsetX, offsetY;
-  
-  dragHandle.addEventListener('mousedown', function(e) {
-    isDragging = true;
-    offsetX = e.clientX - answerBox.getBoundingClientRect().left;
-    offsetY = e.clientY - answerBox.getBoundingClientRect().top;
-  });
-  
-  document.addEventListener('mousemove', function(e) {
-    if (isDragging) {
-      answerBox.style.position = 'absolute';
-      answerBox.style.left = (e.clientX - offsetX) + 'px';
-      answerBox.style.top = (e.clientY - offsetY) + 'px';
-    }
-  });
-  
-  document.addEventListener('mouseup', function() {
-    isDragging = false;
-  });
-  
-  // Assemble the UI
-  answerBox.appendChild(title);
-  answerBox.appendChild(content);
-  answerBox.appendChild(closeButton);
-  answerBox.appendChild(dragHandle);
-  container.appendChild(answerBox);
-  
-  // Add to the page
-  document.body.appendChild(container);
-  
-  // Also log to console
-  console.log('%c AI Answer ', 'background: #E91E63; color: white; font-size: 14px; font-weight: bold; padding: 5px;');
-  console.log(`%c ${aiAnswer}`, 'color: #E91E63; font-size: 14px;');
+
+  // Add problem statement
+  if (answers.problemStatement) {
+    formattedAnswers.problem = answers.problemStatement; // Keep both html and text
+  } else {
+    formattedAnswers.problem = {
+      html: "Problem statement not found",
+      text: "Problem statement not found"
+    };
+  }
+
+  // Add detected answers to the formatted object
+  // Store the raw value, which might be LaTeX or plain text
+  if (answers.correctAnswer) {
+    formattedAnswers.answers.correct = answers.correctAnswer;
+  }
+
+  if (answers.textInputs && Object.keys(answers.textInputs).length > 0) {
+    formattedAnswers.answers.text = answers.textInputs;
+  }
+
+  if (answers.multipleChoice && Object.keys(answers.multipleChoice).length > 0) {
+    formattedAnswers.answers.multipleChoice = answers.multipleChoice;
+  }
+
+  // Store only the LaTeX from math inputs
+  if (answers.mathInputs && Object.keys(answers.mathInputs).length > 0) {
+    formattedAnswers.answers.math = {};
+      for (const [key, value] of Object.entries(answers.mathInputs)) {
+          if (value.latex) {
+            formattedAnswers.answers.math[key] = value.latex; // Store raw LaTeX string
+          }
+      }
+  }
+
+  // Store only the LaTeX from KaTeX displays
+  if (answers.katexDisplays && Object.keys(answers.katexDisplays).length > 0) {
+      formattedAnswers.answers.katexDisplays = {};
+      for (const [key, value] of Object.entries(answers.katexDisplays)) {
+          if (value.latex) {
+            formattedAnswers.answers.katexDisplays[key] = value.latex; // Store raw LaTeX string
+          }
+          }
+  }
+
+  return formattedAnswers;
 }
 
-// Execute and log the results
-const extractedAnswers = extractDeltaMathAnswers();
-displayAnswers(extractedAnswers);
-copyAnswersToClipboard(extractedAnswers);
 
-// Add a message about the network capture feature
-console.log('%c Network Capture Enabled ', 'background: #9C27B0; color: white; font-size: 12px; padding: 3px;');
-console.log('The script has installed a network request capture. Interact with the problem and run the script again to see captured requests.');
+// --- UI Class ---
+// Global variable to track UI instance
+window.deltaUIInstance = null;
 
-// Extract problem content and get AI answer
-(async function() {
-  const problemContent = await extractProblemContent();
-  const aiAnswer = await fetchAnswerFromAI(problemContent, extractedAnswers);
-  createAnswerUI(aiAnswer);
-})();
+class DeltaMathUI {
+    constructor() {
+        // Check if an instance already exists and remove it
+        if (window.deltaUIInstance) {
+            console.log('Existing DeltaMathUI instance found. Removing it before creating a new one.');
+            this.cleanupExistingUI();
+        }
 
-// Return the answers for use in the console
-extractedAnswers;
+        this.isDragging = false;
+        this.currentX = 0;
+        this.currentY = 0;
+        this.initialX = 0;
+        this.initialY = 0;
+        this.xOffset = 0;
+        this.yOffset = 0;
+        this.cachedArticle = null; // To store formatted problem for API
+
+        // Store reference to the extractDeltaMathAnswers function
+        this.extractAnswers = window.extractDeltaMathAnswers || extractDeltaMathAnswers;
+
+        // Register this instance as the current one
+        window.deltaUIInstance = this;
+
+        // Load KaTeX script and CSS asynchronously
+        loadKaTeXScript();
+
+        // Initialize UI after the DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.init());
+        } else {
+            this.init();
+        }
+    }
+
+    init() {
+        this.itemMetadata = {
+            UI: this.createUI(),
+            answerUI: this.createAnswerUI()
+        };
+        this.initializeUI();
+    }
+
+    createUI() {
+        const container = document.createElement("div");
+        const launcher = document.createElement("div");
+        launcher.id = "Launcher";
+        launcher.className = "Launcher";
+        // Using more manageable CSS via classes would be better, but sticking to original inline style approach
+        launcher.style.cssText = "outline: none;min-height: 160px;transform: translateX(0px) translateY(0);opacity: 1;font-family: 'Nunito', sans-serif;width: 180px;height: 240px;background: #1c1e2b;position: fixed;border-radius: 12px;display: flex;flex-direction: column;align-items: center;color: white;font-size: 16px;top: 50%;right: 20px;transform: translateY(-50%);z-index: 99999;padding: 16px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: hidden;white-space: nowrap;";
+
+        const dragHandle = document.createElement("div");
+        dragHandle.className = "drag-handle";
+        dragHandle.style.cssText = "width: 100%;height: 24px;cursor: move;background: rgba(255,255,255,0.05);position: absolute;top: 0;left: 0;border-top-left-radius: 12px;border-top-right-radius: 12px;display: flex;justify-content: center;align-items: center;";
+
+        const dragIndicator = document.createElement("div");
+        dragIndicator.style.cssText = "width: 40px;height: 4px;background: rgba(255,255,255,0.3);border-radius: 2px;margin-top: 4px;";
+        dragHandle.appendChild(dragIndicator);
+
+        const img = document.createElement("img");
+        // Placeholder image - replace with a real one or remove if not needed
+        img.src = "https://diverse-observations-vbulletin-occasional.trycloudflare.com/static/images/example.png";
+        img.alt = "DeltaMath Helper";
+        img.style.cssText = "width: 90px;height: 90px;margin-top: 32px;border-radius: 50%;";
+        // Add error handler for image
+          img.onerror = () => { img.src = 'https://placehold.co/90x90/1c1e2b/ffffff?text=Error'; };
+
+
+        const closeButton = document.createElement("button");
+        closeButton.id = "closeButton";
+        closeButton.style.cssText = "position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;";
+        closeButton.textContent = "×";
+        closeButton.setAttribute('aria-label', 'Close Launcher');
+
+
+        const combinedButton = document.createElement("button");
+        combinedButton.id = "combinedButton";
+        combinedButton.style.cssText = "background: #2c2e3b;border: none;color: white;padding: 12px 20px;border-radius: 8px;cursor: pointer;margin-top: 24px;width: 120px;height: 44px;font-size: 16px;transition: background 0.2s ease;";
+        combinedButton.textContent = "Get Answer";
+
+
+        const version = document.createElement("div");
+        version.style.cssText = "position: absolute;bottom: 8px;right: 8px;font-size: 12px;opacity: 0.5;";
+        version.textContent = "1.1-KTX"; // Indicate KaTeX version
+
+        launcher.appendChild(dragHandle);
+        launcher.appendChild(img);
+        launcher.appendChild(closeButton);
+        launcher.appendChild(combinedButton);
+        launcher.appendChild(version);
+        container.appendChild(launcher);
+
+        return container;
+    }
+
+    createAnswerUI() {
+        const container = document.createElement("div");
+        const answerContainer = document.createElement("div");
+        answerContainer.id = "answerContainer";
+        answerContainer.className = "answerLauncher";
+        answerContainer.style.cssText = "outline: none;min-height: 60px;transform: translateX(0px) translateY(0);opacity: 1;font-family: 'Nunito', sans-serif;width: 250px;height: auto;max-height: 300px;background: #1c1e2b;position: fixed;border-radius: 8px;display: flex;justify-content: center;align-items: center;color: white;font-size: 16px;top: 50%;right: 220px;transform: translateY(-50%);z-index: 99998;padding: 8px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: auto;white-space: normal;display: none;"; // Initially hidden
+
+        const answerDragHandle = document.createElement("div");
+        answerDragHandle.className = "answer-drag-handle";
+        answerDragHandle.style.cssText = "width: 100%;height: 24px;cursor: move;background: rgba(255,255,255,0.05);position: absolute;top: 0;left: 0;border-top-left-radius: 8px;border-top-right-radius: 8px;display: flex;justify-content: center;align-items: center;";
+
+        const answerDragIndicator = document.createElement("div");
+        answerDragIndicator.style.cssText = "width: 30px;height: 3px;background: rgba(255,255,255,0.3);border-radius: 2px;margin-top: 4px;";
+        answerDragHandle.appendChild(answerDragIndicator);
+
+        const closeAnswerButton = document.createElement("button");
+        closeAnswerButton.id = "closeAnswerButton";
+        closeAnswerButton.style.cssText = "position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;";
+        closeAnswerButton.textContent = "×";
+        closeAnswerButton.setAttribute('aria-label', 'Close Answer Panel');
+
+
+        const answerContent = document.createElement("div");
+        answerContent.id = "answerContent";
+        // Padding top adjusted for drag handle and buttons
+        answerContent.style.cssText = "padding: 36px 12px 12px 12px; margin: 0;word-wrap: break-word;font-size: 14px;display: block; width: 100%;height: 100%;text-align: left;overflow-y: auto;user-select: text;-webkit-user-select: text;-moz-user-select: text;-ms-user-select: text;cursor: text;";
+
+        // Add copy button (using modern clipboard API if available)
+        const copyButton = document.createElement("button");
+        copyButton.id = "copyAnswerButton";
+        copyButton.style.cssText = "position: absolute;top: 8px;right: 36px;background: none;border: none;color: white;font-size: 14px;cursor: pointer;padding: 2px 8px;";
+        copyButton.textContent = "Copy";
+        copyButton.setAttribute('aria-label', 'Copy Answer');
+
+        copyButton.addEventListener('click', () => {
+            const contentElement = document.getElementById('answerContent');
+            if (contentElement) {
+                const textToCopy = contentElement.innerText || contentElement.textContent; // Get text content
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        copyButton.textContent = "Copied!";
+                        setTimeout(() => { copyButton.textContent = "Copy"; }, 1500);
+                    }).catch(err => {
+                        console.error('Failed to copy using navigator.clipboard:', err);
+                        // Fallback to execCommand if necessary
+                        this.fallbackCopyTextToClipboard(textToCopy, copyButton);
+                    });
+                } else {
+                    // Fallback for older browsers
+                    this.fallbackCopyTextToClipboard(textToCopy, copyButton);
+                }
+            }
+        });
+
+        answerContainer.appendChild(answerDragHandle);
+        answerContainer.appendChild(closeAnswerButton);
+        answerContainer.appendChild(copyButton); // Add copy button
+        answerContainer.appendChild(answerContent);
+        container.appendChild(answerContainer);
+
+        return container;
+    }
+
+    // Fallback copy method using execCommand
+    fallbackCopyTextToClipboard(text, buttonElement) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        // Avoid scrolling to bottom
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                buttonElement.textContent = "Copied!";
+                setTimeout(() => { buttonElement.textContent = "Copy"; }, 1500);
+            } else {
+                console.error('Fallback copy: execCommand failed');
+                buttonElement.textContent = "Failed";
+                setTimeout(() => { buttonElement.textContent = "Copy"; }, 1500);
+            }
+        } catch (err) {
+            console.error('Fallback copy: Error', err);
+            buttonElement.textContent = "Error";
+            setTimeout(() => { buttonElement.textContent = "Copy"; }, 1500);
+        }
+        document.body.removeChild(textArea);
+    }
+
+
+    cleanupExistingUI() {
+        // Remove existing UI elements if they exist
+        const existingLauncher = document.getElementById('Launcher');
+        if (existingLauncher) {
+            existingLauncher.remove(); // More modern way to remove element
+        }
+
+        const existingAnswerContainer = document.getElementById('answerContainer');
+        if (existingAnswerContainer) {
+            existingAnswerContainer.remove();
+        }
+        // Note: Event listeners on document/body added by drag handlers might persist
+        // if not explicitly removed. A more robust cleanup would involve tracking
+        // and removing those specific listeners.
+    }
+
+    initializeUI() {
+        document.body.appendChild(this.itemMetadata.UI);
+        document.body.appendChild(this.itemMetadata.answerUI);
+
+        // Ensure elements are mounted before setting up event listeners
+        // Use requestAnimationFrame for better timing after DOM updates
+        requestAnimationFrame(() => {
+            if (this.itemMetadata.UI && this.itemMetadata.answerUI) {
+                this.setupEventListeners();
+            } else {
+                console.error("UI elements not found after appending.");
+            }
+        });
+    }
+
+    async fetchAnswer(queryContent) {
+        // Display loading state in answer panel
+        const answerContent = document.getElementById('answerContent');
+        const answerContainer = document.getElementById('answerContainer');
+        if (answerContent && answerContainer) {
+            answerContent.innerHTML = '<div>Loading answer...</div>';
+            answerContainer.style.display = 'flex'; // Show panel while loading
+        }
+
+        try {
+            console.log(`Sending POST request...`); // Avoid logging potentially sensitive queryContent directly
+
+            const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/ask', {
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    // The prompt now asks for MathJax format
+                    q: `${queryContent} Please format the answer ONLY using MathJax delimiters like $$...$$ or $...$ for mathematical expressions.`,
+                    article: this.cachedArticle || null // Send formatted problem context
+                })
+            });
+
+            console.log(`Received response with status: ${response.status}`);
+
+            if (!response.ok) {
+                const errorText = await response.text(); // Get error details if possible
+                console.error('API Error:', response.status, errorText);
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log(`Received data.`); // Avoid logging potentially large/sensitive data
+            return data.response || 'No answer provided by API.';
+
+        } catch (error) {
+            console.error('Error fetching answer:', error);
+            // Display error in the answer panel
+            if (answerContent) {
+                answerContent.innerHTML = `<div style="color: #ffcccc;">Error: ${error.message}</div>`;
+            }
+            return null; // Indicate failure
+        }
+    }
+
+    // Function to process AI response (ensure MathJax delimiters if needed)
+    // This might be less necessary if the AI consistently follows the prompt,
+    // but good as a fallback.
+    processAIResponse(response) {
+        if (!response) return '';
+
+        const trimmedResponse = response.trim();
+
+        // Basic check if it looks like it contains MathJax delimiters
+        // Keep this check as the AI is prompted to use MathJax delimiters
+        const hasDelimiters = /(\$\$[\s\S]+\$\$|\$[\s\S]+\$)/.test(trimmedResponse);
+
+        // If it doesn't seem to have delimiters but contains math-like characters,
+        // wrap the whole thing in $$...$$ as a guess. This is risky.
+        // A better approach relies on the AI correctly formatting the output.
+        const likelyMath = /\\|frac|sqrt|sum|int|\^|_/.test(trimmedResponse);
+        if (!hasDelimiters && likelyMath) {
+            console.warn("AI response didn't seem to contain delimiters, wrapping in $$...$$ as a fallback for KaTeX.");
+            return `$$${trimmedResponse}$$`; // Wrap in $$...$$ for KaTeX display math
+        }
+
+        // Return the response, assuming the AI formatted it correctly with delimiters.
+        return trimmedResponse;
+    }
+
+
+    async formatProblemForAI(problemData) {
+        // Format the problem data for the AI, prioritizing raw LaTeX/HTML
+        let formattedContent = '';
+
+        // Add problem statement (use HTML to preserve embedded math)
+        if (problemData.problem && problemData.problem.html) {
+            // Basic sanitization/simplification could be added here if needed
+            formattedContent += `Problem HTML: ${problemData.problem.html}\n\n`;
+        } else if (problemData.problem && problemData.problem.text) {
+            formattedContent += `Problem Text: ${problemData.problem.text}\n\n`;
+        }
+
+        // Add KaTeX display elements (send raw LaTeX)
+        if (problemData.answers && problemData.answers.katexDisplays && Object.keys(problemData.answers.katexDisplays).length > 0) {
+            formattedContent += 'Mathematical Expressions (KaTeX - LaTeX Source):\n';
+            for (const [key, latex] of Object.entries(problemData.answers.katexDisplays)) {
+                formattedContent += `${key}: ${latex}\n`;
+            }
+            formattedContent += '\n';
+        }
+
+        // Add any math inputs (send raw LaTeX)
+        if (problemData.answers && problemData.answers.math && Object.keys(problemData.answers.math).length > 0) {
+            formattedContent += 'Math Inputs (LaTeX Source):\n';
+            for (const [key, latex] of Object.entries(problemData.answers.math)) {
+                formattedContent += `${key}: ${latex}\n`;
+            }
+            formattedContent += '\n';
+        }
+
+        // Add any text inputs
+        if (problemData.answers && problemData.answers.text && Object.keys(problemData.answers.text).length > 0) {
+            formattedContent += 'Text Inputs:\n';
+            for (const [key, value] of Object.entries(problemData.answers.text)) {
+                formattedContent += `${key}: ${value}\n`;
+            }
+            formattedContent += '\n';
+        }
+
+        // Add any multiple choice selections
+        if (problemData.answers && problemData.answers.multipleChoice && Object.keys(problemData.answers.multipleChoice).length > 0) {
+            formattedContent += 'Multiple Choice Selections:\n';
+            for (const [key, value] of Object.entries(problemData.answers.multipleChoice)) {
+                formattedContent += `${key}: ${value}\n`;
+            }
+            formattedContent += '\n';
+        }
+
+        // Add prompt for AI - explicitly ask for MathJax output
+        formattedContent += 'IMPORTANT: Please solve this DeltaMath problem and provide ONLY THE ANSWER. DO NOT include any explanations, steps, or additional text. Format any mathematical parts of the answer using MathJax delimiters ($$...$$ for display math, $...$ for inline math). Return only the final answer.';
+
+        // Cache the formatted problem content
+        this.cachedArticle = formattedContent;
+
+        return formattedContent; // Return the text part for the 'q' parameter
+    }
+
+
+    // Consolidated Drag Handler Logic
+    makeDraggable(containerElement, handleElement) {
+        let isDragging = false;
+        let startX, startY, initialX, initialY;
+
+        const onMouseDown = (e) => {
+            // Prevent dragging if clicking on buttons/interactive elements within the handle
+            if (e.target !== handleElement && e.target.parentNode !== handleElement) return;
+
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            const rect = containerElement.getBoundingClientRect();
+
+            // Ensure position is calculated relative to the viewport
+            // Use computed style to get accurate left/top if transform is used
+            const styles = window.getComputedStyle(containerElement);
+            initialX = parseFloat(styles.left) || rect.left;
+            initialY = parseFloat(styles.top) || rect.top;
+
+
+            // Set position explicitly if not already set, to allow dragging
+            if (styles.position === 'static') {
+                containerElement.style.position = 'fixed'; // Or 'absolute' depending on context
+            }
+            containerElement.style.right = 'auto'; // Disable right positioning if used
+            containerElement.style.bottom = 'auto'; // Disable bottom positioning
+            containerElement.style.transform = 'none'; // Disable transform positioning
+
+
+            containerElement.style.cursor = 'grabbing';
+            document.body.style.userSelect = 'none'; // Prevent text selection during drag
+
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+        };
+
+        const onMouseMove = (e) => {
+            if (!isDragging) return;
+            const deltaX = e.clientX - startX;
+            const deltaY = e.clientY - startY;
+
+            // Boundary checks (optional: prevent dragging off-screen)
+            const newX = initialX + deltaX;
+            const newY = initialY + deltaY;
+            // const vpWidth = window.innerWidth;
+            // const vpHeight = window.innerHeight;
+            // const elWidth = containerElement.offsetWidth;
+            // const elHeight = containerElement.offsetHeight;
+            // newX = Math.max(0, Math.min(newX, vpWidth - elWidth));
+            // newY = Math.max(0, Math.min(newY, vpHeight - elHeight));
+
+
+            containerElement.style.left = `${newX}px`;
+            containerElement.style.top = `${newY}px`;
+        };
+
+        const onMouseUp = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            containerElement.style.cursor = 'move'; // Reset cursor
+            document.body.style.userSelect = ''; // Re-enable text selection
+
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        };
+
+        handleElement.addEventListener('mousedown', onMouseDown);
+        handleElement.style.cursor = 'move'; // Set cursor on the handle
+
+        // Return a cleanup function (optional)
+        return () => {
+            handleElement.removeEventListener('mousedown', onMouseDown);
+            // Ensure mousemove/mouseup are removed if drag was interrupted
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        };
+    }
+
+
+    setupEventListeners() {
+        const launcher = document.getElementById('Launcher');
+        const answerContainer = document.getElementById('answerContainer');
+
+        if (!launcher || !answerContainer) {
+            console.error("Launcher or AnswerContainer not found during event listener setup.");
+            return;
+        }
+
+        const closeButton = launcher.querySelector('#closeButton');
+        const combinedButton = launcher.querySelector('#combinedButton');
+        const closeAnswerButton = answerContainer.querySelector('#closeAnswerButton');
+        const answerContent = answerContainer.querySelector('#answerContent');
+
+
+        // --- Dragging ---
+        const launcherDragHandle = launcher.querySelector('.drag-handle');
+        const answerDragHandle = answerContainer.querySelector('.answer-drag-handle');
+
+        if (launcherDragHandle) {
+            this.makeDraggable(launcher, launcherDragHandle);
+        } else {
+            console.warn("Launcher drag handle not found.");
+        }
+        if (answerDragHandle) {
+            this.makeDraggable(answerContainer, answerDragHandle);
+        } else {
+            console.warn("Answer drag handle not found.");
+        }
+
+
+        // --- Button Clicks ---
+        if (closeButton) {
+            closeButton.addEventListener('click', () => {
+                launcher.style.display = 'none';
+                answerContainer.style.display = 'none'; // Close answer panel too
+            });
+        }
+
+        if (closeAnswerButton) {
+            closeAnswerButton.addEventListener('click', () => {
+                answerContainer.style.display = 'none';
+            });
+        }
+
+        // --- Get Answer Button ---
+        if (combinedButton) {
+            combinedButton.addEventListener('click', async () => {
+                console.log('Get Answer button clicked.');
+                const answerContentElement = document.getElementById('answerContent');
+                const answerContainerElement = document.getElementById('answerContainer');
+
+                if (!answerContentElement || !answerContainerElement) {
+                    console.error("Answer content or container element not found.");
+                    return;
+                }
+
+                answerContentElement.innerHTML = '<div>Extracting problem data...</div>';
+                answerContainerElement.style.display = 'flex'; // Show panel while processing
+
+                try {
+                    const problemData = this.extractAnswers();
+                    console.log('Problem data extracted.'); // Avoid logging sensitive data
+
+                    const formattedProblem = await this.formatProblemForAI(problemData);
+                    console.log('Problem formatted for AI.'); // Avoid logging sensitive data
+
+                    answerContentElement.innerHTML = '<div>Fetching answer from API...</div>';
+
+                    const apiResponse = await this.fetchAnswer(formattedProblem);
+
+                    if (apiResponse !== null) { // Check if fetchAnswer returned a response (not null due to error)
+                        console.log('API response received. Processing...');
+                        const processedAnswer = this.processAIResponse(apiResponse);
+
+                        // Display the processed answer
+                        answerContentElement.innerHTML = processedAnswer;
+
+                        // --- Render Math using KaTeX if available ---
+                        const checkAndRenderKaTeX = (retriesLeft = 50) => { // Poll up to 5 seconds (50 retries * 100ms delay)
+                            if (window.katex && typeof window.renderMathInElement === 'function') {
+                                console.log('KaTeX and auto-render available. Rendering...');
+                                try {
+                                     // Use auto-render to process the content with delimiters
+                                     window.renderMathInElement(answerContentElement, {
+                                         // KaTeX requires displayMode for $$...$$ and inlineMode for $...$
+                                         delimiters: [
+                                             {left: "$$", right: "$$", display: true},
+                                             {left: "$", right: "$", display: false},
+                                             {left: "\\(", right: "\\)", display: false}, // Add common delimiters
+                                             {left: "\\[", right: "\\]", display: true}
+                                         ],
+                                         throwOnError : false // Don't throw errors on invalid math, just show the raw text
+                                     });
+                                     console.log('KaTeX rendering complete.');
+                                } catch (err) {
+                                    console.error('KaTeX rendering failed:', err);
+                                    answerContentElement.innerHTML += `<div style="color: #ffcccc;">Error rendering math with KaTeX: ${err.message}</div>`;
+                                }
+                            } else if (retriesLeft > 0) {
+                                console.log(`KaTeX or auto-render not yet available, retrying rendering... (${retriesLeft} retries left)`);
+                                setTimeout(() => checkAndRenderKaTeX(retriesLeft - 1), 100); // Check every 100ms
+                            } else {
+                                console.warn('KaTeX or auto-render not available after multiple retries for rendering.');
+                                answerContentElement.innerHTML += '<div style="color: #ffffcc;">Math rendering unavailable. KaTeX or auto-render function not found.</div>';
+                            }
+                        };
+
+                        // Start the polling for KaTeX rendering
+                        checkAndRenderKaTeX();
+                        // --- End of Rendering ---
+
+                    } else {
+                         console.error('API fetch failed, check console for details.');
+                         // Error message is already displayed by fetchAnswer
+                    }
+
+                } catch (error) {
+                    console.error('Error during Get Answer process:', error);
+                    answerContentElement.innerHTML = `<div style="color: #ffcccc;">An error occurred: ${error.message}</div>`;
+                }
+            });
+        } else {
+             console.error("Combined button not found during event listener setup.");
+        }
+    }
+}
+
+// Instantiate the UI helper
+// Initialize UI as soon as possible, KaTeX loading is now asynchronous and non-blocking for UI init.
+new DeltaMathUI();
