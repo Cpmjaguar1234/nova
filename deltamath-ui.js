@@ -37,6 +37,9 @@ function convertLatexToReadableText(latex) {
     { pattern: /\\cos/g, replacement: "cos" },
     { pattern: /\\tan/g, replacement: "tan" },
     
+    // Parentheses expressions (like (3x+3)(2x+9))
+    { pattern: /\(([^()]+)\)\(([^()]+)\)/g, replacement: "($1)($2)" },
+    
     // Other common symbols
     { pattern: /\\times/g, replacement: "×" },
     { pattern: /\\div/g, replacement: "÷" },
@@ -97,6 +100,37 @@ window.extractDeltaMathAnswers = function extractDeltaMathAnswers() {
     radioInputs.forEach((radio, index) => {
       const key = radio.name || `option${index}`;
       answers['multipleChoice'][key] = radio.value;
+    });
+  }
+  
+  // Check for KaTeX display elements (specifically looking for the katex-display class)
+  const katexDisplayElements = document.querySelectorAll('.katex-display');
+  if (katexDisplayElements.length > 0) {
+    answers['katexDisplays'] = {};
+    katexDisplayElements.forEach((katexEl, index) => {
+      try {
+        // Try to extract LaTeX content
+        let latex = "";
+        
+        // Look for annotation element which contains the original LaTeX
+        const annotation = katexEl.querySelector('annotation[encoding="application/x-tex"]');
+        if (annotation) {
+          latex = annotation.textContent.trim();
+        } else {
+          // Fallback: try to get from the rendered content
+          latex = katexEl.textContent.trim();
+        }
+        
+        if (latex) {
+          const key = `katexDisplay${index}`;
+          answers['katexDisplays'][key] = {
+            latex: latex,
+            readable: convertLatexToReadableText(latex)
+          };
+        }
+      } catch (e) {
+        console.warn('Error extracting KaTeX display:', e);
+      }
     });
   }
   
@@ -194,10 +228,13 @@ window.extractDeltaMathAnswers = function extractDeltaMathAnswers() {
     formattedAnswers.answers.math = answers.mathInputs;
   }
   
+  // Add KaTeX display elements to formatted answers
+  if (answers.katexDisplays && Object.keys(answers.katexDisplays).length > 0) {
+    formattedAnswers.answers.katexDisplays = answers.katexDisplays;
+  }
+  
   return formattedAnswers;
 }
-
-import interact from 'interactjs';
 
 class DeltaMathUI {
     constructor() {
@@ -208,6 +245,7 @@ class DeltaMathUI {
         this.initialY = 0;
         this.xOffset = 0;
         this.yOffset = 0;
+        this.cachedArticle = null;
         
         // Store reference to the extractDeltaMathAnswers function
         this.extractAnswers = window.extractDeltaMathAnswers || extractDeltaMathAnswers;
@@ -252,10 +290,11 @@ class DeltaMathUI {
         closeButton.style.cssText = "position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;";
         closeButton.textContent = "×";
 
-        const getAnswerButton = document.createElement("button");
-        getAnswerButton.id = "getAnswerButton";
-        getAnswerButton.style.cssText = "background: #2c2e3b;border: none;color: white;padding: 12px 20px;border-radius: 8px;cursor: pointer;margin-top: 24px;width: 120px;height: 44px;font-size: 16px;transition: background 0.2s ease;";
-        getAnswerButton.textContent = "Get Answers";
+        const combinedButton = document.createElement("button");
+        combinedButton.id = "combinedButton";
+        combinedButton.style.cssText = "background: #2c2e3b;border: none;color: white;padding: 12px 20px;border-radius: 8px;cursor: pointer;margin-top: 24px;width: 120px;height: 44px;font-size: 16px;transition: background 0.2s ease;";
+        combinedButton.textContent = "Get Answer";
+        
 
         const version = document.createElement("div");
         version.style.cssText = "position: absolute;bottom: 8px;right: 8px;font-size: 12px;opacity: 0.5;";
@@ -264,7 +303,7 @@ class DeltaMathUI {
         launcher.appendChild(dragHandle);
         launcher.appendChild(img);
         launcher.appendChild(closeButton);
-        launcher.appendChild(getAnswerButton);
+        launcher.appendChild(combinedButton);
         launcher.appendChild(version);
         container.appendChild(launcher);
 
@@ -276,7 +315,7 @@ class DeltaMathUI {
         const answerContainer = document.createElement("div");
         answerContainer.id = "answerContainer";
         answerContainer.className = "answerLauncher";
-        answerContainer.style.cssText = "outline: none;min-height: 60px;transform: translateX(0px) translateY(0);opacity: 1;font-family: 'Nunito', sans-serif;width: 60px;height: 60px;background: #1c1e2b;position: fixed;border-radius: 8px;display: flex;justify-content: center;align-items: center;color: white;font-size: 24px;top: 50%;right: 220px;transform: translateY(-50%);z-index: 99998;padding: 8px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: hidden;white-space: normal;display: none;";
+        answerContainer.style.cssText = "outline: none;min-height: 60px;transform: translateX(0px) translateY(0);opacity: 1;font-family: 'Nunito', sans-serif;width: 250px;height: auto;max-height: 300px;background: #1c1e2b;position: fixed;border-radius: 8px;display: flex;justify-content: center;align-items: center;color: white;font-size: 16px;top: 50%;right: 220px;transform: translateY(-50%);z-index: 99998;padding: 8px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: auto;white-space: normal;display: none;";
 
         const answerDragHandle = document.createElement("div");
         answerDragHandle.className = "answer-drag-handle";
@@ -287,16 +326,7 @@ class DeltaMathUI {
         answerDragIndicator.style.cssText = "width: 30px;height: 3px;background: rgba(255,255,255,0.3);border-radius: 2px;margin-top: 4px;";
         answerDragHandle.appendChild(answerDragIndicator);
 
-        const dragHandle = document.createElement("div");
-dragHandle.className = "answer-drag-handle";
-dragHandle.style.cssText = "width: 100%;height: 24px;cursor: move;background: rgba(255,255,255,0.05);position: absolute;top: 0;left: 0;border-top-left-radius: 8px;border-top-right-radius: 8px;display: flex;justify-content: center;align-items: center;";
-
-// Add visual indicator for drag handle
-const dragIndicator = document.createElement("div");
-dragIndicator.style.cssText = "width: 30px;height: 3px;background: rgba(255,255,255,0.3);border-radius: 2px;margin-top: 4px;";
-dragHandle.appendChild(dragIndicator);
-
-answerContainer.appendChild(dragHandle);
+        answerContainer.appendChild(answerDragHandle);
         const closeButton = document.createElement("button");
         closeButton.id = "closeAnswerButton";
         closeButton.style.cssText = "position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;";
@@ -304,10 +334,34 @@ answerContainer.appendChild(dragHandle);
 
         const answerContent = document.createElement("div");
         answerContent.id = "answerContent";
-        answerContent.style.cssText = "padding: 0;margin: 0;word-wrap: break-word;font-size: 24px;font-weight: bold;display: flex;justify-content: center;align-items: center;width: 100%;height: 100%;";
+        answerContent.style.cssText = "padding: 32px 12px 12px 12px;margin: 0;word-wrap: break-word;font-size: 14px;display: flex;justify-content: flex-start;align-items: flex-start;width: 100%;height: 100%;text-align: left;overflow-y: auto;user-select: text;-webkit-user-select: text;-moz-user-select: text;-ms-user-select: text;cursor: text;";
 
-        answerContainer.appendChild(dragHandle);
+        // Add copy button
+        const copyButton = document.createElement("button");
+        copyButton.id = "copyAnswerButton";
+        copyButton.style.cssText = "position: absolute;top: 8px;right: 36px;background: none;border: none;color: white;font-size: 14px;cursor: pointer;padding: 2px 8px;";
+        copyButton.textContent = "Copy";
+        copyButton.addEventListener('click', () => {
+            const content = document.getElementById('answerContent');
+            if (content) {
+                const selection = window.getSelection();
+                const range = document.createRange();
+                range.selectNodeContents(content);
+                selection.removeAllRanges();
+                selection.addRange(range);
+                document.execCommand('copy');
+                selection.removeAllRanges();
+                // Visual feedback
+                copyButton.textContent = "Copied!";
+                setTimeout(() => {
+                    copyButton.textContent = "Copy";
+                }, 1500);
+            }
+        });
+        
+        answerContainer.appendChild(answerDragHandle);
         answerContainer.appendChild(closeButton);
+        answerContainer.appendChild(copyButton);
         answerContainer.appendChild(answerContent);
         container.appendChild(answerContainer);
 
@@ -326,120 +380,335 @@ answerContainer.appendChild(dragHandle);
         }, 0);
     }
 
-    setupEventListeners() {
-        setTimeout(() => {
-            const launcher = document.getElementById('Launcher');
-            if (!launcher) return;
+    async fetchAnswer(queryContent) {
+        try {
+            console.log(`Sending POST request with queryContent: ${queryContent}`);
             
-            const closeButton = launcher.querySelector('#closeButton');
-            const getAnswerButton = launcher.querySelector('#getAnswerButton');
-            const answerContainer = document.getElementById('answerContainer');
-            if (!answerContainer) return;
-
-            // Initialize position properly
-            const initPosition = () => {
-             const rect = launcher.getBoundingClientRect();
-             launcher.style.right = null;
-             launcher.style.transform = 'none';
-             launcher.style.left = `${rect.left}px`;
-             launcher.style.top = `${rect.top}px`;
-             this.xOffset = rect.left;
-             this.yOffset = rect.top;
-            };
-            
-            // Initialize position on first load
-            initPosition();
-
-            // Use interact.js for dragging
-            interact(launcher).draggable({
-                listeners: {
-                    start(event) {
-                        this.isDragging = true;
-                        launcher.style.position = 'fixed';
-                        document.body.style.userSelect = 'none'; // Disable text selection
-                    },
-                    move(event) {
-                        const deltaX = event.dx;
-                        const deltaY = event.dy;
-                        this.xOffset += deltaX;
-                        this.yOffset += deltaY;
-                        launcher.style.transform = `translate(${this.xOffset}px, ${this.yOffset}px)`;
-                    },
-                    end(event) {
-                        this.isDragging = false;
-                        document.body.style.userSelect = ''; // Re-enable text selection
-                    }
-                }
+            const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/ask', {
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    q: queryContent,
+                    article: this.cachedArticle || null
+                })
             });
-
-            closeButton.addEventListener('click', () => {
-                launcher.style.display = 'none';
-            });
-
-            const answerDragHandle = answerContainer.querySelector('.answer-drag-handle');
-            const closeAnswerButton = answerContainer.querySelector('#closeAnswerButton');
-            const answerContent = answerContainer.querySelector('#answerContent');
-
-            // Add event listeners for dragging the answer UI
-            interact(answerContainer).draggable({
-                listeners: {
-                    start(event) {
-                        answerIsDragging = true;
-                    },
-                    move(event) {
-                        answerCurrentX = event.dx;
-                        answerCurrentY = event.dy;
-                        answerContainer.style.transform = `translate(${answerCurrentX}px, ${answerCurrentY}px)`;
-                    },
-                    end(event) {
-                        answerIsDragging = false;
-                    }
-                }
-            });
-
-            closeAnswerButton.addEventListener('click', () => {
-                answerContainer.style.display = 'none';
-            });
-
-            // Add hover effect to button
-            getAnswerButton.addEventListener('mouseover', () => {
-                getAnswerButton.style.background = '#3c3e4b';
-            });
-            getAnswerButton.addEventListener('mouseout', () => {
-                getAnswerButton.style.background = '#2c2e3b';
-            });
-            
-            // Add click effect and answer extraction
-            // Preserve 'this' context for the click handler
-            const self = this;
-            getAnswerButton.addEventListener('click', function() {
-                // Visual feedback for click
-                getAnswerButton.style.background = '#4c4e5b';
-                setTimeout(() => getAnswerButton.style.background = '#2c2e3b', 200);
-                
-                console.log('Getting DeltaMath answers...');
-                try {
-                    // Use the stored reference to the function
-                    const extractFn = self.extractAnswers || window.extractDeltaMathAnswers || extractDeltaMathAnswers;
-                    
-                    const answers = extractFn();
-                    console.log('Extracted Answers:', answers);
-                    
-                    // Display answers in the answer UI
-                    answerContent.textContent = JSON.stringify(answers, null, 2);
-                    answerContainer.style.display = 'flex';
-                } catch (e) {
-                    console.error('Error extracting answers:', e);
-                }
-            });
-        }, 0);
+    
+            console.log(`Received response with status: ${response.status}`);
+    
+            if (!response.ok) {
+                console.error('Failed to fetch answer from API');
+                throw new Error('Failed to fetch answer from API');
+            }
+    
+            const data = await response.json();
+            console.log(`Received data: ${data}`);
+            return data.response || 'No answer available';
+        } catch (error) {
+            console.error('Error:', error);
+            return `Error: ${error.message}`;
+        }
     }
+
+    // Function to process AI response and convert LaTeX to readable text
+    processAIResponse(response) {
+        if (!response) return '';
+        
+        // Check if the response contains LaTeX-like patterns
+        const containsLatex = /\\[a-zA-Z]+|\{|\}|\^|_|\\frac|\\sqrt/.test(response);
+        
+        if (containsLatex) {
+            // Convert LaTeX to readable text instead of wrapping with delimiters
+            let processed = response;
+            
+            // Define patterns to convert LaTeX to readable text
+            const latexPatterns = [
+                // Fractions
+                { pattern: /\\frac\{([^{}]+)\}\{([^{}]+)\}/g, replacement: "($1)/($2)" },
+                
+                // Square roots
+                { pattern: /\\sqrt\{([^{}]+)\}/g, replacement: "√($1)" },
+                
+                // Powers with braces
+                { pattern: /([a-zA-Z0-9])\^\{([^{}]+)\}/g, replacement: "$1^($2)" },
+                
+                // Simple powers
+                { pattern: /([a-zA-Z0-9])\^(\d)/g, replacement: "$1^$2" },
+                
+                // Subscripts with braces
+                { pattern: /([a-zA-Z0-9])_\{([^{}]+)\}/g, replacement: "$1_$2" },
+                
+                // Simple subscripts
+                { pattern: /([a-zA-Z0-9])_(\d)/g, replacement: "$1_$2" },
+                
+                // Greek letters
+                { pattern: /\\alpha/g, replacement: "α" },
+                { pattern: /\\beta/g, replacement: "β" },
+                { pattern: /\\gamma/g, replacement: "γ" },
+                { pattern: /\\delta/g, replacement: "δ" },
+                { pattern: /\\epsilon/g, replacement: "ε" },
+                { pattern: /\\theta/g, replacement: "θ" },
+                { pattern: /\\pi/g, replacement: "π" },
+                { pattern: /\\sigma/g, replacement: "σ" },
+                { pattern: /\\omega/g, replacement: "ω" },
+                
+                // Trigonometric functions
+                { pattern: /\\sin/g, replacement: "sin" },
+                { pattern: /\\cos/g, replacement: "cos" },
+                { pattern: /\\tan/g, replacement: "tan" },
+                
+                // Other common symbols
+                { pattern: /\\times/g, replacement: "×" },
+                { pattern: /\\div/g, replacement: "÷" },
+                { pattern: /\\pm/g, replacement: "±" },
+                { pattern: /\\infty/g, replacement: "∞" },
+                { pattern: /\\neq/g, replacement: "≠" },
+                { pattern: /\\geq/g, replacement: "≥" },
+                { pattern: /\\leq/g, replacement: "≤" },
+                
+                // Remove unnecessary braces
+                { pattern: /\{([^{}]+)\}/g, replacement: "$1" }
+            ];
+            
+            // Apply all replacements
+            latexPatterns.forEach(({ pattern, replacement }) => {
+                processed = processed.replace(pattern, replacement);
+            });
+            
+            // Handle equations with = signs
+            processed = processed.replace(/(\\?[a-zA-Z0-9_{}\\^]+\s*=\s*\\?[a-zA-Z0-9_{}\\^]+)/g, "$1");
+            
+            return processed;
+        }
+        
+        return response;
+    }
+
+    async formatProblemForAI(problemData) {
+        // Format the problem data for the AI
+        let formattedContent = '';
+        
+        // Add problem statement
+        if (problemData.problem && problemData.problem.text) {
+            formattedContent += `Problem: ${problemData.problem.text}\n\n`;
+        }
+        
+        // Add KaTeX display elements (mathematical expressions) - prioritize these for better math handling
+        if (problemData.answers && problemData.answers.katexDisplays) {
+            formattedContent += 'Mathematical Expressions (KaTeX):\n';
+            for (const [key, value] of Object.entries(problemData.answers.katexDisplays)) {
+                // Include both LaTeX and readable versions for better AI processing
+                formattedContent += `${key}:\n`;
+                formattedContent += `  LaTeX: ${value.latex}\n`;
+                formattedContent += `  Readable: ${value.readable}\n`;
+            }
+            formattedContent += '\n';
+        }
+        
+        // Add any math inputs
+        if (problemData.answers && problemData.answers.math) {
+            formattedContent += 'Math Inputs:\n';
+            for (const [key, value] of Object.entries(problemData.answers.math)) {
+                formattedContent += `${key}: ${value.readable || value.latex}\n`;
+            }
+            formattedContent += '\n';
+        }
+        
+        // Add any text inputs
+        if (problemData.answers && problemData.answers.text) {
+            formattedContent += 'Text Inputs:\n';
+            for (const [key, value] of Object.entries(problemData.answers.text)) {
+                formattedContent += `${key}: ${value}\n`;
+            }
+            formattedContent += '\n';
+        }
+        
+        // Add any multiple choice selections
+        if (problemData.answers && problemData.answers.multipleChoice) {
+            formattedContent += 'Multiple Choice Selections:\n';
+            for (const [key, value] of Object.entries(problemData.answers.multipleChoice)) {
+                formattedContent += `${key}: ${value}\n`;
+            }
+            formattedContent += '\n';
+        }
+        
+        // Add prompt for AI with specific instructions to only provide the answer
+        formattedContent += 'IMPORTANT: Please solve this DeltaMath problem and provide ONLY THE ANSWER. DO NOT include any explanations, steps, or additional text. Return only the final answer in the most concise form possible.';
+        
+        // Cache the problem content
+        this.cachedArticle = formattedContent;
+        
+        return formattedContent;
+    }
+
+    setupEventListeners() {
+        const launcher = document.getElementById('Launcher');
+        if (!launcher) return;
+        const closeButton = launcher.querySelector('#closeButton');
+        const combinedButton = launcher.querySelector('#combinedButton');
+        const answerContainer = document.getElementById('answerContainer');
+        if (!answerContainer) return;
+
+        const initPosition = () => {
+            const rect = launcher.getBoundingClientRect();
+            launcher.style.right = null;
+            launcher.style.transform = 'none';
+            launcher.style.left = `${rect.left}px`;
+            launcher.style.top = `${rect.top}px`;
+            this.xOffset = rect.left;
+            this.yOffset = rect.top;
+        };
+
+        initPosition();
+
+        const dragElement = (element, container) => {
+            let isDragging = false;
+            let startX, startY, initialX, initialY;
+            element.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.clientX;
+                startY = e.clientY;
+                const rect = container.getBoundingClientRect();
+                initialX = rect.left;
+                initialY = rect.top;
+                document.body.style.userSelect = 'none';
+            });
+            document.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                const deltaX = e.clientX - startX;
+                const deltaY = e.clientY - startY;
+                container.style.left = `${initialX + deltaX}px`;
+                container.style.top = `${initialY + deltaY}px`;
+            });
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                document.body.style.userSelect = '';
+            });
+        };
+
+
+        dragElement(launcher.querySelector('.drag-handle'), launcher);
+        dragElement(answerContainer.querySelector('.answer-drag-handle'), answerContainer);
+
+        closeButton.addEventListener('click', () => {
+            launcher.style.display = 'none';
+        });
+
+        const closeAnswerButton = answerContainer.querySelector('#closeAnswerButton');
+        const answerContent = answerContainer.querySelector('#answerContent');
+
+        closeAnswerButton.addEventListener('click', () => {
+            answerContainer.style.display = 'none';
+        });
+
+        combinedButton.addEventListener('mouseover', () => {
+            combinedButton.style.background = '#3c3e4b';
+        });
+        combinedButton.addEventListener('mouseout', () => {
+            combinedButton.style.background = '#2c2e3b';
+        });
+
+        const self = this;
+        combinedButton.addEventListener('click', async function() {
+            combinedButton.style.background = '#4c4e5b';
+            setTimeout(() => combinedButton.style.background = '#2c2e3b', 200);
+
+            console.log('Getting DeltaMath answers and AI solution...');
+            try {
+                // First extract the problem data
+                const extractFn = self.extractAnswers || window.extractDeltaMathAnswers || extractDeltaMathAnswers;
+                const problemData = extractFn();
+                console.log('Extracted problem data:', problemData);
+                
+                // Format the problem data for the AI
+                const problemContent = await self.formatProblemForAI(problemData);
+                
+                // Get AI answer
+                const aiAnswer = await self.fetchAnswer(problemContent);
+                console.log('AI Answer:', aiAnswer);
+                
+                // Process the AI answer to properly format LaTeX expressions
+                const processedAnswer = self.processAIResponse(aiAnswer);
+                
+                // Display the processed answer
+                answerContent.innerHTML = `<div>${processedAnswer}</div>`;
+                
+                answerContainer.style.display = 'flex';
+                answerContainer.style.width = 'auto';
+                answerContainer.style.maxWidth = '400px';
+                answerContainer.style.height = 'auto';
+                answerContainer.style.maxHeight = '300px';
+                answerContainer.style.overflow = 'auto';
+                
+                // No need to render with KaTeX since we've already converted LaTeX to readable text
+                // Apply some basic styling to make the answer visually appealing
+                answerContent.style.fontFamily = "'Nunito', 'Arial', sans-serif";
+                answerContent.style.fontSize = "16px";
+                answerContent.style.lineHeight = "1.5";
+                answerContent.style.color = "#ffffff";
+                
+                // Add some visual enhancements for mathematical symbols
+                const enhancedHTML = answerContent.innerHTML
+                    .replace(/√\(([^)]+)\)/g, '<span style="font-weight:bold">√</span>($1)')
+                    .replace(/(\d+)\^(\d+)/g, '$1<sup>$2</sup>')
+                    .replace(/([a-zA-Z])\^(\d+)/g, '$1<sup>$2</sup>')
+                    .replace(/\(([^)]+)\)\/\(([^)]+)\)/g, '<span style="display:inline-block;text-align:center"><span style="border-bottom:1px solid #fff">$1</span><br>$2</span>');
+                
+                answerContent.innerHTML = enhancedHTML;
+            } catch (e) {
+                console.error('Error getting answers:', e);
+                answerContent.textContent = `Error: ${e.message}`;
+                answerContainer.style.display = 'flex';
+            }
+        });
+    }
+}
+
+// Function to handle dragging of elements
+function handleDrag(element) {
+    if (!element) return;
+    
+    let isDragging = false;
+    let startX, startY, initialX, initialY;
+
+    element.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        const rect = element.getBoundingClientRect();
+        initialX = rect.left;
+        initialY = rect.top;
+        document.body.style.userSelect = 'none';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.clientX - startX;
+        const deltaY = e.clientY - startY;
+        element.style.left = `${initialX + deltaX}px`;
+        element.style.top = `${initialY + deltaY}px`;
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        document.body.style.userSelect = '';
+    });
 }
 
 // Initialize the UI
 const deltaUI = new DeltaMathUI();
-answerContainer.style.overflow = 'hidden';
-answerContainer.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    answerContainer.scrollTop += e.deltaY;
-});
+const answerContainer = document.getElementById('answerContainer');
+
+// Apply drag functionality to UI elements
+handleDrag(document.getElementById('Launcher'));
+if (answerContainer) {
+    handleDrag(answerContainer);
+    answerContainer.style.overflow = 'hidden';
+    answerContainer.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        answerContainer.scrollTop += e.deltaY;
+    });
+}
