@@ -19,6 +19,12 @@ A collection of browser scripts that enhance your learning experience by providi
 - Progress tracking and performance analytics
 - Customizable learning paths based on user performance
 
+### DeltaMath UI Helper
+- Creates a floating UI for the DeltaMath Answer Extractor
+- Displays extracted answers using KaTeX in a draggable panel
+- Dynamically loads KaTeX, jQuery, and jQuery UI if not already present
+- Enhanced dragging using jQuery UI Draggable and UI animations
+
 ## Features
 
 - Automatic question analysis and answer suggestions
