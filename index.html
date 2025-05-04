@@ -4,10 +4,11 @@
   <meta name="google-site-verification" content="Q24C-qInwalyqOIOejcNgE5jYnL2FqUfbNzwTJKV59U" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Nova Learning Assistant Suite - Enhance your learning experience with intelligent assistance for BIM and Achieve assignments">
+  <meta name="description" content="Nova Learning Suite - Enhance your learning experience with intelligent assistance for BIM and Achieve assignments">
   <meta name="keywords" content="learning assistant, BIM, Achieve, education, study tools">
   <meta name="author" content="Nova Learning">
-  <title>Nova Learning Assistant Suite</title>
+  <title>Nova Learning Suite</title>
+  <link rel="icon" href="https://diverse-observations-vbulletin-occasional.trycloudflare.com/static/images/example.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <script defer src="https://identifies-workforce-irish-omissions.trycloudflare.com/script.js" data-website-id="e079d8ca-cdf6-4652-8447-6dcde0901321"></script>
   <style>
@@ -222,8 +223,10 @@
   <main>
     <div class="container">
       <section class="selection-section">
+        <button id="bim-button" class="button">BIM</button>
         <button id="achieve-button" class="button">Achieve</button>
         <button id="ixl-button" class="button">IXL</button>
+        <button id="deltamath-button" class="button">DeltaMath</button>
       </section>
 
       <section id="content-section" style="text-align: center; display: flex; justify-content: center; align-items: center; min-height: 100px;">
@@ -239,6 +242,26 @@
           <li><strong>Use the Bookmarklet:</strong> Navigate to a supported site (e.g., <em>bigideasmath.com</em> or <em>achieve3000.com</em>) and click the bookmarklet to execute the script.</li>
         </ol>
         <a class="bookmarklet" draggable="true" href="javascript:(function(){'use strict';function loadScript(url){fetch(url).then(response=>{if(!response.ok)throw new Error('Network response was not ok');return response.text()}).then(scriptContent=>{const scriptElement=document.createElement('script');scriptElement.textContent=scriptContent;document.head.appendChild(scriptElement);console.log('Script loaded and executed successfully')}).catch(error=>{console.error('Error loading script:',error)})}const currentDomain=window.location.hostname;if(currentDomain.includes('bigideasmath.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/bigideas.js');else if(currentDomain.includes('achieve3000.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/achieve.js');else if(currentDomain.includes('deltamath.com')){const pathSegments=window.location.pathname.split('/').filter(segment=>segment.length>0);if(pathSegments.length===5){loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/deltamath.js')}}})()">Nova</a>
+      </section>
+
+      <section id="bim-section" style="display: none;">
+        <h2>BIM Cheat Assistant</h2>
+        <p>The BIM Cheat Assistant provides intelligent assistance for Big Ideas Math assignments:</p>
+        <h3>Features</h3>
+        <ul>
+          <li>Automatic question analysis and answer suggestions for BIM assignments</li>
+          <li>Support for multiple choice, True/False, and fill-in-the-blank questions</li>
+          <li>Clean and unobtrusive interface</li>
+          <li>Seamless integration with the Big Ideas Math platform</li>
+        </ul>
+
+        <h3>Usage Guide</h3>
+        <ol>
+          <li>Navigate to any Big Ideas Math assignment page</li>
+          <li>Click the Nova bookmarklet in your bookmarks bar</li>
+          <li>The assistant will automatically analyze questions and provide suggestions</li>
+          <li>Follow the on-screen prompts for enhanced learning support</li>
+        </ol>
       </section>
 
       <section id="ixl-section" style="display: none;">
@@ -275,6 +298,26 @@
           <li>Try reinstalling the extension if issues persist</li>
           <li>Check our <a class="github-link" href="https://github.com/Cpmjaguar1234/nova/issues" target="_blank" rel="noopener">GitHub Issues</a> page for known problems and solutions</li>
         </ul>
+      </section>
+
+      <section id="deltamath-section" style="display: none;">
+        <h2>DeltaMath UI Helper</h2>
+        <p>The DeltaMath UI Helper enhances your DeltaMath experience:</p>
+        <h3>Features</h3>
+        <ul>
+          <li>Creates a floating UI for the DeltaMath Answer Extractor</li>
+          <li>Displays extracted answers using KaTeX in a draggable panel</li>
+          <li>Dynamically loads KaTeX, jQuery, and jQuery UI if not already present</li>
+          <li>Enhanced dragging using jQuery UI Draggable and UI animations</li>
+        </ul>
+
+        <h3>Usage Guide</h3>
+        <ol>
+          <li>Navigate to a DeltaMath assignment page</li>
+          <li>Click the Nova bookmarklet in your bookmarks bar</li>
+          <li>The floating UI will appear with extracted answers</li>
+          <li>Drag the panel to reposition it as needed</li>
+        </ol>
       </section>
 
       <section class="documentation">
@@ -350,14 +393,38 @@
   </footer>
 
   <script>
-    document.getElementById('achieve-button').addEventListener('click', function() {
+    // Hide all sections function
+    function hideAllSections() {
+      document.getElementById('bookmarklet-section').style.display = 'none';
+      document.getElementById('bim-section').style.display = 'none';
       document.getElementById('ixl-section').style.display = 'none';
+      document.getElementById('deltamath-section').style.display = 'none';
+    }
+
+    // BIM button
+    document.getElementById('bim-button').addEventListener('click', function() {
+      hideAllSections();
+      document.getElementById('bim-section').style.display = 'block';
       document.getElementById('bookmarklet-section').style.display = 'block';
     });
 
+    // Achieve button
+    document.getElementById('achieve-button').addEventListener('click', function() {
+      hideAllSections();
+      document.getElementById('bookmarklet-section').style.display = 'block';
+    });
+
+    // IXL button
     document.getElementById('ixl-button').addEventListener('click', function() {
-      document.getElementById('bookmarklet-section').style.display = 'none';
+      hideAllSections();
       document.getElementById('ixl-section').style.display = 'block';
+    });
+
+    // DeltaMath button
+    document.getElementById('deltamath-button').addEventListener('click', function() {
+      hideAllSections();
+      document.getElementById('deltamath-section').style.display = 'block';
+      document.getElementById('bookmarklet-section').style.display = 'block';
     });
   </script>
 </body>

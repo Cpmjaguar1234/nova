@@ -48,7 +48,7 @@ To use the Nova bookmarklet, follow these simple steps:
 
 ### IXL Extension Installation
 
-#### How to Install
+#### Chrome Installation
 
 1. **Download the Extension**: Visit the [GitHub releases page](https://github.com/Cpmjaguar1234/nova/releases/tag/v1.0.0) and download the extension files.
 
@@ -60,18 +60,29 @@ To use the Nova bookmarklet, follow these simple steps:
 
 5. **Verify Installation**: The extension should appear in your list of extensions and be enabled.
 
+#### Firefox Installation
+
+1. **Install from Mozilla Add-ons**: Visit the [Mozilla Add-ons page](https://addons.mozilla.org/en-US/firefox/addon/nova-ixl-extension/) for Nova IXL Extension.
+
+2. **Add to Firefox**: Click the "Add to Firefox" button on the add-on page.
+
+3. **Confirm Installation**: Follow the prompts to complete the installation.
+
+4. **Verify Installation**: The extension icon should appear in your browser toolbar.
+
 ## Supported Sites
 
 - **Big Ideas Math**: Automatically loads the script for bigideasmath.com.
 - **Achieve3000**: Automatically loads the script for achieve3000.com.
-- **IXL**: Enhanced learning support through the Chrome extension.
+- **IXL**: Enhanced learning support through Chrome and Firefox extensions.
 
 ## Troubleshooting
 
 If you encounter any issues, ensure that:
 - Your browser allows bookmarklets and extensions
 - You are visiting a supported site
-- Developer mode is enabled for the IXL extension
+- For Chrome: Developer mode is enabled for the IXL extension
+- For Firefox: The extension is properly installed from Mozilla Add-ons
 
 For more information or support, please contact [1yyumwafd@mozmail.com](mailto:1yyumwafd@mozmail.com).
 
