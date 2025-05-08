@@ -95,6 +95,25 @@ def ask_gemini():
         data = request.get_json()
         app.logger.info(f"POST data: {data}")
 
+        # Handle HTML input from extension
+        if 'html' in data:
+            html_content = data['html']
+            prompt = data.get('prompt', "Give me the answer, only the answer, nothing else. Don't use latex, express it normally.")
+            try:
+                # Combine HTML and prompt for Gemini
+                user_input = f"{html_content}\n\n{prompt}"
+                response = model.generate_content(user_input)
+                if response and hasattr(response, 'text'):
+                    cleaned_response = re.sub(r'\s+', ' ', response.text).strip()
+                    app.logger.info(f"Generated response for HTML: {cleaned_response}")
+                    return jsonify({'response': cleaned_response})
+                else:
+                    app.logger.error('Failed to generate a valid response for HTML')
+                    return jsonify({'error': 'Failed to generate a valid response'}), 500
+            except Exception as e:
+                app.logger.error(f"Error processing HTML: {str(e)}")
+                return jsonify({'error': 'Error processing HTML'}), 500
+
         # Handle image input
         if 'image' in data:
             try:

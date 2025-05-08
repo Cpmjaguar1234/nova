@@ -17,30 +17,51 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
-    <script defer src="https://identifies-workforce-irish-omissions.trycloudflare.com/script.js" data-website-id="e079d8ca-cdf6-4652-8447-6dcde0901321"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script defer src="https://online-metric-learned-bee.trycloudflare.com/script.js" data-website-id="e079d8ca-cdf6-4652-8447-6dcde0901321"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
     <style>
+        /* --- CSS Variables for Theme --- */
         :root {
-            --primary-color: #1c1e2b; /* Dark background */
-            --secondary-color: #2c2e3b; /* Slightly lighter dark background */
-            --accent-color: #3c3e4b; /* Accent dark color, also used for footer/header bg */
-            --text-color: #333; /* Original dark text - will use minimally, mainly for content within light areas */
-            --light-text: #fff; /* White text - used for most text on dark backgrounds */
-            --border-radius: 12px;
-            --transition: all 0.3s ease;
-            --card-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Enhanced shadow */
-            --hover-shadow: 0 15px 30px rgba(0,0,0,0.3); /* More pronounced hover shadow */
+            /* Dark Vampire Theme */
+            --primary-color: #1a1a2e; /* Deep Indigo */
+            --secondary-color: #252540; /* Slightly lighter Indigo */
+            --accent-color: #3d3d5c; /* Muted Purple/Indigo accent */
+            --card-bg: #2c2c4a; /* Background for cards/sections */
+            --light-text: #e0e0ff; /* Soft white/lavender */
+            --muted-text: #b0b0d0; /* Muted text color */
 
-            /* New button specific colors */
-            --bim-color: #4CAF50; /* Green */
-            --achieve-color: #2196F3; /* Blue */
-            --ixl-color: #FF9800; /* Orange */
-            --deltamath-color: #9C27B0; /* Purple */
+            --border-radius: 12px;
+            --transition-speed: 0.3s; /* Standard transition speed */
+            /* Shadows for dark theme */
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            --hover-shadow: 0 15px 30px rgba(0,0,0,0.4);
+
+            /* Nord-like Button Colors */
+            --nord-blue: #5E81AC; /* Frost */
+            --nord-green: #A3BE8C; /* Aurora */
+            --nord-orange: #D08770; /* Aurora */
+            --nord-purple: #B48EAD; /* Aurora */
+
+            --bim-color: var(--nord-green);
+            --achieve-color: var(--nord-blue);
+            --ixl-color: var(--nord-orange);
+            --deltamath-color: var(--nord-purple);
+
+             /* Specific colors for IXL Extension section (using Nord palette) */
+             --ixl-heading-color: var(--ixl-color); /* Use the orange for the main heading */
+             --chrome-color: var(--achieve-color); /* Use blue for Chrome */
+             --firefox-color: var(--deltamath-color); /* Use purple for Firefox */
+             --ixl-link-color-github: var(--bim-color); /* Use green for GitHub link */
+             --ixl-link-color-mozilla: var(--firefox-color); /* Use Firefox color for Mozilla link */
+             --ixl-link-color-repo: var(--achieve-color); /* Use Chrome color for repo link */
         }
 
+        /* --- Base Styles --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -48,43 +69,53 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif; /* Switched body font for modern feel */
+            font-family: 'Poppins', sans-serif;
+            /* Using dark background colors */
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--light-text); /* Default text color is white */
+            color: var(--light-text); /* Light text on dark background */
             line-height: 1.7;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow-x: hidden; /* Prevent overflow issues with animations */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            position: relative; /* Needed for header background effect positioning */
         }
 
+        /* --- Header Styles --- */
         header {
-            background: var(--accent-color);
-            color: var(--light-text);
-            padding: 3rem 1rem 2rem; /* Increased padding */
+            background: var(--accent-color); /* Dark accent background */
+            color: var(--light-text); /* Light text */
+            padding: 4rem 1rem 3rem; /* Increased padding */
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Deeper shadow */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Deeper shadow */
             position: relative;
             overflow: hidden;
+            z-index: 1; /* Ensure header is above background effect */
         }
 
         header h1 {
-            font-family: 'Nunito', sans-serif; /* Kept Nunito for heading for original feel */
-            font-size: clamp(2.5rem, 6vw, 4rem); /* Larger, more responsive heading */
-            margin-bottom: 0.75rem;
+            font-family: 'Nunito', sans-serif;
+            font-size: clamp(2.8rem, 7vw, 4.5rem); /* Larger, more responsive heading */
+            margin-bottom: 1rem;
             font-weight: 700;
-            color: var(--light-text); /* Ensure heading is white */
-            text-shadow: 0 0 10px rgba(255,255,255,0.3); /* Subtle text shadow */
+            color: var(--light-text); /* Light text */
+            text-shadow: 0 0 15px rgba(255,255,255,0.4); /* More pronounced text shadow */
+        }
+
+        header h1 i {
+            margin-right: 15px; /* Space between icon and text */
+            font-size: 1.1em; /* Slightly larger icon relative to text */
         }
 
         header p {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem); /* Larger, more responsive paragraph */
+            font-size: clamp(1.2rem, 2.8vw, 1.5rem); /* Larger, more responsive paragraph */
             opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 900px;
+            margin: 0.5rem auto 0; /* Adjusted margin */
+            color: var(--muted-text); /* Muted text color for description */
         }
 
-         /* Subtle star/particle effect for header background */
+         /* Subtle star/particle effect for header background (using lighter color on dark background) */
         .header-bg-effect {
             position: absolute;
             top: 0;
@@ -98,7 +129,7 @@
 
         .star {
             position: absolute;
-            background: var(--light-text);
+            background: rgba(255,255,255,0.2); /* Subtle light particles */
             border-radius: 50%;
             opacity: 0; /* Start hidden for animation */
             animation: twinkle linear infinite;
@@ -110,42 +141,40 @@
         }
 
 
+        /* --- Main Content Area --- */
         main {
             flex: 1;
-            padding: 3rem 1rem; /* Increased padding */
+            padding: 2rem 1rem; /* Increased padding */
+            z-index: 1; /* Ensure main content is above body background */
         }
 
         .container {
-            max-width: min(1000px, 95%); /* Wider container */
-            margin: 2rem auto;
-            background-color: var(--secondary-color); /* Darker background for container */
+            max-width: min(1100px, 98%); /* Increased max-width */
+            margin: 1.5rem auto; /* Increased margin */
+            background-color: var(--secondary-color); /* Slightly lighter dark background */
             border-radius: var(--border-radius);
-            box-shadow: var(--card-shadow);
-            padding: 2.5rem; /* Increased padding */
-            position: relative; /* Needed for absolute positioning inside if any */
-            z-index: 1; /* Above background effects */
-            /* Ensure container is visible by default */
-             opacity: 1;
-             transform: translateY(0);
+            box-shadow: var(--card-shadow); /* Darker shadow */
+            padding: 2rem; /* Increased padding */
+            position: relative;
+            z-index: 1;
         }
 
+        /* --- Section Styles --- */
         section {
-            margin-bottom: 3rem; /* Increased spacing between sections */
-            padding: 1.5rem;
-            background-color: var(--card-bg); /* Slightly lighter card background */
+            margin-bottom: 2.5rem; /* Increased spacing between sections */
+            padding: 1.5rem; /* Increased padding */
+            background-color: var(--card-bg); /* Dark card background */
             border-radius: var(--border-radius);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Section specific shadow */
-            opacity: 0; /* Initial state for JS animation */
-            transform: translateY(20px); /* Initial state for JS animation */
-             transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition for JS hide/show */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Slightly deeper shadow */
+            opacity: 0; /* Start hidden for JS animation */
+            transform: translateY(20px); /* Start slightly lower for JS animation */
+            transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out;
         }
 
-        /* Sections that are hidden by default */
-         /* Removed #content-section from here */
+         /* Sections that are hidden by default and controlled by JS */
          #bim-section, #achieve-section, #ixl-section, #deltamath-section {
              display: none; /* Start hidden */
          }
-
 
          /* Class added by JS to reveal sections */
          .section-visible {
@@ -154,97 +183,111 @@
              transform: translateY(0);
          }
 
-
+        /* --- Heading Styles --- */
         h2, h3, h4 {
-            color: var(--light-text); /* Headings are white */
+            color: var(--light-text); /* Light text */
             margin-bottom: 1rem;
             font-family: 'Nunito', sans-serif;
             font-weight: 600;
         }
 
         h2 {
-            font-size: clamp(1.8rem, 4vw, 2.2rem);
-            border-bottom: 2px solid rgba(255,255,255,0.1); /* Subtle white border */
+            font-size: clamp(2rem, 4.5vw, 2.5rem);
+            border-bottom: 2px solid rgba(255,255,255,0.15); /* Subtle light border */
             padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem; /* Increased margin */
         }
+         h2 i {
+             margin-right: 10px; /* Space between icon and text */
+             font-size: 1em;
+         }
+
 
         h3 {
-             font-size: clamp(1.4rem, 3vw, 1.8rem);
-             color: rgba(255,255,255,0.8); /* Slightly muted white */
-             margin-top: 1.5rem;
+             font-size: clamp(1.5rem, 3.5vw, 2rem);
+             color: rgba(255,255,255,0.9); /* Slightly muted light */
+             margin-top: 2rem; /* Increased margin */
+             margin-bottom: 1.2rem;
         }
+         h3 i {
+             margin-right: 8px;
+             font-size: 0.9em;
+         }
+
 
         h4 {
-            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-            color: var(--light-text);
-            margin-bottom: 0.8rem;
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+            color: var(--light-text); /* Light text */
+            margin-bottom: 1rem;
+             font-weight: 700;
         }
+         h4 i {
+             margin-right: 8px;
+             font-size: 0.9em;
+         }
+
 
         section p {
-             color: rgba(255,255,255,0.9); /* White text for paragraphs in sections */
+             color: var(--muted-text); /* Muted light text for paragraphs */
+             margin-bottom: 1.2rem;
         }
 
-
+        /* --- Selection Buttons Section --- */
         .selection-section {
-            display: flex; /* Ensure it's a flex container */
+            display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1.5rem; /* Increased gap for better spacing */
-            margin-bottom: 3rem;
-            /* Ensure selection section is visible by default via CSS */
+            gap: 2rem; /* Increased gap */
+            margin-bottom: 3.5rem; /* Increased margin */
+             /* Ensure selection section is visible by default via CSS */
             opacity: 1;
             transform: translateY(0);
         }
 
         .button {
             /* Base button styles */
-            color: var(--light-text); /* White text */
-            /* Adjusted border to match theme more */
-            border: 2px solid transparent; /* Start with transparent or matching background */
-            padding: 1.2rem 2.5rem; /* Larger buttons */
+            color: var(--light-text); /* Light text on button */
+            border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle light border */
+            padding: 1.3rem 2.8rem; /* Larger buttons */
             border-radius: 8px;
             cursor: pointer;
-            font-size: 1.1rem; /* Slightly larger font */
+            font-size: 1.2rem; /* Slightly larger font */
             font-weight: 600;
-            transition: all 0.4s ease; /* Smoother transition */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Darker shadow */
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4); /* Darker shadow */
             position: relative;
             overflow: hidden;
             text-transform: uppercase;
             letter-spacing: 1px;
             flex: 1 1 auto;
-            max-width: 280px; /* Increased max width */
-            text-align: center; /* Center text and icon */
-            display: flex; /* Use flex for content alignment */
+            max-width: 300px; /* Increased max width */
+            text-align: center;
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.75rem; /* Space between icon and text */
+            gap: 1rem; /* Increased space between icon and text */
 
              /* Ensure buttons are visible by default via CSS */
              opacity: 1;
              transform: translateY(0);
         }
 
-        /* Specific Button Styles */
+        /* Specific Button Styles with Gradients (Nord-like blending with dark background) */
         #bim-button {
-             background: linear-gradient(135deg, var(--bim-color), darken(var(--bim-color), 15%));
-             /* Border color matching a slightly lighter primary/secondary */
-             border-color: rgba(255, 255, 255, 0.15); /* More subtle white border */
+             background: linear-gradient(135deg, var(--card-bg), var(--bim-color)); /* Blend with card background */
         }
          #achieve-button {
-             background: linear-gradient(135deg, var(--achieve-color), darken(var(--achieve-color), 15%));
-              border-color: rgba(255, 255, 255, 0.15); /* More subtle white border */
+             background: linear-gradient(135deg, var(--card-bg), var(--achieve-color)); /* Blend with card background */
         }
          #ixl-button {
-             background: linear-gradient(135deg, var(--ixl-color), darken(var(--ixl-color), 15%));
-              border-color: rgba(255, 255, 255, 0.15); /* More subtle white border */
+             background: linear-gradient(135deg, var(--card-bg), var(--ixl-color)); /* Blend with card background */
         }
          #deltamath-button {
-             background: linear-gradient(135deg, var(--deltamath-color), darken(var(--deltamath-color), 15%));
-              border-color: rgba(255, 255, 255, 0.15); /* More subtle white border */
+             background: linear-gradient(135deg, var(--card-bg), var(--deltamath-color)); /* Blend with card background */
         }
 
 
+        /* Button Shine Effect (using a subtle light shine) */
         .button:before {
             content: '';
             position: absolute;
@@ -252,15 +295,16 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); /* Stronger white shine */
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); /* Subtle white shine */
             transition: all 0.6s ease;
         }
 
+        /* Button Hover & Active States */
         .button:hover {
-            transform: translateY(-5px); /* More pronounced lift */
-            box-shadow: 0 8px 16px rgba(0,0,0,0.4); /* Darker hover shadow */
-            filter: brightness(1.2); /* Slightly brighten on hover */
-             border-color: var(--light-text); /* White border on hover */
+            transform: translateY(-6px); /* More pronounced lift */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Darker hover shadow */
+            filter: brightness(1.1); /* Slightly brighten on hover */
+             border-color: var(--light-text); /* Light border on hover */
         }
 
         .button:hover:before {
@@ -269,235 +313,346 @@
 
         .button:focus {
             outline: none;
-            box-shadow: 0 0 0 5px rgba(255,255,255,0.3); /* White focus ring */
+            box-shadow: 0 0 0 6px rgba(255,255,255,0.3); /* Light focus ring */
         }
 
         .button:active {
-            transform: translateY(0);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transform: translateY(-2px); /* Slight press down */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
 
         .button.active {
-             box-shadow: 0 0 18px rgba(255,255,255,0.4); /* Brighter active shadow */
-             filter: brightness(1.3);
-             border-color: var(--light-text); /* White border when active */
+             box-shadow: 0 0 20px rgba(255,255,255,0.5); /* More pronounced active shadow */
+             filter: brightness(1.2);
+             border-color: var(--light-text); /* Light border when active */
         }
 
          .button i {
-             font-size: 1.3rem; /* Larger icons */
+             font-size: 1.4rem; /* Larger icons */
+             color: var(--light-text); /* Ensure button icons are light */
          }
 
 
-        /* Removed #content-section CSS rules */
-
-
+        /* --- Bookmarklet Section --- */
         .bookmarklet-container {
-            text-align: center; /* Center text */
-            padding: 2.5rem; /* More padding */
-            border: 3px dashed rgba(255,255,255,0.3); /* Dashed white border */
+            text-align: center;
+            padding: 3rem; /* More padding */
+            border: 3px dashed rgba(255,255,255,0.4); /* Dashed light border */
             border-radius: var(--border-radius);
             margin: 3rem 0; /* More margin */
-            background: var(--card-bg); /* Card background */
+            background: var(--card-bg); /* Dark card background */
             position: relative;
             overflow: hidden;
         }
 
          .bookmarklet-container h2 {
-             color: var(--light-text);
+             color: var(--light-text); /* Light text */
          }
          .bookmarklet-container p {
-             color: rgba(255,255,255,0.8);
-             text-align: center; /* Ensure paragraph text is centered */
+             color: var(--muted-text); /* Muted light text */
+             text-align: center;
          }
 
         .bookmarklet {
             display: inline-block;
-            margin-top: 2rem; /* More margin */
-            padding: 1rem 2rem; /* Larger button */
-            background-color: var(--primary-color); /* Dark background */
-            color: var(--light-text); /* White text */
+            margin-top: 2.5rem; /* More margin */
+            padding: 1.2rem 2.5rem; /* Larger button */
+            background-color: var(--primary-color); /* Deep Indigo background */
+            color: var(--light-text); /* Light text */
             text-decoration: none;
             border-radius: 8px;
             cursor: grab;
-            transition: var(--transition);
+            transition: var(--transition-speed);
             font-weight: 700;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             position: relative;
             overflow: hidden;
-            animation: pulse-dark 2s infinite; /* Dark pulse animation */
-             font-family: 'Nunito', sans-serif; /* Match heading font */
+            /* Pulse animation using a subtle dark color */
+            animation: pulse-dark 2s infinite;
+             font-family: 'Nunito', sans-serif;
              text-transform: uppercase;
-             /* Use flexbox to align "Nova" and icon */
              display: inline-flex;
              align-items: center;
              justify-content: center;
-             gap: 0.5rem; /* Space between Nova and icon */
+             gap: 0.75rem; /* Space between Nova and icon */
         }
-
-        /* Removed style for the "Drag Me" part */
-        /*
-        .bookmarklet .drag-me-text {
-            font-size: 0.9em;
-            opacity: 0.8;
-             font-weight: 400;
-        }
-        */
-
 
          @keyframes pulse-dark {
-            0% { box-shadow: 0 0 0 0 rgba(28, 30, 43, 0.6); } /* primary-color pulse */
-            70% { box-shadow: 0 0 0 20px rgba(28, 30, 43, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(28, 30, 43, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(26, 26, 46, 0.7); } /* pulse using primary-color */
+            70% { box-shadow: 0 0 0 25px rgba(26, 26, 46, 0); } /* Larger pulse spread */
+            100% { box-shadow: 0 0 0 0 rgba(26, 26, 46, 0); }
         }
 
 
         .bookmarklet:hover {
-            background-color: var(--secondary-color); /* Slightly lighter hover */
-            transform: translateY(-4px) scale(1.05); /* More lift and scale */
+            background-color: var(--accent-color); /* Dark accent on hover */
+            transform: translateY(-5px) scale(1.03); /* More lift and scale */
             box-shadow: var(--hover-shadow);
             animation: none;
         }
 
         .bookmarklet:active {
             cursor: grabbing;
+            transform: translateY(-2px);
         }
+         .bookmarklet i {
+             color: var(--light-text); /* Ensure bookmarklet icon is light */
+         }
 
+        /* --- List Styles --- */
         ul, ol {
-            padding-left: 1.8rem; /* More padding */
-            margin-bottom: 1.5rem; /* More margin */
+            padding-left: 2rem; /* More padding */
+            margin-bottom: 1.8rem; /* More margin */
         }
 
         li {
-            margin-bottom: 0.8rem; /* More space between list items */
+            margin-bottom: 1rem; /* More space between list items */
             line-height: 1.8;
-             color: rgba(255,255,255,0.8); /* Muted white for list items */
+             color: var(--muted-text); /* Muted light for list items */
         }
 
          li strong {
-             color: var(--light-text); /* White for strong text in list items */
+             color: var(--light-text); /* Light for strong text in list items */
+         }
+
+         li i {
+             margin-right: 8px; /* Space between icon and list item text */
+             color: rgba(255,255,255,0.7); /* Muted light icons */
          }
 
 
-        .github-link, .discord-link {
-            color: var(--light-text); /* White links */
+        /* --- Link Styles --- */
+        a {
+            color: var(--light-text); /* Default link color (light) */
             text-decoration: none;
+            transition: color var(--transition-speed) ease;
+        }
+
+        a:hover {
+            color: var(--muted-text); /* Muted light color on hover */
+            text-decoration: underline;
+        }
+
+        .github-link, .discord-link {
             font-weight: 600;
-            transition: color var(--transition-speed) ease, text-shadow 0.3s ease;
-             text-shadow: 0 0 5px rgba(255,255,255,0.3);
+             text-shadow: 0 0 6px rgba(255,255,255,0.3); /* Subtle light shadow */
         }
 
         .github-link:hover, .discord-link:hover {
-            color: rgba(255,255,255,0.8); /* Muted white on hover */
-            text-decoration: underline;
-             text-shadow: none;
+            text-shadow: none;
         }
 
+        /* --- Tools Grid Section --- */
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2.5rem;
+            gap: 2.5rem; /* Increased gap */
+            margin-top: 3rem; /* Increased margin */
         }
 
         .tool-card {
-            background: var(--card-bg);
+            background: var(--card-bg); /* Dark card background */
             border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Consistent with section shadow */
-            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-            border-left: 5px solid var(--accent-color); /* Accent border color */
+            padding: 2.2rem; /* Increased padding */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.18); /* Slightly deeper shadow */
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-left-color var(--transition-speed) ease;
+            border-left: 6px solid var(--accent-color); /* Thicker accent border color (dark accent) */
         }
 
         .tool-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--hover-shadow); /* Use stronger hover shadow */
-            border-left-color: var(--light-text); /* White border on hover */
+            transform: translateY(-10px); /* More pronounced lift */
+            box-shadow: var(--hover-shadow); /* Darker hover shadow */
+            border-left-color: var(--light-text); /* Light border on hover */
         }
 
         .tool-card h4 {
-            color: var(--light-text);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            color: var(--light-text); /* Light text */
+            margin-bottom: 1.2rem; /* Increased margin */
+            font-size: 1.4rem; /* Slightly larger font */
             font-weight: 700;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.15); /* Subtle light border */
+            padding-bottom: 0.8rem; /* Increased padding */
         }
 
         .tool-card ul {
-            padding-left: 1.2rem;
+            padding-left: 1.5rem; /* Increased padding */
+             margin-bottom: 0; /* Remove bottom margin from last list */
         }
 
         .tool-card li {
-            margin-bottom: 0.6rem;
-            line-height: 1.6;
-             color: rgba(255,255,255,0.7); /* More muted white for list items */
+            margin-bottom: 0.8rem; /* More space between list items */
+            line-height: 1.7;
+             color: rgba(255,255,255,0.8); /* Slightly less muted light */
         }
 
          .tool-card i {
-             color: rgba(255,255,255,0.8); /* Muted white icons */
-             margin-right: 8px;
+             color: rgba(255,255,255,0.9); /* Slightly brighter light icons */
+             margin-right: 10px;
          }
 
+
+        /* --- Footer Styles --- */
         footer {
-            background: var(--accent-color);
-            color: var(--light-text);
-            padding: 2rem;
+            background: var(--accent-color); /* Dark accent background */
+            color: var(--light-text); /* Light text */
+            padding: 2.5rem; /* Increased padding */
             text-align: center;
             margin-top: auto;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1; /* Ensure footer is above body background */
         }
 
         footer p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             opacity: 0.8;
+            color: var(--muted-text); /* Muted light text */
+        }
+
+        /* --- Specific Styles for IXL Extension Section --- */
+        #ixl-extension-section h2 {
+            color: var(--ixl-heading-color); /* Use specific Nord color for the main heading */
+        }
+
+        #ixl-extension-section h3 {
+            /* Use general h3 styles, but override color */
+            color: var(--chrome-color); /* Default to Chrome Nord color */
+        }
+
+        #ixl-extension-section .firefox-heading {
+            color: var(--firefox-color); /* Specific class for Firefox Nord heading */
+        }
+
+        #ixl-extension-section p {
+            /* Use general p styles */
+            color: var(--muted-text); /* Ensure paragraph text is muted light */
+        }
+
+        #ixl-extension-section strong {
+             color: var(--ixl-heading-color); /* Keep strong text matching the IXL Nord color */
+        }
+
+        #ixl-extension-section li {
+             color: var(--muted-text); /* Ensure list item text is muted light */
+        }
+
+        #ixl-extension-section a {
+            /* Use general link styles, but override color */
+            color: var(--ixl-link-color-github); /* Default link color (Nord green) */
+            text-decoration: underline; /* Keep underline for clarity in instructions */
+        }
+
+        #ixl-extension-section a:hover {
+            color: var(--light-text); /* Lighter color on hover */
+            text-decoration: none; /* Remove underline on hover */
+        }
+
+        /* Specific link colors within IXL section lists (Nord palette) */
+        #ixl-extension-section .firefox-list a {
+             color: var(--ixl-link-color-mozilla); /* Nord purple */
+        }
+
+        #ixl-extension-section .repo-link {
+             color: var(--ixl-link-color-repo); /* Nord blue */
         }
 
 
-        /* Responsive adjustments */
+        /* --- Responsive Adjustments --- */
         @media (max-width: 768px) {
             .container {
-                padding: 2rem 1.5rem;
+                padding: 1.5rem;
+            }
+
+            header {
+                padding: 3rem 1rem 2rem;
             }
 
             header h1 {
-                font-size: clamp(2rem, 8vw, 3.5rem);
+                font-size: clamp(2.2rem, 9vw, 4rem);
             }
 
             header p {
-                font-size: clamp(1rem, 3vw, 1.2rem);
+                font-size: clamp(1.1rem, 3.5vw, 1.4rem);
             }
 
             h2 {
-                font-size: clamp(1.5rem, 5vw, 2rem);
+                font-size: clamp(1.7rem, 6vw, 2.2rem);
             }
 
             h3 {
-                font-size: clamp(1.2rem, 4vw, 1.6rem);
+                font-size: clamp(1.3rem, 5vw, 1.8rem);
             }
 
             h4 {
-                 font-size: clamp(1rem, 3.5vw, 1.3rem);
+                 font-size: clamp(1.1rem, 4vw, 1.5rem);
             }
 
             .selection-section {
                 flex-direction: column;
                 align-items: center;
+                gap: 1.5rem;
             }
 
             .button {
                 width: 100%;
-                max-width: 300px;
+                max-width: 350px; /* Allow buttons to be a bit wider on mobile */
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
+
+            .button i {
+                font-size: 1.2rem;
             }
 
             .tools-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .bookmarklet-container {
+                padding: 2rem;
+            }
+
+            .bookmarklet {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
             }
         }
+
+         @media (max-width: 480px) {
+             header h1 {
+                 font-size: clamp(2rem, 10vw, 3.5rem);
+             }
+             header p {
+                 font-size: clamp(1rem, 4vw, 1.2rem);
+             }
+             h2 {
+                 font-size: clamp(1.6rem, 7vw, 2rem);
+             }
+             h3 {
+                 font-size: clamp(1.2rem, 6vw, 1.6rem);
+             }
+             h4 {
+                 font-size: clamp(1rem, 5vw, 1.3rem);
+             }
+             .button {
+                 padding: 0.8rem 1.5rem;
+                 font-size: 1rem;
+             }
+             .button i {
+                 font-size: 1.1rem;
+             }
+             .bookmarklet {
+                 padding: 0.8rem 1.5rem;
+                 font-size: 1rem;
+             }
+         }
+
     </style>
 </head>
 <body>
     <header>
-        <div class="header-bg-effect"></div> <h1><i class="fas fa-rocket"></i> Nova Learning Suite</h1>
+        <div class="header-bg-effect"></div>
+        <h1><i class="fas fa-rocket"></i> Nova Learning Suite</h1>
         <p>Elevate your academic journey with intelligent assistance and powerful tools for popular learning platforms.</p>
     </header>
 
@@ -510,17 +665,17 @@
                 <button id="deltamath-button" class="button" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500"><i class="fas fa-chart-line"></i> DeltaMath</button>
             </section>
 
-            <section id="ixl-extension-section" style="background: #2c2e3b; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.12); margin-bottom: 2.5rem; padding: 2rem 1.5rem;">
-                <h2 style="color: #FF9800;"><i class="fas fa-pencil-alt"></i> Nova IXL Extension</h2>
-                <p style="margin-bottom: 1.2rem; color: #fff;">
+            <section id="ixl-extension-section" class="section-visible">
+                <h2><i class="fas fa-pencil-alt"></i> Nova IXL Extension</h2>
+                <p>
                     Enhance your IXL experience with the Nova IXL browser extension. <br>
-                    <strong style="color: #FF9800;">Note:</strong> This extension uses an AI backend, so its performance can be hit or miss depending on the question and the current AI response quality.
+                    <strong>Note:</strong> This extension uses an AI backend, so its performance can be hit or miss depending on the question and the current AI response quality.
                 </p>
                 <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
                     <div style="flex: 1 1 220px; min-width: 220px;">
-                        <h3 style="color: #2196F3;"><i class="fab fa-chrome"></i> Chrome</h3>
-                        <ol style="color: #fff; margin-left: 1.2rem;">
-                            <li>Download the latest release from <a href="https://github.com/cpmjaguar1234/nova/releases" target="_blank" style="color: #4CAF50; text-decoration: underline;">GitHub Releases</a>.</li>
+                        <h3><i class="fab fa-chrome"></i> Chrome</h3>
+                        <ol>
+                            <li>Download the latest release from <a href="https://github.com/cpmjaguar1234/nova/releases" target="_blank">GitHub Releases</a>.</li>
                             <li>Unzip the downloaded file to a folder (e.g., <span style="font-family: monospace;">ixl extension</span>).</li>
                             <li>Go to <b>chrome://extensions</b> in your browser.</li>
                             <li>Enable <b>Developer mode</b> (top right).</li>
@@ -528,22 +683,22 @@
                         </ol>
                     </div>
                     <div style="flex: 1 1 220px; min-width: 220px;">
-                        <h3 style="color: #9C27B0;"><i class="fab fa-firefox-browser"></i> Firefox</h3>
-                        <ol style="color: #fff; margin-left: 1.2rem;">
-                            <li>Visit the <a href="https://addons.mozilla.org/en-US/firefox/addon/nova-ixl-extension/" target="_blank" style="color: #9C27B0; text-decoration: underline;">Mozilla Add-ons page</a>.</li>
+                        <h3 class="firefox-heading"><i class="fab fa-firefox-browser"></i> Firefox</h3>
+                        <ol class="firefox-list">
+                            <li>Visit the <a href="https://addons.mozilla.org/en-US/firefox/addon/nova-ixl-extension/" target="_blank">Mozilla Add-ons page</a>.</li>
                             <li>Click <b>Add to Firefox</b> and follow the prompts.</li>
                             <li>Once installed, look for the Nova IXL icon in your toolbar.</li>
                         </ol>
                     </div>
                 </div>
-                <p style="margin-top: 1.5rem; font-size: 0.95em; color: #ccc;">Need help? See the <a href="https://github.com/cpmjaguar1234/nova" target="_blank" style="color: #2196F3; text-decoration: underline;">GitHub repository</a> for more details.</p>
+                <p style="margin-top: 1.5rem; font-size: 0.95em;">Need help? See the <a href="https://github.com/cpmjaguar1234/nova" target="_blank" class="repo-link">GitHub repository</a> for more details.</p>
             </section>
 
-            <section id="bookmarklet-section" class="bookmarklet-container">
+            <section id="bookmarklet-section" class="bookmarklet-container section-visible">
                 <h2><i class="fas fa-bookmark"></i> Bookmarklet Installation</h2>
                 <p>To use the Nova bookmarklet, drag the button below to your browser's bookmarks bar.</p>
                 <a class="bookmarklet" draggable="true" href="javascript:(function(){'use strict';function loadScript(url){fetch(url).then(response=>{if(!response.ok)throw new Error('Network response was not ok');return response.text()}).then(scriptContent=>{const scriptElement=document.createElement('script');scriptElement.textContent=scriptContent;document.head.appendChild(scriptElement);console.log('Script loaded and executed successfully')}).catch(error=>{console.error('Error loading script:',error)})}const currentDomain=window.location.hostname;if(currentDomain.includes('bigideasmath.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/bigideas.js');else if(currentDomain.includes('achieve3000.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/achieve.js');else if(currentDomain.includes('deltamath.com')){const pathSegments=window.location.pathname.split('/').filter(segment=>segment.length>0);if(pathSegments.length===5){loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/deltamath.js')}}else{alert('Nova Learning Assistant does not support this site yet.')}})()" title="Nova">Nova <i class="fas fa-grip-horizontal"></i></a>
-                 <p style="margin-top: 1.5rem; font-size: 0.9em; opacity: 0.9;">(Ensure your bookmarks bar is visible!)</p>
+                 <p style="margin-top: 1.5rem; font-size: 0.9em; opacity: 0.9; color: var(--muted-text);"> (Ensure your bookmarks bar is visible!)</p>
             </section>
 
             <section id="bim-section">
@@ -618,8 +773,7 @@
                     </ol>
             </section>
 
-
-            <section class="documentation">
+            <section class="documentation section-visible">
                 <h2><i class="fas fa-file-alt"></i> Documentation & Overview</h2>
                 <p>Nova is a suite of browser tools designed to support and enhance your online learning experience across various platforms. Our goal is to provide intelligent assistance that helps you understand concepts and navigate assignments more efficiently.</p>
 
@@ -628,33 +782,33 @@
                     <div class="tool-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                         <h4><i class="fas fa-calculator"></i> BIM Learning Assistant</h4>
                         <ul>
-                            <li>Automatic question analysis for support.</li>
-                            <li>Supports diverse question types.</li>
-                            <li>Clean, integrated interface.</li>
+                            <li><i class="fas fa-check"></i> Automatic question analysis for support.</li>
+                            <li><i class="fas fa-check"></i> Supports diverse question types.</li>
+                            <li><i class="fas fa-check"></i> Clean, integrated interface.</li>
                         </ul>
                     </div>
                     <div class="tool-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                         <h4><i class="fas fa-book-reader"></i> Achieve Learning Assistant</h4>
                         <ul>
-                            <li>Intelligent assistance for Achieve.</li>
-                            <li>Seamless platform integration.</li>
-                            <li>Features for enhanced comprehension.</li>
+                            <li><i class="fas fa-check"></i> Intelligent assistance for Achieve.</li>
+                            <li><i class="fas fa-check"></i> Seamless platform integration.</li>
+                            <li><i class="fas fa-check"></i> Features for enhanced comprehension.</li>
                         </ul>
                     </div>
                      <div class="tool-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                         <h4><i class="fas fa-pencil-alt"></i> IXL Learning Companion (Coming Soon)</h4>
                         <ul>
-                            <li>Real-time feedback & hints planned.</li>
-                            <li>Progress tracking planned.</li>
-                            <li>Seamless integration planned.</li>
+                            <li><i class="fas fa-hourglass-half"></i> Real-time feedback & hints planned.</li>
+                            <li><i class="fas fa-hourglass-half"></i> Progress tracking planned.</li>
+                            <li><i class="fas fa-hourglass-half"></i> Seamless integration planned.</li>
                         </ul>
                     </div>
                      <div class="tool-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                         <h4><i class="fas fa-chart-line"></i> DeltaMath UI Helper</h4>
                         <ul>
-                            <li>Floating UI for data extraction.</li>
-                            <li>KaTeX rendering for math.</li>
-                            <li>Draggable panel for convenience.</li>
+                            <li><i class="fas fa-check"></i> Floating UI for data extraction.</li>
+                            <li><i class="fas fa-check"></i> KaTeX rendering for math.</li>
+                            <li><i class="fas fa-check"></i> Draggable panel for convenience.</li>
                         </ul>
                     </div>
                 </div>
@@ -682,7 +836,7 @@
                     <li><i class="fas fa-wrench"></i> Verify that you are currently visiting a supported site (check the URL).</li>
                     <li><i class="fas fa-wrench"></i> Reload the page and try clicking the bookmarklet again.</li>
                     <li><i class="fas fa-wrench"></i> Check your browser's developer console (usually F12) for error messages.</li>
-                    <li><i class="fas fa-wrench"></i> Consult the <a class="github-link" href="https://github.com/Cpmjaguar1234/nova/issues" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub Issues</a> page for known problems.</li>
+                    <li><i class="fas fa-wrench"></i> Consult the <a class="github-link" href="https://github.com/cpmjaguar1234/nova/issues" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub Issues</a> page for known problems.</li>
                 </ul>
 
                 <h3 style="color: #ff6347;"><i class="fas fa-exclamation-triangle"></i> Important Notes & Disclaimer</h3>
@@ -717,7 +871,7 @@
         // Register GSAP plugins
         gsap.registerPlugin(ScrollTrigger);
 
-         // Function to create background stars
+         // Function to create background stars for the header
         function createStars(count) {
             const container = document.querySelector('.header-bg-effect');
             if (!container) return;
@@ -735,17 +889,17 @@
             }
         }
 
-        // Create stars in the header background
-        createStars(100); // Adjust number of stars
+        // Create stars in the header background (adjust count for density)
+        createStars(150);
 
         // Helper function to hide a section with GSAP animation
         function hideSection(sectionId) {
             const section = document.getElementById(sectionId);
-            // Only hide if it's currently marked as visible
+            // Only hide if it's currently marked as visible by the class
             if (section && section.classList.contains('section-visible')) {
                  gsap.to(section, {
                     opacity: 0,
-                    y: 20,
+                    y: 20, // Animate slightly downwards
                     duration: 0.4,
                     ease: 'power2.in',
                     onComplete: () => {
@@ -754,16 +908,16 @@
                     }
                 });
             } else if (section) {
-                // If it was somehow visible without the class, just hide it instantly
-                section.style.display = 'none';
-                section.classList.remove('section-visible');
+                 // If section exists but isn't marked visible, ensure it's hidden instantly
+                 section.style.display = 'none';
+                 section.classList.remove('section-visible');
             }
         }
 
         // Helper function to show a section with GSAP animation
         function showSection(sectionId) {
             const section = document.getElementById(sectionId);
-            // Only show if it's not already visible
+            // Only show if it's not already visible by the class
             if (section && !section.classList.contains('section-visible')) {
                 section.style.display = 'block'; // Make visible before animating
                 // Use a small timeout to ensure display: block is applied before GSAP starts
@@ -772,7 +926,7 @@
                         { opacity: 0, y: 20 }, // Start from hidden state
                         {
                             opacity: 1,
-                            y: 0,
+                            y: 0, // Animate to original position
                             duration: 0.6,
                             ease: "power2.out",
                             onComplete: () => {
@@ -786,61 +940,57 @@
 
         // Function to hide all relevant sections before showing a new one
         function hideAllContentSections(callback = null) {
+            // List of sections that should be hidden when a button is clicked
             const sectionsToHide = [
-                /* Removed 'content-section' from this list */
-                'bookmarklet-section', // Bookmarklet section can also be hidden/shown
+                'bookmarklet-section',
                 'bim-section',
                 'achieve-section',
-                'ixl-section',
+                'ixl-section', // Include IXL here so its specific content hides when other buttons are clicked
                 'deltamath-section'
-                // Keep .documentation visible
+                // The 'ixl-extension-section' and '.documentation' sections are NOT in this list,
+                // so they remain visible by default and are not hidden by button clicks.
             ];
             let sectionsAnimating = 0;
-            // Count how many sections are currently visible and need animating out
-            const totalSectionsToHide = sectionsToHide.filter(id => {
+            const initiallyVisibleSections = sectionsToHide.filter(id => {
                  const section = document.getElementById(id);
                  return section && section.classList.contains('section-visible');
-            }).length;
+            });
 
-            if (totalSectionsToHide === 0) {
+            if (initiallyVisibleSections.length === 0) {
                 // If none are visible, just call the callback immediately
-                 sectionsToHide.forEach(id => { // Ensure they are all display: none and don't have the class
-                    const section = document.getElementById(id);
-                    if(section) {
-                        section.style.display = 'none';
-                        section.classList.remove('section-visible');
-                    }
-                 });
                 if (callback) callback();
                 return;
             }
 
-            sectionsToHide.forEach(id => {
+            sectionsAnimating = initiallyVisibleSections.length;
+
+            initiallyVisibleSections.forEach(id => {
                 const section = document.getElementById(id);
-                // Only hide if it's currently marked as visible
-                if (section && section.classList.contains('section-visible')) {
-                     sectionsAnimating++;
-                     gsap.to(section, {
-                        opacity: 0,
-                        y: 20,
-                        duration: 0.4,
-                        ease: 'power2.in',
-                        onComplete: () => {
-                            section.classList.remove('section-visible');
-                            section.style.display = 'none';
-                            sectionsAnimating--;
-                            // Call callback only when ALL initially visible sections have finished hiding
-                            if (sectionsAnimating === 0 && callback) {
-                                callback();
-                            }
+                 gsap.to(section, {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.4,
+                    ease: 'power2.in',
+                    onComplete: () => {
+                        section.classList.remove('section-visible');
+                        section.style.display = 'none';
+                        sectionsAnimating--;
+                        // Call callback only when ALL initially visible sections have finished hiding
+                        if (sectionsAnimating === 0 && callback) {
+                            callback();
                         }
-                    });
-                } else if (section) {
-                    // If section exists but isn't marked visible, ensure it's hidden instantly
-                     section.style.display = 'none';
-                     section.classList.remove('section-visible');
-                }
+                    }
+                });
             });
+
+             // Ensure any sections not initially visible but in the hide list are set to display: none
+             sectionsToHide.forEach(id => {
+                 const section = document.getElementById(id);
+                 if (section && !section.classList.contains('section-visible')) {
+                     section.style.display = 'none';
+                     section.classList.remove('section-visible'); // Just in case
+                 }
+             });
         }
 
 
@@ -861,23 +1011,24 @@
         document.getElementById('bim-button').addEventListener('click', function() {
             hideAllContentSections(() => { // Wait for sections to hide
                 showSection('bim-section');
-                showSection('bookmarklet-section'); // Bookmarklet for BIM
+                showSection('bookmarklet-section'); // Bookmarklet is relevant for BIM
                 setActiveButton('bim-button');
             });
         });
 
         document.getElementById('achieve-button').addEventListener('click', function() {
             hideAllContentSections(() => { // Wait for sections to hide
-                showSection('achieve-section'); // Show Achieve specific content
-                showSection('bookmarklet-section'); // Bookmarklet for Achieve
+                showSection('achieve-section');
+                showSection('bookmarklet-section'); // Bookmarklet is relevant for Achieve
                 setActiveButton('achieve-button');
             });
         });
 
         document.getElementById('ixl-button').addEventListener('click', function() {
              hideAllContentSections(() => { // Wait for sections to hide
-                 showSection('ixl-section'); // IXL section (no bookmarklet needed based on content)
-                 // Don't show bookmarklet-section for IXL based on its installation method
+                 showSection('ixl-section'); // Show IXL specific content
+                 // The IXL extension section remains visible as it's not in sectionsToHide
+                 // Don't show bookmarklet-section for IXL as it uses an extension
                  setActiveButton('ixl-button');
              });
         });
@@ -885,7 +1036,7 @@
         document.getElementById('deltamath-button').addEventListener('click', function() {
             hideAllContentSections(() => { // Wait for sections to hide
                 showSection('deltamath-section');
-                showSection('bookmarklet-section'); // Bookmarklet for DeltaMath
+                showSection('bookmarklet-section'); // Bookmarklet is relevant for DeltaMath
                 setActiveButton('deltamath-button');
             });
         });
@@ -896,60 +1047,52 @@
              // Animate header elements
             gsap.from('header h1', {
                 opacity: 0,
-                y: -20,
-                duration: 0.8,
+                y: -30, // Animate slightly upwards
+                duration: 1,
                 delay: 0.5,
                 ease: 'back.out(1.7)'
             });
             gsap.from('header p', {
                 opacity: 0,
-                y: -10,
-                duration: 0.8,
+                y: -20, // Animate slightly upwards
+                duration: 1,
                 delay: 0.7,
                 ease: 'power2.out'
             });
 
-             /*
-             // Removed GSAP animation for selection section to ensure buttons are always visible
-             gsap.from('.selection-section', {
-                 opacity: 0,
-                 y: 20,
-                 duration: 0.8,
-                 delay: 1.0,
-                 ease: 'power2.out'
-             });
-             */
-
-
-             // Animate the container itself to fade/slide in
+             // Animate the main container itself to fade/slide in
              gsap.from(".container", {
                  opacity: 0,
-                 y: 50,
-                 duration: 1,
+                 y: 60, // Animate slightly downwards
+                 duration: 1.2,
                  ease: "power2.out",
-                 delay: 1.2 // Delay slightly after header animations
+                 delay: 1.0 // Delay slightly after header animations
              });
 
 
-             // Show and animate the initial content section and bookmarklet section
-             // Use a small delay to ensure container is somewhat visible first
+             // Ensure the default visible sections are marked and potentially animated in
+             // using GSAP after the container animation starts or finishes.
+             // AOS will also handle these as they scroll into view.
              setTimeout(() => {
-                 /* Removed the showSection('content-section'); call */
-                 showSection('bookmarklet-section'); // Show bookmarklet by default
-                 // The documentation section is also part of the default view
-                 const docSection = document.querySelector('.documentation');
-                 if (docSection) {
-                    docSection.style.display = 'block'; // Ensure it's block
-                    docSection.classList.add('section-visible'); // Mark as visible
-                     // Animate documentation section if needed, but AOS is also on it
-                      gsap.fromTo(docSection, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", delay: 0.2 }); // Added animation for documentation
-                 }
+                 const defaultVisibleSections = [
+                     document.getElementById('ixl-extension-section'),
+                     document.getElementById('bookmarklet-section'),
+                     document.querySelector('.documentation')
+                 ].filter(section => section !== null); // Filter out any nulls
 
-             }, 1500); // Delay showing initial content sections
+                 defaultVisibleSections.forEach(section => {
+                     if (section && !section.classList.contains('section-visible')) {
+                         section.style.display = 'block'; // Ensure display block
+                         section.classList.add('section-visible'); // Mark as visible
+                         // Optional: Add a GSAP animation for these sections on load
+                         gsap.fromTo(section, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", delay: 0.3 });
+                     }
+                 });
+             }, 1600); // Delay showing initial content sections slightly after container animation
 
         });
 
-        // Note: AOS is initialized at the top of the script block and will handle
+        // AOS is initialized at the top of the script block and will handle
         // elements with data-aos attributes as they scroll into view.
 
     </script>
