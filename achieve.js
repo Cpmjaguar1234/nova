@@ -118,7 +118,7 @@ class AssessmentHelper {
 
         // Image element inside the launcher (this image is part of the UI, not the intro animation image)
         const uiImg = document.createElement("img");
-        uiImg.src = "https://diverse-observations-vbulletin-occasional.trycloudflare.com/static/images/example.png"; // Keep the original UI image
+        uiImg.src = "https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/nova%20logo%20png.png"; // Keep the original UI image
         uiImg.style.cssText = "width: 90px;height: 90px;margin-top: 32px;border-radius: 50%;";
 
         // Close button for the main UI
