@@ -73,12 +73,13 @@
             /* Using dark background colors */
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--light-text); /* Light text on dark background */
-            line-height: 1.7;
+            line-height: 1.75; /* Slightly increased for better readability */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             overflow-x: hidden; /* Prevent horizontal scroll */
             position: relative; /* Needed for header background effect positioning */
+            scroll-behavior: smooth; /* Added for smooth scrolling */
         }
 
         /* --- Header Styles --- */
@@ -99,7 +100,7 @@
             margin-bottom: 1rem;
             font-weight: 700;
             color: var(--light-text); /* Light text */
-            text-shadow: 0 0 15px rgba(255,255,255,0.4); /* More pronounced text shadow */
+            text-shadow: 0 2px 10px rgba(255,255,255,0.3); /* Refined text shadow */
         }
 
         header h1 i {
@@ -183,6 +184,77 @@
              transform: translateY(0);
          }
 
+        /* --- Tool Card Styles --- */
+        .tool-card {
+            background-color: var(--accent-color); /* Use accent for card background, distinct from section */
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25); /* Shadow for depth */
+            margin-bottom: 2rem; /* Spacing between cards if they are stacked */
+            transition: transform var(--transition-speed) ease-out, box-shadow var(--transition-speed) ease-out;
+            position: relative; /* For potential future pseudo-elements */
+        }
+
+        .tool-card:last-child {
+            margin-bottom: 0; /* Remove margin from the last card in a section */
+        }
+
+        .tool-card:hover {
+            transform: translateY(-6px) scale(1.02); /* Lift and scale effect on hover */
+            box-shadow: var(--hover-shadow); /* Enhanced shadow on hover */
+        }
+
+        .tool-card h4 {
+            color: var(--light-text);
+            margin-bottom: 1rem;
+            font-size: clamp(1.2rem, 2.8vw, 1.45rem); /* Slightly smaller than main H4s */
+            font-weight: 600; 
+        }
+
+        .tool-card h4 i {
+            margin-right: 0.75rem;
+            /* Icon color will inherit from h4 (var(--light-text)) */
+        }
+
+        .tool-card ul {
+            list-style: none; /* Remove default bullet points */
+            padding-left: 0; /* Remove default padding */
+            margin-bottom: 0; /* Reset margin for ul inside card */
+        }
+
+        .tool-card li {
+            color: var(--muted-text);
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: flex-start; /* Align icon with the start of potentially multi-line text */
+            line-height: 1.6; /* Ensure good readability for list items */
+        }
+
+        .tool-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .tool-card li i { /* General styling for icons within list items */
+            margin-right: 0.75rem;
+            font-size: 0.9em;
+            width: 1.2em; /* Fixed width for alignment */
+            text-align: center;
+            margin-top: 0.2em; /* Fine-tune vertical alignment with text */
+        }
+
+        .tool-card li i.fa-check { /* Specific color for 'check' icons */
+            color: var(--nord-green);
+        }
+
+        .tool-card li i.fa-hourglass-half { /* Specific color for 'hourglass' icons */
+            color: var(--nord-orange);
+        }
+
+        .tool-card li i.fa-cogs,
+        .tool-card li i.fa-bolt { /* Example colors for other icons */
+            color: var(--nord-purple);
+        }
+
         /* --- Heading Styles --- */
         h2, h3, h4 {
             color: var(--light-text); /* Light text */
@@ -192,10 +264,10 @@
         }
 
         h2 {
-            font-size: clamp(2rem, 4.5vw, 2.5rem);
-            border-bottom: 2px solid rgba(255,255,255,0.15); /* Subtle light border */
-            padding-bottom: 0.75rem;
-            margin-bottom: 1.5rem; /* Increased margin */
+            font-size: clamp(2.1rem, 4.8vw, 2.6rem); /* Slightly increased font size */
+            border-bottom: 2px solid rgba(255,255,255,0.2); /* Slightly more visible border */
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.8rem; /* Increased margin */
         }
          h2 i {
              margin-right: 10px; /* Space between icon and text */
@@ -204,10 +276,10 @@
 
 
         h3 {
-             font-size: clamp(1.5rem, 3.5vw, 2rem);
-             color: rgba(255,255,255,0.9); /* Slightly muted light */
-             margin-top: 2rem; /* Increased margin */
-             margin-bottom: 1.2rem;
+             font-size: clamp(1.6rem, 3.8vw, 2.1rem); /* Slightly increased font size */
+             color: rgba(255,255,255,0.95); /* Slightly brighter */
+             margin-top: 2.2rem; /* Increased margin */
+             margin-bottom: 1.4rem; /* Increased margin */
         }
          h3 i {
              margin-right: 8px;
@@ -216,9 +288,9 @@
 
 
         h4 {
-            font-size: clamp(1.3rem, 3vw, 1.6rem);
+            font-size: clamp(1.35rem, 3.2vw, 1.7rem); /* Slightly increased font size */
             color: var(--light-text); /* Light text */
-            margin-bottom: 1rem;
+            margin-bottom: 1.1rem; /* Slightly increased margin */
              font-weight: 700;
         }
          h4 i {
@@ -230,6 +302,20 @@
         section p {
              color: var(--muted-text); /* Muted light text for paragraphs */
              margin-bottom: 1.2rem;
+             line-height: 1.8; /* Added for consistency */
+        }
+
+        /* --- Link Styles --- */
+        a {
+            color: var(--nord-blue); /* Consistent link color */
+            text-decoration: none;
+            transition: color var(--transition-speed) ease, text-decoration var(--transition-speed) ease;
+        }
+
+        a:hover, a:focus {
+            color: var(--light-text); /* Brighter on hover/focus */
+            text-decoration: underline;
+            text-decoration-thickness: 1px; /* Subtle underline */
         }
 
         /* --- Selection Buttons Section --- */

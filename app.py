@@ -10,7 +10,7 @@ from functools import wraps
 import pytesseract
 from PIL import Image
 import io
-import base64
+import base64 
 
 app = Flask(__name__)
 # Add bigideasmath.com to the allowed origins for /ask and /data
