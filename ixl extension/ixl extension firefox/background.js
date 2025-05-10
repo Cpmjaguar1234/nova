@@ -9,17 +9,21 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 async function captureAndProcessHtml() {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
-  // Inject script to extract the HTML of the target element
+  // Inject script to extract the most relevant part of the HTML (question/equation only)
   const [{ result: html }] = await chrome.scripting.executeScript({
     target: { tabId: tab.id },
     func: () => {
-      const el = document.querySelector('.practice.example-view.recommendations-visible');
-      return el ? el.outerHTML : null;
+      // Extract only the ixl-html-crate-root node
+      let el = document.querySelector('.practice.recommendations-visible');
+      if (el) {
+        return el.outerHTML;
+      }
+      return null;
     }
   });
 
   if (!html) {
-    alert('No element with class "practice example-view recommendations-visible" found.');
+    alert('No relevant question or equation found on the page.');
     return;
   }
 
@@ -35,7 +39,7 @@ async function captureAndProcessHtml() {
       },
       body: JSON.stringify({
         html,
-        prompt: "Give me the answer, only the answer, nothing else. Dont use latex, express it normally."
+        prompt: "Give me only the answer, nothing else. Calculate and simplify all expressions fully, including square roots, and return only the final numeric answer(s) rounded to 3 decimal places if needed. Do not use latex, do not add any extra text or formatting."
       })
     });
 
@@ -45,7 +49,8 @@ async function captureAndProcessHtml() {
     }
 
     const data = await response.json();
-    await showOverlayMessage(tab.id, data.response || 'No answer available');
+    // Show whatever the AI returns, even if not strictly formatted
+    await showOverlayMessage(tab.id, data.response || data.error || JSON.stringify(data) || 'No answer available');
   } catch (error) {
     console.error(error.toString());
     const errorMessage = error.message || 'Unknown error occurred';

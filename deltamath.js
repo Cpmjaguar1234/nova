@@ -388,7 +388,7 @@ function loadKaTeXScript() {
   
           const img = document.createElement("img");
           // Use the provided image URL
-          img.src = "https://diverse-observations-vbulletin-occasional.trycloudflare.com/static/images/example.png";
+          img.src = "https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/nova%20logo%20png.png";
           img.alt = "DeltaMath Helper";
           img.style.cssText = "width: 90px;height: 90px;margin-top: 32px;border-radius: 50%;";
           // Add error handler for image
