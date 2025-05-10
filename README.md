@@ -1,106 +1,117 @@
-# Nova Learning Assistant Suite
+# Nova Learning Assistant Suite 🚀
 
-A collection of browser scripts that enhance your learning experience by providing intelligent assistance during BIM and Achieve assignments.
+Welcome to the Nova Learning Assistant Suite! This collection of browser scripts and extensions is designed to enhance your learning experience by providing intelligent assistance and helpful tools for various online educational platforms.
 
-## Tools in the Suite
+## 🛠️ Tools in the Suite
 
-### BIM Cheat Assistant
-- Automatic question analysis and answer suggestions for BIM assignments
-- Support for multiple choice, True/False, and fill-in-the-blank questions
-- Clean and unobtrusive interface
+Our suite currently includes the following tools:
 
-### Achieve Cheat Assistant
-- Intelligent assistance for Achieve assignments
-- Seamless integration with the Achieve platform
-- Enhanced learning support features
+### 🧠 BIM Cheat Assistant
+* Automatic question analysis and answer suggestions for BIM assignments.
+* Supports multiple choice, True/False, and fill-in-the-blank questions.
+* Features a clean and unobtrusive interface.
 
-### IXL Extension
-- Real-time feedback and hints for practice questions
-- Progress tracking and performance analytics
-- Customizable learning paths based on user performance
+### 📚 Achieve Cheat Assistant
+* Provides intelligent assistance for Achieve assignments.
+* Offers seamless integration with the Achieve platform.
+* Includes enhanced learning support features.
 
-### DeltaMath UI Helper
-- Creates a floating UI for the DeltaMath Answer Extractor
-- Displays extracted answers using KaTeX in a draggable panel
-- Dynamically loads KaTeX, jQuery, and jQuery UI if not already present
-- Enhanced dragging using jQuery UI Draggable and UI animations
+### ✏️ IXL Extension
+* Delivers real-time feedback and hints for IXL practice questions.
+* Tracks progress and provides performance analytics.
+* Allows for customizable learning paths based on user performance.
 
-## Features
+### 📊 DeltaMath UI Helper
+* Creates a floating user interface for the DeltaMath Answer Extractor.
+* Displays extracted answers using KaTeX in a draggable panel.
+* Dynamically loads KaTeX, jQuery, and jQuery UI if they are not already present on the page.
+* Features enhanced dragging capabilities using jQuery UI Draggable and UI animations.
 
-- Automatic question analysis and answer suggestions
-- Support for multiple question types
-- Clean and unobtrusive interface
-- Cross-platform compatibility
+## ✨ Core Features
 
-## Installation
+* **Automatic Question Analysis**: Get intelligent answer suggestions.
+* **Multi-Type Support**: Works with various question formats.
+* **Clean Interface**: Enjoy an unobtrusive user experience.
+* **Cross-Platform Compatibility**: Use across different supported learning sites.
 
-### Bookmarklet Installation
+## 🚀 Installation
 
-#### How to Install
+You can install Nova tools using the methods below:
 
-To use the Nova bookmarklet, follow these simple steps:
+### Universal Bookmarklet Installation
 
-1. **Visit the GitHub Pages Site**: Go to [Nova Bookmarklet Site](https://cpmjaguar1234.github.io/nova).
+The easiest way to use Nova on supported platforms (like BigIdeasMath and Achieve3000) is via our universal bookmarklet.
 
-2. **Drag the Bookmarklet**: On the site, you will see a link labeled "Nova". Simply drag this link to your bookmarks bar.
-
-3. **Use the Bookmarklet**: Navigate to a supported site (e.g., bigideasmath.com or achieve3000.com) and click the "Nova" bookmarklet in your bookmarks bar to execute the script.
+**How to Install:**
+1.  **Visit the Nova Hub**: Navigate to our official website: [Nova Learning Suite Hub](https://cpmjaguar1234.github.io/nova/) (This is the page we've been working on!).
+2.  **Drag the Bookmarklet**: On the site, find the "Nova <i class="fas fa-magic"></i>" button in the "Universal Nova Bookmarklet" section. Click and drag this button to your browser's bookmarks/favorites bar.
+3.  **Use**: When you're on a supported learning platform (e.g., `bigideasmath.com` or `achieve3000.com`), simply click the "Nova" bookmarklet in your bookmarks bar to activate the assistant for that page.
 
 ### IXL Extension Installation
 
-#### Chrome Installation
+For an enhanced IXL experience, install our dedicated browser extension.
 
-1. **Download the Extension**: Visit the [GitHub releases page](https://github.com/Cpmjaguar1234/nova/releases/tag/v1.0.0) and download the extension files.
+#### <i class="fab fa-chrome"></i> Google Chrome Installation
+1.  **Download**: Get the latest version from the [GitHub Releases Page](https://github.com/Cpmjaguar1234/nova/releases). (Look for `v1.0.0` or newer).
+2.  **Unzip**: Extract the downloaded files into a dedicated folder on your computer.
+3.  **Open Extensions Page**: In Chrome, type `chrome://extensions` in the address bar and press Enter.
+4.  **Enable Developer Mode**: Find the "Developer mode" toggle (usually in the top-right corner) and turn it ON.
+5.  **Load Unpacked**: Click the "Load unpacked" button and select the folder where you extracted the extension files.
+6.  **Verify**: The Nova IXL Extension should now appear in your list of extensions and be active.
 
-2. **Open Chrome Extensions**: Navigate to `chrome://extensions/` in your Chrome browser.
+#### <i class="fab fa-firefox-browser"></i> Mozilla Firefox Installation
+1.  **Visit Add-ons Page**: Go to the [Nova IXL Extension page on Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/nova-ixl-extension/).
+2.  **Add to Firefox**: Click the "Add to Firefox" button.
+3.  **Confirm**: Follow the on-screen prompts to complete the installation.
+4.  **Verify**: The Nova IXL icon should appear in your Firefox toolbar.
 
-3. **Enable Developer Mode**: Toggle the "Developer mode" switch in the top right corner.
+## ✅ Supported Sites
 
-4. **Load the Extension**: Click "Load unpacked" and select the folder containing the downloaded extension files.
+* **Big Ideas Math**: Bookmarklet automatically loads the script.
+* **Achieve3000**: Bookmarklet automatically loads the script.
+* **IXL**: Enhanced support via the Chrome and Firefox extensions.
+* **DeltaMath**: Bookmarklet provides UI helper for answer extraction.
 
-5. **Verify Installation**: The extension should appear in your list of extensions and be enabled.
+## 🔍 Troubleshooting
 
-#### Firefox Installation
+If you encounter any issues:
 
-1. **Install from Mozilla Add-ons**: Visit the [Mozilla Add-ons page](https://addons.mozilla.org/en-US/firefox/addon/nova-ixl-extension/) for Nova IXL Extension.
+* Ensure your browser allows bookmarklets and extensions to run.
+* Confirm you are on a supported website and page for the specific tool you're trying to use.
+* **For Chrome IXL Extension**: Double-check that "Developer mode" is enabled on the `chrome://extensions` page.
+* **For Firefox IXL Extension**: Ensure the extension was installed correctly from the Mozilla Add-ons page and is enabled.
+* Check the browser's developer console (usually F12) for any error messages that might provide clues.
 
-2. **Add to Firefox**: Click the "Add to Firefox" button on the add-on page.
+For further assistance or to report a bug, please create an issue on our [GitHub Issues page](https://github.com/Cpmjaguar1234/nova/issues) or contact [1yyumwafd@mozmail.com](mailto:1yyumwafd@mozmail.com).
 
-3. **Confirm Installation**: Follow the prompts to complete the installation.
+## ⚠️ Important Notes
 
-4. **Verify Installation**: The extension icon should appear in your browser toolbar.
+* These tools are intended for **learning and practice purposes only**. Their goal is to assist understanding, not to circumvent academic integrity.
+* Always use these tools responsibly and ethically.
+* We encourage you to verify answers and, more importantly, understand the underlying concepts.
+* If you discover an issue or have a question, please report it.
 
-## Supported Sites
+## 📜 Disclaimer
 
-- **Big Ideas Math**: Automatically loads the script for bigideasmath.com.
-- **Achieve3000**: Automatically loads the script for achieve3000.com.
-- **IXL**: Enhanced learning support through Chrome and Firefox extensions.
+This software is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
 
-## Troubleshooting
+## 📄 License
 
-If you encounter any issues, ensure that:
-- Your browser allows bookmarklets and extensions
-- You are visiting a supported site
-- For Chrome: Developer mode is enabled for the IXL extension
-- For Firefox: The extension is properly installed from Mozilla Add-ons
+This project is licensed under the GNU General Public License v3.0. Please see the [LICENSE](LICENSE) file in the GitHub repository for full details.
 
-For more information or support, please contact [1yyumwafd@mozmail.com](mailto:1yyumwafd@mozmail.com).
+## 🤝 Contributing
 
-## Important Notes
+Contributions make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**!
 
-- These tools are designed for learning and practice purposes only
-- Use responsibly and ethically
-- Always verify answers and understand the underlying concepts
-- If you have an issue or question, please report it in the Issues section
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-## Disclaimer
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
-This software is provided "as is", without warranty of any kind. The authors are not responsible for any consequences of using these tools.
+---
 
-## License
-
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+Thank you for using the Nova Learning Assistant Suite!
