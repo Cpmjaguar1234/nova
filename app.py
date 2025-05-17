@@ -15,7 +15,12 @@ import base64
 app = Flask(__name__)
 # Add bigideasmath.com to the allowed origins for /ask and /data
 CORS(app, resources={
-    r"/ask": {"origins": ["https://portal.achieve3000.com", "https://www.deltamath.com", "https://www.bigideasmath.com"]},
+    r"/ask": {
+        "origins": "*",
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"],
+        "supports_credentials": True
+    },  # Allow all origins for /ask, with more specific settings
     r"/set_article": {"origins": "https://portal.achieve3000.com"},
     r"/data": {"origins": ["https://portal.achieve3000.com", "https://www.bigideasmath.com"]} # Changed to a list to include multiple origins
 })
