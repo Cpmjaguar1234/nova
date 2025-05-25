@@ -13,7 +13,7 @@ import io
 import base64
 
 app = Flask(__name__)
-# Add bigideasmath.com to the allowed origins for /ask and /data
+# Configure CORS for all endpoints
 CORS(app, resources={
     r"/ask": {
         "origins": "*",
@@ -21,6 +21,12 @@ CORS(app, resources={
         "allow_headers": ["Content-Type", "Authorization"],
         "supports_credentials": True
     },  # Allow all origins for /ask, with more specific settings
+    r"/ask-ixl": {
+        "origins": "*",
+        "methods": ["POST", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"],
+        "supports_credentials": True
+    },  # Allow all origins for /ask-ixl, with more specific settings
     r"/set_article": {"origins": "https://portal.achieve3000.com"},
     r"/data": {"origins": ["https://portal.achieve3000.com", "https://www.bigideasmath.com"]} # Changed to a list to include multiple origins
 })
@@ -122,6 +128,50 @@ def ask_gemini():
             except Exception as e:
                 app.logger.error(f"Error processing HTML: {str(e)}")
                 return jsonify({'error': 'Error processing HTML'}), 500
+                
+@app.route('/ask-ixl', methods=['POST'])
+def ask_ixl():
+    if not ask_enabled:
+        return jsonify({'error': 'Ask endpoint is currently disabled.'}), 403
+
+    app.logger.info(f"Received request at /ask-ixl")
+    
+    try:
+        data = request.get_json()
+        app.logger.info(f"IXL data: {data}")
+        
+        if not data:
+            return jsonify({'error': 'No data provided'}), 400
+            
+        # Get HTML content and instructions from the request
+        html_content = data.get('html', '')
+        instructions = data.get('instructions', '')
+        
+        # Get the prompt or use a default IXL-specific prompt
+        prompt = data.get('prompt', "Given this IXL math problem, provide the final answer(s) only. Format your response clearly and concisely. If there are multiple answers, separate them with a comma.")
+        
+        if not html_content:
+            return jsonify({'error': 'No HTML content provided'}), 400
+        
+        # Combine HTML, instructions, and prompt for Gemini
+        # Include instructions if available for better context
+        if instructions:
+            user_input = f"IXL Problem Instructions: {instructions}\n\nHTML Content: {html_content}\n\n{prompt}"
+        else:
+            user_input = f"HTML Content: {html_content}\n\n{prompt}"
+            
+        response = model.generate_content(user_input)
+        
+        if response and hasattr(response, 'text'):
+            cleaned_response = re.sub(r'\s+', ' ', response.text).strip()
+            app.logger.info(f"Generated IXL response: {cleaned_response}")
+            return jsonify({'response': cleaned_response})
+        else:
+            app.logger.error('Failed to generate a valid response for IXL')
+            return jsonify({'error': 'Failed to generate a valid response'}), 500
+    except Exception as e:
+        app.logger.error(f"Error processing IXL request: {str(e)}")
+        return jsonify({'error': f'Error processing IXL request: {str(e)}'}), 500
 
         # Handle image input
         if 'image' in data:

@@ -14,8 +14,10 @@ body {
   border-radius: 12px;
   overflow: hidden;
   position: relative;
+  transition: opacity 0.5s ease;
 }
 
+/* Logo styling with animation preparation */
 img.logo {
   width: 90px;
   height: 90px;
@@ -25,8 +27,14 @@ img.logo {
   object-fit: cover;
   border: 2px solid #3a3d4d;
   background: #23243a;
+  transition: transform 0.3s ease;
 }
 
+img.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Button styling with loading state support */
 button#capture {
   background: #2c2e3b;
   color: white;
@@ -48,6 +56,7 @@ button#capture {
   transition: background 0.2s ease, transform 0.1s ease-out;
   margin-top: 24px;
   margin-bottom: 8px;
+  position: relative;
 }
 
 button#capture:hover {
@@ -59,6 +68,31 @@ button#capture:active {
   transform: scale(0.98);
 }
 
+/* Loading indicator for the button */
+#loading-indicator {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 3px solid #fff;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+  display: none;
+  position: absolute;
+  left: 12px;
+}
+
+/* Animation for the loading spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Button text that can be hidden when loading */
+#button-text {
+  transition: opacity 0.2s ease;
+}
+
+/* Version info styling */
 .version-info {
   font-size: 12px;
   color: #bbb;
@@ -68,6 +102,7 @@ button#capture:active {
   opacity: 0.5;
 }
 
+/* Title styling */
 h1.popup-title {
   font-size: 20px;
   margin-bottom: 10px;
@@ -77,6 +112,7 @@ h1.popup-title {
   letter-spacing: 0.5px;
 }
 
+/* Main container */
 #launcher {
   width: 100%;
   display: flex;
@@ -84,9 +120,10 @@ h1.popup-title {
   align-items: center;
   position: relative;
   min-height: 260px;
+  padding-top: 24px; /* Space for the drag handle */
 }
 
-/* Drag handle style for future use */
+/* Drag handle styling */
 .drag-handle {
   width: 100%;
   height: 24px;
@@ -101,10 +138,12 @@ h1.popup-title {
   justify-content: center;
   align-items: center;
 }
+
+/* Drag indicator styling */
 .drag-indicator {
   width: 40px;
   height: 4px;
-  background: rgba(255,255,255,0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
   margin-top: 4px;
 }

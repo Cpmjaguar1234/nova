@@ -43,7 +43,7 @@ async function captureAndProcessHtml() {
   await showOverlayMessage(tab.id, 'Processing...');
 
   try {
-    const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/ask', {
+    const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/ask-ixl', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ async function captureAndProcessHtml() {
       body: JSON.stringify({
         html: extraction.html,
         instructions: extraction.instructions,
-        prompt: "Given the input, provide the final answer(s) only. Do not include steps or explanations. If there are multiple answers, separate them with a comma."
+        prompt: "Given this IXL math problem, provide the final answer(s) only. Format your response clearly and concisely. If there are multiple answers, separate them with a comma."
       })
     });
 
