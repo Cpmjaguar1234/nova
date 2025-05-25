@@ -297,8 +297,20 @@ def handle_data():
             with open(data_file, 'r') as f:
                 existing_data = json.load(f)
 
-            # Append new data
-            existing_data.append(data['text'])
+            # Prepare new data entry with additional fields
+            # Ensure OS and browser information is properly captured
+            new_entry = {
+                'text': data['text'],
+                'timestamp': data.get('timestamp', ''),
+                'os': data.get('os', 'Unknown'),
+                'browser': data.get('browser', 'Unknown')
+            }
+
+            # Log the OS and browser information
+            app.logger.info(f"Received data from OS: {new_entry['os']}, Browser: {new_entry['browser']}")
+
+            # Append new data as structured object
+            existing_data.append(new_entry)
 
             # Write back to file
             with open(data_file, 'w') as f:

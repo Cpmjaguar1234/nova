@@ -3,79 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Statistics</title>
+    <title>Nova Data Dashboard</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #f0f2f5;
+            font-family: 'Nunito', sans-serif;
+            padding-top: 20px;
+        }
+        .dashboard-header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 15px;
             padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         .stats-card {
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
             padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
         .data-item {
             background-color: #fff;
-            border-left: 4px solid #007bff;
-            margin-bottom: 10px;
+            border-left: 4px solid #2575fc;
+            margin-bottom: 15px;
             padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+        .data-item:hover {
+            transform: translateX(5px);
         }
         .stats-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #007bff;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #2575fc;
+            margin-bottom: 5px;
+        }
+        .stats-label {
+            color: #6c757d;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .chart-container {
+            position: relative;
+            height: 250px;
+            width: 100%;
+        }
+        .btn-action {
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .table-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .badge-os {
+            background-color: #6a11cb;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .badge-browser {
+            background-color: #2575fc;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 0.8em;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center mb-4">Data Statistics Dashboard</h1>
+        <div class="dashboard-header text-center">
+            <h1 class="display-4"><i class="fas fa-chart-line me-3"></i>Nova Data Dashboard</h1>
+            <p class="lead">Real-time analytics and user statistics</p>
+        </div>
         
-        <div class="row">
-            <div class="col-md-4">
-                <div class="stats-card">
-                    <h3>Total Entries</h3>
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-icon mb-2"><i class="fas fa-users fa-2x text-primary"></i></div>
                     <div class="stats-number">{{ data|length }}</div>
+                    <div class="stats-label">Total Users</div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="stats-card">
-                    <h3>Average Length</h3>
-                    <div class="stats-number">{{ (data|join|length / data|length)|round|int if data else 0 }}</div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-icon mb-2"><i class="fas fa-laptop fa-2x text-success"></i></div>
+                    <div class="stats-number" id="uniqueOS">0</div>
+                    <div class="stats-label">Unique OS</div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="stats-card">
-                    <h3>Last Updated</h3>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-icon mb-2"><i class="fas fa-globe fa-2x text-warning"></i></div>
+                    <div class="stats-number" id="uniqueBrowsers">0</div>
+                    <div class="stats-label">Unique Browsers</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-icon mb-2"><i class="fas fa-clock fa-2x text-danger"></i></div>
                     <div class="stats-number">Now</div>
+                    <div class="stats-label">Last Updated</div>
                 </div>
             </div>
         </div>
 
-        <div class="text-center mt-4">
-            <button id="toggleAskButton" class="btn">Loading...</button>
-            <button id="clearDataButton" class="btn btn-danger">Clear Data</button>
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="stats-card">
+                    <h4 class="mb-3"><i class="fas fa-desktop me-2"></i>Operating Systems</h4>
+                    <div class="chart-container">
+                        <canvas id="osChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="stats-card">
+                    <h4 class="mb-3"><i class="fas fa-window-maximize me-2"></i>Browsers</h4>
+                    <div class="chart-container">
+                        <canvas id="browserChart"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="stats-card mt-4">
-            <h2 class="mb-4">Data Entries</h2>
-            <div class="data-list">
-                {% for item in data %}
-                <div class="data-item">
-                    <p class="mb-0">{{ item }}</p>
-                </div>
-                {% endfor %}
+        <div class="text-center mb-4">
+            <button id="toggleAskButton" class="btn btn-action me-2">Loading...</button>
+            <button id="clearDataButton" class="btn btn-danger btn-action"><i class="fas fa-trash-alt me-2"></i>Clear Data</button>
+        </div>
+
+        <div class="table-container mt-4">
+            <h3 class="mb-4"><i class="fas fa-database me-2"></i>Data Entries</h3>
+            <div class="table-responsive">
+                <table id="dataTable" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Class</th>
+                            <th>OS</th>
+                            <th>Browser</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in data %}
+                        <tr>
+                            <td>{{ item.text.split('|')[0].split(':')[1].strip() if '|' in item.text and ':' in item.text.split('|')[0] else 'Unknown' }}</td>
+                            <td>{{ item.text.split('|')[1].split(':')[1].strip() if '|' in item.text and len(item.text.split('|')) > 1 and ':' in item.text.split('|')[1] else 'Unknown' }}</td>
+                            <td><span class="badge badge-os">{{ item.os if item.os is defined else 'Unknown' }}</span></td>
+                            <td><span class="badge badge-browser">{{ item.browser if item.browser is defined else 'Unknown' }}</span></td>
+                            <td>{{ item.timestamp if item.timestamp is defined else 'Unknown' }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
+    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    
     <script>
+        // Initialize DataTable
+        $(document).ready(function() {
+            $('#dataTable').DataTable({
+                order: [[4, 'desc']], // Sort by timestamp column descending
+                pageLength: 10,
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                responsive: true
+            });
+        });
+
+        // Data passed from server
+        const serverData = JSON.parse('{{ data | tojson | safe }}');
+
+        // Process data for charts
+        const processChartData = () => {
+            const osData = {};
+            const browserData = {};
+            const osSet = new Set();
+            const browserSet = new Set();
+
+            // Loop through the data using JavaScript
+            serverData.forEach(item => {
+                const os = item.os || 'Unknown';
+                const browser = item.browser || 'Unknown';
+                
+                osSet.add(os);
+                browserSet.add(browser);
+                
+                osData[os] = (osData[os] || 0) + 1;
+                browserData[browser] = (browserData[browser] || 0) + 1;
+            });
+
+            document.getElementById('uniqueOS').textContent = osSet.size;
+            document.getElementById('uniqueBrowsers').textContent = browserSet.size;
+
+            return { osData, browserData };
+        };
+
+        // Create charts
+        const createCharts = () => {
+            const { osData, browserData } = processChartData();
+            
+            // OS Chart
+            const osCtx = document.getElementById('osChart').getContext('2d');
+            new Chart(osCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(osData),
+                    datasets: [{
+                        data: Object.values(osData),
+                        backgroundColor: [
+                            '#6a11cb', '#2575fc', '#fd7e14', '#20c997', '#e83e8c'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+
+            // Browser Chart
+            const browserCtx = document.getElementById('browserChart').getContext('2d');
+            new Chart(browserCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(browserData),
+                    datasets: [{
+                        data: Object.values(browserData),
+                        backgroundColor: [
+                            '#2575fc', '#6a11cb', '#fd7e14', '#20c997', '#e83e8c'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+        };
+
+        // Initialize charts
+        window.addEventListener('load', createCharts);
+
+        // Toggle Ask Button functionality
         async function updateButtonState() {
             try {
                 const response = await fetch('/ask-status');
@@ -83,8 +308,8 @@
                     const data = await response.json();
                     const askEnabled = data.enabled;
                     const button = document.getElementById('toggleAskButton');
-                    button.textContent = askEnabled ? 'Stop' : 'Start';
-                    button.className = askEnabled ? 'btn btn-danger' : 'btn btn-primary';
+                    button.innerHTML = askEnabled ? '<i class="fas fa-stop-circle me-2"></i>Stop Service' : '<i class="fas fa-play-circle me-2"></i>Start Service';
+                    button.className = askEnabled ? 'btn btn-danger btn-action me-2' : 'btn btn-success btn-action me-2';
                 } else {
                     console.error('Failed to fetch ask endpoint status.');
                 }
@@ -96,7 +321,7 @@
         document.getElementById('toggleAskButton').addEventListener('click', async () => {
             try {
                 const button = document.getElementById('toggleAskButton');
-                const askEnabled = button.textContent === 'Stop';
+                const askEnabled = button.classList.contains('btn-danger');
                 const response = await fetch('/toggle-ask', {
                     method: 'POST',
                     headers: {
@@ -105,9 +330,31 @@
                     body: JSON.stringify({ enabled: !askEnabled })
                 });
                 if (response.ok) {
-                    button.textContent = !askEnabled ? 'Stop' : 'Start';
-                    button.className = !askEnabled ? 'btn btn-danger' : 'btn btn-primary';
-                    alert(`Ask endpoint ${!askEnabled ? 'enabled' : 'disabled'} successfully!`);
+                    button.innerHTML = !askEnabled ? '<i class="fas fa-stop-circle me-2"></i>Stop Service' : '<i class="fas fa-play-circle me-2"></i>Start Service';
+                    button.className = !askEnabled ? 'btn btn-danger btn-action me-2' : 'btn btn-success btn-action me-2';
+                    
+                    // Use toast notification instead of alert
+                    const toastContainer = document.createElement('div');
+                    toastContainer.className = 'position-fixed bottom-0 end-0 p-3';
+                    toastContainer.style.zIndex = '11';
+                    toastContainer.innerHTML = `
+                        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header">
+                                <strong class="me-auto">Nova System</strong>
+                                <small>Just now</small>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body">
+                                Service ${!askEnabled ? 'enabled' : 'disabled'} successfully!
+                            </div>
+                        </div>
+                    `;
+                    document.body.appendChild(toastContainer);
+                    
+                    // Remove toast after 3 seconds
+                    setTimeout(() => {
+                        toastContainer.remove();
+                    }, 3000);
                 } else {
                     alert('Failed to toggle ask endpoint.');
                 }
@@ -117,18 +364,41 @@
         });
 
         document.getElementById('clearDataButton').addEventListener('click', async () => {
-            try {
-                const response = await fetch('/clear-data', {
-                    method: 'POST'
-                });
-                if (response.ok) {
-                    alert('Data cleared successfully!');
-                    location.reload(); // Reload the page to update the data view
-                } else {
-                    alert('Failed to clear data.');
+            if (confirm('Are you sure you want to clear all data? This action cannot be undone.')) {
+                try {
+                    const response = await fetch('/clear-data', {
+                        method: 'POST'
+                    });
+                    if (response.ok) {
+                        // Use toast notification
+                        const toastContainer = document.createElement('div');
+                        toastContainer.className = 'position-fixed bottom-0 end-0 p-3';
+                        toastContainer.style.zIndex = '11';
+                        toastContainer.innerHTML = `
+                            <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-header">
+                                    <strong class="me-auto">Nova System</strong>
+                                    <small>Just now</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body">
+                                    Data cleared successfully!
+                                </div>
+                            </div>
+                        `;
+                        document.body.appendChild(toastContainer);
+                        
+                        // Remove toast after 3 seconds and reload page
+                        setTimeout(() => {
+                            toastContainer.remove();
+                            location.reload();
+                        }, 1500);
+                    } else {
+                        alert('Failed to clear data.');
+                    }
+                } catch (error) {
+                    console.error('Error clearing data:', error);
                 }
-            } catch (error) {
-                console.error('Error clearing data:', error);
             }
         });
 

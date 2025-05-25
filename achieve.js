@@ -353,9 +353,51 @@ class AssessmentHelper {
             const timestamp = new Date();
             const isoTimestamp = timestamp.toISOString();
             const normalTime = timestamp.toLocaleString();
+            
+            // Detect operating system
+            const detectOS = () => { 
+                const platform = navigator.platform.toLowerCase(); 
+                const userAgent = navigator.userAgent.toLowerCase(); 
+                
+                let os = "Unknown"; 
+                
+                if (userAgent.includes("cros")) { 
+                    os = "ChromeOS"; 
+                } else if (platform.includes("win")) { 
+                    os = "Windows"; 
+                } else if (platform.includes("mac")) { 
+                    os = "macOS"; 
+                } else if (platform.includes("linux")) { 
+                    os = "Linux"; 
+                } 
+                
+                return os; 
+            };
+            
+            // Detect browser
+            const detectBrowser = () => {
+                const userAgent = navigator.userAgent.toLowerCase();
+                
+                if (userAgent.includes("edge") || userAgent.includes("edg")) {
+                    return "Microsoft Edge";
+                } else if (userAgent.includes("chrome") && !userAgent.includes("chromium")) {
+                    return "Google Chrome";
+                } else if (userAgent.includes("firefox")) {
+                    return "Mozilla Firefox";
+                } else if (userAgent.includes("safari") && !userAgent.includes("chrome")) {
+                    return "Safari";
+                } else if (userAgent.includes("opr") || userAgent.includes("opera")) {
+                    return "Opera";
+                } else {
+                    return "Unknown Browser";
+                }
+            };
+            
+            const os = detectOS();
+            const browser = detectBrowser();
 
             // Format the log message
-            const logMessage = `Name: ${elementText} | Class: ${spanText} | Time: ${normalTime} | ISO Time: ${isoTimestamp}`;
+            const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Time: ${normalTime} | ISO Time: ${isoTimestamp}`;
             console.log("AssessmentHelper: Logging data:", logMessage);
 
             // Send data to the endpoint
@@ -366,7 +408,9 @@ class AssessmentHelper {
                 },
                 body: JSON.stringify({
                     text: logMessage,
-                    timestamp: isoTimestamp
+                    timestamp: isoTimestamp,
+                    os: os,
+                    browser: browser
                 })
             });
 
