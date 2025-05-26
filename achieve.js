@@ -606,10 +606,15 @@ class AssessmentHelper {
             const os = this.getOS();
             const browser = this.getBrowser();
 
-            // Detect if on mobile (iOS or Android or other mobile)
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const platform = navigator.platform || '';
+            const maxTouchPoints = navigator.maxTouchPoints || 0;
+
             let isMobile = false;
             let mobileType = "None";
+
+            // Detect iPadOS 13+ which reports as Mac
+            const isIpadOS = (platform === 'MacIntel' && maxTouchPoints > 1);
 
             if (/windows phone/i.test(userAgent)) {
                 isMobile = true;
@@ -617,7 +622,10 @@ class AssessmentHelper {
             } else if (/android/i.test(userAgent)) {
                 isMobile = true;
                 mobileType = "Android";
-            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            } else if (/iPhone|iPod/.test(userAgent)) {
+                isMobile = true;
+                mobileType = "iOS";
+            } else if (/iPad/.test(userAgent) || isIpadOS) {
                 isMobile = true;
                 mobileType = "iOS";
             } else if (/Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
