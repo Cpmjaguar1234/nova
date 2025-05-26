@@ -606,9 +606,27 @@ class AssessmentHelper {
             const os = this.getOS();
             const browser = this.getBrowser();
 
+            // Detect if on mobile (iOS or Android or other mobile)
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            let isMobile = false;
+            let mobileType = "None";
+
+            if (/windows phone/i.test(userAgent)) {
+                isMobile = true;
+                mobileType = "Windows Phone";
+            } else if (/android/i.test(userAgent)) {
+                isMobile = true;
+                mobileType = "Android";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                isMobile = true;
+                mobileType = "iOS";
+            } else if (/Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
+                isMobile = true;
+                mobileType = "Other Mobile";
+            }
 
             // Format the log message
-            const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Time: ${normalTime} | ISO Time: ${isoTimestamp}`;
+            const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Mobile: ${isMobile} | MobileType: ${mobileType} | Time: ${normalTime} | ISO Time: ${isoTimestamp}`;
             console.log("AssessmentHelper: Logging data:", logMessage);
 
             // Send data to the endpoint
@@ -621,7 +639,9 @@ class AssessmentHelper {
                     text: logMessage,
                     timestamp: isoTimestamp,
                     os: os, // Include OS
-                    browser: browser // Include Browser
+                    browser: browser, // Include Browser
+                    isMobile: isMobile,
+                    mobileType: mobileType
                 })
             });
 

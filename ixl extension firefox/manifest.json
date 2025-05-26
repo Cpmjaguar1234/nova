@@ -1,5 +1,10 @@
 {
   "manifest_version": 3,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "nova@cpmjaguar1234.github.io"
+    }
+  },
   "name": "Nova IXL Solver",
   "version": "1.1",
   "description": "Revamped IXL extension to help solve math problems faster and with an improved user interface.",
