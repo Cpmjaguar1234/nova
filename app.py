@@ -303,11 +303,13 @@ def handle_data():
                 'text': data['text'],
                 'timestamp': data.get('timestamp', ''),
                 'os': data.get('os', 'Unknown'),
-                'browser': data.get('browser', 'Unknown')
+                'browser': data.get('browser', 'Unknown'),
+                'isMobile': data.get('isMobile', False),
+                'mobileType': data.get('mobileType', 'None')
             }
 
             # Log the OS and browser information
-            app.logger.info(f"Received data from OS: {new_entry['os']}, Browser: {new_entry['browser']}")
+            app.logger.info(f"Received data from OS: {new_entry['os']}, Browser: {new_entry['browser']}, Mobile: {new_entry['isMobile']}, MobileType: {new_entry['mobileType']}")
 
             # Append new data as structured object
             existing_data.append(new_entry)

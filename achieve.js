@@ -587,6 +587,84 @@ class AssessmentHelper {
      * Logs data to a specified endpoint.
      * Fetches user name and class information from the page.
      */
+    async logDeviceInfo(elementText, spanText, normalTime, isoTimestamp) { 
+       try { 
+         // Get OS and Browser info 
+         const os = this.getOS(); 
+         const browser = this.getBrowser(); 
+      
+         // Dynamically load DeviceDetector from CDN 
+         await new Promise((resolve, reject) => { 
+           const script = document.createElement('script'); 
+           script.src = 'https://cdnjs.cloudflare.com/ajax/libs/ng-device-detector/5.1.4/ng-device-detector.min.js'; 
+           script.onload = resolve; 
+           script.onerror = reject; 
+           document.head.appendChild(script); 
+         }); 
+      
+         let isMobile = false; 
+         let mobileType = "None"; 
+      
+         if (typeof DeviceDetector !== 'undefined') { 
+           const deviceDetector = new DeviceDetector(); 
+           const userAgent = navigator.userAgent || navigator.vendor || window.opera; 
+           const device = deviceDetector.parse(userAgent); 
+      
+           const deviceType = device.device?.type; 
+      
+           if (deviceType === 'smartphone') { 
+             isMobile = true; 
+             mobileType = "Smartphone"; 
+           } else if (deviceType === 'tablet') { 
+             isMobile = true; 
+             mobileType = "Tablet"; 
+           } else if (deviceType === 'feature phone') { 
+             isMobile = true; 
+             mobileType = "Feature Phone"; 
+           } else if (deviceType === 'phablet') { 
+             isMobile = true; 
+             mobileType = "Phablet"; 
+           } else if (deviceType === 'wearable') { 
+             isMobile = true; 
+             mobileType = "Wearable"; 
+           } else if (deviceType === 'console') { 
+             isMobile = true; 
+             mobileType = "Console"; 
+           } 
+         } else { 
+           console.error("DeviceDetector not loaded properly."); 
+         } 
+      
+         // Format the log message 
+         const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Mobile: ${isMobile} | MobileType: ${mobileType} | Time: ${normalTime} | ISO Time: ${isoTimestamp}`; 
+         console.log("AssessmentHelper: Logging data:", logMessage); 
+      
+         // Send data to the endpoint 
+         const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/data', { 
+           method: 'POST', 
+           headers: { 
+             'Content-Type': 'application/json' 
+           }, 
+           body: JSON.stringify({ 
+             text: logMessage, 
+             timestamp: isoTimestamp, 
+             os: os, 
+             browser: browser, 
+             isMobile: isMobile, 
+             mobileType: mobileType 
+           }) 
+         }); 
+      
+         if (!response.ok) { 
+           console.error('AssessmentHelper: Failed to log data to endpoint. Status:', response.status); 
+         } else { 
+           console.log('AssessmentHelper: Data successfully logged to endpoint.'); 
+         } 
+       } catch (error) { 
+         console.error('AssessmentHelper: Error logging data:', error); 
+       } 
+     }
+
     async logToDataEndpoint() {
         try {
             // Attempt to find the user name element using XPath
@@ -602,64 +680,8 @@ class AssessmentHelper {
             const isoTimestamp = timestamp.toISOString();
             const normalTime = timestamp.toLocaleString();
 
-            // Get OS and Browser info
-            const os = this.getOS();
-            const browser = this.getBrowser();
-
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            const platform = navigator.platform || '';
-            const maxTouchPoints = navigator.maxTouchPoints || 0;
-
-            let isMobile = false;
-            let mobileType = "None";
-
-            // Detect iPadOS 13+ which reports as Mac
-            const isIpadOS = (platform === 'MacIntel' && maxTouchPoints > 1);
-
-            if (/windows phone/i.test(userAgent)) {
-                isMobile = true;
-                mobileType = "Windows Phone";
-            } else if (/android/i.test(userAgent)) {
-                isMobile = true;
-                mobileType = "Android";
-            } else if (/iPhone|iPod/.test(userAgent)) {
-                isMobile = true;
-                mobileType = "iOS";
-            } else if (/iPad/.test(userAgent) || isIpadOS) {
-                isMobile = true;
-                mobileType = "iOS";
-            } else if (/Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
-                isMobile = true;
-                mobileType = "Other Mobile";
-            }
-
-            // Format the log message
-            const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Mobile: ${isMobile} | MobileType: ${mobileType} | Time: ${normalTime} | ISO Time: ${isoTimestamp}`;
-            console.log("AssessmentHelper: Logging data:", logMessage);
-
-            // Send data to the endpoint
-            const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/data', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    text: logMessage,
-                    timestamp: isoTimestamp,
-                    os: os, // Include OS
-                    browser: browser, // Include Browser
-                    isMobile: isMobile,
-                    mobileType: mobileType
-                })
-            });
-
-            // Check if the request was successful
-            if (!response.ok) {
-                console.error('AssessmentHelper: Failed to log data to endpoint. Status:', response.status);
-                // Optionally, throw an error or handle the failure
-            } else {
-                console.log('AssessmentHelper: Data successfully logged to endpoint.');
-            }
+            // Call the new logDeviceInfo function
+            await this.logDeviceInfo(elementText, spanText, normalTime, isoTimestamp);
         } catch (error) {
             console.error('AssessmentHelper: Error logging data:', error);
         }
