@@ -480,30 +480,35 @@ def get_data_dashboard():
         return jsonify({'error': f'Internal server error: {e}'}), 500
 
 @app.route('/data', methods=['POST'])
-# No authentication decorator here, allowing POST requests from any domain.
 def post_data_entry():
-    """
-    Handles adding new data entries. Does NOT require authentication.
-    """
-    app.logger.info(f"Data endpoint called with POST method (no authentication required).")
     try:
-        if not request.is_json:
-            app.logger.warning('POST to /data: Request content type is not application/json.')
-            return jsonify({'error': 'Content-Type must be application/json'}), 400
+        data = request.get_json()
+        if not data:
+            app.logger.warning("Received empty or invalid JSON for /data POST.")
+            return jsonify({'error': 'Invalid JSON'}), 400
 
-        data = request.get_json(silent=True) # Use silent=True for robustness
-        if not data or 'text' not in data:
-            app.logger.warning('POST to /data: No "text" field or invalid JSON provided.')
-            return jsonify({'error': 'Text data is required in JSON body'}), 400
+        text = data.get('text', 'N/A')
+        timestamp = data.get('timestamp', 'N/A')
+        os_info = data.get('os', 'N/A')
+        browser_info = data.get('browser', 'N/A')
+        is_mobile = data.get('isMobile', False)
+        mobile_type = data.get('mobileType', 'N/A')
+        nova_clicks = data.get('novaClicks', 0) # Get novaClicks, default to 0 if not provided
 
-        # Ensure the data file exists and is a list before reading
-        if not os.path.exists(DATA_FILE):
-            with open(DATA_FILE, 'w') as f:
-                json.dump([], f)
+        entry = {
+            'text': text,
+            'timestamp': timestamp,
+            'os': os_info,
+            'browser': browser_info,
+            'isMobile': is_mobile,
+            'mobileType': mobile_type,
+            'novaClicks': nova_clicks # Add novaClicks to the entry
+        }
 
-        # Read existing data
-        with open(DATA_FILE, 'r') as f:
-            existing_data = json.load(f)
+        # Load existing data
+        if os.path.exists(DATA_FILE):
+            with open(DATA_FILE, 'r') as f:
+                existing_data = json.load(f)
         
         # Ensure existing_data is a list before appending
         if not isinstance(existing_data, list):

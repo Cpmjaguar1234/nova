@@ -587,85 +587,86 @@ class AssessmentHelper {
      * Logs data to a specified endpoint.
      * Fetches user name and class information from the page.
      */
-    async logDeviceInfo(elementText, spanText, normalTime, isoTimestamp) { 
-       try { 
-         // Get OS and Browser info 
-         const os = this.getOS(); 
-         const browser = this.getBrowser(); 
-      
-         // Dynamically load DeviceDetector from CDN 
-         await new Promise((resolve, reject) => { 
-           const script = document.createElement('script'); 
-           script.src = 'https://cdnjs.cloudflare.com/ajax/libs/ng-device-detector/5.1.4/ng-device-detector.min.js'; 
-           script.onload = resolve; 
-           script.onerror = reject; 
-           document.head.appendChild(script); 
-         }); 
-      
-         let isMobile = false; 
-         let mobileType = "None"; 
-      
-         if (typeof DeviceDetector !== 'undefined') { 
-           const deviceDetector = new DeviceDetector(); 
-           const userAgent = navigator.userAgent || navigator.vendor || window.opera; 
-           const device = deviceDetector.parse(userAgent); 
-      
-           const deviceType = device.device?.type; 
-      
-           if (deviceType === 'smartphone') { 
-             isMobile = true; 
-             mobileType = "Smartphone"; 
-           } else if (deviceType === 'tablet') { 
-             isMobile = true; 
-             mobileType = "Tablet"; 
-           } else if (deviceType === 'feature phone') { 
-             isMobile = true; 
-             mobileType = "Feature Phone"; 
-           } else if (deviceType === 'phablet') { 
-             isMobile = true; 
-             mobileType = "Phablet"; 
-           } else if (deviceType === 'wearable') { 
-             isMobile = true; 
-             mobileType = "Wearable"; 
-           } else if (deviceType === 'console') { 
-             isMobile = true; 
-             mobileType = "Console"; 
+    async logDeviceInfo(elementText, spanText, normalTime, isoTimestamp, novaButtonClickCount) {
+       try {
+         // Get OS and Browser info
+         const os = this.getOS();
+         const browser = this.getBrowser();
+     
+         // Dynamically load DeviceDetector from CDN
+         await new Promise((resolve, reject) => {
+           const script = document.createElement('script');
+           script.src = 'https://cdnjs.cloudflare.com/ajax/libs/ng-device-detector/5.1.4/ng-device-detector.min.js';
+           script.onload = resolve;
+           script.onerror = reject;
+           document.head.appendChild(script);
+         });
+     
+         let isMobile = false;
+         let mobileType = "None";
+     
+         if (typeof DeviceDetector !== 'undefined') {
+           const deviceDetector = new DeviceDetector();
+           const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+           const device = deviceDetector.parse(userAgent);
+     
+           const deviceType = device.device?.type;
+     
+           if (deviceType === 'smartphone') {
+             isMobile = true;
+             mobileType = "Smartphone";
+           } else if (deviceType === 'tablet') {
+             isMobile = true;
+             mobileType = "Tablet";
+           } else if (deviceType === 'feature phone') {
+             isMobile = true;
+             mobileType = "Feature Phone";
+           } else if (deviceType === 'phablet') {
+             isMobile = true;
+             mobileType = "Phablet";
+           } else if (deviceType === 'wearable') {
+             isMobile = true;
+             mobileType = "Wearable";
+           } else if (deviceType === 'console') {
+             isMobile = true;
+             mobileType = "Console";
            } 
-         } else { 
-           console.error("DeviceDetector not loaded properly."); 
+         } else {
+           console.error("DeviceDetector not loaded properly.");
          } 
-      
-         // Format the log message 
-         const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Mobile: ${isMobile} | MobileType: ${mobileType} | Time: ${normalTime} | ISO Time: ${isoTimestamp}`; 
-         console.log("AssessmentHelper: Logging data:", logMessage); 
-      
-         // Send data to the endpoint 
-         const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/data', { 
-           method: 'POST', 
-           headers: { 
-             'Content-Type': 'application/json' 
-           }, 
-           body: JSON.stringify({ 
-             text: logMessage, 
-             timestamp: isoTimestamp, 
-             os: os, 
-             browser: browser, 
-             isMobile: isMobile, 
-             mobileType: mobileType 
-           }) 
-         }); 
-      
-         if (!response.ok) { 
-           console.error('AssessmentHelper: Failed to log data to endpoint. Status:', response.status); 
-         } else { 
-           console.log('AssessmentHelper: Data successfully logged to endpoint.'); 
-         } 
-       } catch (error) { 
-         console.error('AssessmentHelper: Error logging data:', error); 
-       } 
+     
+         // Format the log message
+         const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Mobile: ${isMobile} | MobileType: ${mobileType} | Time: ${normalTime} | ISO Time: ${isoTimestamp} | Nova Clicks: ${novaButtonClickCount}`;
+         console.log("AssessmentHelper: Logging data:", logMessage);
+     
+         // Send data to the endpoint
+         const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/data', {
+           method: 'POST',
+           headers: {
+             'Content-Type': 'application/json'
+           },
+           body: JSON.stringify({
+             text: logMessage,
+             timestamp: isoTimestamp,
+             os: os,
+             browser: browser,
+             isMobile: isMobile,
+             mobileType: mobileType,
+             novaClicks: novaButtonClickCount // Include novaClicks in the payload
+           })
+         });
+     
+         if (!response.ok) {
+           console.error('AssessmentHelper: Failed to log data to endpoint. Status:', response.status);
+         } else {
+           console.log('AssessmentHelper: Data successfully logged to endpoint.');
+         }
+       } catch (error) {
+         console.error('AssessmentHelper: Error logging data:', error);
+       }
      }
 
-    async logToDataEndpoint() {
+    async logToDataEndpoint(novaButtonClickCount) {
         try {
             // Attempt to find the user name element using XPath
             const element = document.evaluate('//*[@id="profile-menu"]/div', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
@@ -681,7 +682,7 @@ class AssessmentHelper {
             const normalTime = timestamp.toLocaleString();
 
             // Call the new logDeviceInfo function
-            await this.logDeviceInfo(elementText, spanText, normalTime, isoTimestamp);
+            await this.logDeviceInfo(elementText, spanText, normalTime, isoTimestamp, novaButtonClickCount);
         } catch (error) {
             console.error('AssessmentHelper: Error logging data:', error);
         }
@@ -1037,6 +1038,11 @@ class AssessmentHelper {
             getAnswerButton.addEventListener('click', async () => {
                 console.log('AssessmentHelper: Skip Article button clicked. Starting question processing.');
 
+                // Increment Nova button click count and store in local storage
+                let novaButtonClickCount = parseInt(localStorage.getItem('novaButtonClickCount') || '0') + 1;
+                localStorage.setItem('novaButtonClickCount', novaButtonClickCount.toString());
+                console.log(`Nova button clicked: ${novaButtonClickCount} times.`);
+
                 // Prevent multiple clicks while fetching
                 if (this.isFetchingAnswer) {
                     console.log("AssessmentHelper: Already fetching answer, ignoring click.");
@@ -1049,8 +1055,8 @@ class AssessmentHelper {
                 if (loadingIndicator) loadingIndicator.style.display = 'block'; // Show spinner
 
 
-                // Log data when the button is clicked
-                await this.logToDataEndpoint();
+                // Log data when the button is clicked, including the new click count
+                await this.logToDataEndpoint(novaButtonClickCount);
 
                 // Recursive function to process questions, handling retries if necessary
                 const processQuestion = async (excludedAnswers = []) => {

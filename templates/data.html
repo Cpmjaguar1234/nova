@@ -140,6 +140,13 @@
                     <div class="stats-label">Last Updated</div>
                 </div>
             </div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-icon mb-2"><i class="fas fa-mouse-pointer fa-2x text-info"></i></div>
+                    <div class="stats-number" id="totalNovaClicks">0</div>
+                    <div class="stats-label">Total Nova Clicks</div>
+                </div>
+            </div>
         </div>
 
         <div class="row mb-4">
@@ -177,6 +184,7 @@
                             <th>OS</th>
                             <th>Browser</th>
                             <th>Timestamp</th>
+                            <th>Nova Clicks</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -187,6 +195,7 @@
                             <td><span class="badge badge-os">{{ item.os if item.os is defined else 'Unknown' }}</span></td>
                             <td><span class="badge badge-browser">{{ item.browser if item.browser is defined else 'Unknown' }}</span></td>
                             <td>{{ item.timestamp if item.timestamp is defined else 'Unknown' }}</td>
+                            <td>{{ item.novaClicks if item.novaClicks is defined else 'N/A' }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -199,211 +208,148 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- DataTables -->
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-    
+    <!-- DataTables JS -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
     <script>
-        // Initialize DataTable
         $(document).ready(function() {
+            // Initialize DataTable
             $('#dataTable').DataTable({
-                order: [[4, 'desc']], // Sort by timestamp column descending
-                pageLength: 10,
-                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
-                responsive: true
-            });
-        });
-
-        // Data passed from server
-        const serverData = JSON.parse('{{ data | tojson | safe }}');
-
-        // Process data for charts
-        const processChartData = () => {
-            const osData = {};
-            const browserData = {};
-            const osSet = new Set();
-            const browserSet = new Set();
-
-            // Loop through the data using JavaScript
-            serverData.forEach(item => {
-                const os = item.os || 'Unknown';
-                const browser = item.browser || 'Unknown';
-                
-                osSet.add(os);
-                browserSet.add(browser);
-                
-                osData[os] = (osData[os] || 0) + 1;
-                browserData[browser] = (browserData[browser] || 0) + 1;
+                "order": [[ 4, "desc" ]] // Order by timestamp column (index 4) in descending order
             });
 
-            document.getElementById('uniqueOS').textContent = osSet.size;
-            document.getElementById('uniqueBrowsers').textContent = browserSet.size;
+            // Fetch data from Flask backend
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    // Update Total Users
+                    document.querySelector('.stats-card .stats-number').textContent = data.length;
 
-            return { osData, browserData };
-        };
+                    // Calculate Unique OS
+                    const uniqueOS = new Set(data.map(item => item.os)).size;
+                    document.getElementById('uniqueOS').textContent = uniqueOS;
 
-        // Create charts
-        const createCharts = () => {
-            const { osData, browserData } = processChartData();
-            
-            // OS Chart
-            const osCtx = document.getElementById('osChart').getContext('2d');
-            new Chart(osCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: Object.keys(osData),
-                    datasets: [{
-                        data: Object.values(osData),
-                        backgroundColor: [
-                            '#6a11cb', '#2575fc', '#fd7e14', '#20c997', '#e83e8c'
-                        ],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'right'
-                        }
-                    }
-                }
-            });
+                    // Calculate Unique Browsers
+                    const uniqueBrowsers = new Set(data.map(item => item.browser)).size;
+                    document.getElementById('uniqueBrowsers').textContent = uniqueBrowsers;
 
-            // Browser Chart
-            const browserCtx = document.getElementById('browserChart').getContext('2d');
-            new Chart(browserCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: Object.keys(browserData),
-                    datasets: [{
-                        data: Object.values(browserData),
-                        backgroundColor: [
-                            '#2575fc', '#6a11cb', '#fd7e14', '#20c997', '#e83e8c'
-                        ],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'right'
-                        }
-                    }
-                }
-            });
-        };
+                    // Calculate Total Nova Clicks
+                    const totalNovaClicks = data.reduce((sum, item) => sum + (item.novaClicks || 0), 0);
+                    document.getElementById('totalNovaClicks').textContent = totalNovaClicks;
 
-        // Initialize charts
-        window.addEventListener('load', createCharts);
+                    // Prepare data for OS Chart
+                    const osCounts = {};
+                    data.forEach(item => {
+                        osCounts[item.os] = (osCounts[item.os] || 0) + 1;
+                    });
+                    createChart('osChart', Object.keys(osCounts), Object.values(osCounts), 'Operating Systems');
 
-        // Toggle Ask Button functionality
-        async function updateButtonState() {
-            try {
-                const response = await fetch('/ask-status');
-                if (response.ok) {
-                    const data = await response.json();
-                    const askEnabled = data.enabled;
-                    const button = document.getElementById('toggleAskButton');
-                    button.innerHTML = askEnabled ? '<i class="fas fa-stop-circle me-2"></i>Stop Service' : '<i class="fas fa-play-circle me-2"></i>Start Service';
-                    button.className = askEnabled ? 'btn btn-danger btn-action me-2' : 'btn btn-success btn-action me-2';
-                } else {
-                    console.error('Failed to fetch ask endpoint status.');
-                }
-            } catch (error) {
-                console.error('Error fetching ask endpoint status:', error);
-            }
-        }
+                    // Prepare data for Browser Chart
+                    const browserCounts = {};
+                    data.forEach(item => {
+                        browserCounts[item.browser] = (browserCounts[item.browser] || 0) + 1;
+                    });
+                    createChart('browserChart', Object.keys(browserCounts), Object.values(browserCounts), 'Browsers');
 
-        document.getElementById('toggleAskButton').addEventListener('click', async () => {
-            try {
-                const button = document.getElementById('toggleAskButton');
-                const askEnabled = button.classList.contains('btn-danger');
-                const response = await fetch('/toggle-ask', {
+                    // Update Last Updated time
+                    document.querySelector('.stats-card .stats-number').textContent = new Date().toLocaleTimeString();
+
+                    // Update toggle ask button status
+                    fetch('/ask-status')
+                        .then(response => response.json())
+                        .then(statusData => {
+                            const toggleButton = document.getElementById('toggleAskButton');
+                            if (statusData.enabled) {
+                                toggleButton.textContent = 'Disable Ask';
+                                toggleButton.classList.remove('btn-secondary');
+                                toggleButton.classList.add('btn-warning');
+                            } else {
+                                toggleButton.textContent = 'Enable Ask';
+                                toggleButton.classList.remove('btn-warning');
+                                toggleButton.classList.add('btn-secondary');
+                            }
+                        })
+                        .catch(error => console.error('Error fetching ask status:', error));
+                })
+                .catch(error => console.error('Error fetching data:', error));
+
+            // Toggle Ask button functionality
+            document.getElementById('toggleAskButton').addEventListener('click', function() {
+                const isEnabled = this.textContent === 'Disable Ask';
+                fetch('/toggle-ask', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ enabled: !askEnabled })
-                });
-                if (response.ok) {
-                    button.innerHTML = !askEnabled ? '<i class="fas fa-stop-circle me-2"></i>Stop Service' : '<i class="fas fa-play-circle me-2"></i>Start Service';
-                    button.className = !askEnabled ? 'btn btn-danger btn-action me-2' : 'btn btn-success btn-action me-2';
-                    
-                    // Use toast notification instead of alert
-                    const toastContainer = document.createElement('div');
-                    toastContainer.className = 'position-fixed bottom-0 end-0 p-3';
-                    toastContainer.style.zIndex = '11';
-                    toastContainer.innerHTML = `
-                        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
-                                <strong class="me-auto">Nova System</strong>
-                                <small>Just now</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Service ${!askEnabled ? 'enabled' : 'disabled'} successfully!
-                            </div>
-                        </div>
-                    `;
-                    document.body.appendChild(toastContainer);
-                    
-                    // Remove toast after 3 seconds
-                    setTimeout(() => {
-                        toastContainer.remove();
-                    }, 3000);
-                } else {
-                    alert('Failed to toggle ask endpoint.');
-                }
-            } catch (error) {
-                console.error('Error toggling ask endpoint:', error);
-            }
-        });
-
-        document.getElementById('clearDataButton').addEventListener('click', async () => {
-            if (confirm('Are you sure you want to clear all data? This action cannot be undone.')) {
-                try {
-                    const response = await fetch('/clear-data', {
-                        method: 'POST'
-                    });
-                    if (response.ok) {
-                        // Use toast notification
-                        const toastContainer = document.createElement('div');
-                        toastContainer.className = 'position-fixed bottom-0 end-0 p-3';
-                        toastContainer.style.zIndex = '11';
-                        toastContainer.innerHTML = `
-                            <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
-                                <div class="toast-header">
-                                    <strong class="me-auto">Nova System</strong>
-                                    <small>Just now</small>
-                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                </div>
-                                <div class="toast-body">
-                                    Data cleared successfully!
-                                </div>
-                            </div>
-                        `;
-                        document.body.appendChild(toastContainer);
-                        
-                        // Remove toast after 3 seconds and reload page
-                        setTimeout(() => {
-                            toastContainer.remove();
-                            location.reload();
-                        }, 1500);
+                    body: JSON.stringify({ enabled: !isEnabled })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.message);
+                    // Update button text and style based on new status
+                    if (!isEnabled) {
+                        this.textContent = 'Disable Ask';
+                        this.classList.remove('btn-secondary');
+                        this.classList.add('btn-warning');
                     } else {
-                        alert('Failed to clear data.');
+                        this.textContent = 'Enable Ask';
+                        this.classList.remove('btn-warning');
+                        this.classList.add('btn-secondary');
                     }
-                } catch (error) {
-                    console.error('Error clearing data:', error);
+                })
+                .catch(error => console.error('Error toggling ask status:', error));
+            });
+
+            // Clear Data button functionality
+            document.getElementById('clearDataButton').addEventListener('click', function() {
+                if (confirm('Are you sure you want to clear all data? This action cannot be undone.')) {
+                    fetch('/clear-data', {
+                        method: 'POST'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data.message);
+                        // Reload the page to reflect cleared data
+                        location.reload();
+                    })
+                    .catch(error => console.error('Error clearing data:', error));
                 }
+            });
+
+            // Chart.js function
+            function createChart(canvasId, labels, data, title) {
+                const ctx = document.getElementById(canvasId).getContext('2d');
+                new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: data,
+                            backgroundColor: [
+                                '#2575fc', '#6a11cb', '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'
+                            ],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: title,
+                                font: {
+                                    size: 16
+                                }
+                            },
+                            legend: {
+                                position: 'right',
+                            }
+                        }
+                    }
+                });
             }
         });
-
-        // Update button state on page load
-        updateButtonState();
     </script>
 </body>
 </html>
