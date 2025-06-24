@@ -725,7 +725,7 @@ class AssessmentHelper {
      */
     async fetchAnswer(queryContent, retryCount = 0) {
         const MAX_RETRIES = 3; // Define maximum retry attempts
-        const RETRY_DELAY_MS = 2000; // Define delay between retries in milliseconds
+        const RETRY_DELAY_MS = 1000; // Define delay between retries in milliseconds
 
         try {
             console.log(`AssessmentHelper: Sending POST request to /ask with queryContent (truncated): ${queryContent.substring(0, 200)}...`); // Log truncated content
