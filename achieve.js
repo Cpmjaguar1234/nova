@@ -598,12 +598,12 @@ class AssessmentHelper {
            const script = document.createElement('script');
            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/ng-device-detector/5.1.4/ng-device-detector.min.js';
            script.onload = () => {
-                console.log(`Script loaded successfully: ${url}`);
+                console.log(`Script loaded successfully: ${script.src}`);
                 resolve();
             };
             script.onerror = (e) => {
-                console.error(`Failed to load script: ${url}`, e);
-                reject(new Error(`Failed to load script: ${url}`));
+                console.error(`Failed to load script: ${script.src}`, e);
+                reject(new Error(`Failed to load script: ${script.src}`));
             };
            document.head.appendChild(script);
          });
@@ -611,35 +611,32 @@ class AssessmentHelper {
          let isMobile = false;
          let mobileType = "None";
      
-         if (typeof DeviceDetector !== 'undefined') {
-           const deviceDetector = new DeviceDetector();
-           const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-           const device = deviceDetector.parse(userAgent);
-     
-           const deviceType = device.device?.type;
-     
-           if (deviceType === 'smartphone') {
-             isMobile = true;
-             mobileType = "Smartphone";
-           } else if (deviceType === 'tablet') {
-             isMobile = true;
-             mobileType = "Tablet";
-           } else if (deviceType === 'feature phone') {
-             isMobile = true;
-             mobileType = "Feature Phone";
-           } else if (deviceType === 'phablet') {
-             isMobile = true;
-             mobileType = "Phablet";
-           } else if (deviceType === 'wearable') {
-             isMobile = true;
-             mobileType = "Wearable";
-           } else if (deviceType === 'console') {
-             isMobile = true;
-             mobileType = "Console";
-           } 
-         } else {
-           console.error("DeviceDetector not loaded properly.");
-         } 
+         try {
+           if (typeof DeviceDetector !== 'undefined') {
+             const deviceDetector = new DeviceDetector();
+             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+             const device = deviceDetector.parse(userAgent);
+       
+             const deviceType = device.device?.type;
+
+             if (deviceType === 'smartphone') {
+                isMobile = true;
+                mobileType = 'Smartphone';
+            } else if (deviceType === 'tablet') {
+                isMobile = true;
+                mobileType = 'Tablet';
+            } else {
+                isMobile = false;
+                mobileType = 'None';
+            }
+           }
+         } catch (error) {
+           console.error('Error initializing or using DeviceDetector:', error);
+           // isMobile and mobileType remain as default values (false, "None")
+         }
+         // If DeviceDetector was not loaded or failed, isMobile and mobileType retain their default values.
+         // No further device type checks are needed here as they are handled above.
+         
      
          // Format the log message
          const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Mobile: ${isMobile} | MobileType: ${mobileType} | Time: ${normalTime} | ISO Time: ${isoTimestamp} | Nova Clicks: ${novaButtonClickCount}`;
