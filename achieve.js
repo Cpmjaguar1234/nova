@@ -597,8 +597,14 @@ class AssessmentHelper {
          await new Promise((resolve, reject) => {
            const script = document.createElement('script');
            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/ng-device-detector/5.1.4/ng-device-detector.min.js';
-           script.onload = resolve;
-           script.onerror = reject;
+           script.onload = () => {
+                console.log(`Script loaded successfully: ${url}`);
+                resolve();
+            };
+            script.onerror = (e) => {
+                console.error(`Failed to load script: ${url}`, e);
+                reject(new Error(`Failed to load script: ${url}`));
+            };
            document.head.appendChild(script);
          });
      

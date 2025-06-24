@@ -166,8 +166,9 @@ def redirect_to_nova():
         # For now, it redirects to the external dashboard
         pass # Allow the request to proceed to potentially be handled by Flask's routing (e.g. a 404)
     else:
-        app.logger.info(f"Redirecting unauthorized path '{request.path}' to Nova dashboard.")
-        return redirect("https://cpmjaguar1234.github.io/nova")
+        # Removed redirect to non-existent GitHub Pages site.
+        # If a dashboard is needed, it should be hosted and configured correctly.
+        pass
 
 
 # --- Routes ---
@@ -439,9 +440,18 @@ def set_article():
 @require_auth_basic # Only GET requires password
 def get_data_dashboard():
     """
-    Handles reading user data for the dashboard. Requires authentication.
+    Renders the data dashboard HTML page.
     """
-    app.logger.info(f"Data endpoint called with GET method.")
+    app.logger.info("Rendering data.html dashboard.")
+    return render_template('data.html')
+
+@app.route('/api/data', methods=['GET'])
+@require_auth_basic # Secure the API endpoint as well
+def get_api_data():
+    """
+    Handles reading user data and returning it as JSON.
+    """
+    app.logger.info("API data endpoint called with GET method.")
     try:
         data = [] # Initialize data as an empty list by default
         if os.path.exists(DATA_FILE):
@@ -469,14 +479,13 @@ def get_data_dashboard():
             with open(DATA_FILE, 'w') as f:
                 json.dump([], f)
 
-        # At this point, 'data' is guaranteed to be a list.
-        app.logger.info(f"Successfully loaded {len(data)} data entries for GET request.")
-        return render_template('data.html', data=data)
+        app.logger.info(f"Successfully loaded {len(data)} data entries for API GET request.")
+        return jsonify(data)
     except IOError as e:
         app.logger.error(f'Error accessing {DATA_FILE}: {e}', exc_info=True)
         return jsonify({'error': f'Error accessing data file: {e}'}), 500
     except Exception as e:
-        app.logger.error(f'Unexpected error in /data GET: {e}', exc_info=True)
+        app.logger.error(f'Unexpected error in /api/data GET: {e}', exc_info=True)
         return jsonify({'error': f'Internal server error: {e}'}), 500
 
 @app.route('/data', methods=['POST'])
@@ -515,17 +524,9 @@ def post_data_entry():
             app.logger.warning(f"Existing data in '{DATA_FILE}' is not a list during POST. Initializing as empty list for append.")
             existing_data = []
 
-        # Prepare new data entry with additional fields
-        new_entry = {
-            'text': data['text'],
-            'timestamp': data.get('timestamp', 'Unknown'), # Use 'Unknown' as default for safety
-            'os': data.get('os', 'Unknown'),
-            'browser': data.get('browser', 'Unknown')
-        }
+        app.logger.info(f"Received new data entry: OS: {os_info}, Browser: {browser_info}, Text (partial): {text[:50]}...")
 
-        app.logger.info(f"Received new data entry: OS: {new_entry['os']}, Browser: {new_entry['browser']}, Text (partial): {new_entry['text'][:50]}...")
-
-        existing_data.append(new_entry)
+        existing_data.append(entry)
 
         # Write back to file with proper indentation
         with open(DATA_FILE, 'w') as f:
