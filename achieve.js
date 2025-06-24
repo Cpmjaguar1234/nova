@@ -588,6 +588,10 @@ class AssessmentHelper {
      * Fetches user name and class information from the page.
      */
     async logDeviceInfo(elementText, spanText, normalTime, isoTimestamp, novaButtonClickCount) {
+       let deviceDetectorLoaded = false; // Flag to track successful script loading
+       let isMobile = false; // Declare here to ensure accessibility in catch block
+       let mobileType = "None"; // Declare here to ensure accessibility in catch block
+
        try {
          // Get OS and Browser info
          const os = this.getOS();
@@ -599,6 +603,7 @@ class AssessmentHelper {
            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/ng-device-detector/5.1.4/ng-device-detector.min.js';
            script.onload = () => {
                 console.log(`Script loaded successfully: ${script.src}`);
+                deviceDetectorLoaded = true; // Set flag to true on success
                 resolve();
             };
             script.onerror = (e) => {
@@ -608,31 +613,32 @@ class AssessmentHelper {
            document.head.appendChild(script);
          });
      
-         let isMobile = false;
-         let mobileType = "None";
-     
-         try {
-           if (typeof DeviceDetector !== 'undefined') {
-             const deviceDetector = new DeviceDetector();
-             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-             const device = deviceDetector.parse(userAgent);
-       
-             const deviceType = device.device?.type;
+         if (deviceDetectorLoaded) { // Only attempt to use DeviceDetector if script loaded successfully
+           try {
+             if (typeof DeviceDetector !== 'undefined') {
+               const deviceDetector = new DeviceDetector();
+               const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+               const device = deviceDetector.parse(userAgent);
+         
+               const deviceType = device.device?.type;
 
-             if (deviceType === 'smartphone') {
-                isMobile = true;
-                mobileType = 'Smartphone';
-            } else if (deviceType === 'tablet') {
-                isMobile = true;
-                mobileType = 'Tablet';
-            } else {
-                isMobile = false;
-                mobileType = 'None';
-            }
+               if (deviceType === 'smartphone') {
+                  isMobile = true;
+                  mobileType = 'Smartphone';
+              } else if (deviceType === 'tablet') {
+                  isMobile = true;
+                  mobileType = 'Tablet';
+              } else {
+                  isMobile = false;
+                  mobileType = 'None';
+              }
+             }
+           } catch (error) {
+             console.error('Error initializing or using DeviceDetector:', error);
+             // isMobile and mobileType remain as default values (false, "None")
            }
-         } catch (error) {
-           console.error('Error initializing or using DeviceDetector:', error);
-           // isMobile and mobileType remain as default values (false, "None")
+         } else {
+             console.warn('DeviceDetector script failed to load. Skipping device detection.');
          }
          // If DeviceDetector was not loaded or failed, isMobile and mobileType retain their default values.
          // No further device type checks are needed here as they are handled above.
@@ -665,8 +671,9 @@ class AssessmentHelper {
            console.log('AssessmentHelper: Data successfully logged to endpoint.');
          }
        } catch (error) {
-         console.error('AssessmentHelper: Error logging data:', error);
-       }
+           console.error('AssessmentHelper: Error logging data:', error);
+           // isMobile and mobileType retain their default initialized values (false, "None")
+         }
      }
 
     async logToDataEndpoint(novaButtonClickCount) {
