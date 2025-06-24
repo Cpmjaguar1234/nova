@@ -723,7 +723,10 @@ class AssessmentHelper {
      * @param {string} queryContent - The content (article + question) to send to the API.
      * @returns {Promise<string>} A promise that resolves with the answer text or an error message.
      */
-    async fetchAnswer(queryContent) {
+    async fetchAnswer(queryContent, retryCount = 0) {
+        const MAX_RETRIES = 3; // Define maximum retry attempts
+        const RETRY_DELAY_MS = 2000; // Define delay between retries in milliseconds
+
         try {
             console.log(`AssessmentHelper: Sending POST request to /ask with queryContent (truncated): ${queryContent.substring(0, 200)}...`); // Log truncated content
 
@@ -743,10 +746,23 @@ class AssessmentHelper {
             console.log(`AssessmentHelper: Received response from /ask with status: ${response.status}`);
 
             if (!response.ok) {
-                // Handle HTTP errors
-                const errorBody = await response.text(); // Try to get error details
+                const errorBody = await response.text();
                 console.error('AssessmentHelper: Failed to fetch answer from API. Status:', response.status, 'Body:', errorBody);
-                throw new Error(`API request failed with status ${response.status}: ${errorBody}`);
+
+                // Check for specific 500 error with quota exceeded message
+                if (response.status === 500 && errorBody.includes("429 You exceeded your current quota")) {
+                    if (retryCount < MAX_RETRIES) {
+                        console.warn(`AssessmentHelper: Quota exceeded error detected. Retrying in ${RETRY_DELAY_MS / 1000} seconds (Attempt ${retryCount + 1}/${MAX_RETRIES}).`);
+                        await new Promise(resolve => setTimeout(resolve, RETRY_DELAY_MS));
+                        return this.fetchAnswer(queryContent, retryCount + 1); // Retry the call
+                    } else {
+                        console.error(`AssessmentHelper: Max retries (${MAX_RETRIES}) reached for quota exceeded error.`);
+                        throw new Error(`API request failed after multiple retries due to quota: ${errorBody}`);
+                    }
+                } else {
+                    // Handle other HTTP errors without retrying
+                    throw new Error(`API request failed with status ${response.status}: ${errorBody}`);
+                }
             }
 
             const data = await response.json();

@@ -11,7 +11,7 @@ fi
 
 # Set environment variables
 export APP_PASSWORD='password'
-export GEMINI_API_KEY='key'
+export GEMINI_API_KEYS='YOUR_FIRST_GEMINI_API_KEY,YOUR_SECOND_GEMINI_API_KEY,YOUR_THIRD_GEMINI_API_KEY' # Replace with your actual keys
 
 # Generate a random secret key for Flask sessions
 export SECRET_KEY=$(openssl rand -hex 24)
