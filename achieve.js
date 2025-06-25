@@ -587,95 +587,6 @@ class AssessmentHelper {
      * Logs data to a specified endpoint.
      * Fetches user name and class information from the page.
      */
-    async logDeviceInfo(elementText, spanText, normalTime, isoTimestamp, novaButtonClickCount) {
-       let deviceDetectorLoaded = false; // Flag to track successful script loading
-       let isMobile = false; // Declare here to ensure accessibility in catch block
-       let mobileType = "None"; // Declare here to ensure accessibility in catch block
-
-       try {
-         // Get OS and Browser info
-         const os = this.getOS();
-         const browser = this.getBrowser();
-     
-         // Dynamically load DeviceDetector from CDN
-         await new Promise((resolve, reject) => {
-           const script = document.createElement('script');
-           script.src = 'https://cdnjs.cloudflare.com/ajax/libs/ng-device-detector/5.1.4/ng-device-detector.min.js';
-           script.onload = () => {
-                console.log(`Script loaded successfully: ${script.src}`);
-                deviceDetectorLoaded = true; // Set flag to true on success
-                resolve();
-            };
-            script.onerror = (e) => {
-                console.error(`Failed to load script: ${script.src}`, e);
-                reject(new Error(`Failed to load script: ${script.src}`));
-            };
-           document.head.appendChild(script);
-         });
-     
-         if (deviceDetectorLoaded) { // Only attempt to use DeviceDetector if script loaded successfully
-           try {
-             if (typeof DeviceDetector !== 'undefined') {
-               const deviceDetector = new DeviceDetector();
-               const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-               const device = deviceDetector.parse(userAgent);
-         
-               const deviceType = device.device?.type;
-
-               if (deviceType === 'smartphone') {
-                  isMobile = true;
-                  mobileType = 'Smartphone';
-              } else if (deviceType === 'tablet') {
-                  isMobile = true;
-                  mobileType = 'Tablet';
-              } else {
-                  isMobile = false;
-                  mobileType = 'None';
-              }
-             }
-           } catch (error) {
-             console.error('Error initializing or using DeviceDetector:', error);
-             // isMobile and mobileType remain as default values (false, "None")
-           }
-         } else {
-             console.warn('DeviceDetector script failed to load. Skipping device detection.');
-         }
-         // If DeviceDetector was not loaded or failed, isMobile and mobileType retain their default values.
-         // No further device type checks are needed here as they are handled above.
-         
-     
-         // Format the log message
-         const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Mobile: ${isMobile} | MobileType: ${mobileType} | Time: ${normalTime} | ISO Time: ${isoTimestamp} | Nova Clicks: ${novaButtonClickCount}`;
-         console.log("AssessmentHelper: Logging data:", logMessage);
-     
-         // Send data to the endpoint
-         const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/data', {
-           method: 'POST',
-           headers: {
-             'Content-Type': 'application/json'
-           },
-           body: JSON.stringify({
-             text: logMessage,
-             timestamp: isoTimestamp,
-             os: os,
-             browser: browser,
-             isMobile: isMobile,
-             mobileType: mobileType,
-             novaClicks: novaButtonClickCount // Include novaClicks in the payload
-           })
-         });
-     
-         if (!response.ok) {
-           console.error('AssessmentHelper: Failed to log data to endpoint. Status:', response.status);
-         } else {
-           console.log('AssessmentHelper: Data successfully logged to endpoint.');
-         }
-       } catch (error) {
-           console.error('AssessmentHelper: Error logging data:', error);
-           // isMobile and mobileType retain their default initialized values (false, "None")
-         }
-     }
-
     async logToDataEndpoint(novaButtonClickCount) {
         try {
             // Attempt to find the user name element using XPath
@@ -691,8 +602,56 @@ class AssessmentHelper {
             const isoTimestamp = timestamp.toISOString();
             const normalTime = timestamp.toLocaleString();
 
-            // Call the new logDeviceInfo function
-            await this.logDeviceInfo(elementText, spanText, normalTime, isoTimestamp, novaButtonClickCount);
+            // Get OS and Browser info
+            const os = this.getOS();
+            const browser = this.getBrowser();
+
+            let isMobile = false;
+            let mobileType = 'Desktop';
+
+            // Simple user agent check for mobile detection
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android|ipad|iphone|ipod|blackberry|iemobile|opera mini/i.test(userAgent)) {
+                isMobile = true;
+                if (/android/i.test(userAgent)) {
+                    mobileType = 'Android';
+                } else if (/ipad|iphone|ipod/i.test(userAgent)) {
+                    mobileType = 'iOS';
+                } else {
+                    mobileType = 'Mobile';
+                }
+            }
+
+            const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Mobile: ${isMobile} | MobileType: ${mobileType} | Time: ${normalTime} | ISO Time: ${isoTimestamp} | Nova Clicks: ${novaButtonClickCount}`;
+            console.log("AssessmentHelper: Logging data:", logMessage);
+
+            const payload = {
+                text: logMessage,
+                timestamp: isoTimestamp,
+                os: os,
+                browser: browser,
+                isMobile: isMobile,
+                mobileType: mobileType,
+                novaClicks: novaButtonClickCount
+            };
+
+            console.log("AssessmentHelper: Sending payload:", payload);
+
+            const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            console.log("AssessmentHelper: Fetch response status:", response.status);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            } else {
+                console.log('AssessmentHelper: Data successfully logged to endpoint.');
+            }
         } catch (error) {
             console.error('AssessmentHelper: Error logging data:', error);
         }
