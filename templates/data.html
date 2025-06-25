@@ -191,7 +191,7 @@
                         {% for item in data %}
                         <tr>
                             <td>{{ item.text.split('|')[0].split(':')[1].strip() if '|' in item.text and ':' in item.text.split('|')[0] else 'Unknown' }}</td>
-                            <td>{{ item.text.split('|')[1].split(':')[1].strip() if '|' in item.text and len(item.text.split('|')) > 1 and ':' in item.text.split('|')[1] else 'Unknown' }}</td>
+                            <td>{{ item.text.split('|')[1].split(':')[1].strip() if '|' in item.text and (item.text.split('|') | length) > 1 and ':' in item.text.split('|')[1] else 'Unknown' }}</td>
                             <td><span class="badge badge-os">{{ item.os if item.os is defined else 'Unknown' }}</span></td>
                             <td><span class="badge badge-browser">{{ item.browser if item.browser is defined else 'Unknown' }}</span></td>
                             <td>{{ item.timestamp if item.timestamp is defined else 'Unknown' }}</td>
@@ -223,7 +223,8 @@
                 .then(response => response.json())
                 .then(data => {
                     // Update Total Users
-                    document.querySelector('.stats-card .stats-number').textContent = data.length;
+                    const uniqueUsers = new Set(data.map(item => item.text.split('|')[0].split(':')[1].trim())).size;
+                    document.querySelector('.stats-card .stats-number').textContent = uniqueUsers;
 
                     // Calculate Unique OS
                     const uniqueOS = new Set(data.map(item => item.os)).size;
@@ -252,7 +253,7 @@
                     createChart('browserChart', Object.keys(browserCounts), Object.values(browserCounts), 'Browsers');
 
                     // Update Last Updated time
-                    document.querySelector('.stats-card .stats-number').textContent = new Date().toLocaleTimeString();
+                    // document.querySelector('.stats-card .stats-number').textContent = new Date().toLocaleTimeString();
 
                     // Update toggle ask button status
                     fetch('/ask-status')

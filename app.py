@@ -443,7 +443,32 @@ def get_data_dashboard():
     Renders the data dashboard HTML page.
     """
     app.logger.info("Rendering data.html dashboard.")
-    return render_template('data.html')
+    data = []
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE, 'r') as f:
+            content = f.read().strip()
+            if content:
+                try:
+                    loaded_data = json.loads(content)
+                    if isinstance(loaded_data, list):
+                        data = loaded_data
+                    else:
+                        app.logger.error(f"Data file '{DATA_FILE}' content is not a JSON list. Found type: {type(loaded_data).__name__}. Resetting file.")
+                        with open(DATA_FILE, 'w') as f_reset:
+                            json.dump([], f_reset)
+                except json.JSONDecodeError as e:
+                    app.logger.error(f'Error decoding JSON from {DATA_FILE}: Malformed JSON. {e}. Resetting file.', exc_info=True)
+                    with open(DATA_FILE, 'w') as f_reset:
+                        json.dump([], f_reset)
+            else:
+                app.logger.info(f"Data file '{DATA_FILE}' is empty. Initializing as empty list.")
+                with open(DATA_FILE, 'w') as f_reset:
+                    json.dump([], f_reset)
+    else:
+        app.logger.info(f"Creating empty {DATA_FILE} as it does not exist.")
+        with open(DATA_FILE, 'w') as f:
+            json.dump([], f)
+    return render_template('data.html', data=data)
 
 @app.route('/api/data', methods=['GET'])
 @require_auth_basic # Secure the API endpoint as well

@@ -1019,10 +1019,9 @@ class AssessmentHelper {
             getAnswerButton.addEventListener('click', async () => {
                 console.log('AssessmentHelper: Skip Article button clicked. Starting question processing.');
 
-                // Increment Nova button click count and store in local storage
-                let novaButtonClickCount = parseInt(localStorage.getItem('novaButtonClickCount') || '0') + 1;
-                localStorage.setItem('novaButtonClickCount', novaButtonClickCount.toString());
-                console.log(`Nova button clicked: ${novaButtonClickCount} times.`);
+                // Set Nova button click count to 1 for each click
+                let novaButtonClickCount = 1;
+                console.log(`Nova button clicked: ${novaButtonClickCount} time.`);
 
                 // Prevent multiple clicks while fetching
                 if (this.isFetchingAnswer) {
