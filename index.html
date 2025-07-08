@@ -31,20 +31,24 @@
             --secondary-color: #252540; /* Slightly lighter Indigo */
             --accent-color: #3d3d5c; /* Muted Purple/Indigo accent */
             --card-bg: #2c2c4a; /* Background for cards/sections */
-            --light-text: #e0e0ff; /* Soft white/lavender */
-            --muted-text: #b0b0d0; /* Muted text color */
-
-            --border-radius: 12px;
+            --light-text: #e6e6ff; /* Brighter soft white/lavender for better contrast */
+            --muted-text: #b8b8d8; /* Slightly brighter muted text for better readability */
+            
+            --border-radius: 14px; /* Slightly increased border radius */
             --transition-speed: 0.4s; /* Standard transition speed */
-            /* Shadows for dark theme */
-            --card-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            --hover-shadow: 0 15px 30px rgba(0,0,0,0.4);
-
-            /* Nord-like Button Colors */
-            --nord-blue: #5E81AC; /* Frost */
-            --nord-green: #A3BE8C; /* Aurora */
-            --nord-orange: #D08770; /* Aurora */
-            --nord-purple: #B48EAD; /* Aurora */
+            /* Enhanced shadows for dark theme */
+            --card-shadow: 0 10px 25px rgba(0,0,0,0.25), 0 5px 10px rgba(0,0,0,0.15);
+            --hover-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 8px 15px rgba(0,0,0,0.2);
+            
+            /* Subtle glow effects */
+            --subtle-glow: 0 0 15px rgba(255,255,255,0.05);
+            --hover-glow: 0 0 20px rgba(255,255,255,0.1);
+            
+            /* Nord-like Button Colors with slightly increased vibrancy */
+            --nord-blue: #6388b4; /* Frost - slightly brighter */
+            --nord-green: #a8c596; /* Aurora - slightly brighter */
+            --nord-orange: #d99178; /* Aurora - slightly brighter */
+            --nord-purple: #bb97b6; /* Aurora - slightly brighter */
 
             --bim-color: var(--nord-green);
             --achieve-color: var(--nord-blue);
@@ -59,9 +63,14 @@
             --ixl-link-color-mozilla: var(--firefox-color); /* Use Firefox color for Mozilla link */
             --ixl-link-color-repo: var(--achieve-color); /* Use Chrome color for repo link */
 
-             /* Scrollbar styles */
+            /* Scrollbar styles */
             --scrollbar-thumb: var(--accent-color);
             --scrollbar-track: var(--secondary-color);
+            
+            /* Animation durations */
+            --animation-slow: 0.8s;
+            --animation-medium: 0.5s;
+            --animation-fast: 0.3s;
         }
 
         /* --- Base Styles --- */
@@ -73,16 +82,28 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            /* Using dark background colors */
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            /* Enhanced background gradient with subtle animation */
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--secondary-color));
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             color: var(--light-text); /* Light text on dark background */
-            line-height: 1.75; /* Slightly increased for better readability */
-            /* min-height: 100vh; Removed min-height from body to allow header to control initial height */
+            line-height: 1.8; /* Increased for better readability */
+            letter-spacing: 0.01em; /* Subtle letter spacing for better readability */
             display: flex;
             flex-direction: column;
             overflow-x: hidden; /* Prevent horizontal scroll */
             position: relative; /* Needed for header background effect positioning */
             scroll-behavior: smooth; /* Added for smooth scrolling */
+            text-rendering: optimizeLegibility; /* Improved text rendering */
+            -webkit-font-smoothing: antialiased; /* Smoother fonts on webkit browsers */
+            -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+        }
+        
+        /* Subtle background gradient animation */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
          /* Custom Scrollbar Styling */
@@ -107,14 +128,15 @@
 
         /* --- Header Styles --- */
         header {
-            background: var(--accent-color); /* Dark accent background */
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color) 120%); /* Enhanced gradient background */
             color: var(--light-text); /* Light text */
-            padding: 4rem 1rem 3rem; /* Increased padding */
+            padding: 5rem 1rem 4rem; /* Increased padding for more spacious feel */
             text-align: center;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Deeper shadow */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Enhanced shadow for depth */
             position: relative;
             overflow: hidden;
             z-index: 1; /* Ensure header is above background effect */
+            border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle border for definition */
 
             /* Styles for initial centering */
             min-height: 100vh; /* Make header take full viewport height initially */
@@ -124,29 +146,85 @@
             align-items: center; /* Horizontally center content */
         }
 
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
         header h1 {
             font-family: 'Nunito', sans-serif;
-            font-size: clamp(2.8rem, 7vw, 4.5rem); /* Larger, more responsive heading */
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-size: clamp(3rem, 7vw, 4.8rem); /* Larger, more responsive heading */
+            margin-bottom: 1.2rem;
+            font-weight: 800; /* Bolder weight for more impact */
             color: var(--light-text); /* Light text */
-            text-shadow: 0 2px 10px rgba(255,255,255,0.3); /* Refined text shadow */
+            text-shadow: 0 2px 15px rgba(255,255,255,0.4); /* Enhanced text shadow */
+            letter-spacing: -0.02em; /* Tighter letter spacing for headings */
+            line-height: 1.2;
+            transform: translateY(0);
+            opacity: 1;
+            animation: fadeInDown var(--animation-slow) ease-out;
         }
 
         header h1 i {
-            margin-right: 15px; /* Space between icon and text */
-            font-size: 1.1em; /* Slightly larger icon relative to text */
+            margin-right: 18px; /* Increased space between icon and text */
+            font-size: 1.15em; /* Slightly larger icon relative to text */
+            display: inline-block;
+            vertical-align: middle;
+            transform: translateY(-2px); /* Subtle alignment adjustment */
+            animation: rocketWiggle 5s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes rocketWiggle {
+            0%, 100% { transform: translateY(-2px) rotate(0deg); }
+            25% { transform: translateY(-4px) rotate(-5deg); }
+            75% { transform: translateY(-4px) rotate(5deg); }
         }
 
         header p {
-            font-size: clamp(1.2rem, 2.8vw, 1.5rem); /* Larger, more responsive paragraph */
-            opacity: 0.9;
+            font-size: clamp(1.25rem, 2.8vw, 1.6rem); /* Larger, more responsive paragraph */
+            opacity: 0.95;
             max-width: 900px;
-            margin: 0.5rem auto 0; /* Adjusted margin */
+            margin: 0.8rem auto 0; /* Adjusted margin */
             color: var(--muted-text); /* Muted text color for description */
+            font-weight: 300; /* Lighter weight for subtitle */
+            line-height: 1.6;
+            transform: translateY(0);
+            animation: fadeInUp var(--animation-slow) ease-out;
+            animation-delay: 0.2s;
+            animation-fill-mode: both;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* Subtle star/particle effect for header background (using lighter color on dark background) */
+        /* Enhanced star/particle effect for header background */
         .header-bg-effect {
             position: absolute;
             top: 0;
@@ -156,58 +234,120 @@
             pointer-events: none;
             overflow: hidden;
             z-index: 0; /* Behind content */
+            opacity: 0.9; /* Slightly reduce overall opacity */
         }
 
         .star {
             position: absolute;
-            /* Increased opacity and slightly brighter color */
-            background: rgba(255,255,255,0.7); /* More visible light particles */
+            background: rgba(255,255,255,0.8); /* Brighter particles */
             border-radius: 50%;
             opacity: 0; /* Start hidden for animation */
             animation: twinkle linear infinite;
-            /* Added subtle glow effect */
-            box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.3);
+            /* Enhanced glow effect */
+            box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.4);
+            filter: blur(0.5px); /* Subtle blur for softer appearance */
+        }
+        
+        /* Create different star types */
+        .star:nth-child(3n) {
+            background: rgba(180, 180, 255, 0.9); /* Bluish stars */
+            box-shadow: 0 0 10px 4px rgba(180, 180, 255, 0.5);
+        }
+        
+        .star:nth-child(3n+1) {
+            background: rgba(255, 255, 220, 0.9); /* Yellowish stars */
+            box-shadow: 0 0 9px 3px rgba(255, 255, 220, 0.5);
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; } /* Fade to full opacity */
+            0% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.1); } /* Fade to full opacity with slight pulse */
+            100% { opacity: 0; transform: scale(0.8); }
         }
 
 
         /* --- Main Content Area --- */
         main {
             flex: 1;
-            padding: 2rem 1rem; /* Increased padding */
+            padding: 3rem 1rem; /* Increased padding for more breathing room */
             z-index: 1; /* Ensure main content is above body background */
             opacity: 0; /* Initially hidden for fade-in animation */
             transform: translateY(50px); /* Start slightly below for slide-up effect */
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Animation properties */
+            transition: opacity var(--animation-slow) ease-out, transform var(--animation-slow) ease-out; /* Animation properties */
+            position: relative;
+        }
+        
+        /* Add subtle particle effect to main content background */
+        main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: -1;
         }
 
         .container {
-            max-width: min(1100px, 98%); /* Increased max-width */
+            max-width: min(1200px, 96%); /* Slightly increased max-width */
             margin: 1.5rem auto; /* Increased margin */
             background-color: var(--secondary-color); /* Slightly lighter dark background */
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.03) 0%, transparent 100%);
             border-radius: var(--border-radius);
-            box-shadow: var(--card-shadow); /* Darker shadow */
-            padding: 2rem; /* Increased padding */
+            box-shadow: var(--card-shadow), var(--subtle-glow); /* Enhanced shadow with subtle glow */
+            padding: 2.5rem; /* Increased padding */
             position: relative;
             z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle border */
+            backdrop-filter: blur(10px); /* Subtle blur effect */
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
         }
 
         /* --- Section Styles --- */
         section {
-            margin-bottom: 2.5rem; /* Increased spacing between sections */
-            padding: 1.5rem; /* Increased padding */
+            margin-bottom: 3rem; /* Increased spacing between sections */
+            padding: 2rem; /* Increased padding for more breathing room */
             background-color: var(--card-bg); /* Dark card background */
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.02) 0%, transparent 100%);
             border-radius: var(--border-radius);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Slightly deeper shadow */
-            /* Add a subtle border */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-
-            /* Base transition properties for section switching */
-            transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out; /* Removed visibility from transition */
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2); /* Enhanced shadow for depth */
+            border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border */
+            transition: all var(--animation-medium) ease-out; /* Smooth transition for all properties */
+            position: relative;
+            overflow: hidden; /* Ensure glow effect stays within bounds */
+        }
+        
+        /* Add subtle hover effect to sections */
+        section:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25), 0 0 15px rgba(255,255,255,0.05); /* Enhanced shadow with glow on hover */
+            transform: translateY(-3px); /* Subtle lift effect */
+        }
+        
+        /* Add subtle glow effect to section corners */
+        section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            opacity: 0.5;
+            pointer-events: none;
         }
 
          /* Sections that are hidden by default and controlled by JS */
@@ -229,35 +369,71 @@
         /* --- Tool Card Styles --- */
         .tool-card {
             background-color: var(--accent-color); /* Use accent for card background, distinct from section */
-            padding: 1.5rem;
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+            padding: 2rem;
             border-radius: var(--border-radius);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.25); /* Shadow for depth */
-            margin-bottom: 2rem; /* Spacing between cards if they are stacked */
-            transition: transform var(--transition-speed) ease-out, box-shadow var(--transition-speed) ease-out;
-            position: relative; /* For potential future pseudo-elements */
-            /* Add a subtle border */
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Enhanced shadow for depth */
+            margin-bottom: 2.5rem; /* Increased spacing between cards */
+            transition: all var(--animation-medium) cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transition with easing */
+            position: relative; /* For pseudo-elements */
+            border: 1px solid rgba(255, 255, 255, 0.12); /* Slightly more visible border */
+            overflow: hidden; /* Contain the pseudo-elements */
+            transform: translateZ(0); /* Force hardware acceleration */
         }
 
         .tool-card:last-child {
             margin-bottom: 0;
         }
+        
+        /* Add subtle gradient accent to top of card */
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--nord-blue), var(--nord-purple));
+            opacity: 0.7;
+            transition: opacity var(--animation-medium) ease;
+        }
 
         .tool-card:hover {
-            transform: translateY(-6px) scale(1.02); /* Lift and scale effect on hover */
-            box-shadow: var(--hover-shadow); /* Enhanced shadow on hover */
+            transform: translateY(-8px); /* Enhanced lift effect on hover */
+            box-shadow: var(--hover-shadow), 0 0 20px rgba(255,255,255,0.07); /* Enhanced shadow with subtle glow */
+        }
+        
+        .tool-card:hover::before {
+            opacity: 1; /* Make the gradient accent more visible on hover */
         }
 
         .tool-card h4 {
             color: var(--light-text);
-            margin-bottom: 1rem;
-            font-size: clamp(1.2rem, 2.8vw, 1.45rem); /* Slightly smaller than main H4s */
-            font-weight: 600;
+            margin-bottom: 1.2rem;
+            font-size: clamp(1.25rem, 2.8vw, 1.5rem); /* Slightly larger */
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            display: flex;
+            align-items: center;
+            position: relative;
         }
 
         .tool-card h4 i {
-            margin-right: 0.75rem;
-            /* Icon color will inherit from h4 (var(--light-text)) */
+            margin-right: 0.85rem;
+            font-size: 1.1em;
+            color: var(--nord-blue); /* Accent color for icons */
+            transition: transform var(--animation-fast) ease;
+        }
+        
+        .tool-card:hover h4 i {
+            transform: scale(1.1) rotate(5deg); /* Subtle animation on hover */
+        }
+
+        .tool-card p {
+            color: var(--muted-text);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem; /* Slightly larger text */
         }
 
         .tool-card ul,
@@ -265,40 +441,64 @@
             list-style: none; /* Remove default bullet/number points */
             padding-left: 0; /* Remove default padding */
             margin-bottom: 0;
-            margin-top: 1rem; /* Added margin above lists within tool cards */
+            margin-top: 1.2rem; /* Increased margin above lists */
         }
 
         .tool-card li {
             color: var(--muted-text);
-            margin-bottom: 0.8rem; /* Increased space between list items */
+            margin-bottom: 1rem; /* Increased space between list items */
             line-height: 1.8;
             display: flex;
             align-items: flex-start; /* Align icon with the start of potentially multi-line text */
+            position: relative;
+            padding-left: 1.8rem; /* Space for icon */
+            transition: transform var(--animation-fast) ease;
         }
 
         .tool-card li:last-child {
             margin-bottom: 0;
         }
+        
+        .tool-card li:hover {
+            transform: translateX(3px); /* Subtle movement on hover */
+        }
 
         .tool-card li i { /* General styling for icons within list items */
-            margin-right: 0.75rem;
-            font-size: 0.9em;
+            position: absolute;
+            left: 0;
+            font-size: 1em;
             width: 1.2em; /* Fixed width for alignment */
             text-align: center;
             margin-top: 0.2em; /* Fine-tune vertical alignment with text */
+            transition: all var(--animation-fast) ease;
+        }
+        
+        .tool-card li:hover i {
+            transform: scale(1.2); /* Enlarge icon on hover */
         }
 
         .tool-card li i.fa-check { /* Specific color for 'check' icons */
             color: var(--nord-green);
+            text-shadow: 0 0 8px rgba(163, 190, 140, 0.4); /* Subtle glow */
         }
 
         .tool-card li i.fa-hourglass-half { /* Specific color for 'hourglass' icons */
             color: var(--nord-orange);
+            text-shadow: 0 0 8px rgba(208, 135, 112, 0.4); /* Subtle glow */
         }
 
         .tool-card li i.fa-cogs,
-        .tool-card li i.fa-bolt { /* Example colors for other icons */
+        .tool-card li i.fa-bolt,
+        .tool-card li i.fa-info-circle { /* Colors for other icons */
             color: var(--nord-purple);
+            text-shadow: 0 0 8px rgba(180, 142, 173, 0.4); /* Subtle glow */
+        }
+        
+        .tool-card li i.fa-download,
+        .tool-card li i.fa-mouse-pointer,
+        .tool-card li i.fa-bookmark {
+            color: var(--nord-blue);
+            text-shadow: 0 0 8px rgba(94, 129, 172, 0.4); /* Subtle glow */
         }
 
         /* --- Heading Styles --- */
@@ -406,9 +606,9 @@
             height: 70px; /* Adjust height as needed */
             cursor: pointer;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            border-radius: 8px; /* Match theme border radius */
-            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05); /* Enhanced shadow with subtle border */
+            border-radius: var(--border-radius); /* Use theme variable */
+            transition: all var(--animation-medium) cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition with easing */
             flex: 1 1 auto;
             max-width: 300px; /* Match previous max-width */
             text-align: center;
@@ -417,12 +617,17 @@
             justify-content: center;
             /* Remove initial AOS opacity/transform */
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) translateZ(0); /* Force hardware acceleration */
         }
 
         .button-container:hover {
-             transform: translateY(-6px); /* Lift effect */
-             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Darker shadow */
+            transform: translateY(-8px) scale(1.03); /* Enhanced lift effect with slight scale */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1); /* Deeper shadow with enhanced border */
+        }
+        
+        .button-container:active {
+            transform: translateY(-2px) scale(0.98); /* Subtle press effect */
+            transition-duration: 0.1s; /* Faster transition for active state */
         }
 
         .button-container .backdrop {
@@ -430,7 +635,8 @@
             width: 100%;
             height: 100%;
             background-color: var(--secondary-color); /* Use secondary color for backdrop */
-            border-radius: 8px;
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%); /* Subtle gradient overlay */
+            border-radius: var(--border-radius);
             z-index: 1;
         }
 
@@ -438,32 +644,49 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle light border */
-            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.15); /* More visible light border */
+            border-radius: var(--border-radius);
             z-index: 3;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            transition: border-color var(--animation-medium) ease; /* Transition for border color */
+        }
+        
+        .button-container:hover .button-border {
+            border-color: rgba(255, 255, 255, 0.3); /* Brighter border on hover */
         }
 
         .button-container .button {
             position: relative;
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1.25rem; /* Slightly larger text */
+            font-weight: 700; /* Bolder text */
             color: var(--light-text);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px; /* Increased letter spacing */
             z-index: 4;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1rem; /* Space between icon and text */
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+            transition: transform var(--animation-fast) ease, letter-spacing var(--animation-medium) ease; /* Transitions for text effects */
+        }
+        
+        .button-container:hover .button {
+            letter-spacing: 2px; /* Slightly increase letter spacing on hover */
+            transform: scale(1.05); /* Subtle scale effect */
         }
 
         .button-container .button i {
-             font-size: 1.4rem; /* Match previous icon size */
-             color: var(--light-text);
+            font-size: 1.5rem; /* Slightly larger icon */
+            color: var(--light-text);
+            transition: transform var(--animation-fast) ease; /* Transition for icon animation */
+        }
+        
+        .button-container:hover .button i {
+            transform: scale(1.2) rotate(5deg); /* Scale and slight rotation on hover */
         }
 
 
@@ -471,38 +694,116 @@
             position: absolute;
             width: 150%;
             height: 150%;
-            animation: spin 5s linear infinite;
+            animation: spin 8s linear infinite;
             z-index: 2;
+            opacity: 0.7; /* Slightly reduce opacity for better blending */
+            transition: opacity var(--animation-medium) ease; /* Add transition for hover effect */
+        }
+        
+        .button-container:hover .spin {
+            opacity: 1; /* Full opacity on hover */
+            animation-duration: 6s; /* Speed up on hover */
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% { transform: rotate(0deg) scale(0.95); }
+            50% { transform: rotate(180deg) scale(1.05); }
+            100% { transform: rotate(360deg) scale(0.95); }
         }
 
         .button-container .spin-blur {
             background: conic-gradient(from 0deg at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.05) 100%);
             filter: blur(20px);
             mix-blend-mode: overlay;
+            animation-duration: 12s; /* Slower rotation */
+            animation-direction: reverse; /* Opposite direction */
         }
 
         .button-container .spin-intense {
             background: conic-gradient(from 0deg at 50% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0.1) 100%);
             filter: blur(5px);
             mix-blend-mode: overlay;
+            animation-duration: 7s; /* Medium rotation speed */
         }
 
         .button-container .spin-inside {
             background: conic-gradient(from 0deg at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.05) 100%);
             filter: blur(10px);
             mix-blend-mode: overlay;
+            animation-duration: 10s; /* Slower rotation */
+            animation-direction: reverse; /* Opposite direction */
+        }
+        
+        /* Add a new animation for active state */
+        .button-container:active .spin {
+            animation-duration: 3s; /* Much faster on active state */
         }
 
         /* Specific colors for the spin effect based on platform */
-        #bim-button .spin-intense { background: conic-gradient(from 0deg at 50% 50%, rgba(163, 190, 140, 0.2) 0%, rgba(163, 190, 140, 0.8) 20%, rgba(163, 190, 140, 0.2) 40%, rgba(163, 190, 140, 0.2) 100%); } /* Nord Green */
-        #achieve-button .spin-intense { background: conic-gradient(from 0deg at 50% 50%, rgba(94, 129, 172, 0.2) 0%, rgba(94, 129, 172, 0.8) 20%, rgba(94, 129, 172, 0.2) 40%, rgba(94, 129, 172, 0.2) 100%); } /* Nord Blue */
-        #ixl-button .spin-intense { background: conic-gradient(from 0deg at 50% 50%, rgba(208, 135, 112, 0.2) 0%, rgba(208, 135, 112, 0.8) 20%, rgba(208, 135, 112, 0.2) 40%, rgba(208, 135, 112, 0.2) 100%); } /* Nord Orange */
-        #deltamath-button .spin-intense { background: conic-gradient(from 0deg at 50% 50%, rgba(180, 142, 173, 0.2) 0%, rgba(180, 142, 173, 0.8) 20%, rgba(180, 142, 173, 0.2) 40%, rgba(180, 142, 173, 0.2) 100%); } /* Nord Purple */
+        #bim-button .spin-intense { 
+            background: conic-gradient(from 0deg at 50% 50%, 
+                rgba(163, 190, 140, 0.1) 0%, 
+                rgba(163, 190, 140, 0.9) 20%, 
+                rgba(163, 190, 140, 0.1) 40%, 
+                rgba(163, 190, 140, 0.1) 100%); 
+        } /* Nord Green */
+        
+        #achieve-button .spin-intense { 
+            background: conic-gradient(from 0deg at 50% 50%, 
+                rgba(94, 129, 172, 0.1) 0%, 
+                rgba(94, 129, 172, 0.9) 20%, 
+                rgba(94, 129, 172, 0.1) 40%, 
+                rgba(94, 129, 172, 0.1) 100%); 
+        } /* Nord Blue */
+        
+        #ixl-button .spin-intense { 
+            background: conic-gradient(from 0deg at 50% 50%, 
+                rgba(208, 135, 112, 0.1) 0%, 
+                rgba(208, 135, 112, 0.9) 20%, 
+                rgba(208, 135, 112, 0.1) 40%, 
+                rgba(208, 135, 112, 0.1) 100%); 
+        } /* Nord Orange */
+        
+        #deltamath-button .spin-intense { 
+            background: conic-gradient(from 0deg at 50% 50%, 
+                rgba(180, 142, 173, 0.1) 0%, 
+                rgba(180, 142, 173, 0.9) 20%, 
+                rgba(180, 142, 173, 0.1) 40%, 
+                rgba(180, 142, 173, 0.1) 100%); 
+        } /* Nord Purple */
+        
+        /* Add specific colors for the other spin effects */
+        #bim-button .spin-blur, #bim-button .spin-inside { 
+            background: conic-gradient(from 0deg at 50% 50%, 
+                rgba(163, 190, 140, 0.05) 0%, 
+                rgba(163, 190, 140, 0.6) 20%, 
+                rgba(163, 190, 140, 0.05) 40%, 
+                rgba(163, 190, 140, 0.05) 100%); 
+        }
+        
+        #achieve-button .spin-blur, #achieve-button .spin-inside { 
+            background: conic-gradient(from 0deg at 50% 50%, 
+                rgba(94, 129, 172, 0.05) 0%, 
+                rgba(94, 129, 172, 0.6) 20%, 
+                rgba(94, 129, 172, 0.05) 40%, 
+                rgba(94, 129, 172, 0.05) 100%); 
+        }
+        
+        #ixl-button .spin-blur, #ixl-button .spin-inside { 
+            background: conic-gradient(from 0deg at 50% 50%, 
+                rgba(208, 135, 112, 0.05) 0%, 
+                rgba(208, 135, 112, 0.6) 20%, 
+                rgba(208, 135, 112, 0.05) 40%, 
+                rgba(208, 135, 112, 0.05) 100%); 
+        }
+        
+        #deltamath-button .spin-blur, #deltamath-button .spin-inside { 
+            background: conic-gradient(from 0deg at 50% 50%, 
+                rgba(180, 142, 173, 0.05) 0%, 
+                rgba(180, 142, 173, 0.6) 20%, 
+                rgba(180, 142, 173, 0.05) 40%, 
+                rgba(180, 142, 173, 0.05) 100%); 
+        }
 
 
         /* Hide the real button from the Uiverse example, as we're using the div structure */
@@ -514,70 +815,126 @@
         /* --- Bookmarklet Section --- */
         .bookmarklet-container {
             text-align: center;
-            padding: 3rem; /* More padding */
-            border: 3px dashed rgba(255,255,255,0.4); /* Dashed light border */
+            padding: 3.5rem; /* Increased padding */
+            border: 3px dashed rgba(255,255,255,0.3); /* Slightly more subtle dashed border */
             border-radius: var(--border-radius);
-            margin: 3rem 0; /* More margin */
-            background: var(--card-bg); /* Dark card background */
+            margin: 3.5rem 0; /* Increased margin */
+            background: linear-gradient(135deg, var(--card-bg), rgba(30, 30, 50, 0.9)); /* Gradient background */
             position: relative;
             overflow: hidden;
+            box-shadow: var(--card-shadow), 0 0 30px rgba(0, 0, 0, 0.2) inset; /* Inner shadow for depth */
+            transition: all var(--animation-medium) ease;
+        }
+        
+        .bookmarklet-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .bookmarklet-container:hover {
+            border-color: rgba(255, 255, 255, 0.5); /* Brighter border on hover */
+            box-shadow: var(--hover-shadow), 0 0 40px rgba(0, 0, 0, 0.3) inset; /* Enhanced shadow on hover */
         }
 
         .bookmarklet-container h2 {
             color: var(--light-text); /* Light text */
-            margin-bottom: 1rem; /* Adjusted margin */
+            margin-bottom: 1.2rem; /* Increased margin */
+            font-size: 2rem; /* Larger heading */
+            font-weight: 800; /* Bolder heading */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+            position: relative; /* For z-index */
+            z-index: 1; /* Above the ::before element */
         }
+        
         .bookmarklet-container p {
             color: var(--muted-text); /* Muted light text */
             text-align: center;
-            margin-bottom: 2rem; /* Increased margin below paragraph */
+            margin-bottom: 2.5rem; /* Increased margin below paragraph */
+            font-size: 1.1rem; /* Slightly larger text */
+            line-height: 1.6; /* Improved line height */
+            max-width: 80%; /* Limit width for better readability */
+            margin-left: auto;
+            margin-right: auto;
+            position: relative; /* For z-index */
+            z-index: 1; /* Above the ::before element */
         }
 
         .bookmarklet {
-            display: inline-block;
-            margin-top: 0; /* Adjusted margin */
-            padding: 1.2rem 2.5rem; /* Larger button */
-            background-color: var(--primary-color); /* Deep Indigo background */
-            color: var(--light-text); /* Light text */
-            text-decoration: none;
-            border-radius: 8px;
-            cursor: grab;
-            transition: var(--transition-speed);
-            font-weight: 700;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            position: relative;
-            overflow: hidden;
-            /* Pulse animation using a subtle dark color */
-            animation: pulse-dark 2s infinite;
-            font-family: 'Nunito', sans-serif;
-            text-transform: uppercase;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.75rem; /* Space between Nova and icon */
+            margin-top: 0; /* Adjusted margin */
+            padding: 1.3rem 2.8rem; /* Larger button */
+            background-color: var(--primary-color); /* Deep Indigo background */
+            background-image: linear-gradient(135deg, var(--primary-color), var(--accent-color)); /* Gradient background */
+            color: var(--light-text); /* Light text */
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            cursor: grab;
+            transition: all var(--animation-medium) cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition with easing */
+            font-weight: 800; /* Bolder text */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 0 2px rgba(255, 255, 255, 0.1); /* Enhanced shadow with subtle border */
+            position: relative;
+            overflow: hidden;
+            /* Pulse animation using a subtle dark color */
+            animation: pulse-dark 3s infinite;
+            font-family: 'Nunito', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px; /* Increased letter spacing */
+            gap: 1rem; /* Increased space between text and icon */
+            z-index: 1; /* Above the ::before element */
+        }
+        
+        .bookmarklet::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+            z-index: -1;
         }
 
         @keyframes pulse-dark {
-            0% { box-shadow: 0 0 0 0 rgba(26, 26, 46, 0.7); } /* pulse using primary-color */
-            70% { box-shadow: 0 0 0 25px rgba(26, 26, 46, 0); } /* Larger pulse spread */
-            100% { box-shadow: 0 0 0 0 rgba(26, 26, 46, 0); }
+            0% { box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 0 0 rgba(var(--primary-rgb), 0.7); }
+            50% { box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 0 20px rgba(var(--primary-rgb), 0); }
+            100% { box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 0 0 rgba(var(--primary-rgb), 0); }
         }
 
-
         .bookmarklet:hover {
-            background-color: var(--accent-color); /* Dark accent on hover */
-            transform: translateY(-5px) scale(1.03); /* More lift and scale */
-            box-shadow: var(--hover-shadow);
+            background-image: linear-gradient(135deg, var(--accent-color), var(--primary-color)); /* Reversed gradient on hover */
+            transform: translateY(-8px) scale(1.05); /* Enhanced lift and scale */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 0 0 3px rgba(255, 255, 255, 0.2); /* Deeper shadow with brighter border */
             animation: none;
+            letter-spacing: 2px; /* Slightly increase letter spacing on hover */
         }
 
         .bookmarklet:active {
             cursor: grabbing;
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(0.98); /* Subtle press effect */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3), 0 0 0 2px rgba(255, 255, 255, 0.1); /* Reduced shadow when pressed */
+            transition-duration: 0.1s; /* Faster transition for active state */
         }
+        
         .bookmarklet i {
             color: var(--light-text); /* Ensure bookmarklet icon is light */
+            font-size: 1.4rem; /* Larger icon */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+            transition: transform var(--animation-fast) ease; /* Transition for icon animation */
         }
+        
+        .bookmarklet:hover i {
+            transform: scale(1.2) rotate(5deg); /* Scale and slight rotation on hover */
+        }
+/* Remove empty rule */
 
         /* --- List Styles (General) --- */
         ul, ol {
@@ -702,30 +1059,72 @@
         #scrollToTopBtn {
             display: none; /* Hidden by default */
             position: fixed; /* Fixed position */
-            bottom: 20px; /* Place the button at the bottom */
-            right: 20px; /* Place the button 20px from the right */
+            bottom: 25px; /* Slightly higher from the bottom */
+            right: 25px; /* Slightly further from the right */
             z-index: 1000; /* Make sure it's above other content */
             border: none; /* Remove borders */
             outline: none; /* Remove outline */
             background-color: var(--accent-color); /* Background color */
+            background-image: linear-gradient(135deg, var(--accent-color), var(--primary-color)); /* Gradient background */
             color: var(--light-text); /* Text color */
             cursor: pointer; /* Add a mouse pointer on hover */
-            width: 48px;
-            height: 48px;
+            width: 52px; /* Slightly larger */
+            height: 52px; /* Slightly larger */
             padding: 12px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px; /* Increase font size */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Add shadow */
-            transition: background-color 0.3s ease, opacity 0.3s ease; /* Add transition */
-            opacity: 0.8; /* Slightly transparent */
+            font-size: 20px; /* Larger icon */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 0 2px rgba(255, 255, 255, 0.1); /* Enhanced shadow with subtle border */
+            transition: all var(--animation-medium) cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition with easing */
+            opacity: 0.85; /* Slightly transparent */
+            transform: translateY(0) scale(1); /* Initial state for animation */
+            overflow: hidden; /* For the pseudo-element */
+        }
+        
+        #scrollToTopBtn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity var(--animation-medium) ease;
         }
 
         #scrollToTopBtn:hover {
-            background-color: var(--primary-color); /* Darker background on hover */
+            background-image: linear-gradient(135deg, var(--primary-color), var(--accent-color)); /* Reversed gradient on hover */
             opacity: 1; /* Full opacity on hover */
+            transform: translateY(-5px) scale(1.1); /* Lift and scale effect */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 0 3px rgba(255, 255, 255, 0.2); /* Deeper shadow with brighter border */
+        }
+        
+        #scrollToTopBtn:hover::before {
+            opacity: 1; /* Show the radial gradient on hover */
+        }
+        
+        #scrollToTopBtn:active {
+            transform: translateY(-2px) scale(0.95); /* Subtle press effect */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 0 2px rgba(255, 255, 255, 0.1); /* Reduced shadow when pressed */
+            transition-duration: 0.1s; /* Faster transition for active state */
+        }
+        
+        #scrollToTopBtn i {
+            transition: transform var(--animation-fast) ease; /* Transition for icon animation */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+        }
+        
+        #scrollToTopBtn:hover i {
+            transform: translateY(-3px); /* Move icon up slightly on hover */
+            animation: bounce 1s infinite; /* Add bounce animation */
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-3px); }
+            50% { transform: translateY(-8px); }
         }
 
 
@@ -992,16 +1391,16 @@
                     <div style="margin-top:1.2rem;">
                         <strong>For Chrome:</strong>
                         <ol style="margin-top:0.7rem; color:var(--muted-text);">
-                            <li><i class="fas fa-download"></i> Download the latest release from <a href="https://github.com/cpmjaguar1234/nova/releases" target="_blank" style="color:var(--ixl-link-color-github);"> GitHub Releases</a>.</li>
+                            <li><i class="fas fa-download"></i> Download the latest release from&nbsp;<a href="https://github.com/cpmjaguar1234/nova/releases" target="_blank" style="color:var(--ixl-link-color-github);">GitHub Releases</a>.</li>
                             <li><i class="fas fa-folder-open"></i> Unzip the downloaded file to a folder (e.g., ixl extension).</li>
                             <li><i class="fas fa-toggle-on"></i> Open Chrome Extensions (chrome://extensions/). Enable Developer mode (top right).</li>
-                            <li><i class="fas fa-upload"></i> Click <b>Load unpacked</b> and select the ixl extension folder.</li>
+                            <li><i class="fas fa-upload"></i> Click&nbsp;<b>Load unpacked</b>&nbsp;and select the ixl extension folder.</li>
                         </ol>
                     </div>
                     <div style="margin-top:1.2rem;">
                         <strong class="firefox-heading">For Firefox:</strong>
                         <ol class="firefox-list" style="margin-top:0.7rem; color:var(--muted-text);">
-                            <li><i class="fab fa-firefox-browser"></i> Visit the <a href="https://addons.mozilla.org/en-US/firefox/addon/nova-ixl-extension/" target="_blank" style="color:var(--ixl-link-color-mozilla);">Mozilla Add-ons page</a>.</li>
+                            <li><i class="fab fa-firefox-browser"></i> Visit the&nbsp;<a href="https://addons.mozilla.org/en-US/firefox/addon/nova-ixl-extension/" target="_blank" style="color:var(--ixl-link-color-mozilla);">Mozilla Add-ons page</a>.</li>
                             <li><i class="fas fa-check"></i> Click "Add to Firefox" and follow the installation prompts.</li>
                             <li><i class="fas fa-puzzle-piece"></i> Once installed, look for the Nova IXL icon in your toolbar.</li>
                         </ol>

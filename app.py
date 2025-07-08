@@ -8,6 +8,12 @@ from functools import wraps
 
 import bcrypt
 import google.generativeai as genai
+import openai
+
+client = openai.OpenAI(
+    base_url="https://api.groq.com/openai/v1",
+    api_key=os.environ.get("GROQ_API_KEY")
+)
 from flask import Flask, request, jsonify, render_template, redirect, session, Response # Added Response
 from flask_cors import CORS
 # You mentioned pytesseract and PIL but they are not used in the provided routes.
@@ -41,27 +47,7 @@ if not APP_PASSWORD_RAW:
 SALT = bcrypt.gensalt(rounds=12) # Generate a new salt each time for increased security if hashing raw password
 HASHED_PASSWORD = bcrypt.hashpw(APP_PASSWORD_RAW.encode('utf-8'), SALT)
 
-GEMINI_API_KEYS = [key.strip() for key in os.getenv('GEMINI_API_KEYS', '').split(',') if key.strip()]
-if not GEMINI_API_KEYS:
-    raise ValueError("GEMINI_API_KEYS environment variable is not set. Please provide a comma-separated list of keys.")
 
-current_key_index = 0
-
-def get_next_gemini_key():
-    global current_key_index
-    key = GEMINI_API_KEYS[current_key_index]
-    current_key_index = (current_key_index + 1) % len(GEMINI_API_KEYS)
-    return key
-
-# --- Gemini Model Configuration ---
-try:
-    genai.configure(api_key=get_next_gemini_key())
-    model = genai.GenerativeModel('gemini-2.0-flash-exp')
-    app.logger.info("Gemini model configured successfully.")
-except Exception as e:
-    app.logger.error(f"Failed to configure Gemini model: {e}")
-    # Consider raising an exception here to prevent the app from starting if AI is critical
-    raise RuntimeError(f"Gemini API configuration failed: {e}")
 
 # --- CORS Configuration ---
 # Be as specific as possible with origins in production.
@@ -253,8 +239,11 @@ def ask_gemini():
                     ]
                     
                     # For image input, we directly generate content and return
-                    response = model.generate_content(multimodal_prompt_parts)
-                    return _handle_gemini_response(response, "image")
+                    # For image input, we directly generate content and return
+                    # Groq API does not support image input directly in chat completions
+                    # For now, we'll return an error for image input.
+                    app.logger.error("Groq API does not support image input directly in chat completions.")
+                    return jsonify({'error': 'Image input is not supported by the configured Groq API.'}), 400
 
                 except Exception as e:
                     app.logger.error(f"Error processing image for /ask: {e}", exc_info=True)
@@ -301,34 +290,20 @@ def ask_gemini():
             app.logger.warning("User input is empty or contains only whitespace after processing.")
             return jsonify({'error': 'No meaningful query content provided for AI generation.'}), 400
 
+        app.logger.info(f"Sending request to Groq with prompt length: {len(user_input)} characters.")
         try:
-            app.logger.info(f"Sending request to Gemini with prompt length: {len(user_input)} characters.")
-            retries = 0
-            max_retries = len(GEMINI_API_KEYS) # Try each key once
-            while retries < max_retries:
-                try:
-                    # Re-initialize model with new key for each attempt
-                    new_key = get_next_gemini_key()
-                    genai.configure(api_key=new_key)
-                    model = genai.GenerativeModel('gemini-2.0-flash-exp') # Re-initialize model with new key
-                    app.logger.info(f"Attempting with new Gemini API key: {new_key[:5]}...")
-                    response = model.generate_content(user_input)
-                    return _handle_gemini_response(response, "text/html")
-                except (genai.types.BlockedPromptException, genai.types.StopCandidateException) as e:
-                    app.logger.warning(f"Gemini API error (attempt {retries + 1}/{max_retries}): {e}")
-                    retries += 1
-                    if retries >= max_retries:
-                        app.logger.error(f"All Gemini API keys failed after {max_retries} attempts.")
-                        return jsonify({'error': 'All available AI keys failed or request was blocked due to safety concerns or content policy violation.'}), 500
-                except Exception as e:
-                    app.logger.error(f"Error during Gemini content generation for /ask: {e}", exc_info=True)
-                    retries += 1
-                    if retries >= max_retries:
-                        app.logger.error(f"All Gemini API keys failed after {max_retries} attempts.")
-                        return jsonify({'error': f'Error generating response from AI after {max_retries} attempts: {e}'}), 500
-                    return jsonify({'error': f'Error generating response from AI: {e}'}), 500
+            response = client.chat.completions.create(
+                messages=[
+                    {
+                        "role": "user",
+                        "content": user_input,
+                    }
+                ],
+                model="llama-3.1-8b-instant", # Using a common Groq model, can be made configurable
+            )
+            return _handle_groq_response(response, "text/html")
         except Exception as e:
-            app.logger.error(f"Error during Gemini content generation for /ask: {e}", exc_info=True)
+            app.logger.error(f"Error during Groq content generation for /ask: {e}", exc_info=True)
             return jsonify({'error': f'Error generating response from AI: {e}'}), 500
     # If multimodal_prompt_parts was not None, it means it was an image request and already returned.
     # This final line ensures that if for some unexpected reason the function reaches here
@@ -337,10 +312,10 @@ def ask_gemini():
     return jsonify({'error': 'An unexpected server error occurred. No response generated.'}), 500
 
 
-def _handle_gemini_response(response, input_type="unknown"):
-    """Helper function to process Gemini's response."""
-    if response and hasattr(response, 'text'):
-        cleaned_response = re.sub(r'\s+', ' ', response.text).strip()
+def _handle_groq_response(response, input_type="unknown"):
+    """Helper function to process Groq's response."""
+    if response and response.choices and response.choices[0].message.content:
+        cleaned_response = re.sub(r'\s+', ' ', response.choices[0].message.content).strip()
         app.logger.info(f"Generated response for {input_type}: {cleaned_response[:100]}...") # Log first 100 chars
         return jsonify({'response': cleaned_response})
     else:
@@ -359,62 +334,47 @@ def ask_ixl():
 
     app.logger.info(f"Received request at /ask-ixl")
 
-    try:
-        # Ensure we have at least one except clause
-        pass
-    except Exception as e:
-        app.logger.error(f"Error in /ask-ixl: {e}", exc_info=True)
-        return jsonify({'error': f'Error processing IXL request: {e}'}), 500
-        data = request.get_json(silent=True) # Use silent=True for robustness
-        if not data:
+
+    data = request.get_json(silent=True) # Use silent=True for robustness
+    if not data:
             app.logger.warning("POST request to /ask-ixl received non-JSON or empty data.")
             return jsonify({'error': 'No data provided or invalid JSON'}), 400
 
-        app.logger.info(f"IXL data keys: {data.keys()}")
+    app.logger.info(f"IXL data keys: {data.keys()}")
 
-        html_content = data.get('html', '').strip()
-        instructions = data.get('instructions', '').strip()
-        prompt = data.get('prompt', DEFAULT_PROMPT_IXL)
+    html_content = data.get('html', '').strip()
+    instructions = data.get('instructions', '').strip()
+    prompt = data.get('prompt', DEFAULT_PROMPT_IXL)
 
-        if not html_content:
-            app.logger.warning('No HTML content provided for /ask-ixl.')
-            return jsonify({'error': 'No HTML content provided for IXL problem'}), 400
+    if not html_content:
+        app.logger.warning('No HTML content provided for /ask-ixl.')
+        return jsonify({'error': 'No HTML content provided for IXL problem'}), 400
 
-        # Combine HTML, instructions, and prompt for Gemini
-        user_input_parts = []
-        if instructions:
-            user_input_parts.append(f"IXL Problem Instructions: {instructions}")
-        
-        user_input_parts.append(f"HTML Content: {html_content}")
-        user_input_parts.append(prompt)
-        
-        user_input = "\n\n".join(user_input_parts)
-        
-        app.logger.info(f"Sending IXL request to Gemini with prompt length: {len(user_input)} characters.")
-        retries = 0
-        max_retries = len(GEMINI_API_KEYS) # Try each key once
-        while retries < max_retries:
-            try:
-                # Re-initialize model with new key for each attempt
-                new_key = get_next_gemini_key()
-                genai.configure(api_key=new_key)
-                model = genai.GenerativeModel('gemini-2.0-flash-exp') # Re-initialize model with new key
-                app.logger.info(f"Attempting with new Gemini API key for IXL: {new_key[:5]}...")
-                response = model.generate_content(user_input)
-                return _handle_gemini_response(response, "IXL problem")
-            except (genai.types.BlockedPromptException, genai.types.StopCandidateException) as e:
-                app.logger.warning(f"Gemini IXL API error (attempt {retries + 1}/{max_retries}): {e}")
-                retries += 1
-                if retries >= max_retries:
-                    app.logger.error(f"All Gemini API keys failed after {max_retries} attempts.")
-                    return jsonify({'error': 'All available AI keys failed or request was blocked due to safety concerns or content policy violation.'}), 500
-            except Exception as e:
-                app.logger.error(f"Error during Gemini content generation for /ask-ixl: {e}", exc_info=True)
-                retries += 1
-                if retries >= max_retries:
-                    app.logger.error(f"All Gemini API keys failed after {max_retries} attempts.")
-                    return jsonify({'error': f'Error generating response from AI after {max_retries} attempts: {e}'}), 500
-        return jsonify({'error': f'Error processing IXL request: {e}'}), 500
+    # Combine HTML, instructions, and prompt for Groq
+    user_input_parts = []
+    if instructions:
+        user_input_parts.append(f"IXL Problem Instructions: {instructions}")
+    
+    user_input_parts.append(f"HTML Content: {html_content}")
+    user_input_parts.append(prompt)
+
+    user_input = "\n\n".join(user_input_parts)
+
+    app.logger.info(f"Sending IXL request to Groq with prompt length: {len(user_input)} characters.")
+    try:
+        response = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": user_input,
+                }
+            ],
+            model="llama-3.1-8b-instant", # Using a common Groq model, can be made configurable
+        )
+        return _handle_groq_response(response, "IXL problem")
+    except Exception as e:
+        app.logger.error(f"Error during Groq content generation for /ask-ixl: {e}", exc_info=True)
+        return jsonify({'error': f'Error generating response from AI: {e}'}), 500
 
 @app.route('/set_article', methods=['POST'])
 @require_auth # Apply authentication if this endpoint needs to be secured
