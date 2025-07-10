@@ -762,7 +762,7 @@ class AssessmentHelper {
             }
 
             const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Mobile: ${isMobile} | MobileType: ${mobileType} | Time: ${normalTime} | ISO Time: ${isoTimestamp} | Nova Clicks: ${novaButtonClickCount}`;
-            console.log("AssessmentHelper: Logging data:", logMessage);
+    
 
             const payload = {
                 text: logMessage,
@@ -774,7 +774,7 @@ class AssessmentHelper {
                 novaClicks: novaButtonClickCount
             };
 
-            console.log("AssessmentHelper: Sending payload:", payload);
+    
 
             const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/data', {
                 method: 'POST',
@@ -789,7 +789,7 @@ class AssessmentHelper {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             } else {
-                console.log('AssessmentHelper: Data successfully logged to endpoint.');
+
             }
         } catch (error) {
             console.error('AssessmentHelper: Error logging data:', error);
