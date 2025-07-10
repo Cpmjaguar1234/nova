@@ -6,6 +6,43 @@
  * Both Anime.js and Draggabilly are loaded dynamically via JavaScript.
  * Enhanced visual cues for buttons, loading states, and answer display.
  */
+const starEffectCSS = `
+    .header-bg-effect {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 0; /* Revert margin-top */
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.5; // Dimmed the stars
+    }
+
+    .star {
+        position: absolute;
+        background: rgba(255,255,255,1);
+        border-radius: 50%;
+        opacity: 0;
+        animation: twinkle linear infinite;
+        box-shadow: 0 0 12px 5px rgba(255, 255, 255, 0.6);
+        filter: blur(0.5px);
+    }
+
+    @keyframes twinkle {
+        0% { opacity: 0; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1.1); }
+        100% { opacity: 0; transform: scale(0.8); }
+    }
+`;
+
+// Inject CSS into the head
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = starEffectCSS;
+document.head.appendChild(styleSheet);
+
 class AssessmentHelper {
     constructor() {
         // Manual drag properties for the answer UI (Draggabilly is used for the main UI)
@@ -177,8 +214,86 @@ class AssessmentHelper {
         launcher.appendChild(version);
         launcher.appendChild(discordLink); // Append the Discord link
 
+        // Add the star effect container
+        const starEffectContainer = document.createElement("div");
+        starEffectContainer.className = "header-bg-effect";
+        launcher.appendChild(starEffectContainer);
+
         // Append launcher to the container
         container.appendChild(launcher);
+
+
+
+        return container;
+    }
+
+    /**
+     * Generates star elements and appends them to the specified container.
+     * @param {HTMLElement} container - The container element to append stars to.
+     */
+    createStars(container, launcher) {
+        const numStars = 30; // Number of stars to generate (reduced)
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = `${Math.random() * 3 + 1}px`; // Random size between 1px and 4px
+            star.style.height = star.style.width;
+            star.style.left = `${Math.random() * 100}%`;
+            const uiImg = launcher.querySelector('img');
+            const getAnswerButton = launcher.querySelector('#getAnswerButton');
+
+            const launcherRect = launcher.getBoundingClientRect();
+
+            const uiImgRect = uiImg.getBoundingClientRect();
+            const getAnswerButtonRect = getAnswerButton.getBoundingClientRect();
+
+            // Convert UI element coordinates to be relative to the launcher's top-left corner
+            const uiImgRelativeTop = uiImgRect.top - launcherRect.top;
+            const uiImgRelativeLeft = uiImgRect.left - launcherRect.left;
+
+            const getAnswerButtonRelativeTop = getAnswerButtonRect.top - launcherRect.top;
+            const getAnswerButtonRelativeLeft = getAnswerButtonRect.left - launcherRect.left;
+
+
+
+            let randomTop, randomLeft;
+            let attempts = 0;
+            const maxAttempts = 100; // Prevent infinite loops
+
+            do {
+                randomTop = Math.random() * container.clientHeight;
+                randomLeft = Math.random() * container.clientWidth;
+                attempts++;
+    
+
+                // Check for overlap with Nova logo
+                const overlapsLogo = (
+                    randomLeft < uiImgRelativeLeft + uiImgRect.width &&
+                    randomLeft + star.offsetWidth > uiImgRelativeLeft &&
+                    randomTop < uiImgRelativeTop + uiImgRect.height &&
+                    randomTop + star.offsetHeight > uiImgRelativeTop
+                );
+
+                // Check for overlap with Skip Article button
+                const overlapsButton = (
+                    randomLeft < getAnswerButtonRelativeLeft + getAnswerButtonRect.width &&
+                    randomLeft + star.offsetWidth > getAnswerButtonRelativeLeft &&
+                    randomTop < getAnswerButtonRelativeTop + getAnswerButtonRect.height &&
+                    randomTop + star.offsetHeight > getAnswerButtonRelativeTop
+                );
+
+                if (!overlapsLogo && !overlapsButton) {
+                    break; // Found a safe spot
+                }
+            } while (attempts < maxAttempts);
+
+            star.style.top = `${randomTop}px`;
+            star.style.left = `${randomLeft}px`;
+            star.style.animationDelay = `${Math.random() * 5}s`; // Random delay for twinkle effect
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random duration for twinkle effect
+            container.appendChild(star);
+        }
+
 
         return container;
     }
@@ -318,11 +433,16 @@ class AssessmentHelper {
         const launcher = document.getElementById('Launcher');
         if (launcher) {
             if (skipAnimation) {
-                console.log("AssessmentHelper: Skipping UI fade-in animation.");
+
                 launcher.style.visibility = 'visible';
                 launcher.style.opacity = 1;
                 // Set up listeners immediately in fallback mode
                 this.setupEventListeners();
+                // Generate stars after the UI is visible
+                const starEffectContainer = launcher.querySelector('.header-bg-effect');
+                if (starEffectContainer) {
+                        this.createStars(starEffectContainer, launcher);
+                }
                 // Check localStorage before displaying Discord popup in fallback mode
                 if (localStorage.getItem('discordPopupDismissed') !== 'true') {
                     this.displayDiscordPopup();
@@ -348,6 +468,14 @@ class AssessmentHelper {
                         this.displayDiscordPopup();
                     } else {
                         console.log("Discord popup permanently dismissed by user. Not showing.");
+                    }
+                    // Find the star effect container within the launcher
+                    const starEffectContainer = launcher.querySelector('.header-bg-effect');
+                    if (starEffectContainer) {
+                        console.log('showUI (setTimeout): starEffectContainer found. Calling createStars.');
+                        this.createStars(starEffectContainer, launcher);
+                    } else {
+                        console.error('showUI (setTimeout): starEffectContainer not found.');
                     }
                 }, 500); // Matches the launcher's opacity transition duration
             }
@@ -420,7 +548,6 @@ class AssessmentHelper {
      * with permanent dismissal only if the 'Don't show again' checkbox is checked.
      */
     displayDiscordPopup() {
-        const userName = this.getUserNameFromDOM();
         const discordLink = "https://discord.gg/DWb9pQ79";
 
         const popup = document.createElement('div');
@@ -473,7 +600,7 @@ class AssessmentHelper {
         icon.style.cssText = 'font-size: 40px; margin-bottom: 10px; color: #5865f2;'; // Added Discord blue color to icon
 
         const message = document.createElement('p');
-        message.innerHTML = `Hey ${userName}! Want to connect with other Nova users? Join our Discord community!`;
+        message.innerHTML = `Would you like to join the Nova Discord?`;
         message.style.cssText = 'margin-bottom: 15px; line-height: 1.4;';
 
         const discordBtn = document.createElement('a');
@@ -866,6 +993,8 @@ class AssessmentHelper {
                     display: block;
                     width: 100%;
                     height: 100%;
+        margin-top: 0; /* Revert margin-top */
+        overflow: hidden;
                     color: white;
                     text-align: center;
                     line-height: 14px; /* Center checkmark vertically */
@@ -888,9 +1017,9 @@ class AssessmentHelper {
                 const draggie = new Draggabilly(launcher, {
                     handle: '.drag-handle',
                     // Add a delay before dragging starts (in milliseconds)
-                    delay: 150 // Adjust this value (e.g., 100, 200) to fine-tune the feel
+                    delay: 50 // Adjust this value (e.g., 100, 200) to fine-tune the feel
                 });
-                console.log("AssessmentHelper: Draggabilly initialized on #Launcher with handle '.drag-handle' and delay 150ms.");
+                console.log("AssessmentHelper: Draggabilly initialized on #Launcher with handle '.drag-handle' and delay 50ms.");
                 // Optional: Add Draggabilly listeners for debugging or custom behavior
                 // draggie.on( 'dragStart', function( event, pointer ) { console.log('Draggabilly drag started', pointer); } );
                 // draggie.on( 'dragEnd', function( event, pointer ) { console.log('Draggabilly drag ended', pointer); } );
