@@ -848,7 +848,8 @@ class AssessmentHelper {
                 },
                 body: JSON.stringify({
                     q: queryContent,
-                    article: this.cachedArticle || null // Include cached article if available
+                    article: this.cachedArticle || null, // Include cached article if available
+                    response_format: "single_letter" // Explicitly request a single letter response
                 })
             });
 
