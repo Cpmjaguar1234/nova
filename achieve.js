@@ -197,7 +197,7 @@ class AssessmentHelper {
 
         // Discord icon link
         const discordLink = document.createElement("a");
-        discordLink.href = "https://discord.gg/sDqyChG2C4"; // Provided Discord invite link
+        discordLink.href = "https://discord.gg/fmXQN5Pg4E"; // Provided Discord invite link
         discordLink.target = "_blank"; // Open in new tab
         discordLink.style.cssText = "position: absolute; bottom: 8px; left: 8px; opacity: 0.5; transition: opacity 0.2s ease; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px;";
         discordLink.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16"> 
@@ -548,7 +548,7 @@ class AssessmentHelper {
      * with permanent dismissal only if the 'Don't show again' checkbox is checked.
      */
     displayDiscordPopup() {
-        const discordLink = "https://discord.gg/DWb9pQ79";
+        const discordLink = "https://discord.gg/fmXQN5Pg4E";
 
         const popup = document.createElement('div');
         popup.id = 'discordPopup';
