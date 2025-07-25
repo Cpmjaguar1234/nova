@@ -52,6 +52,9 @@ class AssessmentHelper {
         this.answerInitialX = 0;
         this.answerInitialY = 0;
 
+        // Default text for TinyMCE editor
+        this.defaultTinyMCEText = "Based on the article's title and image, I believe food scientists are responsible for researching and developing new food products, ensuring food safety and quality, conducting experiments to improve food processing methods, analyzing nutritional content, and implementing quality control measures in food production. They also work on enhancing food preservation techniques and creating innovative food packaging solutions.";
+
         // Cached article content to avoid re-fetching for subsequent questions
         this.cachedArticle = null;
         this.isFetchingAnswer = false; // State to track if an answer fetch is in progress
@@ -134,6 +137,33 @@ class AssessmentHelper {
         });
     }
 
+    /**
+     * Types the given text into the TinyMCE editor iframe.
+     * @param {string} text - The text to type into the editor.
+     */
+    typeIntoTinyMCE(text) {
+        try {
+            const tinymceIframe = document.querySelector('div.tox-sidebar-wrap iframe');
+            if (tinymceIframe) {
+                const iframeDoc = tinymceIframe.contentDocument || tinymceIframe.contentWindow.document;
+                const editableElement = iframeDoc.querySelector('p.MuiTypography-root.MuiTypography-body1.jss302.css-tok6xw');
+                if (editableElement) {
+                    editableElement.textContent = text;
+                    console.log('Text successfully typed into TinyMCE editor.');
+                } else {
+                    console.warn('Editable element not found within TinyMCE iframe.');
+                    this.showAlert('TinyMCE editable area not found.', 'warning');
+                }
+            } else {
+                console.warn('TinyMCE iframe not found.');
+                this.showAlert('TinyMCE editor not found on the page.', 'warning');
+            }
+        } catch (error) {
+            console.error('Error typing into TinyMCE:', error);
+            this.showAlert('Failed to type into TinyMCE editor.', 'error');
+        }
+    }
+
 
     /**
      * Creates the main UI element (the launcher).
@@ -189,6 +219,20 @@ class AssessmentHelper {
         getAnswerButton.appendChild(loadingIndicator);
         getAnswerButton.appendChild(buttonTextSpan);
 
+        // New button for typing into TinyMCE
+        const typeAnswerButton = document.createElement("button");
+        typeAnswerButton.id = "typeAnswerButton";
+        typeAnswerButton.style.cssText = "background: #2c2e3b;border: none;color: white;padding: 12px 20px;border-radius: 8px;cursor: pointer;margin-top: 10px;width: 120px;height: 44px;font-size: 16px;transition: background 0.2s ease, transform 0.1s ease; display: flex; justify-content: center; align-items: center;";
+        const typeButtonTextSpan = document.createElement("span");
+        typeButtonTextSpan.textContent = "Type Answer";
+        typeAnswerButton.appendChild(typeButtonTextSpan);
+
+        // Event listener for the type answer button
+        typeAnswerButton.addEventListener("click", () => this.typeIntoTinyMCE(this.defaultTinyMCEText));
+
+        // Append buttons to launcher
+        launcher.appendChild(getAnswerButton);
+        launcher.appendChild(typeAnswerButton);
 
         // Version display
         const version = document.createElement("div");
@@ -761,28 +805,7 @@ class AssessmentHelper {
                 }
             }
 
-            const logMessage = `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Mobile: ${isMobile} | MobileType: ${mobileType} | Time: ${normalTime} | ISO Time: ${isoTimestamp} | Nova Clicks: ${novaButtonClickCount}`;
-    
 
-            const payload = {
-                text: logMessage,
-                timestamp: isoTimestamp,
-                os: os,
-                browser: browser,
-                isMobile: isMobile,
-                mobileType: mobileType,
-                novaClicks: novaButtonClickCount
-            };
-
-    
-
-            const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/data', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
 
             console.log("AssessmentHelper: Fetch response status:", response.status);
 
@@ -837,7 +860,7 @@ class AssessmentHelper {
         const RETRY_DELAY_MS = 1000; // Define delay between retries in milliseconds
 
         try {
-            console.log(`AssessmentHelper: Sending POST request to /ask with queryContent (truncated): ${queryContent.substring(0, 200)}...`); // Log truncated content
+    
 
             const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/ask', {
                 method: 'POST',
@@ -876,7 +899,7 @@ class AssessmentHelper {
             }
 
             const data = await response.json();
-            console.log(`AssessmentHelper: Received data from /ask:`, data); // Log the full data object
+    
             // Return the response text or a default message
             return data.response ? String(data.response).trim() : 'No answer available'; // Ensure answer is string and trimmed
         } catch (error) {
@@ -899,7 +922,7 @@ class AssessmentHelper {
             const paragraphs = articleContainer.querySelectorAll('p');
             // Extract and join the text content of each <p> element
             articleContent = Array.from(paragraphs).map(p => p.textContent.trim()).join(' ');
-            console.log(`AssessmentHelper: Fetched article content (truncated): ${articleContent.substring(0, 200)}...`);
+    
         } else {
             console.warn('AssessmentHelper: Article content container (#start-reading) not found.');
         }
@@ -910,7 +933,7 @@ class AssessmentHelper {
         if (questionContainer) {
             // Extract the text content of the container
             questionContent = questionContainer.textContent.trim();
-            console.log(`AssessmentHelper: Fetched question content (truncated): ${questionContent.substring(0, 200)}...`);
+    
         } else {
             console.warn('AssessmentHelper: Question content container (#activity-component-react) not found.');
         }
@@ -1174,10 +1197,13 @@ class AssessmentHelper {
                         console.log(`AssessmentHelper: Starting processQuestion with excluded answers: ${excludedAnswers.join(', ')}`);
                         // Fetch the current article and question content from the page
                         let queryContent = await this.fetchArticleContent();
-                        console.log(`AssessmentHelper: Fetched content for question processing (truncated): ${queryContent.substring(0, 200)}...`);
+                
 
                         // Append instruction to the query for the API
                         queryContent += "\n\nPROVIDE ONLY A ONE-LETTER ANSWER THAT'S IT NOTHING ELSE (A, B, C, or D).";
+
+                        // Show the query content to the user
+                        this.showMessage(`Sending to bot:\n${queryContent}`, 5000);
 
                         // Add prompt to avoid excluded answers if retrying
                         if (excludedAnswers.length > 0) {
@@ -1188,7 +1214,7 @@ class AssessmentHelper {
                         // Fetch the answer from the API
                         console.log("AssessmentHelper: Fetching answer from API...");
                         const answer = await this.fetchAnswer(queryContent);
-                        console.log(`AssessmentHelper: Received answer from API: "${answer}"`);
+                
 
                         // Display the received answer in the answer UI
                         answerContent.textContent = answer;
@@ -1200,7 +1226,7 @@ class AssessmentHelper {
                         // Check if the received answer is a valid single letter (A-D) and not excluded
                         if (answer && ['A', 'B', 'C', 'D'].includes(answer.trim()) && !excludedAnswers.includes(answer.trim())) {
                             const trimmedAnswer = answer.trim();
-                            console.log(`AssessmentHelper: Answer "${trimmedAnswer}" is valid and not excluded. Attempting to select option.`);
+                    
                             // Find all radio button options on the page
                             const options = document.querySelectorAll('[role="radio"]');
                             // Calculate the index based on the letter (A=0, B=1, etc.)
@@ -1208,7 +1234,7 @@ class AssessmentHelper {
 
                             // Check if an option exists at the calculated index
                             if (options[index]) {
-                                console.log(`AssessmentHelper: Clicking option at index ${index} for answer "${trimmedAnswer}".`);
+                        
                                 options[index].click(); // Simulate clicking the radio button
 
                                 // Wait a short time for the page to register the click
@@ -1237,7 +1263,7 @@ class AssessmentHelper {
 
                                                 // Check if the button was "Try again"
                                                 if (buttonText === 'Try again') {
-                                                    console.log(`AssessmentHelper: Answer "${trimmedAnswer}" was incorrect. Retrying question.`);
+                                            
                                                     // If incorrect, hide the answer UI and retry the question,
                                                     // adding the incorrect answer to the excluded list.
                                                     await new Promise(resolve => setTimeout(async () => {
@@ -1290,7 +1316,7 @@ class AssessmentHelper {
                                 answerContent.textContent = `Error: Option ${trimmedAnswer} not found on page.`;
                             }
                         } else {
-                            console.log(`AssessmentHelper: Answer "${answer}" is not a valid single letter option (A-D) or is in the excluded list. Displaying answer.`);
+                    
                             // If the answer is not a valid format (e.g., multiple letters, text) or is excluded,
                             // just display what the API returned and don't attempt to click options.
                         }

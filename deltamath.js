@@ -694,7 +694,7 @@ function loadKaTeXScript() {
           }
   
           try {
-              console.log(`Sending POST request...`); // Avoid logging potentially sensitive queryContent directly
+             
   
               const response = await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/ask', {
                   method: 'POST',
@@ -719,7 +719,7 @@ function loadKaTeXScript() {
               }
   
               const data = await response.json();
-              console.log(`Received data.`); // Avoid logging potentially large/sensitive data
+             
               return data.response || 'No answer provided by API.';
   
           } catch (error) {
@@ -833,10 +833,10 @@ function loadKaTeXScript() {
           try {
               // 'this' should refer to the DeltaMathUI instance here
               const problemData = this.extractAnswers();
-              console.log('Problem data extracted.'); // Avoid logging sensitive data
+             
   
               const formattedProblem = await this.formatProblemForAI(problemData);
-              console.log('Problem formatted for AI.'); // Avoid logging sensitive data
+             
   
               answerContentElement.innerHTML = '<div>Fetching answer from API...</div>';
   

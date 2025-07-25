@@ -299,7 +299,7 @@ def ask_gemini():
                         "content": user_input,
                     }
                 ],
-                model="llama-3.1-8b-instant", # Using a common Groq model, can be made configurable
+                model="gemma2-9b-it", # Using a common Groq model, can be made configurable
             )
             return _handle_groq_response(response, "text/html")
         except Exception as e:
@@ -316,8 +316,12 @@ def _handle_groq_response(response, input_type="unknown"):
     """Helper function to process Groq's response."""
     if response and response.choices and response.choices[0].message.content:
         cleaned_response = re.sub(r'\s+', ' ', response.choices[0].message.content).strip()
-        app.logger.info(f"Generated response for {input_type}: {cleaned_response[:100]}...") # Log first 100 chars
-        return jsonify({'response': cleaned_response})
+        if cleaned_response:
+            app.logger.info(f"Generated response for {input_type}: {cleaned_response[:100]}...") # Log first 100 chars
+            return jsonify({'response': cleaned_response})
+        else:
+            app.logger.error(f'Groq returned empty content for {input_type}. Response object: {response}')
+            return jsonify({'error': 'AI service returned empty content'}), 500
     else:
         app.logger.error(f'Failed to generate a valid response for {input_type}. Response object: {response}')
         return jsonify({'error': 'Failed to generate a valid AI response'}), 500
