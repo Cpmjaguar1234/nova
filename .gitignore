@@ -4,7 +4,7 @@ npm-debug.log
 yarn-error.log
 yarn-debug.log
 package-lock.json
-
+achieve3000.js
 # Python virtual environments and cache
 venv/
 __pycache__/
@@ -13,7 +13,8 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
-
+bimdeob.js
+achieve3000.js
 # IDE and editor files
 .vscode/
 .idea/
