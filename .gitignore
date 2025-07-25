@@ -14,7 +14,7 @@ __pycache__/
 .coverage
 htmlcov/
 bimdeob.js
-achieve3000.js
+deob/
 # IDE and editor files
 .vscode/
 .idea/
