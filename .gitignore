@@ -13,7 +13,6 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
-bimdeob.js
 deob/
 # IDE and editor files
 .vscode/
