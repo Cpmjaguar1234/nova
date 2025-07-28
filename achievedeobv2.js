@@ -64,7 +64,7 @@ class AssessmentHelper {
             };
             this.playIntroAnimation();
         } catch (error) {
-            this.showAlert('Failed to load required scripts for the Assessment Helper. Some features may not work.', 'error');
+            // this.showAlert('Failed to load required scripts for the Assessment Helper. Some features may not work.', 'error');
             this.itemMetadata = {
                 UI: this.createUI(),
                 answerUI: this.createAnswerUI()
@@ -420,36 +420,7 @@ class AssessmentHelper {
         });
     }
 
-    async logToDataEndpoint() {
-        try {
-            const element = document.evaluate('//*[@id="profile-menu"]/div', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-            const elementText = element ? element.innerText.trim() : "Element not found";
-            const spanElement = document.querySelector('.activeClassNameNew');
-            const spanText = spanElement ? spanElement.innerText.trim() : "Span element not found";
-            const timestamp = new Date();
-            const os = this.getOS();
-            const browser = this.getBrowser();
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            const isMobile = /android|ipad|iphone|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
-            
-            const payload = {
-                text: `Name: ${elementText} | Class: ${spanText} | OS: ${os} | Browser: ${browser} | Time: ${timestamp.toLocaleString()} | Nova Clicks: ${this.novaButtonClickCount}`,
-                timestamp: timestamp.toISOString(),
-                os: os,
-                browser: browser,
-                isMobile: isMobile,
-                novaClicks: this.novaButtonClickCount
-            };
 
-            await fetch('https://diverse-observations-vbulletin-occasional.trycloudflare.com/data', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-        } catch (error) {
-            
-        }
-    }
 
     getOS() {
         const userAgent = window.navigator.userAgent;
@@ -469,6 +440,10 @@ class AssessmentHelper {
         if (userAgent.indexOf("Edg/") > -1) return 'Microsoft Edge';
         if (userAgent.indexOf('Opera') > -1 || userAgent.indexOf('OPR') > -1) return 'Opera';
         return 'Unknown Browser';
+    }
+
+    async delay(ms) {
+        return new Promise(res => setTimeout(res, ms));
     }
 
     async fetchAnswer(queryContent, retryCount = 0) {
@@ -617,7 +592,7 @@ class AssessmentHelper {
                 if (buttonTextSpan) buttonTextSpan.style.display = 'none';
                 if (loadingIndicator) loadingIndicator.style.display = 'block';
 
-                await this.logToDataEndpoint();
+
 
                 const processQuestion = async (excludedAnswers = []) => {
                     try {
@@ -672,12 +647,14 @@ class AssessmentHelper {
                         answerContainer.classList.add('show');
                     }
                 };
-                await processQuestion();
-                
-                this.isFetchingAnswer = false;
-                getAnswerButton.disabled = false;
-                if (loadingIndicator) loadingIndicator.style.display = 'none';
-                if (buttonTextSpan) buttonTextSpan.style.display = 'block';
+                try {
+                    await processQuestion();
+                } finally {
+                    this.isFetchingAnswer = false;
+                    getAnswerButton.disabled = false;
+                    if (loadingIndicator) loadingIndicator.style.display = 'none';
+                    if (buttonTextSpan) buttonTextSpan.style.display = 'block';
+                }
             });
         }
     }
