@@ -679,115 +679,44 @@ class AssessmentHelper {
                     // Check if on courseware delivery page
                     if (window.location.href.includes('https://f2.apps.elf.edmentum.com/courseware-delivery')) {
                         if (buttonTextSpan) {
-                            buttonTextSpan.textContent = 'Skip Course';
+                            buttonTextSpan.textContent = 'Skip Course'; // Ensure button text is set
                         }
-                        
-                        // Check for video content
-                        const videoElement = document.querySelector('video[data-assetid]');
-                        if (videoElement) {
-                            console.log('AssessmentHelper: Found video content, skipping to next section');
-                            const nextPlayerButton = document.querySelector('.player-icon.next');
-                            if (nextPlayerButton) {
-                                nextPlayerButton.click();
-                                setTimeout(() => {
-                                    if (!this.isClosed) {
-                                        getAnswerButton.click();
-                                    }
-                                }, 1000);
-                                this.isFetchingAnswer = false;
-                                getAnswerButton.disabled = false;
-                                if (buttonTextSpan) buttonTextSpan.style.display = 'block';
-                                if (loadingIndicator) loadingIndicator.style.display = 'none';
-                                return;
-                            }
-                        }
-                        const readablePanel = document.querySelector('.PanelContainer.readable');
-                        let formattedQuery = '';
-                        if (readablePanel) {
-                            console.log('AssessmentHelper: Found readable panel, sending content to AI');
-                            const readablePanelContent = readablePanel.innerText || readablePanel.textContent;
-                            formattedQuery = readablePanelContent;
-                        }
-                        const submitButton = document.querySelector('button.btn.buttonDone');
-                        const multipleChoiceList = document.querySelector('body > div.ItemContainer.multiplechoice.readable > div.PanelContainer.readable > div.Player.panel.panel-default.QuestionPanel > div.panel-body > div.InteractionContent > div.Interaction > form > ul');
-                        if (multipleChoiceList && submitButton) {
-                            console.log('AssessmentHelper: Found answerable multiple choice question');
-                            const choices = Array.from(multipleChoiceList.querySelectorAll('li.interaction-multiplechoice-choice')).map(li => {
-                                const content = li.querySelector('.interaction-multiplechoice-choice-content');
-                                return content ? content.innerText || content.textContent : '';
-                            }).filter(text => text);
-                            const stemElement = document.querySelector('.stem');
-                            if (stemElement) {
-                                formattedQuery += '\n\nQuestion: ' + (stemElement.innerText || stemElement.textContent);
-                            }
-                            formattedQuery += '\n\nChoices:\n' + choices.join('\n') + '\n\nPROVIDE ONLY A ONE-LETTER ANSWER THAT\'S IT NOTHING ELSE (A, B, C, or D).';
-                        }
-                        if (formattedQuery) {
-                            console.log('AssessmentHelper: Fetching answer for courseware content...');
-                            this.fetchAnswer(formattedQuery).then(answer => {
-                               
-                                if (!answer.startsWith('Error:')) {
-                                    const answerText = answer.trim().toUpperCase();
-                                    if (multipleChoiceList && /^[A-D]$/.test(answerText)) {
-                                        const index = answerText.charCodeAt(0) - 'A'.charCodeAt(0);
-                                        const choices = multipleChoiceList.querySelectorAll('li.interaction-multiplechoice-choice');
-                                        if (index >= 0 && index < choices.length) {
-                                            const choice = choices[index];
-                                            const input = choice.querySelector('input[type="radio"]');
-                                            if (input) {
-                                                // Use click() as requested by the user
-                                                input.click();
-                                                console.log('AssessmentHelper: Selected choice ' + answerText);
-                                                const submitButton = document.querySelector('button.btn.buttonDone');
-                                                if (submitButton) {
-                                                    setTimeout(() => {
-                                                        submitButton.click();
-                                                        console.log('AssessmentHelper: Clicked submit button');
-                                                    }, 500);
-                                                }
-                                            }
-                                        }
-                                    }
+                    }
+
+                    // Check if the button is in "Skip Course" mode
+                    if (buttonTextSpan && buttonTextSpan.textContent === 'Skip Course') {
+                        const nextPlayerButton = document.querySelector('.player-icon.next');
+                        const tutorialNavNextButton = document.querySelector('.tutorial-nav-next'); // Also check for this one
+
+                        if (nextPlayerButton) {
+                            nextPlayerButton.click();
+                            console.log('AssessmentHelper: Auto-clicked .player-icon.next');
+                            setTimeout(() => {
+                                if (!this.isClosed) {
+                                    getAnswerButton.click(); // Re-trigger for next page
                                 }
-                            });
+                            }, 1000);
+                        } else if (tutorialNavNextButton && !tutorialNavNextButton.classList.contains('disabled')) {
+                            tutorialNavNextButton.click();
+                            console.log('AssessmentHelper: Auto-clicked .tutorial-nav-next');
+                            setTimeout(() => {
+                                if (!this.isClosed) {
+                                    getAnswerButton.click(); // Re-trigger for next page
+                                }
+                            }, 1000);
+                        } else {
+                            console.log('AssessmentHelper: No next navigation button found for courseware delivery.');
                         }
 
-                        const element = document.querySelector('.interaction-multiplechoice-choiceslist');
-                        if (element) {
-                            console.log('Element found:', element);
-                        } else {
-                            console.log('Element not found.');
-                        }
-
-                        const nextButton = document.querySelector('.tutorial-nav-next');
-                        if (nextButton) {
-                            if (nextButton.classList.contains('disabled')) {
-                                console.log('AssessmentHelper: Next button is disabled, waiting for AI response...');
-                                if (formattedQuery) {
-                                    // Wait for AI response and submit button click before proceeding
-                                    return;
-                                }
-                            } else {
-                                console.log('AssessmentHelper: Auto-clicking next button on courseware delivery.');
-                                nextButton.click();
-                                setTimeout(() => {
-                                    if (!this.isClosed) {
-                                        console.log('AssessmentHelper: Auto-triggering next skip');
-                                        getAnswerButton.click();
-                                    }
-                                }, 1000);
-                            }
-                        } else {
-                            console.log('AssessmentHelper: No next button found, stopping auto-skip');
-                        }
+                        // Regardless of whether a button was found, we are in "skip course" mode,
+                        // so we should not proceed with question answering logic.
                         this.isFetchingAnswer = false;
                         getAnswerButton.disabled = false;
                         if (buttonTextSpan) buttonTextSpan.style.display = 'block';
                         if (loadingIndicator) loadingIndicator.style.display = 'none';
-                        return; // Exit after skipping course
-                    }
-
-                    console.log('AssessmentHelper: Question type:', isHottextQuestion ? 'hottext' : 'multiple choice');
+                        return; // IMPORTANT: Exit here to prevent question answering
+                    } else { // Only proceed with question answering if not in "Skip Course" mode
+                        console.log('AssessmentHelper: Question type:', isHottextQuestion ? 'hottext' : 'multiple choice');
                     
                     let formattedQuery = prompt + (choices ? '\n\nChoices:\n' + choices.join('\n') : '') + (isHottextQuestion ?
                         "\n\nPROVIDE ONLY THE INCORRECT OR MISSPELLED WORD FROM THE CHOICES, NOTHING ELSE." :
@@ -802,7 +731,6 @@ class AssessmentHelper {
                         throw new Error(answer);
                     }
 
-                   
                     if (answerContent && answerContainer) {
                         answerContent.textContent = answer;
                         answerContainer.style.display = 'flex';
@@ -899,6 +827,7 @@ class AssessmentHelper {
                             }
                         }, 1000);
                     }
+                }
                 } catch (error) {
                     console.error('AssessmentHelper: Error in answer processing:', error);
                     this.showAlert('Error processing question. Please try again.', 'error');
@@ -1187,6 +1116,47 @@ class AssessmentHelper {
         console.error('AssessmentHelper: All retry attempts failed');
         this.showAlert('Failed to fetch answer after multiple retries.', 'error');
         return 'Error: Failed to fetch answer after multiple retries.';
+    }
+
+    dragGapMatchItem(draggableId, droppableId) {
+        const draggable = document.querySelector(`[data-ed-draggable-id="${draggableId}"]`);
+        const droppable = document.querySelector(`[data-ed-droppable-id="${droppableId}"]`);
+
+        if (draggable && droppable) {
+            // Simulate drag start
+            const dragStartEvent = new MouseEvent('mousedown', {
+                bubbles: true,
+                cancelable: true,
+                view: window,
+                clientX: draggable.getBoundingClientRect().left,
+                clientY: draggable.getBoundingClientRect().top
+            });
+            draggable.dispatchEvent(dragStartEvent);
+
+            // Simulate drag over droppable
+            const dragOverEvent = new MouseEvent('mousemove', {
+                bubbles: true,
+                cancelable: true,
+                view: window,
+                clientX: droppable.getBoundingClientRect().left + droppable.offsetWidth / 2,
+                clientY: droppable.getBoundingClientRect().top + droppable.offsetHeight / 2
+            });
+            document.dispatchEvent(dragOverEvent);
+
+            // Simulate drop
+            const dropEvent = new MouseEvent('mouseup', {
+                bubbles: true,
+                cancelable: true,
+                view: window,
+                clientX: droppable.getBoundingClientRect().left + droppable.offsetWidth / 2,
+                clientY: droppable.getBoundingClientRect().top + droppable.offsetHeight / 2
+            });
+            document.dispatchEvent(dropEvent);
+
+            console.log(`AssessmentHelper: Dragged item ${draggableId} to ${droppableId}`);
+        } else {
+            console.error(`AssessmentHelper: Draggable ${draggableId} or Droppable ${droppableId} not found.`);
+        }
     }
 
     skipTutorials() {
