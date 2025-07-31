@@ -269,7 +269,24 @@
             this.itemMetadata.UI.querySelector('#closeButton').addEventListener('click', () => this.destroy());
             this.itemMetadata.UI.querySelector('#getAnswerButton').addEventListener('click', () => this.autoClickNext());
             this.itemMetadata.UI.querySelector('#themeButton').addEventListener('click', () => this.showThemePopup());
-            this.itemMetadata.UI.querySelector('#debugNavigatorButton').addEventListener('click', () => createEdmentumNavigatorAutoRefresh());
+            this.itemMetadata.UI.querySelector('#debugNavigatorButton').addEventListener('click', () => {
+                console.log('Debug Navigator button clicked. Loading edmentum-nav.js...');
+                GM_xmlhttpRequest({
+                    method: 'GET',
+                    url: 'https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/edmentum/edmentum-nav.js',
+                    onload: function(response) {
+                        try {
+                            eval(response.responseText);
+                            console.log('edmentum-nav.js loaded and executed successfully.');
+                        } catch (e) {
+                            console.error('Error executing edmentum-nav.js:', e);
+                        }
+                    },
+                    onerror: function(error) {
+                        console.error('Error loading edmentum-nav.js:', error);
+                    }
+                });
+            });
 
             // Button hover effects
             this.itemMetadata.UI.querySelectorAll('button').forEach(button => {

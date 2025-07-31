@@ -14,21 +14,22 @@
       width: '320px',
       maxHeight: '80vh',
       overflowY: 'auto',
-      background: '#fff',
-      border: '2px solid #333',
+      background: '#1c1e2b',
+      border: '2px solid rgba(255, 255, 255, 0.3)',
       padding: '12px',
       zIndex: '9999',
       fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif',
       fontSize: '14px',
-      boxShadow: '0 0 12px rgba(0,0,0,0.25)',
+      boxShadow: '0 0 12px rgba(0,0,0,0.2)',
       borderRadius: '8px',
+      color: 'white'
     });
     document.body.appendChild(uiBox);
 
     // Title
     const title = document.createElement('div');
     title.id = 'edmentum-navigator-title';
-    title.innerHTML = '📚 <strong>Edmentum Navigator</strong>';
+    title.innerHTML = '📚 <strong style="color:#4cc9f0">Edmentum Navigator</strong>';
     title.style.marginBottom = '8px';
     uiBox.appendChild(title);
 
@@ -38,12 +39,12 @@
     legend.style.fontSize = '13px';
     legend.style.marginBottom = '12px';
     legend.innerHTML = `
-      <div>Legend:</div>
-      <div style="color:#155724; background:#d4edda; padding:2px 6px; border-radius:4px; display:inline-block; margin:3px 5px 3px 0;">Tutorial</div>
-      <div style="color:#721c24; background:#f8d7da; padding:2px 6px; border-radius:4px; display:inline-block; margin:3px 5px 3px 0;">Assessment</div>
-      <div style="color:#0c5460; background:#d1ecf1; padding:2px 6px; border-radius:4px; display:inline-block; margin:3px 5px 3px 0;">Document</div>
-      <div style="color:#333; background:#f1f1f1; padding:2px 6px; border-radius:4px; display:inline-block; margin:3px 5px 3px 0;">Other</div>
-      <div style="color:#000; background:#e3f2fd; padding:2px 6px; border-radius:4px; display:inline-block; margin:3px 5px 3px 0;">Unit</div>
+      <div style="color:#4cc9f0">Legend:</div>
+      <div style="color:#a8e6cf; background:#1a2e3a; padding:2px 6px; border-radius:4px; display:inline-block; margin:3px 5px 3px 0;">Tutorial</div>
+      <div style="color:#ffaaa5; background:#3a1a2e; padding:2px 6px; border-radius:4px; display:inline-block; margin:3px 5px 3px 0;">Assessment</div>
+      <div style="color:#a8c6e6; background:#1a3a2e; padding:2px 6px; border-radius:4px; display:inline-block; margin:3px 5px 3px 0;">Document</div>
+      <div style="color:#d3d3d3; background:#2e2e2e; padding:2px 6px; border-radius:4px; display:inline-block; margin:3px 5px 3px 0;">Other</div>
+      <div style="color:#ffffff; background:#2e1a3a; padding:2px 6px; border-radius:4px; display:inline-block; margin:3px 5px 3px 0;">Unit</div>
     `;
     uiBox.appendChild(legend);
   }
@@ -73,26 +74,26 @@
     btn.style.transition = 'background-color 0.25s ease';
 
     if (type === 'unit') {
-      btn.style.background = '#e3f2fd';
-      btn.style.color = '#000';
+      btn.style.background = '#2e1a3a';
+      btn.style.color = '#ffffff';
       btn.style.fontWeight = '600';
     } else {
       switch (subtype.toLowerCase()) {
         case 'tutorial':
-          btn.style.background = '#d4edda';
-          btn.style.color = '#155724';
+          btn.style.background = '#1a2e3a';
+          btn.style.color = '#a8e6cf';
           break;
         case 'assessment':
-          btn.style.background = '#f8d7da';
-          btn.style.color = '#721c24';
+          btn.style.background = '#3a1a2e';
+          btn.style.color = '#ffaaa5';
           break;
         case 'document':
-          btn.style.background = '#d1ecf1';
-          btn.style.color = '#0c5460';
+          btn.style.background = '#1a3a2e';
+          btn.style.color = '#a8c6e6';
           break;
         default:
-          btn.style.background = '#f1f1f1';
-          btn.style.color = '#333';
+          btn.style.background = '#2e2e2e';
+          btn.style.color = '#d3d3d3';
       }
     }
 
