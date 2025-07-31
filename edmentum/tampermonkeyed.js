@@ -124,22 +124,6 @@ const themes = {
         }
 
 
-// ==UserScript==
-// @name         Edmentum Assessment Helper
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Helper script for Edmentum assessments
-// @author       You
-// @match        *://*.edmentum.com/*
-// @grant        unsafeWindow
-// @grant        GM_log
-// @grant        GM_getValue
-// @grant        GM_setValue
-// @grant        GM_deleteValue
-// @grant        GM_xmlhttpRequest
-// @connect      * 
-// ==/UserScript==
-
 class AssessmentHelper {
     constructor() {
         console.log('[AssessmentHelper] Constructor: Initializing...');

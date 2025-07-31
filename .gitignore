@@ -17,6 +17,7 @@ deob/
 # IDE and editor files
 .vscode/
 .idea/
+.trae/
 *.swp
 *.swo
 *~
