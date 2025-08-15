@@ -52,16 +52,10 @@
 
             --bim-color: var(--nord-green);
             --achieve-color: var(--nord-blue);
-            --ixl-color: var(--nord-orange);
+
             --deltamath-color: var(--nord-purple);
 
-            /* Specific colors for IXL Extension section (using Nord palette) */
-            --ixl-heading-color: var(--ixl-color); /* Use the orange for the main heading */
-            --chrome-color: var(--achieve-color); /* Use blue for Chrome */
-            --firefox-color: var(--deltamath-color); /* Use purple for Firefox */
-            --ixl-link-color-github: var(--bim-color); /* Use green for GitHub link */
-            --ixl-link-color-mozilla: var(--firefox-color); /* Use Firefox color for Mozilla link */
-            --ixl-link-color-repo: var(--achieve-color); /* Use Chrome color for repo link */
+
 
             /* Scrollbar styles */
             --scrollbar-thumb: var(--accent-color);
@@ -1004,56 +998,7 @@
         }
 
 
-        /* --- Specific Styles for IXL Extension Section --- */
-        #ixl-extension-section h2 {
-            color: var(--ixl-heading-color); /* Use specific Nord color for the main heading */
-        }
 
-        #ixl-extension-section h3 {
-            /* Use general h3 styles, but override color */
-            color: var(--chrome-color); /* Default to Chrome Nord color */
-        }
-
-        #ixl-extension-section .firefox-heading {
-            color: var(--firefox-color); /* Specific class for Firefox Nord heading */
-        }
-
-        #ixl-extension-section p {
-            color: var(--muted-text); /* Ensure paragraph text is muted light */
-        }
-
-        /* Specific adjustment for the paragraph before the first tool card in IXL section */
-        #ixl-section > p:first-of-type {
-            margin-bottom: 1rem; /* Reduced margin */
-        }
-
-
-        #ixl-extension-section strong {
-            color: var(--ixl-heading-color); /* Keep strong text matching the IXL Nord color */
-        }
-
-        #ixl-extension-section li {
-            color: var(--muted-text); /* Ensure list item text is muted light */
-        }
-
-        #ixl-extension-section a {
-            color: var(--ixl-link-color-github); /* Default link color (Nord green) */
-            text-decoration: underline;
-        }
-
-        #ixl-extension-section a:hover {
-            color: var(--light-text); /* Lighter color on hover */
-            text-decoration: none;
-        }
-
-        /* Specific link colors within IXL section lists (Nord palette) */
-        #ixl-extension-section .firefox-list a {
-            color: var(--ixl-link-color-mozilla); /* Nord purple */
-        }
-
-        #ixl-extension-section .repo-link {
-            color: var(--ixl-link-color-repo); /* Nord blue */
-        }
 
          /* Scroll-to-Top Button */
         #scrollToTopBtn {
@@ -1298,15 +1243,7 @@
                     </div>
                 </div>
 
-                <div id="ixl-button" class="button-container">
-                    <div class="spin spin-blur"></div>
-                    <div class="spin spin-intense"></div>
-                    <div class="backdrop"></div>
-                    <div class="button-border">
-                        <div class="spin spin-inside"></div>
-                        <div class="button"><i class="fas fa-pencil-alt"></i> IXL</div>
-                    </div>
-                </div>
+
 
                 <div id="deltamath-button" class="button-container">
                     <div class="spin spin-blur"></div>
@@ -1373,31 +1310,7 @@
                 </div>
             </section>
 
-            <section id="ixl-section"> <h2><i class="fas fa-pencil-alt"></i> IXL Instructions</h2>
-                <p class="ixl-intro-paragraph">For IXL, we recommend using the dedicated browser extension for the best experience. Follow the steps below to install and use the extension in your browser.</p>
-                <div class="tool-card">
-                    <h4><i class="fas fa-info-circle"></i> Overview</h4>
-                    <p>The Nova IXL browser extension enhances your IXL experience with real-time assistance.</p>
-                </div>
-                 <div class="tool-card">
-                    <h4><i class="fas fa-wrench"></i> Features</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Progress Analytics: Tracks performance and offers hints in real time.</li>
-                        <li><i class="fas fa-check"></i> Clean UI: Unobtrusive overlays.</li>
-                    </ul>
-                </div>
-                <div class="tool-card">
-                    <h4><i class="fas fa-download"></i> Installation & Usage (Extension)</h4>
-                    <div style="margin-top:1.2rem;">
-                        <strong>For Chrome:</strong>
-                        <ol style="margin-top:0.7rem; color:var(--muted-text);">
-                            <li><i class="fas fa-download"></i> Download the latest release from&nbsp;<a href="https://github.com/cpmjaguar1234/nova/releases" target="_blank" style="color:var(--ixl-link-color-github);">GitHub Releases</a>.</li>
-                            <li><i class="fas fa-folder-open"></i> Unzip the downloaded file to a folder (e.g., ixl extension).</li>
-                            <li><i class="fas fa-toggle-on"></i> Open Chrome Extensions (chrome://extensions/). Enable Developer mode (top right).</li>
-                            <li><i class="fas fa-upload"></i> Click&nbsp;<b>Load unpacked</b>&nbsp;and select the ixl extension folder.</li>
-                        </ol>
-                    </div>
-                    <div style="margin-top:1.2rem;">
+
                         <strong class="firefox-heading">For Firefox:</strong>
                         <ol class="firefox-list" style="margin-top:0.7rem; color:var(--muted-text);">
                             <li><i class="fab fa-firefox-browser"></i> Visit the&nbsp;<a href="https://addons.mozilla.org/en-US/firefox/addon/nova-ixl-extension/" target="_blank" style="color:var(--ixl-link-color-mozilla);">Mozilla Add-ons page</a>.</li>
