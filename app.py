@@ -60,12 +60,7 @@ CORS(app, resources={
         "allow_headers": ["Content-Type", "Authorization"],
         "supports_credentials": True
     },
-    r"/ask-ixl": {
-        "origins": "*",  # Specify actual frontend origins here in production
-        "methods": ["POST", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"],
-        "supports_credentials": True
-    },
+
     r"/set_article": {"origins": "https://portal.achieve3000.com"},
     # Changed to a list to include multiple origins, good practice.
     # For '/data', we'll allow specific origins for POST, as requested
@@ -144,7 +139,7 @@ def redirect_to_nova():
     """
     # Exclude specific known endpoints and static files from redirection
     # Updated endpoint names after splitting /data route
-    if request.endpoint in ['static', 'ask_gemini', 'ask_ixl', 'ask_status', 'toggle_ask', 'get_data_dashboard', 'post_data_entry', 'clear_data', 'set_article']:
+    if request.endpoint in ['static', 'ask_gemini', 'ask_status', 'toggle_ask', 'get_data_dashboard', 'post_data_entry', 'clear_data', 'set_article']:
         return None # Do not redirect
 
     # Also check if it's a specific path that should not redirect, e.g., root "/"
@@ -385,78 +380,9 @@ def _handle_groq_response(response, input_type="unknown"):
         return jsonify({'error': 'Failed to generate a valid AI response'}), 500
 
 
-@app.route('/ask-ixl', methods=['POST'])
-def ask_ixl():
-    """
-    Handles IXL specific requests, expecting HTML content and instructions.
-    """
-    if not ask_enabled:
-        app.logger.warning("Access denied to /ask-ixl: Endpoint is currently disabled.")
-        return jsonify({'error': 'Ask endpoint is currently disabled.'}), 403
-
-    app.logger.info(f"Received request at /ask-ixl")
 
 
-    data = request.get_json(silent=True) # Use silent=True for robustness
-    if not data:
-            app.logger.warning("POST request to /ask-ixl received non-JSON or empty data.")
-            return jsonify({'error': 'No data provided or invalid JSON'}), 400
 
-    app.logger.info(f"IXL data keys: {data.keys()}")
-
-    html_content = data.get('html', '').strip()
-    instructions = data.get('instructions', '').strip()
-    prompt = data.get('prompt', DEFAULT_PROMPT_IXL)
-
-    if not html_content:
-        app.logger.warning('No HTML content provided for /ask-ixl.')
-        return jsonify({'error': 'No HTML content provided for IXL problem'}), 400
-
-    # Combine HTML, instructions, and prompt for Groq
-    user_input_parts = []
-    if instructions:
-        user_input_parts.append(f"IXL Problem Instructions: {instructions}")
-    
-    user_input_parts.append(f"HTML Content: {html_content}")
-    user_input_parts.append(prompt)
-
-    user_input = "\n\n".join(user_input_parts)
-
-    app.logger.info(f"Sending IXL request to Groq with prompt length: {len(user_input)} characters.")
-    try:
-        response = client.chat.completions.create(
-            messages=[
-                {
-                    "role": "user",
-                    "content": user_input,
-                }
-            ],
-            model="llama-3.1-8b-instant", # Using a common Groq model, can be made configurable
-        )
-        return _handle_groq_response(response, "IXL problem")
-    except Exception as e:
-        app.logger.error(f"Error during Groq content generation for /ask-ixl: {e}", exc_info=True)
-        return jsonify({'error': f'Error generating response from AI: {e}'}), 500
-
-@app.route('/set_article', methods=['POST'])
-@require_auth # Apply authentication if this endpoint needs to be secured
-def set_article():
-    """
-    Stores article content in the session.
-    Consider if this should be secured by require_auth.
-    """
-    try:
-        data = request.get_json(silent=True) # Use silent=True for robustness
-        if not data or 'article' not in data:
-            app.logger.warning("Invalid request to /set_article: Missing 'article' field or invalid JSON.")
-            return jsonify({'error': "Invalid request: 'article' field is required in JSON body."}), 400
-
-        session['article_content'] = data['article']
-        app.logger.info("Article content stored in session.")
-        return jsonify({'success': True, 'message': 'Article content stored successfully.'}), 200
-    except Exception as e:
-        app.logger.error(f"Error storing article content: {e}", exc_info=True)
-        return jsonify({'error': f'Error storing article content: {e}'}), 500
 
 @app.route('/data', methods=['GET'])
 @require_auth_basic # Only GET requires password
@@ -492,48 +418,7 @@ def get_data_dashboard():
             json.dump([], f)
     return render_template('data.html', data=data)
 
-@app.route('/api/data', methods=['GET'])
-@require_auth_basic # Secure the API endpoint as well
-def get_api_data():
-    """
-    Handles reading user data and returning it as JSON.
-    """
-    app.logger.info("API data endpoint called with GET method.")
-    try:
-        data = [] # Initialize data as an empty list by default
-        if os.path.exists(DATA_FILE):
-            with open(DATA_FILE, 'r') as f:
-                content = f.read().strip()
-                if content: # Only try to load if content is not empty
-                    try:
-                        loaded_data = json.loads(content)
-                        if isinstance(loaded_data, list):
-                            data = loaded_data
-                        else:
-                            app.logger.error(f"Data file '{DATA_FILE}' content is not a JSON list. Found type: {type(loaded_data).__name__}. Resetting file.")
-                            with open(DATA_FILE, 'w') as f_reset:
-                                json.dump([], f_reset)
-                    except json.JSONDecodeError as e:
-                        app.logger.error(f'Error decoding JSON from {DATA_FILE}: Malformed JSON. {e}. Resetting file.', exc_info=True)
-                        with open(DATA_FILE, 'w') as f_reset:
-                            json.dump([], f_reset)
-                else:
-                    app.logger.info(f"Data file '{DATA_FILE}' is empty. Initializing as empty list.")
-                    with open(DATA_FILE, 'w') as f_reset:
-                        json.dump([], f_reset)
-        else:
-            app.logger.info(f"Creating empty {DATA_FILE} as it does not exist.")
-            with open(DATA_FILE, 'w') as f:
-                json.dump([], f)
 
-        app.logger.info(f"Successfully loaded {len(data)} data entries for API GET request.")
-        return jsonify(data)
-    except IOError as e:
-        app.logger.error(f'Error accessing {DATA_FILE}: {e}', exc_info=True)
-        return jsonify({'error': f'Error accessing data file: {e}'}), 500
-    except Exception as e:
-        app.logger.error(f'Unexpected error in /api/data GET: {e}', exc_info=True)
-        return jsonify({'error': f'Internal server error: {e}'}), 500
 
 @app.route('/data', methods=['POST'])
 def post_data_entry():
