@@ -7,7 +7,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <!-- Chart.js fallback -->
+    <script>
+        // Fallback for Chart.js if CDN fails
+        if (typeof Chart === 'undefined') {
+            console.warn('Primary Chart.js CDN failed, loading fallback...');
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"><\/script>');
+        }
+    </script>
     <!-- DataTables -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
     <!-- Font Awesome -->
@@ -438,6 +446,128 @@
             font-size: 0.9rem;
             text-transform: uppercase;
         }
+        
+        /* Authentication Modal Styles */
+        .auth-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .auth-modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 400px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+        }
+        
+        .auth-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .auth-modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
+        }
+        
+        .auth-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6c757d;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+        
+        .auth-close:hover {
+            background: #f8f9fa;
+            color: #dc3545;
+        }
+        
+        .auth-form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .auth-form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .auth-form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .auth-form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+        
+        .auth-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .auth-btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+        }
+        
+        .auth-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .auth-btn-secondary {
+            background: #f8f9fa;
+            color: #6c757d;
+            border: 1px solid #e9ecef;
+        }
+        
+        .auth-btn-secondary:hover {
+            background: #e9ecef;
+        }
     </style>
 </head>
 <body>
@@ -446,14 +576,54 @@
         <div class="d-flex align-items-center">
             <i class="fas fa-check-circle me-2" id="notificationIcon"></i>
             <span id="notificationText">Action completed successfully</span>
-            <button type="button" class="btn-close ms-auto" onclick="hideNotification()"></button>
+            <button type="button" class="btn-close ms-auto" data-action="hide-notification"></button>
         </div>
     </div>
 
     <!-- Refresh Button -->
-    <button class="refresh-btn" onclick="refreshData()" title="Refresh Data">
+    <button class="refresh-btn" data-action="refresh-data" title="Refresh Data">
         <i class="fas fa-sync-alt"></i>
     </button>
+
+    <!-- Authentication Modal -->
+    <div id="authModal" class="auth-modal">
+        <div class="auth-modal-content">
+            <div class="auth-modal-header">
+                <h3 class="auth-modal-title">
+                    <i class="fas fa-shield-alt me-2"></i>
+                    Authentication Required
+                </h3>
+                <button class="auth-close" data-action="close-auth-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="authForm">
+                <div class="auth-form-group">
+                    <label class="auth-form-label" for="authUsername">
+                        <i class="fas fa-user me-1"></i>
+                        Username
+                    </label>
+                    <input type="text" id="authUsername" class="auth-form-input" placeholder="Enter username" required>
+                </div>
+                <div class="auth-form-group">
+                    <label class="auth-form-label" for="authPassword">
+                        <i class="fas fa-lock me-1"></i>
+                        Password
+                    </label>
+                    <input type="password" id="authPassword" class="auth-form-input" placeholder="Enter password" required>
+                </div>
+                <div class="auth-buttons">
+                    <button type="button" class="auth-btn auth-btn-secondary" data-action="close-auth-modal">
+                        Cancel
+                    </button>
+                    <button type="submit" class="auth-btn auth-btn-primary">
+                        <i class="fas fa-check me-1"></i>
+                        Authenticate
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <div class="dashboard-container">
         <!-- Header Section -->
@@ -755,14 +925,27 @@
 
         // Chart creation functions
         function createModernChart(canvasId, chartType, labels, data, title, colors) {
-            const ctx = document.getElementById(canvasId).getContext('2d');
+            // Check if Chart.js is available
+            if (typeof Chart === 'undefined') {
+                console.error('Chart.js is not loaded. Skipping chart creation for:', canvasId);
+                showNotification('Chart library failed to load. Charts may not display.', 'error');
+                return;
+            }
+            
+            const ctx = document.getElementById(canvasId);
+            if (!ctx) {
+                console.error('Canvas element not found:', canvasId);
+                return;
+            }
+            
+            const context = ctx.getContext('2d');
             
             if (charts[canvasId]) {
                 charts[canvasId].destroy();
             }
             
             const gradientColors = colors.map(color => {
-                const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+                const gradient = context.createLinearGradient(0, 0, 0, 400);
                 gradient.addColorStop(0, color + '80');
                 gradient.addColorStop(1, color + '20');
                 return gradient;
@@ -826,7 +1009,12 @@
                 }
             };
 
-            charts[canvasId] = new Chart(ctx, config);
+            try {
+                charts[canvasId] = new Chart(context, config);
+            } catch (error) {
+                console.error('Error creating chart:', canvasId, error);
+                showNotification(`Failed to create ${title} chart`, 'error');
+            }
         }
 
         // Data processing functions
@@ -874,70 +1062,82 @@
         }
 
         function createCharts(data) {
-            // OS Chart
-            const osCounts = {};
-            data.forEach(item => {
-                const os = item.os || 'Unknown';
-                osCounts[os] = (osCounts[os] || 0) + 1;
-            });
+            // Check if Chart.js is available before creating charts
+            if (typeof Chart === 'undefined') {
+                console.error('Chart.js library is not loaded. Charts will not be displayed.');
+                showNotification('Chart library not available. Please refresh the page.', 'error');
+                return;
+            }
             
-            createModernChart(
-                'osChart', 
-                'doughnut',
-                Object.keys(osCounts),
-                Object.values(osCounts),
-                'Operating Systems',
-                ['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe', '#00f2fe']
-            );
+            try {
+                // OS Chart
+                const osCounts = {};
+                data.forEach(item => {
+                    const os = item.os || 'Unknown';
+                    osCounts[os] = (osCounts[os] || 0) + 1;
+                });
+                
+                createModernChart(
+                    'osChart', 
+                    'doughnut',
+                    Object.keys(osCounts),
+                    Object.values(osCounts),
+                    'Operating Systems',
+                    ['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe', '#00f2fe']
+                );
 
-            // Browser Chart
-            const browserCounts = {};
-            data.forEach(item => {
-                const browser = item.browser || 'Unknown';
-                browserCounts[browser] = (browserCounts[browser] || 0) + 1;
-            });
-            
-            createModernChart(
-                'browserChart',
-                'doughnut',
-                Object.keys(browserCounts),
-                Object.values(browserCounts),
-                'Browsers',
-                ['#43e97b', '#38f9d7', '#fa709a', '#fee140', '#a8edea', '#fed6e3']
-            );
+                // Browser Chart
+                const browserCounts = {};
+                data.forEach(item => {
+                    const browser = item.browser || 'Unknown';
+                    browserCounts[browser] = (browserCounts[browser] || 0) + 1;
+                });
+                
+                createModernChart(
+                    'browserChart',
+                    'doughnut',
+                    Object.keys(browserCounts),
+                    Object.values(browserCounts),
+                    'Browsers',
+                    ['#43e97b', '#38f9d7', '#fa709a', '#fee140', '#a8edea', '#fed6e3']
+                );
 
-            // Activity Timeline Chart
-            const activityByHour = new Array(24).fill(0);
-            data.forEach(item => {
-                if (item.timestamp) {
-                    const hour = new Date(item.timestamp).getHours();
-                    activityByHour[hour]++;
-                }
-            });
-            
-            createModernChart(
-                'activityChart',
-                'line',
-                Array.from({length: 24}, (_, i) => `${i}:00`),
-                activityByHour,
-                'Activity by Hour',
-                ['#667eea']
-            );
+                // Activity Timeline Chart
+                const activityByHour = new Array(24).fill(0);
+                data.forEach(item => {
+                    if (item.timestamp) {
+                        const hour = new Date(item.timestamp).getHours();
+                        activityByHour[hour]++;
+                    }
+                });
+                
+                createModernChart(
+                    'activityChart',
+                    'line',
+                    Array.from({length: 24}, (_, i) => `${i}:00`),
+                    activityByHour,
+                    'Activity by Hour',
+                    ['#667eea']
+                );
 
-            // Device Type Chart
-            const deviceCounts = {
-                'Desktop': data.filter(item => !item.isMobile).length,
-                'Mobile': data.filter(item => item.isMobile).length
-            };
-            
-            createModernChart(
-                'deviceChart',
-                'bar',
-                Object.keys(deviceCounts),
-                Object.values(deviceCounts),
-                'Device Types',
-                ['#4facfe', '#00f2fe']
-            );
+                // Device Type Chart
+                const deviceCounts = {
+                    'Desktop': data.filter(item => !item.isMobile).length,
+                    'Mobile': data.filter(item => item.isMobile).length
+                };
+                
+                createModernChart(
+                    'deviceChart',
+                    'bar',
+                    Object.keys(deviceCounts),
+                    Object.values(deviceCounts),
+                    'Device Types',
+                    ['#4facfe', '#00f2fe']
+                );
+            } catch (error) {
+                console.error('Error creating charts:', error);
+                showNotification('Failed to create analytics charts', 'error');
+            }
         }
 
         // API functions
@@ -1058,16 +1258,58 @@
                 return;
             }
             
+            // Show authentication modal
+            showAuthModal();
+        }
+        
+        function showAuthModal() {
+            const modal = document.getElementById('authModal');
+            modal.style.display = 'block';
+            document.getElementById('authUsername').focus();
+        }
+        
+        function closeAuthModal() {
+            const modal = document.getElementById('authModal');
+            modal.style.display = 'none';
+            // Clear form
+            document.getElementById('authForm').reset();
+        }
+        
+        async function performClearData(username, password) {
             try {
-                const response = await fetch('/clear-data', { method: 'POST' });
-                if (!response.ok) throw new Error('Failed to clear data');
+                // Create credentials for Basic Auth
+                const credentials = btoa(`${username}:${password}`);
+                
+                const response = await fetch('/clear-data', { 
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Basic ${credentials}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (response.status === 401) {
+                    showNotification('Authentication failed. Please check your credentials.', 'error');
+                    return false;
+                }
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
                 
                 const result = await response.json();
                 showNotification(result.message, 'success');
+                closeAuthModal();
                 setTimeout(() => location.reload(), 1500);
+                return true;
             } catch (error) {
                 console.error('Error clearing data:', error);
-                showNotification('Failed to clear data', 'error');
+                if (error.message.includes('401')) {
+                    showNotification('Authentication required. Please provide valid credentials.', 'error');
+                } else {
+                    showNotification(`Failed to clear data: ${error.message}`, 'error');
+                }
+                return false;
             }
         }
 
@@ -1112,74 +1354,127 @@
             }
         }
 
-        // Event delegation for table action buttons
-        function setupTableEventHandlers() {
+        // Event delegation for table action buttons and general UI actions
+        function setupEventHandlers() {
             document.addEventListener('click', function(e) {
-                if (e.target.closest('[data-action]')) {
-                    const button = e.target.closest('[data-action]');
-                    const action = button.getAttribute('data-action');
-                    const entryId = button.getAttribute('data-entry-id');
-                    
-                    if (action === 'view') {
+                const button = e.target.closest('[data-action]');
+                if (!button) return;
+                
+                const action = button.getAttribute('data-action');
+                const entryId = button.getAttribute('data-entry-id');
+                
+                switch(action) {
+                    case 'view':
                         viewDetails(entryId);
-                    } else if (action === 'delete') {
+                        break;
+                    case 'delete':
                         deleteEntry(entryId);
-                    }
+                        break;
+                    case 'hide-notification':
+                        hideNotification();
+                        break;
+                    case 'refresh-data':
+                        refreshData();
+                        break;
+                    case 'close-auth-modal':
+                        closeAuthModal();
+                        break;
                 }
             });
         }
 
         // Initialize dashboard
         $(document).ready(async function() {
-            // Setup event handlers
-            setupTableEventHandlers();
-            
-            // Initialize DataTable
-            dataTable = $('#dataTable').DataTable({
-                order: [[5, 'desc']],
-                pageLength: 25,
-                responsive: true,
-                language: {
-                    search: 'Search records:',
-                    lengthMenu: 'Show _MENU_ entries per page',
-                    info: 'Showing _START_ to _END_ of _TOTAL_ entries',
-                    paginate: {
-                        previous: 'Previous',
-                        next: 'Next'
+            try {
+                // Setup event handlers
+                setupEventHandlers();
+                
+                // Setup authentication modal event handlers
+                document.getElementById('authForm').addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const username = document.getElementById('authUsername').value;
+                    const password = document.getElementById('authPassword').value;
+                    
+                    if (!username || !password) {
+                        showNotification('Please enter both username and password', 'error');
+                        return;
                     }
+                    
+                    await performClearData(username, password);
+                });
+                
+                // Close modal when clicking outside
+                document.getElementById('authModal').addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeAuthModal();
+                    }
+                });
+                
+                // Close modal with Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && document.getElementById('authModal').style.display === 'block') {
+                        closeAuthModal();
+                    }
+                });
+                
+                // Initialize DataTable
+                dataTable = $('#dataTable').DataTable({
+                    order: [[5, 'desc']],
+                    pageLength: 25,
+                    responsive: true,
+                    language: {
+                        search: 'Search records:',
+                        lengthMenu: 'Show _MENU_ entries per page',
+                        info: 'Showing _START_ to _END_ of _TOTAL_ entries',
+                        paginate: {
+                            previous: 'Previous',
+                            next: 'Next'
+                        }
+                    }
+                });
+
+                // Fetch and process data
+                dashboardData = await fetchData();
+                const stats = processData(dashboardData);
+                updateStatistics(stats);
+                
+                // Create charts with error handling
+                createCharts(dashboardData);
+
+                // Update ask button status
+                try {
+                    const askStatus = await fetchAskStatus();
+                    updateAskButton(askStatus.enabled);
+                } catch (error) {
+                    console.error('Failed to fetch ask status:', error);
+                    showNotification('Failed to load system status', 'error');
                 }
-            });
+                
+                updateLastUpdated();
 
-            // Fetch and process data
-            dashboardData = await fetchData();
-            const stats = processData(dashboardData);
-            updateStatistics(stats);
-            createCharts(dashboardData);
-
-            // Update ask button status
-            const askStatus = await fetchAskStatus();
-            updateAskButton(askStatus.enabled);
-            
-            updateLastUpdated();
-
-            // Event listeners
-            document.getElementById('toggleAskButton').addEventListener('click', toggleAskStatus);
-            document.getElementById('clearDataButton').addEventListener('click', clearData);
-            document.getElementById('exportDataButton').addEventListener('click', exportData);
-            document.getElementById('refreshDataButton').addEventListener('click', refreshData);
-            
-            // Auto-refresh every 5 minutes (since it reloads the page)
-            setInterval(async () => {
-                showNotification('Auto-refreshing data...', 'success');
+                // Event listeners for control buttons
+                document.getElementById('toggleAskButton').addEventListener('click', toggleAskStatus);
+                document.getElementById('clearDataButton').addEventListener('click', clearData);
+                document.getElementById('exportDataButton').addEventListener('click', exportData);
+                document.getElementById('refreshDataButton').addEventListener('click', refreshData);
+                
+                // Auto-refresh every 5 minutes (since it reloads the page)
+                setInterval(async () => {
+                    showNotification('Auto-refreshing data...', 'success');
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
+                }, 300000); // 5 minutes
+                
+                // Welcome message
                 setTimeout(() => {
-                    window.location.reload();
+                    showNotification('Nova Analytics Hub loaded successfully', 'success');
                 }, 1000);
-            }, 300000); // 5 minutes
-            
-            // Welcome message
-            setTimeout(() => {
-                showNotification('Nova Analytics Hub loaded successfully', 'success');
-            }, 1000);
+                
+            } catch (error) {
+                console.error('Error initializing dashboard:', error);
+                showNotification('Dashboard initialization failed. Please refresh the page.', 'error');
+            }
         });
     </script>
 </body>

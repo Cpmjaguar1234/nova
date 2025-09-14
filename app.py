@@ -69,6 +69,13 @@ CORS(app, resources={
         "methods": ["GET", "POST", "OPTIONS"], # Explicitly allow POST
         "allow_headers": ["Content-Type", "Authorization"],
         "supports_credentials": True
+    },
+    # Add CORS configuration for clear-data endpoint
+    r"/clear-data": {
+        "origins": ["http://localhost:5000", "*"],
+        "methods": ["POST", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"],
+        "supports_credentials": True
     }
 })
 
@@ -306,7 +313,7 @@ def redirect_to_nova():
     """
     # Exclude specific known endpoints and static files from redirection
     # Updated endpoint names after splitting /data route
-    if request.endpoint in ['static', 'ask_gemini', 'ask_status', 'toggle_ask', 'get_data_dashboard', 'post_data_entry', 'clear_data', 'set_article']:
+    if request.endpoint in ['static', 'ask_gemini', 'ask_status', 'toggle_ask', 'get_data_dashboard', 'post_data_entry', 'clear_data', 'set_article', 'handle_answers']:
         return None # Do not redirect
 
     # Also check if it's a specific path that should not redirect, e.g., root "/"
