@@ -126,6 +126,173 @@ def require_auth_basic(f):
     return decorated_function
 
 
+# --- Helper Functions for Enhanced User Agent Parsing ---
+def parse_browser_details(user_agent):
+    """Parse detailed browser information from user agent string."""
+    browser_details = {
+        'name': 'Unknown',
+        'version': 'Unknown',
+        'engine': 'Unknown',
+        'is_mobile': False
+    }
+    
+    try:
+        # Brave Browser
+        if 'Brave' in user_agent:
+            browser_details['name'] = 'Brave'
+            browser_details['engine'] = 'Blink'
+        # Vivaldi
+        elif 'Vivaldi' in user_agent:
+            vivaldi_match = re.search(r'Vivaldi/([0-9\.]+)', user_agent)
+            browser_details['name'] = 'Vivaldi'
+            browser_details['version'] = vivaldi_match.group(1) if vivaldi_match else 'Unknown'
+            browser_details['engine'] = 'Blink'
+        # Microsoft Edge (Chromium and Legacy)
+        elif 'Edg' in user_agent or 'Edge' in user_agent:
+            edge_match = re.search(r'Edg?/([0-9\.]+)', user_agent)
+            browser_details['name'] = 'Microsoft Edge'
+            if edge_match:
+                version_num = int(edge_match.group(1).split('.')[0])
+                browser_details['version'] = edge_match.group(1)
+                browser_details['engine'] = 'Blink' if version_num >= 79 else 'EdgeHTML'
+            else:
+                browser_details['engine'] = 'EdgeHTML'
+        # Opera
+        elif 'Opera' in user_agent or 'OPR' in user_agent:
+            opera_match = re.search(r'(?:Opera|OPR)/([0-9\.]+)', user_agent)
+            browser_details['name'] = 'Opera'
+            browser_details['version'] = opera_match.group(1) if opera_match else 'Unknown'
+            browser_details['engine'] = 'Blink'
+        # Chrome (must come after other Chromium browsers)
+        elif 'Chrome' in user_agent and 'Edge' not in user_agent and 'OPR' not in user_agent:
+            chrome_match = re.search(r'Chrome/([0-9\.]+)', user_agent)
+            browser_details['name'] = 'Google Chrome'
+            browser_details['version'] = chrome_match.group(1) if chrome_match else 'Unknown'
+            browser_details['engine'] = 'Blink'
+        # Firefox
+        elif 'Firefox' in user_agent:
+            firefox_match = re.search(r'Firefox/([0-9\.]+)', user_agent)
+            browser_details['name'] = 'Mozilla Firefox'
+            browser_details['version'] = firefox_match.group(1) if firefox_match else 'Unknown'
+            browser_details['engine'] = 'Gecko'
+        # Safari
+        elif 'Safari' in user_agent and 'Chrome' not in user_agent:
+            safari_match = re.search(r'Version/([0-9\.]+).*Safari', user_agent)
+            browser_details['name'] = 'Apple Safari'
+            browser_details['version'] = safari_match.group(1) if safari_match else 'Unknown'
+            browser_details['engine'] = 'WebKit'
+        # Internet Explorer
+        elif 'Trident' in user_agent or 'MSIE' in user_agent:
+            ie_match = re.search(r'(?:MSIE |Trident.*rv:)([0-9\.]+)', user_agent)
+            browser_details['name'] = 'Internet Explorer'
+            browser_details['version'] = ie_match.group(1) if ie_match else 'Unknown'
+            browser_details['engine'] = 'Trident'
+        # Samsung Internet
+        elif 'Samsung' in user_agent:
+            browser_details['name'] = 'Samsung Internet'
+            browser_details['engine'] = 'Blink'
+        # UC Browser
+        elif 'UCBrowser' in user_agent:
+            uc_match = re.search(r'UCBrowser/([0-9\.]+)', user_agent)
+            browser_details['name'] = 'UC Browser'
+            browser_details['version'] = uc_match.group(1) if uc_match else 'Unknown'
+        # Yandex Browser
+        elif 'YaBrowser' in user_agent:
+            yandex_match = re.search(r'YaBrowser/([0-9\.]+)', user_agent)
+            browser_details['name'] = 'Yandex Browser'
+            browser_details['version'] = yandex_match.group(1) if yandex_match else 'Unknown'
+            browser_details['engine'] = 'Blink'
+        
+        # Detect mobile browsers
+        browser_details['is_mobile'] = bool(re.search(r'Mobile|Android|iPhone|iPad|iPod', user_agent))
+        
+    except Exception as e:
+        app.logger.error(f"Error parsing browser details: {e}")
+    
+    return browser_details
+
+def parse_os_details(user_agent):
+    """Parse detailed OS information from user agent string."""
+    os_details = {
+        'name': 'Unknown',
+        'version': 'Unknown',
+        'architecture': 'Unknown'
+    }
+    
+    try:
+        # Windows detection with versions
+        if 'Windows NT' in user_agent:
+            if 'Windows NT 10.0' in user_agent:
+                os_details['name'] = 'Windows'
+                os_details['version'] = '10/11'
+                if 'WOW64' in user_agent or 'Win64' in user_agent:
+                    os_details['architecture'] = '64-bit'
+                else:
+                    os_details['architecture'] = '32-bit'
+            elif 'Windows NT 6.3' in user_agent:
+                os_details['name'] = 'Windows'
+                os_details['version'] = '8.1'
+            elif 'Windows NT 6.2' in user_agent:
+                os_details['name'] = 'Windows'
+                os_details['version'] = '8'
+            elif 'Windows NT 6.1' in user_agent:
+                os_details['name'] = 'Windows'
+                os_details['version'] = '7'
+            else:
+                os_details['name'] = 'Windows'
+        # macOS detection
+        elif 'Mac OS X' in user_agent:
+            mac_match = re.search(r'Mac OS X ([0-9_]+)', user_agent)
+            os_details['name'] = 'macOS'
+            if mac_match:
+                version = mac_match.group(1).replace('_', '.')
+                major_version = int(version.split('.')[1]) if len(version.split('.')) > 1 else 0
+                if major_version >= 15:
+                    os_details['version'] = 'Monterey+'
+                elif major_version >= 14:
+                    os_details['version'] = 'Big Sur'
+                elif major_version >= 13:
+                    os_details['version'] = 'Catalina+'
+                else:
+                    os_details['version'] = version
+        # Linux distributions
+        elif 'Linux' in user_agent:
+            os_details['name'] = 'Linux'
+            if 'Ubuntu' in user_agent:
+                os_details['version'] = 'Ubuntu'
+            elif 'Fedora' in user_agent:
+                os_details['version'] = 'Fedora'
+            elif 'SUSE' in user_agent:
+                os_details['version'] = 'SUSE'
+            elif 'Red Hat' in user_agent:
+                os_details['version'] = 'Red Hat'
+        # Android
+        elif 'Android' in user_agent:
+            android_match = re.search(r'Android ([0-9\.]+)', user_agent)
+            os_details['name'] = 'Android'
+            os_details['version'] = android_match.group(1) if android_match else 'Unknown'
+        # iOS
+        elif 'iPhone' in user_agent or 'iPad' in user_agent or 'iPod' in user_agent:
+            ios_match = re.search(r'OS ([0-9_]+)', user_agent)
+            os_details['name'] = 'iOS'
+            if ios_match:
+                os_details['version'] = ios_match.group(1).replace('_', '.')
+        # Chrome OS
+        elif 'CrOS' in user_agent:
+            os_details['name'] = 'Chrome OS'
+        # BSD variants
+        elif 'FreeBSD' in user_agent:
+            os_details['name'] = 'FreeBSD'
+        elif 'OpenBSD' in user_agent:
+            os_details['name'] = 'OpenBSD'
+        elif 'NetBSD' in user_agent:
+            os_details['name'] = 'NetBSD'
+            
+    except Exception as e:
+        app.logger.error(f"Error parsing OS details: {e}")
+    
+    return os_details
+
 # --- Global Flags ---
 ask_enabled = True  # Global variable to track the state of the /ask and /ask-ixl endpoints
 
@@ -435,15 +602,25 @@ def post_data_entry():
         is_mobile = data.get('isMobile', False)
         mobile_type = data.get('mobileType', 'N/A')
         nova_clicks = data.get('novaClicks', 0) # Get novaClicks, default to 0 if not provided
-
+        
+        # Enhanced user agent parsing for better analytics
+        user_agent = request.headers.get('User-Agent', 'Unknown')
+        
+        # Parse additional browser details from user agent
+        browser_details = parse_browser_details(user_agent)
+        os_details = parse_os_details(user_agent)
+        
         entry = {
             'text': text,
             'timestamp': timestamp,
             'os': os_info,
+            'osDetails': os_details,  # Additional OS information
             'browser': browser_info,
+            'browserDetails': browser_details,  # Additional browser information
+            'userAgent': user_agent,  # Store full user agent for analysis
             'isMobile': is_mobile,
             'mobileType': mobile_type,
-            'novaClicks': nova_clicks # Add novaClicks to the entry
+            'novaClicks': nova_clicks
         }
 
         # Load existing data
@@ -456,7 +633,7 @@ def post_data_entry():
             app.logger.warning(f"Existing data in '{DATA_FILE}' is not a list during POST. Initializing as empty list for append.")
             existing_data = []
 
-        app.logger.info(f"Received new data entry: OS: {os_info}, Browser: {browser_info}, Text (partial): {text[:50]}...")
+        app.logger.info(f"Received new data entry: OS: {os_info} ({os_details.get('version', '')}), Browser: {browser_info} ({browser_details.get('version', '')}), Text (partial): {text[:50]}...")
 
         existing_data.append(entry)
 
