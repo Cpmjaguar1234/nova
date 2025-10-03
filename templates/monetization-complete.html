@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova API Key</title>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #1c1e2b;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+            background: #2c2e3b;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            max-width: 600px;
+            width: 90%;
+        }
+        h1 {
+            color: #4caf50;
+            margin-bottom: 1.5rem;
+        }
+        .key-display {
+            background: #1c1e2b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 1.1rem;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+        .instructions {
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+        .copy-btn {
+            background: #5865f2;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s ease;
+            margin: 0.5rem;
+        }
+        .copy-btn:hover {
+            background: #4e5d94;
+        }
+        .btn {
+            background: #3c3e4b;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+        .btn:hover {
+            background: #4c4e5b;
+        }
+        .status {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            display: none;
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+            display: block;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+        .warning {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            display: block;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+        .key-info {
+            background: rgba(40, 167, 69, 0.1);
+            border-left: 4px solid #28a745;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        .steps {
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+        .steps ol {
+            padding-left: 1.5rem;
+        }
+        .steps li {
+            margin-bottom: 1rem;
+        }
+        .highlight {
+            background: rgba(88, 101, 242, 0.2);
+            border: 1px solid rgba(88, 101, 242, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Congratulations! 🎉</h1>
+        <p class="instructions">You've successfully completed the monetized task. Here is your Nova API key:</p>
+        
+        <div class="key-display" id="keyDisplay">{{ key or 'Loading key...' }}</div>
+        
+        <button class="copy-btn" id="copyButton">📋 Copy Key</button>
+        
+        <div class="status" id="statusMessage"></div>
+        
+        <div class="highlight">
+            <h3>Important Notice</h3>
+            <p>Everyone uses the same link to get their API key. You can bookmark this page or the link below to get your key in the future.</p>
+        </div>
+        
+        <div class="key-info">
+            <h3>Key Information</h3>
+            <p>Your API key includes:</p>
+            <ul>
+                <li>Access to all Nova bot features</li>
+                <li>24-hour validity period</li>
+            </ul>
+        </div>
+        
+        <div class="steps">
+            <h3>How to Use Your Key:</h3>
+            <ol>
+                <li>Copy the key above using the "Copy Key" button</li>
+                <li>Open the Nova browser extension</li>
+                <li>Click the "🔑 Key" button in the extension</li>
+                <li>Paste your key in the input field</li>
+                <li>Click "Save Key" to activate your access</li>
+            </ol>
+        </div>
+        
+        <div>
+            <a href="https://f-ghost-insights-pressed.trycloudflare.com/get-key" class="btn">
+                Get Another Key
+            </a>
+            <a href="https://f-ghost-insights-pressed.trycloudflare.com" class="btn">
+                Back to Dashboard
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Copy key to clipboard
+        document.getElementById('copyButton').addEventListener('click', () => {
+            const keyText = document.getElementById('keyDisplay').textContent;
+            navigator.clipboard.writeText(keyText).then(() => {
+                const status = document.getElementById('statusMessage');
+                status.textContent = '✅ Key copied to clipboard successfully!';
+                status.className = 'status success';
+                
+                // Reset status message after 3 seconds
+                setTimeout(() => {
+                    status.className = 'status';
+                }, 3000);
+            }).catch(err => {
+                console.error('Failed to copy key: ', err);
+                const status = document.getElementById('statusMessage');
+                status.textContent = '❌ Failed to copy key. Please try again.';
+                status.className = 'status warning';
+                status.style.display = 'block';
+                
+                // Reset status message after 3 seconds
+                setTimeout(() => {
+                    status.className = 'status';
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>

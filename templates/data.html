@@ -764,6 +764,10 @@
                     <i class="fas fa-trash-alt me-2"></i>
                     Clear All Data
                 </button>
+                <button id="clearKeysButton" class="btn btn-modern btn-warning-modern">
+                    <i class="fas fa-key me-2"></i>
+                    Clear All Keys
+                </button>
                 <button id="exportDataButton" class="btn btn-modern btn-warning-modern">
                     <i class="fas fa-download me-2"></i>
                     Export Data
@@ -1262,8 +1266,17 @@
             showAuthModal();
         }
         
-        function showAuthModal() {
+        function showAuthModal(action = 'clearData') {
+            window.currentAuthAction = action;
             const modal = document.getElementById('authModal');
+            const title = document.querySelector('.auth-modal-title');
+            
+            if (action === 'clearKeys') {
+                title.innerHTML = '<i class="fas fa-key me-2"></i>Authenticate to Clear Keys';
+            } else {
+                title.innerHTML = '<i class="fas fa-shield-alt me-2"></i>Authentication Required';
+            }
+            
             modal.style.display = 'block';
             document.getElementById('authUsername').focus();
         }
@@ -1305,9 +1318,60 @@
             } catch (error) {
                 console.error('Error clearing data:', error);
                 if (error.message.includes('401')) {
-                    showNotification('Authentication required. Please provide valid credentials.', 'error');
+                    showNotification('Authentication failed. Please check your credentials.', 'error');
                 } else {
                     showNotification(`Failed to clear data: ${error.message}`, 'error');
+                }
+                return false;
+            }
+        }
+
+        async function clearKeys() {
+            if (!confirm('Are you sure you want to clear all API keys? This action cannot be undone and will invalidate all existing keys.')) {
+                return;
+            }
+            
+            try {
+                // Show authentication modal for key clearing
+                showAuthModal('clearKeys');
+            } catch (error) {
+                console.error('Error initiating key clear:', error);
+                showNotification('Failed to initiate key clearing', 'error');
+            }
+        }
+        
+        async function performClearKeys(username, password) {
+            try {
+                // Create credentials for Basic Auth
+                const credentials = btoa(`${username}:${password}`);
+                
+                const response = await fetch('/clear-keys', { 
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Basic ${credentials}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (response.status === 401) {
+                    showNotification('Authentication failed. Please check your credentials.', 'error');
+                    return false;
+                }
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const result = await response.json();
+                showNotification(result.message, 'success');
+                closeAuthModal();
+                return true;
+            } catch (error) {
+                console.error('Error clearing keys:', error);
+                if (error.message.includes('401')) {
+                    showNotification('Authentication required. Please provide valid credentials.', 'error');
+                } else {
+                    showNotification(`Failed to clear keys: ${error.message}`, 'error');
                 }
                 return false;
             }
@@ -1400,9 +1464,14 @@
                         return;
                     }
                     
-                    await performClearData(username, password);
+                    // Check what action we're performing
+                    if (window.currentAuthAction === 'clearKeys') {
+                        await performClearKeys(username, password);
+                    } else {
+                        await performClearData(username, password);
+                    }
                 });
-                
+
                 // Close modal when clicking outside
                 document.getElementById('authModal').addEventListener('click', function(e) {
                     if (e.target === this) {
@@ -1455,6 +1524,7 @@
                 // Event listeners for control buttons
                 document.getElementById('toggleAskButton').addEventListener('click', toggleAskStatus);
                 document.getElementById('clearDataButton').addEventListener('click', clearData);
+                document.getElementById('clearKeysButton').addEventListener('click', clearKeys);
                 document.getElementById('exportDataButton').addEventListener('click', exportData);
                 document.getElementById('refreshDataButton').addEventListener('click', refreshData);
                 
