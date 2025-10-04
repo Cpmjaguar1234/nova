@@ -33,6 +33,7 @@ Our suite currently includes the following tools:
 * **Multi-Type Support**: Works with various question formats.
 * **Clean Interface**: Enjoy an unobtrusive user experience.
 * **Cross-Platform Compatibility**: Use across different supported learning sites.
+* **Multiple Monetization Options**: Choose between LootLabs and work.ink for API key generation.
 
 ## 🚀 Installation
 
