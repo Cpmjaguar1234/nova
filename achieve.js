@@ -1,1 +1,2119 @@
-function _0x3eb8(_0x243b15,_0xf011c){const _0x49e485=_0x5591();return _0x3eb8=function(_0x5df911,_0x51d935){_0x5df911=_0x5df911-(0xf*-0x102+0x917+0x719);let _0x31cc38=_0x49e485[_0x5df911];return _0x31cc38;},_0x3eb8(_0x243b15,_0xf011c);}function _0x5591(){const _0x5823da=['\x20\x20\x20\x20\x20\x20bord','}\x0a\x20\x20\x20\x20.key','dlHII','maining\x20ti','olor\x20when\x20','q.463-.63.','c2e3b\x20100%','eouHm','tion:\x20fixe','\x20\x20\x20\x20\x200%\x20{\x20','va%20logo%','answerInit','n:\x20center;','onclick','ze:\x2012px;\x0a','er\x20a\x20key','answerLaun','d\x20in\x20TinyM','https://cd','cher','ot\x20found.','ter;','anslateY(-','CRiaF','3.451-.559','\x20a\x20new\x20key','FwWfu','OzgIy','50%;\x0a\x20\x20\x20\x20\x20','AHGtC','KtAaW','key-status','GrDnw','tVhUl','-radius:\x203','x:\x2099999;p','-shadow:\x200','ter;\x20justi','\x20\x20\x20\x20','blrIM','#007bff','\x20\x20backgrou','KCuFJ','yScriptUrl','JFCbl','ct\x20for\x20clo','.close-btn','ype:\x20','xDtvF','LvJHR','-size:\x2016p','dding:\x2015p','Brave\x20Brow','onchange','entY','ay:\x20block;','ity\x20on\x20hov','iKey','orm:\x20rotat','complete','Unknown','MSTEL','Join\x20Disco','invalid','PI\x20key.\x20Pl','\x20rgba(0,\x200','ag-handle',',\x200,\x200.2);','introLoade',';top:\x200;','n:\x20fixed;\x0a','nLrLa','error','m\x200.5s\x20eas','-modal\x20but','radient(13','JaHra','#start-rea','RmyTY','er\x20your\x20No','hQCuc','0.5;\x20displ','bsp;&nbsp;','2);\x0a\x20\x20\x20\x20\x20\x20','px;\x0a\x20\x20\x20\x20\x20\x20','zmGXA','VTwud','tingsModal','lootlabs','Detected\x20O','#infoDialo','xMbVz','ixOAK','g:\x208px;box','l\x20styles\x20*','0.1s\x20ease;','g/validate','mfxCP',':\x20absolute','GrmuZ','react','\x20\x20\x20text-al','display','\x20ease,\x20opa','wZScN','er:\x201px\x20so','content:\x20c','inite;\x20dis','5\x200\x200\x200-.0','rgba(255,\x20','wSxLf','addEventLi','FCjqi','\x0a\x0aDo\x20not\x20p','KJMdS','eight:\x2020p','r\x20Submit\x20b','<svg\x20xmlns','clientY','\x20\x20\x20\x20\x20\x20z-in','evaluate','Handling\x20d','\x200c-.788\x200','sform:\x20tra','golcW',':\x20twinkle\x20','platform=w','-radius:\x206','Zimko','tVxTl','#3c3e4b','r:\x20move;ba','-top:\x203px\x20','adow:\x200\x204p','x\x20solid\x20rg','KukHd','ton\x20not\x20fo','glrtJ','sform\x200.3s','BJqPC','\x20\x20\x20\x20\x20\x20\x20bor','lare.com/a','mousedown','none','e:\x2012px;op','px;font-si',')\x20effect\x20f','city\x200.2s\x20','ba(255,\x2025','der:\x201px\x20s','dow','n\x20the\x20Nova','fab\x20fa-dis','rwLga','ion.','\x20valid','overlay','BghoE','77-.406.83','Agree','ding:\x208px\x20','\x20center;\x0a\x20','show','mouseup','iPad','ign:\x20cente','\x2020px;\x0a\x20\x20\x20','QABri','\x20nowrap;','sYsUi','QUWFI','fuMlB','LsQXK','uNUJZ','\x20this\x20agai','olumn;alig','1-.007c2.6','gJwJD','hadow:\x200\x200','\x2016\x22>\x20\x0a\x20\x20\x20','enter;colo','nHpVg','status','SLrgN','e(360deg);','\x0a\x0a\x20\x20\x20\x20@key','ate(0deg);','\x20\x20\x20\x20\x20font-','n-top\x20*/\x0a\x20','ottom:\x208px','ansform:\x20r','XzhSs','qBEDx','x;border-r','GNiDL','werButton\x20','transition','x;font-siz',':\x20#1c1e2b;','/\x0a\x20\x20\x20\x20\x20\x20\x20\x20','torAll','JKnSK','linear\x20inf','ly\x20shrink\x20','LxRtN','\x20\x20\x20\x20.key-s','HYzDc','block;\x0a\x20\x20\x20','sequence..','bIJgh','ale(0.98);','I\x20key.\x20Ple','ey-status\x20','d\x20state\x20fo','ransform:\x20','WVdWK','ime.js\x20is\x20','align-item','sButton','input[name','MhWgV','onmouseup','\x0a\x20\x20\x20\x20\x20\x20\x20\x20o',';\x20width:\x202','Launcher.s','Udjtx','block','readyState','0%;\x0a\x20\x20\x20\x20\x20\x20','qgweI','e:\x2018px;cu','vPfaO','rowser\x20Det','end','Enhanced\x20B','3/dist/dra','5,\x20255,\x200.','hSwDf','position','ge\x20color\x20t','kYmyw','VZLOi','padding:\x208','gXhJG','Would\x20you\x20','length','Name:\x20','ey\x20system\x20','htmlFor','cy)\x20','display:\x20f','Assessment','op:\x200;\x0a\x20\x20\x20','easeInOutS','TBtwY','w.githubus','monetizati','ont-family','trim','&nbsp;&nbs','+=500','fixed','\x20|\x20UserAge','\x20\x20\x20\x20\x20\x20\x20\x20bo','95);\x20/*\x20Sl','bbsoZ','red\x20script','stringify','UTwdU','e\x20invalid\x20','#closeAnsw','ome\x20featur','\x20expired\x20A','align:\x20mid','\x20\x20\x20\x20min-wi','Unknown\x20OS','\x200-.021.01','pTfZw','ulating\x20re','8.195a.05.',':\x20100002;\x0a','wOYgJ','tgTPu','xloPn','agTaY','discordPop','placeholde','Hfiyi','ressed\x20*/\x0a','Starting\x20p','filter','\x20questions','rtcOC','vaedu.us.k','WhDgE','lqaFM','CGVJT','se\x20buttons','dfZXQ','Your\x20API\x20k','#cancel_bu','kcxsE','.025c-.141','GBmqu','gMLrL','className','ze:\x2011px;\x0a','Checkmark\x20','02.05.05\x200','\x20}\x0a\x20\x20\x20\x20.ke','Mac:','FlKkx','ranslate(-','qCQDs','No\x20poll\x20op','UeHUY','\x208.041\x200a.','=\x22tiny-rea','dden;trans','t\x20failed\x20a','No\x20answer\x20','\x20|\x20ISO\x20Tim','feedbackAc','onmousedow','\x20poll...','baPsT','top','onPlatform','\x20\x20cursor:\x20','\x20\x20\x20\x20.overl','\x20border:\x20n','\x20\x20\x20\x20\x20top:\x20','Failed\x20to\x20',':\x20scale(0.','eUQtX','CRfSk','height','tton:activ','2);\x20border','Question\x20c','bi\x20bi-disc','eaAEL','RjghK','loadScript','linear','0,0,0,0.2)','qhTbZ','Error:\x20','BYfag','HFGZQ','s...','ration:\x20no','tzNDa','applicatio','-items:\x20ce','vXqSY','24-.213\x209.','ze:\x2016px;t','y...','formatRema','expires','Chrome\x20OS','left','bzHvh','ton:active','.032q.003.','4px;\x20heigh','BonTV','ease,\x20tran','scale(0.98','Fkmbi','iUmDj','Jvogm','mouseleave','in\x20the\x20Nov','SUSE','bility:\x20hi','to\x27,\x20sans-','TRGEJ','rsor:\x20poin','Successful','height:\x2010','BvvhU','ojwlp','io\x22]',',\x20transfor','transparen','spin\x200.8s\x20','e4b;\x20/*\x20Da','sidtE','\x20\x20\x20\x20\x20\x20\x20\x20\x20b','width','border-box','355795wbkQbl','ain.','\x20|\x20Browser','toISOStrin','ietyU','tQTtD','absolute;\x20','dating\x20API','KETiA','y:\x200.5;\x20tr',':\x20white;\x0a\x20','.5s\x20ease-i','r\x20{\x0a\x20\x20\x20\x20\x20\x20','ty:\x200.6;\x0a\x20','essing\x20que','1e2b;posit','ackground:','RsOaw','s\x20ease;\x0a\x20\x20','bottom:\x208p','key','GjTzP','Microsoft\x20','rMwLM','IDIcZ','\x20\x20\x20\x20\x20\x20\x20\x20op','sZjcc','rQuuY','No\x20body\x20el','g\x20longer..','tLMyE','PUPtL','=\x22M13.545\x20','-1.438-.72','ty:\x200;visi','ugArt','IfxKM','qURef','transform\x20','offsetHeig','15px','getKeyRema','keySetting','BmiUa','MLaLq','1048uRBJEv','aUKFP','JboOb','\x20\x20\x20\x20/*\x20Hov','s\x20for\x20the\x20','45;\x0a\x20\x20\x20\x20}\x0a','#4e5d94','TLalw','3\x200\x200\x200\x203.','createElem','\x20\x20\x20\x20\x20\x20\x20wid','er\x20effect\x20','https://di','b;\x20/*\x20Chan','mXNaq','Google\x20Chr','yles','fabEX',':\x200;\x20trans','BxsJc','\x20\x20\x20\x20\x20\x20\x20\x20wi','\x20h3\x20{\x0a\x20\x20\x20\x20','contentDoc','ptions\x20fou','IE:','Nova\x20API\x20k','Vivaldi','ess\x20denied','IjZHm','one;min-he','07\x200\x201.45.','3a12.2\x2012.','zySwC','nd:\x20rgba(2','oHrcY',';right:\x208p','erey+','-LETTER\x20AN','n\x20containe','ily:\x20\x27Nuni','urrentColo','VphkM','ansition:\x20','target','\x200\x200\x20.021-','r\x20current\x20','tton:\x20','EQBnB','frames\x20twi','I\x20key:','Error\x20vali','RuQFw','\x2040px;\x20mar','Error\x20proc','getElement','Processing','nline-bloc','_blank','ing\x20new\x20AP','Cancel','ont-size:\x20','e2b\x200%,\x20#2','TUrzb','ity:\x201;\x0a\x20\x20','znyYy','close-btn','if;\x0a\x20\x20\x20\x20\x20\x20','QfhEe','Friend','nter;\x0a\x20\x20\x20\x20','OksNp','t-size:\x2012','VfjUa','Error\x20gett','1.613\x201.43','oXWdF','ord\x22\x20viewB','#2c2e3b','Selected\x20p','osition:\x20a','NNKEi','.header-bg','DOMContent','transform','#e05252;\x20/','OcGyh','ErrXY','wser','IlJnK','keyData','\x20\x20\x20\x20\x20\x20\x20@ke','r;\x0a\x20\x20\x20\x20\x20\x20\x20','t:\x20220px;z','utton:hove','board.','\x20none;\x0a\x20\x20\x20','Element\x20no','50%,\x20-50%)','\x20*/\x0a\x20\x20\x20\x20\x20\x20','ytiSY','radius:\x2050','OqjZQ','Please\x20ent','0.5','\x200%\x20{\x20tran','to;\x0a\x20\x20\x20\x20\x20\x20','dth:\x20250px','uVvzi','INoif','th:\x20120px;','qtrtn','No\x20Next\x20bu','https://ra','Vivaldi\x20','appendChil','BjTvO','Kjavr','querySelec','GVsZN','-allowed;\x0a','\x20size\x20as\x20n','load\x20requi','vert\x20margi','irection:\x20','iKMTt','Ridsk','arance:\x20no','YqgGW','old;\x0a\x20\x20\x20\x20\x20','User-Agent','translateX','qQwAV','(20px)','euYSi','\x200;visibil','wAnUR','Desktop','px;\x0a\x20\x20\x20\x20}\x0a','Submitting','how\x20{\x0a\x20\x20\x20\x20','OQQiR','Helper:\x20An','0\x200\x200-.412','\x20padding:\x20','tfRBa','value','refox','-top:\x200;\x0a\x20','over\x20{\x0a\x20\x20\x20','\x20{\x20opacity','nimation','\x20.056-.019','textAlign','initialize',';overflow:','macOS\x20Mont','gkrAt','dDSna','220,\x2053,\x206','qlAeq','\x20\x20\x20pointer','aoEVM',';border-ra','ox=\x220\x200\x2016','createUI','px);\x0a\x20\x20\x20\x20\x20','%;\x0a\x20\x20\x20\x20\x20\x20\x20','XWUXR','embGY','ight:\x20100%','.037c.334-','floor','assessment','GTivg','info','nd:\x20rgba(4','Yrikg','2\x200\x200\x200-3.','click','\x20\x20\x20\x20color:','OnSiI','05\x200\x200\x200\x20.','\x20\x20\x20margin-','innerText','Windows','/*\x20Custom\x20','top:\x2015px;','2000/svg\x22\x20','n-out;\x0a\x20\x20\x20','gNKvn','\x20D).','adius:\x208px','\x20\x20\x20\x20flex-d','pykVs','e5b;\x20/*\x20Ev','order-radi','\x2020px;','.\x20Cannot\x20p','Disagree','disabled','IUryG','8\x200\x200\x201-1.',';\x0a\x20\x20\x20\x20\x20\x20\x20\x20','thub.com/C','godeK','inite;\x0a\x20\x20\x20','groEw','\x20blue\x20*/\x0a\x20','onload','ith\x20a\x20diff','Qymob','\x20\x20\x20\x20\x20max-w','r\x22\x20class=\x22','uota:\x20','BbraN','lex;justif','MWzli','0%;\x20border','heckbox','ZswTk','\x20100%\x20{\x20tr','sults:','und','checkbox','background','nter;width','padding:\x201','jax/libs/a','\x20on\x20page.','\x20backgroun','on:hover\x20{',':\x20bold;dis','onmouseout','307c-.789\x20','\x20\x20justify-','absolute;b','head','le(1);\x20/*\x20','ackground\x20','XcOqF','\x20\x20\x20cursor:','ne;\x0a\x20\x20\x20\x20\x20\x20','space-betw','1turn','uoCIm','-50%);\x0a\x20\x20\x20','zQGGY','qiwYH','TENSa',';justify-c','Edge','WdHZk','lVQJP','eX(0px)\x20tr','NNEbS','removeEven','src','ngs-modal\x20','\x20when\x20pres','idth:\x2080%;','oIJYt','ound:\x20#4c4','6px;\x0a\x20\x20\x20\x20\x20','s\x20due\x20to\x20q','vqEdS','\x20Nova\x20API\x20','0,\x20167,\x2069','nIHuM','\x20input\x20{\x0a\x20',';\x20transfor',',0,0,0.3);','AOGfz','fdfbr','047.066\x2012','eg);\x20}\x0a\x20\x20\x20','us:\x2012px;d','img','50%);opaci','\x2020px;tran','log','DHRgN','QjRgJ','header-bg-','VnWYS','n:\x20fixed;b','cordPopup','from','tivityForm','\x20top:\x2050%;','SsXeH','itor','sform:\x20rot','API\x20reques','white','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20','Unknown\x20Br','on:\x20absolu','\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','#ff6b6b','borderColo','\x20\x20\x20\x20\x20color',',1);\x0a\x20\x20\x20\x20\x20','\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20','bottom','over\x20*/\x0a\x20\x20','\x20\x20\x20\x20top:\x200',';\x20box-shad','ImrvO','ing:\x2012px\x20','center','XqwAj','9l-.018-.0','pjLol','s:\x20center;','4px;\x0a\x20\x20\x20\x20\x20','.612\x22/>\x20\x0a\x20','1\x20.053.007','mCVEX','DdPZZ','novaMoneti','.03.03.05.','MwUYk','QPnVb','TvcYN','nimejs/3.2','wtRUV','zationPlat','011.05.05\x20','https://no','oCSCF','l\x20process.','atus.inval','t:\x2024px;\x20a','getNewApiK','Mobile','cssText','\x20\x20\x20\x20\x20left:','e;font-siz','Save','elative;\x0a\x20','Android\x20Ta','ifIJy','nd,\x20waitin','left:\x200;\x0a\x20','104454AANAiF','ze:\x2024px;f','0-3.257-1.','swer\x20recei','\x20\x20\x20\x20\x20\x20\x20lef','Opera\x20','\x20text-alig','Error:\x20Opt','closeButto','n;transiti','OAOkN','uad','iOS\x20','8-1.613c.8','7|8|0|12|1','-settings-','\x20\x20\x20\x20\x20\x20\x20100','rrnqg','ans-serif;','5deg,\x20#1c1','timeline','charCodeAt','ontent:\x20\x27\x5c','er-radius:','\x20center;al','en\x20it\x20appe','OLfhz','width=\x2216\x22','Mozilla\x20Fi','329a.05.05','|3|13|15|6','ursor:\x20not','/11','boxShadow','\x20animation','star','ome','RxrZy','\x20\x20\x20\x20\x20\x20\x20#ge','2b;positio','ign-items:','*/\x0a\x20\x20\x20\x20\x20\x20\x20','le\x20button\x20','scale(0.5)','body','Next\x20butto','Touch-enab','wmVkI','10px','20px;\x0a\x20\x20\x20\x20','ter;\x0a\x20\x20\x20\x20\x20','or:\x20transp','ite-space:','jWewZ','\x20transform','XnMDd','3|1|0|11|2','animeScrip','\x20\x20\x20\x20cursor','argin-bott','d\x20{\x0a\x20\x20\x20\x20\x20\x20','NVRvj','0%);z-inde','height:\x20au',':\x200;\x20/*\x20Re','innerHTML','ErDMn','Android\x20','\x20\x20}\x0a\x20\x20\x20\x20.k','LsMnA','HMRHu',';transform','m:\x20scale(0','\x20\x20\x20\x20\x20\x20tran','ement\x20foun','LaMwx','ackground-','\x20\x20\x20\x20\x20\x20back','USmIw','p\x20button\x20n','OSAhN','\x20\x20\x20\x20\x20\x20\x20col','VSYWp','/*\x20Disable','2713\x27;\x20/*\x20','\x20not\x20found','\x20rotate(0d','XoJbI','60px;backg','\x20\x20\x20\x20\x20\x20\x20\x20ba','upCheckbox','iYJYe','dex:\x2010000','find','Clicked\x20Ne','bsolute;\x0a\x20','11a9\x209\x200\x200','Key\x20is\x20set','cHFdM','\x20}\x0a\x20\x20\x20\x20\x20\x20\x20','clientWidt','fetchArtic','ey\x20is\x20used','Expired','ght:\x208px;b','utton...','ox-shadow:','Looking\x20fo',':\x20100001;\x0a','acity:\x200.7','\x20\x20\x20\x20\x20\x20\x20bac','Btn',':\x20center;\x0a','lxGUf','iOS:','Error:\x20No\x20','lign-items','r\x20getAnswe','RoQuv','va/refs/he','\x20work.','NwuYy','\x20invalid','UC\x20Browser','\x20\x20\x20\x20\x20\x20\x20\x20\x20f','\x20\x20\x20\x20filter','ints','NG\x20ELSE\x20(A','ggabilly.p','ptwCw','oLkCo','g/ask','\x2012px\x205px\x20','818-1.329a','oDkxg','getItem','rButton','dKoJl','=\x22http://w','e;\x0a\x20\x20\x20\x20\x20\x20\x20','ba(88,\x20101','cord','aOkEq','raw=true','dwTZf','open','ssNameNew','hyBgm',':\x20translat','DoLsy','eaFTE','es\x20may\x20not','OYAKC','uar1234/no','\x20width:\x2010','message','0%,\x20-50%)\x20','checked','ved:','und-color:','validateAp','utomation\x20','se;\x20displa','or\x20expired','\x20iframe\x20fo','|5|11|9','ton...','YEMMq','dispatchEv','le(1)','leContent','.454\x201.196','getAnswerB','no-cache','hCQqi','om:\x2012px;\x0a','answerCont','uDZRz','tions\x20foun','pAzJO','YUEyy','or\x20questio','\x20flex;\x0a\x20\x20\x20','span',':\x2024px;wid','\x20\x20\x20','HTTP\x20error','\x20\x20\x20\x20\x20text-','\x20pointer;\x0a','Android:','\x20OK\x20in\x20inf','x\x20rgba(255','/11\x20(64-bi','clientX','form','\x20z-index:\x20','ion\x20proces','-family:\x20\x27','QBdgT','lor:\x20white','Windows\x208.','50%;right:','Error\x20calc','66-9.106a.','612s.637-1','seButton','RED_NODE_T','AnUSH','width:\x2090p','mjLcM','a(0,0,0,0.','y:\x20flex;\x20j','\x20vertical-','Get\x20Key','0;\x0a\x20\x20\x20\x20\x20\x20\x20','zRkSj','No\x20TinyMCE','hidden','\x20Submit\x20bu','-effect','Wjaie','(0,0,0,0.5','4|3|2|0|1','uHJMq','SWER\x20THAT\x27','\x20/*\x20Ensure','Clicked\x20bu','ex;\x20align-','.095.248-.','16px;top:\x20','ity:\x20hidde','-index:\x2099','ZfFiz','\x20\x20\x20\x20\x20\x20\x20tra','ght:\x20100%;','Next','test','tLBtQ','component-','jhWgX','\x20|\x20Mobile:','Detected\x20B','showUI','.05.05\x200\x200','{\x0a\x20\x20\x20\x20\x20\x20\x20\x20','gap','y-content:','TqwLc','rhVhI','-index:\x2010','pressed\x20*/','MdGRK','195a.05.05','h:\x2014px;\x0a\x20','SKSkk','sbhTK','aGZvd','eader-bg-e','\x20\x20\x20\x20\x20\x20100%','ase\x20try\x20ag','dding:\x200;\x0a','JjCOu','\x20}\x0a\x0a\x20\x20\x20\x20.h','PZTgo','marginTop','setItem','4.465.515.','Info\x20dialo','\x20\x20\x20\x20positi','max-width:',',\x200.2);\x0a\x20\x20','.8);\x20}\x0a\x20\x20\x20','eJQaX','jXdLP','hlSvw','visibility','ww.w3.org/','ndpoint','5.05\x200\x200\x200','pVqhj','4-1.438-1.','t\x20failed\x20w','y:\x20visible','op:\x208px;\x0a\x20','oll\x20option','t:\x20','\x20absolute;','d\x200.2s\x20eas','or\x20no\x20more','nbzCX','right:\x205px','poll\x20optio','\x20{\x0a\x20\x20\x20\x20\x20\x20\x20','Retrying\x20w','909.817\x201.','ialog\x20and\x20','Enter\x20your','jRIlY','px);\x0a\x20\x20\x20\x20}','ound,\x20proc','or:\x20white;','eBWUD','ion:\x20fixed','not\x20loaded','replace','oDrGd','ialX','iKlrv','gegax','ranslateX(','#loadingIn','%20png.png','\x20to\x20use\x20th','effect\x20for','cordPopupC','\x20\x20\x20\x20\x20\x20','ZYjQr','oll\x20select','rd;font-si','erButton:h','erUI','Starting\x20q','osition:\x20r','inyMCE\x20fil','Unicode\x20*/','TinyMCE\x20ed','Safari:','anslate(-5','x;opacity:','verflow:\x20h','href','05\x200\x200\x201-.','|2|4|10|14','json','uBzxk','MWPuT','wser\x20','rofile-men','YzEeB','r\x20Next\x20but','\x20\x20\x20.answer','Firefox:','ontent:\x20ce','lKwHF','Received\x20a','hbOfB','\x20\x20\x20\x20}\x0a\x20\x20\x20\x20','\x2010px;\x0a\x20\x20\x20','display:\x20i','NUeCg','ick\x20letter','Don\x27t\x20show','jEuoh','ound:\x20#3c3','d:\x20none;\x0a\x20','tton',':\x20blur(0.5','FNpeS','Pfvot','easeOutExp','heck\x20your\x20','ustify-con',');\x0a\x20\x20\x20\x20\x20\x20\x20','%\x20{\x20transf',',\x20B,\x20C,\x20or','color:\x20','va\x20API\x20key','\x20\x20\x20\x20\x20box-s','11px',':\x200;\x0a\x20\x20\x20\x20\x20','id\x20{\x0a\x20\x20\x20\x20\x20','\x20#3c3e4b;\x0a','KDTuG','itemMetada','rxUIK','\x20\x20\x20\x20\x20\x20\x20\x20\x20o','VBuWg','flex','xt\x20button:','ezXVC','load\x20scrip','serif;widt','olid\x20white','nsition:\x20c','QfHZs','YqCCs','\x20\x20\x20\x20\x20\x20\x20rig','clicked','https://gi','RSdJL','tent:\x20cent','ocessing..','Red\x20Hat','Listeners','NZADG','fgmeI','chlMc','.2s\x20ease,\x20','ox\x20*/\x0a\x20\x20\x20\x20','setupEvent','font-size:','ly\x20filled\x20','vertically','KhagA','ite;\x0a\x20\x20\x20\x20\x20','x;height:\x20','Apple\x20Safa','rowser:','AFCjS','tom:\x2012px;','color','TMmci','eeded\x20*/\x0a\x20','PBtPd','ezfAO','POST','stPmn','idden;\x0a\x20\x20\x20','\x201px\x20solid','olbeK','s\x20ease-out','05.05\x200\x200\x20','ansform:\x20t','8;\x0a\x20\x20\x20\x20\x20\x20\x20','Error:\x20Sub','#getAnswer','er:\x20none;c',';transitio','\x20\x20\x20opacity','t2eZXSSS5','.22.534-3.','hBOcx','GREAF','TDISj','nkle\x20{\x0a\x20\x20\x20','t;position','Browser\x20De','Span\x20eleme','\x20\x20top:\x2050%','nslateX(20','tom:\x2015px;','x;\x20left:\x208','toLocaleSt','\x20\x20\x20\x20\x20opaci','iCeGF','g:\x202px\x208px','\x20\x20}\x0a','random','470GDuKfw','tcvdL','border:\x203p','isFetching','wRibU','olor\x200.2s\x20','wFMXY','ed\x20*/\x0a\x20\x20\x20\x20','12-1.438\x201','\x20\x20\x20\x20width:','is\x20feature','pkg.com/dr','for\x20checkb','995\x202.02.0','\x20button','.overlay','otate(360d','n:\x20absolut','hadow:\x200\x202','width:\x2060p','scord.gg/G','.613\x200\x20.88','fFeiJ','bhOlo','marginBott','Revert\x20mar','olid\x20#dc35','style','ter;paddin','8000041NUdPKw','RaeLi','CxMeh','ArYqz','wDxzf','tar\x20{\x0a\x20\x20\x20\x20','69oiTEmz','WiUAF','CMuvk','SNLVG','\x20\x20border-r','width:\x20100','\x204px\x208px\x20r','TknrT','#keySettin','aggabilly@','Yandex\x20Bro','zKVVI','Edge:','Key\x20saved','px;box-sha','showKeySet','xplorer\x20','=\x22poll\x22]','n-items:\x20c','\x20display:\x20','\x20\x20\x20color:\x20','ngs-modal','ajzxb','IgzRE','animationD','PLAyZ','PERwg','\x20/*\x20Adjust','YMRPK','XqbXL','#dc3545','color\x200.2s','eft:\x2050%;\x0a','WKQZC','uestion\x20pr','-radius:\x205','\x20\x20display:','Enhanced\x20O','COlTi','\x20\x20\x20\x20\x20\x20\x20\x20\x20#','Button','\x20\x20\x20\x20\x20\x20appe','.612m5.316','ButtonText','\x20|\x20MobileT','EmuNF','kZLKG','&times;','8px;\x0a\x20\x20\x20\x20\x20','me:','nsform\x200.1','yxzgs','(pressed)\x20','q.121.1.24','1343601zKlTZQ','ight:\x20160p','pacity\x200.5',',\x20242,\x200.5','div','cVuci','lbGAA','tatus.vali','jjlXp','ruazM','sequence:','S\x20IT\x20NOTHI','ns...','\x208px\x20rgba(','JeSVi','modal\x20{\x0a\x20\x20','\x20\x20\x20\x20\x20\x20\x20\x20tr',';word-wrap','EuZnX','#closeButt','14px;\x0a\x20\x20\x20\x20','\x20\x20\x20\x20\x20right','eAnswerBut','r\x20info\x20dia','CMAXW','rZMEI','in\x20{\x0a\x20\x20\x20\x20\x20','gba(0,0,0,','NSSrd','fZFfz','8-.631\x201.6','\x201-1.248-.','WmUpy','adius:\x206px','1.2','uYcBy','rgbJY','yxhWG','20png.png?','\x20API\x20key\x20i','ink\x20when\x20p','https://un','qKlLS','Getting\x20Ke','ercontent.','tqjhy','rImage','MpMQK','enter;\x0a\x20\x20\x20','\x20\x20\x20\x20\x20\x20opac','key-settin','6\x22\x20fill=\x22c','getOS','EdgcK','Question\x20p','fy-content','YqyXc','nimation:\x20','th:\x20100%;\x0a','\x20\x20\x20\x20\x20borde','rm\x200.1s\x20ea','\x20|\x20OS:\x20','\x20\x20\x20\x20box-sh','orkink','een','preventDef','\x20settings.','73\x201.438\x201','\x200\x204px\x208px','.04.04\x200\x200','ffect\x20{\x0a\x20\x20','\x20height=\x221','\x20\x20\x20z-index','n-top:\x2032p','No\x20key\x20set','macOS\x20Cata','\x20\x20\x20\x20\x20\x20\x20mar','ht:\x201.4;',':\x2012px;\x0a\x20\x20','IGtEK','gsButton','logToDataE','fAeJZ','stion:','NJFrC','oqLXv','uttonText','VubDa','FHIPx','icator','Button:act','Hover\x20effe','nsition:\x20o','VsXvW','UDmtM','ring','998;paddin','ight:\x2060px',',\x200.2);','gin-top\x20*/',':\x2010px;\x0a\x20\x20','CNIBY','init','dth:\x2020px;','Android\x20Ph','ckground:\x20','\x20|\x20Time:\x20','TiSZX','\x2012px;\x0a\x20\x20\x20','JjPaR','UumNy','\x20full\x20opac','AYSfq','log\x20OK\x20but','one','fetchAnswe','myYaT','tlXpe','\x20Helper.\x20S','rButton\x20*/','UZyjl','\x20|\x20Nova\x20Cl','\x0a\x20\x20\x20\x20\x20\x20\x20\x20t','257\x201.011a','closest','\x20height:\x201','\x20\x20\x20backgro','XNdMp','\x0a\x20\x20\x20\x20\x20\x20\x20\x20f','ROGtA','or:\x20#ff6b6','003.041c.2','1|4|3|0|2','pacity:\x200.','Return\x20to\x20','#5865f2','20px;borde','cmdua','.key-setti','\x20opacity\x200','etAnswerBu','PFiOf','com/Cpmjag','opacity:\x200','Loaded',':\x20100%;hei','singleNode','g-handle','phodd','seconds','op:\x200;\x20/*\x20','key_data','ize:\x2010px;','ryXJo','/\x0a\x20\x20\x20\x20.key','response','ith\x20status','dow:\x200\x204px','\x20\x20}\x0a\x20\x20\x20\x20\x20\x20','ransition:','r\x20found','255,\x20255,\x20','e3b;\x0a\x20\x20\x20\x20\x20','uqKBc','elay','tons\x20*/\x0a\x20\x20','tAnswerBut','kFNCm','OpenBSD','anTgV','pNLlR','justifyCon','12px;\x0a\x20\x20\x20\x20','0.2s\x20ease;','TtVkk','0.6);\x0a\x20\x20\x20\x20','.activeCla','CE\x20iframe','nOgqP','XMvWl','\x20answer\x20co','play:\x20flex','Edge\x20(Lega','Nova\x20API\x20K','\x20\x20\x20\x20backgr','g/get-key?','sibility:\x20','34/nova/bl','pDLNH','\x20Nova\x20dash','Windows:','agging','in.js','-weight:\x20b','idth:\x20300p','qjalk','focus','HlEcL','hQgPA','tion:\x20abso','KrxFg','Invalid\x20an','qjdRK','nsition:\x20b','lay\x20animat','GuEjJ','ttons\x20foun','when\x20press','429\x20You\x20ex','mYRpF','zgmND','Android','QOAwP','MtALK','\x20\x20\x20\x20\x20\x20\x20fon','meJYu','\x20\x20\x20border:','VjrJA','658\x200\x208\x208\x20','vlvqU','0.2);overf','NetBSD','checkmark\x20','ialY','YAPxD','quota','ht:\x2014px;\x20','\x20key:','5px\x20rgba(0','displayDis','Agzfd','items:\x20cen','a\x20Discord?','\x20\x20\x20.key-st','0\x200\x205px\x20rg','FDPZf','\x20\x20\x20\x20\x20\x20\x20ove','valid','\x20the\x20Nova\x20','like\x20to\x20jo','arent;\x0a\x20\x20\x20','12|6|10|8|','Value','iframe[id^','answer-dra',':\x20break-wo','7\x200\x201.451.','us:\x208px;\x0a\x20','w:\x200\x204px\x201','\x20complete\x20','MTJdE','fSjwb','tor','nt:\x20','kixdK','#answerCon','-.833.05.0','or\x20getAnsw','VcUSi','g\x20OK\x20butto','yzhic','\x2014px;\x0a\x20\x20\x20','NKEsB','YNSPw','contentWin','AkhcX','\x2050%;\x0a\x20\x20\x20\x20','ition:\x20opa','\x20detected','ri\x20','18px','ption\x20','ont-weight','scale(1)','\x20#5865f2;\x20','et\x20your\x20ke','WNyvC','jvFKY','o\x20red\x20on\x20h',':\x20pointer;','ace:\x20norma','und:\x20rgba(','ings-modal','stion...','KTjzN','ENEEA','ceeded\x20you','\x20found.','px;backgro','\x20\x20\x20\x20#close','qYgEg','mVndU','Linux','0003;\x0a\x20\x20\x20\x20','acity:\x201\x20!','next\x20butto','dDQFv','pmjaguar12','-6.449-2.3','99615jJdSUM','ZEvEy','Error\x20in\x20a','HQAcP','FaXcd','\x20/*\x20Slight','IvRTP','SyQRQ','aRrmQ','\x20close\x20but','getUserNam','acity:\x200.5','en\x20darker\x20','lina+','Skip\x20Artic','x;\x20height:','(0)','classList','pointer;\x0a\x20','#dialogClo','bmit\x20butto','opacity','kuZyF','ontainer\x20f','refox\x20','nweCe','tons...','gs-modal','ground-col','TEDcg','Opera','\x20text-deco','iningTime','bhOpt','LlAwk','kground:\x20n','xoRPI','-helper-st','apiKey','y\x200.5s\x20eas','split','LikcQ','ault','Fedora','g/data','MmwsF','s:\x2012px;\x0a\x20','fPrNt','margin-bot','No\x20questio','sed\x20*/\x0a\x20\x20\x20','ding','us:\x2010px;\x0a','dSBUv','userAgent','YPE','important;','.066l.015-','n:\x20color\x200',',0,0,0.2);','sform\x200.1s','ound:\x20#2c2','-=20','Selecting\x20','\x20\x20\x20\x20\x2050%\x20{','offsetWidt','t:\x200;\x0a\x20\x20\x20\x20','Ubuntu','ed\x20{\x0a\x20\x20\x20\x20\x20','.\x20Please\x20c','ome\x20','bPcLj','\x20\x20#dismiss','Bearer\x20',':\x2024px;top','modal\x20butt','text/css','closeAnswe','t\x20next\x20ste','absolute;t','\x20position:','undefined','drag-handl','tection\x20Re','kgd.min.js','</svg>','\x20|\x20Class:\x20','eFromDOM','\x20\x20\x20\x20\x20\x20\x20dis','+=20','uration','ection:','RiBhx','er\x20*/\x0a\x20\x20\x20\x20','*\x20Darker\x20c','XygvP','FVWAc','olor:\x20whit','qnels','erent\x20answ','\x20ease;font','0.5;\x0a\x20\x20\x20\x20\x20','document','er...','\x2013.2\x200\x200\x20','Vvhzq','Launcher','dicator','\x20\x20\x20border-','VmMth','100%;\x0a\x20\x20\x20\x20','\x20\x20\x20\x20\x20\x20\x20\x20\x20a','cle','Option\x20','sAMOw','GaOuX','label','\x20\x20\x20\x20\x20\x20\x20\x20\x20p','\x20100px;\x0a\x20\x20','jfdNc','GvfkZ','vOUHO','xiGfV','BlackBerry','ontouchsta','\x200;\x0a\x20\x20\x20\x20\x20\x20','ive,\x20#clos','004.085\x208\x20','nyUXT','/*\x20Key\x20set','24px;curso','NByTL','Opera:','bzGVS','rocessing\x20','Windows\x208','syWyq','55,255,255','for\x20getAns','before\x20{\x0a\x20','Clicked\x20','solid\x20#fff','ntainer\x20wh','hours','ht:\x208px;\x0a\x20','outline:\x20n','EzLKU','border:\x20no','LzLER','249.594.05','Color','gzrHz','\x0a\x20\x20\x20\x20\x20\x20\x20\x20h','FIRST_ORDE','0\x200\x201-.02-','y-settings','onerror','/*\x20Discord','MuaQz','SbOUQ','sUbXQ','JNmrH','password','y\x20from\x20the','mium)\x20','join','stener','available','rm:\x20scale(','normal\x20sca','ne;color:\x20','e;font-fam','loading','FreeBSD','expired','.05\x200\x200\x200-','MXWtk','uRaPV','button','pXzUa','ze:\x2016px;\x0a','03.03\x200\x200\x20','022.021.03','ternet','textConten','adding:\x2016','visible','ova%20logo','u\x22]/div','eafwe','Brave:','service.\x20G','RgPEO','\x20\x20\x20\x20\x20\x20\x20\x20#g',':\x2050%;righ','dsZTx','qrszx','\x20to\x20access','\x20\x20opacity:','ly\x20clicked','SwtqW','nter;align','inSRZ','cGOpI','.drag-hand','input','fHmEK','\x20\x20\x20positio','er;\x20align-','alTkJ','iPhone','Windows\x207','ightly\x20shr','macOS','slNhN','iOS','8px;cursor','ize:\x2018px;','\x20\x20\x20\x20\x20\x20\x20\x20pa','n\x20not\x20foun','column;\x0a\x20\x20','RhQyR','ext-align:','includes','tings\x20moda','\x20\x20margin-t','8-.637\x201.6','lor:\x20#5865','eight:\x20240','x;\x0a\x20\x20\x20\x20}\x0a\x20','mation\x20for','on:hover,\x20','14px','Nunito\x27,\x20s','px;\x20opacit','zDbxw','\x0a\x20\x20\x20\x20\x20\x20\x20\x20l','-events:\x20n','key-info','EYwiM','Linux:','ple\x20retrie','iWjaT','e-out;\x0a\x20\x20\x20','/*\x20Active\x20','JpowI','tNUHH','0\x200\x200-.052','\x20\x20\x20\x20\x20\x20posi','align:\x20cen','=\x22white\x22\x20d','ton:disabl','gFSEl','n/json','(-50%)\x20sca','entX','7a13.3\x2013.','XCQKl','rection:\x20c','hCjpP','EIQmB','cSNOn','gin-bottom','e\x20{\x0a\x20\x20\x20\x20\x20\x20','erButton\x20*','\x20\x20\x20\x20font-s',',\x20255,\x20255','<path\x20fill','\x20\x20\x20\x20\x20\x20\x20\x20','showAlert','ty:\x200;\x0a\x20\x20\x20','ejhfq','owser','nslateY(-5','mit\x20button','t\x20found','h:\x20180px;h','54vOzFxa','answerUI','\x20\x20\x20\x20\x20\x20\x20pad','clientHeig','answerCurr','Checking\x20f','px\x205px\x20rgb','dius:\x208px;','KqWUr','\x0a\x20\x20\x20\x20\x20\x20\x20\x20','gClientRec','add','Windows\x20Ph','.25-.297.5','vWhLg','kjEEu','sTJRa','-key','52-.025c-1','cbZYS','lOmBt','ex;flex-di','jVFSG','e\x20(pressed','ainer',':\x20\x27Nunito\x27','te;\x0a\x20\x20\x20\x20\x20\x20','24-1.438-1','SUzyC','\x20\x20\x20\x20margin','ById','nccUk','nKEXa','white;padd','Try\x20again','remove','x\x2012px\x20rgb','mkDiw','🔑\x20Key','npOcl','\x20\x20\x20\x20\x20\x20text','njs.cloudf','visible;\x0a\x20','0-1.438-.7','9,\x200.2);\x0a\x20','LELPU','Selected\x20o','rflow:\x20hid','lHOHT','ow:\x200\x200\x205p','lid\x20#28a74','Chrome:','Edge\x20(Chro','eugQZ','Submit','opacity\x200.','createAnsw','right',':\x20center;\x20','GTPem','nt\x20not\x20fou','ipsnn','fontSize','rker\x20backg',';font-size','5;\x0a\x20\x20\x20\x20}\x0a\x20','tUrl','\x20opacity:\x20','BlZjz','a\x20settings','play:\x20none','ument','ent','phsMR','uDQdl','-align:\x20ce','duZCF','\x20ease,\x20tra','12px','macOS\x20Big\x20','draggabill','low:\x20hidde','Invalid\x20or','wrfHg','\x20color:\x20wh','erButton','FeYWv','\x200\x200\x201\x20.05','Sur','\x20none;bord','ay\x20{\x0a\x20\x20\x20\x20\x20','key\x20in\x20Nov','\x20on\x20page','und:\x20#1c1e','adius:\x2050%','#activity-','-1.613c.80','\x20.key-sett','f2;','iPod','\x20\x20\x20\x20\x20\x20widt','yBwRP','r:\x20white;f','\x20hidden;wh','\x20\x20\x20\x20\x20\x20\x20\x20\x20}','form:\x20scal','ze:\x2018px;\x0a','\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20','llxAL','tent','height:\x2044','ars\x20*/\x0a\x20\x20\x20','ads/main/n','x-sizing:\x20','/*\x20Center\x20','text','\x20}\x0a\x0a\x20\x20\x20\x20.s','[role=\x22rad','NnTXp','MOYye','one;\x0a\x20\x20\x20\x20\x20','easeInOutQ','ton\x20{\x0a\x20\x20\x20\x20',':\x20linear-g','90px;margi','Starting\x20a','\x0a\x20\x20\x20\x20\x20\x20\x20\x20m','SbEux','nswer:','novaApiKey','.\x20Your\x20API','//*[@id=\x22p','den;\x0a\x20\x20\x20\x20\x20','\x20key\x20may\x20b','m-8.198\x207.','answerIsDr','omRGY','nPfzy','on:\x20opacit','GfAMh','padding:\x200','Windows\x2010','d;\x0a\x20\x20\x20\x20\x20\x20\x20','Chrome\x20OS:','\x20\x20height:\x20','scale(0.95','e\x20set\x20your','\x20center;co','mouseenter','forEach','Error:\x20Acc','Starting\x20T','OHOEN','g/get-key','type','aTlGU','script','\x20\x20\x20\x20\x20\x20\x20\x20\x20t','upDismisse','Vivaldi:','yWffq','SYHlZ',';margin:\x200','ound:\x20rgba','ONLY\x20A\x20ONE','.answer-dr','SLnGj','.125.194-2','\x20\x20\x20\x20\x20\x20\x20\x20to','match','round\x20on\x20h',':\x20#2c2e3b;','wbaFV','S\x20Detectio','\x0a\x0aPROVIDE\x20','Submit\x20but','\x20\x20\x20\x20border','#2c2e3b;\x0a\x20','TNFKB','\x20\x20\x20\x20\x20\x20\x20\x20he',':\x2010px;\x20co','lute;\x0a\x20\x20\x20\x20','blet','margin-top','hKTlX','QEmIi',':checked::','mousemove','QtDaI','No\x20radio\x20o','GARpS','le(0.8)','2.907a13.2','fyric','\x20\x20\x20\x20\x20\x20\x20\x20\x20c','HmXrz','utton','r-radius:\x20','\x20visibilit','le\x20*/\x0a\x20\x20\x20\x20','k;\x0a\x20\x20\x20\x20\x20\x20\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20b','xplorer','\x200\x200\x200\x20.05','n;white-sp','p;&nbsp;&n','QqXnr','0\x204.001-2.','true','Clicked\x20Su','Lnurb','%;height:\x20','gBtn','tanLu','nsform:\x20tr','8C.356\x206.0','.612s.637-','createStar','teBdi','1;\x20transfo','op:\x208px;ri','p:\x200;\x0a\x20\x20\x20\x20','SQUFU','maxTouchPo','\x20white;\x0a\x20\x20','CCIPK','ser','rames\x20spin','yjEqV','.019q.127-','yframes\x20sp',':\x200.5;\x0a\x20\x20\x20','ufeiS','\x20\x20\x20\x20\x20\x20\x20\x20vi','hKHWw','UPTnH','Luvwc','width:\x2020p','Internet\x20E','loadingInd','6.019\x2013.2','RHGjS','SuqJY','|7|5|9|4','n...','led\x20device','fo\x20{\x0a\x20\x20\x20\x20\x20','effect','ine','API\x20key\x20fo','dismissDis','lStZX','fter\x20multi','595.05.05\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20z','oXxMi','Samsung\x20In','cessed,\x20bu','position:\x20',',\x20sans-ser','5px\x2025px;\x0a','map','QiMmY','100002;\x0a\x20\x20','\x2090%;\x0a\x20\x20\x20\x20','\x20\x20\x20font-si','tXZcP','getBrowser','cokTq','\x20\x20\x20\x20\x20\x20\x20/*\x20','ease\x20enter','Submit\x20pro','\x0a\x20\x20\x20\x20@keyf','duXIX','isplay:\x20fl','VbLMc','42996RFvZhr','!\x20status:\x20','\x20line-heig','ding:\x2010px','minutes','city\x200.3s\x20','AyTxh','dding:\x208px','.613\x201.438','hkiqN','\x20\x20top:\x2020p','getBoundin','und.\x20Pleas','x;\x0a\x20\x20\x20\x20\x20\x20\x20','ease;\x0a\x20\x20\x20\x20','ITkdi','\x20box-shado','icks:\x20','e:\x20','cachedArti',':\x2020px;\x0a\x20\x20','round:\x20#1c','o\x20dialog','ion\x20','srHoq','JSApP','vfZrJ','Answer','gdVyk','e,\x20transfo','\x20\x20\x20\x20left:\x20','OZEUE','oiPyl','rder-radiu','kPKOD','dle;\x0a\x20\x20\x20\x20\x20','19\x201.196\x205','tListener','cWSLA','MxvKy','onmouseove','\x20\x20\x20\x20/*\x20Ani','NGVUx','553412uEzBYe','LMGTG','\x20\x20/*\x20Activ','.1/anime.m','nsform:\x20sc','NRzcm','translateY','Zxsvw','playIntroA','weight:\x2050','kaxbb','e(0.8);\x20}\x0a','transform:','ob/main/no','njqmQ','VdjgK','1.1);\x20}\x0a\x20\x20','ct_\x22]','bpDMa','2s\x20ease;\x20d','ilRge','\x20\x20\x20.key-in','\x200-.01-.05','DiscordPop','\x20\x20\x20\x20\x20\x20font','ZuglF','eZMkV','\x20\x20\x20\x20\x20\x20}\x0a\x20\x20','0-.02-.019'];_0x5591=function(){return _0x5823da;};return _0x5591();}const _0x5298b2=_0x3eb8;(function(_0x4d4287,_0x345e6b){const _0x4d4c12=_0x3eb8,_0x165474=_0x4d4287();while(!![]){try{const _0x403b47=-parseInt(_0x4d4c12(0x515))/(-0x1fa9+0xae6+0x14c4)+parseInt(_0x4d4c12(0x894))/(0x34*-0x1a+-0x1c9d+0x21e7*0x1)+-parseInt(_0x4d4c12(0x4df))/(0x964*-0x1+0xb07+-0x68*0x4)*(parseInt(_0x4d4c12(0x869))/(-0x751+0x229f+0x1*-0x1b4a))+-parseInt(_0x4d4c12(0x640))/(0xbb6+0x24f+-0xe00)*(-parseInt(_0x4d4c12(0x755))/(0x837*0x2+-0x218d+0x7*0x273))+-parseInt(_0x4d4c12(0x4d9))/(0x10*-0x260+-0x4*-0x66b+-0xc5b*-0x1)+parseInt(_0x4d4c12(0x1a4))/(0x26b3+-0xca5+-0x1a06)*(parseInt(_0x4d4c12(0x2fc))/(0xc25*0x1+-0x25f*-0x5+-0x7fd*0x3))+parseInt(_0x4d4c12(0x4bc))/(0x250c+0x8ce+-0x2dd0)*(parseInt(_0x4d4c12(0x177))/(-0x2b*-0x25+0x23e+0x86a*-0x1));if(_0x403b47===_0x345e6b)break;else _0x165474['push'](_0x165474['shift']());}catch(_0x51fa19){_0x165474['push'](_0x165474['shift']());}}}(_0x5591,-0x9ed5*-0x4+-0x52c49+0x4a8*0x314));const starEffectCSS=_0x5298b2(0x865)+_0x5298b2(0x838)+_0x5298b2(0x420)+_0x5298b2(0x20c)+_0x5298b2(0x2c7)+_0x5298b2(0x96b)+_0x5298b2(0x35f)+_0x5298b2(0x280)+_0x5298b2(0x96f)+_0x5298b2(0x4cc)+_0x5298b2(0x2b6)+_0x5298b2(0x402)+_0x5298b2(0x3fd)+_0x5298b2(0x55b)+_0x5298b2(0x738)+_0x5298b2(0x5dc)+_0x5298b2(0x80a)+_0x5298b2(0x2d5)+_0x5298b2(0x26e)+_0x5298b2(0x2fb)+_0x5298b2(0x1ae)+_0x5298b2(0x54f)+_0x5298b2(0x808)+_0x5298b2(0x24d)+_0x5298b2(0x26e)+_0x5298b2(0x80c)+_0x5298b2(0x33c)+_0x5298b2(0x21e)+_0x5298b2(0x96d)+_0x5298b2(0x601)+_0x5298b2(0x784)+_0x5298b2(0x7d9)+_0x5298b2(0x244)+_0x5298b2(0x72d)+_0x5298b2(0x7cd)+_0x5298b2(0x55d)+_0x5298b2(0x46d)+_0x5298b2(0x4a8)+_0x5298b2(0x83c)+_0x5298b2(0x7c9)+_0x5298b2(0x4de)+_0x5298b2(0x408)+_0x5298b2(0x2cc)+_0x5298b2(0x76f)+_0x5298b2(0x8da)+_0x5298b2(0x1c5)+_0x5298b2(0x6c9)+_0x5298b2(0x2d1)+_0x5298b2(0x6ac)+_0x5298b2(0x208)+_0x5298b2(0x24a)+_0x5298b2(0x798)+_0x5298b2(0x3d2)+_0x5298b2(0x31e)+_0x5298b2(0x92e)+_0x5298b2(0x97b)+_0x5298b2(0x271)+_0x5298b2(0x46b)+_0x5298b2(0x963)+_0x5298b2(0x380)+_0x5298b2(0x91e)+_0x5298b2(0x5b6)+_0x5298b2(0x5c4)+_0x5298b2(0x379)+_0x5298b2(0x460)+_0x5298b2(0x426)+_0x5298b2(0x96a)+_0x5298b2(0x1d4)+_0x5298b2(0x4ae)+_0x5298b2(0x8ba)+_0x5298b2(0x5a4)+_0x5298b2(0x2b1)+_0x5298b2(0x344)+_0x5298b2(0x40b)+_0x5298b2(0x680)+_0x5298b2(0x798)+_0x5298b2(0x830)+_0x5298b2(0x6e8)+_0x5298b2(0x8a4)+_0x5298b2(0x3fe)+_0x5298b2(0x239)+_0x5298b2(0x1b6)+_0x5298b2(0x7be)+_0x5298b2(0x89f)+_0x5298b2(0x456)+_0x5298b2(0x6c1)+_0x5298b2(0x720)+_0x5298b2(0x90f)+_0x5298b2(0x5af)+_0x5298b2(0x30b)+_0x5298b2(0x524)+_0x5298b2(0x738)+_0x5298b2(0x8b9)+_0x5298b2(0x7e3)+_0x5298b2(0x2c4)+_0x5298b2(0x72c)+_0x5298b2(0x4ff)+_0x5298b2(0x525)+_0x5298b2(0x4a2)+_0x5298b2(0x126)+(_0x5298b2(0x205)+_0x5298b2(0x26e)+_0x5298b2(0x284)+_0x5298b2(0x977)+_0x5298b2(0x81e)+_0x5298b2(0x267)+_0x5298b2(0x674)+_0x5298b2(0x71a)+_0x5298b2(0x8e4)+_0x5298b2(0x876)+_0x5298b2(0x879)+_0x5298b2(0x60d)+_0x5298b2(0x5f9)+_0x5298b2(0x2b2)+_0x5298b2(0x853)+_0x5298b2(0x3f5)+_0x5298b2(0x63a)+_0x5298b2(0x9c3)+_0x5298b2(0x20e)+_0x5298b2(0x26e)+_0x5298b2(0x409)+_0x5298b2(0x85d)+_0x5298b2(0x257)+_0x5298b2(0x835)+_0x5298b2(0x8ac)+_0x5298b2(0x3c1)+_0x5298b2(0x729)+_0x5298b2(0x30e)+_0x5298b2(0x7c0)+_0x5298b2(0x7b6)+_0x5298b2(0x62f)+_0x5298b2(0x1b9)+_0x5298b2(0x772)+_0x5298b2(0x237)+_0x5298b2(0x561)+_0x5298b2(0x746)+_0x5298b2(0x563)+_0x5298b2(0x77d)+_0x5298b2(0x7a0)+_0x5298b2(0x1e9)+_0x5298b2(0x749)+_0x5298b2(0x719)+_0x5298b2(0x7c0)+_0x5298b2(0x7b6)+_0x5298b2(0x62f)+_0x5298b2(0x2b0)+_0x5298b2(0x1ae)+_0x5298b2(0x54f)+_0x5298b2(0x71a)+_0x5298b2(0x870)+_0x5298b2(0x457)+_0x5298b2(0x550)+_0x5298b2(0x81a)+_0x5298b2(0x2aa)+_0x5298b2(0x5ed)+_0x5298b2(0x49e)+_0x5298b2(0x46f)+_0x5298b2(0x355)+_0x5298b2(0x57e)+_0x5298b2(0x806)+_0x5298b2(0x34d)+_0x5298b2(0x428)+_0x5298b2(0x7d3)+_0x5298b2(0x337)+_0x5298b2(0x3ab)+_0x5298b2(0x9b8)+_0x5298b2(0x7c6)+_0x5298b2(0x176)+_0x5298b2(0x26e)+_0x5298b2(0x48c)+_0x5298b2(0x61a)+_0x5298b2(0x123)+_0x5298b2(0x6db)+_0x5298b2(0x8fb)+_0x5298b2(0x7cf)+_0x5298b2(0x5cd)+_0x5298b2(0x67d)+_0x5298b2(0x5b7)+_0x5298b2(0x5ed)+_0x5298b2(0x203)+_0x5298b2(0x2d0)+_0x5298b2(0x181)+_0x5298b2(0x757)+_0x5298b2(0x951)+_0x5298b2(0x5c1)+_0x5298b2(0x805)+_0x5298b2(0x930)+_0x5298b2(0x905)+_0x5298b2(0x136)+_0x5298b2(0x652)+_0x5298b2(0x3e5)+_0x5298b2(0x5e0)+_0x5298b2(0x292)+_0x5298b2(0x5c2)+_0x5298b2(0x595)+_0x5298b2(0x1e0)+_0x5298b2(0x529)+_0x5298b2(0x8b2)+_0x5298b2(0x30b)+_0x5298b2(0x68b))+(_0x5298b2(0x28a)+_0x5298b2(0x81e)+_0x5298b2(0x187)+_0x5298b2(0x46f)+_0x5298b2(0x456)+_0x5298b2(0x59f)+_0x5298b2(0x2a5)+_0x5298b2(0x8df)+_0x5298b2(0x420)+_0x5298b2(0x690)+_0x5298b2(0x41a)+_0x5298b2(0x58f)+_0x5298b2(0x417)+_0x5298b2(0x47e)+_0x5298b2(0x6d0)+_0x5298b2(0x36a)+_0x5298b2(0x663)+_0x5298b2(0x7cd)+_0x5298b2(0x85e)+_0x5298b2(0x6f4)+_0x5298b2(0x71a)+_0x5298b2(0x400)+_0x5298b2(0x1b8)+_0x5298b2(0x57c)+_0x5298b2(0x6d8)+_0x5298b2(0x924)+_0x5298b2(0x725)+_0x5298b2(0x8a9)+_0x5298b2(0x84b)+_0x5298b2(0x85e)+_0x5298b2(0x120)+_0x5298b2(0x190)+_0x5298b2(0x369)+_0x5298b2(0x26e)+_0x5298b2(0x80c)+_0x5298b2(0x579)+_0x5298b2(0x340)+_0x5298b2(0x985)+_0x5298b2(0x3f0)+_0x5298b2(0x9a3)+_0x5298b2(0x905)+_0x5298b2(0x4e3)+_0x5298b2(0x536)+_0x5298b2(0x26e)+_0x5298b2(0x670)+_0x5298b2(0x495)+_0x5298b2(0x58f)+_0x5298b2(0x71e)+_0x5298b2(0x952)+_0x5298b2(0x5eb)+_0x5298b2(0x1eb)+_0x5298b2(0x22d)+_0x5298b2(0x97e)+_0x5298b2(0x51c)+_0x5298b2(0x338)+_0x5298b2(0x8da)+_0x5298b2(0x253)+_0x5298b2(0x2ae)+_0x5298b2(0x40a)+_0x5298b2(0x8b1)+_0x5298b2(0x91a)+_0x5298b2(0x787)+_0x5298b2(0x796)+_0x5298b2(0x5fe)+_0x5298b2(0x2ef)+_0x5298b2(0x46e)+_0x5298b2(0x593)+_0x5298b2(0x62e)+_0x5298b2(0x242)+_0x5298b2(0x781)+_0x5298b2(0x93d)+_0x5298b2(0x946)+_0x5298b2(0x4d6)+_0x5298b2(0x1a9)+_0x5298b2(0x137)+_0x5298b2(0x7af)+_0x5298b2(0x70f)+_0x5298b2(0x8f7)+_0x5298b2(0x7fd)+_0x5298b2(0x832)+_0x5298b2(0x887)+_0x5298b2(0x3d2)+_0x5298b2(0x396)+_0x5298b2(0x995)+_0x5298b2(0x7e5)+_0x5298b2(0x6ae)+_0x5298b2(0x5cd)+_0x5298b2(0x7f8)+_0x5298b2(0x3d9)+_0x5298b2(0x466)+_0x5298b2(0x3bf)+_0x5298b2(0x85c)+_0x5298b2(0x4ba)),styleSheet=document[_0x5298b2(0x1ad)+_0x5298b2(0x79d)](_0x5298b2(0x4d7));styleSheet[_0x5298b2(0x7ef)]=_0x5298b2(0x68c),styleSheet[_0x5298b2(0x25b)]=starEffectCSS,document[_0x5298b2(0x290)][_0x5298b2(0x216)+'d'](styleSheet);class AssessmentHelper{constructor(){const _0x25cc67=_0x5298b2,_0x193ddb={'zySwC':_0x25cc67(0x606)+_0x25cc67(0x334)+_0x25cc67(0x848),'YEMMq':function(_0x57e061,_0x53b943){return _0x57e061===_0x53b943;},'XWUXR':_0x25cc67(0x6ec),'TUrzb':_0x25cc67(0x1f6)+_0x25cc67(0x5a5),'CMAXW':_0x25cc67(0x8c3)+_0x25cc67(0x77e)+_0x25cc67(0x93e)+_0x25cc67(0x287)+_0x25cc67(0x2e8)+_0x25cc67(0x897)+_0x25cc67(0x5d5),'uVvzi':_0x25cc67(0x2e3)+_0x25cc67(0x2ea)+_0x25cc67(0x3be),'yxhWG':_0x25cc67(0x909),'XqwAj':_0x25cc67(0x53e)+_0x25cc67(0x4c7)+_0x25cc67(0x4e8)+_0x25cc67(0x99c)+_0x25cc67(0x37c)+_0x25cc67(0x694),'gzrHz':_0x25cc67(0x7d6)},_0x3f8cc3=_0x193ddb[_0x25cc67(0x1c4)][_0x25cc67(0x668)]('|');let _0x4095d0=0x153e+-0xd91+-0x7ad;while(!![]){switch(_0x3f8cc3[_0x4095d0++]){case'0':this[_0x25cc67(0x4bf)+_0x25cc67(0x884)]=![];continue;case'1':this[_0x25cc67(0x87c)+_0x25cc67(0x6b0)]=null;continue;case'2':this[_0x25cc67(0x1fd)]=null;continue;case'3':this[_0x25cc67(0x8bc)+_0x25cc67(0x5f4)]=-0x1*0x983+0x1*-0x1b7c+0x24ff;continue;case'4':_0x193ddb[_0x25cc67(0x3a3)](document[_0x25cc67(0x994)],_0x193ddb[_0x25cc67(0x24b)])?document[_0x25cc67(0x920)+_0x25cc67(0x6e6)](_0x193ddb[_0x25cc67(0x1e2)],()=>this[_0x25cc67(0x57b)]()):this[_0x25cc67(0x57b)]();continue;case'5':this[_0x25cc67(0x335)+_0x25cc67(0x797)]=_0x193ddb[_0x25cc67(0x52d)];continue;case'6':this[_0x25cc67(0x759)+_0x25cc67(0x73f)]=-0x8*-0xc7+0x8e7*-0x1+-0x2af*-0x1;continue;case'7':this[_0x25cc67(0x9b1)+_0x25cc67(0x135)]=localStorage[_0x25cc67(0x383)](_0x193ddb[_0x25cc67(0x20f)])||_0x193ddb[_0x25cc67(0x53a)];continue;case'8':this[_0x25cc67(0x8bc)+_0x25cc67(0x42e)]=0x3ad+0x25f0+-0x9f*0x43;continue;case'9':this[_0x25cc67(0x7a5)+_0x25cc67(0x8dc)]=_0x193ddb[_0x25cc67(0x2da)];continue;case'10':this[_0x25cc67(0x759)+_0x25cc67(0x8e7)]=-0x2*-0x2d9+-0x3*0x494+0x80a;continue;case'11':this[_0x25cc67(0x666)]=localStorage[_0x25cc67(0x383)](_0x193ddb[_0x25cc67(0x6d7)])||null;continue;case'12':this[_0x25cc67(0x7dc)+_0x25cc67(0x5d4)]=![];continue;}break;}}async[_0x5298b2(0x57b)](){const _0x5ad5bc=_0x5298b2,_0x591785={'mXNaq':_0x5ad5bc(0x13a)+_0x5ad5bc(0x21d)+_0x5ad5bc(0x9bb)+_0x5ad5bc(0x1a8)+_0x5ad5bc(0x9ac)+_0x5ad5bc(0x58b)+_0x5ad5bc(0x9c0)+_0x5ad5bc(0x393)+_0x5ad5bc(0x374),'tVxTl':_0x5ad5bc(0x8f9)};try{await this[_0x5ad5bc(0x145)](this[_0x5ad5bc(0x335)+_0x5ad5bc(0x797)]),await this[_0x5ad5bc(0x145)](this[_0x5ad5bc(0x7a5)+_0x5ad5bc(0x8dc)]),this[_0x5ad5bc(0x471)+'ta']={'UI':this[_0x5ad5bc(0x248)](),'answerUI':this[_0x5ad5bc(0x78d)+_0x5ad5bc(0x43c)]()},this[_0x5ad5bc(0x89c)+_0x5ad5bc(0x23a)]();}catch(_0x15ea6b){this[_0x5ad5bc(0x74d)](_0x591785[_0x5ad5bc(0x1b2)],_0x591785[_0x5ad5bc(0x932)]),this[_0x5ad5bc(0x471)+'ta']={'UI':this[_0x5ad5bc(0x248)](),'answerUI':this[_0x5ad5bc(0x78d)+_0x5ad5bc(0x43c)]()},this[_0x5ad5bc(0x3ee)](!![]);}}[_0x5298b2(0x145)](_0xb392b6){const _0x429233=_0x5298b2,_0x428c71={'JaHra':function(_0x486d08){return _0x486d08();},'phsMR':function(_0x257f19,_0x469257){return _0x257f19(_0x469257);},'INoif':_0x429233(0x7f1)};return new Promise((_0x24892e,_0x5a58f0)=>{const _0x6d9f5b=_0x429233,_0x423310={'RuQFw':function(_0x38b394,_0x5a6f63){const _0x2d1ce3=_0x3eb8;return _0x428c71[_0x2d1ce3(0x79e)](_0x38b394,_0x5a6f63);}},_0x4c782f=document[_0x6d9f5b(0x1ad)+_0x6d9f5b(0x79d)](_0x428c71[_0x6d9f5b(0x210)]);_0x4c782f[_0x6d9f5b(0x2a4)]=_0xb392b6,_0x4c782f[_0x6d9f5b(0x274)]=()=>{const _0x3e3472=_0x6d9f5b;_0x428c71[_0x3e3472(0x8fd)](_0x24892e);},_0x4c782f[_0x6d9f5b(0x6dc)]=_0x15aa3f=>{const _0x36335c=_0x6d9f5b;_0x4c782f[_0x36335c(0x778)](),_0x423310[_0x36335c(0x1d7)](_0x5a58f0,new Error(_0x36335c(0x13a)+_0x36335c(0x478)+_0x36335c(0x419)+_0xb392b6));},document[_0x6d9f5b(0x290)][_0x6d9f5b(0x216)+'d'](_0x4c782f);});}[_0x5298b2(0x248)](){const _0x4ccd91=_0x5298b2,_0x423a0b={'KqWUr':_0x4ccd91(0x519),'ZswTk':_0x4ccd91(0x6aa),'CGVJT':_0x4ccd91(0x6d1)+_0x4ccd91(0x1c1)+_0x4ccd91(0x516)+_0x4ccd91(0x444)+_0x4ccd91(0x22a)+_0x4ccd91(0x3e2)+_0x4ccd91(0x305)+_0x4ccd91(0x7df)+_0x4ccd91(0x667)+_0x4ccd91(0x6eb)+_0x4ccd91(0x1cb)+_0x4ccd91(0x167)+_0x4ccd91(0x479)+_0x4ccd91(0x754)+_0x4ccd91(0x724)+_0x4ccd91(0x635)+_0x4ccd91(0x7b2)+_0x4ccd91(0x323)+_0x4ccd91(0x2c0)+_0x4ccd91(0x267)+_0x4ccd91(0x2b7)+_0x4ccd91(0x867)+_0x4ccd91(0x76a)+_0x4ccd91(0x742)+_0x4ccd91(0x960)+_0x4ccd91(0x4f1)+_0x4ccd91(0x965)+_0x4ccd91(0x7bb)+_0x4ccd91(0x1e0)+_0x4ccd91(0x3e1)+_0x4ccd91(0x3c5)+_0x4ccd91(0x2ba)+_0x4ccd91(0x92c)+_0x4ccd91(0x751)+_0x4ccd91(0x33a)+_0x4ccd91(0x8d4)+_0x4ccd91(0x6f9)+_0x4ccd91(0x4ed)+_0x4ccd91(0x5b2)+_0x4ccd91(0x522)+_0x4ccd91(0x147)+_0x4ccd91(0x23e)+_0x4ccd91(0x7bc)+_0x4ccd91(0x330)+_0x4ccd91(0x959),'YqyXc':_0x4ccd91(0x692)+'e','rhVhI':_0x4ccd91(0x4e4)+_0x4ccd91(0x828)+_0x4ccd91(0x6c2)+_0x4ccd91(0x934)+_0x4ccd91(0x57e)+_0x4ccd91(0x170)+_0x4ccd91(0x4af)+_0x4ccd91(0x913)+_0x4ccd91(0x8f6),'xoRPI':_0x4ccd91(0x2b8),'KtAaW':_0x4ccd91(0x214)+_0x4ccd91(0x9b0)+_0x4ccd91(0x541)+_0x4ccd91(0x5a3)+_0x4ccd91(0x395)+_0x4ccd91(0x373)+_0x4ccd91(0x7c5)+_0x4ccd91(0x6fb)+_0x4ccd91(0x433),'KrxFg':_0x4ccd91(0x3cc)+_0x4ccd91(0x491)+_0x4ccd91(0x7d1)+_0x4ccd91(0x55e)+_0x4ccd91(0x972)+_0x4ccd91(0x7b3)+';','OLfhz':_0x4ccd91(0x6f2),'ErrXY':_0x4ccd91(0x304)+'n','UZyjl':_0x4ccd91(0x857)+_0x4ccd91(0x68f)+_0x4ccd91(0x831)+_0x4ccd91(0x364)+_0x4ccd91(0x187)+_0x4ccd91(0x7ae)+_0x4ccd91(0x4a6)+_0x4ccd91(0x6a1)+_0x4ccd91(0x2f5)+_0x4ccd91(0x997)+_0x4ccd91(0x169)+_0x4ccd91(0x4d8)+_0x4ccd91(0x4b9)+_0x4ccd91(0x4a7)+_0x4ccd91(0x67a)+_0x4ccd91(0x489)+_0x4ccd91(0x19d)+_0x4ccd91(0x910)+_0x4ccd91(0x798)+_0x4ccd91(0x902)+_0x4ccd91(0x8e8)+_0x4ccd91(0x81b)+_0x4ccd91(0x416)+';','tXZcP':_0x4ccd91(0x3a8)+_0x4ccd91(0x819),'QiMmY':_0x4ccd91(0x284)+_0x4ccd91(0x800)+_0x4ccd91(0x6d3)+_0x4ccd91(0x6ea)+_0x4ccd91(0x776)+_0x4ccd91(0x2d8)+_0x4ccd91(0x59d)+_0x4ccd91(0x81a)+_0x4ccd91(0x718)+_0x4ccd91(0x62c)+_0x4ccd91(0x80c)+_0x4ccd91(0x3b4)+_0x4ccd91(0x211)+_0x4ccd91(0x7c3)+_0x4ccd91(0x942)+_0x4ccd91(0x153)+_0x4ccd91(0x5b4)+_0x4ccd91(0x289)+_0x4ccd91(0x41b)+_0x4ccd91(0x886)+_0x4ccd91(0x551)+_0x4ccd91(0x39e)+_0x4ccd91(0x3cf)+_0x4ccd91(0x465)+_0x4ccd91(0x482)+_0x4ccd91(0x710)+_0x4ccd91(0x5fc)+_0x4ccd91(0x8c6),'oXxMi':_0x4ccd91(0x844)+_0x4ccd91(0x56e),'oCSCF':_0x4ccd91(0x4be)+_0x4ccd91(0x937)+_0x4ccd91(0x945)+_0x4ccd91(0x99d)+_0x4ccd91(0x140)+_0x4ccd91(0x502)+_0x4ccd91(0x27d)+_0x4ccd91(0x935)+_0x4ccd91(0x6cd)+_0x4ccd91(0x990)+_0x4ccd91(0x15c)+_0x4ccd91(0x2f0)+_0x4ccd91(0x54e)+_0x4ccd91(0x171)+_0x4ccd91(0x97b)+_0x4ccd91(0x91c)+_0x4ccd91(0x79b)+_0x4ccd91(0x2d6)+_0x4ccd91(0x786)+_0x4ccd91(0x3bb)+_0x4ccd91(0x74a)+_0x4ccd91(0x577),'embGY':_0x4ccd91(0x3b3),'WiUAF':_0x4ccd91(0x64e)+'le','qlAeq':_0x4ccd91(0x3a8)+_0x4ccd91(0x56b),'MmwsF':_0x4ccd91(0x857)+_0x4ccd91(0x28f)+_0x4ccd91(0x96e)+_0x4ccd91(0x1c7)+_0x4ccd91(0x976)+_0x4ccd91(0x941)+_0x4ccd91(0x64b)+';','WKQZC':_0x4ccd91(0x537),'syWyq':_0x4ccd91(0x1b0)+_0x4ccd91(0x4d0)+_0x4ccd91(0x4a9),'jWewZ':_0x4ccd91(0x1dd),'AHGtC':_0x4ccd91(0x857)+_0x4ccd91(0x17d)+_0x4ccd91(0x18a)+_0x4ccd91(0x4b5)+_0x4ccd91(0x72a)+_0x4ccd91(0x180)+_0x4ccd91(0x1ce)+_0x4ccd91(0x78c)+_0x4ccd91(0x8a7)+_0x4ccd91(0x867)+_0x4ccd91(0x3df)+_0x4ccd91(0x5fc)+_0x4ccd91(0x8d6)+_0x4ccd91(0x54c)+_0x4ccd91(0x78f)+_0x4ccd91(0x842)+_0x4ccd91(0x64f)+_0x4ccd91(0x268),'CRfSk':_0x4ccd91(0x2be)+_0x4ccd91(0x84c)},_0x5682b9=document[_0x4ccd91(0x1ad)+_0x4ccd91(0x79d)](_0x423a0b[_0x4ccd91(0x75d)]),_0x16045e=document[_0x4ccd91(0x1ad)+_0x4ccd91(0x79d)](_0x423a0b[_0x4ccd91(0x75d)]);_0x16045e['id']=_0x423a0b[_0x4ccd91(0x27f)],_0x16045e[_0x4ccd91(0x11f)]=_0x423a0b[_0x4ccd91(0x27f)],_0x16045e[_0x4ccd91(0x4d7)][_0x4ccd91(0x2f3)]=_0x423a0b[_0x4ccd91(0x116)];const _0x316245=document[_0x4ccd91(0x1ad)+_0x4ccd91(0x79d)](_0x423a0b[_0x4ccd91(0x75d)]);_0x316245[_0x4ccd91(0x11f)]=_0x423a0b[_0x4ccd91(0x54d)],_0x316245[_0x4ccd91(0x4d7)][_0x4ccd91(0x2f3)]=_0x423a0b[_0x4ccd91(0x3f4)];const _0x57b1a3=document[_0x4ccd91(0x1ad)+_0x4ccd91(0x79d)](_0x423a0b[_0x4ccd91(0x664)]);_0x57b1a3[_0x4ccd91(0x2a4)]=_0x423a0b[_0x4ccd91(0x8cf)],_0x57b1a3[_0x4ccd91(0x4d7)][_0x4ccd91(0x2f3)]=_0x423a0b[_0x4ccd91(0x5dd)];const _0x1fff26=document[_0x4ccd91(0x1ad)+_0x4ccd91(0x79d)](_0x423a0b[_0x4ccd91(0x316)]);_0x1fff26['id']=_0x423a0b[_0x4ccd91(0x1fa)],_0x1fff26[_0x4ccd91(0x6f8)+'t']='×',_0x1fff26[_0x4ccd91(0x4d7)][_0x4ccd91(0x2f3)]=_0x423a0b[_0x4ccd91(0x58d)];const _0x5c0179=document[_0x4ccd91(0x1ad)+_0x4ccd91(0x79d)](_0x423a0b[_0x4ccd91(0x316)]);_0x5c0179['id']=_0x423a0b[_0x4ccd91(0x85f)],_0x5c0179[_0x4ccd91(0x4d7)][_0x4ccd91(0x2f3)]=_0x423a0b[_0x4ccd91(0x85b)];const _0x11f459=document[_0x4ccd91(0x1ad)+_0x4ccd91(0x79d)](_0x423a0b[_0x4ccd91(0x75d)]);_0x11f459['id']=_0x423a0b[_0x4ccd91(0x854)],_0x11f459[_0x4ccd91(0x4d7)][_0x4ccd91(0x2f3)]=_0x423a0b[_0x4ccd91(0x2ed)];const _0x473a01=document[_0x4ccd91(0x1ad)+_0x4ccd91(0x79d)](_0x423a0b[_0x4ccd91(0x24c)]);_0x473a01[_0x4ccd91(0x6f8)+'t']=_0x423a0b[_0x4ccd91(0x4e0)],_0x473a01['id']=_0x423a0b[_0x4ccd91(0x243)],_0x5c0179[_0x4ccd91(0x216)+'d'](_0x11f459),_0x5c0179[_0x4ccd91(0x216)+'d'](_0x473a01);const _0x5ba353=document[_0x4ccd91(0x1ad)+_0x4ccd91(0x79d)](_0x423a0b[_0x4ccd91(0x75d)]);_0x5ba353[_0x4ccd91(0x4d7)][_0x4ccd91(0x2f3)]=_0x423a0b[_0x4ccd91(0x66d)],_0x5ba353[_0x4ccd91(0x6f8)+'t']=_0x423a0b[_0x4ccd91(0x500)];const _0x5a47eb=document[_0x4ccd91(0x1ad)+_0x4ccd91(0x79d)]('a');_0x5a47eb[_0x4ccd91(0x446)]=_0x423a0b[_0x4ccd91(0x6c8)],_0x5a47eb[_0x4ccd91(0x1cf)]=_0x423a0b[_0x4ccd91(0x331)],_0x5a47eb[_0x4ccd91(0x4d7)][_0x4ccd91(0x2f3)]=_0x423a0b[_0x4ccd91(0x8ce)],_0x5a47eb[_0x4ccd91(0x33d)]=_0x4ccd91(0x926)+_0x4ccd91(0x386)+_0x4ccd91(0x410)+_0x4ccd91(0x25f)+_0x4ccd91(0x317)+_0x4ccd91(0x55c)+_0x4ccd91(0x548)+_0x4ccd91(0x1cc)+_0x4ccd91(0x278)+_0x4ccd91(0x142)+_0x4ccd91(0x1f0)+_0x4ccd91(0x247)+_0x4ccd91(0x964)+_0x4ccd91(0x74b)+_0x4ccd91(0x73a)+_0x4ccd91(0x197)+_0x4ccd91(0x815)+_0x4ccd91(0x6a8)+_0x4ccd91(0x2fe)+_0x4ccd91(0x2eb)+_0x4ccd91(0x737)+_0x4ccd91(0x11c)+_0x4ccd91(0x762)+_0x4ccd91(0x94f)+_0x4ccd91(0x1c3)+_0x4ccd91(0x255)+_0x4ccd91(0x5ef)+_0x4ccd91(0x232)+_0x4ccd91(0x615)+_0x4ccd91(0x91d)+_0x4ccd91(0x767)+_0x4ccd91(0x7fc)+_0x4ccd91(0x4aa)+_0x4ccd91(0x590)+_0x4ccd91(0x55a)+_0x4ccd91(0x9c5)+_0x4ccd91(0x82c)+_0x4ccd91(0x152)+_0x4ccd91(0x2b5)+_0x4ccd91(0x15b)+_0x4ccd91(0x6f6)+_0x4ccd91(0x740)+_0x4ccd91(0x1ac)+_0x4ccd91(0x4c9)+_0x4ccd91(0x412)+_0x4ccd91(0x23b)+_0x4ccd91(0x8b6)+_0x4ccd91(0x381)+_0x4ccd91(0x3ef)+_0x4ccd91(0x8aa)+_0x4ccd91(0x2db)+_0x4ccd91(0x35c)+_0x4ccd91(0x534)+_0x4ccd91(0x852)+_0x4ccd91(0x6da)+_0x4ccd91(0x679)+_0x4ccd91(0x83a)+_0x4ccd91(0x3e0)+_0x4ccd91(0x3f8)+_0x4ccd91(0x7ac)+_0x4ccd91(0x961)+_0x4ccd91(0x88d)+_0x4ccd91(0x3a7)+_0x4ccd91(0x12a)+_0x4ccd91(0x4a1)+_0x4ccd91(0x2e0)+_0x4ccd91(0x514)+_0x4ccd91(0x9c8)+_0x4ccd91(0x447)+_0x4ccd91(0x6bf)+_0x4ccd91(0x26d)+_0x4ccd91(0x6d5)+_0x4ccd91(0x6ef)+_0x4ccd91(0x2e4)+_0x4ccd91(0x259)+_0x4ccd91(0x598)+_0x4ccd91(0x406)+_0x4ccd91(0x422)+_0x4ccd91(0x319)+_0x4ccd91(0x820)+_0x4ccd91(0x845)+_0x4ccd91(0x6a8)+_0x4ccd91(0x824)+_0x4ccd91(0x122)+_0x4ccd91(0x1d0)+_0x4ccd91(0x24e)+_0x4ccd91(0x8c9)+_0x4ccd91(0x63f)+_0x4ccd91(0x3c7)+_0x4ccd91(0x6f5)+_0x4ccd91(0x8b0)+_0x4ccd91(0x7db)+_0x4ccd91(0x28d)+_0x4ccd91(0x780)+_0x4ccd91(0x770)+_0x4ccd91(0x82d)+_0x4ccd91(0x1ee)+_0x4ccd91(0x309)+_0x4ccd91(0x1c2)+_0x4ccd91(0x558)+(_0x4ccd91(0x4d1)+_0x4ccd91(0x722)+_0x4ccd91(0x4c4)+_0x4ccd91(0x509)+_0x4ccd91(0x92b)+_0x4ccd91(0x198)+_0x4ccd91(0x414)+_0x4ccd91(0x3c8)+_0x4ccd91(0x871)+_0x4ccd91(0x7b5)+_0x4ccd91(0x60b)+_0x4ccd91(0x558)+_0x4ccd91(0x4d1)+_0x4ccd91(0x533)+_0x4ccd91(0x4c4)+_0x4ccd91(0x2df)+_0x4ccd91(0x695)),_0x5a47eb[_0x4ccd91(0x891)+'r']=()=>_0x5a47eb[_0x4ccd91(0x4d7)][_0x4ccd91(0x655)]='1',_0x5a47eb[_0x4ccd91(0x28c)]=()=>_0x5a47eb[_0x4ccd91(0x4d7)][_0x4ccd91(0x655)]=_0x4ccd91(0x20b),_0x16045e[_0x4ccd91(0x216)+'d'](_0x316245),_0x16045e[_0x4ccd91(0x216)+'d'](_0x57b1a3),_0x16045e[_0x4ccd91(0x216)+'d'](_0x1fff26),_0x16045e[_0x4ccd91(0x216)+'d'](_0x5c0179),_0x16045e[_0x4ccd91(0x216)+'d'](_0x5ba353),_0x16045e[_0x4ccd91(0x216)+'d'](_0x5a47eb);const _0x56d0b0=document[_0x4ccd91(0x1ad)+_0x4ccd91(0x79d)](_0x423a0b[_0x4ccd91(0x75d)]);return _0x56d0b0[_0x4ccd91(0x11f)]=_0x423a0b[_0x4ccd91(0x13d)],_0x16045e[_0x4ccd91(0x216)+'d'](_0x56d0b0),_0x5682b9[_0x4ccd91(0x216)+'d'](_0x16045e),_0x5682b9;}[_0x5298b2(0x82e)+'s'](_0x56200b,_0x3bd548){const _0x3f36f2=_0x5298b2,_0x572bdc={'cSNOn':function(_0x93a614,_0x4a81ee){return _0x93a614<_0x4a81ee;},'nKEXa':_0x3f36f2(0x519),'inSRZ':_0x3f36f2(0x31f),'XNdMp':function(_0xd9842f,_0x2e7421){return _0xd9842f+_0x2e7421;},'KukHd':function(_0x1e8692,_0x6382f5){return _0x1e8692*_0x6382f5;},'FlKkx':function(_0x24190b,_0x47125e){return _0x24190b*_0x47125e;},'QPnVb':_0x3f36f2(0x2b8),'tqjhy':_0x3f36f2(0x4a5)+_0x3f36f2(0x507),'YqCCs':function(_0x3fb7a3,_0x50f0b0){return _0x3fb7a3-_0x50f0b0;},'cokTq':function(_0x1f9c0b,_0x302399){return _0x1f9c0b-_0x302399;},'CNIBY':function(_0x38b6cf,_0xc40809){return _0x38b6cf*_0xc40809;},'ytiSY':function(_0x5290b4,_0xd65e94){return _0x5290b4<_0xd65e94;},'myYaT':function(_0x184530,_0x3b54c0){return _0x184530+_0x3b54c0;},'kixdK':function(_0xbfaa26,_0x52bb99){return _0xbfaa26>_0x52bb99;},'baPsT':function(_0x2cfbe5,_0xd08da6){return _0x2cfbe5+_0xd08da6;},'jjlXp':function(_0xc32e21,_0x143996){return _0xc32e21<_0x143996;},'EdgcK':function(_0x52053d,_0xd44629){return _0x52053d<_0xd44629;},'aoEVM':function(_0x400c45,_0x2dfe7c){return _0x400c45+_0x2dfe7c;},'tVhUl':function(_0x39f748,_0x3b64d0){return _0x39f748+_0x3b64d0;},'uoCIm':function(_0x3ee32e,_0x454a99){return _0x3ee32e<_0x454a99;},'QBdgT':function(_0xd478b5,_0x3af5a7){return _0xd478b5+_0x3af5a7;},'TBtwY':function(_0x274bd0,_0x53e3a7){return _0x274bd0&&_0x53e3a7;}},_0x1e57de=-0x1949+-0x252d+0x3e94;for(let _0x2af8a6=-0xcee+0x2ae*-0x5+-0x5*-0x544;_0x572bdc[_0x3f36f2(0x745)](_0x2af8a6,_0x1e57de);_0x2af8a6++){const _0x4ef63f=document[_0x3f36f2(0x1ad)+_0x3f36f2(0x79d)](_0x572bdc[_0x3f36f2(0x775)]);_0x4ef63f[_0x3f36f2(0x11f)]=_0x572bdc[_0x3f36f2(0x70a)],_0x4ef63f[_0x3f36f2(0x4d7)][_0x3f36f2(0x175)]=_0x572bdc[_0x3f36f2(0x594)](_0x572bdc[_0x3f36f2(0x938)](Math[_0x3f36f2(0x4bb)](),0x132a+-0x2*-0x4e1+-0x1ce9),0x1db9+0x93f+-0x4b*0x85)+'px',_0x4ef63f[_0x3f36f2(0x4d7)][_0x3f36f2(0x13e)]=_0x4ef63f[_0x3f36f2(0x4d7)][_0x3f36f2(0x175)],_0x4ef63f[_0x3f36f2(0x4d7)][_0x3f36f2(0x158)]=_0x572bdc[_0x3f36f2(0x125)](Math[_0x3f36f2(0x4bb)](),-0x2059+0x3*0x127+-0x3a9*-0x8)+'%';const _0x43a695=_0x3bd548[_0x3f36f2(0x219)+_0x3f36f2(0x611)](_0x572bdc[_0x3f36f2(0x2e6)]),_0x37204f=_0x3bd548[_0x3f36f2(0x219)+_0x3f36f2(0x611)](_0x572bdc[_0x3f36f2(0x542)]),_0x7d6d02=_0x3bd548[_0x3f36f2(0x874)+_0x3f36f2(0x75f)+'t'](),_0x2ade59=_0x43a695[_0x3f36f2(0x874)+_0x3f36f2(0x75f)+'t'](),_0x14de47=_0x37204f[_0x3f36f2(0x874)+_0x3f36f2(0x75f)+'t'](),_0x1039b2=_0x572bdc[_0x3f36f2(0x47d)](_0x2ade59[_0x3f36f2(0x134)],_0x7d6d02[_0x3f36f2(0x134)]),_0x4cf702=_0x572bdc[_0x3f36f2(0x47d)](_0x2ade59[_0x3f36f2(0x158)],_0x7d6d02[_0x3f36f2(0x158)]),_0x563fd9=_0x572bdc[_0x3f36f2(0x861)](_0x14de47[_0x3f36f2(0x134)],_0x7d6d02[_0x3f36f2(0x134)]),_0x250c02=_0x572bdc[_0x3f36f2(0x861)](_0x14de47[_0x3f36f2(0x158)],_0x7d6d02[_0x3f36f2(0x158)]);let _0x140991,_0x24dbf,_0x3057ad=0x152*0x1+0x12a5+-0x13f7;const _0xb1348d=-0xb1b*-0x3+0x2e3*0x5+-0x1c*0x1b1;do{_0x140991=_0x572bdc[_0x3f36f2(0x57a)](Math[_0x3f36f2(0x4bb)](),_0x56200b[_0x3f36f2(0x758)+'ht']),_0x24dbf=_0x572bdc[_0x3f36f2(0x125)](Math[_0x3f36f2(0x4bb)](),_0x56200b[_0x3f36f2(0x360)+'h']),_0x3057ad++;const _0x245189=_0x572bdc[_0x3f36f2(0x207)](_0x24dbf,_0x572bdc[_0x3f36f2(0x589)](_0x4cf702,_0x2ade59[_0x3f36f2(0x175)]))&&_0x572bdc[_0x3f36f2(0x613)](_0x572bdc[_0x3f36f2(0x133)](_0x24dbf,_0x4ef63f[_0x3f36f2(0x681)+'h']),_0x4cf702)&&_0x572bdc[_0x3f36f2(0x51d)](_0x140991,_0x572bdc[_0x3f36f2(0x589)](_0x1039b2,_0x2ade59[_0x3f36f2(0x13e)]))&&_0x572bdc[_0x3f36f2(0x613)](_0x572bdc[_0x3f36f2(0x589)](_0x140991,_0x4ef63f[_0x3f36f2(0x19e)+'ht']),_0x1039b2),_0x2d1cc2=_0x572bdc[_0x3f36f2(0x54a)](_0x24dbf,_0x572bdc[_0x3f36f2(0x245)](_0x250c02,_0x14de47[_0x3f36f2(0x175)]))&&_0x572bdc[_0x3f36f2(0x613)](_0x572bdc[_0x3f36f2(0x8d2)](_0x24dbf,_0x4ef63f[_0x3f36f2(0x681)+'h']),_0x250c02)&&_0x572bdc[_0x3f36f2(0x298)](_0x140991,_0x572bdc[_0x3f36f2(0x589)](_0x563fd9,_0x14de47[_0x3f36f2(0x13e)]))&&_0x572bdc[_0x3f36f2(0x613)](_0x572bdc[_0x3f36f2(0x3c2)](_0x140991,_0x4ef63f[_0x3f36f2(0x19e)+'ht']),_0x563fd9);if(_0x572bdc[_0x3f36f2(0x9af)](!_0x245189,!_0x2d1cc2))break;}while(_0x572bdc[_0x3f36f2(0x51d)](_0x3057ad,_0xb1348d));_0x4ef63f[_0x3f36f2(0x4d7)][_0x3f36f2(0x134)]=_0x140991+'px',_0x4ef63f[_0x3f36f2(0x4d7)][_0x3f36f2(0x158)]=_0x24dbf+'px',_0x4ef63f[_0x3f36f2(0x4d7)][_0x3f36f2(0x4f7)+_0x3f36f2(0x5b9)]=_0x572bdc[_0x3f36f2(0x57a)](Math[_0x3f36f2(0x4bb)](),0x4*-0x65+-0x177a+0x83*0x31)+'s',_0x4ef63f[_0x3f36f2(0x4d7)][_0x3f36f2(0x4f7)+_0x3f36f2(0x69a)]=_0x572bdc[_0x3f36f2(0x3c2)](_0x572bdc[_0x3f36f2(0x125)](Math[_0x3f36f2(0x4bb)](),-0x1307*0x1+0x2*-0xd16+0x2d36),-0x1e8e+-0x115*0x11+0x30f5)+'s',_0x56200b[_0x3f36f2(0x216)+'d'](_0x4ef63f);}return _0x56200b;}[_0x5298b2(0x78d)+_0x5298b2(0x43c)](){const _0x1336c5=_0x5298b2,_0x574141={'kZLKG':_0x1336c5(0x519),'OQQiR':_0x1336c5(0x3ac)+_0x1336c5(0x76d),'gJwJD':_0x1336c5(0x8c1)+_0x1336c5(0x8c4),'Zxsvw':_0x1336c5(0x6d1)+_0x1336c5(0x1c1)+_0x1336c5(0x576)+_0x1336c5(0x343)+_0x1336c5(0x390)+_0x1336c5(0x2a1)+_0x1336c5(0x8c7)+_0x1336c5(0x2b9)+_0x1336c5(0x199)+_0x1336c5(0x166)+_0x1336c5(0x12c)+_0x1336c5(0x620)+_0x1336c5(0x86e)+_0x1336c5(0x15e)+_0x1336c5(0x93b)+_0x1336c5(0x6a4)+_0x1336c5(0x3c1)+_0x1336c5(0x729)+_0x1336c5(0x30e)+_0x1336c5(0x4cf)+_0x1336c5(0x491)+_0x1336c5(0x354)+_0x1336c5(0x87e)+_0x1336c5(0x186)+_0x1336c5(0x42a)+_0x1336c5(0x246)+_0x1336c5(0x75c)+_0x1336c5(0x9ab)+_0x1336c5(0x27b)+_0x1336c5(0x3f2)+_0x1336c5(0x314)+_0x1336c5(0x324)+_0x1336c5(0x7e8)+_0x1336c5(0x3c3)+_0x1336c5(0x795)+_0x1336c5(0x68a)+_0x1336c5(0x702)+_0x1336c5(0x200)+_0x1336c5(0x3e3)+_0x1336c5(0x575)+_0x1336c5(0x90e)+_0x1336c5(0x8d5)+_0x1336c5(0x4e5)+_0x1336c5(0x530)+_0x1336c5(0x5f1)+_0x1336c5(0x7a6)+_0x1336c5(0x821)+_0x1336c5(0x62d)+'l;','NNEbS':_0x1336c5(0x609)+_0x1336c5(0x5a8),'hKHWw':_0x1336c5(0x4e4)+_0x1336c5(0x828)+_0x1336c5(0x6c2)+_0x1336c5(0x934)+_0x1336c5(0x57e)+_0x1336c5(0x170)+_0x1336c5(0x4af)+_0x1336c5(0x913)+_0x1336c5(0x8f6),'vfZrJ':_0x1336c5(0x6f2),'CxMeh':_0x1336c5(0x68d)+_0x1336c5(0x384),'blrIM':_0x1336c5(0x857)+_0x1336c5(0x68f)+_0x1336c5(0x831)+_0x1336c5(0x364)+_0x1336c5(0x187)+_0x1336c5(0x7ae)+_0x1336c5(0x4a6)+_0x1336c5(0x6a1)+_0x1336c5(0x2f5)+_0x1336c5(0x997)+_0x1336c5(0x169)+_0x1336c5(0x4d8)+_0x1336c5(0x4b9)+_0x1336c5(0x4a7)+_0x1336c5(0x67a)+_0x1336c5(0x489)+_0x1336c5(0x19d)+_0x1336c5(0x910),'bhOpt':_0x1336c5(0x3ac)+_0x1336c5(0x79d),'IfxKM':_0x1336c5(0x7e1)+_0x1336c5(0x7f7)+_0x1336c5(0x526)+_0x1336c5(0x60a)+_0x1336c5(0x43a)+_0x1336c5(0x2fd)+_0x1336c5(0x625)+_0x1336c5(0x28b)+_0x1336c5(0x5ca)+_0x1336c5(0x29d)+_0x1336c5(0x452)+_0x1336c5(0x709)+_0x1336c5(0x150)+_0x1336c5(0x285)+_0x1336c5(0x5a6)+_0x1336c5(0x3e6)},_0x267194=document[_0x1336c5(0x1ad)+_0x1336c5(0x79d)](_0x574141[_0x1336c5(0x50d)]),_0x27f87d=document[_0x1336c5(0x1ad)+_0x1336c5(0x79d)](_0x574141[_0x1336c5(0x50d)]);_0x27f87d['id']=_0x574141[_0x1336c5(0x230)],_0x27f87d[_0x1336c5(0x11f)]=_0x574141[_0x1336c5(0x962)],_0x27f87d[_0x1336c5(0x4d7)][_0x1336c5(0x2f3)]=_0x574141[_0x1336c5(0x89b)];const _0x5b96b6=document[_0x1336c5(0x1ad)+_0x1336c5(0x79d)](_0x574141[_0x1336c5(0x50d)]);_0x5b96b6[_0x1336c5(0x11f)]=_0x574141[_0x1336c5(0x2a2)],_0x5b96b6[_0x1336c5(0x4d7)][_0x1336c5(0x2f3)]=_0x574141[_0x1336c5(0x83f)];const _0x427675=document[_0x1336c5(0x1ad)+_0x1336c5(0x79d)](_0x574141[_0x1336c5(0x883)]);_0x427675['id']=_0x574141[_0x1336c5(0x4db)],_0x427675[_0x1336c5(0x4d7)][_0x1336c5(0x2f3)]=_0x574141[_0x1336c5(0x8d8)];const _0x2bd711=document[_0x1336c5(0x1ad)+_0x1336c5(0x79d)](_0x574141[_0x1336c5(0x50d)]);return _0x2bd711['id']=_0x574141[_0x1336c5(0x661)],_0x2bd711[_0x1336c5(0x4d7)][_0x1336c5(0x2f3)]=_0x574141[_0x1336c5(0x19b)],_0x27f87d[_0x1336c5(0x216)+'d'](_0x5b96b6),_0x27f87d[_0x1336c5(0x216)+'d'](_0x427675),_0x27f87d[_0x1336c5(0x216)+'d'](_0x2bd711),_0x267194[_0x1336c5(0x216)+'d'](_0x27f87d),_0x267194;}[_0x5298b2(0x89c)+_0x5298b2(0x23a)](){const _0x5b1c89=_0x5298b2,_0x2c8a52={'LsQXK':function(_0x1feaa9,_0x53c877){return _0x1feaa9===_0x53c877;},'HMRHu':_0x5b1c89(0x691),'FNpeS':_0x5b1c89(0x9ac)+_0x5b1c89(0x231)+_0x5b1c89(0x989)+_0x5b1c89(0x42b)+_0x5b1c89(0x269)+_0x5b1c89(0x5e1)+_0x5b1c89(0x94b),'nOgqP':_0x5b1c89(0x480)+_0x5b1c89(0x26f)+_0x5b1c89(0x63e)+_0x5b1c89(0x5d0)+_0x5b1c89(0x8a1)+_0x5b1c89(0x8bb)+_0x5b1c89(0x53b)+_0x5b1c89(0x38b),'GrDnw':_0x5b1c89(0x2b8),'nccUk':_0x5b1c89(0x8f5)+_0x5b1c89(0x543),'lqaFM':_0x5b1c89(0x7ce)+_0x5b1c89(0x307),'alTkJ':_0x5b1c89(0x297),'yzhic':_0x5b1c89(0x463)+'o','groEw':_0x5b1c89(0x67e),'JjPaR':_0x5b1c89(0x9ae)+_0x5b1c89(0x84d),'iKMTt':_0x5b1c89(0x699),'YNSPw':_0x5b1c89(0x146),'TMmci':_0x5b1c89(0x9b5)};if(_0x2c8a52[_0x5b1c89(0x95d)](typeof anime,_0x2c8a52[_0x5b1c89(0x342)])){console[_0x5b1c89(0x8f9)](_0x2c8a52[_0x5b1c89(0x461)]),this[_0x5b1c89(0x3ee)]();return;}const _0x2f9884=_0x2c8a52[_0x5b1c89(0x5c7)],_0x33fa3d=document[_0x5b1c89(0x1ad)+_0x5b1c89(0x79d)](_0x2c8a52[_0x5b1c89(0x8d1)]);_0x33fa3d[_0x5b1c89(0x2a4)]=_0x2f9884,_0x33fa3d['id']=_0x2c8a52[_0x5b1c89(0x774)],_0x33fa3d[_0x5b1c89(0x4d7)][_0x5b1c89(0x2f3)]=_0x5b1c89(0x2ca)+_0x5b1c89(0x70f)+_0x5b1c89(0x8f7)+_0x5b1c89(0x2cd)+_0x5b1c89(0x4b2)+_0x5b1c89(0x26e)+_0x5b1c89(0x887)+_0x5b1c89(0x8cd)+_0x5b1c89(0x3e5)+_0x5b1c89(0x82b)+_0x5b1c89(0x443)+_0x5b1c89(0x398)+_0x5b1c89(0x327)+_0x5b1c89(0x26e)+_0x5b1c89(0x4c5)+_0x5b1c89(0x6b6)+_0x5b1c89(0x2cd)+_0x5b1c89(0x33b)+_0x5b1c89(0x20d)+_0x5b1c89(0x8b1)+_0x5b1c89(0x313)+_0x5b1c89(0x581)+_0x5b1c89(0x174)+_0x5b1c89(0x366)+_0x5b1c89(0x559)+_0x5b1c89(0x8f2)+_0x5b1c89(0x8f4)+_0x5b1c89(0x2ca)+_0x5b1c89(0x55d)+_0x5b1c89(0x368)+_0x5b1c89(0x2cd)+_0x5b1c89(0x706)+_0x5b1c89(0x6bd)+'\x20\x20',document[_0x5b1c89(0x328)][_0x5b1c89(0x216)+'d'](_0x33fa3d),anime[_0x5b1c89(0x310)]({'easing':_0x2c8a52[_0x5b1c89(0x115)],'duration':0x320,'complete':_0x2ac54c=>{const _0x42e6e5=_0x5b1c89;_0x33fa3d[_0x42e6e5(0x778)](),this[_0x42e6e5(0x3ee)]();}})[_0x5b1c89(0x760)]({'targets':_0x33fa3d,'opacity':[0x7*-0x50b+-0x1d9f+0x40ec,0x21d9+-0xb03*0x2+-0xbd2],'scale':[0x539*-0x1+0x17*0x3d+0x42*-0x1+0.5,-0x5a9+-0x406*-0x2+-0x262],'rotate':_0x2c8a52[_0x5b1c89(0x711)],'duration':0x3e8,'easing':_0x2c8a52[_0x5b1c89(0x619)]})[_0x5b1c89(0x760)]({'targets':_0x33fa3d,'translateY':_0x2c8a52[_0x5b1c89(0x272)],'duration':0x1f4,'easing':_0x2c8a52[_0x5b1c89(0x582)]})[_0x5b1c89(0x760)]({'targets':_0x33fa3d,'translateY':_0x2c8a52[_0x5b1c89(0x220)],'duration':0x1f4,'easing':_0x2c8a52[_0x5b1c89(0x582)]})[_0x5b1c89(0x760)]({'targets':_0x33fa3d,'opacity':0x0,'duration':0x1f4,'easing':_0x2c8a52[_0x5b1c89(0x61c)]},_0x2c8a52[_0x5b1c89(0x497)]);}[_0x5298b2(0x3ee)](_0x2c4526=![]){const _0x3a41cd=_0x5298b2,_0xc13476={'gkrAt':function(_0x45b7b2,_0x29a37e){return _0x45b7b2!==_0x29a37e;},'rrnqg':_0x3a41cd(0x9ce)+_0x3a41cd(0x7f3)+'d','bzHvh':_0x3a41cd(0x825),'BlZjz':_0x3a41cd(0x1f5)+_0x3a41cd(0x3d7),'XoJbI':_0x3a41cd(0x6aa),'wtRUV':_0x3a41cd(0x6fa),'lxGUf':function(_0x1014ed,_0xfe061b,_0x27f866){return _0x1014ed(_0xfe061b,_0x27f866);},'qQwAV':function(_0x428216,_0xe16fb8){return _0x428216!==_0xe16fb8;}};document[_0x3a41cd(0x328)][_0x3a41cd(0x216)+'d'](this[_0x3a41cd(0x471)+'ta']['UI']),document[_0x3a41cd(0x328)][_0x3a41cd(0x216)+'d'](this[_0x3a41cd(0x471)+'ta'][_0x3a41cd(0x756)]);const _0x248daa=document[_0x3a41cd(0x1da)+_0x3a41cd(0x773)](_0xc13476[_0x3a41cd(0x353)]);if(_0x248daa){if(_0x2c4526){_0x248daa[_0x3a41cd(0x4d7)][_0x3a41cd(0x40f)]=_0xc13476[_0x3a41cd(0x2e9)],_0x248daa[_0x3a41cd(0x4d7)][_0x3a41cd(0x655)]=-0x1754+-0x1*-0x8b5+0xea0,this[_0x3a41cd(0x48b)+_0x3a41cd(0x485)]();const _0x189a38=_0x248daa[_0x3a41cd(0x219)+_0x3a41cd(0x611)](_0xc13476[_0x3a41cd(0x799)]);_0x189a38&&this[_0x3a41cd(0x82e)+'s'](_0x189a38,_0x248daa);if(_0xc13476[_0x3a41cd(0x240)](localStorage[_0x3a41cd(0x383)](_0xc13476[_0x3a41cd(0x30d)]),_0xc13476[_0x3a41cd(0x159)]))this[_0x3a41cd(0x5fa)+_0x3a41cd(0x2c1)]();else{}}else _0x248daa[_0x3a41cd(0x4d7)][_0x3a41cd(0x40f)]=_0xc13476[_0x3a41cd(0x2e9)],_0xc13476[_0x3a41cd(0x36d)](setTimeout,()=>{const _0x1a513b=_0x3a41cd;_0x248daa[_0x1a513b(0x4d7)][_0x1a513b(0x655)]=-0x1d4a+-0x2eb+0x2036;},0x14d7*0x1+-0x1f3a+-0x1*-0xa6d),_0xc13476[_0x3a41cd(0x36d)](setTimeout,()=>{const _0x3322c2=_0x3a41cd;this[_0x3322c2(0x48b)+_0x3322c2(0x485)]();if(_0xc13476[_0x3322c2(0x240)](localStorage[_0x3322c2(0x383)](_0xc13476[_0x3322c2(0x30d)]),_0xc13476[_0x3322c2(0x159)]))this[_0x3322c2(0x5fa)+_0x3322c2(0x2c1)]();else{}const _0x12b6f7=_0x248daa[_0x3322c2(0x219)+_0x3322c2(0x611)](_0xc13476[_0x3322c2(0x799)]);if(_0x12b6f7)this[_0x3322c2(0x82e)+'s'](_0x12b6f7,_0x248daa);else{}},0x1aff+-0x6ac+-0x125f);}else{this[_0x3a41cd(0x48b)+_0x3a41cd(0x485)]();if(_0xc13476[_0x3a41cd(0x227)](localStorage[_0x3a41cd(0x383)](_0xc13476[_0x3a41cd(0x30d)]),_0xc13476[_0x3a41cd(0x159)]))this[_0x3a41cd(0x5fa)+_0x3a41cd(0x2c1)]();else{}}}[_0x5298b2(0x74d)](_0x161778,_0x12e52d=_0x5298b2(0x252)){const _0x34722e=_0x5298b2,_0x4b0dd2={'eBWUD':_0x34722e(0x975)+_0x34722e(0x99a),'QjRgJ':_0x34722e(0x519),'KhagA':function(_0x1d2a0e,_0x3fecd0){return _0x1d2a0e===_0x3fecd0;},'phodd':_0x34722e(0x8f9),'ENEEA':_0x34722e(0x4fd),'NGVUx':_0x34722e(0x8d9),'mkDiw':function(_0x1232fd,_0x41009b,_0x31b9b2){return _0x1232fd(_0x41009b,_0x31b9b2);}},_0x5c18b3=document[_0x34722e(0x1ad)+_0x34722e(0x79d)](_0x4b0dd2[_0x34722e(0x2bd)]);_0x5c18b3[_0x34722e(0x4d7)][_0x34722e(0x2f3)]=_0x34722e(0x2ca)+_0x34722e(0x70f)+_0x34722e(0x8f7)+_0x34722e(0x2cd)+_0x34722e(0x873)+_0x34722e(0x876)+_0x34722e(0x2f4)+_0x34722e(0x61f)+_0x34722e(0x525)+_0x34722e(0x4a2)+_0x34722e(0x431)+_0x34722e(0x299)+_0x34722e(0x174)+_0x34722e(0x348)+_0x34722e(0x469)+(_0x4b0dd2[_0x34722e(0x48f)](_0x12e52d,_0x4b0dd2[_0x34722e(0x5a9)])?_0x4b0dd2[_0x34722e(0x632)]:_0x4b0dd2[_0x34722e(0x893)])+(_0x34722e(0x26e)+_0x34722e(0x257)+_0x34722e(0x835)+_0x34722e(0x2cd)+_0x34722e(0x286)+_0x34722e(0x859)+_0x34722e(0x2cd)+_0x34722e(0x4e3)+_0x34722e(0x263)+_0x34722e(0x26e)+_0x34722e(0x553)+_0x34722e(0x936)+_0x34722e(0x779)+_0x34722e(0x3ce)+_0x34722e(0x904)+_0x34722e(0x928)+_0x34722e(0x358)+_0x34722e(0x3d2)+_0x34722e(0x4b7)+_0x34722e(0x74e)+_0x34722e(0x7f2)+_0x34722e(0x5b4)+_0x34722e(0x5a0)+_0x34722e(0x182)+_0x34722e(0x260)+_0x34722e(0x378)+_0x34722e(0x9b2)+_0x34722e(0x76e)+_0x34722e(0x858)+_0x34722e(0x1e6)+_0x34722e(0x8ac)+_0x34722e(0x8e3)+_0x34722e(0x876)+_0x34722e(0x277)+_0x34722e(0x2a7)+_0x34722e(0x2ca)+_0x34722e(0x916)+_0x34722e(0x956)+_0x34722e(0x1ff)+'\x20'),_0x5c18b3[_0x34722e(0x6f8)+'t']=_0x161778,document[_0x34722e(0x328)][_0x34722e(0x216)+'d'](_0x5c18b3),_0x4b0dd2[_0x34722e(0x77a)](setTimeout,()=>_0x5c18b3[_0x34722e(0x4d7)][_0x34722e(0x655)]=0x1*-0xb4e+-0x22*-0x83+0x1*-0x617,-0x3*0xb39+0x4*0x81+0x1fb1),_0x4b0dd2[_0x34722e(0x77a)](setTimeout,()=>{const _0x1e7c20=_0x34722e;_0x5c18b3[_0x1e7c20(0x4d7)][_0x1e7c20(0x655)]=-0x412*0x1+-0x3*0x18a+-0x2*-0x458,_0x5c18b3[_0x1e7c20(0x920)+_0x1e7c20(0x6e6)](_0x4b0dd2[_0x1e7c20(0x429)],()=>_0x5c18b3[_0x1e7c20(0x778)]());},0x2307+-0x8b*0x16+0x12f*-0x3);}[_0x5298b2(0x64a)+_0x5298b2(0x697)](){const _0x3358fa=_0x5298b2,_0xfcab3a={'MpMQK':_0x3358fa(0x7d8)+_0x3358fa(0x44d)+_0x3358fa(0x6fc),'JjCOu':_0x3358fa(0x1e8)},_0x5225af=document[_0x3358fa(0x929)](_0xfcab3a[_0x3358fa(0x544)],document,null,XPathResult[_0x3358fa(0x6d9)+_0x3358fa(0x3ca)+_0x3358fa(0x677)],null)[_0x3358fa(0x5a7)+_0x3358fa(0x607)],_0x264f8c=_0x5225af?_0x5225af[_0x3358fa(0x25b)][_0x3358fa(0x9b3)]():'',_0x3c29dc=_0x264f8c[_0x3358fa(0x7fe)](/^([^(]+)/);return _0x3c29dc?_0x3c29dc[-0x169b+-0x3*-0x35b+0xf7*0xd][_0x3358fa(0x9b3)]():_0xfcab3a[_0x3358fa(0x401)];}[_0x5298b2(0x5fa)+_0x5298b2(0x2c1)](){const _0x57ab14=_0x5298b2,_0x3aec58={'QOAwP':_0x57ab14(0x2ce),'Vvhzq':_0x57ab14(0x2c9),'fSjwb':_0x57ab14(0x59c),'CCIPK':_0x57ab14(0x5ff)+_0x57ab14(0x388)+_0x57ab14(0x518)+')','stPmn':_0x57ab14(0x170)+'t','iUmDj':_0x57ab14(0x940),'sUbXQ':_0x57ab14(0x9ce)+_0x57ab14(0x7f3)+'d','tQTtD':_0x57ab14(0x825),'yjEqV':_0x57ab14(0x226)+_0x57ab14(0x228),'TiSZX':_0x57ab14(0x975)+_0x57ab14(0x99a),'vWhLg':_0x57ab14(0x226)+_0x57ab14(0x650),'lVQJP':_0x57ab14(0x9ce)+'up','SLnGj':function(_0x3fb989,_0x26a57a){return _0x3fb989(_0x26a57a);},'oDkxg':_0x57ab14(0x1b0)+_0x57ab14(0x4d0)+_0x57ab14(0x4a9),'aRrmQ':_0x57ab14(0x519),'DdPZZ':_0x57ab14(0x6f2),'mCVEX':_0x57ab14(0x949)+_0x57ab14(0x389),'tanLu':_0x57ab14(0x48c)+_0x57ab14(0x1d8)+_0x57ab14(0x746)+_0x57ab14(0x809)+_0x57ab14(0x723)+_0x57ab14(0x7b7),'WdHZk':_0x57ab14(0x670)+_0x57ab14(0x4b4)+_0x57ab14(0x86b)+_0x57ab14(0x562),'eafwe':_0x57ab14(0x1dd),'VZLOi':_0x57ab14(0x8ef)+'rd','olbeK':_0x57ab14(0x70d),'qYgEg':_0x57ab14(0x283),'hCQqi':_0x57ab14(0x84f)+_0x57ab14(0x436)+_0x57ab14(0x27e),'SyQRQ':_0x57ab14(0x6b4),'IDIcZ':_0x57ab14(0x45b)+_0x57ab14(0x95f)+'n','SsXeH':function(_0xbef907,_0x286d44,_0x44a00e){return _0xbef907(_0x286d44,_0x44a00e);},'qiwYH':function(_0x49d343,_0x3e0d11,_0xcd28eb){return _0x49d343(_0x3e0d11,_0xcd28eb);},'LELPU':_0x57ab14(0x256)},_0x49e572=_0x3aec58[_0x57ab14(0x382)],_0x5c31b3=document[_0x57ab14(0x1ad)+_0x57ab14(0x79d)](_0x3aec58[_0x57ab14(0x648)]);_0x5c31b3['id']=_0x3aec58[_0x57ab14(0x2a0)],_0x5c31b3[_0x57ab14(0x4d7)][_0x57ab14(0x2f3)]=_0x57ab14(0x2ca)+_0x57ab14(0x70f)+_0x57ab14(0x8f7)+_0x57ab14(0x2cd)+_0x57ab14(0x873)+_0x57ab14(0x876)+_0x57ab14(0x52a)+_0x57ab14(0x87d)+_0x57ab14(0x2cd)+_0x57ab14(0x284)+_0x57ab14(0x7d0)+_0x57ab14(0x8fc)+_0x57ab14(0x30f)+_0x57ab14(0x1e1)+_0x57ab14(0x8b7)+_0x57ab14(0x466)+_0x57ab14(0x2d0)+_0x57ab14(0x181)+_0x57ab14(0x2cd)+_0x57ab14(0x233)+_0x57ab14(0x32d)+_0x57ab14(0x9b8)+_0x57ab14(0x88a)+_0x57ab14(0x66e)+_0x57ab14(0x2cd)+_0x57ab14(0x879)+_0x57ab14(0x60d)+_0x57ab14(0x5f9)+_0x57ab14(0x67b)+_0x57ab14(0x2ca)+_0x57ab14(0x55d)+_0x57ab14(0x9c9)+_0x57ab14(0x2cd)+_0x57ab14(0x706)+_0x57ab14(0x6bd)+_0x57ab14(0x345)+_0x57ab14(0x92c)+_0x57ab14(0x4b3)+_0x57ab14(0x249)+_0x57ab14(0x3e5)+_0x57ab14(0x571)+_0x57ab14(0x517)+_0x57ab14(0x4a0)+_0x57ab14(0x16f)+_0x57ab14(0x8fa)+_0x57ab14(0x733)+_0x57ab14(0x378)+_0x57ab14(0x9b2)+_0x57ab14(0x76e)+_0x57ab14(0x858)+_0x57ab14(0x1e6)+_0x57ab14(0x8ac)+_0x57ab14(0x8e3)+_0x57ab14(0x876)+_0x57ab14(0x277)+_0x57ab14(0x5d7)+_0x57ab14(0x876)+_0x57ab14(0x3b7)+_0x57ab14(0x739)+_0x57ab14(0x32e)+_0x57ab14(0x698)+_0x57ab14(0x5ca)+_0x57ab14(0x26e)+_0x57ab14(0x264)+_0x57ab14(0x21f)+_0x57ab14(0x71c)+_0x57ab14(0x2cd)+_0x57ab14(0x98a)+_0x57ab14(0x2dd)+_0x57ab14(0x75e);const _0x3f9cf8=document[_0x57ab14(0x1ad)+_0x57ab14(0x79d)](_0x3aec58[_0x57ab14(0x2e2)]);_0x3f9cf8[_0x57ab14(0x6f8)+'t']='×',_0x3f9cf8[_0x57ab14(0x4d7)][_0x57ab14(0x2f3)]=_0x57ab14(0x2ca)+_0x57ab14(0x70f)+_0x57ab14(0x4cd)+_0x57ab14(0x387)+_0x57ab14(0x139)+_0x57ab14(0x50f)+_0x57ab14(0x47e)+_0x57ab14(0x6d0)+_0x57ab14(0x2cd)+_0x57ab14(0x289)+_0x57ab14(0x45e)+_0x57ab14(0x2cd)+_0x57ab14(0x138)+_0x57ab14(0x7cd)+_0x57ab14(0x34d)+_0x57ab14(0x428)+_0x57ab14(0x2ca)+_0x57ab14(0x85e)+_0x57ab14(0x7bf)+_0x57ab14(0x2cd)+_0x57ab14(0x136)+_0x57ab14(0x652)+_0x57ab14(0x2cd)+_0x57ab14(0x798)+_0x57ab14(0x6a5)+_0x57ab14(0x3e5)+_0x57ab14(0x47b)+_0x57ab14(0x4c1)+_0x57ab14(0x15e)+_0x57ab14(0x67c)+_0x57ab14(0x918)+_0x57ab14(0x944)+_0x57ab14(0x877)+_0x57ab14(0x8d7),_0x3f9cf8[_0x57ab14(0x891)+'r']=()=>{const _0x4c3be1=_0x57ab14;_0x3f9cf8[_0x4c3be1(0x4d7)][_0x4c3be1(0x496)]=_0x3aec58[_0x4c3be1(0x5e9)],_0x3f9cf8[_0x4c3be1(0x4d7)][_0x4c3be1(0x655)]=0xe4f+-0x1*-0x641+-0x1*0x148f;},_0x3f9cf8[_0x57ab14(0x28c)]=()=>{const _0x299936=_0x57ab14;_0x3f9cf8[_0x299936(0x4d7)][_0x299936(0x496)]=_0x3aec58[_0x299936(0x6a9)],_0x3f9cf8[_0x299936(0x4d7)][_0x299936(0x655)]=0x173e+0x59b+0x5c5*-0x5+0.5;},_0x3f9cf8[_0x57ab14(0x131)+'n']=()=>_0x3f9cf8[_0x57ab14(0x4d7)][_0x57ab14(0x1f7)]=_0x57ab14(0x7e6)+')',_0x3f9cf8[_0x57ab14(0x98e)]=()=>_0x3f9cf8[_0x57ab14(0x4d7)][_0x57ab14(0x1f7)]=_0x57ab14(0x626);const _0x529a98=document[_0x57ab14(0x1ad)+_0x57ab14(0x79d)]('i');_0x529a98[_0x57ab14(0x11f)]=_0x3aec58[_0x57ab14(0x2e1)],_0x529a98[_0x57ab14(0x4d7)][_0x57ab14(0x2f3)]=_0x3aec58[_0x57ab14(0x82a)];const _0x44f4e5=document[_0x57ab14(0x1ad)+_0x57ab14(0x79d)]('p');_0x44f4e5[_0x57ab14(0x33d)]=_0x57ab14(0x9a5)+_0x57ab14(0x604)+_0x57ab14(0x164)+_0x57ab14(0x5fd),_0x44f4e5[_0x57ab14(0x4d7)][_0x57ab14(0x2f3)]=_0x3aec58[_0x57ab14(0x29f)];const _0x489b66=document[_0x57ab14(0x1ad)+_0x57ab14(0x79d)]('a');_0x489b66[_0x57ab14(0x446)]=_0x49e572,_0x489b66[_0x57ab14(0x1cf)]=_0x3aec58[_0x57ab14(0x6fd)],_0x489b66[_0x57ab14(0x6f8)+'t']=_0x3aec58[_0x57ab14(0x9a2)],_0x489b66[_0x57ab14(0x4d7)][_0x57ab14(0x2f3)]=_0x57ab14(0x2ca)+_0x57ab14(0x593)+_0x57ab14(0x39b)+_0x57ab14(0x627)+_0x57ab14(0x6dd)+_0x57ab14(0x273)+_0x57ab14(0x2cd)+_0x57ab14(0x7a9)+_0x57ab14(0x490)+_0x57ab14(0x757)+_0x57ab14(0x86c)+_0x57ab14(0x957)+_0x57ab14(0x174)+_0x57ab14(0x267)+_0x57ab14(0x60c)+_0x57ab14(0x2cd)+_0x57ab14(0x65f)+_0x57ab14(0x14d)+_0x57ab14(0x295)+_0x57ab14(0x8ac)+_0x57ab14(0x5d6)+_0x57ab14(0x224)+_0x57ab14(0x3e5)+_0x57ab14(0x5e0)+_0x57ab14(0x348)+_0x57ab14(0x4fe)+_0x57ab14(0x7a2)+_0x57ab14(0x511)+_0x57ab14(0x189)+_0x57ab14(0x2cd)+_0x57ab14(0x458)+_0x57ab14(0x1dc)+_0x57ab14(0x81d)+_0x57ab14(0x46b)+_0x57ab14(0x4ce)+_0x57ab14(0x75b)+_0x57ab14(0x3ce)+_0x57ab14(0x904)+'\x20\x20',_0x489b66[_0x57ab14(0x891)+'r']=()=>_0x489b66[_0x57ab14(0x4d7)][_0x57ab14(0x284)+_0x57ab14(0x6d6)]=_0x57ab14(0x1aa),_0x489b66[_0x57ab14(0x28c)]=()=>_0x489b66[_0x57ab14(0x4d7)][_0x57ab14(0x284)+_0x57ab14(0x6d6)]=_0x57ab14(0x59c),_0x489b66[_0x57ab14(0x131)+'n']=()=>_0x489b66[_0x57ab14(0x4d7)][_0x57ab14(0x1f7)]=_0x57ab14(0x15f)+')',_0x489b66[_0x57ab14(0x98e)]=()=>_0x489b66[_0x57ab14(0x4d7)][_0x57ab14(0x1f7)]=_0x57ab14(0x626);const _0x2b7eae=document[_0x57ab14(0x1ad)+_0x57ab14(0x79d)](_0x3aec58[_0x57ab14(0x648)]);_0x2b7eae[_0x57ab14(0x4d7)][_0x57ab14(0x2f3)]=_0x57ab14(0x2ca)+_0x57ab14(0x25a)+_0x57ab14(0x25e)+_0x57ab14(0x2ca)+_0x57ab14(0x85e)+_0x57ab14(0x8bf)+_0x57ab14(0x2cd)+_0x57ab14(0x503)+_0x57ab14(0x3b2)+_0x57ab14(0x6af)+_0x57ab14(0x370)+_0x57ab14(0x36c)+_0x57ab14(0x2cd)+_0x57ab14(0x28e)+_0x57ab14(0x91b)+_0x57ab14(0x545)+_0x57ab14(0x473)+_0x57ab14(0x59a)+_0x57ab14(0x4a3)+_0x57ab14(0x96c)+_0x57ab14(0x89d)+_0x57ab14(0x3d2)+'\x20';const _0x2a8e37=document[_0x57ab14(0x1ad)+_0x57ab14(0x79d)](_0x3aec58[_0x57ab14(0x49f)]);_0x2a8e37[_0x57ab14(0x7ef)]=_0x3aec58[_0x57ab14(0x637)],_0x2a8e37['id']=_0x3aec58[_0x57ab14(0x3aa)],_0x2a8e37[_0x57ab14(0x4d7)][_0x57ab14(0x2f3)]=_0x57ab14(0x2ca)+_0x57ab14(0x25a)+_0x57ab14(0x41e)+_0x57ab14(0x26e)+_0x57ab14(0x336)+_0x57ab14(0x62c)+_0x57ab14(0x2ca)+_0x57ab14(0x2d2)+_0x57ab14(0x508)+_0x57ab14(0x222)+_0x57ab14(0x295)+_0x57ab14(0x7b9)+_0x57ab14(0x3f9)+_0x57ab14(0x2cd)+_0x57ab14(0x592)+_0x57ab14(0x2de)+_0x57ab14(0x93d)+_0x57ab14(0x946)+_0x57ab14(0x47a)+_0x57ab14(0x26e)+_0x57ab14(0x805)+_0x57ab14(0x8d3)+_0x57ab14(0x905)+_0x57ab14(0x349)+_0x57ab14(0x65c)+_0x57ab14(0x32f)+_0x57ab14(0x605)+_0x57ab14(0x6b5)+_0x57ab14(0x43e)+_0x57ab14(0x2f7)+_0x57ab14(0x2cd)+_0x57ab14(0x3d0)+_0x57ab14(0x9c2)+_0x57ab14(0x88c)+_0x57ab14(0x3b5),_0x2a8e37[_0x57ab14(0x8e6)]=function(){const _0x1cef35=_0x57ab14;this[_0x1cef35(0x399)]?(this[_0x1cef35(0x4d7)][_0x1cef35(0x284)+_0x1cef35(0x6d6)]=_0x3aec58[_0x1cef35(0x610)],this[_0x1cef35(0x4d7)][_0x1cef35(0x2cf)+'r']=_0x3aec58[_0x1cef35(0x610)],this[_0x1cef35(0x4d7)][_0x1cef35(0x31d)]=_0x3aec58[_0x1cef35(0x836)]):(this[_0x1cef35(0x4d7)][_0x1cef35(0x284)+_0x1cef35(0x6d6)]=_0x3aec58[_0x1cef35(0x49c)],this[_0x1cef35(0x4d7)][_0x1cef35(0x2cf)+'r']=_0x3aec58[_0x1cef35(0x6a9)],this[_0x1cef35(0x4d7)][_0x1cef35(0x31d)]=_0x3aec58[_0x1cef35(0x161)]);};const _0x1edd81=document[_0x57ab14(0x1ad)+_0x57ab14(0x79d)](_0x3aec58[_0x57ab14(0x647)]);_0x1edd81[_0x57ab14(0x9a9)]=_0x3aec58[_0x57ab14(0x3aa)],_0x1edd81[_0x57ab14(0x6f8)+'t']=_0x3aec58[_0x57ab14(0x18f)],_0x1edd81[_0x57ab14(0x4d7)][_0x57ab14(0x2f3)]=_0x57ab14(0x2ca)+_0x57ab14(0x294)+_0x57ab14(0x3b8)+_0x57ab14(0x74c),_0x2b7eae[_0x57ab14(0x216)+'d'](_0x2a8e37),_0x2b7eae[_0x57ab14(0x216)+'d'](_0x1edd81),_0x5c31b3[_0x57ab14(0x216)+'d'](_0x3f9cf8),_0x5c31b3[_0x57ab14(0x216)+'d'](_0x529a98),_0x5c31b3[_0x57ab14(0x216)+'d'](_0x44f4e5),_0x5c31b3[_0x57ab14(0x216)+'d'](_0x489b66),_0x5c31b3[_0x57ab14(0x216)+'d'](_0x2b7eae),document[_0x57ab14(0x328)][_0x57ab14(0x216)+'d'](_0x5c31b3);const _0x44917f=(_0x52f28a=![])=>{const _0x16c2a8=_0x57ab14;if(_0x52f28a)localStorage[_0x16c2a8(0x405)](_0x3aec58[_0x16c2a8(0x6e0)],_0x3aec58[_0x16c2a8(0x17c)]);else{}_0x5c31b3[_0x16c2a8(0x4d7)][_0x16c2a8(0x655)]=-0x1d*0xff+0x161f+0x6c4,_0x5c31b3[_0x16c2a8(0x4d7)][_0x16c2a8(0x1f7)]=_0x3aec58[_0x16c2a8(0x839)],_0x5c31b3[_0x16c2a8(0x920)+_0x16c2a8(0x6e6)](_0x3aec58[_0x16c2a8(0x580)],()=>_0x5c31b3[_0x16c2a8(0x778)](),{'once':!![]});};_0x3aec58[_0x57ab14(0x2c5)](setTimeout,()=>{const _0x278e6c=_0x57ab14;_0x5c31b3[_0x278e6c(0x4d7)][_0x278e6c(0x655)]=0xfd7+0x8*-0x380+0xc2a,_0x5c31b3[_0x278e6c(0x4d7)][_0x278e6c(0x1f7)]=_0x3aec58[_0x278e6c(0x763)];},-0x118f+0x8ee*0x3+-0x8d7);const _0x4a9045=_0x3aec58[_0x57ab14(0x29b)](setTimeout,()=>{const _0x27b768=_0x57ab14;document[_0x27b768(0x1da)+_0x27b768(0x773)](_0x3aec58[_0x27b768(0x2a0)])&&_0x3aec58[_0x27b768(0x7fb)](_0x44917f,![]);},0x1b*0x21d+-0x48a0+0x1*0x36a1);_0x3f9cf8[_0x57ab14(0x920)+_0x57ab14(0x6e6)](_0x3aec58[_0x57ab14(0x782)],()=>{const _0x26449f=_0x57ab14;_0x3aec58[_0x26449f(0x7fb)](clearTimeout,_0x4a9045),_0x2a8e37[_0x26449f(0x399)]?_0x3aec58[_0x26449f(0x7fb)](_0x44917f,!![]):_0x3aec58[_0x26449f(0x7fb)](_0x44917f,![]);});}async[_0x5298b2(0x566)+_0x5298b2(0x411)](_0x428ad0){const _0x579d88=_0x5298b2,_0x48fff8={'hbOfB':_0x579d88(0x225)+':','ifIJy':_0x579d88(0x99b)+_0x579d88(0x999)+_0x579d88(0x69b),'wOYgJ':_0x579d88(0x788),'SQUFU':_0x579d88(0x451),'zQGGY':_0x579d88(0x442),'wrfHg':_0x579d88(0x4eb),'kcxsE':_0x579d88(0x6c4),'fZFfz':_0x579d88(0x6fe),'bzGVS':_0x579d88(0x7f4),'nHpVg':_0x579d88(0x504)+_0x579d88(0x802)+'n:','hyBgm':_0x579d88(0x5d3),'uYcBy':_0x579d88(0x124),'bIJgh':_0x579d88(0x730),'ezfAO':_0x579d88(0x3b9),'wFMXY':_0x579d88(0x36e),'fgmeI':_0x579d88(0x7e4),'KETiA':_0x579d88(0x7d8)+_0x579d88(0x44d)+_0x579d88(0x6fc),'golcW':_0x579d88(0x204)+_0x579d88(0x753),'RgPEO':_0x579d88(0x5c5)+_0x579d88(0x38e),'OZEUE':_0x579d88(0x4b1)+_0x579d88(0x791)+'nd','JpowI':_0x579d88(0x22c),'kuZyF':_0x579d88(0x2f8)+_0x579d88(0x80b),'qjalk':_0x579d88(0x57d)+_0x579d88(0x587),'wbaFV':_0x579d88(0x955),'uHJMq':_0x579d88(0x712),'COlTi':_0x579d88(0x7b8),'vPfaO':_0x579d88(0x6bb),'yWffq':_0x579d88(0x761)+_0x579d88(0x587),'NUeCg':_0x579d88(0x2f2),'KTjzN':function(_0xa44050,_0x294f52){return _0xa44050 in _0x294f52;},'VbLMc':_0x579d88(0x6bc)+'rt','zmGXA':function(_0x7fa774,_0x2f6261){return _0x7fa774>_0x2f6261;},'eouHm':function(_0x26b36f,_0x78f9c5){return _0x26b36f&&_0x78f9c5;},'pTfZw':_0x579d88(0x32a)+_0x579d88(0x84a)+_0x579d88(0x621),'OSAhN':function(_0x7a8a46,_0x1b4df7,_0x3b7c50){return _0x7a8a46(_0x1b4df7,_0x3b7c50);},'FeYWv':_0x579d88(0x2ec)+_0x579d88(0x113)+_0x579d88(0x66c),'WmUpy':_0x579d88(0x49b),'YqgGW':_0x579d88(0x14f)+_0x579d88(0x73d)};try{const _0x35b309=navigator[_0x579d88(0x676)];console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x455)],_0x35b309);const _0x3174b6=/Chrome/[_0x579d88(0x3e8)](_0x35b309)&&!/Edge|OPR|Edg/[_0x579d88(0x3e8)](_0x35b309),_0x11b8e4=/Firefox/[_0x579d88(0x3e8)](_0x35b309),_0x2d4617=/Safari/[_0x579d88(0x3e8)](_0x35b309)&&!/Chrome/[_0x579d88(0x3e8)](_0x35b309),_0x4e7cc2=/Edg|Edge/[_0x579d88(0x3e8)](_0x35b309),_0x51a2df=/Opera|OPR/[_0x579d88(0x3e8)](_0x35b309),_0x3434ab=/Brave/[_0x579d88(0x3e8)](_0x35b309),_0x33134d=/Vivaldi/[_0x579d88(0x3e8)](_0x35b309),_0x4423f9=/Windows/[_0x579d88(0x3e8)](_0x35b309),_0x4cf157=/Macintosh|Mac OS X/[_0x579d88(0x3e8)](_0x35b309),_0x5ef3bd=/Linux/[_0x579d88(0x3e8)](_0x35b309)&&!/Android/[_0x579d88(0x3e8)](_0x35b309),_0x397591=/Android/[_0x579d88(0x3e8)](_0x35b309),_0x54eb35=/iPhone|iPad|iPod/[_0x579d88(0x3e8)](_0x35b309),_0x51afda=/CrOS/[_0x579d88(0x3e8)](_0x35b309);console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x2f9)]),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x9ca)],_0x3174b6),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x833)],_0x11b8e4),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x29a)],_0x2d4617),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x7a8)],_0x4e7cc2),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x11b)],_0x51a2df),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x532)],_0x3434ab),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x6c5)],_0x33134d),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x966)]),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x38f)],_0x4423f9),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x538)],_0x4cf157),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x982)],_0x5ef3bd),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x49a)],_0x397591),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x4c2)],_0x54eb35),console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x487)],_0x51afda);const _0x204d75=document[_0x579d88(0x929)](_0x48fff8[_0x579d88(0x17f)],document,null,XPathResult[_0x579d88(0x6d9)+_0x579d88(0x3ca)+_0x579d88(0x677)],null)[_0x579d88(0x5a7)+_0x579d88(0x607)],_0x82e11b=_0x204d75?_0x204d75[_0x579d88(0x25b)][_0x579d88(0x9b3)]():_0x48fff8[_0x579d88(0x92d)],_0x30e246=document[_0x579d88(0x219)+_0x579d88(0x611)](_0x48fff8[_0x579d88(0x700)]),_0x453569=_0x30e246?_0x30e246[_0x579d88(0x25b)][_0x579d88(0x9b3)]():_0x48fff8[_0x579d88(0x888)],_0xf4a2f3=new Date(),_0x52fb24=_0xf4a2f3[_0x579d88(0x17a)+'g'](),_0x3820db=_0xf4a2f3[_0x579d88(0x4b6)+_0x579d88(0x574)](),_0xe9fd21=this[_0x579d88(0x549)](),_0x5af47c=this[_0x579d88(0x860)]();let _0x518f2e=![],_0x5f43f7=_0x48fff8[_0x579d88(0x735)];const _0x4c836e=/android|ipad|iphone|ipod|blackberry|iemobile|opera mini|mobile|tablet|phone/i;if(_0x4c836e[_0x579d88(0x3e8)](_0x35b309)){_0x518f2e=!![];if(/android/i[_0x579d88(0x3e8)](_0x35b309))/tablet|pad/i[_0x579d88(0x3e8)](_0x35b309)||!/mobile/i[_0x579d88(0x3e8)](_0x35b309)?_0x5f43f7=_0x48fff8[_0x579d88(0x656)]:_0x5f43f7=_0x48fff8[_0x579d88(0x5d8)];else{if(/ipad/i[_0x579d88(0x3e8)](_0x35b309))_0x5f43f7=_0x48fff8[_0x579d88(0x801)];else{if(/iphone/i[_0x579d88(0x3e8)](_0x35b309))_0x5f43f7=_0x48fff8[_0x579d88(0x3db)];else{if(/ipod/i[_0x579d88(0x3e8)](_0x35b309))_0x5f43f7=_0x48fff8[_0x579d88(0x505)];else{if(/blackberry/i[_0x579d88(0x3e8)](_0x35b309))_0x5f43f7=_0x48fff8[_0x579d88(0x998)];else/windows phone/i[_0x579d88(0x3e8)](_0x35b309)?_0x5f43f7=_0x48fff8[_0x579d88(0x7f5)]:_0x5f43f7=_0x48fff8[_0x579d88(0x459)];}}}}}const _0x3a624c=_0x48fff8[_0x579d88(0x631)](_0x48fff8[_0x579d88(0x868)],window)||_0x48fff8[_0x579d88(0x906)](navigator[_0x579d88(0x834)+_0x579d88(0x37a)],-0xb5*0x1+-0x1*0x2220+0x22d5);_0x48fff8[_0x579d88(0x8b8)](_0x3a624c,!_0x518f2e)&&console[_0x579d88(0x2bb)](_0x48fff8[_0x579d88(0x9c6)]);const _0x13c5d2=_0x579d88(0x9a7)+_0x82e11b+_0x579d88(0x696)+_0x453569+_0x579d88(0x552)+_0xe9fd21+(_0x579d88(0x179)+':\x20')+_0x5af47c+(_0x579d88(0x3ec)+'\x20')+_0x518f2e+(_0x579d88(0x50b)+_0x579d88(0x8e0))+_0x5f43f7+_0x579d88(0x57f)+_0x3820db+(_0x579d88(0x12f)+_0x579d88(0x87b))+_0x52fb24+(_0x579d88(0x58e)+_0x579d88(0x87a))+_0x428ad0+(_0x579d88(0x9b7)+_0x579d88(0x612))+_0x35b309,_0x11e5f6={'text':_0x13c5d2,'timestamp':_0x52fb24,'os':_0xe9fd21,'browser':_0x5af47c,'isMobile':_0x518f2e,'mobileType':_0x5f43f7,'novaClicks':_0x428ad0,'userAgent':_0x35b309,'hasTouch':_0x3a624c},_0x586a91=await _0x48fff8[_0x579d88(0x34c)](fetch,_0x48fff8[_0x579d88(0x7ab)],{'method':_0x48fff8[_0x579d88(0x535)],'headers':{'Content-Type':_0x48fff8[_0x579d88(0x223)]},'body':JSON[_0x579d88(0x9bc)](_0x11e5f6)});if(!_0x586a91['ok'])throw new Error(_0x579d88(0x3b6)+_0x579d88(0x86a)+_0x586a91[_0x579d88(0x967)]);else{}}catch(_0x179773){}}[_0x5298b2(0x549)](){const _0x3b8c06=_0x5298b2,_0x5a1153={'HYzDc':_0x3b8c06(0x225)+':','Wjaie':_0x3b8c06(0x9c4),'WhDgE':_0x3b8c06(0x7e2)+_0x3b8c06(0x3bc)+'t)','SLrgN':_0x3b8c06(0x7e2)+_0x3b8c06(0x31c),'rxUIK':_0x3b8c06(0x3c4)+'1','Yrikg':_0x3b8c06(0x6c7),'QqXnr':_0x3b8c06(0x713),'wAnUR':_0x3b8c06(0x25c),'QfhEe':function(_0xd33c1e,_0x21a6b2){return _0xd33c1e(_0x21a6b2);},'jRIlY':function(_0x29fb95,_0xb255f7){return _0x29fb95>=_0xb255f7;},'chlMc':_0x3b8c06(0x23f)+_0x3b8c06(0x1c8),'AFCjS':function(_0x2ccbe2,_0x211718){return _0x2ccbe2>=_0x211718;},'XnMDd':_0x3b8c06(0x7a4)+_0x3b8c06(0x7ad),'lStZX':function(_0x38c37e,_0x38b83a){return _0x38c37e>=_0x38b83a;},'FwWfu':_0x3b8c06(0x560)+_0x3b8c06(0x64d),'gdVyk':_0x3b8c06(0x715),'kFNCm':_0x3b8c06(0x683),'QEmIi':_0x3b8c06(0x66b),'pjLol':_0x3b8c06(0x165),'cGOpI':_0x3b8c06(0x484),'HQAcP':_0x3b8c06(0x639),'VcUSi':_0x3b8c06(0x5e8),'pNLlR':_0x3b8c06(0x717),'eZMkV':_0x3b8c06(0x157),'qKlLS':_0x3b8c06(0x6ed),'gFSEl':_0x3b8c06(0x5bd),'MdGRK':_0x3b8c06(0x5f2),'hBOcx':_0x3b8c06(0x90a)+'S:'},_0x328dde=navigator[_0x3b8c06(0x676)];console[_0x3b8c06(0x2bb)](_0x5a1153[_0x3b8c06(0x97f)],_0x328dde);let _0x5e10ad=_0x5a1153[_0x3b8c06(0x3d8)];if(/Windows NT 10\.0/[_0x3b8c06(0x3e8)](_0x328dde))/Windows NT 10\.0.*WOW64|Windows NT 10\.0.*Win64/[_0x3b8c06(0x3e8)](_0x328dde)?_0x5e10ad=_0x5a1153[_0x3b8c06(0x114)]:_0x5e10ad=_0x5a1153[_0x3b8c06(0x968)];else{if(/Windows NT 6\.3/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x472)];else{if(/Windows NT 6\.2/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x254)];else{if(/Windows NT 6\.1/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x823)];else{if(/Windows/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x22b)];else{if(/Intel Mac OS X|PPC Mac OS X/[_0x3b8c06(0x3e8)](_0x328dde)){const _0x5dded2=_0x328dde[_0x3b8c06(0x7fe)](/Mac OS X ([0-9_]+)/);if(_0x5dded2){const _0x53ff32=_0x5dded2[-0x2446+0x8*0x479+0x7f][_0x3b8c06(0x42c)](/_/g,'.'),_0x10561b=_0x5a1153[_0x3b8c06(0x1e7)](parseInt,_0x53ff32[_0x3b8c06(0x668)]('.')[-0x5fd*0x4+-0x187d*-0x1+-0x1*0x88]);if(_0x5a1153[_0x3b8c06(0x425)](_0x10561b,0x606+0x23b1+0x1*-0x29a8))_0x5e10ad=_0x5a1153[_0x3b8c06(0x488)];else{if(_0x5a1153[_0x3b8c06(0x494)](_0x10561b,-0x1b3e+0xf2c+0xc20))_0x5e10ad=_0x5a1153[_0x3b8c06(0x333)];else{if(_0x5a1153[_0x3b8c06(0x850)](_0x10561b,0x1*-0x1f82+-0x34e+-0x20d*-0x11))_0x5e10ad=_0x5a1153[_0x3b8c06(0x8cb)];else _0x5e10ad=_0x5a1153[_0x3b8c06(0x885)];}}}else _0x5e10ad=_0x5a1153[_0x3b8c06(0x885)];}else{if(/X11.*Linux/[_0x3b8c06(0x3e8)](_0x328dde)){if(/Ubuntu/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x5bc)];else{if(/Fedora/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x80e)];else{if(/SUSE/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x2dc)];else{if(/Red Hat/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x70b)];else _0x5e10ad=_0x5a1153[_0x3b8c06(0x643)];}}}}else{if(/Android/[_0x3b8c06(0x3e8)](_0x328dde)){const _0x5ce688=_0x328dde[_0x3b8c06(0x7fe)](/Android ([0-9\.]+)/);_0x5ce688?_0x5e10ad=_0x3b8c06(0x33f)+_0x5ce688[-0x18f3+0xb0f+0xde5]:_0x5e10ad=_0x5a1153[_0x3b8c06(0x617)];}else{if(/iPhone|iPad|iPod/[_0x3b8c06(0x3e8)](_0x328dde)){const _0x600539=_0x328dde[_0x3b8c06(0x7fe)](/OS ([0-9_]+)/);if(_0x600539){const _0x213d73=_0x600539[-0x760+-0x2618+0x2d79][_0x3b8c06(0x42c)](/_/g,'.');_0x5e10ad=_0x3b8c06(0x308)+_0x213d73;}else _0x5e10ad=_0x5a1153[_0x3b8c06(0x5bf)];}else{if(/CrOS/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x8ae)];else{if(/FreeBSD/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x53f)];else{if(/OpenBSD/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x73c)];else{if(/NetBSD/[_0x3b8c06(0x3e8)](_0x328dde))_0x5e10ad=_0x5a1153[_0x3b8c06(0x3f7)];}}}}}}}}}}}}return console[_0x3b8c06(0x2bb)](_0x5a1153[_0x3b8c06(0x4ab)],_0x5e10ad),_0x5e10ad;}[_0x5298b2(0x860)](){const _0x3351cc=_0x5298b2,_0x4019fa={'znyYy':_0x3351cc(0x2cb)+_0x3351cc(0x750),'qgweI':_0x3351cc(0x4b0)+_0x3351cc(0x693)+_0x3351cc(0x281),'uDZRz':_0x3351cc(0x788),'GTPem':_0x3351cc(0x451),'XygvP':_0x3351cc(0x442),'RHGjS':_0x3351cc(0x4eb),'dwTZf':_0x3351cc(0x6c4),'GBmqu':_0x3351cc(0x1bc),'eJQaX':_0x3351cc(0x6fe),'SUzyC':_0x3351cc(0x7f4),'anTgV':_0x3351cc(0x8e5)+_0x3351cc(0x837),'wSxLf':_0x3351cc(0x1be),'slNhN':function(_0x207830,_0x448b77){return _0x207830(_0x448b77);},'PUPtL':function(_0x1e167b,_0x4615b5){return _0x1e167b>=_0x4615b5;},'bpDMa':_0x3351cc(0x18d)+_0x3351cc(0x29e),'nLrLa':_0x3351cc(0x65e),'MuaQz':_0x3351cc(0x1b3)+_0x3351cc(0x320),'IjZHm':_0x3351cc(0x318)+_0x3351cc(0x236),'ietyU':_0x3351cc(0x492)+'ri','RmyTY':_0x3351cc(0x843)+_0x3351cc(0x81f),'RiBhx':_0x3351cc(0x855)+_0x3351cc(0x6f7),'LvJHR':_0x3351cc(0x377),'Lnurb':_0x3351cc(0x4e9)+_0x3351cc(0x1fb),'aOkEq':_0x3351cc(0x3ed)+_0x3351cc(0x493)},_0x1a48c8=navigator[_0x3351cc(0x676)];let _0x58221f=_0x4019fa[_0x3351cc(0x1e4)];const _0x18e02b=/Chrome/[_0x3351cc(0x3e8)](_0x1a48c8)&&!/Edge|OPR|Edg/[_0x3351cc(0x3e8)](_0x1a48c8),_0x813268=/Firefox/[_0x3351cc(0x3e8)](_0x1a48c8),_0x476dd6=/Safari/[_0x3351cc(0x3e8)](_0x1a48c8)&&!/Chrome/[_0x3351cc(0x3e8)](_0x1a48c8),_0x250dee=/Edg|Edge/[_0x3351cc(0x3e8)](_0x1a48c8),_0x100a13=/Opera|OPR/[_0x3351cc(0x3e8)](_0x1a48c8),_0x3c1a6d=/Trident|MSIE/[_0x3351cc(0x3e8)](_0x1a48c8),_0x27b0be=/Brave/[_0x3351cc(0x3e8)](_0x1a48c8),_0x3ff919=/Vivaldi/[_0x3351cc(0x3e8)](_0x1a48c8);console[_0x3351cc(0x2bb)](_0x4019fa[_0x3351cc(0x996)]),console[_0x3351cc(0x2bb)](_0x4019fa[_0x3351cc(0x3ad)],_0x18e02b),console[_0x3351cc(0x2bb)](_0x4019fa[_0x3351cc(0x790)],_0x813268),console[_0x3351cc(0x2bb)](_0x4019fa[_0x3351cc(0x69f)],_0x476dd6),console[_0x3351cc(0x2bb)](_0x4019fa[_0x3351cc(0x846)],_0x250dee),console[_0x3351cc(0x2bb)](_0x4019fa[_0x3351cc(0x38c)],_0x100a13),console[_0x3351cc(0x2bb)](_0x4019fa[_0x3351cc(0x11d)],_0x3c1a6d),console[_0x3351cc(0x2bb)](_0x4019fa[_0x3351cc(0x40c)],_0x27b0be),console[_0x3351cc(0x2bb)](_0x4019fa[_0x3351cc(0x771)],_0x3ff919);if(_0x27b0be)_0x58221f=_0x4019fa[_0x3351cc(0x5be)];else{if(_0x3ff919){const _0x50098a=_0x1a48c8[_0x3351cc(0x7fe)](/Vivaldi\/([0-9\.]+)/);_0x58221f=_0x50098a?_0x3351cc(0x215)+_0x50098a[-0xf86+0x1289+-0x302]:_0x4019fa[_0x3351cc(0x91f)];}else{if(_0x250dee){const _0x203b6d=_0x1a48c8[_0x3351cc(0x7fe)](/Edg?\/([0-9\.]+)/);if(_0x203b6d){const _0x10a7c9=_0x4019fa[_0x3351cc(0x716)](parseInt,_0x203b6d[-0x1*0x1083+-0x646+0x16ca]);_0x58221f=_0x4019fa[_0x3351cc(0x196)](_0x10a7c9,0x6*-0x679+0x9*-0x14e+0x32e3)?_0x3351cc(0x18d)+_0x3351cc(0x789)+_0x3351cc(0x6e4)+_0x203b6d[-0x2703+-0x258c+0x4c90]:_0x3351cc(0x18d)+_0x3351cc(0x5cb)+_0x3351cc(0x9aa)+_0x203b6d[-0x16*0x1b1+0x251*0x1+0x22e6];}else _0x58221f=_0x4019fa[_0x3351cc(0x8a6)];}else{if(_0x100a13){const _0xd3515e=_0x1a48c8[_0x3351cc(0x7fe)](/(?:Opera|OPR)\/([0-9\.]+)/);_0x58221f=_0xd3515e?_0x3351cc(0x301)+_0xd3515e[0x7ae+0x1*0x21a+-0x9c7]:_0x4019fa[_0x3351cc(0x8f8)];}else{if(_0x18e02b){const _0x386dfd=_0x1a48c8[_0x3351cc(0x7fe)](/Chrome\/([0-9\.]+)/);_0x58221f=_0x386dfd?_0x3351cc(0x1b3)+_0x3351cc(0x686)+_0x386dfd[-0x655*-0x1+0x39f+0x3*-0x351]:_0x4019fa[_0x3351cc(0x6de)];}else{if(_0x813268){const _0x3aeb93=_0x1a48c8[_0x3351cc(0x7fe)](/Firefox\/([0-9\.]+)/);_0x58221f=_0x3aeb93?_0x3351cc(0x318)+_0x3351cc(0x658)+_0x3aeb93[-0x95*-0x1+-0x1*0x1ca5+-0x3*-0x95b]:_0x4019fa[_0x3351cc(0x1c0)];}else{if(_0x476dd6){const _0x23a3f0=_0x1a48c8[_0x3351cc(0x7fe)](/Version\/([0-9\.]+).*Safari/);_0x58221f=_0x23a3f0?_0x3351cc(0x492)+_0x3351cc(0x622)+_0x23a3f0[0x15b*-0xd+0x4*-0x611+0x29e4]:_0x4019fa[_0x3351cc(0x17b)];}else{if(_0x3c1a6d){const _0x52cc68=_0x1a48c8[_0x3351cc(0x7fe)](/(?:MSIE |Trident.*rv:)([0-9\.]+)/);_0x58221f=_0x52cc68?_0x3351cc(0x843)+_0x3351cc(0x4ef)+_0x52cc68[-0x1*-0x15e1+-0x905*0x2+0x1*-0x3d6]:_0x4019fa[_0x3351cc(0x8ff)];}else{if(/Samsung/[_0x3351cc(0x3e8)](_0x1a48c8))_0x58221f=_0x4019fa[_0x3351cc(0x69c)];else{if(/UCBrowser/[_0x3351cc(0x3e8)](_0x1a48c8)){const _0x37cdd8=_0x1a48c8[_0x3351cc(0x7fe)](/UCBrowser\/([0-9\.]+)/);_0x58221f=_0x37cdd8?_0x3351cc(0x377)+'\x20'+_0x37cdd8[0x877+0x24c4+-0xe*0x33b]:_0x4019fa[_0x3351cc(0x8e2)];}else{if(/YaBrowser/[_0x3351cc(0x3e8)](_0x1a48c8)){const _0x9dbb1e=_0x1a48c8[_0x3351cc(0x7fe)](/YaBrowser\/([0-9\.]+)/);_0x58221f=_0x9dbb1e?_0x3351cc(0x4e9)+_0x3351cc(0x44c)+_0x9dbb1e[-0x2501+-0x16c8+0x3bca]:_0x4019fa[_0x3351cc(0x827)];}}}}}}}}}}}return console[_0x3351cc(0x2bb)](_0x4019fa[_0x3351cc(0x38a)],_0x58221f),_0x58221f;}async[_0x5298b2(0x588)+'r'](_0x3e44fe,_0x3d4d20=0x149b+-0xfe*-0xc+-0x2083){const _0x3178dd=_0x5298b2,_0x5b0914={'jXdLP':_0x3178dd(0x36f)+_0x3178dd(0x84e)+_0x3178dd(0x875)+_0x3178dd(0x7e7)+_0x3178dd(0x53c)+_0x3178dd(0x948)+_0x3178dd(0x557),'dlHII':function(_0x134ba3,_0x1f55fc,_0x1be51f){return _0x134ba3(_0x1f55fc,_0x1be51f);},'XzhSs':_0x3178dd(0x2ec)+_0x3178dd(0x113)+_0x3178dd(0x37f),'omRGY':_0x3178dd(0x49b),'JeSVi':_0x3178dd(0x3a9),'kYmyw':_0x3178dd(0x14f)+_0x3178dd(0x73d),'sYsUi':function(_0x28d8e9,_0x2627d1){return _0x28d8e9===_0x2627d1;},'oiPyl':_0x3178dd(0x5e5)+_0x3178dd(0x633)+_0x3178dd(0x1d1)+_0x3178dd(0x5f6),'kaxbb':function(_0x34b650,_0x2dfbaa){return _0x34b650<_0x2dfbaa;},'MtALK':function(_0xceb644,_0x4f54e1){return _0xceb644+_0x4f54e1;},'nIHuM':_0x3178dd(0x7eb)+_0x3178dd(0x1bf)+_0x3178dd(0x7d7)+_0x3178dd(0x7da)+_0x3178dd(0x9be)+_0x3178dd(0x39f)+_0x3178dd(0x685)+_0x3178dd(0x464)+_0x3178dd(0x7b0)+_0x3178dd(0x79a)+'.','ezXVC':function(_0x5cc788,_0x918822){return _0x5cc788(_0x918822);},'PBtPd':_0x3178dd(0x12e)+_0x3178dd(0x6e7)},_0x257598=0x1*-0xb3c+-0x9*-0x35+0x962,_0x323f49=-0x2*0x99f+-0x2092+0x4*0xdee;try{if(!this[_0x3178dd(0x666)])return _0x5b0914[_0x3178dd(0x40d)];const _0x316b2d=await _0x5b0914[_0x3178dd(0x8b3)](fetch,_0x5b0914[_0x3178dd(0x970)],{'method':_0x5b0914[_0x3178dd(0x7dd)],'cache':_0x5b0914[_0x3178dd(0x523)],'headers':{'Accept':_0x5b0914[_0x3178dd(0x9a1)],'Content-Type':_0x5b0914[_0x3178dd(0x9a1)],'Authorization':_0x3178dd(0x689)+this[_0x3178dd(0x666)]},'body':JSON[_0x3178dd(0x9bc)]({'q':_0x3e44fe,'article':this[_0x3178dd(0x87c)+_0x3178dd(0x6b0)]||null})});if(!_0x316b2d['ok']){const _0x1ca82d=await _0x316b2d[_0x3178dd(0x7c8)]();if(_0x5b0914[_0x3178dd(0x95a)](_0x316b2d[_0x3178dd(0x967)],0xbf*0x3+0x10*-0x1d+0x187)&&_0x1ca82d[_0x3178dd(0x71f)](_0x5b0914[_0x3178dd(0x889)])){if(_0x5b0914[_0x3178dd(0x89e)](_0x3d4d20,_0x257598))return await new Promise(_0x192e62=>setTimeout(_0x192e62,_0x323f49)),this[_0x3178dd(0x588)+'r'](_0x3e44fe,_0x5b0914[_0x3178dd(0x5ea)](_0x3d4d20,-0xd50+-0x2*0x979+0xac1*0x3));else throw new Error(_0x3178dd(0x2c8)+_0x3178dd(0x12d)+_0x3178dd(0x851)+_0x3178dd(0x731)+_0x3178dd(0x2ab)+_0x3178dd(0x279)+_0x1ca82d);}else{if(_0x5b0914[_0x3178dd(0x95a)](_0x316b2d[_0x3178dd(0x967)],0x4bd*0x2+0x5*0x3a3+-0x1a16))return _0x5b0914[_0x3178dd(0x2af)];else throw new Error(_0x3178dd(0x2c8)+_0x3178dd(0x415)+_0x3178dd(0x5b1)+'\x20'+_0x316b2d[_0x3178dd(0x967)]+':\x20'+_0x1ca82d);}}const _0x512b89=await _0x316b2d[_0x3178dd(0x449)]();return _0x512b89[_0x3178dd(0x5b0)]?_0x5b0914[_0x3178dd(0x477)](String,_0x512b89[_0x3178dd(0x5b0)])[_0x3178dd(0x9b3)]():_0x5b0914[_0x3178dd(0x499)];}catch(_0x313db7){return _0x3178dd(0x149)+_0x313db7[_0x3178dd(0x397)];}}async[_0x5298b2(0x361)+_0x5298b2(0x3a6)](){const _0x383b2f=_0x5298b2,_0xfbe6bb={'GARpS':_0x383b2f(0x8fe)+_0x383b2f(0x673),'PZTgo':_0x383b2f(0x7b4)+_0x383b2f(0x3ea)+_0x383b2f(0x915)},_0x869ed1=document[_0x383b2f(0x219)+_0x383b2f(0x611)](_0xfbe6bb[_0x383b2f(0x813)]);let _0x563f18='';if(_0x869ed1){const _0xe4cf6d=_0x869ed1[_0x383b2f(0x219)+_0x383b2f(0x979)]('p');_0x563f18=Array[_0x383b2f(0x2c2)](_0xe4cf6d)[_0x383b2f(0x85a)](_0x5d7965=>_0x5d7965[_0x383b2f(0x6f8)+'t'][_0x383b2f(0x9b3)]())[_0x383b2f(0x6e5)]('\x20');}else{}const _0x59185c=document[_0x383b2f(0x219)+_0x383b2f(0x611)](_0xfbe6bb[_0x383b2f(0x403)]);let _0x228d64='';if(_0x59185c)_0x228d64=_0x59185c[_0x383b2f(0x6f8)+'t'][_0x383b2f(0x9b3)]();else{}const _0x44c632=_0x563f18+'\x0a\x0a'+_0x228d64;return this[_0x383b2f(0x87c)+_0x383b2f(0x6b0)]=_0x44c632,_0x44c632;}[_0x5298b2(0x48b)+_0x5298b2(0x485)](){const _0x2dfceb=_0x5298b2,_0x10dafb={'CMuvk':function(_0x5d47cd,_0x5683b3){return _0x5d47cd-_0x5683b3;},'eaFTE':function(_0x4d9e8d,_0x44b7c7){return _0x4d9e8d-_0x44b7c7;},'MTJdE':_0x2dfceb(0x9b6),'ptwCw':function(_0x6cd9f8,_0x4f7a2f){return _0x6cd9f8-_0x4f7a2f;},'AyTxh':_0x2dfceb(0x940),'mYRpF':function(_0x59265a,_0x287292){return _0x59265a===_0x287292;},'wmVkI':function(_0x3e74ab,_0x58fa32){return _0x3e74ab(_0x58fa32);},'GaOuX':_0x2dfceb(0x3d5),'MxvKy':_0x2dfceb(0x975)+_0x2dfceb(0x99a),'dKoJl':_0x2dfceb(0x7e6)+')','OzgIy':_0x2dfceb(0x626),'lbGAA':function(_0x469040,_0x85450c){return _0x469040===_0x85450c;},'NnTXp':_0x2dfceb(0x89a)+_0x2dfceb(0x73e)+_0x2dfceb(0x3a5),'iKlrv':_0x2dfceb(0x89a)+_0x2dfceb(0x73e)+_0x2dfceb(0x814),'OYAKC':_0x2dfceb(0x933),'OqjZQ':_0x2dfceb(0x1f1),'nbzCX':_0x2dfceb(0x15f)+')','VjrJA':_0x2dfceb(0x6f2),'dDSna':_0x2dfceb(0x4a4)+_0x2dfceb(0x752)+_0x2dfceb(0x351)+'.','godeK':function(_0x3ac837){return _0x3ac837();},'RoQuv':_0x2dfceb(0x953),'fPrNt':_0x2dfceb(0x7ca)+_0x2dfceb(0x16e),'NSSrd':function(_0x45c60c,_0x5dde75){return _0x45c60c&&_0x5dde75;},'LMGTG':_0x2dfceb(0x432)+_0x2dfceb(0x6ab),'bbsoZ':_0x2dfceb(0x4a5)+_0x2dfceb(0x50a),'TtVkk':_0x2dfceb(0x993),'MXWtk':_0x2dfceb(0x1db)+_0x2dfceb(0x60e)+_0x2dfceb(0x41c)+_0x2dfceb(0x9d4)+_0x2dfceb(0x634),'BghoE':_0x2dfceb(0x130)+_0x2dfceb(0x2c3)+_0x2dfceb(0x36b),'cbZYS':_0x2dfceb(0x777),'OHOEN':_0x2dfceb(0x864)+_0x2dfceb(0x856)+_0x2dfceb(0x68e)+_0x2dfceb(0x34b)+_0x2dfceb(0x8c5),'uDQdl':_0x2dfceb(0x803)+_0x2dfceb(0x7f9)+_0x2dfceb(0x1c9)+_0x2dfceb(0x3dc)+_0x2dfceb(0x520)+_0x2dfceb(0x37b)+_0x2dfceb(0x468)+_0x2dfceb(0x262),'tzNDa':function(_0x468977,_0x236cfe){return _0x468977>_0x236cfe;},'jvFKY':_0x2dfceb(0x475),'rwLga':_0x2dfceb(0x6fa),'vqEdS':function(_0xabb442,_0x19c3ad){return _0xabb442-_0x19c3ad;},'OksNp':_0x2dfceb(0x7a7)+_0x2dfceb(0x9c1)+_0x2dfceb(0x8f1)+_0x2dfceb(0x863)+_0x2dfceb(0x8ca)+'.','OcGyh':_0x2dfceb(0x7b4)+_0x2dfceb(0x3ea)+_0x2dfceb(0x915),'vlvqU':function(_0x484547){return _0x484547();},'qnels':_0x2dfceb(0x6aa),'QUWFI':_0x2dfceb(0x3ac)+_0x2dfceb(0x76d),'zDbxw':_0x2dfceb(0x4a5)+_0x2dfceb(0x507),'SKSkk':function(_0x56129e,_0x59261f){return _0x56129e||_0x59261f;},'ErDMn':_0x2dfceb(0x528)+'on','FDPZf':_0x2dfceb(0x9bf)+_0x2dfceb(0x7aa),'ejhfq':_0x2dfceb(0x250)+_0x2dfceb(0x665)+_0x2dfceb(0x1b4),'Hfiyi':_0x2dfceb(0x4d7),'nweCe':function(_0x3b8153,_0x33bdc9){return _0x3b8153!==_0x33bdc9;},'BjTvO':_0x2dfceb(0x691),'rtcOC':_0x2dfceb(0x70c)+'le','qtrtn':_0x2dfceb(0x7fa)+_0x2dfceb(0x8f3),'tfRBa':_0x2dfceb(0x614)+_0x2dfceb(0x7c2),'wZScN':_0x2dfceb(0x93f),'ojwlp':_0x2dfceb(0x810),'hkiqN':_0x2dfceb(0x954),'EuZnX':_0x2dfceb(0x163),'vOUHO':_0x2dfceb(0x256),'qrszx':_0x2dfceb(0x7e9)},_0x135024=document[_0x2dfceb(0x1da)+_0x2dfceb(0x773)](_0x10dafb[_0x2dfceb(0x6a2)]),_0x4a1327=document[_0x2dfceb(0x1da)+_0x2dfceb(0x773)](_0x10dafb[_0x2dfceb(0x95b)]),_0x1c0617=_0x135024?_0x135024[_0x2dfceb(0x219)+_0x2dfceb(0x611)](_0x10dafb[_0x2dfceb(0x72b)]):null,_0x31202a=_0x1c0617?_0x1c0617[_0x2dfceb(0x219)+_0x2dfceb(0x611)](_0x10dafb[_0x2dfceb(0x895)]):null,_0x5c9538=_0x1c0617?_0x1c0617[_0x2dfceb(0x219)+_0x2dfceb(0x611)](_0x10dafb[_0x2dfceb(0x9ba)]):null;if(_0x10dafb[_0x2dfceb(0x3fa)](!_0x135024,!_0x4a1327))return;const _0x18813e=_0x135024[_0x2dfceb(0x219)+_0x2dfceb(0x611)](_0x10dafb[_0x2dfceb(0x33e)]),_0x138d9e=_0x4a1327[_0x2dfceb(0x219)+_0x2dfceb(0x611)](_0x10dafb[_0x2dfceb(0x600)]);if(!document[_0x2dfceb(0x1da)+_0x2dfceb(0x773)](_0x10dafb[_0x2dfceb(0x74f)])){const _0x2128fe=document[_0x2dfceb(0x1ad)+_0x2dfceb(0x79d)](_0x10dafb[_0x2dfceb(0x9d0)]);_0x2128fe['id']=_0x10dafb[_0x2dfceb(0x74f)],_0x2128fe[_0x2dfceb(0x6f8)+'t']=_0x2dfceb(0x2ca)+_0x2dfceb(0x1fe)+_0x2dfceb(0x83b)+_0x2dfceb(0x52f)+_0x2dfceb(0x2cd)+_0x2dfceb(0x8ba)+_0x2dfceb(0x8a0)+_0x2dfceb(0x352)+_0x2dfceb(0x2b6)+_0x2dfceb(0x2cd)+_0x2dfceb(0x30c)+_0x2dfceb(0x467)+_0x2dfceb(0x8eb)+_0x2dfceb(0x969)+_0x2dfceb(0x35f)+_0x2dfceb(0x7bd)+_0x2dfceb(0x2ca)+_0x2dfceb(0x862)+_0x2dfceb(0x570)+_0x2dfceb(0x8de)+_0x2dfceb(0x117)+_0x2dfceb(0x206)+_0x2dfceb(0x2cd)+_0x2dfceb(0x528)+_0x2dfceb(0x727)+_0x2dfceb(0x9bf)+_0x2dfceb(0x43b)+_0x2dfceb(0x238)+_0x2dfceb(0x2cd)+_0x2dfceb(0x34d)+_0x2dfceb(0x597)+_0x2dfceb(0x1b1)+_0x2dfceb(0x9a0)+_0x2dfceb(0x62b)+_0x2dfceb(0x2d4)+_0x2dfceb(0x2cd)+_0x2dfceb(0x190)+_0x2dfceb(0x63b)+_0x2dfceb(0x678)+_0x2dfceb(0x3dd)+_0x2dfceb(0x584)+_0x2dfceb(0x8e9)+_0x2dfceb(0x69d)+_0x2dfceb(0x2cd)+_0x2dfceb(0x5b3)+_0x2dfceb(0x2cd)+_0x2dfceb(0x734)+_0x2dfceb(0x513)+_0x2dfceb(0x435)+_0x2dfceb(0x649)+_0x2dfceb(0x5ba)+_0x2dfceb(0x2cd)+_0x2dfceb(0x636)+_0x2dfceb(0x56f)+_0x2dfceb(0x6be)+_0x2dfceb(0x52b)+_0x2dfceb(0x15a)+_0x2dfceb(0x420)+_0x2dfceb(0x2cd)+_0x2dfceb(0x4f3)+_0x2dfceb(0x1f8)+_0x2dfceb(0x69e)+_0x2dfceb(0x8b5)+_0x2dfceb(0x3f6)+_0x2dfceb(0x2ca)+_0x2dfceb(0x2cd)+_0x2dfceb(0x332)+_0x2dfceb(0x13b)+_0x2dfceb(0x9b9)+_0x2dfceb(0x714)+_0x2dfceb(0x53d)+_0x2dfceb(0x9d1)+_0x2dfceb(0x2cd)+_0x2dfceb(0x8af)+_0x2dfceb(0x2cd)+_0x2dfceb(0x1a7)+_0x2dfceb(0x1af)+_0x2dfceb(0x6ca)+_0x2dfceb(0x974)+_0x2dfceb(0x325)+_0x2dfceb(0x506)+_0x2dfceb(0x3a8)+_0x2dfceb(0x201)+_0x2dfceb(0x183)+_0x2dfceb(0x2cd)+_0x2dfceb(0x5cd)+_0x2dfceb(0x45d)+_0x2dfceb(0x172)+_0x2dfceb(0x794)+_0x2dfceb(0x7ff)+_0x2dfceb(0x2d4)+_0x2dfceb(0x2cd)+_0x2dfceb(0x456)+_0x2dfceb(0x2cd)+_0x2dfceb(0x896)+_0x2dfceb(0x76c)+_0x2dfceb(0x943)+_0x2dfceb(0x616)+_0x2dfceb(0x748)+_0x2dfceb(0x978)+(_0x2dfceb(0x701)+_0x2dfceb(0x5a1)+_0x2dfceb(0x13f)+_0x2dfceb(0x747)+_0x2dfceb(0x2cd)+_0x2dfceb(0x5cd)+_0x2dfceb(0x2a9)+_0x2dfceb(0x266)+_0x2dfceb(0x64c)+_0x2dfceb(0x284)+_0x2dfceb(0x2a6)+_0x2dfceb(0x672)+_0x2dfceb(0x2cd)+_0x2dfceb(0x3e5)+_0x2dfceb(0x898)+_0x2dfceb(0x983)+_0x2dfceb(0x645)+_0x2dfceb(0x97c)+_0x2dfceb(0x5e4)+_0x2dfceb(0x4c3)+_0x2dfceb(0x2cd)+_0x2dfceb(0x5b3)+_0x2dfceb(0x2cd)+_0x2dfceb(0x34f)+_0x2dfceb(0x986)+_0x2dfceb(0x371)+_0x2dfceb(0x58c)+_0x2dfceb(0x2ca)+_0x2dfceb(0x322)+_0x2dfceb(0x5bb)+_0x2dfceb(0x73b)+_0x2dfceb(0x684)+_0x2dfceb(0x2cd)+_0x2dfceb(0x4b7)+_0x2dfceb(0x184)+_0x2dfceb(0x2cd)+_0x2dfceb(0x817)+_0x2dfceb(0x31b)+_0x2dfceb(0x21b)+_0x2dfceb(0x2cd)+_0x2dfceb(0x8af)+_0x2dfceb(0x2cd)+_0x2dfceb(0x892)+_0x2dfceb(0x726)+_0x2dfceb(0x5c9)+_0x2dfceb(0x6ce)+_0x2dfceb(0x315)+_0x2dfceb(0x7c4)+_0x2dfceb(0x2cd)+_0x2dfceb(0x450)+_0x2dfceb(0x991)+_0x2dfceb(0x22f)+_0x2dfceb(0x2cd)+_0x2dfceb(0x546)+_0x2dfceb(0x1e3)+_0x2dfceb(0x2cd)+_0x2dfceb(0x83e)+_0x2dfceb(0x5cf)+_0x2dfceb(0x77f)+_0x2dfceb(0x2cd)+_0x2dfceb(0x7f2)+_0x2dfceb(0x987)+_0x2dfceb(0x89a)+_0x2dfceb(0x73e)+_0x2dfceb(0x291)+_0x2dfceb(0x59b)+_0x2dfceb(0x6e9)+_0x2dfceb(0x81c)+_0x2dfceb(0x2cd)+_0x2dfceb(0x5b3)+_0x2dfceb(0x2cd)+_0x2dfceb(0x25d)+_0x2dfceb(0x5f3)+_0x2dfceb(0x4c8)+_0x2dfceb(0x48a)+_0x2dfceb(0x2cd)+_0x2dfceb(0x688)+_0x2dfceb(0x8ab)+_0x2dfceb(0x356)+_0x2dfceb(0x80f)+_0x2dfceb(0x6cb)+_0x2dfceb(0x2cd)+_0x2dfceb(0x817)+_0x2dfceb(0x312)+_0x2dfceb(0x350)+_0x2dfceb(0x121)+_0x2dfceb(0x440)+_0x2dfceb(0x2ca)+_0x2dfceb(0x2cd)+_0x2dfceb(0x4f2)+_0x2dfceb(0x980)+_0x2dfceb(0x2cd)+_0x2dfceb(0x1ae)+_0x2dfceb(0x54f)+_0x2dfceb(0x2cd)+_0x2dfceb(0x2cd)+_0x2dfceb(0x16b)+_0x2dfceb(0x995)+_0x2dfceb(0x721)+_0x2dfceb(0x5ab))+(_0x2dfceb(0x4d5)+_0x2dfceb(0x578)+_0x2dfceb(0x98f)+_0x2dfceb(0x445)+_0x2dfceb(0x49d)+_0x2dfceb(0x2cd)+_0x2dfceb(0x34d)+_0x2dfceb(0x428)+_0x2dfceb(0x2ca)+_0x2dfceb(0x2cd)+_0x2dfceb(0x302)+_0x2dfceb(0x8bd)+_0x2dfceb(0x2ca)+_0x2dfceb(0x2cd)+_0x2dfceb(0x86b)+_0x2dfceb(0x5f7)+_0x2dfceb(0x7c7)+_0x2dfceb(0x5f3)+_0x2dfceb(0x48e)+_0x2dfceb(0x206)+_0x2dfceb(0x2cd)+_0x2dfceb(0x749)+_0x2dfceb(0x5ad)+_0x2dfceb(0x4fa)+_0x2dfceb(0x21c)+_0x2dfceb(0x498)+_0x2dfceb(0x2cd)+_0x2dfceb(0x6b5)+_0x2dfceb(0x1f3)+_0x2dfceb(0x35b)+_0x2dfceb(0x2cd)+_0x2dfceb(0x7f2)+_0x2dfceb(0x9ad)+_0x2dfceb(0x2cd)+_0x2dfceb(0x300)+_0x2dfceb(0x682)+_0x2dfceb(0x2cd)+_0x2dfceb(0x5b3)+_0x2dfceb(0x437)),document[_0x2dfceb(0x290)][_0x2dfceb(0x216)+'d'](_0x2128fe);}if(_0x10dafb[_0x2dfceb(0x659)](typeof Draggabilly,_0x10dafb[_0x2dfceb(0x217)]))try{const _0x35a79e=new Draggabilly(_0x135024,{'handle':_0x10dafb[_0x2dfceb(0x112)],'delay':0x32});}catch(_0x14312c){}else{}const _0x42d1cb=_0x4a1327[_0x2dfceb(0x219)+_0x2dfceb(0x611)](_0x10dafb[_0x2dfceb(0x212)]),_0x5dc0e7=_0x4a1327[_0x2dfceb(0x219)+_0x2dfceb(0x611)](_0x10dafb[_0x2dfceb(0x234)]);if(_0x42d1cb)_0x42d1cb[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x919)],_0x31b06f=>{const _0x7f79cd=_0x2dfceb;_0x31b06f[_0x7f79cd(0x556)+_0x7f79cd(0x66a)](),this[_0x7f79cd(0x7dc)+_0x7f79cd(0x5d4)]=!![];const _0x315ccf=_0x4a1327[_0x7f79cd(0x874)+_0x7f79cd(0x75f)+'t']();this[_0x7f79cd(0x8bc)+_0x7f79cd(0x42e)]=_0x10dafb[_0x7f79cd(0x4e1)](_0x31b06f[_0x7f79cd(0x3bd)],_0x315ccf[_0x7f79cd(0x158)]),this[_0x7f79cd(0x8bc)+_0x7f79cd(0x5f4)]=_0x10dafb[_0x7f79cd(0x392)](_0x31b06f[_0x7f79cd(0x927)],_0x315ccf[_0x7f79cd(0x134)]),_0x4a1327[_0x7f79cd(0x4d7)][_0x7f79cd(0x99f)]=_0x10dafb[_0x7f79cd(0x60f)];});else{}document[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x16d)],_0x46f1cd=>{const _0x118273=_0x2dfceb;if(this[_0x118273(0x7dc)+_0x118273(0x5d4)]&&_0x4a1327){_0x46f1cd[_0x118273(0x556)+_0x118273(0x66a)]();let _0x54e390=_0x10dafb[_0x118273(0x37d)](_0x46f1cd[_0x118273(0x3bd)],this[_0x118273(0x8bc)+_0x118273(0x42e)]),_0x4a4bf3=_0x10dafb[_0x118273(0x392)](_0x46f1cd[_0x118273(0x927)],this[_0x118273(0x8bc)+_0x118273(0x5f4)]);_0x4a1327[_0x118273(0x4d7)][_0x118273(0x158)]=_0x54e390+'px',_0x4a1327[_0x118273(0x4d7)][_0x118273(0x134)]=_0x4a4bf3+'px',_0x4a1327[_0x118273(0x4d7)][_0x118273(0x78e)]=null,_0x4a1327[_0x118273(0x4d7)][_0x118273(0x2d3)]=null,_0x4a1327[_0x118273(0x4d7)][_0x118273(0x1f7)]=_0x10dafb[_0x118273(0x86f)];}}),document[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x872)],()=>{const _0x4261fb=_0x2dfceb;this[_0x4261fb(0x7dc)+_0x4261fb(0x5d4)]=![];}),document[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x527)],()=>{const _0x2d502a=_0x2dfceb;this[_0x2d502a(0x7dc)+_0x2d502a(0x5d4)]=![];});if(_0x18813e)_0x18813e[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x6b9)],()=>{const _0x13c2ac=_0x2dfceb,_0x565983={'dDQFv':function(_0x2fd579,_0x1cb823){const _0x3ccbb2=_0x3eb8;return _0x10dafb[_0x3ccbb2(0x5e6)](_0x2fd579,_0x1cb823);},'tcvdL':function(_0x3ac96c,_0x4ac65d){const _0x584cd7=_0x3eb8;return _0x10dafb[_0x584cd7(0x32b)](_0x3ac96c,_0x4ac65d);},'TvcYN':_0x10dafb[_0x13c2ac(0x6b3)],'VsXvW':_0x10dafb[_0x13c2ac(0x890)]};_0x135024[_0x13c2ac(0x4d7)][_0x13c2ac(0x655)]=-0x359+0x152+0x207,_0x135024[_0x13c2ac(0x920)+_0x13c2ac(0x6e6)](_0x10dafb[_0x13c2ac(0x890)],function _0x2c1817(){const _0x5f36e8=_0x13c2ac;_0x565983[_0x5f36e8(0x63d)](_0x565983[_0x5f36e8(0x4bd)](parseFloat,_0x135024[_0x5f36e8(0x4d7)][_0x5f36e8(0x655)]),-0xa0a*0x1+0x1*0x23cc+0x9d*-0x2a)&&(_0x135024[_0x5f36e8(0x4d7)][_0x5f36e8(0x40f)]=_0x565983[_0x5f36e8(0x2e7)],_0x135024[_0x5f36e8(0x2a3)+_0x5f36e8(0x88e)](_0x565983[_0x5f36e8(0x572)],_0x2c1817));});}),_0x18813e[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x919)],()=>{const _0xff92f9=_0x2dfceb;_0x18813e[_0xff92f9(0x4d7)][_0xff92f9(0x1f7)]=_0x10dafb[_0xff92f9(0x385)];}),_0x18813e[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x872)],()=>{const _0x35ebf0=_0x2dfceb;_0x18813e[_0x35ebf0(0x4d7)][_0x35ebf0(0x1f7)]=_0x10dafb[_0x35ebf0(0x8cc)];});else{}if(_0x138d9e)_0x138d9e[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x6b9)],()=>{const _0x3bcf64=_0x2dfceb,_0x1d8632={'TknrT':function(_0x1f965d,_0xa849ee){const _0x147804=_0x3eb8;return _0x10dafb[_0x147804(0x51b)](_0x1f965d,_0xa849ee);},'XCQKl':function(_0x31dc65,_0x31e7f7){const _0x2f39f5=_0x3eb8;return _0x10dafb[_0x2f39f5(0x32b)](_0x31dc65,_0x31e7f7);},'tgTPu':_0x10dafb[_0x3bcf64(0x86f)],'aUKFP':_0x10dafb[_0x3bcf64(0x6b3)],'ugArt':_0x10dafb[_0x3bcf64(0x7cb)],'fabEX':_0x10dafb[_0x3bcf64(0x890)]};_0x4a1327[_0x3bcf64(0x4d7)][_0x3bcf64(0x655)]=0x124f+0x1bea+-0x2e39,_0x4a1327[_0x3bcf64(0x4d7)][_0x3bcf64(0x1f7)]=_0x10dafb[_0x3bcf64(0x42f)],_0x4a1327[_0x3bcf64(0x920)+_0x3bcf64(0x6e6)](_0x10dafb[_0x3bcf64(0x890)],function _0x57dcf9(){const _0x16d238=_0x3bcf64;_0x1d8632[_0x16d238(0x4e6)](_0x1d8632[_0x16d238(0x741)](parseFloat,_0x4a1327[_0x16d238(0x4d7)][_0x16d238(0x655)]),0x238c+-0x1*-0x21f8+-0x4584)&&(_0x4a1327[_0x16d238(0x4d7)][_0x16d238(0x917)]=_0x1d8632[_0x16d238(0x9cb)],_0x4a1327[_0x16d238(0x4d7)][_0x16d238(0x40f)]=_0x1d8632[_0x16d238(0x1a5)],_0x4a1327[_0x16d238(0x4d7)][_0x16d238(0x1f7)]=_0x1d8632[_0x16d238(0x19a)],_0x4a1327[_0x16d238(0x2a3)+_0x16d238(0x88e)](_0x1d8632[_0x16d238(0x1b5)],_0x57dcf9));});}),_0x138d9e[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x919)],()=>{const _0x2ef72a=_0x2dfceb;_0x138d9e[_0x2ef72a(0x4d7)][_0x2ef72a(0x1f7)]=_0x10dafb[_0x2ef72a(0x385)];}),_0x138d9e[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x872)],()=>{const _0x3f9c81=_0x2dfceb;_0x138d9e[_0x3f9c81(0x4d7)][_0x3f9c81(0x1f7)]=_0x10dafb[_0x3f9c81(0x8cc)];});else{}if(_0x1c0617)_0x1c0617[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x704)],()=>{const _0x15bb6a=_0x2dfceb;_0x1c0617[_0x15bb6a(0x4d7)][_0x15bb6a(0x284)]=_0x10dafb[_0x15bb6a(0x394)];}),_0x1c0617[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x527)],()=>{const _0x5c45a8=_0x2dfceb;_0x1c0617[_0x5c45a8(0x4d7)][_0x5c45a8(0x284)]=_0x10dafb[_0x5c45a8(0x209)];}),_0x1c0617[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x919)],()=>{const _0x3d667d=_0x2dfceb;_0x1c0617[_0x3d667d(0x4d7)][_0x3d667d(0x1f7)]=_0x10dafb[_0x3d667d(0x41d)];}),_0x1c0617[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x872)],()=>{const _0x11e378=_0x2dfceb;_0x1c0617[_0x11e378(0x4d7)][_0x11e378(0x1f7)]=_0x10dafb[_0x11e378(0x8cc)];}),_0x1c0617[_0x2dfceb(0x920)+_0x2dfceb(0x6e6)](_0x10dafb[_0x2dfceb(0x6b9)],async()=>{const _0x160ebf=_0x2dfceb,_0x5c27b2={'tLMyE':_0x10dafb[_0x160ebf(0x5ee)],'BvvhU':_0x10dafb[_0x160ebf(0x241)],'BbraN':function(_0x4a67b2){const _0x532424=_0x160ebf;return _0x10dafb[_0x532424(0x270)](_0x4a67b2);},'ajzxb':_0x10dafb[_0x160ebf(0x86f)],'JboOb':_0x10dafb[_0x160ebf(0x372)],'TRGEJ':function(_0x27b326,_0x498d2c){const _0x25c9f2=_0x160ebf;return _0x10dafb[_0x25c9f2(0x32b)](_0x27b326,_0x498d2c);},'njqmQ':_0x10dafb[_0x160ebf(0x66f)],'ROGtA':function(_0x1564ba,_0x5745a6){const _0xf16987=_0x160ebf;return _0x10dafb[_0xf16987(0x531)](_0x1564ba,_0x5745a6);},'cHFdM':_0x10dafb[_0x160ebf(0x895)],'AkhcX':_0x10dafb[_0x160ebf(0x9ba)],'Fkmbi':_0x10dafb[_0x160ebf(0x5c3)],'uNUJZ':_0x10dafb[_0x160ebf(0x6f0)],'uRaPV':_0x10dafb[_0x160ebf(0x94e)],'ipsnn':function(_0x5cfa74,_0x28ee9f){const _0x2584f5=_0x160ebf;return _0x10dafb[_0x2584f5(0x5e6)](_0x5cfa74,_0x28ee9f);},'rMwLM':_0x10dafb[_0x160ebf(0x768)],'RjghK':_0x10dafb[_0x160ebf(0x7ed)],'yxzgs':_0x10dafb[_0x160ebf(0x79f)],'CRiaF':function(_0x4d8903,_0x180c1c){const _0x5c7504=_0x160ebf;return _0x10dafb[_0x5c7504(0x14e)](_0x4d8903,_0x180c1c);},'kPKOD':_0x10dafb[_0x160ebf(0x62a)],'fyric':_0x10dafb[_0x160ebf(0x94a)],'ITkdi':function(_0x1397f0,_0x117506){const _0x4cac27=_0x160ebf;return _0x10dafb[_0x4cac27(0x2ac)](_0x1397f0,_0x117506);}};let _0x56a9ba=-0x1b9f+-0x2639*-0x1+-0xa99;if(this[_0x160ebf(0x4bf)+_0x160ebf(0x884)])return;if(!this[_0x160ebf(0x666)]){this[_0x160ebf(0x4ee)+_0x160ebf(0x908)]();return;}const _0x8378ae=await this[_0x160ebf(0x39c)+_0x160ebf(0x8ea)]();if(!_0x8378ae){this[_0x160ebf(0x4ee)+_0x160ebf(0x908)](_0x10dafb[_0x160ebf(0x1ea)]);return;}this[_0x160ebf(0x4bf)+_0x160ebf(0x884)]=!![],_0x1c0617[_0x160ebf(0x26b)]=!![];const _0x51fa69=document[_0x160ebf(0x219)+_0x160ebf(0x611)](_0x10dafb[_0x160ebf(0x1f9)]),_0x22b57e=_0x51fa69&&_0x51fa69[_0x160ebf(0x219)+_0x160ebf(0x611)](_0x10dafb[_0x160ebf(0x66f)]);if(_0x5c9538)_0x5c9538[_0x160ebf(0x4d7)][_0x160ebf(0x917)]=_0x22b57e?_0x10dafb[_0x160ebf(0x86f)]:_0x10dafb[_0x160ebf(0x5c3)];if(_0x31202a)_0x31202a[_0x160ebf(0x4d7)][_0x160ebf(0x917)]=_0x22b57e?_0x10dafb[_0x160ebf(0x5c3)]:_0x10dafb[_0x160ebf(0x86f)];await this[_0x160ebf(0x566)+_0x160ebf(0x411)](_0x56a9ba);const _0x333330=async(_0x315a4f=[])=>{const _0x412adb=_0x160ebf,_0x4c644d={'teBdi':_0x5c27b2[_0x412adb(0x4f5)],'TNFKB':_0x5c27b2[_0x412adb(0x1a6)],'yBwRP':function(_0x2af59f,_0x57b287){const _0x56804d=_0x412adb;return _0x5c27b2[_0x56804d(0x168)](_0x2af59f,_0x57b287);},'Luvwc':function(_0x392721){const _0x484d8d=_0x412adb;return _0x5c27b2[_0x484d8d(0x27a)](_0x392721);},'USmIw':_0x5c27b2[_0x412adb(0x8a2)],'mVndU':_0x5c27b2[_0x412adb(0x195)],'WNyvC':function(_0x51aeb5,_0x1e4948){const _0x2350bf=_0x412adb;return _0x5c27b2[_0x2350bf(0x596)](_0x51aeb5,_0x1e4948);},'kjEEu':_0x5c27b2[_0x412adb(0x35e)],'NRzcm':_0x5c27b2[_0x412adb(0x61e)],'oLkCo':_0x5c27b2[_0x412adb(0x160)],'SwtqW':_0x5c27b2[_0x412adb(0x95e)],'NNKEi':_0x5c27b2[_0x412adb(0x6f1)],'srHoq':function(_0x30d856,_0x17d164){const _0x4df18f=_0x412adb;return _0x5c27b2[_0x4df18f(0x792)](_0x30d856,_0x17d164);},'cVuci':_0x5c27b2[_0x412adb(0x18e)],'NVRvj':_0x5c27b2[_0x412adb(0x144)]};try{let _0x86b45b=await this[_0x412adb(0x361)+_0x412adb(0x3a6)]();_0x86b45b+=_0x5c27b2[_0x412adb(0x512)];_0x5c27b2[_0x412adb(0x8c8)](_0x315a4f[_0x412adb(0x9a6)],0x191*-0x16+-0x99b*-0x4+-0x4e*0xd)&&(_0x86b45b+=_0x412adb(0x922)+_0x412adb(0x45a)+'\x20'+_0x315a4f[_0x412adb(0x6e5)](',\x20')+'.');const _0xaf42c3=await this[_0x412adb(0x588)+'r'](_0x86b45b);_0x5dc0e7[_0x412adb(0x6f8)+'t']=_0xaf42c3,_0x4a1327[_0x412adb(0x4d7)][_0x412adb(0x917)]=_0x5c27b2[_0x412adb(0x88b)],_0x4a1327[_0x412adb(0x4d7)][_0x412adb(0x40f)]=_0x5c27b2[_0x412adb(0x816)],_0x4a1327[_0x412adb(0x651)][_0x412adb(0x760)](_0x5c27b2[_0x412adb(0x1a6)]);if(_0xaf42c3&&['A','B','C','D'][_0x412adb(0x71f)](_0xaf42c3[_0x412adb(0x9b3)]())&&!_0x315a4f[_0x412adb(0x71f)](_0xaf42c3[_0x412adb(0x9b3)]())){const _0x566e9f=_0xaf42c3[_0x412adb(0x9b3)](),_0x3cdf4a=document[_0x412adb(0x219)+_0x412adb(0x979)](_0x5c27b2[_0x412adb(0x8a2)]),_0x1729e8=_0x5c27b2[_0x412adb(0x878)](_0x566e9f[_0x412adb(0x311)](0x19cb+0x17*0x62+-0x2299),'A'[_0x412adb(0x311)](-0x21cd+0x24f9+0x196*-0x2));_0x3cdf4a[_0x1729e8]?(_0x3cdf4a[_0x1729e8][_0x412adb(0x256)](),await new Promise(_0x44bdc6=>setTimeout(async()=>{const _0x5217b2=_0x412adb,_0x3d13a6=Array[_0x5217b2(0x2c2)](document[_0x5217b2(0x219)+_0x5217b2(0x979)](_0x5c27b2[_0x5217b2(0x195)]))[_0x5217b2(0x359)](_0x5eb263=>_0x5eb263[_0x5217b2(0x6f8)+'t'][_0x5217b2(0x9b3)]()===_0x5217b2(0x78b));_0x3d13a6?(_0x3d13a6[_0x5217b2(0x256)](),await new Promise(_0x3fb5c5=>setTimeout(async()=>{const _0x3aa4a7=_0x5217b2,_0xe9e348={'zKVVI':_0x4c644d[_0x3aa4a7(0x82f)],'pAzJO':_0x4c644d[_0x3aa4a7(0x807)],'AnUSH':function(_0x2de2ad,_0x2f25ba){const _0x46491e=_0x3aa4a7;return _0x4c644d[_0x46491e(0x7ba)](_0x2de2ad,_0x2f25ba);},'NKEsB':function(_0x203f97){const _0x475a58=_0x3aa4a7;return _0x4c644d[_0x475a58(0x841)](_0x203f97);},'MLaLq':_0x4c644d[_0x3aa4a7(0x34a)],'VSYWp':_0x4c644d[_0x3aa4a7(0x638)],'meJYu':function(_0x26b356,_0x56bfaf){const _0x46bb31=_0x3aa4a7;return _0x4c644d[_0x46bb31(0x629)](_0x26b356,_0x56bfaf);},'PLAyZ':_0x4c644d[_0x3aa4a7(0x764)],'NByTL':_0x4c644d[_0x3aa4a7(0x899)],'MOYye':_0x4c644d[_0x3aa4a7(0x37e)],'KCuFJ':_0x4c644d[_0x3aa4a7(0x708)]},_0x6b2024=document[_0x3aa4a7(0x1da)+_0x3aa4a7(0x773)](_0x4c644d[_0x3aa4a7(0x1f4)]);if(_0x6b2024){const _0x31e141=_0x6b2024[_0x3aa4a7(0x6f8)+'t'][_0x3aa4a7(0x9b3)]();_0x6b2024[_0x3aa4a7(0x256)](),_0x4c644d[_0x3aa4a7(0x881)](_0x31e141,_0x4c644d[_0x3aa4a7(0x51a)])?await new Promise(_0x119ffd=>setTimeout(async()=>{const _0x1bbdb4=_0x3aa4a7;_0x4a1327[_0x1bbdb4(0x4d7)][_0x1bbdb4(0x917)]=_0xe9e348[_0x1bbdb4(0x4ea)],_0x4a1327[_0x1bbdb4(0x651)][_0x1bbdb4(0x778)](_0xe9e348[_0x1bbdb4(0x3af)]),await _0xe9e348[_0x1bbdb4(0x3cb)](_0x333330,[..._0x315a4f,_0x566e9f]),_0xe9e348[_0x1bbdb4(0x61b)](_0x119ffd);},-0x3*0x2ed+-0xaa9+0x149c)):await new Promise(_0x30046a=>setTimeout(async()=>{const _0x4af5e9=_0x3aa4a7,_0x18bb6e=document[_0x4af5e9(0x219)+_0x4af5e9(0x611)](_0xe9e348[_0x4af5e9(0x1a3)]),_0x3bd5b8=Array[_0x4af5e9(0x2c2)](document[_0x4af5e9(0x219)+_0x4af5e9(0x979)](_0xe9e348[_0x4af5e9(0x34e)]))[_0x4af5e9(0x359)](_0xb2456=>_0xb2456[_0x4af5e9(0x6f8)+'t'][_0x4af5e9(0x9b3)]()===_0x4af5e9(0x78b));if(_0xe9e348[_0x4af5e9(0x5ec)](_0x3bd5b8,_0x18bb6e)){_0x4a1327[_0x4af5e9(0x4d7)][_0x4af5e9(0x917)]=_0xe9e348[_0x4af5e9(0x4ea)],_0x4a1327[_0x4af5e9(0x651)][_0x4af5e9(0x778)](_0xe9e348[_0x4af5e9(0x3af)]);const _0x554157=document[_0x4af5e9(0x219)+_0x4af5e9(0x611)](_0xe9e348[_0x4af5e9(0x4f8)]),_0x404fac=document[_0x4af5e9(0x219)+_0x4af5e9(0x611)](_0xe9e348[_0x4af5e9(0x6c3)]);if(_0x554157)_0x554157[_0x4af5e9(0x4d7)][_0x4af5e9(0x917)]=_0xe9e348[_0x4af5e9(0x7cc)];if(_0x404fac)_0x404fac[_0x4af5e9(0x4d7)][_0x4af5e9(0x917)]=_0xe9e348[_0x4af5e9(0x4ea)];await _0xe9e348[_0x4af5e9(0x61b)](_0x333330),_0xe9e348[_0x4af5e9(0x61b)](runSequence);}else _0x5dc0e7[_0x4af5e9(0x6f8)+'t']=_0xe9e348[_0x4af5e9(0x8db)];_0xe9e348[_0x4af5e9(0x61b)](_0x30046a);},-0x3f7+-0x6*-0x137+0x289*0x1));}else _0x5dc0e7[_0x3aa4a7(0x6f8)+'t']=_0x4c644d[_0x3aa4a7(0x339)];_0x4c644d[_0x3aa4a7(0x841)](_0x3fb5c5);},-0xc1f+-0x153d+-0x1*-0x2544))):_0x5dc0e7[_0x5217b2(0x6f8)+'t']=_0x5c27b2[_0x5217b2(0x16c)],_0x5c27b2[_0x5217b2(0x27a)](_0x44bdc6);},0x21eb+0xf29+-0x1826*0x2))):_0x5dc0e7[_0x412adb(0x6f8)+'t']=_0x412adb(0x303)+_0x412adb(0x880)+_0x566e9f+(_0x412adb(0x351)+_0x412adb(0x288));}else{}}catch(_0x1107a6){_0x5dc0e7[_0x412adb(0x6f8)+'t']=_0x412adb(0x149)+_0x1107a6[_0x412adb(0x397)],_0x4a1327[_0x412adb(0x4d7)][_0x412adb(0x917)]=_0x5c27b2[_0x412adb(0x88b)],_0x4a1327[_0x412adb(0x4d7)][_0x412adb(0x40f)]=_0x5c27b2[_0x412adb(0x816)],_0x4a1327[_0x412adb(0x651)][_0x412adb(0x760)](_0x5c27b2[_0x412adb(0x1a6)]);}finally{this[_0x412adb(0x4bf)+_0x412adb(0x884)]=![],_0x1c0617[_0x412adb(0x26b)]=![];if(_0x31202a)_0x31202a[_0x412adb(0x4d7)][_0x412adb(0x917)]=_0x5c27b2[_0x412adb(0x4f5)];if(_0x5c9538)_0x5c9538[_0x412adb(0x4d7)][_0x412adb(0x917)]=_0x5c27b2[_0x412adb(0x160)];}};await _0x10dafb[_0x160ebf(0x5f0)](_0x333330);});else{}}[_0x5298b2(0x4ee)+_0x5298b2(0x908)](_0x12446b=null){const _0x188fcf=_0x5298b2,_0x117469={'hQgPA':_0x188fcf(0x599),'QtDaI':_0x188fcf(0x4ec),'BJqPC':function(_0x2287a0,_0x5f5e03,_0x166602){return _0x2287a0(_0x5f5e03,_0x166602);},'SbOUQ':_0x188fcf(0x8d0)+_0x188fcf(0x94c),'uBzxk':_0x188fcf(0x7d6),'gegax':_0x188fcf(0x8d0)+_0x188fcf(0x376),'VubDa':_0x188fcf(0x20a)+_0x188fcf(0x8c0),'AOGfz':_0x188fcf(0x2ec)+_0x188fcf(0x113)+_0x188fcf(0x5ce)+_0x188fcf(0x92f)+_0x188fcf(0x554),'ufeiS':_0x188fcf(0x1dd),'xiGfV':_0x188fcf(0x59f)+_0x188fcf(0x4f4),'xDtvF':_0x188fcf(0x4cb),'pXzUa':_0x188fcf(0x519),'UDmtM':_0x188fcf(0x94d),'dsZTx':_0x188fcf(0x547)+_0x188fcf(0x65b),'OnSiI':_0x188fcf(0x6f2),'LzLER':_0x188fcf(0x1e5),'RaeLi':_0x188fcf(0x50e),'dSBUv':_0x188fcf(0x5cc)+'ey','HmXrz':_0x188fcf(0x2d9),'BmiUa':_0x188fcf(0x19f),'qBEDx':_0x188fcf(0x623),'sAMOw':_0x188fcf(0x3da),'gXhJG':_0x188fcf(0x32c),'hCjpP':_0x188fcf(0x7a3),'xMbVz':_0x188fcf(0x8d0),'EzLKU':_0x188fcf(0x602),'ryXJo':_0x188fcf(0x35d),'HFGZQ':_0x188fcf(0x8f0),'MWzli':_0x188fcf(0x55f),'lOmBt':_0x188fcf(0x70d),'XMvWl':_0x188fcf(0x6e2),'EYwiM':_0x188fcf(0x424)+_0x188fcf(0x2ad)+_0x188fcf(0x18b),'EIQmB':_0x188fcf(0x728),'LikcQ':_0x188fcf(0x475),'BYfag':_0x188fcf(0x296)+_0x188fcf(0x555),'eaAEL':_0x188fcf(0x2f6),'dfZXQ':_0x188fcf(0x3d1),'GNiDL':_0x188fcf(0x1df),'oqLXv':_0x188fcf(0x72e),'BonTV':_0x188fcf(0x119)+_0x188fcf(0x362)+_0x188fcf(0x705)+_0x188fcf(0x603)+_0x188fcf(0x6ff)+_0x188fcf(0x628)+_0x188fcf(0x6e3)+_0x188fcf(0x5d2)+_0x188fcf(0x202),'SuqJY':_0x188fcf(0x46c)},_0x1b850d=document[_0x188fcf(0x219)+_0x188fcf(0x611)](_0x117469[_0x188fcf(0x6ba)]),_0xab38a1=document[_0x188fcf(0x219)+_0x188fcf(0x611)](_0x117469[_0x188fcf(0x8e1)]);if(_0x1b850d)_0x1b850d[_0x188fcf(0x778)]();if(_0xab38a1)_0xab38a1[_0x188fcf(0x778)]();const _0x3c4635=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)](_0x117469[_0x188fcf(0x6f3)]);_0x3c4635[_0x188fcf(0x11f)]=_0x117469[_0x188fcf(0x573)];const _0x123bcb=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)](_0x117469[_0x188fcf(0x6f3)]);_0x123bcb[_0x188fcf(0x11f)]=_0x117469[_0x188fcf(0x703)];const _0x1f2cbd=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)](_0x117469[_0x188fcf(0x258)]);_0x1f2cbd[_0x188fcf(0x11f)]=_0x117469[_0x188fcf(0x6d4)],_0x1f2cbd[_0x188fcf(0x33d)]=_0x117469[_0x188fcf(0x4da)],_0x1f2cbd[_0x188fcf(0x8be)]=()=>{const _0x203e77=_0x188fcf;_0x123bcb[_0x203e77(0x778)](),_0x3c4635[_0x203e77(0x778)]();};const _0x387c14=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)]('h3');_0x387c14[_0x188fcf(0x6f8)+'t']=_0x117469[_0x188fcf(0x675)],_0x387c14[_0x188fcf(0x4d7)][_0x188fcf(0x23c)]=_0x117469[_0x188fcf(0x818)],_0x387c14[_0x188fcf(0x4d7)][_0x188fcf(0x404)]='0',_0x387c14[_0x188fcf(0x4d7)][_0x188fcf(0x4d4)+'om']=_0x117469[_0x188fcf(0x1a2)],_0x387c14[_0x188fcf(0x4d7)][_0x188fcf(0x793)]=_0x117469[_0x188fcf(0x971)];let _0x540f2f=null;if(_0x12446b){const _0x4d70c5=_0x117469[_0x188fcf(0x6b2)][_0x188fcf(0x668)]('|');let _0x461d23=-0x4*0x82f+-0xae4+-0x2ba*-0x10;while(!![]){switch(_0x4d70c5[_0x461d23++]){case'0':_0x540f2f[_0x188fcf(0x4d7)][_0x188fcf(0x4d4)+'om']=_0x117469[_0x188fcf(0x9a4)];continue;case'1':_0x540f2f[_0x188fcf(0x4d7)][_0x188fcf(0x793)]=_0x117469[_0x188fcf(0x743)];continue;case'2':_0x540f2f[_0x188fcf(0x6f8)+'t']=_0x12446b;continue;case'3':_0x540f2f[_0x188fcf(0x11f)]=_0x117469[_0x188fcf(0x430)];continue;case'4':_0x540f2f=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)](_0x117469[_0x188fcf(0x6f3)]);continue;}break;}}const _0x12a170=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)](_0x117469[_0x188fcf(0x6f3)]);_0x12a170[_0x188fcf(0x11f)]=_0x117469[_0x188fcf(0x90c)],_0x12a170[_0x188fcf(0x4d7)][_0x188fcf(0x4d4)+'om']=_0x117469[_0x188fcf(0x1a2)],_0x12a170[_0x188fcf(0x4d7)][_0x188fcf(0x793)]=_0x117469[_0x188fcf(0x743)];this[_0x188fcf(0x666)]?(_0x12a170[_0x188fcf(0x651)][_0x188fcf(0x760)](_0x117469[_0x188fcf(0x6d2)]),_0x12a170[_0x188fcf(0x6f8)+'t']=_0x117469[_0x188fcf(0x5ae)]):(_0x12a170[_0x188fcf(0x651)][_0x188fcf(0x760)](_0x117469[_0x188fcf(0x14b)]),_0x12a170[_0x188fcf(0x6f8)+'t']=_0x117469[_0x188fcf(0x27c)]);const _0x476102=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)](_0x117469[_0x188fcf(0x769)]);_0x476102[_0x188fcf(0x7ef)]=_0x117469[_0x188fcf(0x5c8)],_0x476102[_0x188fcf(0x9cf)+'r']=_0x117469[_0x188fcf(0x72f)],_0x476102[_0x188fcf(0x235)]=this[_0x188fcf(0x666)]||'',_0x476102[_0x188fcf(0x4d7)][_0x188fcf(0x4d4)+'om']=_0x117469[_0x188fcf(0x1a2)],_0x476102[_0x188fcf(0x4d7)][_0x188fcf(0x793)]=_0x117469[_0x188fcf(0x744)];const _0x32ef9e=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)](_0x117469[_0x188fcf(0x6f3)]);_0x32ef9e[_0x188fcf(0x4d7)][_0x188fcf(0x917)]=_0x117469[_0x188fcf(0x669)],_0x32ef9e[_0x188fcf(0x4d7)][_0x188fcf(0x5c0)+_0x188fcf(0x7c2)]=_0x117469[_0x188fcf(0x14a)],_0x32ef9e[_0x188fcf(0x4d7)][_0x188fcf(0x3f1)]=_0x117469[_0x188fcf(0x9a4)];const _0x2165cd=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)](_0x117469[_0x188fcf(0x258)]);_0x2165cd[_0x188fcf(0x6f8)+'t']=_0x117469[_0x188fcf(0x143)],_0x2165cd[_0x188fcf(0x4d7)][_0x188fcf(0x475)]='1',_0x2165cd[_0x188fcf(0x4d7)][_0x188fcf(0x793)]=_0x117469[_0x188fcf(0x744)],_0x2165cd[_0x188fcf(0x8be)]=()=>{const _0x2edc76=_0x188fcf,_0x10790b=_0x476102[_0x2edc76(0x235)][_0x2edc76(0x9b3)]();if(_0x10790b){const _0x1c2c97=_0x117469[_0x2edc76(0x5db)][_0x2edc76(0x668)]('|');let _0x5e7a9d=0x1293*-0x1+-0x24cc+0x375f;while(!![]){switch(_0x1c2c97[_0x5e7a9d++]){case'0':_0x12a170[_0x2edc76(0x6f8)+'t']=_0x117469[_0x2edc76(0x811)];continue;case'1':this[_0x2edc76(0x666)]=_0x10790b;continue;case'2':_0x117469[_0x2edc76(0x93c)](setTimeout,()=>{const _0x14e91e=_0x2edc76;_0x123bcb[_0x14e91e(0x778)](),_0x3c4635[_0x14e91e(0x778)]();},0x24a0+-0x1791*0x1+-0x9ef);continue;case'3':_0x12a170[_0x2edc76(0x11f)]=_0x117469[_0x2edc76(0x6df)];continue;case'4':localStorage[_0x2edc76(0x405)](_0x117469[_0x2edc76(0x44a)],_0x10790b);continue;}break;}}else _0x12a170[_0x2edc76(0x11f)]=_0x117469[_0x2edc76(0x430)],_0x12a170[_0x2edc76(0x6f8)+'t']=_0x117469[_0x2edc76(0x56c)];};const _0x42aa4a=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)](_0x117469[_0x188fcf(0x258)]);_0x42aa4a[_0x188fcf(0x6f8)+'t']=_0x117469[_0x188fcf(0x118)],_0x42aa4a[_0x188fcf(0x4d7)][_0x188fcf(0x475)]='1',_0x42aa4a[_0x188fcf(0x4d7)][_0x188fcf(0x793)]=_0x117469[_0x188fcf(0x744)],_0x42aa4a[_0x188fcf(0x8be)]=()=>{const _0x4411e5=_0x188fcf;window[_0x4411e5(0x38d)](_0x117469[_0x4411e5(0x2b3)],_0x117469[_0x4411e5(0x83d)]);};const _0x1db38b=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)](_0x117469[_0x188fcf(0x258)]);_0x1db38b[_0x188fcf(0x6f8)+'t']=_0x117469[_0x188fcf(0x973)],_0x1db38b[_0x188fcf(0x4d7)][_0x188fcf(0x475)]='1',_0x1db38b[_0x188fcf(0x4d7)][_0x188fcf(0x793)]=_0x117469[_0x188fcf(0x744)],_0x1db38b[_0x188fcf(0x8be)]=()=>{const _0x3dd029=_0x188fcf;_0x123bcb[_0x3dd029(0x778)](),_0x3c4635[_0x3dd029(0x778)]();},_0x32ef9e[_0x188fcf(0x216)+'d'](_0x2165cd),_0x32ef9e[_0x188fcf(0x216)+'d'](_0x42aa4a),_0x32ef9e[_0x188fcf(0x216)+'d'](_0x1db38b);const _0x3e8cf6=document[_0x188fcf(0x1ad)+_0x188fcf(0x79d)](_0x117469[_0x188fcf(0x6f3)]);_0x3e8cf6[_0x188fcf(0x11f)]=_0x117469[_0x188fcf(0x56a)],_0x3e8cf6[_0x188fcf(0x33d)]=_0x117469[_0x188fcf(0x15d)],_0x3e8cf6[_0x188fcf(0x4d7)][_0x188fcf(0x793)]=_0x117469[_0x188fcf(0x847)],_0x3e8cf6[_0x188fcf(0x4d7)][_0x188fcf(0x404)]=_0x117469[_0x188fcf(0x1a2)],_0x123bcb[_0x188fcf(0x216)+'d'](_0x1f2cbd),_0x123bcb[_0x188fcf(0x216)+'d'](_0x387c14);if(_0x540f2f)_0x123bcb[_0x188fcf(0x216)+'d'](_0x540f2f);_0x123bcb[_0x188fcf(0x216)+'d'](_0x12a170),_0x123bcb[_0x188fcf(0x216)+'d'](_0x476102),_0x123bcb[_0x188fcf(0x216)+'d'](_0x32ef9e),_0x123bcb[_0x188fcf(0x216)+'d'](_0x3e8cf6),document[_0x188fcf(0x328)][_0x188fcf(0x216)+'d'](_0x3c4635),document[_0x188fcf(0x328)][_0x188fcf(0x216)+'d'](_0x123bcb),_0x476102[_0x188fcf(0x5d9)]();}[_0x5298b2(0x1a0)+_0x5298b2(0x660)](){const _0x314e47=_0x5298b2,_0x4cc1f8={'NZADG':function(_0x4c7679,_0x2dc4a5){return _0x4c7679-_0x2dc4a5;},'YMRPK':function(_0x2f07fb,_0x167822){return _0x2f07fb<=_0x167822;},'Pfvot':function(_0x59b515,_0x23d7be){return _0x59b515/_0x23d7be;},'UTwdU':function(_0x37f7a9,_0x273f5f){return _0x37f7a9*_0x273f5f;},'hSwDf':function(_0x5d7113,_0x39b776){return _0x5d7113*_0x39b776;},'TEDcg':function(_0x29c9f1,_0x3eb389){return _0x29c9f1/_0x3eb389;},'Zimko':function(_0x48adfb,_0x3ade8b){return _0x48adfb%_0x3ade8b;},'aTlGU':function(_0x4c2013,_0x154477){return _0x4c2013*_0x154477;},'LlAwk':function(_0x8d647f,_0x323d86){return _0x8d647f*_0x323d86;},'EmuNF':function(_0x1deaf6,_0x1d9f99){return _0x1deaf6*_0x1d9f99;},'ruazM':function(_0x56268b,_0x6eac01){return _0x56268b/_0x6eac01;},'RSdJL':function(_0x3ea7ad,_0x24aadd){return _0x3ea7ad*_0x24aadd;},'GvfkZ':_0x314e47(0x3c6)+_0x314e47(0x9c7)+_0x314e47(0x8b4)+_0x314e47(0x510)};if(!this[_0x314e47(0x1fd)]||!this[_0x314e47(0x1fd)][_0x314e47(0x156)])return null;try{const _0x33f007=new Date(this[_0x314e47(0x1fd)][_0x314e47(0x156)]),_0x14c0bb=new Date(),_0x2c9c34=_0x4cc1f8[_0x314e47(0x486)](_0x33f007,_0x14c0bb);if(_0x4cc1f8[_0x314e47(0x4fb)](_0x2c9c34,0x1c50+0x1*0x1da0+-0x19c*0x24))return{'expired':!![]};const _0x492b6e=Math[_0x314e47(0x24f)](_0x4cc1f8[_0x314e47(0x462)](_0x2c9c34,_0x4cc1f8[_0x314e47(0x9bd)](_0x4cc1f8[_0x314e47(0x99e)](-0xb12+0x26b3+-0x17b9,-0x3*0x6fa+-0x6cc+0x1bf6*0x1),-0x13e+-0x21c3+-0x5d*-0x61))),_0x49ec52=Math[_0x314e47(0x24f)](_0x4cc1f8[_0x314e47(0x65d)](_0x4cc1f8[_0x314e47(0x931)](_0x2c9c34,_0x4cc1f8[_0x314e47(0x7f0)](_0x4cc1f8[_0x314e47(0x662)](-0x9e1+-0xcd1*0x1+0x1a9a,0x231a+-0xd51*-0x1+-0x302f),-0x160a+-0x2489+-0x1*-0x3acf)),_0x4cc1f8[_0x314e47(0x50c)](0xfc7*-0x2+0x9ef+0x1987,0xb8c+0xcf6+-0x1de*0xd))),_0x48283d=Math[_0x314e47(0x24f)](_0x4cc1f8[_0x314e47(0x51e)](_0x4cc1f8[_0x314e47(0x931)](_0x2c9c34,_0x4cc1f8[_0x314e47(0x481)](-0x1*-0x355+0x2*-0xa9f+-0x5*-0x45d,-0xc80+0x1*0x2bd+-0x9ff*-0x1)),-0x102d*0x1+-0x1571+0x2986));return{'expired':![],'hours':_0x492b6e,'minutes':_0x49ec52,'seconds':_0x48283d,'totalMs':_0x2c9c34};}catch(_0x4ce940){return console[_0x314e47(0x8f9)](_0x4cc1f8[_0x314e47(0x6b8)],_0x4ce940),null;}}[_0x5298b2(0x155)+_0x5298b2(0x660)](){const _0x281bad=_0x5298b2,_0x32d347={'vXqSY':_0x281bad(0x8ed),'hQCuc':_0x281bad(0x363),'FaXcd':function(_0x4e770b,_0x11af75){return _0x4e770b>_0x11af75;}},_0x584605=this[_0x281bad(0x1a0)+_0x281bad(0x660)]();if(!_0x584605)return _0x32d347[_0x281bad(0x151)];if(_0x584605[_0x281bad(0x6ee)])return _0x32d347[_0x281bad(0x901)];if(_0x32d347[_0x281bad(0x644)](_0x584605[_0x281bad(0x6cf)],0x13c4+0x1*0x2a5+-0x1669))return _0x584605[_0x281bad(0x6cf)]+'h\x20'+_0x584605[_0x281bad(0x86d)]+'m';else return _0x32d347[_0x281bad(0x644)](_0x584605[_0x281bad(0x86d)],-0x203+-0x1b73+0x1d76)?_0x584605[_0x281bad(0x86d)]+'m\x20'+_0x584605[_0x281bad(0x5aa)]+'s':_0x584605[_0x281bad(0x5aa)]+'s';}async[_0x5298b2(0x39c)+_0x5298b2(0x8ea)](){const _0x1518f4=_0x5298b2,_0x41edb1={'NwuYy':function(_0x37208f,_0x25ea02,_0x39ff58){return _0x37208f(_0x25ea02,_0x39ff58);},'llxAL':_0x1518f4(0x2ec)+_0x1518f4(0x113)+_0x1518f4(0x911)+_0x1518f4(0x766),'npOcl':_0x1518f4(0x49b),'DHRgN':_0x1518f4(0x14f)+_0x1518f4(0x73d),'rgbJY':_0x1518f4(0x1d6)+_0x1518f4(0x17e)+_0x1518f4(0x5f8)};if(!this[_0x1518f4(0x666)])return![];try{const _0x57ecab=await _0x41edb1[_0x1518f4(0x375)](fetch,_0x41edb1[_0x1518f4(0x7c1)],{'method':_0x41edb1[_0x1518f4(0x77c)],'headers':{'Content-Type':_0x41edb1[_0x1518f4(0x2bc)]},'body':JSON[_0x1518f4(0x9bc)]({'key':this[_0x1518f4(0x666)]})});if(!_0x57ecab['ok'])return![];const _0x5b4693=await _0x57ecab[_0x1518f4(0x449)]();if(_0x5b4693[_0x1518f4(0x602)])return this[_0x1518f4(0x1fd)]=_0x5b4693[_0x1518f4(0x5ac)],!![];return![];}catch(_0x318b4b){return console[_0x1518f4(0x8f9)](_0x41edb1[_0x1518f4(0x539)],_0x318b4b),![];}}async[_0x5298b2(0x2f1)+'ey'](){const _0x45b129=_0x5298b2,_0x3aa929={'UeHUY':_0x45b129(0x1a1)+_0x45b129(0x98b),'ixOAK':_0x45b129(0x540)+_0x45b129(0x154),'qURef':_0x45b129(0x2ec)+_0x45b129(0x113)+_0x45b129(0x7ee),'Ridsk':_0x45b129(0x1dd),'FVWAc':_0x45b129(0x1ed)+_0x45b129(0x1de)+_0x45b129(0x1d5),'YAPxD':_0x45b129(0x77b),'jhWgX':_0x45b129(0x1ed)+_0x45b129(0x1de)+_0x45b129(0x984)+_0x45b129(0x3ff)+_0x45b129(0x178),'aGZvd':_0x45b129(0x8f9)};try{const _0x28a5a1=document[_0x45b129(0x1da)+_0x45b129(0x773)](_0x3aa929[_0x45b129(0x129)]),_0x4936ae=_0x28a5a1?_0x28a5a1[_0x45b129(0x6f8)+'t']:'';_0x28a5a1&&(_0x28a5a1[_0x45b129(0x6f8)+'t']=_0x3aa929[_0x45b129(0x90d)],_0x28a5a1[_0x45b129(0x26b)]=!![]),window[_0x45b129(0x38d)](_0x3aa929[_0x45b129(0x19c)],_0x3aa929[_0x45b129(0x221)]),_0x28a5a1&&(_0x28a5a1[_0x45b129(0x6f8)+'t']=_0x4936ae,_0x28a5a1[_0x45b129(0x26b)]=![]);}catch(_0x522075){console[_0x45b129(0x8f9)](_0x3aa929[_0x45b129(0x6a0)],_0x522075);const _0x50c748=document[_0x45b129(0x1da)+_0x45b129(0x773)](_0x3aa929[_0x45b129(0x129)]);_0x50c748&&(_0x50c748[_0x45b129(0x6f8)+'t']=_0x3aa929[_0x45b129(0x5f5)],_0x50c748[_0x45b129(0x26b)]=![]),this[_0x45b129(0x74d)](_0x3aa929[_0x45b129(0x3eb)],_0x3aa929[_0x45b129(0x3fc)]);}}}const helper=new AssessmentHelper();console[_0x5298b2(0x2bb)](_0x5298b2(0x1bd)+_0x5298b2(0x9a8)+_0x5298b2(0x23d)+'d'),document[_0x5298b2(0x920)+_0x5298b2(0x6e6)](_0x5298b2(0x256),async _0x9c30e8=>{const _0x4e942d=_0x5298b2,_0x37b81f={'cmdua':_0x4e942d(0x4e7)+_0x4e942d(0x565)};_0x9c30e8[_0x4e942d(0x1cf)][_0x4e942d(0x591)](_0x37b81f[_0x4e942d(0x59e)])&&helper[_0x4e942d(0x4ee)+_0x4e942d(0x908)]();}),function automateActivity(){const _0x29a93c=_0x5298b2,_0x9686f1={'pDLNH':_0x29a93c(0x7ec)+_0x29a93c(0x43f)+_0x29a93c(0x2ee)+'..','glrtJ':_0x29a93c(0x608)+_0x29a93c(0x12b)+_0x29a93c(0x8a5),'cWSLA':_0x29a93c(0x3d4)+_0x29a93c(0x3a0)+_0x29a93c(0x282),'sZjcc':_0x29a93c(0x193)+_0x29a93c(0x346)+_0x29a93c(0x8c2)+_0x29a93c(0x5c6),'fuMlB':_0x29a93c(0x9b4)+_0x29a93c(0x822)+_0x29a93c(0x903),'RhQyR':_0x29a93c(0x70d),'duXIX':_0x29a93c(0x16a)+_0x29a93c(0x48d)+_0x29a93c(0x441)+_0x29a93c(0x2c6),'SYHlZ':_0x29a93c(0x9d2)+_0x29a93c(0x439)+_0x29a93c(0x3c0)+_0x29a93c(0x14c),'duZCF':_0x29a93c(0x98c)+_0x29a93c(0x4f0),'tlXpe':_0x29a93c(0x128)+_0x29a93c(0x3ae)+'d','fHmEK':function(_0x3bebd7,_0x4a139a){return _0x3bebd7<_0x4a139a;},'iCeGF':function(_0x126bc3,_0x63ea96){return _0x126bc3===_0x63ea96;},'LaMwx':_0x29a93c(0x950),'VTwud':_0x29a93c(0x26a),'PERwg':_0x29a93c(0x367)+_0x29a93c(0x925)+_0x29a93c(0x365),'TLalw':_0x29a93c(0x6f2),'IlJnK':_0x29a93c(0x16a)+_0x29a93c(0x707)+_0x29a93c(0x3d6)+_0x29a93c(0x45f),'LxRtN':_0x29a93c(0x804)+_0x29a93c(0x939)+_0x29a93c(0x282),'HlEcL':_0x29a93c(0x367)+_0x29a93c(0x52c)+_0x29a93c(0x586)+_0x29a93c(0x3a2),'MSTEL':_0x29a93c(0x90b)+_0x29a93c(0x829),'fAeJZ':_0x29a93c(0x16a)+_0x29a93c(0x707)+_0x29a93c(0x3ba)+_0x29a93c(0x87f),'SbEux':_0x29a93c(0x407)+_0x29a93c(0x618)+_0x29a93c(0x71b)+'d','pykVs':_0x29a93c(0x367)+_0x29a93c(0x44f)+_0x29a93c(0x65a),'agTaY':function(_0x143625,_0x33ae56){return _0x143625>_0x33ae56;},'ArYqz':_0x29a93c(0x213)+_0x29a93c(0x5e3)+'d','VphkM':_0x29a93c(0x11a)+_0x29a93c(0x45f),'lHOHT':_0x29a93c(0x653)+_0x29a93c(0x3c9),'UumNy':_0x29a93c(0x7ca)+_0x29a93c(0x16e),'GrmuZ':function(_0x2cb837,_0x28e3d4){return _0x2cb837&&_0x28e3d4;},'rQuuY':_0x29a93c(0x4a5)+_0x29a93c(0x507),'VBuWg':_0x29a93c(0x432)+_0x29a93c(0x6ab),'fFeiJ':_0x29a93c(0x4a5)+_0x29a93c(0x50a),'JSApP':_0x29a93c(0x993),'ilRge':_0x29a93c(0x940),'jVFSG':function(_0x5bb4eb){return _0x5bb4eb();},'gNKvn':_0x29a93c(0x54b)+_0x29a93c(0x6c6)+_0x29a93c(0x8ec),'PFiOf':_0x29a93c(0x826)+_0x29a93c(0x654)+'n','IgzRE':function(_0xe010f0,_0x373b77){return _0xe010f0(_0x373b77);},'ZuglF':_0x29a93c(0x130)+_0x29a93c(0x2c3)+_0x29a93c(0x36b),'iWjaT':_0x29a93c(0x777),'GuEjJ':_0x29a93c(0x329)+_0x29a93c(0x71b)+'d','TqwLc':function(_0x530f8e){return _0x530f8e();},'euYSi':_0x29a93c(0x803)+_0x29a93c(0x7f9)+_0x29a93c(0x1c9)+_0x29a93c(0x3dc)+_0x29a93c(0x520)+_0x29a93c(0x37b)+_0x29a93c(0x468)+_0x29a93c(0x262),'OAOkN':_0x29a93c(0x454)+_0x29a93c(0x7d5),'bhOlo':function(_0x25253b,_0x4b3ec0){return _0x25253b-_0x4b3ec0;},'iYJYe':_0x29a93c(0x5de)+_0x29a93c(0x2ff)+_0x29a93c(0x39a),'QABri':function(_0x2b1e8f,_0x5eb17c){return _0x2b1e8f<_0x5eb17c;},'Udjtx':_0x29a93c(0x421)+_0x29a93c(0x275)+_0x29a93c(0x6a3)+_0x29a93c(0x6a7),'BxsJc':_0x29a93c(0x1d9)+_0x29a93c(0x185)+_0x29a93c(0x568),'eUQtX':_0x29a93c(0x75a)+_0x29a93c(0x3b1)+_0x29a93c(0x521),'tNUHH':_0x29a93c(0x7b4)+_0x29a93c(0x3ea)+_0x29a93c(0x915),'GTivg':_0x29a93c(0x141)+_0x29a93c(0x657)+_0x29a93c(0x427)+_0x29a93c(0x185)+_0x29a93c(0x630),'WVdWK':_0x29a93c(0x812)+_0x29a93c(0x1bb)+_0x29a93c(0x2fa)+_0x29a93c(0x194)+'.','jEuoh':function(_0x269fb2){return _0x269fb2();},'tLBtQ':_0x29a93c(0x671)+_0x29a93c(0x1ca)+_0x29a93c(0x5b5),'RsOaw':_0x29a93c(0x30a)+_0x29a93c(0x31a)+_0x29a93c(0x448)+_0x29a93c(0x3a1),'pVqhj':function(_0x411f4a){return _0x411f4a();},'MWPuT':_0x29a93c(0x92a)+_0x29a93c(0x423)+_0x29a93c(0x63c)+_0x29a93c(0x849),'nyUXT':function(_0x486a26){return _0x486a26();},'oDrGd':_0x29a93c(0x7d2)+_0x29a93c(0x39d)+_0x29a93c(0x981)+'.','MwUYk':function(_0x3981bb){return _0x3981bb();},'sbhTK':_0x29a93c(0x43d)+_0x29a93c(0x501)+_0x29a93c(0x483)+'.','VnWYS':_0x29a93c(0x67f)+_0x29a93c(0x41f)+_0x29a93c(0x849),'ZfFiz':_0x29a93c(0x22e)+_0x29a93c(0x132),'VmMth':function(_0x2c6663){return _0x2c6663();},'QfHZs':_0x29a93c(0x642)+_0x29a93c(0x39d)+_0x29a93c(0x51f),'IvRTP':_0x29a93c(0x64e)+_0x29a93c(0x326)+_0x29a93c(0x47f),'XqbXL':_0x29a93c(0x20a)+_0x29a93c(0x900)+_0x29a93c(0x46a)+_0x29a93c(0x434)+_0x29a93c(0x4c6)+'.','GjTzP':_0x29a93c(0x7a7)+_0x29a93c(0x9c1)+_0x29a93c(0x8f1)+_0x29a93c(0x863)+_0x29a93c(0x8ca)+'.','Kjavr':function(_0x2c6d43){return _0x2c6d43();},'UPTnH':_0x29a93c(0x256),'sTJRa':function(_0x3c2d7f,_0x4d7754,_0x7fcd88){return _0x3c2d7f(_0x4d7754,_0x7fcd88);}},_0x47d665=()=>{const _0x1fcb04=_0x29a93c;console[_0x1fcb04(0x2bb)](_0x9686f1[_0x1fcb04(0x5d1)]);const _0x39ea1f=document[_0x1fcb04(0x219)+_0x1fcb04(0x611)](_0x9686f1[_0x1fcb04(0x93a)]);if(!_0x39ea1f){console[_0x1fcb04(0x2bb)](_0x9686f1[_0x1fcb04(0x88f)]);return;}const _0x5b1783=_0x39ea1f[_0x1fcb04(0x1ba)+_0x1fcb04(0x79c)]||_0x39ea1f[_0x1fcb04(0x61d)+_0x1fcb04(0x947)][_0x1fcb04(0x6a6)],_0x284ee4=_0x5b1783[_0x1fcb04(0x328)];if(!_0x284ee4){console[_0x1fcb04(0x2bb)](_0x9686f1[_0x1fcb04(0x191)]);return;}_0x284ee4[_0x1fcb04(0x33d)]=_0x9686f1[_0x1fcb04(0x95c)],_0x284ee4[_0x1fcb04(0x3a4)+_0x1fcb04(0x79d)](new Event(_0x9686f1[_0x1fcb04(0x71d)],{'bubbles':!![]})),console[_0x1fcb04(0x2bb)](_0x9686f1[_0x1fcb04(0x866)]);},_0x22191b=()=>{const _0x5e0b36=_0x29a93c;console[_0x5e0b36(0x2bb)](_0x9686f1[_0x5e0b36(0x7f6)]);const _0x41092a=Array[_0x5e0b36(0x2c2)](document[_0x5e0b36(0x219)+_0x5e0b36(0x979)](_0x9686f1[_0x5e0b36(0x7a1)]));if(!_0x41092a[_0x5e0b36(0x9a6)]){console[_0x5e0b36(0x2bb)](_0x9686f1[_0x5e0b36(0x58a)]);return;}const _0x22fe80=_0x9686f1[_0x5e0b36(0x70e)](Math[_0x5e0b36(0x4bb)](),0x115*0x1a+0x4*-0x587+0x3*-0x202+0.5)?0x29e+-0x6ba*-0x5+-0x2440:0xd*-0x2b+-0x17fa+0x18a*0x11;_0x41092a[_0x22fe80][_0x5e0b36(0x256)](),console[_0x5e0b36(0x2bb)](_0x5e0b36(0x1f2)+_0x5e0b36(0x418)+':\x20'+(_0x9686f1[_0x5e0b36(0x4b8)](_0x22fe80,-0x3a*0xa1+-0x1708+0x6*0x9eb)?_0x9686f1[_0x5e0b36(0x347)]:_0x9686f1[_0x5e0b36(0x907)]));},_0x43b7a8=()=>{const _0x616f4a=_0x29a93c;console[_0x616f4a(0x2bb)](_0x9686f1[_0x616f4a(0x4f9)]);const _0x1c144d=Array[_0x616f4a(0x2c2)](document[_0x616f4a(0x219)+_0x616f4a(0x979)](_0x9686f1[_0x616f4a(0x1ab)]))[_0x616f4a(0x359)](_0xaa4717=>_0xaa4717[_0x616f4a(0x6f8)+'t'][_0x616f4a(0x9b3)]()===_0x616f4a(0x78b));_0x1c144d?(_0x1c144d[_0x616f4a(0x256)](),console[_0x616f4a(0x2bb)](_0x9686f1[_0x616f4a(0x1fc)])):console[_0x616f4a(0x2bb)](_0x9686f1[_0x616f4a(0x97d)]);},_0x51febd=()=>{const _0x16452f=_0x29a93c;console[_0x16452f(0x2bb)](_0x9686f1[_0x16452f(0x5da)]);const _0xd52818=document[_0x16452f(0x219)+_0x16452f(0x611)](_0x9686f1[_0x16452f(0x8ee)]);_0xd52818?(_0xd52818[_0x16452f(0x256)](),console[_0x16452f(0x2bb)](_0x9686f1[_0x16452f(0x567)])):console[_0x16452f(0x2bb)](_0x9686f1[_0x16452f(0x7d4)]);},_0x58504a=()=>{const _0x3b0c60=_0x29a93c;console[_0x3b0c60(0x2bb)](_0x9686f1[_0x3b0c60(0x265)]);const _0x400534=Array[_0x3b0c60(0x2c2)](document[_0x3b0c60(0x219)+_0x3b0c60(0x979)](_0x9686f1[_0x3b0c60(0x1ab)]))[_0x3b0c60(0x9d3)](_0x29ce51=>_0x29ce51[_0x3b0c60(0x6f8)+'t'][_0x3b0c60(0x9b3)]()===_0x3b0c60(0x3e7)||_0x29ce51['id']===_0x3b0c60(0x130)+_0x3b0c60(0x2c3)+_0x3b0c60(0x36b));_0x9686f1[_0x3b0c60(0x9cd)](_0x400534[_0x3b0c60(0x9a6)],-0x17*0x3b+-0xa8*0x2b+-0x1*-0x2185)?_0x400534[_0x3b0c60(0x7ea)](_0x57f3aa=>{const _0x1f38b1=_0x3b0c60;_0x57f3aa[_0x1f38b1(0x256)](),console[_0x1f38b1(0x2bb)](_0x1f38b1(0x35a)+_0x1f38b1(0x476)+'\x20'+(_0x57f3aa['id']||_0x57f3aa[_0x1f38b1(0x6f8)+'t'][_0x1f38b1(0x9b3)]()));}):console[_0x3b0c60(0x2bb)](_0x9686f1[_0x3b0c60(0x4dc)]);},_0x3b1bdb=()=>{const _0xfd067f=_0x29a93c,_0x4e4a93=document[_0xfd067f(0x219)+_0xfd067f(0x611)](_0x9686f1[_0xfd067f(0x1cd)]),_0x4facd9=document[_0xfd067f(0x219)+_0xfd067f(0x611)](_0x9686f1[_0xfd067f(0x785)]);[_0x4e4a93,_0x4facd9][_0xfd067f(0x7ea)](_0xf1b095=>{const _0x3f2f21=_0xfd067f;_0xf1b095&&(_0xf1b095[_0x3f2f21(0x256)](),console[_0x3f2f21(0x2bb)](_0x3f2f21(0x3de)+_0x3f2f21(0x1d2)+_0xf1b095['id']));});},_0x262498=async()=>{const _0x1a1052=_0x29a93c,_0x1b35d8={'gMLrL':_0x9686f1[_0x1a1052(0x583)],'jfdNc':_0x9686f1[_0x1a1052(0x1ab)],'uqKBc':function(_0x3e575d,_0x48d2b2){const _0x175f5d=_0x1a1052;return _0x9686f1[_0x175f5d(0x914)](_0x3e575d,_0x48d2b2);},'KJMdS':_0x9686f1[_0x1a1052(0x192)],'TENSa':_0x9686f1[_0x1a1052(0x474)],'ZYjQr':_0x9686f1[_0x1a1052(0x4d2)],'mjLcM':_0x9686f1[_0x1a1052(0x882)],'eugQZ':_0x9686f1[_0x1a1052(0x8a8)],'SNLVG':function(_0x21afb6){const _0x5109a3=_0x1a1052;return _0x9686f1[_0x5109a3(0x76b)](_0x21afb6);},'JKnSK':_0x9686f1[_0x1a1052(0x261)],'JNmrH':function(_0x486178){const _0x4a575a=_0x1a1052;return _0x9686f1[_0x4a575a(0x76b)](_0x486178);},'RxrZy':_0x9686f1[_0x1a1052(0x5a2)],'wDxzf':_0x9686f1[_0x1a1052(0x97d)],'LsMnA':function(_0x33982d){const _0x3e66f0=_0x1a1052;return _0x9686f1[_0x3e66f0(0x76b)](_0x33982d);},'Qymob':function(_0x42d937,_0x262a63){const _0x4fe83a=_0x1a1052;return _0x9686f1[_0x4fe83a(0x4f6)](_0x42d937,_0x262a63);},'bPcLj':_0x9686f1[_0x1a1052(0x8ad)],'Jvogm':function(_0x35c0e8,_0x12502c){const _0x468c0d=_0x1a1052;return _0x9686f1[_0x468c0d(0x4b8)](_0x35c0e8,_0x12502c);},'rZMEI':_0x9686f1[_0x1a1052(0x732)],'Agzfd':_0x9686f1[_0x1a1052(0x5e2)],'ZEvEy':function(_0x1c871e){const _0x3ac02d=_0x1a1052;return _0x9686f1[_0x3ac02d(0x3f3)](_0x1c871e);},'TDISj':_0x9686f1[_0x1a1052(0x229)],'qCQDs':function(_0x57a43a,_0xa415a0){const _0x235ffe=_0x1a1052;return _0x9686f1[_0x235ffe(0x9cd)](_0x57a43a,_0xa415a0);},'wRibU':_0x9686f1[_0x1a1052(0x306)],'GfAMh':function(_0x25f0dd,_0x1794f8){const _0x32a15f=_0x1a1052;return _0x9686f1[_0x32a15f(0x4d3)](_0x25f0dd,_0x1794f8);},'YUEyy':_0x9686f1[_0x1a1052(0x357)],'hKTlX':function(_0x41a2f4,_0xa44bd1){const _0x7bb146=_0x1a1052;return _0x9686f1[_0x7bb146(0x958)](_0x41a2f4,_0xa44bd1);},'MhWgV':_0x9686f1[_0x1a1052(0x992)],'zRkSj':_0x9686f1[_0x1a1052(0x1b7)]};console[_0x1a1052(0x2bb)](_0x9686f1[_0x1a1052(0x13c)]),await new Promise(_0x56650f=>setTimeout(_0x56650f,-0x1*-0x86b+0xc40+-0x137f*0x1));const _0x3ab755=document[_0x1a1052(0x219)+_0x1a1052(0x611)](_0x9686f1[_0x1a1052(0x736)]);if(_0x3ab755){console[_0x1a1052(0x2bb)](_0x9686f1[_0x1a1052(0x251)]),await new Promise(_0x3ca044=>setTimeout(_0x3ca044,-0x1161+-0x6*-0x1e+0x11d9));const _0x1fe8a5=document[_0x1a1052(0x219)+_0x1a1052(0x979)](_0x9686f1[_0x1a1052(0x583)]);(!_0x1fe8a5||_0x9686f1[_0x1a1052(0x4b8)](_0x1fe8a5[_0x1a1052(0x9a6)],-0x2009*0x1+-0x1e83*0x1+-0xfa3*-0x4))&&(console[_0x1a1052(0x2bb)](_0x9686f1[_0x1a1052(0x988)]),await new Promise(_0x3764aa=>setTimeout(_0x3764aa,0x1d*0x6e+-0x1*0xccb+0x375)));const _0x4ea6f9=async(_0x4ac910=[])=>{const _0x459567=_0x1a1052,_0x156b81={'lKwHF':_0x1b35d8[_0x459567(0x923)],'EQBnB':_0x1b35d8[_0x459567(0x29c)],'qjdRK':_0x1b35d8[_0x459567(0x438)],'ImrvO':_0x1b35d8[_0x459567(0x3cd)],'oXWdF':_0x1b35d8[_0x459567(0x78a)],'JFCbl':function(_0x134293,_0x2f8b34){const _0x2d44cf=_0x459567;return _0x1b35d8[_0x2d44cf(0x276)](_0x134293,_0x2f8b34);},'oIJYt':function(_0x1fab12){const _0x5b2a8b=_0x459567;return _0x1b35d8[_0x5b2a8b(0x4e2)](_0x1fab12);},'mfxCP':_0x1b35d8[_0x459567(0x687)],'YzEeB':function(_0x1fdb99,_0x44ddaf){const _0x4bca18=_0x459567;return _0x1b35d8[_0x4bca18(0x162)](_0x1fdb99,_0x44ddaf);},'NJFrC':_0x1b35d8[_0x459567(0x52e)],'sidtE':_0x1b35d8[_0x459567(0x5fb)],'GREAF':function(_0x38a919){const _0x30aefa=_0x459567;return _0x1b35d8[_0x30aefa(0x641)](_0x38a919);}};try{let _0x385ad7=await helper[_0x459567(0x361)+_0x459567(0x3a6)]();_0x385ad7+=_0x1b35d8[_0x459567(0x4ad)];_0x1b35d8[_0x459567(0x127)](_0x4ac910[_0x459567(0x9a6)],-0x109d*-0x1+-0xfb9+-0xe4)&&(_0x385ad7+=_0x459567(0x922)+_0x459567(0x45a)+'\x20'+_0x4ac910[_0x459567(0x6e5)](',\x20')+'.');const _0x41f10d=await helper[_0x459567(0x588)+'r'](_0x385ad7);console[_0x459567(0x2bb)](_0x1b35d8[_0x459567(0x4c0)],_0x41f10d);if(_0x41f10d&&['A','B','C','D'][_0x459567(0x71f)](_0x41f10d[_0x459567(0x9b3)]())&&!_0x4ac910[_0x459567(0x71f)](_0x41f10d[_0x459567(0x9b3)]())){const _0x5419b8=_0x41f10d[_0x459567(0x9b3)](),_0x352411=document[_0x459567(0x219)+_0x459567(0x979)](_0x1b35d8[_0x459567(0x11e)]),_0x2ffaa6=_0x1b35d8[_0x459567(0x7e0)](_0x5419b8[_0x459567(0x311)](-0x1245+0x15d5+-0x390),'A'[_0x459567(0x311)](0x14ca+0x16d*-0x5+-0xda9));_0x352411[_0x2ffaa6]?(_0x352411[_0x2ffaa6][_0x459567(0x256)](),console[_0x459567(0x2bb)](_0x459567(0x783)+_0x459567(0x624)+_0x5419b8),await new Promise(_0x1f9202=>setTimeout(async()=>{const _0x4ad95d=_0x459567,_0x57b1b7={'GVsZN':_0x1b35d8[_0x4ad95d(0x11e)],'IGtEK':_0x1b35d8[_0x4ad95d(0x6b7)],'zgmND':function(_0x38a2ac,_0x563974){const _0xcdfd7=_0x4ad95d;return _0x1b35d8[_0xcdfd7(0x5b8)](_0x38a2ac,_0x563974);},'VfjUa':_0x1b35d8[_0x4ad95d(0x923)],'IUryG':_0x1b35d8[_0x4ad95d(0x29c)],'FCjqi':_0x1b35d8[_0x4ad95d(0x438)],'DoLsy':_0x1b35d8[_0x4ad95d(0x3cd)],'nPfzy':_0x1b35d8[_0x4ad95d(0x78a)],'KDTuG':function(_0x2d785c){const _0x5cba07=_0x4ad95d;return _0x1b35d8[_0x5cba07(0x4e2)](_0x2d785c);},'fdfbr':_0x1b35d8[_0x4ad95d(0x97a)],'hlSvw':function(_0x54c528){const _0x599713=_0x4ad95d;return _0x1b35d8[_0x599713(0x6e1)](_0x54c528);}},_0x577628=Array[_0x4ad95d(0x2c2)](document[_0x4ad95d(0x219)+_0x4ad95d(0x979)](_0x1b35d8[_0x4ad95d(0x6b7)]))[_0x4ad95d(0x359)](_0x9f1415=>_0x9f1415[_0x4ad95d(0x6f8)+'t'][_0x4ad95d(0x9b3)]()===_0x4ad95d(0x78b));_0x577628?(_0x577628[_0x4ad95d(0x256)](),console[_0x4ad95d(0x2bb)](_0x1b35d8[_0x4ad95d(0x321)]),await new Promise(_0x1d7b05=>setTimeout(async()=>{const _0x52842a=_0x4ad95d,_0x2bb19b={'FHIPx':_0x156b81[_0x52842a(0x453)],'AYSfq':_0x156b81[_0x52842a(0x1d3)],'qhTbZ':_0x156b81[_0x52842a(0x5df)],'XcOqF':_0x156b81[_0x52842a(0x2d7)],'xloPn':_0x156b81[_0x52842a(0x1ef)],'oHrcY':function(_0x1f762c,_0x39f7f8){const _0x44fc9e=_0x52842a;return _0x156b81[_0x44fc9e(0x8dd)](_0x1f762c,_0x39f7f8);},'VdjgK':function(_0x556cf6){const _0x97fcfa=_0x52842a;return _0x156b81[_0x97fcfa(0x2a8)](_0x556cf6);}},_0x1b24ce=document[_0x52842a(0x1da)+_0x52842a(0x773)](_0x156b81[_0x52842a(0x912)]);if(_0x1b24ce){const _0x5a4969=_0x1b24ce[_0x52842a(0x6f8)+'t'][_0x52842a(0x9b3)]();_0x1b24ce[_0x52842a(0x256)](),console[_0x52842a(0x2bb)](_0x52842a(0x6cc)+_0x5a4969+_0x52842a(0x4ca)),_0x156b81[_0x52842a(0x44e)](_0x5a4969,_0x156b81[_0x52842a(0x569)])?await new Promise(_0x34caac=>setTimeout(async()=>{const _0x37eaad=_0x52842a,_0x52682f=document[_0x37eaad(0x219)+_0x37eaad(0x611)](_0x2bb19b[_0x37eaad(0x56d)]);if(_0x52682f){const _0x5ba7e4=_0x52682f[_0x37eaad(0x219)+_0x37eaad(0x611)](_0x2bb19b[_0x37eaad(0x585)]),_0xd9fa56=_0x52682f[_0x37eaad(0x219)+_0x37eaad(0x611)](_0x2bb19b[_0x37eaad(0x148)]);if(_0x5ba7e4)_0x5ba7e4[_0x37eaad(0x4d7)][_0x37eaad(0x917)]=_0x2bb19b[_0x37eaad(0x293)];if(_0xd9fa56)_0xd9fa56[_0x37eaad(0x4d7)][_0x37eaad(0x917)]=_0x2bb19b[_0x37eaad(0x9cc)];}await _0x2bb19b[_0x37eaad(0x1c6)](_0x4ea6f9,[..._0x4ac910,_0x5419b8]),_0x2bb19b[_0x37eaad(0x8a3)](_0x34caac);},0x19d+0x2021*-0x1+0xfd8*0x2)):await new Promise(_0x20f609=>setTimeout(async()=>{const _0x5ebcad=_0x52842a,_0x1d26be=document[_0x5ebcad(0x219)+_0x5ebcad(0x611)](_0x57b1b7[_0x5ebcad(0x21a)]),_0x1e1551=Array[_0x5ebcad(0x2c2)](document[_0x5ebcad(0x219)+_0x5ebcad(0x979)](_0x57b1b7[_0x5ebcad(0x564)]))[_0x5ebcad(0x359)](_0x37b76b=>_0x37b76b[_0x5ebcad(0x6f8)+'t'][_0x5ebcad(0x9b3)]()===_0x5ebcad(0x78b));if(_0x57b1b7[_0x5ebcad(0x5e7)](_0x1e1551,_0x1d26be)){const _0x22b1ad=document[_0x5ebcad(0x219)+_0x5ebcad(0x611)](_0x57b1b7[_0x5ebcad(0x1ec)]);if(_0x22b1ad){const _0x46c1e3=_0x22b1ad[_0x5ebcad(0x219)+_0x5ebcad(0x611)](_0x57b1b7[_0x5ebcad(0x26c)]),_0x3cf7e3=_0x22b1ad[_0x5ebcad(0x219)+_0x5ebcad(0x611)](_0x57b1b7[_0x5ebcad(0x921)]);if(_0x46c1e3)_0x46c1e3[_0x5ebcad(0x4d7)][_0x5ebcad(0x917)]=_0x57b1b7[_0x5ebcad(0x391)];if(_0x3cf7e3)_0x3cf7e3[_0x5ebcad(0x4d7)][_0x5ebcad(0x917)]=_0x57b1b7[_0x5ebcad(0x7de)];}await _0x57b1b7[_0x5ebcad(0x470)](_0x4ea6f9);}else{console[_0x5ebcad(0x2bb)](_0x57b1b7[_0x5ebcad(0x2b4)]);const _0x30c33b=document[_0x5ebcad(0x219)+_0x5ebcad(0x611)](_0x57b1b7[_0x5ebcad(0x1ec)]);if(_0x30c33b){_0x30c33b[_0x5ebcad(0x26b)]=![];const _0x48728f=_0x30c33b[_0x5ebcad(0x219)+_0x5ebcad(0x611)](_0x57b1b7[_0x5ebcad(0x26c)]),_0xdbd2bb=_0x30c33b[_0x5ebcad(0x219)+_0x5ebcad(0x611)](_0x57b1b7[_0x5ebcad(0x921)]);if(_0x48728f)_0x48728f[_0x5ebcad(0x4d7)][_0x5ebcad(0x917)]=_0x57b1b7[_0x5ebcad(0x7de)];if(_0xdbd2bb)_0xdbd2bb[_0x5ebcad(0x4d7)][_0x5ebcad(0x917)]=_0x57b1b7[_0x5ebcad(0x391)];}}_0x57b1b7[_0x5ebcad(0x40e)](_0x20f609);},0xc6b+-0x195a+-0x67*-0x25));}else console[_0x52842a(0x2bb)](_0x156b81[_0x52842a(0x173)]);_0x156b81[_0x52842a(0x4ac)](_0x1d7b05);},-0xae1+0xc6b+0x25e*0x1))):console[_0x4ad95d(0x2bb)](_0x1b35d8[_0x4ad95d(0x4dd)]),_0x1b35d8[_0x4ad95d(0x341)](_0x1f9202);},0x206b+0x1926+-0x379d))):console[_0x459567(0x2bb)](_0x459567(0x6b1)+_0x5419b8+(_0x459567(0x351)+_0x459567(0x7b1)));}else{console[_0x459567(0x2bb)](_0x1b35d8[_0x459567(0x3b0)],_0x41f10d);if(!_0x41f10d||!['A','B','C','D'][_0x459567(0x71f)](_0x41f10d[_0x459567(0x9b3)]())||_0x4ac910[_0x459567(0x71f)](_0x41f10d[_0x459567(0x9b3)]())){if(_0x1b35d8[_0x459567(0x80d)](_0x4ac910[_0x459567(0x9a6)],0x186f+0x11*-0x1f5+-0x2f3*-0x3)){console[_0x459567(0x2bb)](_0x1b35d8[_0x459567(0x98d)]);const _0x3994e4=document[_0x459567(0x219)+_0x459567(0x611)](_0x1b35d8[_0x459567(0x923)]);if(_0x3994e4){const _0x2d6684=_0x3994e4[_0x459567(0x219)+_0x459567(0x611)](_0x1b35d8[_0x459567(0x29c)]),_0x1362df=_0x3994e4[_0x459567(0x219)+_0x459567(0x611)](_0x1b35d8[_0x459567(0x438)]);if(_0x2d6684)_0x2d6684[_0x459567(0x4d7)][_0x459567(0x917)]=_0x1b35d8[_0x459567(0x3cd)];if(_0x1362df)_0x1362df[_0x459567(0x4d7)][_0x459567(0x917)]=_0x1b35d8[_0x459567(0x78a)];}await new Promise(_0x54b2d8=>setTimeout(_0x54b2d8,-0x1*0x9ad+0x161b+0xb42*-0x1)),await _0x1b35d8[_0x459567(0x276)](_0x4ea6f9,[..._0x4ac910,_0x41f10d?_0x41f10d[_0x459567(0x9b3)]():null][_0x459567(0x9d3)](Boolean));}else console[_0x459567(0x2bb)](_0x1b35d8[_0x459567(0x97a)]);}}}catch(_0x41172c){console[_0x459567(0x8f9)](_0x1b35d8[_0x459567(0x3d3)],_0x41172c);}};await _0x9686f1[_0x1a1052(0x45c)](_0x4ea6f9),console[_0x1a1052(0x2bb)](_0x9686f1[_0x1a1052(0x261)]);}else console[_0x1a1052(0x2bb)](_0x9686f1[_0x1a1052(0x3e9)]);},_0x4f6490=async()=>{const _0x2b2152=_0x29a93c;try{const _0xeaa7fb=_0x9686f1[_0x2b2152(0x188)][_0x2b2152(0x668)]('|');let _0x3dd7f3=-0x98*-0x19+-0x131f+-0xdb*-0x5;while(!![]){switch(_0xeaa7fb[_0x3dd7f3++]){case'0':await new Promise(_0xd22aa9=>setTimeout(_0xd22aa9,0xf5+-0x1af+0x2ae));continue;case'1':_0x9686f1[_0x2b2152(0x413)](_0x22191b);continue;case'2':console[_0x2b2152(0x2bb)](_0x9686f1[_0x2b2152(0x44b)]);continue;case'3':await new Promise(_0x567e09=>setTimeout(_0x567e09,0xcd6+-0xa93*0x1+-0x1f*0x9));continue;case'4':_0x9686f1[_0x2b2152(0x6c0)](_0x51febd);continue;case'5':await new Promise(_0x32d00f=>setTimeout(_0x32d00f,0x29d+0x18e3+-0x1798));continue;case'6':await new Promise(_0x1a7fed=>setTimeout(_0x1a7fed,0x1*-0xc27+0x1e35+-0xeee));continue;case'7':console[_0x2b2152(0x2bb)](_0x9686f1[_0x2b2152(0x42d)]);continue;case'8':_0x9686f1[_0x2b2152(0x6c0)](_0x47d665);continue;case'9':await _0x9686f1[_0x2b2152(0x2e5)](_0x262498);continue;case'10':await new Promise(_0x2ad92b=>setTimeout(_0x2ad92b,-0x1e5+0x629+-0x318));continue;case'11':console[_0x2b2152(0x2bb)](_0x9686f1[_0x2b2152(0x3fb)]);continue;case'12':console[_0x2b2152(0x2bb)](_0x9686f1[_0x2b2152(0x2bf)]);continue;case'13':console[_0x2b2152(0x2bb)](_0x9686f1[_0x2b2152(0x3e4)]);continue;case'14':_0x9686f1[_0x2b2152(0x6ad)](_0x58504a);continue;case'15':_0x9686f1[_0x2b2152(0x6c0)](_0x43b7a8);continue;}break;}}catch(_0x4c1355){console[_0x2b2152(0x8f9)](_0x9686f1[_0x2b2152(0x47c)],_0x4c1355);}};helper[_0x29a93c(0x57b)](),document[_0x29a93c(0x920)+_0x29a93c(0x6e6)](_0x9686f1[_0x29a93c(0x840)],async _0x16028d=>{const _0x3b9c4a=_0x29a93c;if(_0x16028d[_0x3b9c4a(0x1cf)][_0x3b9c4a(0x591)](_0x9686f1[_0x3b9c4a(0x192)])){console[_0x3b9c4a(0x2bb)](_0x9686f1[_0x3b9c4a(0x646)]);if(!helper[_0x3b9c4a(0x666)]){helper[_0x3b9c4a(0x4ee)+_0x3b9c4a(0x908)](_0x9686f1[_0x3b9c4a(0x4fc)]);return;}const _0x4ceb54=await helper[_0x3b9c4a(0x39c)+_0x3b9c4a(0x8ea)]();if(!_0x4ceb54){helper[_0x3b9c4a(0x4ee)+_0x3b9c4a(0x908)](_0x9686f1[_0x3b9c4a(0x18c)]);return;}try{const _0x1f68da=_0x16028d[_0x3b9c4a(0x1cf)][_0x3b9c4a(0x591)](_0x9686f1[_0x3b9c4a(0x192)]),_0x2ff3a8=_0x1f68da[_0x3b9c4a(0x219)+_0x3b9c4a(0x611)](_0x9686f1[_0x3b9c4a(0x474)]),_0x544e38=_0x1f68da[_0x3b9c4a(0x219)+_0x3b9c4a(0x611)](_0x9686f1[_0x3b9c4a(0x4d2)]);if(_0x2ff3a8)_0x2ff3a8[_0x3b9c4a(0x4d7)][_0x3b9c4a(0x917)]=_0x9686f1[_0x3b9c4a(0x882)];if(_0x544e38)_0x544e38[_0x3b9c4a(0x4d7)][_0x3b9c4a(0x917)]=_0x9686f1[_0x3b9c4a(0x8a8)];await _0x9686f1[_0x3b9c4a(0x218)](_0x4f6490);}catch(_0x6c2995){console[_0x3b9c4a(0x8f9)](_0x9686f1[_0x3b9c4a(0x47c)],_0x6c2995);const _0x45b439=_0x16028d[_0x3b9c4a(0x1cf)][_0x3b9c4a(0x591)](_0x9686f1[_0x3b9c4a(0x192)]);if(_0x45b439){_0x45b439[_0x3b9c4a(0x26b)]=![];const _0x5b31f7=_0x45b439[_0x3b9c4a(0x219)+_0x3b9c4a(0x611)](_0x9686f1[_0x3b9c4a(0x474)]),_0x3d0a73=_0x45b439[_0x3b9c4a(0x219)+_0x3b9c4a(0x611)](_0x9686f1[_0x3b9c4a(0x4d2)]);if(_0x5b31f7)_0x5b31f7[_0x3b9c4a(0x4d7)][_0x3b9c4a(0x917)]=_0x9686f1[_0x3b9c4a(0x8a8)];if(_0x3d0a73)_0x3d0a73[_0x3b9c4a(0x4d7)][_0x3b9c4a(0x917)]=_0x9686f1[_0x3b9c4a(0x882)];}}}}),_0x9686f1[_0x29a93c(0x765)](setInterval,()=>{const _0x2fb8ab=_0x29a93c;_0x9686f1[_0x2fb8ab(0x2e5)](_0x3b1bdb);},0x106*0x8+-0x25f2+-0x1e26*-0x1);}();
+/**
+ * AssessmentHelper Class
+ * Manages a floating UI element for interacting with assessment pages.
+ * Includes Draggabilly for main UI dragging and an intro animation using Anime.js.
+ * The intro animation features an image animating into view.
+ * Both Anime.js and Draggabilly are loaded dynamically via JavaScript.
+ * Enhanced visual cues for buttons, loading states, and answer display.
+ */
+class AssessmentHelper {
+  constructor() {
+    // Manual drag properties for the answer UI (Draggabilly is used for the main UI)
+    this.answerIsDragging = false;
+    this.answerCurrentX = 0;
+    this.answerCurrentY = 0;
+    this.answerInitialX = 0;
+    this.answerInitialY = 0;
+
+    // Cached article content to avoid re-fetching for subsequent questions
+    this.cachedArticle = null;
+    this.isFetchingAnswer = false; // State to track if an answer fetch is in progress
+    this.isProcessingRespond = false;
+    this.currentQuestionText = ''; // Track the current question text
+    this.completionAnimationPlayed = false; // Track if the completion animation has been played
+
+    // URLs for the external libraries
+    this.animeScriptUrl =
+      "https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"; // Anime.js core library
+    this.draggabillyScriptUrl =
+      "https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"; // Draggabilly library
+
+    // Ensure the script runs after the DOM is fully loaded
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => this.init());
+    } else {
+      this.init();
+    }
+  }
+
+  /**
+   * Initializes the helper. Creates UI elements but does not append them yet.
+   * Dynamically loads necessary scripts (Anime.js, Draggabilly) sequentially.
+   * Starts the intro animation after scripts are loaded.
+   */
+  async init() {
+    console.log("AssessmentHelper: Starting initialization...");
+    try {
+      // Dynamically load Anime.js first
+      console.log(`AssessmentHelper: Loading script: ${this.animeScriptUrl}`);
+      await this.loadScript(this.animeScriptUrl);
+      console.log("AssessmentHelper: Anime.js script loaded successfully.");
+
+      // Then dynamically load Draggabilly
+      console.log(
+        `AssessmentHelper: Loading script: ${this.draggabillyScriptUrl}`,
+      );
+      await this.loadScript(this.draggabillyScriptUrl);
+      console.log("AssessmentHelper: Draggabilly script loaded successfully.");
+
+      // Create UI elements after scripts are loaded and available
+      this.itemMetadata = {
+        UI: this.createUI(), // Main draggable UI
+        answerUI: this.createAnswerUI(), // Smaller answer display UI
+      };
+
+      // Start the intro animation, which will handle appending and showing the UI
+      this.playIntroAnimation();
+    } catch (error) {
+      console.error("AssessmentHelper: Failed during script loading:", error);
+      // Handle the error - notify the user and potentially proceed without full functionality
+      alert(
+        "Failed to load required scripts for the Assessment Helper. Some features may not work.",
+      );
+      // Fallback: Create and show UI without animation/dragging if scripts fail
+      this.itemMetadata = {
+        UI: this.createUI(),
+        answerUI: this.createAnswerUI(),
+      };
+      this.showUI(true); // Pass true to indicate fallback mode (skip animation)
+    }
+  }
+
+  /**
+   * Dynamically loads a JavaScript script by creating a script tag.
+   * Returns a Promise that resolves when the script is loaded.
+   * @param {string} url - The URL of the script to load.
+   * @returns {Promise<void>} A Promise that resolves when the script is loaded or rejects on error.
+   */
+  loadScript(url) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = url;
+      script.onload = () => {
+        console.log(`AssessmentHelper: Script loaded: ${url}`);
+        resolve();
+      };
+      script.onerror = (error) => {
+        console.error(`AssessmentHelper: Error loading script: ${url}`, error);
+        // Clean up the script tag on error
+        script.remove();
+        reject(new Error(`Failed to load script: ${url}`));
+      };
+      // Append the script to the document head
+      document.head.appendChild(script);
+    });
+  }
+
+  /**
+   * Creates the main UI element (the launcher).
+   * Includes the drag handle for Draggabilly.
+   * @returns {HTMLDivElement} The container element for the main UI.
+   */
+  createUI() {
+    const container = document.createElement("div");
+    const launcher = document.createElement("div");
+    launcher.id = "Launcher";
+    launcher.className = "Launcher";
+    // Initial styles for animation: hidden and transparent
+    // Transition added for the fade-in effect
+    launcher.style.cssText =
+      "outline: none;min-height: 160px;opacity: 0;visibility: hidden;transition: opacity 0.5s ease;font-family: 'Nunito', sans-serif;width: 180px;height: 240px;background: #1c1e2b;position: fixed;border-radius: 12px;display: flex;flex-direction: column;align-items: center;color: white;font-size: 16px;top: 50%;right: 20px;transform: translateY(-50%);z-index: 99999;padding: 16px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: hidden;white-space: nowrap;";
+
+    // Drag handle element - Draggabilly will be configured to use this
+    const dragHandle = document.createElement("div");
+    dragHandle.className = "drag-handle";
+    dragHandle.style.cssText =
+      "width: 100%;height: 24px;cursor: move;background: transparent;position: absolute;top: 0;";
+
+    // Image element inside the launcher (this image is part of the UI, not the intro animation image)
+    const uiImg = document.createElement("img");
+    uiImg.src =
+      "https://github.com/Cpmjaguar1234/nova/blob/main/nova%20logo%20png.png?raw=true"; // Keep the original UI image
+    uiImg.style.cssText =
+      "width: 90px;height: 90px;margin-top: 32px;border-radius: 50%;";
+
+    // Close button for the main UI
+    const closeButton = document.createElement("button");
+    closeButton.id = "closeButton";
+    // Use Unicode multiplication symbol
+    closeButton.textContent = "\u00D7"; // Unicode multiplication symbol
+    // Added transition for smoother hover effect
+    // Set initial color to white and opacity to 0.5 for dimmed appearance
+    // Removed temporary blue background
+    closeButton.style.cssText =
+      "position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;transition: color 0.2s ease, transform 0.1s ease; opacity: 0.5; display: block; visibility: visible;";
+
+    // Button to trigger the answer fetching process
+    const getAnswerButton = document.createElement("button");
+    getAnswerButton.id = "getAnswerButton";
+    // Added transitions for background and transform on hover/active
+    getAnswerButton.style.cssText =
+      "background: #2c2e3b;border: none;color: white;padding: 12px 20px;border-radius: 8px;cursor: pointer;margin-top: 24px;width: 120px;height: 44px;font-size: 16px;transition: background 0.2s ease, transform 0.1s ease; display: flex; justify-content: center; align-items: center;"; // Added flex properties for centering content
+
+    // Loading indicator element (initially hidden)
+    const loadingIndicator = document.createElement("div");
+    loadingIndicator.id = "loadingIndicator";
+    loadingIndicator.style.cssText =
+      "border: 4px solid rgba(255, 255, 255, 0.3); border-radius: 50%; border-top: 4px solid #fff; width: 20px; height: 20px; animation: spin 1s linear infinite; display: none;"; // Basic spinner CSS
+
+    // Button text span
+    const buttonTextSpan = document.createElement("span");
+    buttonTextSpan.textContent = "Skip Article";
+    buttonTextSpan.id = "getAnswerButtonText";
+
+    getAnswerButton.appendChild(loadingIndicator);
+    getAnswerButton.appendChild(buttonTextSpan);
+
+    // Version display
+    const version = document.createElement("div");
+    version.style.cssText =
+      "position: absolute;bottom: 8px;right: 8px;font-size: 12px;opacity: 0.5;";
+    version.textContent = "1.2"; // Updated version number
+
+    // Append elements to the launcher
+    launcher.appendChild(dragHandle);
+    launcher.appendChild(uiImg); // Append the UI image
+    launcher.appendChild(closeButton);
+    launcher.appendChild(getAnswerButton);
+    launcher.appendChild(version);
+
+    // Append launcher to the container
+    container.appendChild(launcher);
+
+    return container;
+  }
+
+  /**
+   * Creates the smaller UI element to display the answer.
+   * Uses manual dragging.
+   * @returns {HTMLDivElement} The container element for the answer UI.
+   */
+  createAnswerUI() {
+    const container = document.createElement("div");
+    const answerContainer = document.createElement("div");
+    answerContainer.id = "answerContainer";
+    answerContainer.className = "answerLauncher";
+    // Initial styles for the answer UI (starts hidden)
+    // Added transition for smoother appearance
+    answerContainer.style.cssText =
+      "outline: none;min-height: 60px;transform: translateX(0px) translateY(-50%);opacity: 0;visibility: hidden;transition: opacity 0.3s ease, transform 0.3s ease;font-family: 'Nunito', sans-serif;width: 60px;height: 60px;background: #1c1e2b;position: fixed;border-radius: 8px;display: flex;justify-content: center;align-items: center;color: white;font-size: 24px;top: 50%;right: 220px;z-index: 99998;padding: 8px;box-shadow: 0 4px 8px rgba(0,0,0,0.2);overflow: hidden;white-space: normal;";
+
+    // Drag handle for the answer UI (for manual dragging)
+    const dragHandle = document.createElement("div");
+    dragHandle.className = "answer-drag-handle";
+    dragHandle.style.cssText =
+      "width: 100%;height: 24px;cursor: move;background: transparent;position: absolute;top: 0;";
+
+    // Close button for the answer UI
+    const closeButton = document.createElement("button");
+    closeButton.id = "closeAnswerButton";
+    // Added transition for smoother hover effect
+    closeButton.style.cssText =
+      "position: absolute;top: 8px;right: 8px;background: none;border: none;color: white;font-size: 18px;cursor: pointer;padding: 2px 8px;transition: color 0.2s ease, transform 0.1s ease;";
+
+    // Element to display the fetched answer
+    const answerContent = document.createElement("div");
+    answerContent.id = "answerContent";
+    answerContent.style.cssText =
+      "padding: 0;margin: 0;word-wrap: break-word;font-size: 24px;font-weight: bold;display: flex;justify-content: center;align-items: center;width: 100%;height: 100%;";
+
+    // Append elements to the answer container
+    answerContainer.appendChild(dragHandle);
+    answerContainer.appendChild(closeButton);
+    answerContainer.appendChild(answerContent);
+
+    // Append answer container to the main container
+    container.appendChild(answerContainer);
+
+    return container;
+  }
+
+  /**
+   * Plays the introductory animation using Anime.js.
+   * Displays the Nova image animating into view, then removes it
+   * and shows the main UI. The background is not faded.
+   */
+  playIntroAnimation() {
+    // Check if Anime.js is available before attempting animation
+    if (typeof anime === "undefined") {
+      console.error(
+        "AssessmentHelper: Anime.js is not loaded. Cannot play animation.",
+      );
+      this.showUI(); // Fallback to showing UI directly
+      return;
+    }
+
+    const imageUrl =
+      "https://github.com/Cpmjaguar1234/nova/blob/main/nova%20logo%20png.png?raw=true"; // Image URL
+
+    // Create the image element for the intro animation
+    const introImgElement = document.createElement("img");
+    introImgElement.src = imageUrl;
+    introImgElement.id = "introLoaderImage"; // Give it an ID for targeting with Anime.js
+    introImgElement.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.5); /* Start slightly smaller and centered */
+            width: 100px; /* Base size */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 100001;
+            opacity: 0; /* Start hidden */
+        `;
+
+    // Append image to the body
+    document.body.appendChild(introImgElement);
+
+    console.log("AssessmentHelper: Starting Anime.js intro animation.");
+
+    // Anime.js animation sequence for the intro image
+    anime
+      .timeline({
+        easing: "easeInOutQuad", // Smooth easing
+        duration: 800, // Duration for animation segments
+        complete: (anim) => {
+          console.log(
+            "AssessmentHelper: Intro animation complete. Showing UI.",
+          );
+          // Remove the intro image element from the DOM after animation finishes
+          introImgElement.remove();
+          // Show the main UI and set up listeners
+          this.showUI();
+        },
+      })
+      .add({
+        targets: introImgElement,
+        opacity: [0, 1], // Fade in
+        scale: [0.5, 1], // Scale up
+        rotate: "1turn", // Rotate once
+        duration: 1000, // Longer duration for the initial entrance
+        easing: "easeOutExpo",
+      })
+      .add({
+        targets: introImgElement,
+        translateY: "-=20", // Move up slightly
+        duration: 500,
+        easing: "easeInOutSine",
+      })
+      .add({
+        targets: introImgElement,
+        translateY: "+=20", // Move back down
+        duration: 500,
+        easing: "easeInOutSine",
+      })
+      // Add a final fade out for the intro image before removing it
+      .add(
+        {
+          targets: introImgElement,
+          opacity: 0,
+          duration: 500,
+          easing: "linear",
+        },
+        "+=500",
+      ); // Add a small delay before fading out
+  }
+
+  /**
+   * Appends the UI elements to the DOM and makes the main UI visible with a fade-in.
+   * Then sets up event listeners.
+   * @param {boolean} [skipAnimation=false] - If true, skips the fade-in animation for fallback.
+   */
+  showUI(skipAnimation = false) {
+    console.log("AssessmentHelper: Showing UI.");
+    // Append UI elements to the body
+    document.body.appendChild(this.itemMetadata.UI);
+    document.body.appendChild(this.itemMetadata.answerUI);
+
+    // Get the launcher element after it's added to the DOM
+    const launcher = document.getElementById("Launcher");
+    if (launcher) {
+      if (skipAnimation) {
+        console.log("AssessmentHelper: Skipping UI fade-in animation.");
+        launcher.style.visibility = "visible";
+        launcher.style.opacity = 1;
+        // Set up listeners immediately in fallback mode
+        this.setupEventListeners();
+      } else {
+        // Make the launcher visible and trigger the fade-in transition
+        launcher.style.visibility = "visible";
+        // Use a small timeout to ensure the visibility change is processed before
+        // the opacity transition starts, guaranteeing the transition runs.
+        setTimeout(() => {
+          launcher.style.opacity = 1;
+        }, 10); // A small delay (e.g., 10ms) is usually sufficient
+
+        // Set up event listeners after the UI is visible and potentially faded in.
+        // Use a timeout slightly longer than the UI fade-in transition duration
+        // to ensure elements are fully ready.
+        setTimeout(() => {
+          this.setupEventListeners();
+        }, 500); // Matches the launcher's opacity transition duration
+      }
+    } else {
+      // Fallback if the launcher element was not found after creation/appending
+      console.error(
+        "AssessmentHelper: Launcher UI element not found after animation. Attempting event listener setup anyway.",
+      );
+      // If launcher isn't found, Draggabilly won't initialize for it, but other listeners might work.
+      this.setupEventListeners();
+    }
+  }
+
+  /**
+   * Sets up polling to check for changes in the assessment UI
+   */
+  setupPolling() {
+    const pollInterval = setInterval(async () => {
+      const activeStep = this.getActiveStep();
+      const currentTab = activeStep?.stepLabel?.toLowerCase() || '';
+
+      // Handle Read tab
+      if (currentTab === 'read') {
+        console.log('AssessmentHelper: On Read tab, looking for Next button...');
+        const nextButton = Array.from(document.querySelectorAll('button.MuiButton-containedPrimary, button.MuiButton-root, button'))
+          .find(btn => btn.textContent?.trim().toLowerCase() === 'next');
+
+      if (nextButton) {
+        console.log('AssessmentHelper: Found and clicking Next button on Read tab');
+        nextButton.click();
+        return;
+      }
+      console.log('AssessmentHelper: No Next button found on Read tab yet');
+      return;
+    }
+
+    // Handle Ready tab (polls)
+    if (currentTab === 'ready') {
+      console.log('AssessmentHelper: On Ready tab, checking for poll...');
+      if (!this.isFetchingAnswer) {
+        this.processQuestion().catch(error => {
+          console.error('AssessmentHelper: Error processing poll:', error);
+        });
+      }
+      return;
+    }
+
+    // Handle Respond tab
+    if (currentTab === 'respond') {
+      console.log('AssessmentHelper: On Respond tab, starting question answering...');
+      clearInterval(pollInterval);
+      if (!this.isFetchingAnswer) {
+        this.processQuestion().catch(error => {
+          console.error('AssessmentHelper: Error in processQuestion:', error);
+        });
+      }
+      return;
+    }
+
+    console.log(`AssessmentHelper: On ${currentTab} tab, no action needed.`);
+  }, 2000);
+  }
+
+  /**
+   * Fetches an answer from the backend API based on the provided query content.
+   * @param {string} queryContent - The content (article + question) to send to the API.
+   * @returns {Promise<string>} A promise that resolves with the answer text or an error message.
+   */
+  async fetchAnswer(queryContent) {
+    if (!queryContent) {
+      console.error('AssessmentHelper: No query content provided');
+      return 'Error: No question provided';
+    }
+
+    const getAnswerButton = document.getElementById('getAnswerButton');
+    const buttonTextSpan = document.getElementById('getAnswerButtonText');
+    const loadingIndicator = document.getElementById('loadingIndicator');
+
+    try {
+      // Update UI for loading state
+      this.isFetchingAnswer = true;
+      if (getAnswerButton) getAnswerButton.disabled = true;
+      if (buttonTextSpan) buttonTextSpan.style.display = 'none';
+      if (loadingIndicator) loadingIndicator.style.display = 'block';
+
+      // Check if this is a poll question
+      const isPollQuestion = Array.from(document.querySelectorAll('.MuiFormControlLabel-label')).some(label => {
+        const text = label.textContent.toLowerCase();
+        return text.includes('agree') || text.includes('disagree') || text.includes('yes') || text.includes('no');
+      });
+
+      // Modify the query based on question type
+      let modifiedQuery = queryContent;
+      if (isPollQuestion) {
+        modifiedQuery += "\n\nIMPORTANT: This is a poll question with Agree/Disagree/Yes/No options. Please respond with ONLY 'A' for Agree/Yes or 'D' for Disagree/No. Nothing else.";
+      } else {
+        modifiedQuery += "\n\nIMPORTANT: Provide ONLY a single letter answer (A, B, C, or D). Nothing else.";
+      }
+
+      // Get article container content
+      const articleContainer = document.getElementById('article_container');
+      const articleContent = articleContainer ? articleContainer.outerHTML : '';
+
+      const response = await fetch('https://novaedu.us.kg/ask', {
+        method: 'POST',
+        cache: 'no-cache',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          q: modifiedQuery,
+          article: articleContent || this.cachedArticle || null,
+          conversation_id: sessionStorage.getItem('conversation_id') || null,
+        }),
+      });
+
+      if (!response.ok) {
+        // Handle HTTP errors
+        const errorBody = await response.text(); // Try to get error details
+        console.error(
+          "AssessmentHelper: Failed to fetch answer from API. Status:",
+          response.status,
+          "Body:",
+          errorBody,
+        );
+        throw new Error(
+          `API request failed with status ${response.status}: ${errorBody}`,
+        );
+      }
+
+      const data = await response.json();
+      let answer = data.response ? String(data.response).trim() : "No answer available";
+
+      // For poll questions, ensure the answer is just A or D
+      if (isPollQuestion) {
+        const lowerAnswer = answer.toLowerCase();
+        if (lowerAnswer.includes("agree") || lowerAnswer.includes("yes")) {
+          answer = "A";
+        } else if (lowerAnswer.includes("disagree") || lowerAnswer.includes("no")) {
+          answer = "D";
+        } else if (answer.length > 1) {
+          answer = answer.charAt(0).toUpperCase();
+        }
+      }
+
+      return answer;
+    } catch (error) {
+      console.error("AssessmentHelper: Error fetching answer:", error);
+      return `Error: ${error.message}`; // Return error message to the UI
+    }
+  }
+
+  /**
+   * Fetches the article content and question content from the current page DOM.
+   * Caches the article content.
+   * @returns {Promise<string>} A promise that resolves with the combined article and question content.
+   */
+
+  /**
+   * Fetches the article content and question content from the current page DOM.
+   * Caches the article content.
+   * @returns {Promise<string>} A promise that resolves with the combined article and question content.
+   */
+  /**
+   * Handles the 'Respond' tab by finding the question and options,
+   * then selecting the best answer.
+   */
+  async handleRespondTab() {
+    console.log('AssessmentHelper: Handling Respond tab...');
+
+    // Find the question text
+    const questionElement = document.querySelector('.activity-questions-handle');
+    if (!questionElement) {
+      console.error('AssessmentHelper: Could not find question element');
+      return;
+    }
+
+    const questionText = questionElement.textContent.trim();
+    console.log('AssessmentHelper: Found question:', questionText);
+
+    // Find all answer options
+    const options = Array.from(document.querySelectorAll('[role="radio"]'));
+    if (options.length === 0) {
+      console.error('AssessmentHelper: No answer options found');
+      return;
+    }
+
+    console.log(`AssessmentHelper: Found ${options.length} answer options`);
+
+    // Get the text for each option
+    const optionTexts = options.map(option => {
+      const textElement = option.querySelector('.jss745');
+      return textElement ? textElement.textContent.trim() : '';
+    }).filter(Boolean);
+
+    // Format the question and options for the API
+    const formattedQuestion = `${questionText}\n\nOptions:\n${optionTexts.map((text, index) => `${String.fromCharCode(65 + index)}. ${text}`).join('\n')}`;
+
+    try {
+      // Get the answer from the API
+      console.log('AssessmentHelper: Fetching answer for question...');
+      const answer = await this.fetchAnswer(formattedQuestion);
+      console.log('AssessmentHelper: Received answer:', answer);
+
+      // Extract just the letter from the answer (A, B, C, or D)
+      const answerLetter = answer.trim().charAt(0).toUpperCase();
+      if (!['A', 'B', 'C', 'D'].includes(answerLetter)) {
+        throw new Error(`Invalid answer format: ${answer}`);
+      }
+
+      // Find and click the corresponding option
+      const optionIndex = answerLetter.charCodeAt(0) - 65; // A=0, B=1, etc.
+      if (optionIndex >= 0 && optionIndex < options.length) {
+        console.log(`AssessmentHelper: Selecting option ${answerLetter} (${optionTexts[optionIndex]})`);
+        options[optionIndex].click();
+
+        // Find and click the
+        const submitButton = document.querySelector('button[type="button"]:has-text("Submit")');
+        if (submitButton) {
+          console.log('AssessmentHelper: Clicking submit button');
+          submitButton.click();
+        } else {
+          console.warn('AssessmentHelper: Could not find submit button');
+        }
+      } else {
+        console.error('AssessmentHelper: Invalid option index:', optionIndex);
+      }
+    } catch (error) {
+      console.error('AssessmentHelper: Error handling Respond tab:', error);
+    }
+  }
+
+  async fetchArticleContent() {
+    // First check if we're on the Read tab
+    const activeStep = this.getActiveStep();
+    if (activeStep && activeStep.stepLabel && activeStep.stepLabel.toLowerCase() === 'read') {
+        console.log('AssessmentHelper: On Read tab, skipping question detection');
+        return '';
+    }
+
+    // Select the container with the ID 'start-reading' for article content
+    const articleContainer = document.querySelector("#start-reading");
+    let articleContent = "";
+    if (articleContainer) {
+      // Select all <p> elements within the container
+      const paragraphs = articleContainer.querySelectorAll("p");
+      // Extract and join the text content of each <p> element
+      articleContent = Array.from(paragraphs)
+        .map((p) => p.textContent.trim())
+        .join(" ");
+    } else {
+      console.warn(
+        "AssessmentHelper: Article content container (#start-reading) not found.",
+      );
+    }
+
+    // Double check if we're on the Read tab after getting article content
+    const currentStep = this.getActiveStep();
+    if (currentStep && currentStep.stepLabel && currentStep.stepLabel.toLowerCase() === 'read') {
+        console.log('AssessmentHelper: Confirmed on Read tab, returning article content only');
+        return articleContent;
+    }
+
+    // Only try to find questions if we're not on the Read tab
+    let questionContent = "";
+    let questionContainer = null;
+
+    // Try the poll container first
+    questionContainer = document.querySelector("#before-reading-poll");
+    if (questionContainer) {
+      // Extract the question text from the poll
+      const questionElement = questionContainer.querySelector("p.MuiTypography-h6");
+      if (questionElement) {
+        questionContent = questionElement.textContent.trim();
+      }
+    }
+
+    // If not found, try the activity component
+    if (!questionContainer) {
+      questionContainer = document.querySelector("#activity-component-react");
+      if (questionContainer) {
+        questionContent = questionContainer.textContent.trim();
+      }
+    }
+
+    // If not found, try a specific selector that might appear on the 'Read' tab
+    if (!questionContent) {
+        const challengeQuestion = document.querySelector('.challenge-question-prompt p');
+        if (challengeQuestion) {
+            questionContent = challengeQuestion.textContent.trim();
+            console.log(`AssessmentHelper: Found question with '.challenge-question-prompt' selector.`);
+        }
+    }
+
+    // If still not found, try a more generic approach for question-like elements
+    if (!questionContent) {
+      const allTextElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, div[role="heading"]');
+      for (const elem of allTextElements) {
+        const text = elem.textContent.trim();
+        // A simple heuristic: if it ends with a question mark and is of a reasonable length
+        if (text.endsWith('?') && text.length > 15) {
+          // Avoid picking up labels or instructions
+          if (!text.toLowerCase().includes('maximum points') && !text.toLowerCase().includes('your answer')) {
+            questionContent = text;
+            console.log(`AssessmentHelper: Found question with generic fallback: ${text}`);
+            break;
+          }
+        }
+      }
+    }
+
+    if (questionContent) {
+      console.log(
+        `AssessmentHelper: Fetched question content (truncated): ${questionContent.substring(0, 200)}...`,
+      );
+    } else {
+      console.warn(
+        "AssessmentHelper: Question content not found with any selector.",
+      );
+    }
+
+    // Combine article and question content
+    const combinedContent = `${articleContent}\n\n${questionContent}`;
+    // Cache the article content for potential future use (e.g., follow-up questions)
+    this.cachedArticle = combinedContent;
+    return combinedContent;
+  }
+
+  /**
+   * Sets up all event listeners for the UI elements, including Draggabilly
+   * for the main UI and manual drag for the answer UI.
+   * Also adds visual feedback for button states and loading.
+   */
+  setupEventListeners() {
+    console.log("AssessmentHelper: Setting up event listeners.");
+
+    // Initialize progress bar
+    this.addProgressBar();
+
+    const launcher = document.getElementById("Launcher");
+    const answerContainer = document.getElementById("answerContainer");
+    const getAnswerButton = launcher
+      ? launcher.querySelector("#getAnswerButton")
+      : null;
+
+    if (!launcher || !answerContainer) {
+      console.error(
+        "AssessmentHelper: UI elements not found during event listener setup. Aborting listener setup."
+      );
+      return;
+    }
+
+    const closeButton = launcher.querySelector("#closeButton");
+    const closeAnswerButton =
+      answerContainer.querySelector("#closeAnswerButton");
+
+    if (!document.getElementById("assessment-helper-styles")) {
+      const style = document.createElement("style");
+      style.id = "assessment-helper-styles";
+      style.textContent = `
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #closeButton:hover, #closeAnswerButton:hover { color: #ff6b6b; opacity: 1 !important; }
+        #closeButton:active, #closeAnswerButton:active { color: #e05252; transform: scale(0.95); }
+        #getAnswerButton:hover { background: #3c3e4b; }
+        #getAnswerButton:active { background: #4c4e5b; transform: scale(0.98); }
+        #getAnswerButton:disabled { opacity: 0.6; cursor: not-allowed; }
+        .answerLauncher.show { opacity: 1; visibility: visible; transform: translateY(-50%) scale(1); }
+        #assessment-progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #f0f0f0;
+            z-index: 9999;
+        }
+        #assessment-progress-fill {
+            height: 100%;
+            width: 0%;
+            background-color: #ffffff;
+            transition: width 0.3s ease;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    if (typeof Draggabilly !== "undefined") {
+      try {
+        new Draggabilly(launcher, { handle: ".drag-handle", delay: 150 });
+        console.log(
+          "AssessmentHelper: Draggabilly initialized on #Launcher with handle '.drag-handle' and delay 150ms."
+        );
+      } catch (error) {
+        console.error("AssessmentHelper: Failed to initialize Draggabilly:", error);
+      }
+    } else {
+      console.error(
+        "AssessmentHelper: Draggabilly is not defined. Cannot initialize dragging for the main UI."
+      );
+    }
+
+    const answerDragHandle = answerContainer.querySelector(".answer-drag-handle");
+    if (answerDragHandle) {
+      answerDragHandle.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        this.answerIsDragging = true;
+        const rect = answerContainer.getBoundingClientRect();
+        this.answerInitialX = e.clientX - rect.left;
+        this.answerInitialY = e.clientY - rect.top;
+        answerContainer.style.position = "fixed";
+      });
+    } else {
+      console.warn("AssessmentHelper: Answer drag handle (.answer-drag-handle) not found.");
+    }
+
+    document.addEventListener("mousemove", (e) => {
+      if (this.answerIsDragging && answerContainer) {
+        e.preventDefault();
+        let newX = e.clientX - this.answerInitialX;
+        let newY = e.clientY - this.answerInitialY;
+        answerContainer.style.left = `${newX}px`;
+        answerContainer.style.top = `${newY}px`;
+        answerContainer.style.right = null;
+        answerContainer.style.bottom = null;
+        answerContainer.style.transform = "none";
+      }
+    });
+
+    document.addEventListener("mouseup", () => { this.answerIsDragging = false; });
+    document.addEventListener("mouseleave", () => { this.answerIsDragging = false; });
+
+    if (closeButton) {
+      closeButton.addEventListener("click", () => {
+        launcher.style.opacity = 0;
+        launcher.addEventListener("transitionend", function handler() {
+          if (parseFloat(launcher.style.opacity) === 0) {
+            launcher.style.visibility = "hidden";
+            launcher.removeEventListener("transitionend", handler);
+          }
+        });
+      });
+      closeButton.addEventListener("mousedown", () => { closeButton.style.transform = "scale(0.95)"; });
+      closeButton.addEventListener("mouseup", () => { closeButton.style.transform = "scale(1)"; });
+    } else {
+      console.warn("AssessmentHelper: Close button (#closeButton) not found on main UI.");
+    }
+
+    if (closeAnswerButton) {
+      closeAnswerButton.addEventListener("click", () => {
+        answerContainer.style.opacity = 0;
+        answerContainer.style.transform = "translateY(-50%) scale(0.8)";
+        answerContainer.addEventListener("transitionend", function handler() {
+          if (parseFloat(answerContainer.style.opacity) === 0) {
+            answerContainer.style.display = "none";
+            answerContainer.style.visibility = "hidden";
+            answerContainer.style.transform = "translateY(-50%) scale(1)";
+            answerContainer.removeEventListener("transitionend", handler);
+          }
+        });
+      });
+      closeAnswerButton.addEventListener("mousedown", () => { closeAnswerButton.style.transform = "scale(0.95)"; });
+      closeAnswerButton.addEventListener("mouseup", () => { closeAnswerButton.style.transform = "scale(1)"; });
+    } else {
+      console.warn("AssessmentHelper: Close button (#closeAnswerButton) not found on answer UI.");
+    }
+
+    // Periodically check for and close any pop-ups that have a specific close icon
+    setInterval(() => {
+      const closeIcon = document.querySelector('[data-testid="CloseIcon"]');
+      if (closeIcon) {
+        const button = closeIcon.closest('button');
+        if (button) {
+          console.log('AssessmentHelper: Found and clicked a close button (likely a popup).');
+          button.click();
+
+          // After closing popup, check if we need to proceed to the next step
+          setTimeout(() => {
+            // Check if we're on the Ready tab and the popup was just closed
+            const activeStep = this.getActiveStep();
+            const currentTab = activeStep?.stepLabel?.toLowerCase() || '';
+
+            if (currentTab === 'ready') {
+              console.log('AssessmentHelper: Popup closed, attempting to proceed to next step...');
+              // Try to find and click the Next button
+              const nextButton = Array.from(document.querySelectorAll('button.MuiButton-containedPrimary, button.MuiButton-root, button')).find(btn =>
+                btn.textContent?.toLowerCase().includes('next') ||
+                btn.textContent?.toLowerCase().includes('continue')
+              );
+
+              if (nextButton) {
+                console.log('AssessmentHelper: Found and clicking Next button after popup close');
+                nextButton.click();
+              } else {
+                // If no Next button, try to find and click the second tab
+                const tabs = document.querySelectorAll('.MuiStepLabel-label');
+                if (tabs.length > 1) {
+                  console.log('AssessmentHelper: Clicking on the next tab after popup close');
+                  tabs[1].click();
+                }
+              }
+            }
+          }, 500); // Small delay to allow popup close to complete
+        }
+      }
+    }, 2000); // Check every 2 seconds
+
+    if (getAnswerButton) {
+      getAnswerButton.addEventListener("mouseenter", () => { getAnswerButton.style.background = "#3c3e4b"; });
+      getAnswerButton.addEventListener("mouseleave", () => { getAnswerButton.style.background = "#2c2e3b"; });
+      getAnswerButton.addEventListener("mousedown", () => { getAnswerButton.style.transform = "scale(0.98)"; });
+      getAnswerButton.addEventListener("mouseup", () => { getAnswerButton.style.transform = "scale(1)"; });
+
+      getAnswerButton.addEventListener("click", async () => {
+        console.log("AssessmentHelper: Get Answer button clicked.");
+        const answerContent = document.getElementById("answerContent");
+
+        try {
+          // First check which tab we're on
+          const activeStep = this.getActiveStep();
+          const currentTab = activeStep?.stepLabel?.toLowerCase() || '';
+
+          // Handle Ready tab (polls)
+          if (currentTab === 'ready') {
+            console.log('AssessmentHelper: On Ready tab, processing poll...');
+            const pollOptions = document.querySelectorAll('.MuiFormGroup-root input[type="radio"]');
+            if (pollOptions.length > 0) {
+              // Select a random option for the poll
+              const randomOption = pollOptions[Math.floor(Math.random() * pollOptions.length)];
+              randomOption.click();
+              console.log('AssessmentHelper: Selected a poll option');
+
+              // Find and click the submit button if it exists
+              const submitButton = Array.from(document.querySelectorAll('button')).find(btn =>
+                btn.textContent?.toLowerCase().includes('submit') ||
+                btn.textContent?.toLowerCase().includes('next')
+              );
+
+              if (submitButton) {
+                console.log('AssessmentHelper: Submitting poll');
+                submitButton.click();
+              }
+            }
+            return;
+          }
+
+          // Handle Read tab
+          if (currentTab === 'read') {
+            console.log('AssessmentHelper: On Read tab, attempting to auto-progress...');
+            // Try to find and click the Next button
+            const nextButton = Array.from(document.querySelectorAll('button.MuiButton-containedPrimary, button.MuiButton-root')).find(btn =>
+              btn.textContent && btn.textContent.trim().toLowerCase() === 'next'
+            );
+
+            if (nextButton) {
+              console.log('AssessmentHelper: Found and clicking Next button on Read tab');
+              nextButton.click();
+              return;
+            } else {
+              console.log('AssessmentHelper: No Next button found on Read tab');
+              // If no Next button, try to find and click the second tab
+              const tabs = document.querySelectorAll('.MuiStepLabel-label');
+              if (tabs.length > 1) {
+                console.log('AssessmentHelper: Clicking on the next tab');
+                tabs[1].click(); // Click the second tab (index 1)
+              }
+              return;
+            }
+          }
+
+          // Debug logging to see what currentTab contains
+          console.log(`AssessmentHelper: Debug - currentTab = "${currentTab}", isQuestionTabActive = ${this.isQuestionTabActive()}`);
+          
+          // If not on Ready, Read, Respond, or question tab, ignore click
+          if (!this.isQuestionTabActive() && currentTab !== 'respond' && currentTab !== 'ready') {
+            console.log("AssessmentHelper: Not on a question tab, ignoring click.");
+            if (answerContent) {
+              answerContent.textContent = "Please navigate to a question tab first.";
+              answerContent.style.color = "#ff6b6b";
+              setTimeout(() => {
+                answerContent.textContent = "";
+              }, 3000);
+            }
+            return;
+          }
+
+          if (this.isFetchingAnswer) {
+            console.log("AssessmentHelper: Already fetching answer, ignoring click.");
+            return;
+          }
+
+          this.isFetchingAnswer = true;
+          const buttonTextSpan = document.getElementById('getAnswerButtonText');
+          const loadingIndicator = document.getElementById('loadingIndicator');
+
+          if (getAnswerButton) getAnswerButton.disabled = true;
+          if (buttonTextSpan) buttonTextSpan.style.display = "none";
+          if (loadingIndicator) loadingIndicator.style.display = "block";
+
+          // Handle Ready tab differently - directly process without API call
+          if (currentTab === 'ready') {
+            console.log('AssessmentHelper: Processing Ready tab question directly...');
+            await this.processQuestion();
+            
+            // Reset UI state
+            if (getAnswerButton) getAnswerButton.disabled = false;
+            if (buttonTextSpan) buttonTextSpan.style.display = "block";
+            if (loadingIndicator) loadingIndicator.style.display = "none";
+            this.isFetchingAnswer = false;
+            return;
+          }
+
+          // Handle Respond tab - directly process without API call
+          if (currentTab === 'respond') {
+            console.log('AssessmentHelper: Processing Respond tab question directly...');
+            await this.processQuestion();
+            
+            // Reset UI state
+            if (getAnswerButton) getAnswerButton.disabled = false;
+            if (buttonTextSpan) buttonTextSpan.style.display = "block";
+            if (loadingIndicator) loadingIndicator.style.display = "none";
+            this.isFetchingAnswer = false;
+            return;
+          }
+
+          let questionContent = await this.fetchArticleContent();
+          if (!questionContent) throw new Error('Could not fetch question content');
+
+          const answer = await this.fetchAnswer(questionContent);
+          console.log(`AssessmentHelper: Received answer from API: "${answer}"`);
+
+          if (!answerContainer || !answerContent) throw new Error('Answer UI elements not found');
+
+          answerContent.textContent = answer;
+          answerContainer.style.display = "flex";
+          answerContainer.style.visibility = "visible";
+          answerContainer.classList.add("show");
+
+          const isPollQuestion = Array.from(document.querySelectorAll('.MuiFormControlLabel-label')).some(label => {
+            const text = label.textContent.toLowerCase();
+            return text.includes('agree') || text.includes('disagree') || text.includes('yes') || text.includes('no');
+          });
+          const isValidAnswer = answer && ["A", "B", "C", "D"].includes(answer.trim());
+
+          if (isValidAnswer) {
+            const trimmedAnswer = answer.trim();
+            console.log(`AssessmentHelper: Answer "${trimmedAnswer}" is valid. Attempting to select option.`);
+
+            let targetOption = null;
+            const options = document.querySelectorAll('input[type="radio"], [role="radio"]');
+
+            if (isPollQuestion) {
+                // For polls, find the options and click one, often they are not standard A/B/C
+                const pollOptions = document.querySelectorAll('.MuiFormGroup-root input[type="radio"]');
+                if (pollOptions.length > 0) {
+                    // Find the option that matches 'Agree' or 'Disagree' based on API response
+                    const targetValue = (trimmedAnswer === 'A') ? 'Agree' : 'Disagree';
+                    let selected = false;
+                    for (const option of pollOptions) {
+                        const label = option.closest('label')?.textContent.trim();
+                        if (label && label.includes(targetValue)) {
+                            option.click();
+                            targetOption = option;
+                            console.log(`AssessmentHelper: Selected poll option: ${label}`);
+                            selected = true;
+                            break;
+                        }
+                    }
+                    if (!selected) {
+                        console.warn("AssessmentHelper: Could not find specific poll option, selecting randomly.");
+                        const randomOption = pollOptions[Math.floor(Math.random() * pollOptions.length)];
+                        randomOption.click();
+                        targetOption = randomOption;
+                    }
+                } else {
+                    console.error("No poll radios found.");
+                }
+            } else {
+                // For standard multiple choice
+                console.log(`AssessmentHelper: Looking for option matching answer '${trimmedAnswer}'`);
+
+                // First try: Look for options with data-value or value attributes
+                const optionByValue = Array.from(options).find(opt => {
+                    const value = opt.getAttribute('data-value') || opt.getAttribute('value') || '';
+                    return value.trim().toUpperCase() === trimmedAnswer;
+                });
+
+                if (optionByValue) {
+                    targetOption = optionByValue;
+                    console.log(`Found option by value: ${optionByValue.outerHTML}`);
+                } else {
+                    // Second try: Look for options where the label starts with the answer letter
+                    for (const option of options) {
+                        let labelText = '';
+                        // Try to find label in various ways
+                        const label = option.closest('label') ||
+                                    (option.id && document.querySelector(`label[for="${option.id}"]`)) ||
+                                    option.closest('[role="radio"]')?.querySelector('span') ||
+                                    option.parentElement;
+
+                        if (label) {
+                            labelText = label.textContent?.trim().toUpperCase() || '';
+                            console.log(`Option label text: '${labelText}'`);
+
+                            // Check if label starts with answer (A, B, C, D) followed by punctuation
+                            const answerRegex = new RegExp(`^${trimmedAnswer}[\s\.\)\-]`);
+                            if (answerRegex.test(labelText)) {
+                                targetOption = option;
+                                console.log(`Matched option by label start: ${labelText}`);
+                                break;
+                            }
+
+                            // Check if label contains the answer in a span with a specific class
+                            const answerSpan = label.querySelector(`span[data-answer="${trimmedAnswer}"]`);
+                            if (answerSpan) {
+                                targetOption = option;
+                                console.log('Matched option by data-answer attribute');
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                // Third try: If still no match, try to find by position (A=0, B=1, etc.)
+                if (!targetOption && options.length > 0) {
+                    const optionIndex = trimmedAnswer.charCodeAt(0) - 65; // A=0, B=1, etc.
+                    if (optionIndex >= 0 && optionIndex < options.length) {
+                        console.log(`Falling back to option by index: ${optionIndex}`);
+                        targetOption = options[optionIndex];
+                    } else {
+                        // If we still don't have a match, try to find any unchecked option
+                        const uncheckedOption = Array.from(options).find(opt => !opt.checked && !opt.getAttribute('aria-checked'));
+                        if (uncheckedOption) {
+                            console.log('No exact match found, selecting first unchecked option');
+                            targetOption = uncheckedOption;
+                        }
+                    }
+                }
+            }
+
+            if (targetOption) {
+                console.log(`AssessmentHelper: Clicking option for "${trimmedAnswer}".`);
+                targetOption.click();
+
+                // Store the selected poll answer text to use in the written response prompt
+                if (isPollQuestion) {
+                    const label = targetOption.closest('label')?.querySelector('.MuiFormControlLabel-label');
+                    if (label) {
+                        const pollAnswerText = label.textContent.trim();
+                        questionContent += `\n\nI voted '${pollAnswerText}'. Please provide a written explanation for this choice.`;
+                    }
+                }
+            } else {
+                console.warn(`AssessmentHelper: Option for "${trimmedAnswer}" not found.`);
+                answerContent.textContent = `Error: Option ${trimmedAnswer} not found.`;
+            }
+
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            const possibleSubmitTexts = ["Submit", "Check Answer", "Submit Response"];
+            const submitBtn = Array.from(document.querySelectorAll("button")).find(button =>
+                possibleSubmitTexts.some(text => button.textContent?.trim().toLowerCase() === text.toLowerCase())
+            );
+
+            if (submitBtn) {
+                console.log("AssessmentHelper: Submit button found, clicking...");
+                submitBtn.click();
+
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                // Check for pagination after poll submission
+                if (isPollQuestion) {
+                    await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for editor to appear
+                    console.log("AssessmentHelper: Fetching written response for poll...");
+                    const writtenResponse = await this.fetchAnswer(questionContent); // Use the modified questionContent
+                    console.log(`AssessmentHelper: Received written response: "${writtenResponse}".`);
+                    this.writeTinyMCE(writtenResponse);
+
+                    // Check for pagination after poll submission
+                    const pagination = document.querySelector('[aria-label*="Amount of Pages"]');
+                    if (pagination && pagination.getAttribute('aria-label').includes('2')) {
+                        const page2Button = Array.from(pagination.querySelectorAll('button'))
+                            .find(btn => btn.getAttribute('aria-label') === 'Go to page 2');
+                        if (page2Button) {
+                            console.log("AssessmentHelper: Navigating to page 2 of poll response.");
+                            page2Button.click();
+                            await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for page 2 to load
+                        }
+                    }
+                    const nextBtn = Array.from(document.querySelectorAll("button"))
+                        .find(btn => btn.textContent?.trim() === 'Next');
+                    if (nextBtn) {
+                        console.log("AssessmentHelper: Clicking 'Next' button after poll response.");
+                        nextBtn.click();
+                        return; // End the process here for polls
+                    }
+                }
+
+                // Handle the next question or submission
+                const handleNextQuestion = async () => {
+                    // Wait for UI to update
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+
+                    if (this.isQuestionTabActive()) {
+                        console.log("AssessmentHelper: Processing next question...");
+                        answerContainer.style.display = "none";
+                        answerContainer.classList.remove("show");
+                        this.isFetchingAnswer = false;
+                        await this.processQuestion();
+                        return true;
+                    }
+                    return false;
+                };
+
+                // Find all relevant buttons
+                const allButtons = Array.from(document.querySelectorAll('button'));
+                const nextQuestionButton = allButtons.find(btn =>
+                    btn.textContent.trim().toLowerCase().includes('next question') ||
+                    btn.textContent.trim() === 'Next' ||
+                    btn.textContent.trim() === 'Continue'
+                );
+
+                const submitButton = allButtons.find(btn =>
+                    btn.textContent.trim().toLowerCase().includes('submit') ||
+                    btn.textContent.trim().toLowerCase().includes('check answer')
+                );
+
+                // Handle next question button
+                if (nextQuestionButton) {
+                    console.log("AssessmentHelper: Next question button found, clicking...");
+                    const currentQuestionId = document.getElementById('question-text')?.textContent.trim();
+
+                    // Store the current question before clicking next
+                    const previousQuestion = this.currentQuestionText;
+
+                    nextQuestionButton.click();
+
+                    // Reset state for next question
+                    answerContainer.style.display = "none";
+                    answerContainer.classList.remove("show");
+                    this.isFetchingAnswer = false;
+
+                    // Wait for the next question to load
+                    console.log("AssessmentHelper: Waiting for next question to load...");
+
+                    const checkForNewQuestion = async () => {
+                        // Wait for a short delay to allow the page to start loading
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+
+                        // Check for the question text element
+                        const questionElement = document.getElementById('question-text');
+                        if (!questionElement) {
+                            console.log('AssessmentHelper: Question element not found yet...');
+                            return false;
+                        }
+
+                        const newQuestionText = questionElement.textContent.trim();
+
+                        // If we have a new question that's different from the previous one
+                        if (newQuestionText && newQuestionText !== previousQuestion) {
+                            console.log('AssessmentHelper: New question detected:', newQuestionText.substring(0, 50) + '...');
+                            this.currentQuestionText = newQuestionText;
+                            return true;
+                        }
+
+                        return false;
+                    };
+
+                    // Try checking for a new question a few times
+                    for (let i = 0; i < 10; i++) {
+                        if (await checkForNewQuestion()) {
+                            // New question detected, process it
+                            await this.processQuestion();
+                            return;
+                        }
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                    }
+
+                    console.error("AssessmentHelper: Timed out waiting for new question");
+                    return;
+                }
+                // Handle submit button
+                else if (submitButton) {
+                    console.log("AssessmentHelper: Submit button found, clicking...");
+                    submitButton.click();
+
+                    // Wait for submission to process and next question to load
+                    console.log("AssessmentHelper: Waiting for submission to process...");
+                    await new Promise(resolve => setTimeout(resolve, 2500));
+
+                    // Reset state for next question
+                    answerContainer.style.display = "none";
+                    answerContainer.classList.remove("show");
+                    this.isFetchingAnswer = false;
+
+                    // Process next question if we're still on a question tab
+                    if (this.isQuestionTabActive()) {
+                        console.log("AssessmentHelper: Processing next question after submission...");
+                        await this.processQuestion();
+                    } else {
+                        // If not on question tab, look for completion buttons
+                        try {
+                            const allButtons = Array.from(document.querySelectorAll('button'));
+                            const nextStepButton = allButtons.find(btn =>
+                                (btn.textContent?.trim().toLowerCase().includes('next') ||
+                                btn.textContent?.trim().toLowerCase().includes('continue') ||
+                                btn.textContent?.trim().toLowerCase().includes('finish')) &&
+                                !btn.disabled
+                            );
+
+                            if (nextStepButton) {
+                                console.log("AssessmentHelper: Found next step button, clicking...");
+                                nextStepButton.click();
+                                // Check for next question after clicking next step
+                                await new Promise(resolve => setTimeout(resolve, 1500));
+                                if (this.isQuestionTabActive()) {
+                                    await this.processQuestion();
+                                }
+                            } else {
+                                // Check for page 2 button if no next step button found
+                                const page2Button = allButtons.find(btn =>
+                                    btn.getAttribute('aria-label') === 'Go to page 2' ||
+                                    btn.textContent?.trim().toLowerCase().includes('page 2')
+                                );
+
+                                if (page2Button) {
+                                    if (this.isQuestionTabActive()) {
+                                        console.log("AssessmentHelper: Found Page 2 button, but we're on a question tab. Not clicking.");
+                                    } else {
+                                        console.log("AssessmentHelper: Found Page 2 button, clicking...");
+                                        page2Button.click();
+                                        await new Promise(resolve => setTimeout(resolve, 1500));
+                                        if (this.isQuestionTabActive()) {
+                                            await this.processQuestion();
+                                        }
+                                    }
+                                } else {
+                                    console.log("AssessmentHelper: No next step or page 2 button found.");
+
+                                    // Final check for any next/continue button
+                                    const anyNextButton = allButtons.find(btn =>
+                                        (btn.textContent?.trim().toLowerCase().includes('next') ||
+                                        btn.textContent?.trim().toLowerCase().includes('continue')) &&
+                                        !btn.disabled
+                                    );
+
+                                    if (anyNextButton) {
+                                        console.log("AssessmentHelper: Found a next/continue button, clicking...");
+                                        anyNextButton.click();
+                                        await new Promise(resolve => setTimeout(resolve, 1500));
+                                        if (this.isQuestionTabActive()) {
+                                            await this.processQuestion();
+                                        }
+                                    } else {
+                                        console.log("AssessmentHelper: No further actions to take on this tab.");
+                                    }
+                                }
+                            }
+                        } catch (error) {
+                            console.error("AssessmentHelper: Error handling next steps:", error);
+                        }
+                    }
+                } else {
+                    console.log("AssessmentHelper: No 'Next' or 'Try again' button found.");
+                    answerContent.textContent = "Submit processed, but next step not found.";
+                }
+            } else {
+                console.log("AssessmentHelper: Submit button not found after selecting option.");
+                answerContent.textContent = "Error: Submit button not found.";
+            }
+          } else {
+            console.log(`AssessmentHelper: Answer "${answer}" is not a valid option.`);
+          }
+        } catch (error) {
+          console.error("Error during question processing:", error);
+          if (answerContent) {
+            answerContent.textContent = `Error: ${error.message}`;
+            answerContent.style.color = "#ff6b6b";
+          }
+        } finally {
+          this.isFetchingAnswer = false;
+          const buttonTextSpan = document.getElementById('getAnswerButtonText');
+          const loadingIndicator = document.getElementById('loadingIndicator');
+          if (getAnswerButton) getAnswerButton.disabled = false;
+          if (buttonTextSpan) buttonTextSpan.style.display = "block";
+          if (loadingIndicator) loadingIndicator.style.display = "none";
+        }
+      });
+    }
+  } // End of setupEventListeners method
+
+  // Add progress bar functionality
+  addProgressBar() {
+    // Create progress container if it doesn't exist
+    let progressContainer = document.getElementById('progressContainer');
+    if (!progressContainer) {
+      progressContainer = document.createElement('div');
+      progressContainer.id = 'progressContainer';
+      progressContainer.style.width = '100%';
+      progressContainer.style.height = '4px';
+      progressContainer.style.background = 'rgba(255, 255, 255, 0.1)';
+      progressContainer.style.borderRadius = '0';
+      progressContainer.style.margin = '0';
+      progressContainer.style.position = 'absolute';
+      progressContainer.style.bottom = '0';
+      progressContainer.style.left = '0';
+      progressContainer.style.width = '100%';
+      progressContainer.style.overflow = 'hidden';
+
+      const progressBar = document.createElement('div');
+      progressBar.id = 'progressBar';
+      progressBar.style.height = '100%';
+      progressBar.style.width = '0%';
+      progressBar.style.background = '#2196f3'; // Start with blue
+      progressBar.style.transition = 'width 0.5s ease-in-out, background 0.5s ease';
+      progressBar.style.borderRadius = '2px';
+
+      progressContainer.appendChild(progressBar);
+
+      // Add the progress container to the launcher, before the getAnswerButton
+      const launcher = document.getElementById('Launcher');
+      const getAnswerButton = document.getElementById('getAnswerButton');
+      if (launcher && getAnswerButton) {
+        launcher.insertBefore(progressContainer, getAnswerButton);
+      } else {
+        console.warn('AssessmentHelper: Could not find launcher or getAnswerButton to append progress bar');
+      }
+    }
+
+    // Initial tab check and progress update
+    console.log("AssessmentHelper: Initial tab check on startup...");
+    this.logStepperProgress();
+    const activeStep = this.getActiveStep();
+    if (activeStep) {
+      console.log(`AssessmentHelper: Starting on step ${activeStep.stepNumber} (${activeStep.stepLabel})`);
+    }
+
+    // Update progress based on current stepper state
+    this.updateProgressBar();
+  }
+
+  // Update progress bar based on current question and stepper state
+  updateProgressBar() {
+    const progressBar = document.getElementById('progressBar');
+    if (!progressBar) {
+      console.warn('AssessmentHelper: Progress bar element not found');
+      return;
+    }
+
+    // Get stepper progress
+    const steps = document.querySelectorAll('.MuiStep-root');
+    let completedSteps = 0;
+    // Only track first 3 steps for progress
+    const maxStepsToTrack = 3;
+    let totalSteps = Math.min(steps.length, maxStepsToTrack);
+    let currentStep = null;
+
+    steps.forEach((step, i) => {
+      // Only count the first 3 steps
+      if (i >= maxStepsToTrack) return;
+      
+      const isCompleted = step.querySelector('.Mui-completed');
+      const isActive = step.querySelector('.Mui-active');
+
+      if (isCompleted) completedSteps++;
+      if (isActive) currentStep = i + 1;
+    });
+
+    // Calculate percentage (add 0.5 to the current step to show partial progress)
+    let progressPercentage = 0;
+    if (totalSteps > 0) {
+      progressPercentage = Math.min(100,
+        ((completedSteps + (currentStep ? 0.5 : 0)) / totalSteps) * 100
+      );
+    }
+
+    // Update progress bar with smooth transition
+    progressBar.style.transition = 'width 0.5s ease-in-out';
+    progressBar.style.width = `${progressPercentage}%`;
+
+    // Change color based on progress
+    if (progressPercentage >= 100) {
+      progressBar.style.background = '#4caf50'; // Green when complete
+      this.playCompletionAnimation();
+    } else if (progressPercentage > 50) {
+      progressBar.style.background = '#ff9800'; // Orange when over 50%
+    } else {
+      progressBar.style.background = '#2196f3'; // Blue when less than 50%
+    }
+
+    console.log(`Assessment Progress: ${Math.round(progressPercentage)}% (Step ${currentStep || '?'} of ${totalSteps})`);
+  }
+
+  // Play completion animation when all questions are answered
+  playCompletionAnimation() {
+    if (this.completionAnimationPlayed) return;
+    this.completionAnimationPlayed = true;
+    
+    const progressBar = document.getElementById('progressBar');
+    if (!progressBar) return;
+    
+    // Add celebration effect
+    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+    let currentColor = 0;
+    
+    // Rainbow color animation
+    const colorInterval = setInterval(() => {
+      progressBar.style.background = colors[currentColor];
+      currentColor = (currentColor + 1) % colors.length;
+    }, 200);
+    
+    // Pulse effect
+    const pulseEffect = () => {
+      anime({
+        targets: progressBar,
+        scale: [1, 1.05, 1],
+        duration: 1000,
+        easing: 'easeInOutQuad',
+        loop: true
+      });
+    };
+    
+    // Start animations
+    pulseEffect();
+    
+    // Stop animations after 5 seconds
+    setTimeout(() => {
+      clearInterval(colorInterval);
+      anime.remove(progressBar);
+      progressBar.style.background = '#4caf50';
+      progressBar.style.transform = 'scale(1)';
+      this.completionAnimationPlayed = false;
+    }, 5000);
+  }
+
+  // Set up mutation observer to update progress when stepper changes
+  setupStepperObserver() {
+    if (!this.stepperObserver) {
+      const stepper = document.querySelector('.MuiStepper-root');
+      if (stepper) {
+        this.stepperObserver = new MutationObserver((mutations) => {
+          this.updateProgressBar();
+
+          // Check if we've switched to the Respond tab
+          const activeStep = this.getActiveStep();
+          const currentTab = activeStep?.stepLabel?.toLowerCase() || '';
+
+          if (currentTab === 'respond' && !this.isProcessingRespond) {
+            console.log('AssessmentHelper: Switched to Respond tab, starting question processing...');
+            this.isProcessingRespond = true;
+            this.processQuestion().catch(error => {
+              console.error('AssessmentHelper: Error in processQuestion:', error);
+              this.isProcessingRespond = false;
+            });
+          } else if (currentTab !== 'respond') {
+            // Reset the flag if we're not on the Respond tab
+            this.isProcessingRespond = false;
+          }
+        });
+        this.stepperObserver.observe(stepper, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['class']
+        });
+      }
+    }
+    // Observer is already set up above, no need to set it up again
+  }
+
+  /**
+   * Handles the next question button click and waits for the next question to load
+   * @param {HTMLElement} nextQuestionButton - The next question button element
+   * @param {HTMLElement} answerContainer - The answer container element to hide
+   */
+  async handleNextQuestion(nextQuestionButton, answerContainer) {
+    if (!nextQuestionButton) return;
+
+    // Get the current question counter state if it exists
+    const questionCounter = document.querySelector('p[class*="jss"][aria-hidden="true"]');
+    let initialCounterState = questionCounter ? questionCounter.textContent.trim() : null;
+
+    console.log("AssessmentHelper: Next question button found, clicking...");
+    nextQuestionButton.click();
+
+    // Wait for the next question to load with a more robust check
+    console.log("AssessmentHelper: Waiting for next question to load...");
+
+    // Initial wait
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    // Check for loading indicators, question elements, or counter update
+    let attempts = 0;
+    const maxAttempts = 10; // 10 attempts * 500ms = max 5 seconds wait
+    let nextQuestionLoaded = false;
+
+    while (attempts < maxAttempts && !nextQuestionLoaded) {
+      // Check if we can find elements that indicate the next question is loaded
+      const questionElements = document.querySelectorAll('.question-text, [role="question"], .question');
+      const answerOptions = document.querySelectorAll('.answer-option, [role="option"], .option');
+
+      // Check if the question counter has updated
+      const currentCounter = questionCounter ? questionCounter.textContent.trim() : null;
+      const counterUpdated = initialCounterState && currentCounter && currentCounter !== initialCounterState;
+
+      if (questionElements.length > 0 || answerOptions.length > 0 || counterUpdated) {
+        console.log("AssessmentHelper: Next question loaded successfully");
+        nextQuestionLoaded = true;
+
+        // Add a 1-second delay after detecting the new question
+        console.log("AssessmentHelper: Waiting 1 second before continuing...");
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        break;
+      }
+
+      // Wait before next check
+      await new Promise(resolve => setTimeout(resolve, 500));
+      attempts++;
+    }
+
+    if (!nextQuestionLoaded) {
+      console.warn("AssessmentHelper: Next question did not load within expected time");
+    }
+
+    // Reset state for next question
+    if (answerContainer) {
+        answerContainer.style.display = "none";
+        answerContainer.classList.remove("show");
+    }
+    this.isFetchingAnswer = false;
+
+    // Process next question if we're still on a question tab
+    if (this.isQuestionTabActive()) {
+        console.log("AssessmentHelper: Processing next question...");
+        await this.processQuestion();
+    }
+  }
+
+  // Start the question processing loop
+  async startQuestionProcessing() {
+    try {
+      // Process the current question
+      const result = await this.processQuestion();
+
+      // If we're on the Respond tab, set up a mutation observer to detect when the answer is submitted
+      // and the next question appears
+      const activeStep = this.getActiveStep();
+      const currentTab = activeStep?.stepLabel?.toLowerCase() || '';
+
+      if (currentTab === 'respond') {
+        console.log('AssessmentHelper: Setting up observer for next question...');
+
+        // Set up a mutation observer to watch for changes in the question container
+        const questionContainer = document.querySelector('.question-text, [role="question"], .question')?.parentElement;
+        if (questionContainer) {
+          const observer = new MutationObserver(async (mutations) => {
+            // Check if the question text has changed
+            const questionChanged = mutations.some(mutation =>
+              mutation.type === 'childList' ||
+              (mutation.type === 'characterData' && mutation.target.textContent.trim() !== '')
+            );
+
+            if (questionChanged) {
+              console.log('AssessmentHelper: Detected question change, processing new question...');
+              observer.disconnect(); // Stop observing to avoid multiple triggers
+              await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for UI to update
+              await this.startQuestionProcessing(); // Process the new question
+            }
+          });
+
+          // Start observing the question container for changes
+          observer.observe(questionContainer, {
+            childList: true,
+            subtree: true,
+            characterData: true
+          });
+        }
+      }
+
+      return result;
+    } catch (error) {
+      console.error("Error in question processing loop:", error);
+      throw error;
+    }
+  }
+
+  isQuestionTabActive() {
+    const activeStep = this.getActiveStep();
+    return activeStep ? activeStep.isQuestionTab() : false;
+}
+
+  writeTinyMCE(text, retries = 5) {
+    // Wait a moment for the editor to initialize
+    setTimeout(() => {
+        // 1. Locate the dynamic TinyMCE iframe
+        const iframe = document.querySelector('iframe[id*="tiny-react"][id$="_ifr"]');
+        if (!iframe) {
+            if (retries > 0) {
+                console.log(`Retrying to find TinyMCE iframe... (${retries} retries left)`);
+                return this.writeTinyMCE(text, retries - 1);
+            }
+            return console.error("❌ TinyMCE iframe not found after multiple retries.");
+        }
+
+        // 2. Access the internal document
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+        // 3. Find the editable TinyMCE <body>
+        const editorBody =
+            doc.querySelector('body#tinymce') ||
+            doc.querySelector('body.mce-content-body') ||
+            doc.querySelector('body[contenteditable="true"]');
+
+        if (!editorBody) return console.error("❌ TinyMCE editor body not found.");
+
+        // 4. Remove placeholder content if any
+        editorBody.removeAttribute("data-mce-placeholder");
+        editorBody.removeAttribute("aria-placeholder");
+
+        const bogus = editorBody.querySelector('br[data-mce-bogus]');
+        if (bogus) bogus.remove();
+
+        // 5. Focus and insert text
+        editorBody.focus();
+        const ok = doc.execCommand("insertText", false, text);
+
+        // 6. Fallback if execCommand fails
+        if (!ok) {
+            editorBody.innerHTML = `<p>${text}</p>`;
+        }
+
+        console.log("✅ Text inserted and placeholder removed.");
+    }, 1000); // Initial 1-second delay
+  }
+
+  async handleRespondTab() {
+    try {
+      console.log('AssessmentHelper: Starting to process response tab...');
+
+      // Get the question content
+      const content = await this.fetchArticleContent();
+      if (!content) {
+        console.log('AssessmentHelper: No content found');
+        return;
+      }
+      
+      console.log('AssessmentHelper: Content fetched successfully');
+      // Process the content here...
+      
+    } catch (error) {
+      console.error('AssessmentHelper: Error in handleRespondTab:', error);
+    }
+  }
+
+  getActiveStep() {
+    // Get all step elements
+    const steps = Array.from(document.querySelectorAll('.MuiStep-root'));
+    
+    if (!steps.length) {
+      console.log('Active Step: No steps found');
+      return null;
+    }
+
+    // Find the active step by checking aria-current attribute
+    let activeStep = null;
+    let activeStepIndex = -1;
+    
+    steps.forEach((step, index) => {
+      const button = step.querySelector('button.MuiStepButton-root');
+      const isActive = button?.getAttribute('aria-current') === 'true';
+      
+      if (isActive) {
+        activeStep = step;
+        activeStepIndex = index;
+      }
+    });
+    
+    if (!activeStep) {
+      console.log('Active Step: None');
+      return null;
+    }
+
+    // Get the step number (1-based index)
+    const stepNumber = activeStepIndex + 1;
+    
+    // Try to get the step label from the step's text content
+    let stepLabel = '';
+    
+    // Method 1: Try to get from the step's text content
+    const labelElement = activeStep.querySelector('.MuiStepLabel-label');
+    if (labelElement) {
+      stepLabel = labelElement.textContent?.trim() || '';
+    }
+    
+    // Method 2: If still empty, try to get from the step button's aria-label
+    if (!stepLabel) {
+      const button = activeStep.querySelector('button.MuiStepButton-root');
+      if (button) {
+        const ariaLabel = button.getAttribute('aria-label') || '';
+        // Extract just the label part (e.g., "Respond" from "Respond Step 3")
+        const match = ariaLabel.match(/^(.+?)\s*step\s*\d+/i);
+        if (match) {
+          stepLabel = match[1].trim();
+        }
+      }
+    }
+    
+    // Method 3: If still empty, use the step number as a fallback
+    if (!stepLabel) {
+      stepLabel = `Step ${stepNumber}`;
+    }
+
+    console.log(`Active Step: ${stepNumber} (${stepLabel})`);
+
+    return { 
+      stepNumber, 
+      stepLabel,
+      // Add a helper method to check if this is a question tab
+      isQuestionTab: () => ['ready', 'respond'].includes(stepLabel.toLowerCase())
+    };
+  }
+
+ logStepperProgress() {
+  try {
+    // Get all steps
+    const steps = Array.from(document.querySelectorAll('.MuiStep-root'));
+    
+    if (!steps.length) {
+      console.warn('No stepper steps found on the page');
+      return;
+    }
+
+    console.group('📊 Stepper Progress');
+    console.log(`Found ${steps.length} steps in the stepper`);
+
+    let activeStepIndex = -1;
+    const stepStatus = [];
+    
+    // First pass: Collect all step information
+    steps.forEach((step, index) => {
+      const button = step.querySelector('button.MuiStepButton-root');
+      const isActive = button?.getAttribute('aria-current') === 'true';
+      const isDisabled = button?.hasAttribute('disabled');
+      const isCompleted = step.querySelector('.MuiStepIcon-root.Mui-completed') !== null;
+      
+      if (isActive) {
+        activeStepIndex = index;
+      }
+      
+      // Get step label
+      let label = `Step ${index + 1}`;
+      if (button) {
+        const ariaLabel = button.getAttribute('aria-label') || '';
+        const match = ariaLabel.match(/(.+?)\s*step\s*\d+/i);
+        label = match ? match[1].trim() : 
+               step.querySelector('.MuiStepLabel-label span')?.textContent?.trim() || 
+               label;
+      }
+
+      stepStatus.push({
+        index,
+        label,
+        isActive,
+        isCompleted,
+        isDisabled
+      });
+    });
+
+    // Log each step's status
+    stepStatus.forEach(step => {
+      let status;
+      if (step.isActive) {
+        status = '🟢 Active';
+      } else if (step.isCompleted) {
+        status = '✅ Completed';
+      } else if (step.isDisabled) {
+        status = '⛔ Disabled';
+      } else {
+        status = '⏳ Pending';
+      }
+      
+      console.log(`#${step.index + 1} ${step.label}: ${status}`);
+    });
+
+    // Log summary
+    if (activeStepIndex !== -1) {
+      console.log(`\n🔍 Current active step: #${activeStepIndex + 1} (${stepStatus[activeStepIndex].label})`);
+    } else if (stepStatus.every(step => step.isCompleted)) {
+      console.log('\n🏁 All steps completed!');
+    } else {
+      console.log('\nℹ️ No active step detected');
+    }
+
+    // Return the step status for programmatic use
+    const result = {
+      totalSteps: steps.length,
+      activeStep: activeStepIndex,
+      steps: stepStatus,
+      isComplete: stepStatus.every(step => step.isCompleted)
+    };
+
+    console.groupEnd();
+    return result;
+  } catch (error) {
+    console.error('Error in logStepperProgress:', error);
+    console.groupEnd();
+    return {
+      error: error.message,
+      totalSteps: 0,
+      activeStep: -1,
+      steps: [],
+      isComplete: false
+    };
+  }
+}
+
+  async processQuestion() {
+    const activeStep = this.getActiveStep();
+    const currentTab = activeStep?.stepLabel?.toLowerCase() || '';
+
+    console.log(`AssessmentHelper: Processing question on ${currentTab} tab...`);
+
+    // Special handling for Ready tab (polls and text questions)
+    if (currentTab === 'ready') {
+      console.log('AssessmentHelper: Processing Ready tab...');
+      
+      // First check for radio button polls
+      const pollOptions = document.querySelectorAll('input[type="radio"], .MuiFormGroup-root input[type="radio"], .MuiRadio-root input[type="radio"]');
+      if (pollOptions.length > 0) {
+        console.log(`AssessmentHelper: Found ${pollOptions.length} poll options...`);
+        
+        // Find the first unchecked option
+        const uncheckedOption = Array.from(pollOptions).find(opt => !opt.checked);
+        if (uncheckedOption) {
+          console.log('AssessmentHelper: Selecting a poll option...');
+          uncheckedOption.click();
+          console.log('AssessmentHelper: Selected a poll option');
+          
+          // Try to find and click the submit/next button
+          setTimeout(() => {
+            const submitButton = Array.from(document.querySelectorAll('button, [role="button"]')).find(btn => {
+              const btnText = btn.textContent?.toLowerCase() || '';
+              return (btnText.includes('submit') || btnText.includes('next')) && 
+                     !btn.disabled && 
+                     window.getComputedStyle(btn).display !== 'none';
+            });
+            
+            if (submitButton) {
+              console.log('AssessmentHelper: Clicking submit/next button...');
+              submitButton.click();
+            } else {
+              console.log('AssessmentHelper: No enabled submit/next button found');
+            }
+          }, 500); // Small delay to ensure the radio button is registered
+        } else {
+          console.log('AssessmentHelper: All poll options already selected');
+        }
+      } 
+      // Check for text input questions (TinyMCE editor)
+      else {
+        const tinyMceIframe = document.querySelector('iframe[id*="tiny-react"][id$="_ifr"], iframe[src*="tinymce"]');
+        if (tinyMceIframe) {
+          console.log('AssessmentHelper: Found text input question on Ready tab...');
+          // Use the writeTinyMCE method to input a response
+          this.writeTinyMCE("This could be recycled or repurposed instead of being thrown away.");
+          
+          // Look for submit button after a longer delay to ensure text is inserted
+          setTimeout(() => {
+            const submitButton = Array.from(document.querySelectorAll('button, [role="button"]')).find(btn => {
+              const btnText = btn.textContent?.toLowerCase() || '';
+              return (btnText.includes('submit') || btnText.includes('next')) && 
+                     !btn.disabled && 
+                     window.getComputedStyle(btn).display !== 'none';
+            });
+            
+            if (submitButton) {
+              console.log('AssessmentHelper: Submitting response');
+              submitButton.click();
+            } else {
+              console.log('AssessmentHelper: No submit button found after text input');
+            }
+          }, 2000); // Increased delay to 2 seconds
+        } else {
+          console.log('AssessmentHelper: No recognizable input found on Ready tab');
+          // Try to find any interactive elements that might be clickable
+          const clickableItems = document.querySelectorAll('button, [role="button"], [tabindex="0"]');
+          console.log(`AssessmentHelper: Found ${clickableItems.length} potentially clickable items`);
+        }
+      }
+      return;
+    }
+
+    // Rest of your existing code for other tabs...
+    if (currentTab === 'read') {
+      console.log('AssessmentHelper: On Read tab, attempting auto-proceed...');
+      
+      // First check for pagination and click page 2
+      const pagination = document.querySelector('[aria-label*="Amount of Pages"]');
+      if (pagination && pagination.getAttribute('aria-label').includes('2')) {
+        const page2Button = Array.from(pagination.querySelectorAll('button'))
+          .find(btn => btn.getAttribute('aria-label') === 'Go to page 2');
+        if (page2Button) {
+          console.log('AssessmentHelper: Found pagination, clicking page 2...');
+          page2Button.click();
+          
+          // Wait for page 2 to load, then look for Next button
+          setTimeout(() => {
+            const nextButton = Array.from(document.querySelectorAll('button.MuiButton-containedPrimary, button.MuiButton-root, button'))
+              .find(btn => btn.textContent?.trim().toLowerCase() === 'next');
+            if (nextButton) {
+              console.log('AssessmentHelper: Found and clicking Next button after page 2');
+              nextButton.click();
+            } else {
+              console.log('AssessmentHelper: No Next button found after page 2');
+            }
+          }, 1000);
+          return;
+        }
+      }
+      
+      // Try to find and click the Close button first
+      const closeButton = Array.from(document.querySelectorAll('button')).find(btn =>
+        btn.textContent?.trim().toLowerCase() === 'close'
+      );
+      if (closeButton) {
+        console.log('AssessmentHelper: Found and clicking Close button');
+        closeButton.click();
+        // Wait a bit then look for Next button
+        setTimeout(() => {
+          const nextButton = Array.from(document.querySelectorAll('button.MuiButton-containedPrimary, button.MuiButton-root, button'))
+            .find(btn => btn.textContent?.trim().toLowerCase() === 'next');
+          if (nextButton) {
+            console.log('AssessmentHelper: Found and clicking Next button');
+            nextButton.click();
+          }
+        }, 500);
+      } else {
+        // Try to find and click the Next button directly
+        const nextButton = Array.from(document.querySelectorAll('button.MuiButton-containedPrimary, button.MuiButton-root, button'))
+          .find(btn => btn.textContent?.trim().toLowerCase() === 'next');
+        if (nextButton) {
+          console.log('AssessmentHelper: Found and clicking Next button');
+          nextButton.click();
+        }
+      }
+      return;
+    }
+
+    // Original question processing for other tabs
+    if (this.isQuestionTabActive() || currentTab === 'respond') {
+      try {
+        const content = await this.fetchArticleContent();
+        if (!content) {
+          console.log('AssessmentHelper: No question content found');
+          return;
+        }
+        const answer = await this.fetchAnswer(content);
+
+        // Rest of your existing question processing logic
+        const answerContent = document.getElementById("answerContent");
+        if (answerContent) {
+          answerContent.textContent = answer;
+          answerContent.style.display = "flex";
+          answerContent.style.visibility = "visible";
+          answerContent.classList.add("show");
+        }
+
+        // Select the answer option
+        const trimmedAnswer = answer.trim().toUpperCase();
+        const options = document.querySelectorAll('input[type="radio"], [role="radio"]');
+        let optionSelected = false;
+        console.log(`AssessmentHelper: Looking for option matching answer '${trimmedAnswer}'`);
+
+        for (const option of options) {
+          // Use an async IIFE to handle the async operations
+          (async () => {
+            try {
+              // Try multiple ways to get the option text
+              let label = '';
+              
+              // Try different selectors to find the label text
+              const labelElement = option.closest('label');
+              if (labelElement) {
+                // Try common class names and direct text content
+                label = labelElement.querySelector('.MuiTypography-body1, .MuiFormControlLabel-label, [data-qa="answer-text"]')?.textContent?.trim() || 
+                        labelElement.textContent.trim();
+              }
+              
+              // If we still don't have a label, try looking at sibling elements
+              if (!label) {
+                const siblingText = option.nextElementSibling?.textContent?.trim() || 
+                                  option.previousElementSibling?.textContent?.trim();
+                if (siblingText) {
+                  label = siblingText;
+                }
+              }
+              
+              console.log(`Option label text: '${label}'`);
+              
+              // Try different matching strategies
+              const normalizedLabel = (label || '').toUpperCase().trim();
+              const isMatch = 
+                normalizedLabel === trimmedAnswer || // Exact match
+                normalizedLabel.startsWith(trimmedAnswer + '.') || // Matches "A."
+                normalizedLabel.startsWith(trimmedAnswer + ')') || // Matches "A)"
+                normalizedLabel.startsWith(trimmedAnswer + ' ') || // Matches "A "
+                normalizedLabel.endsWith(' ' + trimmedAnswer) || // Ends with the answer
+                normalizedLabel.includes(' ' + trimmedAnswer + ' '); // Contains the answer as a whole word
+              
+              if (isMatch) {
+                console.log(`Matched option by label: ${label}`);
+                option.click();
+                console.log(`AssessmentHelper: Clicked option for "${trimmedAnswer}"`);
+                optionSelected = true;
+                
+                // Add a small delay to ensure the selection is registered
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                // Find and click the submit button
+                const submitButton = Array.from(document.querySelectorAll('button')).find(btn => {
+                  const btnText = btn.textContent?.toLowerCase() || '';
+                  return btnText.includes('submit') || btnText.includes('check answer') || btnText.includes('next');
+                });
+
+                if (submitButton) {
+                  console.log('AssessmentHelper: Found submit button, clicking...');
+                  submitButton.click();
+                  
+                  // Wait for submission to process
+                  await new Promise(resolve => setTimeout(resolve, 3000));
+                  
+                  // Check if we're still on the same page or moved to next question
+                  if (this.isQuestionTabActive()) {
+                    // Process next question
+                    console.log('AssessmentHelper: Processing next question...');
+                    await this.processQuestion();
+                  }
+                } else {
+                  console.log('AssessmentHelper: No submit button found after selecting answer');
+                }
+              }
+            } catch (error) {
+              console.error('Error processing option:', error);
+            }
+          })();
+        }
+
+        if (!optionSelected) {
+          console.log(`AssessmentHelper: Could not find matching option for answer: ${trimmedAnswer}`);
+          return null;
+        }
+
+        return answer;
+      } catch (error) {
+        console.error('AssessmentHelper: Error in processQuestion:', error);
+        return null;
+      }
+    } else {
+      console.log('AssessmentHelper: Not on a question tab, skipping question processing');
+      return null;
+    }
+  }
+}
+
+// Create an instance of the AssessmentHelper to start the UI
+const assessmentHelper = new AssessmentHelper();
