@@ -1,1589 +1,358 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="google-site-verification" content="Q24C-qInwalyqOIOejcNgE5jYnLL2FqUfbNzwTJKV59U" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nova Learning Suite - Unlock your potential with intelligent learning assistance tools for BIM, Achieve, IXL, and DeltaMath.">
-    <meta name="keywords" content="Nova, learning assistant, education tools, study aid, BIM, Achieve3000, IXL, DeltaMath, student helper, academic support">
-    <meta name="author" content="Nova Learning">
-    <title>Nova - Intelligent Learning Assistance</title>
-
-    <link rel="icon" href="https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/nova%20logo%20png.png" type="image/png">
-
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script defer src="https://onion-italian-liquid-collectors.trycloudflare.com/script.js" data-website-id="e079d8ca-cdf6-4652-8447-6dcde0901321"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="workink.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8084331785814437" crossorigin="anonymous"></script>
-
-    <style>
-        /* --- CSS Variables for Dark Nord/Vampire/Galaxy Theme --- */
-        :root {
-            --primary-color: #1a1a2e; /* Deep Indigo */
-            --secondary-color: #252540; /* Slightly lighter Indigo */
-            --accent-color: #3d3d5c; /* Muted Purple/Indigo accent */
-            --card-bg: #2c2c4a; /* Background for cards/sections */
-            --light-text: #e6e6ff; /* Brighter soft white/lavender for better contrast */
-            --muted-text: #b8b8d8; /* Slightly brighter muted text for better readability */
-            
-            --border-radius: 14px; /* Slightly increased border radius */
-            --transition-speed: 0.4s; /* Standard transition speed */
-            /* Enhanced shadows for dark theme */
-            --card-shadow: 0 10px 25px rgba(0,0,0,0.25), 0 5px 10px rgba(0,0,0,0.15);
-            --hover-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 8px 15px rgba(0,0,0,0.2);
-            
-            /* Subtle glow effects */
-            --subtle-glow: 0 0 15px rgba(255,255,255,0.05);
-            --hover-glow: 0 0 20px rgba(255,255,255,0.1);
-            
-            /* Nord-like Button Colors with slightly increased vibrancy */
-            --nord-blue: #6388b4; /* Frost - slightly brighter */
-            --nord-green: #a8c596; /* Aurora - slightly brighter */
-            --nord-orange: #d99178; /* Aurora - slightly brighter */
-            --nord-purple: #bb97b6; /* Aurora - slightly brighter */
-
-            --bim-color: var(--nord-green);
-            --achieve-color: var(--nord-blue);
-
-            --deltamath-color: var(--nord-purple);
-
-
-
-            /* Scrollbar styles */
-            --scrollbar-thumb: var(--accent-color);
-            --scrollbar-track: var(--secondary-color);
-            
-            /* Animation durations */
-            --animation-slow: 0.8s;
-            --animation-medium: 0.5s;
-            --animation-fast: 0.3s;
-        }
-
-        /* --- Base Styles --- */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            /* Enhanced background gradient with subtle animation */
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--secondary-color));
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            color: var(--light-text); /* Light text on dark background */
-            line-height: 1.8; /* Increased for better readability */
-            letter-spacing: 0.01em; /* Subtle letter spacing for better readability */
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-            position: relative; /* Needed for header background effect positioning */
-            scroll-behavior: smooth; /* Added for smooth scrolling */
-            text-rendering: optimizeLegibility; /* Improved text rendering */
-            -webkit-font-smoothing: antialiased; /* Smoother fonts on webkit browsers */
-            -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
-        }
-        
-        /* Subtle background gradient animation */
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-         /* Custom Scrollbar Styling */
-        body::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        body::-webkit-scrollbar-track {
-            background: var(--scrollbar-track);
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background-color: var(--scrollbar-thumb);
-            border-radius: 6px;
-            border: 3px solid var(--scrollbar-track);
-        }
-
-        body::-webkit-scrollbar-thumb:hover {
-            background-color: var(--accent-color);
-        }
-
-
-        /* --- Header Styles --- */
-        header {
-            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color) 120%); /* Enhanced gradient background */
-            color: var(--light-text); /* Light text */
-            padding: 5rem 1rem 4rem; /* Increased padding for more spacious feel */
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Enhanced shadow for depth */
-            position: relative;
-            overflow: hidden;
-            z-index: 1; /* Ensure header is above background effect */
-            border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle border for definition */
-
-            /* Styles for initial centering */
-            min-height: 100vh; /* Make header take full viewport height initially */
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Vertically center content */
-            align-items: center; /* Horizontally center content */
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        header h1 {
-            font-family: 'Nunito', sans-serif;
-            font-size: clamp(3rem, 7vw, 4.8rem); /* Larger, more responsive heading */
-            margin-bottom: 1.2rem;
-            font-weight: 800; /* Bolder weight for more impact */
-            color: var(--light-text); /* Light text */
-            text-shadow: 0 2px 15px rgba(255,255,255,0.4); /* Enhanced text shadow */
-            letter-spacing: -0.02em; /* Tighter letter spacing for headings */
-            line-height: 1.2;
-            transform: translateY(0);
-            opacity: 1;
-            animation: fadeInDown var(--animation-slow) ease-out;
-        }
-
-        header h1 i {
-            margin-right: 18px; /* Increased space between icon and text */
-            font-size: 1.15em; /* Slightly larger icon relative to text */
-            display: inline-block;
-            vertical-align: middle;
-            transform: translateY(-2px); /* Subtle alignment adjustment */
-            animation: rocketWiggle 5s ease-in-out infinite;
-            animation-delay: 1s;
-        }
-
-        @keyframes rocketWiggle {
-            0%, 100% { transform: translateY(-2px) rotate(0deg); }
-            25% { transform: translateY(-4px) rotate(-5deg); }
-            75% { transform: translateY(-4px) rotate(5deg); }
-        }
-
-        header p {
-            font-size: clamp(1.25rem, 2.8vw, 1.6rem); /* Larger, more responsive paragraph */
-            opacity: 0.95;
-            max-width: 900px;
-            margin: 0.8rem auto 0; /* Adjusted margin */
-            color: var(--muted-text); /* Muted text color for description */
-            font-weight: 300; /* Lighter weight for subtitle */
-            line-height: 1.6;
-            transform: translateY(0);
-            animation: fadeInUp var(--animation-slow) ease-out;
-            animation-delay: 0.2s;
-            animation-fill-mode: both;
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Enhanced star/particle effect for header background */
-        .header-bg-effect {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 0; /* Behind content */
-            opacity: 0.9; /* Slightly reduce overall opacity */
-        }
-
-        .star {
-            position: absolute;
-            background: rgba(255,255,255,0.8); /* Brighter particles */
-            border-radius: 50%;
-            opacity: 0; /* Start hidden for animation */
-            animation: twinkle linear infinite;
-            /* Enhanced glow effect */
-            box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.4);
-            filter: blur(0.5px); /* Subtle blur for softer appearance */
-        }
-        
-        /* Create different star types */
-        .star:nth-child(3n) {
-            background: rgba(180, 180, 255, 0.9); /* Bluish stars */
-            box-shadow: 0 0 10px 4px rgba(180, 180, 255, 0.5);
-        }
-        
-        .star:nth-child(3n+1) {
-            background: rgba(255, 255, 220, 0.9); /* Yellowish stars */
-            box-shadow: 0 0 9px 3px rgba(255, 255, 220, 0.5);
-        }
-
-        @keyframes twinkle {
-            0% { opacity: 0; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.1); } /* Fade to full opacity with slight pulse */
-            100% { opacity: 0; transform: scale(0.8); }
-        }
-
-
-        /* --- Main Content Area --- */
-        main {
-            flex: 1;
-            padding: 3rem 1rem; /* Increased padding for more breathing room */
-            z-index: 1; /* Ensure main content is above body background */
-            opacity: 0; /* Initially hidden for fade-in animation */
-            transform: translateY(50px); /* Start slightly below for slide-up effect */
-            transition: opacity var(--animation-slow) ease-out, transform var(--animation-slow) ease-out; /* Animation properties */
-            position: relative;
-        }
-        
-        /* Add subtle particle effect to main content background */
-        main::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .container {
-            max-width: min(1200px, 96%); /* Slightly increased max-width */
-            margin: 1.5rem auto; /* Increased margin */
-            background-color: var(--secondary-color); /* Slightly lighter dark background */
-            background-image: linear-gradient(to bottom, rgba(255,255,255,0.03) 0%, transparent 100%);
-            border-radius: var(--border-radius);
-            box-shadow: var(--card-shadow), var(--subtle-glow); /* Enhanced shadow with subtle glow */
-            padding: 2.5rem; /* Increased padding */
-            position: relative;
-            z-index: 1;
-            border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle border */
-            backdrop-filter: blur(10px); /* Subtle blur effect */
-            -webkit-backdrop-filter: blur(10px); /* For Safari */
-        }
-
-        /* --- Section Styles --- */
-        section {
-            margin-bottom: 3rem; /* Increased spacing between sections */
-            padding: 2rem; /* Increased padding for more breathing room */
-            background-color: var(--card-bg); /* Dark card background */
-            background-image: linear-gradient(to bottom, rgba(255,255,255,0.02) 0%, transparent 100%);
-            border-radius: var(--border-radius);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2); /* Enhanced shadow for depth */
-            border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border */
-            transition: all var(--animation-medium) ease-out; /* Smooth transition for all properties */
-            position: relative;
-            overflow: hidden; /* Ensure glow effect stays within bounds */
-        }
-        
-        /* Add subtle hover effect to sections */
-        section:hover {
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25), 0 0 15px rgba(255,255,255,0.05); /* Enhanced shadow with glow on hover */
-            transform: translateY(-3px); /* Subtle lift effect */
-        }
-        
-        /* Add subtle glow effect to section corners */
-        section::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            opacity: 0.5;
-            pointer-events: none;
-        }
-        
-        section::after {
-            content: '';
-            position: absolute;
-            bottom: -50px;
-            right: -50px;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-         /* Sections that are hidden by default and controlled by JS */
-        /* Removed initial display: none from CSS, handled by inline style in HTML */
-        /* #bim-section, #achieve-section, #ixl-section, #deltamath-section { ... } */
-
-
-        /* Class added by JS to reveal sections */
-        .section-visible {
-            /* display is handled by JS */
-            opacity: 1;
-            transform: translateY(0);
-            visibility: visible; /* Ensure visibility is set when active */
-             /* Transition visibility instantly when showing, with no delay */
-            transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out; /* Removed visibility from transition */
-        }
-
-
-        /* --- Tool Card Styles --- */
-        .tool-card {
-            background-color: var(--accent-color); /* Use accent for card background, distinct from section */
-            background-image: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Enhanced shadow for depth */
-            margin-bottom: 2.5rem; /* Increased spacing between cards */
-            transition: all var(--animation-medium) cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transition with easing */
-            position: relative; /* For pseudo-elements */
-            border: 1px solid rgba(255, 255, 255, 0.12); /* Slightly more visible border */
-            overflow: hidden; /* Contain the pseudo-elements */
-            transform: translateZ(0); /* Force hardware acceleration */
-        }
-
-        .tool-card:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* Add subtle gradient accent to top of card */
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(to right, var(--nord-blue), var(--nord-purple));
-            opacity: 0.7;
-            transition: opacity var(--animation-medium) ease;
-        }
-
-        .tool-card:hover {
-            transform: translateY(-8px); /* Enhanced lift effect on hover */
-            box-shadow: var(--hover-shadow), 0 0 20px rgba(255,255,255,0.07); /* Enhanced shadow with subtle glow */
-        }
-        
-        .tool-card:hover::before {
-            opacity: 1; /* Make the gradient accent more visible on hover */
-        }
-
-        .tool-card h4 {
-            color: var(--light-text);
-            margin-bottom: 1.2rem;
-            font-size: clamp(1.25rem, 2.8vw, 1.5rem); /* Slightly larger */
-            font-weight: 700;
-            letter-spacing: 0.01em;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .tool-card h4 i {
-            margin-right: 0.85rem;
-            font-size: 1.1em;
-            color: var(--nord-blue); /* Accent color for icons */
-            transition: transform var(--animation-fast) ease;
-        }
-        
-        .tool-card:hover h4 i {
-            transform: scale(1.1) rotate(5deg); /* Subtle animation on hover */
-        }
-
-        .tool-card p {
-            color: var(--muted-text);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem; /* Slightly larger text */
-        }
-
-        .tool-card ul,
-        .tool-card ol { /* Apply to both unordered and ordered lists */
-            list-style: none; /* Remove default bullet/number points */
-            padding-left: 0; /* Remove default padding */
-            margin-bottom: 0;
-            margin-top: 1.2rem; /* Increased margin above lists */
-        }
-
-        .tool-card li {
-            color: var(--muted-text);
-            margin-bottom: 1rem; /* Increased space between list items */
-            line-height: 1.8;
-            display: flex;
-            align-items: flex-start; /* Align icon with the start of potentially multi-line text */
-            position: relative;
-            padding-left: 1.8rem; /* Space for icon */
-            transition: transform var(--animation-fast) ease;
-        }
-
-        .tool-card li:last-child {
-            margin-bottom: 0;
-        }
-        
-        .tool-card li:hover {
-            transform: translateX(3px); /* Subtle movement on hover */
-        }
-
-        .tool-card li i { /* General styling for icons within list items */
-            position: absolute;
-            left: 0;
-            font-size: 1em;
-            width: 1.2em; /* Fixed width for alignment */
-            text-align: center;
-            margin-top: 0.2em; /* Fine-tune vertical alignment with text */
-            transition: all var(--animation-fast) ease;
-        }
-        
-        .tool-card li:hover i {
-            transform: scale(1.2); /* Enlarge icon on hover */
-        }
-
-        .tool-card li i.fa-check { /* Specific color for 'check' icons */
-            color: var(--nord-green);
-            text-shadow: 0 0 8px rgba(163, 190, 140, 0.4); /* Subtle glow */
-        }
-
-        .tool-card li i.fa-hourglass-half { /* Specific color for 'hourglass' icons */
-            color: var(--nord-orange);
-            text-shadow: 0 0 8px rgba(208, 135, 112, 0.4); /* Subtle glow */
-        }
-
-        .tool-card li i.fa-cogs,
-        .tool-card li i.fa-bolt,
-        .tool-card li i.fa-info-circle { /* Colors for other icons */
-            color: var(--nord-purple);
-            text-shadow: 0 0 8px rgba(180, 142, 173, 0.4); /* Subtle glow */
-        }
-        
-        .tool-card li i.fa-download,
-        .tool-card li i.fa-mouse-pointer,
-        .tool-card li i.fa-bookmark {
-            color: var(--nord-blue);
-            text-shadow: 0 0 8px rgba(94, 129, 172, 0.4); /* Subtle glow */
-        }
-
-        /* --- Heading Styles --- */
-        h2, h3, h4 {
-            color: var(--light-text); /* Light text */
-            margin-bottom: 1rem;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 600;
-        }
-
-        h2 {
-            font-size: clamp(2.1rem, 4.8vw, 2.6rem); /* Slightly increased font size */
-            border-bottom: 2px solid rgba(255,255,255,0.2); /* Slightly more visible border */
-            padding-bottom: 0.8rem;
-            margin-bottom: 1.8rem; /* Increased margin */
-        }
-        h2 i {
-            margin-right: 10px; /* Space between icon and text */
-            font-size: 1em;
-        }
-
-
-        h3 {
-            font-size: clamp(1.6rem, 3.8vw, 2.1rem); /* Slightly increased font size */
-            color: rgba(255,255,255,0.95); /* Slightly brighter */
-            margin-top: 2.2rem; /* Increased margin */
-            margin-bottom: 1.4rem; /* Increased margin */
-        }
-        h3 i {
-            margin-right: 8px;
-            font-size: 0.9em;
-        }
-
-
-        h4 {
-            font-size: clamp(1.35rem, 3.2vw, 1.7rem); /* Slightly increased font size */
-            color: var(--light-text); /* Light text */
-            margin-bottom: 1.1rem; /* Slightly increased margin */
-            font-weight: 700;
-        }
-        h4 i {
-            margin-right: 8px;
-            font-size: 0.9em;
-        }
-
-
-        section p {
-            color: var(--muted-text); /* Muted light text for paragraphs */
-            margin-bottom: 1.2rem;
-            line-height: 1.8; /* Added for consistency */
-        }
-
-        /* Specific adjustment for the paragraph before the first tool card in IXL section */
-        #ixl-section > p:first-of-type {
-            margin-bottom: 1rem; /* Reduced margin */
-        }
-
-        /* Rule to add more space below the introductory paragraph in the IXL section */
-        .ixl-intro-paragraph {
-            margin-bottom: 1.5rem; /* Reduced margin from 3rem to 1.5rem */
-        }
-
-
-        /* --- Link Styles --- */
-        a {
-            color: var(--nord-blue); /* Consistent link color */
-            text-decoration: none;
-            transition: color var(--transition-speed) ease, text-decoration var(--transition-speed) ease;
-        }
-
-        a:hover, a:focus {
-            color: var(--light-text); /* Brighter on hover/focus */
-            text-decoration: underline;
-            text-decoration-thickness: 1px; /* Subtle underline */
-        }
-
-        .github-link, .discord-link {
-            font-weight: 600;
-            text-shadow: 0 0 6px rgba(255,255,255,0.3); /* Subtle light shadow */
-        }
-
-        .github-link:hover, .discord-link:hover {
-            text-shadow: none;
-        }
-
-        /* --- Selection Buttons Section --- */
-        .selection-section {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem; /* Increased gap */
-            margin-bottom: 3.5rem; /* Increased margin */
-            /* Ensure section is visible by default */
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            transition: none; /* Remove transition */
-        }
-
-
-        /* --- New Button Styles (from Uiverse.io) --- */
-        .button-container {
-            position: relative;
-            width: 250px; /* Adjust width as needed */
-            height: 70px; /* Adjust height as needed */
-            cursor: pointer;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05); /* Enhanced shadow with subtle border */
-            border-radius: var(--border-radius); /* Use theme variable */
-            transition: all var(--animation-medium) cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition with easing */
-            flex: 1 1 auto;
-            max-width: 300px; /* Match previous max-width */
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* Remove initial AOS opacity/transform */
-            opacity: 1;
-            transform: translateY(0) translateZ(0); /* Force hardware acceleration */
-        }
-
-        .button-container:hover {
-            transform: translateY(-8px) scale(1.03); /* Enhanced lift effect with slight scale */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1); /* Deeper shadow with enhanced border */
-        }
-        
-        .button-container:active {
-            transform: translateY(-2px) scale(0.98); /* Subtle press effect */
-            transition-duration: 0.1s; /* Faster transition for active state */
-        }
-
-        .button-container .backdrop {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: var(--secondary-color); /* Use secondary color for backdrop */
-            background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%); /* Subtle gradient overlay */
-            border-radius: var(--border-radius);
-            z-index: 1;
-        }
-
-        .button-container .button-border {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid rgba(255, 255, 255, 0.15); /* More visible light border */
-            border-radius: var(--border-radius);
-            z-index: 3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            transition: border-color var(--animation-medium) ease; /* Transition for border color */
-        }
-        
-        .button-container:hover .button-border {
-            border-color: rgba(255, 255, 255, 0.3); /* Brighter border on hover */
-        }
-
-        .button-container .button {
-            position: relative;
-            font-size: 1.25rem; /* Slightly larger text */
-            font-weight: 700; /* Bolder text */
-            color: var(--light-text);
-            text-transform: uppercase;
-            letter-spacing: 1.5px; /* Increased letter spacing */
-            z-index: 4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem; /* Space between icon and text */
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
-            transition: transform var(--animation-fast) ease, letter-spacing var(--animation-medium) ease; /* Transitions for text effects */
-        }
-        
-        .button-container:hover .button {
-            letter-spacing: 2px; /* Slightly increase letter spacing on hover */
-            transform: scale(1.05); /* Subtle scale effect */
-        }
-
-        .button-container .button i {
-            font-size: 1.5rem; /* Slightly larger icon */
-            color: var(--light-text);
-            transition: transform var(--animation-fast) ease; /* Transition for icon animation */
-        }
-        
-        .button-container:hover .button i {
-            transform: scale(1.2) rotate(5deg); /* Scale and slight rotation on hover */
-        }
-
-
-        .button-container .spin {
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            animation: spin 8s linear infinite;
-            z-index: 2;
-            opacity: 0.7; /* Slightly reduce opacity for better blending */
-            transition: opacity var(--animation-medium) ease; /* Add transition for hover effect */
-        }
-        
-        .button-container:hover .spin {
-            opacity: 1; /* Full opacity on hover */
-            animation-duration: 6s; /* Speed up on hover */
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg) scale(0.95); }
-            50% { transform: rotate(180deg) scale(1.05); }
-            100% { transform: rotate(360deg) scale(0.95); }
-        }
-
-        .button-container .spin-blur {
-            background: conic-gradient(from 0deg at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.05) 100%);
-            filter: blur(20px);
-            mix-blend-mode: overlay;
-            animation-duration: 12s; /* Slower rotation */
-            animation-direction: reverse; /* Opposite direction */
-        }
-
-        .button-container .spin-intense {
-            background: conic-gradient(from 0deg at 50% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0.1) 100%);
-            filter: blur(5px);
-            mix-blend-mode: overlay;
-            animation-duration: 7s; /* Medium rotation speed */
-        }
-
-        .button-container .spin-inside {
-            background: conic-gradient(from 0deg at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.05) 100%);
-            filter: blur(10px);
-            mix-blend-mode: overlay;
-            animation-duration: 10s; /* Slower rotation */
-            animation-direction: reverse; /* Opposite direction */
-        }
-        
-        /* Add a new animation for active state */
-        .button-container:active .spin {
-            animation-duration: 3s; /* Much faster on active state */
-        }
-
-        /* Specific colors for the spin effect based on platform */
-        #bim-button .spin-intense { 
-            background: conic-gradient(from 0deg at 50% 50%, 
-                rgba(163, 190, 140, 0.1) 0%, 
-                rgba(163, 190, 140, 0.9) 20%, 
-                rgba(163, 190, 140, 0.1) 40%, 
-                rgba(163, 190, 140, 0.1) 100%); 
-        } /* Nord Green */
-        
-        #achieve-button .spin-intense { 
-            background: conic-gradient(from 0deg at 50% 50%, 
-                rgba(94, 129, 172, 0.1) 0%, 
-                rgba(94, 129, 172, 0.9) 20%, 
-                rgba(94, 129, 172, 0.1) 40%, 
-                rgba(94, 129, 172, 0.1) 100%); 
-        } /* Nord Blue */
-        
-        #ixl-button .spin-intense { 
-            background: conic-gradient(from 0deg at 50% 50%, 
-                rgba(208, 135, 112, 0.1) 0%, 
-                rgba(208, 135, 112, 0.9) 20%, 
-                rgba(208, 135, 112, 0.1) 40%, 
-                rgba(208, 135, 112, 0.1) 100%); 
-        } /* Nord Orange */
-        
-        #deltamath-button .spin-intense { 
-            background: conic-gradient(from 0deg at 50% 50%, 
-                rgba(180, 142, 173, 0.1) 0%, 
-                rgba(180, 142, 173, 0.9) 20%, 
-                rgba(180, 142, 173, 0.1) 40%, 
-                rgba(180, 142, 173, 0.1) 100%); 
-        } /* Nord Purple */
-        
-        /* Add specific colors for the other spin effects */
-        #bim-button .spin-blur, #bim-button .spin-inside { 
-            background: conic-gradient(from 0deg at 50% 50%, 
-                rgba(163, 190, 140, 0.05) 0%, 
-                rgba(163, 190, 140, 0.6) 20%, 
-                rgba(163, 190, 140, 0.05) 40%, 
-                rgba(163, 190, 140, 0.05) 100%); 
-        }
-        
-        #achieve-button .spin-blur, #achieve-button .spin-inside { 
-            background: conic-gradient(from 0deg at 50% 50%, 
-                rgba(94, 129, 172, 0.05) 0%, 
-                rgba(94, 129, 172, 0.6) 20%, 
-                rgba(94, 129, 172, 0.05) 40%, 
-                rgba(94, 129, 172, 0.05) 100%); 
-        }
-        
-        #ixl-button .spin-blur, #ixl-button .spin-inside { 
-            background: conic-gradient(from 0deg at 50% 50%, 
-                rgba(208, 135, 112, 0.05) 0%, 
-                rgba(208, 135, 112, 0.6) 20%, 
-                rgba(208, 135, 112, 0.05) 40%, 
-                rgba(208, 135, 112, 0.05) 100%); 
-        }
-        
-        #deltamath-button .spin-blur, #deltamath-button .spin-inside { 
-            background: conic-gradient(from 0deg at 50% 50%, 
-                rgba(180, 142, 173, 0.05) 0%, 
-                rgba(180, 142, 173, 0.6) 20%, 
-                rgba(180, 142, 173, 0.05) 40%, 
-                rgba(180, 142, 173, 0.05) 100%); 
-        }
-
-
-        /* Hide the real button from the Uiverse example, as we're using the div structure */
-        .real-button {
-            display: none;
-        }
-
-
-        /* --- Bookmarklet Section --- */
-        .bookmarklet-container {
-            text-align: center;
-            padding: 3.5rem; /* Increased padding */
-            border: 3px dashed rgba(255,255,255,0.3); /* Slightly more subtle dashed border */
-            border-radius: var(--border-radius);
-            margin: 3.5rem 0; /* Increased margin */
-            background: linear-gradient(135deg, var(--card-bg), rgba(30, 30, 50, 0.9)); /* Gradient background */
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--card-shadow), 0 0 30px rgba(0, 0, 0, 0.2) inset; /* Inner shadow for depth */
-            transition: all var(--animation-medium) ease;
-        }
-        
-        .bookmarklet-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
-            z-index: 0;
-            pointer-events: none;
-        }
-        
-        .bookmarklet-container:hover {
-            border-color: rgba(255, 255, 255, 0.5); /* Brighter border on hover */
-            box-shadow: var(--hover-shadow), 0 0 40px rgba(0, 0, 0, 0.3) inset; /* Enhanced shadow on hover */
-        }
-
-        .bookmarklet-container h2 {
-            color: var(--light-text); /* Light text */
-            margin-bottom: 1.2rem; /* Increased margin */
-            font-size: 2rem; /* Larger heading */
-            font-weight: 800; /* Bolder heading */
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
-            position: relative; /* For z-index */
-            z-index: 1; /* Above the ::before element */
-        }
-        
-        .bookmarklet-container p {
-            color: var(--muted-text); /* Muted light text */
-            text-align: center;
-            margin-bottom: 2.5rem; /* Increased margin below paragraph */
-            font-size: 1.1rem; /* Slightly larger text */
-            line-height: 1.6; /* Improved line height */
-            max-width: 80%; /* Limit width for better readability */
-            margin-left: auto;
-            margin-right: auto;
-            position: relative; /* For z-index */
-            z-index: 1; /* Above the ::before element */
-        }
-
-        .bookmarklet {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 0; /* Adjusted margin */
-            padding: 1.3rem 2.8rem; /* Larger button */
-            background-color: var(--primary-color); /* Deep Indigo background */
-            background-image: linear-gradient(135deg, var(--primary-color), var(--accent-color)); /* Gradient background */
-            color: var(--light-text); /* Light text */
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            cursor: grab;
-            transition: all var(--animation-medium) cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition with easing */
-            font-weight: 800; /* Bolder text */
-            box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 0 2px rgba(255, 255, 255, 0.1); /* Enhanced shadow with subtle border */
-            position: relative;
-            overflow: hidden;
-            /* Pulse animation using a subtle dark color */
-            animation: pulse-dark 3s infinite;
-            font-family: 'Nunito', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1.5px; /* Increased letter spacing */
-            gap: 1rem; /* Increased space between text and icon */
-            z-index: 1; /* Above the ::before element */
-        }
-        
-        .bookmarklet::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
-            z-index: -1;
-        }
-
-        @keyframes pulse-dark {
-            0% { box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 0 0 rgba(var(--primary-rgb), 0.7); }
-            50% { box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 0 20px rgba(var(--primary-rgb), 0); }
-            100% { box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 0 0 rgba(var(--primary-rgb), 0); }
-        }
-
-        .bookmarklet:hover {
-            background-image: linear-gradient(135deg, var(--accent-color), var(--primary-color)); /* Reversed gradient on hover */
-            transform: translateY(-8px) scale(1.05); /* Enhanced lift and scale */
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 0 0 3px rgba(255, 255, 255, 0.2); /* Deeper shadow with brighter border */
-            animation: none;
-            letter-spacing: 2px; /* Slightly increase letter spacing on hover */
-        }
-
-        .bookmarklet:active {
-            cursor: grabbing;
-            transform: translateY(-2px) scale(0.98); /* Subtle press effect */
-            box-shadow: 0 8px 15px rgba(0,0,0,0.3), 0 0 0 2px rgba(255, 255, 255, 0.1); /* Reduced shadow when pressed */
-            transition-duration: 0.1s; /* Faster transition for active state */
-        }
-        
-        .bookmarklet i {
-            color: var(--light-text); /* Ensure bookmarklet icon is light */
-            font-size: 1.4rem; /* Larger icon */
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
-            transition: transform var(--animation-fast) ease; /* Transition for icon animation */
-        }
-        
-        .bookmarklet:hover i {
-            transform: scale(1.2) rotate(5deg); /* Scale and slight rotation on hover */
-        }
-/* Remove empty rule */
-
-        /* --- List Styles (General) --- */
-        ul, ol {
-            padding-left: 2rem; /* More padding */
-            margin-bottom: 1.8rem; /* More margin */
-        }
-
-        li {
-            margin-bottom: 1rem; /* More space between list items */
-            line-height: 1.8;
-            color: var(--muted-text); /* Muted light for list items */
-        }
-
-        li strong {
-            color: var(--light-text); /* Light for strong text in list items */
-        }
-
-        li i {
-            margin-right: 8px; /* Space between icon and list item text */
-            color: rgba(255,255,255,0.7); /* Muted light icons */
-        }
-
-
-        /* --- Link Styles (General) --- */
-        /* Already defined above, ensuring consistency */
-
-
-        .github-link, .discord-link {
-            font-weight: 600;
-            text-shadow: 0 0 6px rgba(255,255,255,0.3); /* Subtle light shadow */
-        }
-
-        .github-link:hover, .discord-link:hover {
-            text-shadow: none;
-        }
-
-        /* --- Tools Grid Section (Removed as sections are now switched) --- */
-        /* .tools-grid { ... } */
-        /* .tool-card { ... } */
-        /* .tool-card:hover { ... } */
-        /* .tool-card h4 { ... } */
-
-
-        /* --- Footer Styles --- */
-        footer {
-            background: var(--accent-color); /* Dark accent background */
-            color: var(--light-text); /* Light text */
-            padding: 2.5rem; /* Increased padding */
-            text-align: center;
-            margin-top: auto;
-            box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.3);
-            z-index: 1; /* Ensure footer is above body background */
-        }
-
-        footer p {
-            font-size: 0.95rem;
-            opacity: 0.8;
-            color: var(--muted-text); /* Muted light text */
-        }
-
-        footer a {
-             color: var(--light-text); /* Light links in footer */
-        }
-
-        footer a:hover {
-             color: var(--muted-text); /* Muted light on hover */
-        }
-
-
-
-
-         /* Scroll-to-Top Button */
-        #scrollToTopBtn {
-            display: none; /* Hidden by default */
-            position: fixed; /* Fixed position */
-            bottom: 25px; /* Slightly higher from the bottom */
-            right: 25px; /* Slightly further from the right */
-            z-index: 1000; /* Make sure it's above other content */
-            border: none; /* Remove borders */
-            outline: none; /* Remove outline */
-            background-color: var(--accent-color); /* Background color */
-            background-image: linear-gradient(135deg, var(--accent-color), var(--primary-color)); /* Gradient background */
-            color: var(--light-text); /* Text color */
-            cursor: pointer; /* Add a mouse pointer on hover */
-            width: 52px; /* Slightly larger */
-            height: 52px; /* Slightly larger */
-            padding: 12px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px; /* Larger icon */
-            box-shadow: 0 6px 12px rgba(0,0,0,0.4), 0 0 0 2px rgba(255, 255, 255, 0.1); /* Enhanced shadow with subtle border */
-            transition: all var(--animation-medium) cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition with easing */
-            opacity: 0.85; /* Slightly transparent */
-            transform: translateY(0) scale(1); /* Initial state for animation */
-            overflow: hidden; /* For the pseudo-element */
-        }
-        
-        #scrollToTopBtn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity var(--animation-medium) ease;
-        }
-
-        #scrollToTopBtn:hover {
-            background-image: linear-gradient(135deg, var(--primary-color), var(--accent-color)); /* Reversed gradient on hover */
-            opacity: 1; /* Full opacity on hover */
-            transform: translateY(-5px) scale(1.1); /* Lift and scale effect */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 0 3px rgba(255, 255, 255, 0.2); /* Deeper shadow with brighter border */
-        }
-        
-        #scrollToTopBtn:hover::before {
-            opacity: 1; /* Show the radial gradient on hover */
-        }
-        
-        #scrollToTopBtn:active {
-            transform: translateY(-2px) scale(0.95); /* Subtle press effect */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 0 2px rgba(255, 255, 255, 0.1); /* Reduced shadow when pressed */
-            transition-duration: 0.1s; /* Faster transition for active state */
-        }
-        
-        #scrollToTopBtn i {
-            transition: transform var(--animation-fast) ease; /* Transition for icon animation */
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
-        }
-        
-        #scrollToTopBtn:hover i {
-            transform: translateY(-3px); /* Move icon up slightly on hover */
-            animation: bounce 1s infinite; /* Add bounce animation */
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(-3px); }
-            50% { transform: translateY(-8px); }
-        }
-
-
-        /* --- Responsive Adjustments --- */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
-            }
-
-            header {
-                padding: 3rem 1rem 2rem;
-            }
-
-            header h1 {
-                font-size: clamp(2.2rem, 9vw, 4rem);
-            }
-
-            header p {
-                font-size: clamp(1.1rem, 3.5vw, 1.4rem);
-            }
-
-            h2 {
-                font-size: clamp(1.7rem, 6vw, 2.2rem);
-            }
-
-            h3 {
-                font-size: clamp(1.3rem, 5vw, 1.8rem);
-            }
-
-            h4 {
-                font-size: clamp(1.1rem, 4vw, 1.5rem);
-            }
-
-            .selection-section {
-                flex-direction: column;
-                align-items: center;
-                gap: 1.5rem;
-            }
-
-            .button-container {
-                width: 100%;
-                max-width: 350px; /* Allow buttons to be a bit wider on mobile */
-                height: 60px; /* Adjust height for mobile */
-            }
-
-            .button-container .button {
-                font-size: 1.1rem;
-            }
-
-            .button-container .button i {
-                font-size: 1.2rem;
-            }
-
-            .tool-card {
-                 padding: 1.5rem;
-            }
-
-            .bookmarklet-container {
-                padding: 2rem;
-            }
-
-            .bookmarklet {
-                padding: 1rem 2rem;
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 1rem;
-            }
-
-            header {
-                padding: 2rem 1rem;
-            }
-
-            header h1 {
-                font-size: clamp(2rem, 10vw, 3.5rem);
-            }
-            header p {
-                font-size: clamp(1rem, 4vw, 1.2rem);
-            }
-            h2 {
-                font-size: clamp(1.6rem, 7vw, 2rem);
-            }
-            h3 {
-                font-size: clamp(1.2rem, 6vw, 1.6rem);
-            }
-            h4 {
-                font-size: clamp(1rem, 5vw, 1.3rem);
-            }
-            .selection-section {
-                gap: 1rem;
-            }
-             .button-container {
-                height: 50px; /* Adjust height for smaller mobile */
-            }
-             .button-container .button {
-                font-size: 1rem;
-            }
-             .button-container .button i {
-                font-size: 1.1rem;
-            }
-            .bookmarklet {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
-
-    </style>
-</head>
-<body>
-
-    <svg style="position: absolute; width: 0; height: 0;">
-      <filter width="300%" x="-100%" height="300%" y="-100%" id="unopaq">
-        <feColorMatrix
-          values="1 0 0 0 0
-                  0 1 0 0 0
-                  0 0 1 0 0
-                  0 0 0 9 0"
-        ></feColorMatrix>
-      </filter>
-      <filter width="300%" x="-100%" height="300%" y="-100%" id="unopaq2">
-        <feColorMatrix
-          values="1 0 0 0 0
-                  0 1 0 0 0
-                  0 0 1 0 0
-                  0 0 0 3 0"
-        ></feColorMatrix>
-      </filter>
-      <filter width="300%" x="-100%" height="300%" y="-100%" id="unopaq3">
-        <feColorMatrix
-          values="1 0 0 0.2 0
-                  0 1 0 0.2 0
-                  0 0 1 0.2 0
-                  0 0 0 2 0"
-        ></feColorMatrix>
-      </filter>
-    </svg>
-
-
-    <header>
-        <div class="header-bg-effect"></div>
-        <h1><i class="fas fa-rocket"></i> Nova Learning Suite</h1>
-        <p>Elevate your academic journey with intelligent assistance and powerful tools for popular learning platforms.</p>
-    </header>
-
-    <main id="main-content">
-        <div class="container">
-            <section class="selection-section" id="selection-section">
-                <h2 style="width: 100%; text-align: center;"><i class="fas fa-tools"></i> Select Your Learning Platform</h2>
-                <p style="width: 100%; text-align: center;">Click on the button corresponding to the learning platform you are currently using to view specific instructions and tools.</p>
-
-                <div id="bim-button" class="button-container">
-                    <div class="spin spin-blur"></div>
-                    <div class="spin spin-intense"></div>
-                    <div class="backdrop"></div>
-                    <div class="button-border">
-                        <div class="spin spin-inside"></div>
-                        <div class="button"><i class="fas fa-calculator"></i> BIM</div>
-                    </div>
-                </div>
-
-                <div id="achieve-button" class="button-container">
-                    <div class="spin spin-blur"></div>
-                    <div class="spin spin-intense"></div>
-                    <div class="backdrop"></div>
-                    <div class="button-border">
-                        <div class="spin spin-inside"></div>
-                        <div class="button"><i class="fas fa-book-reader"></i> Achieve</div>
-                    </div>
-                </div>
-
-
-
-                <div id="deltamath-button" class="button-container">
-                    <div class="spin spin-blur"></div>
-                    <div class="spin spin-intense"></div>
-                    <div class="backdrop"></div>
-                    <div class="button-border">
-                        <div class="spin spin-inside"></div>
-                        <div class="button"><i class="fas fa-chart-line"></i> DeltaMath</div>
-                    </div>
-                </div>
-                </section>
-
-            <section id="bim-section" style="display: none;">
-                <h2><i class="fas fa-calculator"></i> Big Ideas Math (BIM) Instructions </h2>
-                <p>Follow these steps to use the Nova tool on Big Ideas Math:</p>
-                 <div class="tool-card">
-                    <h4><i class="fas fa-info-circle"></i> Overview</h4>
-                    <p>Nova provides real-time assistance on Big Ideas Math assignments.</p>
-                 </div>
-                <div class="tool-card">
-                    <h4><i class="fas fa-wrench"></i> Features</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Automatic Question Analysis: Detects question type (multiple-choice, True/False, fill-in-the-blank) and suggests answers.</li>
-                        <li><i class="fas fa-check"></i> Clean UI: Unobtrusive overlays, draggable panels (via jQuery UI).</li>
-                    </ul>
-                </div>
-                <div class="tool-card">
-                    <h4><i class="fas fa-download"></i> Installation & Usage (Bookmarklet)</h4>
-                    <ol>
-                        <li><i class="fas fa-mouse-pointer"></i> Drag the "Nova" bookmarklet (found in the section below) to your browser's bookmarks bar.</li>
-                        <li><i class="fas fa-check-circle"></i> Ensure you are on a BIM assignment page (<code>bigideasmath.com</code>).</li>
-                        <li><i class="fas fa-bookmark"></i> Click the "Nova" bookmarklet while on the assignment page.</li>
-                        <li><i class="fas fa-magic"></i> A floating UI will appear on the page.</li>
-                        <li><i class="fas fa-question-circle"></i> Click the "Get Answer" button on the floating UI to reveal the answer(s) for the current question.</li>
-                        <li><i class="fas fa-copy"></i> The answer will also be copied to your clipboard.</li>
-                    </ol>
-                </div>
-            </section>
-
-            <section id="achieve-section" style="display: none;">
-                <h2><i class="fas fa-book-reader"></i> Achieve3000 Instructions</h2>
-                <p>Follow these steps to use the Nova tool on Achieve3000:</p>
-                 <div class="tool-card">
-                    <h4><i class="fas fa-info-circle"></i> Overview</h4>
-                    <p>Nova provides assistance on Achieve3000 articles and activities.</p>
-                 </div>
-                 <div class="tool-card">
-                    <h4><i class="fas fa-wrench"></i> Features</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Progress Analytics: Tracks performance and offers hints in real time.</li>
-                        <li><i class="fas fa-check"></i> Clean UI: Unobtrusive overlays.</li>
-                    </ul>
-                </div>
-                <div class="tool-card">
-                    <h4><i class="fas fa-download"></i> Installation & Usage (Bookmarklet)</h4>
-                    <ol>
-                        <li><i class="fas fa-mouse-pointer"></i> Drag the "Nova" bookmarklet (found in the section below) to your browser's bookmarks bar.</li>
-                        <li><i class="fas fa-check-circle"></i> Ensure you are on an Achieve3000 article or activity page (<code>achieve3000.com</code>).</li>
-                        <li><i class="fas fa-bookmark"></i> Click the "Nova" bookmarklet while on the article/activity page.</li>
-                        <li><i class="fas fa-magic"></i> A floating UI will appear on the page.</li>
-                        <li><i class="fas fa-question-circle"></i> Click the "Skip Article" button on the floating UI to get the answer to the main question based on the article content.</li>
-                        <li><i class="fas fa-copy"></i> The answer will also be copied to your clipboard.</li>
-                    </ol>
-                </div>
-            </section>
-
-
-
-                    </div>
-                    <div class="tool-card" style="margin-top:0.7rem; text-align: center;">
-                        <i class="fas fa-question-circle"></i> Need help? See the <a href="https://github.com/cpmjaguar1234/nova" target="_blank" class="repo-link">GitHub repository</a> or check the <a href="https://discord.com/invite/Gt2eZXSSS5/" target="_blank" class="repo-link">Discord</a> for more details.
-
-                    </div>
-                </div>
-            </section>
-
-            <section id="deltamath-section" style="display: none;">
-                <h2><i class="fas fa-chart-line"></i> DeltaMath Instructions</h2>
-                <p>Follow these steps to use the Nova tool on DeltaMath:</p>
-                 <div class="tool-card">
-                    <h4><i class="fas fa-info-circle"></i> Overview</h4>
-                    <p>Nova provides assistance on DeltaMath problems by extracting answers.</p>
-                 </div>
-                 <div class="tool-card">
-                    <h4><i class="fas fa-wrench"></i> Features</h4>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Floating UI panel showing KaTeX-rendered answers.</li>
-                        <li><i class="fas fa-check"></i> Dynamically injects necessary libraries (KaTeX, jQuery, jQuery UI) if missing.</li>
-                    </ul>
-                </div>
-                <div class="tool-card">
-                    <h4><i class="fas fa-download"></i> Installation & Usage (Bookmarklet)</h4>
-                    <ol>
-                        <li><i class="fas fa-mouse-pointer"></i> Drag the "Nova" bookmarklet (found in the section below) to your browser's bookmarks bar.</li>
-                        <li><i class="fas fa-check-circle"></i> Ensure you are on a specific DeltaMath problem page (where you see the problem and input fields) (<code>deltamath.com</code>).</li>
-                        <li><i class="fas fa-bookmark"></i> Click the "Nova" bookmarklet while on the problem page.</li>
-                        <li><i class="fas fa-magic"></i> A floating UI will appear on the page, displaying the extracted answer(s).</li>
-                        <li><i class="fas fa-copy"></i> The answer will also be copied to your clipboard.</li>
-                    </ol>
-                    <p style="margin-top: 1rem;"><i class="fas fa-exclamation-triangle" style="color: var(--nord-orange);"></i> Note: This tool extracts the correct answer directly from the page's underlying data structures when available. It may not work on all problem types or if DeltaMath changes its internal structure.</p>
-                </div>
-            </section>
-
-
-            <section id="bookmarklet-section" class="bookmarklet-container">
-                <h2><i class="fas fa-bookmark"></i> Bookmarklet Installation</h2>
-                <p>To use the Nova bookmarklet for BIM, Achieve3000, or DeltaMath, drag the button below to your browser's bookmarks bar.</p>
-                <a class="bookmarklet" draggable="true" href="javascript:(function(){'use strict';function loadScript(url){fetch(url).then(response=>{if(!response.ok)throw new Error('Network response was not ok');return response.text()}).then(scriptContent=>{const scriptElement=document.createElement('script');scriptElement.textContent=scriptContent;document.head.appendChild(scriptElement);console.log('Script loaded and executed successfully')}).catch(error=>{console.error('Error loading script:',error)})}const currentDomain=window.location.hostname;if(currentDomain.includes('bigideasmath.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/bigideas.js');else if(currentDomain.includes('achieve3000.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/achieve.js');else if(currentDomain.includes('edmentum.com'))loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/edmentum/edmentum.js');else if(currentDomain.includes('deltamath.com')){const pathSegments=window.location.pathname.split('/').filter(segment=>segment.length>0);if(pathSegments.length===5){loadScript('https://raw.githubusercontent.com/Cpmjaguar1234/nova/refs/heads/main/deltamath.js')}}})()" title="Drag this to your bookmarks bar">Nova <i class="fas fa-grip-horizontal"></i></a>
-                <p style="margin-top: 1.5rem; font-size: 0.9em; opacity: 0.9; color: var(--muted-text);"> (Ensure your bookmarks bar is visible: Chrome/Firefox: Ctrl+Shift+B, Safari: Cmd+Shift+B) </p>
-            </section>
-
+import React, { useState, useEffect } from 'react';
+import { 
+  Terminal, 
+  Cpu, 
+  Key, 
+  Zap, 
+  Shield, 
+  BookOpen, 
+  ChevronRight, 
+  Github, 
+  Menu, 
+  X, 
+  CheckCircle2,
+  Code2,
+  Globe,
+  Download
+} from 'lucide-react';
+
+const NovaWebsite = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeKey, setActiveKey] = useState('');
+  const [keyStatus, setKeyStatus] = useState('idle'); // idle, validating, success, error
+
+  // Handle scroll for navbar styling
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleKeyValidation = (e) => {
+    e.preventDefault();
+    if (!activeKey) return;
+    
+    setKeyStatus('validating');
+    // Simulate API check
+    setTimeout(() => {
+      if (activeKey.toLowerCase().includes('nova') || activeKey.length > 8) {
+        setKeyStatus('success');
+      } else {
+        setKeyStatus('error');
+      }
+    }, 1500);
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-violet-500/30">
+      {/* Navigation */}
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-950/80 backdrop-blur-md border-b border-white/5' : 'bg-transparent'}`}>
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-2 group cursor-pointer">
+            <div className="w-10 h-10 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/20 group-hover:shadow-violet-500/40 transition-all duration-300">
+              <Zap className="text-white w-6 h-6" />
+            </div>
+            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+              Nova<span className="text-violet-500">.</span>
+            </span>
+          </div>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+            <a href="#features" className="hover:text-white transition-colors">Features</a>
+            <a href="#how-it-works" className="hover:text-white transition-colors">How it Works</a>
+            <a href="#keys" className="hover:text-white transition-colors">Get Keys</a>
+            <a href="https://github.com/cpmjaguar1234/nova" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+              <Github className="w-4 h-4" />
+              <span>Source</span>
+            </a>
+            <button className="bg-white text-slate-950 px-5 py-2.5 rounded-full hover:bg-violet-200 transition-colors font-semibold">
+              Launch App
+            </button>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </button>
         </div>
-    </main>
 
-    <footer>
-        <p>&copy; 2025 Nova Learning. All rights reserved.</p>
-        <p style="margin-top: 0.5rem;">
-            <a href="https://github.com/cpmjaguar1234/nova" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
-            |
-            <a href="https://discord.gg/Gt2eZXSSS5" target="_blank" class="discord-link"><i class="fab fa-discord"></i> Discord</a>
-        </p>
-    </footer>
+        {/* Mobile Nav */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-20 left-0 w-full bg-slate-950 border-b border-white/10 p-6 flex flex-col gap-4 shadow-2xl">
+            <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium">Features</a>
+            <a href="#keys" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium">Keys</a>
+            <a href="https://github.com/cpmjaguar1234" target="_blank" rel="noreferrer" className="text-lg font-medium">GitHub</a>
+          </div>
+        )}
+      </nav>
 
-    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 overflow-hidden">
+        {/* Background Gradients */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-violet-600/20 rounded-full blur-[120px] -z-10 pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-violet-300 text-sm font-medium mb-8 animate-fade-in-up">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+            </span>
+            v2.5.0 Now Available
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-500">
+            Intelligent Learning <br />
+            <span className="text-violet-500">Accelerated.</span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Nova is the ultimate browser utility for students. Automate repetitive tasks, analyze questions in real-time, and unlock your full potential with the power of NovaEdu.
+          </p>
 
-    <script>
-        // --- JavaScript for Section Visibility and Button Active State ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('.selection-section .button-container'); // Updated selector
-            // Select all instructional sections (excluding selection and bookmarklet)
-            const instructionalSections = document.querySelectorAll('main .container section:not(.selection-section):not(.bookmarklet-container)');
-            const selectionSection = document.getElementById('selection-section');
-            const bookmarkletSection = document.getElementById('bookmarklet-section');
-            const ixlExtensionSection = document.getElementById('ixl-section'); // Get IXL extension section
-            const mainContent = document.getElementById("main-content"); // Get the main content area
-            const header = document.querySelector("header"); // Get the header
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="w-full sm:w-auto px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white rounded-xl font-bold transition-all transform hover:scale-105 shadow-lg shadow-violet-600/25 flex items-center justify-center gap-2">
+              <Download className="w-5 h-5" />
+              Install Nova
+            </button>
+            <button className="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-800 text-slate-200 border border-white/10 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+              <Key className="w-5 h-5" />
+              Get License Key
+            </button>
+          </div>
 
+          {/* Code Preview/Terminal */}
+          <div className="mt-20 mx-auto max-w-4xl bg-slate-900 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+            <div className="flex items-center gap-2 px-4 py-3 bg-slate-950 border-b border-white/5">
+              <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
+              <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
+              <div className="ml-4 text-xs font-mono text-slate-500">nova-cli — node — 85x24</div>
+            </div>
+            <div className="p-6 text-left font-mono text-sm md:text-base">
+              <div className="text-slate-400 mb-2">$ nova init --school-mode</div>
+              <div className="text-violet-400 mb-2">➜ Initializing Nova Learning Suite v2.5...</div>
+              <div className="text-slate-300 mb-2">[+] Injecting UI components... <span className="text-green-400">Done</span></div>
+              <div className="text-slate-300 mb-2">[+] Connecting to Knowledge Base... <span className="text-green-400">Connected</span></div>
+              <div className="text-slate-300 mb-4">[+] Verifying License Key... <span className="text-green-400">Valid (Lifetime)</span></div>
+              <div className="text-slate-200 animate-pulse">_ Waiting for input...</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            // --- Debugging Logs ---
-            console.log("DOMContentLoaded fired.");
-            console.log("Found selection section:", selectionSection);
-            console.log("Found buttons:", buttons);
+      {/* Stats Section */}
+      <section className="py-12 border-y border-white/5 bg-slate-900/30">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { label: 'Active Users', value: '15,000+' },
+            { label: 'Questions Solved', value: '2.4M+' },
+            { label: 'Uptime', value: '99.9%' },
+            { label: 'Supported Sites', value: '12+' },
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
+              <div className="text-sm text-slate-500 uppercase tracking-wider font-medium">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-            if (buttons.length === 0) {
-                console.error("No buttons found with class '.selection-section .button-container'. Check HTML structure and class names."); // Updated log
-                 const selectionSection = document.getElementById('selection-section');
-                 if (selectionSection) {
-                      const errorMessage = document.createElement('p');
-                      errorMessage.style.color = 'red';
-                      errorMessage.textContent = 'Error: Could not load selection buttons. Please try refreshing the page or contact support.';
-                      selectionSection.appendChild(errorMessage);
-                 }
-            } else {
-                 buttons.forEach((button, index) => {
-                    console.log(`Button ${index} (${button.id}) found.`);
-                    console.log(`Button ${index} (${button.id}) computed styles: display=${window.getComputedStyle(button).display}, opacity=${window.getComputedStyle(button).opacity}, visibility=${window.getComputedStyle(button).visibility}`);
-                 });
-            }
+      {/* Features Grid */}
+      <section id="features" className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Designed for <span className="text-violet-500">Performance</span></h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Nova isn't just a tool; it's a complete ecosystem designed to help you understand complex topics instantly.
+            </p>
+          </div>
 
-             console.log("Instructional sections found:", instructionalSections);
-             instructionalSections.forEach((section, index) => {
-                 console.log(`Instructional Section ${index} (${section.id}) initial display style:`, window.getComputedStyle(section).display);
-                 console.log(`Instructional Section ${index} (${section.id}) initial opacity style:`, window.getComputedStyle(section).opacity);
-                 console.log(`Instructional Section ${index} (${section.id}) initial visibility style:`, window.getComputedStyle(section).visibility);
-             });
-            // --- End Debugging Logs ---
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Cpu className="w-8 h-8 text-violet-400" />,
+                title: "Smart Analysis",
+                desc: "Our algorithm instantly detects questions on your screen and retrieves the most accurate explanations and answers."
+              },
+              {
+                icon: <Globe className="w-8 h-8 text-indigo-400" />,
+                title: "Universal Support",
+                desc: "Works seamlessly across major educational platforms including IXL, DeltaMath, and more with a single extension."
+              },
+              {
+                icon: <Shield className="w-8 h-8 text-emerald-400" />,
+                title: "Privacy First",
+                desc: "Nova runs locally in your browser. Your data stays with you, and our stealth mode ensures you remain undetected."
+              },
+              {
+                icon: <Terminal className="w-8 h-8 text-pink-400" />,
+                title: "Custom Scripting",
+                desc: "Advanced users can write custom modules to extend Nova's functionality to new websites and platforms."
+              },
+              {
+                icon: <BookOpen className="w-8 h-8 text-amber-400" />,
+                title: "Study Guides",
+                desc: "Automatically generates study guides based on the problems you struggled with during your sessions."
+              },
+              {
+                icon: <Zap className="w-8 h-8 text-cyan-400" />,
+                title: "Instant Solver",
+                desc: "One-click solution for math problems, graphing, and multiple-choice questions with detailed steps."
+              }
+            ].map((feature, i) => (
+              <div key={i} className="p-8 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-violet-500/50 hover:bg-slate-900 transition-all group">
+                <div className="mb-6 p-4 rounded-xl bg-slate-950 inline-block border border-white/5 group-hover:scale-110 transition-transform">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-white">{feature.title}</h3>
+                <p className="text-slate-400 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* Key Management / Pricing */}
+      <section id="keys" className="py-24 px-6 bg-slate-900/20 relative">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"></div>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl relative overflow-hidden">
+            {/* Decorative Glow */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600/20 blur-[80px] rounded-full -mr-32 -mt-32"></div>
 
-            // Initially hide all instructional sections using inline styles set in HTML
-            // Ensure IXL is visible and has the animation class initially
-             if (ixlExtensionSection) {
-                 ixlExtensionSection.classList.add('section-visible');
-                 ixlExtensionSection.style.display = 'block'; // Ensure it's block
-                 ixlExtensionSection.style.opacity = 1; // Ensure opacity is 1
-                 ixlExtensionSection.style.transform = 'translateY(0)'; // Ensure transform is reset
-                 ixlExtensionSection.style.visibility = 'visible'; // Ensure visible
-             }
+            <div className="relative z-10 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Activate Nova <span className="text-violet-500">Pro</span></h2>
+              <p className="text-slate-400 mb-8 max-w-xl mx-auto">
+                Enter your license key to unlock premium features, including unlimited daily solves and priority support.
+              </p>
 
+              <form onSubmit={handleKeyValidation} className="max-w-md mx-auto mb-8">
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <Key className={`w-5 h-5 ${keyStatus === 'error' ? 'text-red-400' : keyStatus === 'success' ? 'text-green-400' : 'text-slate-500'}`} />
+                  </div>
+                  <input
+                    type="text"
+                    value={activeKey}
+                    onChange={(e) => {
+                      setActiveKey(e.target.value);
+                      setKeyStatus('idle');
+                    }}
+                    placeholder="XXXX-XXXX-XXXX-XXXX"
+                    className={`w-full bg-slate-950 border-2 ${keyStatus === 'error' ? 'border-red-500/50' : keyStatus === 'success' ? 'border-green-500/50' : 'border-white/10 focus:border-violet-500'} rounded-xl py-4 pl-12 pr-4 text-white placeholder-slate-600 focus:outline-none transition-all font-mono tracking-widest uppercase`}
+                  />
+                  <button 
+                    type="submit"
+                    className="absolute right-2 top-2 bottom-2 bg-white text-slate-950 px-4 rounded-lg font-bold hover:bg-slate-200 transition-colors"
+                  >
+                    {keyStatus === 'validating' ? 'Checking...' : 'Activate'}
+                  </button>
+                </div>
+                {keyStatus === 'success' && (
+                  <div className="mt-3 flex items-center justify-center gap-2 text-green-400 text-sm font-medium animate-in fade-in slide-in-from-top-2">
+                    <CheckCircle2 className="w-4 h-4" />
+                    Key Verified! Welcome, Beta Tester.
+                  </div>
+                )}
+                {keyStatus === 'error' && (
+                  <div className="mt-3 text-red-400 text-sm font-medium animate-in fade-in slide-in-from-top-2">
+                    Invalid key. Please try again.
+                  </div>
+                )}
+              </form>
 
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetId = button.id.replace('-button', '-section');
-                    const targetSection = document.getElementById(targetId);
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-slate-500">
+                <a href="#" className="hover:text-violet-400 transition-colors flex items-center gap-1">
+                  Don't have a key? Get one here <ChevronRight className="w-3 h-3" />
+                </a>
+                <span className="hidden md:inline">•</span>
+                <a href="#" className="hover:text-violet-400 transition-colors">
+                  Contact Support
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                    if (targetSection) {
-                         console.log(`Button clicked: ${button.id}, targeting section: ${targetId}`); // Debugging log
+      {/* Installation Steps */}
+      <section id="how-it-works" className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-8">Setup in <span className="text-violet-500">Seconds</span></h2>
+              <div className="space-y-8">
+                {[
+                  { title: "Get the Extension", text: "Download the Nova extension for Chrome or Edge from our releases page." },
+                  { title: "Enter License", text: "Launch the extension and enter your unique key provided by cpmjaguar1234." },
+                  { title: "Start Learning", text: "Navigate to your learning platform. Nova will automatically detect the environment." }
+                ].map((step, i) => (
+                  <div key={i} className="flex gap-6">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-slate-800 border border-white/10 flex items-center justify-center text-xl font-bold text-violet-400">
+                      {i + 1}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2 text-white">{step.title}</h3>
+                      <p className="text-slate-400">{step.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-violet-600/20 to-transparent blur-3xl rounded-full"></div>
+              <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 shadow-2xl relative transform md:rotate-3 hover:rotate-0 transition-all duration-500">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-violet-600 rounded-lg flex items-center justify-center">
+                    <Zap className="text-white w-6 h-6" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-white">Nova Dashboard</div>
+                    <div className="text-xs text-slate-400">v2.5.0 • Stable</div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-8 bg-slate-800 rounded w-full animate-pulse"></div>
+                  <div className="h-24 bg-slate-800/50 rounded w-full border border-dashed border-slate-700 flex items-center justify-center text-slate-500 text-sm">
+                    Active Module: IXL Helper
+                  </div>
+                  <div className="flex gap-2">
+                    <div className="h-8 bg-violet-600/20 rounded w-1/3"></div>
+                    <div className="h-8 bg-slate-800 rounded w-2/3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                        // Remove active class from all buttons
-                        buttons.forEach(btn => btn.classList.remove('active'));
+      {/* Footer */}
+      <footer className="py-12 border-t border-white/5 bg-slate-950">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
+              <Code2 className="text-white w-4 h-4" />
+            </div>
+            <span className="font-bold text-slate-300">NovaEdu</span>
+          </div>
+          <div className="text-slate-500 text-sm">
+            © 2024 cpmjaguar1234. All rights reserved.
+          </div>
+          <div className="flex gap-6">
+            <a href="#" className="text-slate-500 hover:text-white transition-colors">Discord</a>
+            <a href="#" className="text-slate-500 hover:text-white transition-colors">Terms</a>
+            <a href="#" className="text-slate-500 hover:text-white transition-colors">Privacy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
 
-                        // Add active class to the clicked button
-                        button.classList.add('active');
-
-                        // Find the currently visible instructional section (check inline display style)
-                        const currentVisibleSection = document.querySelector('main .container section:not(.selection-section):not(.bookmarklet-container)[style*="display: block"]');
-
-
-                        if (currentVisibleSection && currentVisibleSection !== targetSection) {
-                             console.log("Hiding current visible section:", currentVisibleSection.id); // Debugging log
-                            // Start fade-out/move-up transition
-                            currentVisibleSection.classList.remove('section-visible');
-                             currentVisibleSection.style.visibility = 'hidden'; // Hide visibility immediately
-
-                             // After the transition, set display to none
-                             // Get the actual transition duration from computed style
-                            const transitionDuration = parseFloat(getComputedStyle(currentVisibleSection).transitionDuration) * 1000;
-                            setTimeout(() => {
-                                currentVisibleSection.style.display = 'none'; // Set display to none
-                                 console.log(`Finished hiding ${currentVisibleSection.id}`); // Debugging log
-                            }, transitionDuration);
-                        } else if (currentVisibleSection === targetSection) {
-                             console.log("Clicked button for already visible section. Doing nothing."); // Debugging log
-                             return; // Don't do anything if the target section is already visible
-                        }
-
-
-                        // Show the target section
-                         console.log("Showing target section:", targetSection.id); // Debugging log
-                        targetSection.style.display = 'block'; // Set display to block
-
-                        // Use requestAnimationFrame to ensure the display change is processed before animation
-                        requestAnimationFrame(() => {
-                             // Trigger fade-in/move-down transition
-                            targetSection.classList.add('section-visible');
-                             targetSection.style.visibility = 'visible'; // Make visible immediately before transition
-                             console.log(`Finished showing ${targetSection.id}`); // Debugging log
-                        });
-
-
-                         // Scroll to the newly visible section
-                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    } else {
-                         console.error(`Target section not found for button: ${button.id}`);
-                    }
-                });
-            });
-
-            // --- Header Background Star Effect ---
-            const headerBgEffect = document.querySelector('.header-bg-effect');
-            if (headerBgEffect) {
-                const numStars = 150; // Increased number of stars
-                for (let i = 0; i < numStars; i++) {
-                    const star = document.createElement('div');
-                    star.classList.add('star');
-                    // More variation in size
-                    const size = Math.random() * 4 + 1; // Random size between 1px and 5px
-                    star.style.width = `${size}px`;
-                    star.style.height = `${size}px`;
-                    star.style.top = `${Math.random() * 100}%`;
-                    star.style.left = `${Math.random() * 100}%`;
-                    // More variation in animation speed and delay
-                    star.style.animationDuration = `${Math.random() * 4 + 2}s`; // Random duration between 2s and 6s
-                    star.style.animationDelay = `${Math.random() * 3}s`; // Random delay up to 3s
-                     // Add a random initial opacity for more variation
-                    star.style.opacity = Math.random() * 0.5; // Start with varied low opacity
-                    headerBgEffect.appendChild(star);
-                }
-            }
-
-             // --- Scroll-to-Top Button Logic ---
-            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    scrollToTopBtn.style.display = "block";
-                } else {
-                    scrollToTopBtn.style.display = "none";
-                }
-            };
-
-            // When the user clicks on the button, scroll to the top of the document
-            scrollToTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth' // Smooth scroll
-                });
-            });
-
-            // --- GSAP ScrollTrigger Animation ---
-            // Ensure GSAP and ScrollTrigger are loaded before registering
-            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-                 gsap.registerPlugin(ScrollTrigger);
-
-                 // Animate the header moving up and the main content fading in on scroll
-                 gsap.to(header, {
-                    scrollTrigger: {
-                        trigger: header,
-                        start: "top top", // Animation starts when the top of the header hits the top of the viewport
-                        end: "bottom top", // Animation ends when the bottom of the header hits the top of the viewport
-                        scrub: 1, // Smoothly links the animation to the scroll position
-                        // markers: true // Uncomment for debugging ScrollTrigger
-                    },
-                    yPercent: -100, // Move the header up by 100% of its height
-                    ease: "none" // Linear movement
-                 });
-
-                 gsap.to(mainContent, {
-                    scrollTrigger: {
-                        trigger: header,
-                        start: "top center", // Start fading in main content when header is halfway up
-                        end: "center center", // Finish fading in main content when header at the top
-                        scrub: 1,
-                        // markers: true // Uncomment for debugging ScrollTrigger
-                    },
-                    opacity: 1, // Fade in the main content
-                    y: 0, // Move main content to its original position
-                    ease: "none"
-                 });
-
-                 console.log("GSAP and ScrollTrigger animation set up.");
-
-            } else {
-                 console.warn("GSAP or ScrollTrigger library not loaded. Skipping GSAP animation setup.");
-            }
-
-
-        });
-
-        // --- Initialize AOS ---
-        // Ensure AOS is initialized after the DOM is ready and elements are potentially hidden/shown by JS
-        window.addEventListener('load', () => {
-             // Check if AOS is loaded before initializing
-            if (typeof AOS !== 'undefined') {
-                 AOS.init({
-                    duration: 800, // values from 0 to 3000, with step 50ms
-                    easing: 'ease-out-cubic', // default easing for AOS animations
-                    once: true // whether animation should happen only once - while scrolling down
-                 });
-                 // console.log("AOS initialized."); // Debugging log
-            } else {
-                 console.warn("AOS library not loaded. Skipping AOS initialization.");
-            }
-        });
-
-
-    </script>
-
-</body>
-</html>
+export default NovaWebsite;
